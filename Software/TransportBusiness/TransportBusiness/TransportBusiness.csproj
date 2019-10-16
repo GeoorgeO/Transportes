@@ -40,6 +40,9 @@
     <Reference Include="DevExpress.XtraBars.v17.2" />
     <Reference Include="DevExpress.Sparkline.v17.2.Core" />
     <Reference Include="DevExpress.XtraEditors.v17.2" />
+    <Reference Include="DevExpress.XtraGrid.v17.2, Version=17.2.11.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraLayout.v17.2, Version=17.2.11.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraPrinting.v17.2, Version=17.2.11.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -88,10 +91,10 @@
     <Compile Include="Formularios\Catalogos\Frm_Personal.Designer.cs">
       <DependentUpon>Frm_Personal.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\Catalogos\Frm_Personal_Tipo.cs">
+    <Compile Include="Formularios\Catalogos\Tipos\Frm_Personal_Tipo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\Catalogos\Frm_Personal_Tipo.Designer.cs">
+    <Compile Include="Formularios\Catalogos\Tipos\Frm_Personal_Tipo.Designer.cs">
       <DependentUpon>Frm_Personal_Tipo.cs</DependentUpon>
     </Compile>
     <Compile Include="Formularios\Catalogos\Frm_Proveedores.cs">
@@ -111,6 +114,12 @@
     </Compile>
     <Compile Include="Formularios\Catalogos\Frm_Vehiculos.Designer.cs">
       <DependentUpon>Frm_Vehiculos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Catalogos\Tipos\Frm_Tipo_Empleados.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Catalogos\Tipos\Frm_Tipo_Empleados.Designer.cs">
+      <DependentUpon>Frm_Tipo_Empleados.cs</DependentUpon>
     </Compile>
     <Compile Include="Formularios\Control\Frm_Check_List.cs">
       <SubType>Form</SubType>
@@ -170,6 +179,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Formularios\Catalogos\Frm_Aseguradoras.resx">
       <DependentUpon>Frm_Aseguradoras.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Catalogos\Tipos\Frm_Tipo_Empleados.resx">
+      <DependentUpon>Frm_Tipo_Empleados.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Frm_Principal.resx">
       <DependentUpon>Frm_Principal.cs</DependentUpon>
