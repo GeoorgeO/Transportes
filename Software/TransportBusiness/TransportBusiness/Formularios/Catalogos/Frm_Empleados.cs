@@ -11,9 +11,9 @@ using DevExpress.XtraEditors;
 
 namespace TransportBusiness.Formularios.Catalogos
 {
-    public partial class Frm_Personal : DevExpress.XtraEditors.XtraForm
+    public partial class Frm_Empleados : DevExpress.XtraEditors.XtraForm
     {
-        public Frm_Personal()
+        public Frm_Empleados()
         {
             InitializeComponent();
         }

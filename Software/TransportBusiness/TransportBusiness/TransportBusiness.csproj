@@ -55,6 +55,30 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Clases\Codigos.cs" />
+    <Compile Include="Clases\Crypto.cs" />
+    <Compile Include="Clases\GridCheckMarksSelection.cs" />
+    <Compile Include="Clases\GridMarksSelecioncs.cs" />
+    <Compile Include="Clases\MSRegistro.cs" />
+    <Compile Include="Clases\Validar_Campos.cs" />
+    <Compile Include="Conexion\Frm_Conexiones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Conexion\Frm_Conexiones.designer.cs">
+      <DependentUpon>Frm_Conexiones.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Conexion\Frm_DataBaseSQL.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Conexion\Frm_DataBaseSQL.designer.cs">
+      <DependentUpon>Frm_DataBaseSQL.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Conexion\Frm_InstanciaSQL.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Conexion\Frm_InstanciaSQL.designer.cs">
+      <DependentUpon>Frm_InstanciaSQL.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\Catalogos\Frm_Aseguradoras.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -85,17 +109,11 @@
     <Compile Include="Formularios\Catalogos\Frm_Mantenimiento.Designer.cs">
       <DependentUpon>Frm_Mantenimiento.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\Catalogos\Frm_Personal.cs">
+    <Compile Include="Formularios\Catalogos\Frm_Empleados.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\Catalogos\Frm_Personal.Designer.cs">
-      <DependentUpon>Frm_Personal.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Formularios\Catalogos\Tipos\Frm_Personal_Tipo.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Formularios\Catalogos\Tipos\Frm_Personal_Tipo.Designer.cs">
-      <DependentUpon>Frm_Personal_Tipo.cs</DependentUpon>
+    <Compile Include="Formularios\Catalogos\Frm_Empleados.Designer.cs">
+      <DependentUpon>Frm_Empleados.cs</DependentUpon>
     </Compile>
     <Compile Include="Formularios\Catalogos\Frm_Proveedores.cs">
       <SubType>Form</SubType>
@@ -177,6 +195,15 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Conexion\Frm_Conexiones.resx">
+      <DependentUpon>Frm_Conexiones.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Conexion\Frm_DataBaseSQL.resx">
+      <DependentUpon>Frm_DataBaseSQL.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Conexion\Frm_InstanciaSQL.resx">
+      <DependentUpon>Frm_InstanciaSQL.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Catalogos\Frm_Aseguradoras.resx">
       <DependentUpon>Frm_Aseguradoras.cs</DependentUpon>
     </EmbeddedResource>

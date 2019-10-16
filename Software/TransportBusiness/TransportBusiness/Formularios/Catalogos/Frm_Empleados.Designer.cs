@@ -1,6 +1,6 @@
 ﻿namespace TransportBusiness.Formularios.Catalogos
 {
-    partial class Frm_Personal
+    partial class Frm_Empleados
     {
         /// <summary>
         /// Required designer variable.
