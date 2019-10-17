@@ -11,6 +11,8 @@ namespace TransportBusiness
 {
     public partial class Frm_Principal : DevExpress.XtraBars.Ribbon.RibbonForm
     {
+        public string UsuariosLogin { get; set; }
+        public char UsuariosClase { get; set; }
         public Frm_Principal()
         {
             InitializeComponent();
