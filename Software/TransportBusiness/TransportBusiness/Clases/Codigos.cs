@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Drawing;
-using iTextSharp.text.pdf;
+//using iTextSharp.text.pdf;
 
 namespace TransportBusiness
 {
     class Codigos
-    {
+    { /*
         public static Bitmap Codigos128(string _Code, Boolean vertexto = false, Single Height = 0)
         {
             Barcode128 barcode = new Barcode128();
@@ -55,7 +55,7 @@ namespace TransportBusiness
                 throw new Exception("Error al generar el codigo" + ex.ToString());
             }
         }
-
+        */
 
     }
 }

@@ -12,7 +12,7 @@ namespace TransportBusiness
 {
     class MSRegistro
     {
-        const string NombreProyecto = "BSC-Reportes";
+        const string NombreProyecto = "Transportes";
         public string GetSetting(string section, string key, string sDefault)
         {
             RegistryKey rk = Registry.CurrentUser.OpenSubKey(@"Software\" + NombreProyecto + "\\" + section);
