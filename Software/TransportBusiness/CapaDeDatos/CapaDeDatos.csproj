@@ -42,6 +42,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Catalogos\CLS_Marcas.cs" />
     <Compile Include="Tipos\CLS_Tipo_Activo.cs" />
     <Compile Include="Tipos\CLS_Tipo_Domicilio.cs" />
     <Compile Include="Tipos\CLS_Tipo_Placa.cs" />

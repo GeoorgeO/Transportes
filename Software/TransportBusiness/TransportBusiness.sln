@@ -4,6 +4,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 15.0.28307.779
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TransportBusiness", "TransportBusiness\TransportBusiness.csproj", "{AA7E08C2-7019-4C17-9749-3CE7939704BD}"
+	ProjectSection(ProjectDependencies) = postProject
+		{3D6C2D01-6490-44FE-ADEE-026694C2C779} = {3D6C2D01-6490-44FE-ADEE-026694C2C779}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CapaDeDatos", "CapaDeDatos\CapaDeDatos.csproj", "{3D6C2D01-6490-44FE-ADEE-026694C2C779}"
 EndProject
