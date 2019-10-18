@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CapaDeDatos
 {
-    class CLS_Tipo_Placa: ConexionBase
+    public class CLS_Tipo_Placa: ConexionBase
     {
 
         public string Id_Tipo_Placa { get; set; }
@@ -50,7 +50,7 @@ namespace CapaDeDatos
             Exito = true;
             try
             {
-                _conexion.NombreProcedimiento = "SP_Select_Tipo_Placa";
+                _conexion.NombreProcedimiento = "SP_Tipo_Placa_Select";
                 _dato.CadenaTexto = Id_Tipo_Placa;
                 _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_Tipo_Placa");
 
@@ -82,7 +82,7 @@ namespace CapaDeDatos
             Exito = true;
             try
             {
-                _conexion.NombreProcedimiento = "SP_INSUPD_Tipo_Placa";
+                _conexion.NombreProcedimiento = "SP_Tipo_Placa_Insert";
                 _dato.CadenaTexto = Id_Tipo_Placa;
                 _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_Tipo_Placa");
                 _dato.CadenaTexto = Nombre_Tipo_Placa;
@@ -114,7 +114,7 @@ namespace CapaDeDatos
             Exito = true;
             try
             {
-                _conexion.NombreProcedimiento = "SP_DELETE_Tipo_Placa";
+                _conexion.NombreProcedimiento = "SP_Tipo_Placa_Delete";
                 _dato.CadenaTexto = Id_Tipo_Placa;
                 _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_Tipo_Placa");
                 _conexion.EjecutarDataset();

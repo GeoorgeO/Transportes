@@ -50,7 +50,7 @@ namespace CapaDeDatos
             Exito = true;
             try
             {
-                _conexion.NombreProcedimiento = "SP_Select_Tipo_Activo";
+                _conexion.NombreProcedimiento = "SP_Tipo_Activo_Select";
                 _dato.CadenaTexto = Id_Tipo_Activo;
                 _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_Tipo_Activo");
                 
@@ -82,7 +82,7 @@ namespace CapaDeDatos
             Exito = true;
             try
             {
-                _conexion.NombreProcedimiento = "SP_INSUPD_Tipo_Activo";
+                _conexion.NombreProcedimiento = "SP_Tipo_Activo_Insert";
                 _dato.CadenaTexto = Id_Tipo_Activo;
                 _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_Tipo_Activo");
                 _dato.CadenaTexto = Nombre_Tipo_Activo;
@@ -114,7 +114,7 @@ namespace CapaDeDatos
             Exito = true;
             try
             {
-                _conexion.NombreProcedimiento = "SP_DELETE_Tipo_Activo";
+                _conexion.NombreProcedimiento = "SP_Tipo_Activo_delete";
                 _dato.CadenaTexto = Id_Tipo_Activo;
                 _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_Tipo_Activo");
                 _conexion.EjecutarDataset();

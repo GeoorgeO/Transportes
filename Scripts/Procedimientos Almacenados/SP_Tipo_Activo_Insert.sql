@@ -5,15 +5,15 @@ SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
-IF  EXISTS (SELECT * FROM SYS.OBJECTS WHERE TYPE = 'P' AND NAME = 'SP_INSUPD_Tipo_Activo')
-DROP PROCEDURE SP_INSUPD_Tipo_Activo
+IF  EXISTS (SELECT * FROM SYS.OBJECTS WHERE TYPE = 'P' AND NAME = 'SP_Tipo_Activo_Insert')
+DROP PROCEDURE SP_Tipo_Activo_Insert
 GO
 -- =============================================
 -- Author:		<Author,,Name>
 -- Create date: <Create Date,,>
 -- Description:	<Description,,>
 -- =============================================
-create PROCEDURE [dbo].[SP_INSUPD_Tipo_Activo] 
+create PROCEDURE [dbo].[SP_Tipo_Activo_Insert] 
 	-- Add the parameters for the stored procedure here
 	@Id_Tipo_Activo char(4),
 	@Nombre_Tipo_Activo varchar(70)
