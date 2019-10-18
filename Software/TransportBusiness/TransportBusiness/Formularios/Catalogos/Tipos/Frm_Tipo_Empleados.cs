@@ -17,5 +17,10 @@ namespace TransportBusiness.Formularios.Catalogos.Tipos
         {
             InitializeComponent();
         }
+
+        private void btnLimpiar_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+
+        }
     }
 }

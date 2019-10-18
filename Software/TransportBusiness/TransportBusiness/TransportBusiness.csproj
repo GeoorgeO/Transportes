@@ -55,11 +55,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Formularios\Catalogos\Form_Estado.cs">
+    <Compile Include="Formularios\Catalogos\Frm_Estado.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\Catalogos\Form_Estado.Designer.cs">
-      <DependentUpon>Form_Estado.cs</DependentUpon>
+    <Compile Include="Formularios\Catalogos\Frm_Estado.Designer.cs">
+      <DependentUpon>Frm_Estado.cs</DependentUpon>
     </Compile>
     <Compile Include="Formularios\Catalogos\Frm_Activos.cs">
       <SubType>Form</SubType>
@@ -103,23 +103,11 @@
     <Compile Include="Formularios\Catalogos\Frm_Pais.Designer.cs">
       <DependentUpon>Frm_Pais.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\Catalogos\Frm_Personal.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Formularios\Catalogos\Frm_Personal.Designer.cs">
-      <DependentUpon>Frm_Personal.cs</DependentUpon>
-    </Compile>
     <Compile Include="Formularios\Catalogos\Frm_Marcas.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Formularios\Catalogos\Frm_Marcas.Designer.cs">
       <DependentUpon>Frm_Marcas.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Formularios\Catalogos\Tipos\Frm_Personal_Tipo.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Formularios\Catalogos\Tipos\Frm_Personal_Tipo.Designer.cs">
-      <DependentUpon>Frm_Personal_Tipo.cs</DependentUpon>
     </Compile>
     <Compile Include="Formularios\Catalogos\Frm_Proveedores.cs">
       <SubType>Form</SubType>
@@ -231,8 +219,8 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Formularios\Catalogos\Form_Estado.resx">
-      <DependentUpon>Form_Estado.cs</DependentUpon>
+    <EmbeddedResource Include="Formularios\Catalogos\Frm_Estado.resx">
+      <DependentUpon>Frm_Estado.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Catalogos\Frm_Activos.resx">
       <DependentUpon>Frm_Activos.cs</DependentUpon>
