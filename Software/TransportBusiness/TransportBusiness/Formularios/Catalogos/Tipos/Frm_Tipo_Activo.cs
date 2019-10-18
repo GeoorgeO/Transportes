@@ -83,6 +83,7 @@ namespace TransportBusiness
         {
             textId.Text = "";
             textNombre.Text = "";
+            SeleccionarTipoActivo();
         }
 
         private void gridControl1_Click(object sender, EventArgs e)
@@ -94,8 +95,6 @@ namespace TransportBusiness
                     DataRow row = this.gridView1.GetDataRow(i);
                     textId.Text = row["Id_Tipo_Activo"].ToString();
                     textNombre.Text = row["Nombre_Tipo_Activo"].ToString();
-                    
-                   
                 }
             }
             catch (Exception ex)

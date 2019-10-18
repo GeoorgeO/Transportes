@@ -33,6 +33,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="CapaDeDatos">
+      <HintPath>..\CapaDeDatos\bin\Debug\CapaDeDatos.dll</HintPath>
+    </Reference>
     <Reference Include="DevExpress.BonusSkins.v17.2" />
     <Reference Include="DevExpress.Data.v17.2" />
     <Reference Include="DevExpress.Printing.v17.2.Core" />
