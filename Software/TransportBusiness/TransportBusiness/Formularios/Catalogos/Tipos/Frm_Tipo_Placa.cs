@@ -109,7 +109,7 @@ namespace TransportBusiness
             }
             else
             {
-                XtraMessageBox.Show("Es necesario seleccionar un departamento y una actividad.");
+                XtraMessageBox.Show("Es necesario Agregar un nombre al tipo de placa.");
             }
         }
 
@@ -121,7 +121,7 @@ namespace TransportBusiness
             }
             else
             {
-                XtraMessageBox.Show("Es necesario seleccionar un departamento y una actividad.");
+                XtraMessageBox.Show("Es necesario seleccionar un tipo de placa.");
             }
         }
 

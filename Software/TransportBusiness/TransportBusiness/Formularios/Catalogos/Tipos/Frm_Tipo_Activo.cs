@@ -22,6 +22,7 @@ namespace TransportBusiness
 
         private void CargarTiposActivos()
         {
+            gridControl1.DataSource = null;
             CLS_Tipo_Activo TipoActivo = new CLS_Tipo_Activo();
             
             TipoActivo.MtdSeleccionarTiposActivos();
@@ -31,17 +32,7 @@ namespace TransportBusiness
             }
         }
 
-        private void SeleccionarTipoActivo()
-        {
-           gridControl1.DataSource = null;
-           CLS_Tipo_Activo TipoActivo = new CLS_Tipo_Activo();
-
-            TipoActivo.MtdSeleccionarTiposActivos();
-            if (TipoActivo.Exito)
-            {
-                gridControl1.DataSource = TipoActivo.Datos;
-            }
-        }
+        
 
         private void InsertarTipoActivo()
         {
@@ -52,7 +43,7 @@ namespace TransportBusiness
             if (TipoActivo.Exito)
             {
 
-                SeleccionarTipoActivo();
+                CargarTiposActivos();
                 XtraMessageBox.Show("Se ha Insertado el registro con exito");
                 LimpiarCampos();
             }
@@ -69,7 +60,7 @@ namespace TransportBusiness
             TipoActivo.MtdEliminarTipoActivo();
             if (TipoActivo.Exito)
             {
-                SeleccionarTipoActivo();
+                CargarTiposActivos();
                 XtraMessageBox.Show("Se ha Eliminado el registro con exito");
                 LimpiarCampos();
             }
@@ -83,7 +74,6 @@ namespace TransportBusiness
         {
             textId.Text = "";
             textNombre.Text = "";
-            SeleccionarTipoActivo();
         }
 
         private void gridControl1_Click(object sender, EventArgs e)
@@ -95,6 +85,8 @@ namespace TransportBusiness
                     DataRow row = this.gridView1.GetDataRow(i);
                     textId.Text = row["Id_Tipo_Activo"].ToString();
                     textNombre.Text = row["Nombre_Tipo_Activo"].ToString();
+                    
+                   
                 }
             }
             catch (Exception ex)
@@ -105,23 +97,20 @@ namespace TransportBusiness
 
         private void Frm_Tipo_Activo_Load(object sender, EventArgs e)
         {
-            SeleccionarTipoActivo();
+            CargarTiposActivos();
         }
 
         private void btnGuardar_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             if (textNombre.Text.ToString().Trim().Length > 0)
             {
-                if (textId.Text.ToString().Trim().Length==0)
-                {
-                    textId.Text = "-9";
-                }
+                
 
                 InsertarTipoActivo();
             }
             else
             {
-                XtraMessageBox.Show("Es necesario seleccionar un departamento y una actividad.");
+                XtraMessageBox.Show("Es necesario Agregar un nombre al tipo de activo.");
             }
            
         }
@@ -134,7 +123,7 @@ namespace TransportBusiness
             }
             else
             {
-                XtraMessageBox.Show("Es necesario seleccionar un departamento y una actividad.");
+                XtraMessageBox.Show("Es necesario seleccionar un tipo de activo.");
             }
             
         }
