@@ -57,6 +57,7 @@
     <Compile Include="Conexion\UtileriasCodigo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SEG_Login.cs" />
+    <Compile Include="Tipos\CLS_Tipo_Transporte.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

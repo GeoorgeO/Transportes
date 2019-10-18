@@ -28,8 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_Tipo_Activo));
-            this.barManager1 = new DevExpress.XtraBars.BarManager();
+            this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.bIconos = new DevExpress.XtraBars.Bar();
             this.btnLimpiar = new DevExpress.XtraBars.BarLargeButtonItem();
             this.btnGuardar = new DevExpress.XtraBars.BarLargeButtonItem();
@@ -181,9 +182,9 @@
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 350);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 353);
             this.barDockControlBottom.Manager = this.barManager1;
-            this.barDockControlBottom.Size = new System.Drawing.Size(513, 28);
+            this.barDockControlBottom.Size = new System.Drawing.Size(513, 25);
             // 
             // barDockControlLeft
             // 
@@ -191,7 +192,7 @@
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.barDockControlLeft.Location = new System.Drawing.Point(0, 0);
             this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Size = new System.Drawing.Size(58, 350);
+            this.barDockControlLeft.Size = new System.Drawing.Size(56, 353);
             // 
             // barDockControlRight
             // 
@@ -199,7 +200,7 @@
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
             this.barDockControlRight.Location = new System.Drawing.Point(513, 0);
             this.barDockControlRight.Manager = this.barManager1;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 350);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 353);
             // 
             // repositoryItemTextEdit1
             // 
@@ -209,10 +210,10 @@
             // 
             this.panelControl2.Controls.Add(this.gridControl1);
             this.panelControl2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelControl2.Location = new System.Drawing.Point(58, 126);
+            this.panelControl2.Location = new System.Drawing.Point(56, 126);
             this.panelControl2.Name = "panelControl2";
             this.panelControl2.Padding = new System.Windows.Forms.Padding(10);
-            this.panelControl2.Size = new System.Drawing.Size(455, 224);
+            this.panelControl2.Size = new System.Drawing.Size(457, 227);
             this.panelControl2.TabIndex = 11;
             // 
             // gridControl1
@@ -222,7 +223,7 @@
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.MenuManager = this.barManager1;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(431, 200);
+            this.gridControl1.Size = new System.Drawing.Size(433, 203);
             this.gridControl1.TabIndex = 0;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -243,6 +244,7 @@
             this.Id_Tipo_Activo.Caption = "Id Tipo Activo";
             this.Id_Tipo_Activo.FieldName = "Id_Tipo_Activo";
             this.Id_Tipo_Activo.Name = "Id_Tipo_Activo";
+            this.Id_Tipo_Activo.OptionsColumn.AllowEdit = false;
             this.Id_Tipo_Activo.Visible = true;
             this.Id_Tipo_Activo.VisibleIndex = 0;
             // 
@@ -251,6 +253,7 @@
             this.Nombre_Tipo_Activo.Caption = "Tipo Activo";
             this.Nombre_Tipo_Activo.FieldName = "Nombre_Tipo_Activo";
             this.Nombre_Tipo_Activo.Name = "Nombre_Tipo_Activo";
+            this.Nombre_Tipo_Activo.OptionsColumn.AllowEdit = false;
             this.Nombre_Tipo_Activo.Visible = true;
             this.Nombre_Tipo_Activo.VisibleIndex = 1;
             // 
@@ -258,10 +261,10 @@
             // 
             this.panelControl1.Controls.Add(this.groupControl1);
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelControl1.Location = new System.Drawing.Point(58, 0);
+            this.panelControl1.Location = new System.Drawing.Point(56, 0);
             this.panelControl1.Name = "panelControl1";
             this.panelControl1.Padding = new System.Windows.Forms.Padding(10);
-            this.panelControl1.Size = new System.Drawing.Size(455, 126);
+            this.panelControl1.Size = new System.Drawing.Size(457, 126);
             this.panelControl1.TabIndex = 10;
             // 
             // groupControl1
@@ -273,7 +276,7 @@
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl1.Location = new System.Drawing.Point(12, 12);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(431, 102);
+            this.groupControl1.Size = new System.Drawing.Size(433, 102);
             this.groupControl1.TabIndex = 0;
             this.groupControl1.Text = "Tipo Activo";
             // 
@@ -321,7 +324,11 @@
             this.Controls.Add(this.barDockControlRight);
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "Frm_Tipo_Activo";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Frm_Tipo_Activo";
             this.Load += new System.EventHandler(this.Frm_Tipo_Activo_Load);
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
