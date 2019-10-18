@@ -1,4 +1,4 @@
-﻿namespace TransportBusiness.Formularios.Catalogos
+﻿namespace TransportBusiness
 {
     partial class Frm_Pais
     {
@@ -28,9 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_Pais));
-            this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
+            this.barManager1 = new DevExpress.XtraBars.BarManager();
             this.bIconos = new DevExpress.XtraBars.Bar();
             this.btnLimpiar = new DevExpress.XtraBars.BarLargeButtonItem();
             this.btnGuardar = new DevExpress.XtraBars.BarLargeButtonItem();
@@ -50,9 +49,9 @@
             this.Nombre_Pais = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
-            this.textEdit2 = new DevExpress.XtraEditors.TextEdit();
+            this.textNombre = new DevExpress.XtraEditors.TextEdit();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
-            this.textEdit1 = new DevExpress.XtraEditors.TextEdit();
+            this.textId = new DevExpress.XtraEditors.TextEdit();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).BeginInit();
@@ -64,8 +63,8 @@
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textNombre.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textId.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // barManager1
@@ -121,6 +120,7 @@
             this.btnLimpiar.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnLimpiar.ImageOptions.Image")));
             this.btnLimpiar.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnLimpiar.ImageOptions.LargeImage")));
             this.btnLimpiar.Name = "btnLimpiar";
+            this.btnLimpiar.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnLimpiar_ItemClick);
             // 
             // btnGuardar
             // 
@@ -129,6 +129,7 @@
             this.btnGuardar.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnGuardar.ImageOptions.Image")));
             this.btnGuardar.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnGuardar.ImageOptions.LargeImage")));
             this.btnGuardar.Name = "btnGuardar";
+            this.btnGuardar.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnGuardar_ItemClick);
             // 
             // btnEliminar
             // 
@@ -137,6 +138,7 @@
             this.btnEliminar.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnEliminar.ImageOptions.Image")));
             this.btnEliminar.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnEliminar.ImageOptions.LargeImage")));
             this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnEliminar_ItemClick);
             // 
             // btnSalir
             // 
@@ -145,6 +147,7 @@
             this.btnSalir.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnSalir.ImageOptions.Image")));
             this.btnSalir.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnSalir.ImageOptions.LargeImage")));
             this.btnSalir.Name = "btnSalir";
+            this.btnSalir.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnSalir_ItemClick);
             // 
             // bEstado
             // 
@@ -223,6 +226,7 @@
             this.gridControl1.TabIndex = 0;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
+            this.gridControl1.Click += new System.EventHandler(this.gridControl1_Click);
             // 
             // gridView1
             // 
@@ -231,6 +235,7 @@
             this.Nombre_Pais});
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
+            this.gridView1.OptionsBehavior.Editable = false;
             this.gridView1.OptionsView.ShowGroupPanel = false;
             // 
             // Id_Pais
@@ -261,9 +266,9 @@
             // 
             // groupControl1
             // 
-            this.groupControl1.Controls.Add(this.textEdit2);
+            this.groupControl1.Controls.Add(this.textNombre);
             this.groupControl1.Controls.Add(this.labelControl2);
-            this.groupControl1.Controls.Add(this.textEdit1);
+            this.groupControl1.Controls.Add(this.textId);
             this.groupControl1.Controls.Add(this.labelControl1);
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl1.Location = new System.Drawing.Point(12, 12);
@@ -272,13 +277,13 @@
             this.groupControl1.TabIndex = 0;
             this.groupControl1.Text = "Pais";
             // 
-            // textEdit2
+            // textNombre
             // 
-            this.textEdit2.Location = new System.Drawing.Point(112, 63);
-            this.textEdit2.MenuManager = this.barManager1;
-            this.textEdit2.Name = "textEdit2";
-            this.textEdit2.Size = new System.Drawing.Size(231, 20);
-            this.textEdit2.TabIndex = 3;
+            this.textNombre.Location = new System.Drawing.Point(57, 63);
+            this.textNombre.MenuManager = this.barManager1;
+            this.textNombre.Name = "textNombre";
+            this.textNombre.Size = new System.Drawing.Size(231, 20);
+            this.textNombre.TabIndex = 3;
             // 
             // labelControl2
             // 
@@ -288,13 +293,14 @@
             this.labelControl2.TabIndex = 2;
             this.labelControl2.Text = "Pais:";
             // 
-            // textEdit1
+            // textId
             // 
-            this.textEdit1.Location = new System.Drawing.Point(112, 28);
-            this.textEdit1.MenuManager = this.barManager1;
-            this.textEdit1.Name = "textEdit1";
-            this.textEdit1.Size = new System.Drawing.Size(100, 20);
-            this.textEdit1.TabIndex = 1;
+            this.textId.Enabled = false;
+            this.textId.Location = new System.Drawing.Point(57, 28);
+            this.textId.MenuManager = this.barManager1;
+            this.textId.Name = "textId";
+            this.textId.Size = new System.Drawing.Size(100, 20);
+            this.textId.TabIndex = 1;
             // 
             // labelControl1
             // 
@@ -317,6 +323,7 @@
             this.Controls.Add(this.barDockControlTop);
             this.Name = "Frm_Pais";
             this.Text = "Frm_Pais";
+            this.Load += new System.EventHandler(this.Frm_Pais_Load);
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).EndInit();
@@ -328,8 +335,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
             this.groupControl1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textNombre.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textId.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -357,9 +364,9 @@
         private DevExpress.XtraGrid.Columns.GridColumn Nombre_Pais;
         private DevExpress.XtraEditors.PanelControl panelControl1;
         private DevExpress.XtraEditors.GroupControl groupControl1;
-        private DevExpress.XtraEditors.TextEdit textEdit2;
+        private DevExpress.XtraEditors.TextEdit textNombre;
         private DevExpress.XtraEditors.LabelControl labelControl2;
-        private DevExpress.XtraEditors.TextEdit textEdit1;
+        private DevExpress.XtraEditors.TextEdit textId;
         private DevExpress.XtraEditors.LabelControl labelControl1;
     }
 }
