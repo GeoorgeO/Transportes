@@ -235,6 +235,7 @@
             this.Nombre_Marca});
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
+            this.gridView1.OptionsBehavior.Editable = false;
             this.gridView1.OptionsView.ShowGroupPanel = false;
             // 
             // Id_Marca
@@ -278,7 +279,7 @@
             // 
             // textNombre
             // 
-            this.textNombre.Location = new System.Drawing.Point(112, 63);
+            this.textNombre.Location = new System.Drawing.Point(68, 63);
             this.textNombre.MenuManager = this.barManager1;
             this.textNombre.Name = "textNombre";
             this.textNombre.Size = new System.Drawing.Size(231, 20);
@@ -294,7 +295,8 @@
             // 
             // textId
             // 
-            this.textId.Location = new System.Drawing.Point(112, 28);
+            this.textId.Enabled = false;
+            this.textId.Location = new System.Drawing.Point(68, 28);
             this.textId.MenuManager = this.barManager1;
             this.textId.Name = "textId";
             this.textId.Size = new System.Drawing.Size(100, 20);
