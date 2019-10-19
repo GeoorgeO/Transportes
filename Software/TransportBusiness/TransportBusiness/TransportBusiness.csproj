@@ -33,7 +33,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="CapaDeDatos">
+    <Reference Include="CapaDeDatos, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\CapaDeDatos\bin\Debug\CapaDeDatos.dll</HintPath>
     </Reference>
     <Reference Include="DevExpress.BonusSkins.v17.2" />
@@ -123,6 +124,12 @@
     </Compile>
     <Compile Include="Formularios\Catalogos\Frm_Infracciones.Designer.cs">
       <DependentUpon>Frm_Infracciones.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Catalogos\Frm_Licencias.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Catalogos\Frm_Licencias.Designer.cs">
+      <DependentUpon>Frm_Licencias.cs</DependentUpon>
     </Compile>
     <Compile Include="Formularios\Catalogos\Frm_Mantenimiento.cs">
       <SubType>Form</SubType>
@@ -278,6 +285,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Catalogos\Frm_Empresas.resx">
       <DependentUpon>Frm_Empresas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Catalogos\Frm_Licencias.resx">
+      <DependentUpon>Frm_Licencias.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Catalogos\Frm_Marcas.resx">
       <DependentUpon>Frm_Marcas.cs</DependentUpon>
