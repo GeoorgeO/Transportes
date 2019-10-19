@@ -21,7 +21,7 @@ namespace TransportBusiness
 
         private void btnLimpiar_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            
+            LimpiarCampos();
         }
         private void LimpiarCampos()
         {
