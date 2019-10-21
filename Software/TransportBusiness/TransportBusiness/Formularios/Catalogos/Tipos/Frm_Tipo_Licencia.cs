@@ -14,15 +14,17 @@ namespace TransportBusiness
 {
     public partial class Frm_Tipo_Licencia : DevExpress.XtraEditors.XtraForm
     {
-        public Frm_Tipo_Licencia(Boolean Pasel)
+        public Boolean PaSel { get; set; }
+        public Frm_Tipo_Licencia(Boolean BPasel)
         {
+            this.PaSel = BPasel;
             InitializeComponent();
-            this.PaSel = PaSel;
+            
         }
 
         public string IdTipoLicencia { get; set; }
         public string TipoLicencia { get; set; }
-        public Boolean PaSel { get; set; }
+        
 
         private void CargarTipoLicencia()
         {
@@ -103,9 +105,13 @@ namespace TransportBusiness
 
         private void Frm_Tipo_Licencia_Load(object sender, EventArgs e)
         {
-            if (PaSel)
+            if (PaSel==true)
             {
-               
+                btnSeleccionar.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+            }
+            else
+            {
+                btnSeleccionar.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
             }
             CargarTipoLicencia();
         }

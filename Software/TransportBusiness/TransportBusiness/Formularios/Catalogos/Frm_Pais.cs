@@ -14,8 +14,14 @@ namespace TransportBusiness
 {
     public partial class Frm_Pais : DevExpress.XtraEditors.XtraForm
     {
-        public Frm_Pais()
+
+        public string IdPais { get; set; }
+        public string Pais { get; set; }
+        public Boolean PaSel { get; set; }
+
+        public Frm_Pais(Boolean BPasel)
         {
+            this.PaSel = BPasel;
             InitializeComponent();
         }
 
@@ -94,6 +100,14 @@ namespace TransportBusiness
 
         private void Frm_Pais_Load(object sender, EventArgs e)
         {
+            if (PaSel == true)
+            {
+                btnSeleccionar.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+            }
+            else
+            {
+                btnSeleccionar.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+            }
             CargarPais();
         }
 
@@ -130,6 +144,13 @@ namespace TransportBusiness
 
         private void btnSalir_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            this.Close();
+        }
+
+        private void btnSeleecionar_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            IdPais = textId.Text.Trim();
+            Pais = textNombre.Text.Trim();
             this.Close();
         }
     }
