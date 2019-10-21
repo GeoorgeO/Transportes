@@ -15,8 +15,8 @@ GO
 -- =============================================
 create PROCEDURE [dbo].[SP_Tipo_Empleado_Insert] 
 	-- Add the parameters for the stored procedure here
-	@Id_Tipo_Empleado char(4),
-	@Nombre_Tipo_Empleado varchar(70)
+	@Id_Tipo_Empleado char(3),
+	@Nombre_Tipo_Empleado varchar(25)
 AS
 BEGIN
 	-- SET NOCOUNT ON added to prevent extra result sets from
@@ -30,7 +30,7 @@ BEGIN
 	begin try
 
 		declare @maximo char(4)
-		select @maximo=right(concat('0000', isnull(max(Id_Tipo_Empleado),0)+1),4) from dbo.Tipo_Empleado
+		select @maximo=right(concat('000', isnull(max(Id_Tipo_Empleado),0)+1),3) from dbo.Tipo_Empleado
 
 		declare @Existe int
 		select @Existe = count(Id_Tipo_Empleado) from dbo.Tipo_Empleado a where (a.Id_Tipo_Empleado=@Id_Tipo_Empleado)

@@ -14,8 +14,16 @@ namespace TransportBusiness
 {
     public partial class Frm_Tipo_Empleados : DevExpress.XtraEditors.XtraForm
     {
-        public Frm_Tipo_Empleados()
+        public Boolean PaSel { get; set; }
+
+        public string IdTipoEmpleado { get; set; }
+        public string TipoEmpleado { get; set; }
+
+       
+
+        public Frm_Tipo_Empleados(Boolean BPasel)
         {
+            this.PaSel = BPasel;
             InitializeComponent();
         }
 
@@ -106,6 +114,14 @@ namespace TransportBusiness
 
         private void Frm_Tipo_Empleados_Load(object sender, EventArgs e)
         {
+            if (PaSel == true)
+            {
+                btnSeleccionar.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+            }
+            else
+            {
+                btnSeleccionar.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+            }
             gridView1.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFullFocus;
             gridView1.OptionsSelection.EnableAppearanceFocusedCell = false;
             CargarTiposActivos();
@@ -137,6 +153,13 @@ namespace TransportBusiness
             {
                 XtraMessageBox.Show(ex.Message);
             }
+        }
+
+        private void btnSeleccionar_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            IdTipoEmpleado = textId.Text.Trim();
+            TipoEmpleado = textNombre.Text.Trim();
+            this.Close();
         }
     }
 }
