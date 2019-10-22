@@ -9,7 +9,7 @@ ELSE
 		
 	CREATE TABLE [dbo].[TipoPersona](
 		[Id_TipoPersona] [char](4) NOT NULL,
-		[TipoPersona] [varbinary](50) NULL,
+		[TipoPersona] [varchar](50) NULL,
 	 CONSTRAINT [PK_TipoPersona] PRIMARY KEY CLUSTERED 
 	(
 		[Id_TipoPersona] ASC
