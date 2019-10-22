@@ -288,8 +288,6 @@
             this.Id_Tipo_Empleado.Caption = "Id TipoEmpleado";
             this.Id_Tipo_Empleado.FieldName = "Id_Tipo_Empleado";
             this.Id_Tipo_Empleado.Name = "Id_Tipo_Empleado";
-            this.Id_Tipo_Empleado.Visible = true;
-            this.Id_Tipo_Empleado.VisibleIndex = 1;
             // 
             // Nombre_Tipo_Empleado
             // 
@@ -297,7 +295,7 @@
             this.Nombre_Tipo_Empleado.FieldName = "Nombre_Tipo_Empleado";
             this.Nombre_Tipo_Empleado.Name = "Nombre_Tipo_Empleado";
             this.Nombre_Tipo_Empleado.Visible = true;
-            this.Nombre_Tipo_Empleado.VisibleIndex = 2;
+            this.Nombre_Tipo_Empleado.VisibleIndex = 1;
             // 
             // Nombre_Empleado
             // 
@@ -305,7 +303,7 @@
             this.Nombre_Empleado.FieldName = "Nombre_Empleado";
             this.Nombre_Empleado.Name = "Nombre_Empleado";
             this.Nombre_Empleado.Visible = true;
-            this.Nombre_Empleado.VisibleIndex = 3;
+            this.Nombre_Empleado.VisibleIndex = 2;
             // 
             // Telefono
             // 
@@ -313,7 +311,7 @@
             this.Telefono.FieldName = "Telefono";
             this.Telefono.Name = "Telefono";
             this.Telefono.Visible = true;
-            this.Telefono.VisibleIndex = 4;
+            this.Telefono.VisibleIndex = 3;
             // 
             // RFC
             // 
@@ -321,7 +319,7 @@
             this.RFC.FieldName = "RFC";
             this.RFC.Name = "RFC";
             this.RFC.Visible = true;
-            this.RFC.VisibleIndex = 5;
+            this.RFC.VisibleIndex = 4;
             // 
             // CURP
             // 
@@ -329,7 +327,7 @@
             this.CURP.FieldName = "CURP";
             this.CURP.Name = "CURP";
             this.CURP.Visible = true;
-            this.CURP.VisibleIndex = 6;
+            this.CURP.VisibleIndex = 5;
             // 
             // No_Identificacion
             // 
@@ -337,15 +335,13 @@
             this.No_Identificacion.FieldName = "No_Identificacion";
             this.No_Identificacion.Name = "No_Identificacion";
             this.No_Identificacion.Visible = true;
-            this.No_Identificacion.VisibleIndex = 7;
+            this.No_Identificacion.VisibleIndex = 6;
             // 
             // Id_Licencia
             // 
             this.Id_Licencia.Caption = "Id Licencia";
             this.Id_Licencia.FieldName = "Id_Licencia";
             this.Id_Licencia.Name = "Id_Licencia";
-            this.Id_Licencia.Visible = true;
-            this.Id_Licencia.VisibleIndex = 8;
             // 
             // No_Licencia
             // 
@@ -353,7 +349,7 @@
             this.No_Licencia.FieldName = "No_Licencia";
             this.No_Licencia.Name = "No_Licencia";
             this.No_Licencia.Visible = true;
-            this.No_Licencia.VisibleIndex = 9;
+            this.No_Licencia.VisibleIndex = 7;
             // 
             // panelControl1
             // 
@@ -394,7 +390,7 @@
             // 
             // btnbusqlicencia
             // 
-            this.btnbusqlicencia.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
+            this.btnbusqlicencia.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnbusqlicencia.ImageOptions.Image")));
             this.btnbusqlicencia.Location = new System.Drawing.Point(380, 98);
             this.btnbusqlicencia.Name = "btnbusqlicencia";
             this.btnbusqlicencia.Size = new System.Drawing.Size(24, 23);

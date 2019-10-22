@@ -25,7 +25,6 @@ GO
 -- =============================================
 CREATE PROCEDURE SP_Tipo_Empleado_Select 
 	-- Add the parameters for the stored procedure here
-	@Id_Tipo_Empleado char(3)
 	
 AS
 BEGIN
@@ -37,6 +36,6 @@ BEGIN
 	SELECT Id_Tipo_Empleado
 	      ,Nombre_Tipo_Empleado
 	FROM dbo.Tipo_Empleado
-	where Id_Tipo_Empleado=@Id_Tipo_Empleado
+	
 END
 GO

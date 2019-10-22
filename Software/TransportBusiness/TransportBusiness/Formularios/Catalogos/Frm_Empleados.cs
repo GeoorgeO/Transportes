@@ -171,12 +171,12 @@ namespace TransportBusiness
 
         private void btnbusqlicencia_Click(object sender, EventArgs e)
         {
-            Frm_Tipo_Empleados TipoEmpleado = new Frm_Tipo_Empleados(true);
+            Frm_Licencias Licencia = new Frm_Licencias(true);
 
-            TipoEmpleado.ShowDialog();
+            Licencia.ShowDialog();
 
-            textTipoEmpleado.Tag = TipoEmpleado.IdTipoEmpleado;
-            textTipoEmpleado.Text = TipoEmpleado.TipoEmpleado;
+            textLicencia.Tag = Licencia.IdLicencia;
+            textLicencia.Text = Licencia.Licencia;
         }
     }
 }

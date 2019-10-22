@@ -14,13 +14,19 @@ namespace TransportBusiness
 {
     public partial class Frm_Licencias : DevExpress.XtraEditors.XtraForm
     {
-        public Frm_Licencias()
+
+        public Boolean PaSel { get; set; }
+
+        
+
+        public Frm_Licencias(Boolean BPasel)
         {
+            this.PaSel = BPasel;
             InitializeComponent();
         }
 
-        public string IdTipoLicencia { get; set; }
-        public string TipoLicencia { get; set; }
+        public string IdLicencia { get; set; }
+        public string Licencia { get; set; }
 
         private void CargarLicencias()
         {
@@ -116,6 +122,15 @@ namespace TransportBusiness
 
         private void Frm_Licencias_Load(object sender, EventArgs e)
         {
+            if (PaSel == true)
+            {
+                btnSeleccionar.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+            }
+            else
+            {
+                btnSeleccionar.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+            }
+
             CargarLicencias();
         }
 
@@ -177,6 +192,13 @@ namespace TransportBusiness
 
         private void btnSalir_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            this.Close();
+        }
+
+        private void btnSeleccionar_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            IdLicencia = textId.Text.Trim();
+            Licencia = textNoLic.Text.Trim();
             this.Close();
         }
     }

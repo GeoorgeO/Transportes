@@ -75,7 +75,7 @@ namespace TransportBusiness.Formularios.Catalogos.Tipos
             gridControl1.DataSource = null;
             CLS_Tipo_Empleado TipoActivo = new CLS_Tipo_Empleado();
 
-            TipoActivo.MtdSeleccionarTiposEmpleados();
+            TipoActivo.MtdSeleccionarTipoEmpleado();
             if (TipoActivo.Exito)
             {
                 gridControl1.DataSource = TipoActivo.Datos;

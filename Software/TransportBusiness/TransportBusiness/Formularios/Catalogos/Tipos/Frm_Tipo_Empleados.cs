@@ -72,7 +72,7 @@ namespace TransportBusiness
             gridControl1.DataSource = null;
             CLS_Tipo_Empleado TipoActivo = new CLS_Tipo_Empleado();
 
-            TipoActivo.MtdSeleccionarTiposEmpleados();
+            TipoActivo.MtdSeleccionarTipoEmpleado();
             if (TipoActivo.Exito)
             {
                 gridControl1.DataSource = TipoActivo.Datos;
@@ -131,7 +131,7 @@ namespace TransportBusiness
             gridControl1.DataSource = null;
             CLS_Tipo_Empleado TipoEmpleado = new CLS_Tipo_Empleado();
 
-            TipoEmpleado.MtdSeleccionarTiposEmpleados();
+            TipoEmpleado.MtdSeleccionarTipoEmpleado();
             if (TipoEmpleado.Exito)
             {
                 gridControl1.DataSource = TipoEmpleado.Datos;
