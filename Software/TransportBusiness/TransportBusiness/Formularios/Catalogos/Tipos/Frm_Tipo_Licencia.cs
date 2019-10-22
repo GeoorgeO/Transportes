@@ -45,7 +45,6 @@ namespace TransportBusiness
             CLS_Tipo_Licencia TipoLicencia = new CLS_Tipo_Licencia();
             TipoLicencia.Id_Tipo_Licencia = textId.Text.Trim();
             TipoLicencia.Nombre_Tipo_Licencia = textNombre.Text.Trim();
-            TipoLicencia.Serie = textSerie.Text.Trim();
             TipoLicencia.MtdInsertarTipoLicencia();
             if (TipoLicencia.Exito)
             {
@@ -81,7 +80,6 @@ namespace TransportBusiness
         {
             textId.Text = "";
             textNombre.Text = "";
-            textSerie.Text = "";
         }
 
         private void gridControl1_Click(object sender, EventArgs e)
@@ -93,8 +91,6 @@ namespace TransportBusiness
                     DataRow row = this.gridView1.GetDataRow(i);
                     textId.Text = row["Id_Tipo_Licencia"].ToString();
                     textNombre.Text = row["Nombre_Tipo_Licencia"].ToString();
-                    textSerie.Text = row["Serie"].ToString();
-
                 }
             }
             catch (Exception ex)
@@ -120,15 +116,7 @@ namespace TransportBusiness
         {
             if (textNombre.Text.ToString().Trim().Length > 0)
             {
-                if (textSerie.Text.ToString().Trim().Length > 0)
-                {
-
-                    InsertarTipoLicencia();
-                }
-                else
-                {
-                    XtraMessageBox.Show("Es necesario Agregar un numero de serie.");
-                }
+                InsertarTipoLicencia();
             }
             else
             {

@@ -11,7 +11,6 @@ namespace CapaDeDatos
 
         public string Id_Tipo_Licencia { get; set; }
         public string Nombre_Tipo_Licencia { get; set; }
-        public string Serie { get; set; }
 
         public void MtdSeleccionarTipoLicencia()
         {
@@ -58,8 +57,6 @@ namespace CapaDeDatos
                 _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_Tipo_Licencia");
                 _dato.CadenaTexto = Nombre_Tipo_Licencia;
                 _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Nombre_Tipo_Licencia");
-                _dato.CadenaTexto = Serie;
-                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Serie");
                 _conexion.EjecutarDataset();
 
                 if (_conexion.Exito)

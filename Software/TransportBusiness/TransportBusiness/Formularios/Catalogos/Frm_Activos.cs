@@ -62,5 +62,14 @@ namespace TransportBusiness
             txtTipoPlaca.Text = frm.vNombre_Tipo_Placa;
             txtTipoPlaca.Tag = frm.vId_Tipo_Placa;
         }
+
+        private void btnOperador_Click(object sender, EventArgs e)
+        {
+            Frm_Empleados frm = new Frm_Empleados();
+            frm.ShowDialog();
+
+            txtOperador.Text = frm.vNombre_Empleado;
+            txtOperador.Tag = frm.vId_Empleado;
+        }
     }
 }

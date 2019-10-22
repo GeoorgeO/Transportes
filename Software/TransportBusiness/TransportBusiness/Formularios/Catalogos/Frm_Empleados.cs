@@ -14,6 +14,8 @@ namespace TransportBusiness
 {
     public partial class Frm_Empleados : DevExpress.XtraEditors.XtraForm
     {
+        public string vId_Empleado { get; set; }
+        public string vNombre_Empleado { get; set; }
         public Frm_Empleados()
         {
             InitializeComponent();
@@ -177,6 +179,20 @@ namespace TransportBusiness
 
             textLicencia.Tag = Licencia.IdLicencia;
             textLicencia.Text = Licencia.Licencia;
+        }
+
+        private void btnSeleccionar_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            if(textIdEmpleado.Text!=string.Empty && textEmpleado.Text!=string.Empty)
+            {
+                vId_Empleado = textIdEmpleado.Text;
+                vNombre_Empleado = textEmpleado.Text;
+                this.Close();
+            }
+            else
+            {
+                XtraMessageBox.Show("No se ha seleccionado un empleado");
+            }
         }
     }
 }

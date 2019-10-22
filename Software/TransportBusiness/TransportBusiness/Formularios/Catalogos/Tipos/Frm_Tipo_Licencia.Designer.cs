@@ -50,11 +50,8 @@
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.Id_Tipo_Licencia = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Nombre_Tipo_Licencia = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.Serie = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
-            this.textSerie = new DevExpress.XtraEditors.TextEdit();
-            this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.textNombre = new DevExpress.XtraEditors.TextEdit();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.textId = new DevExpress.XtraEditors.TextEdit();
@@ -69,7 +66,6 @@
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.textSerie.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textNombre.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textId.Properties)).BeginInit();
             this.SuspendLayout();
@@ -235,10 +231,10 @@
             // 
             this.panelControl2.Controls.Add(this.gridControl1);
             this.panelControl2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelControl2.Location = new System.Drawing.Point(56, 126);
+            this.panelControl2.Location = new System.Drawing.Point(56, 107);
             this.panelControl2.Name = "panelControl2";
             this.panelControl2.Padding = new System.Windows.Forms.Padding(10);
-            this.panelControl2.Size = new System.Drawing.Size(565, 287);
+            this.panelControl2.Size = new System.Drawing.Size(565, 306);
             this.panelControl2.TabIndex = 17;
             // 
             // gridControl1
@@ -248,7 +244,7 @@
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.MenuManager = this.barManager1;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(541, 263);
+            this.gridControl1.Size = new System.Drawing.Size(541, 282);
             this.gridControl1.TabIndex = 0;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -258,8 +254,7 @@
             // 
             this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.Id_Tipo_Licencia,
-            this.Nombre_Tipo_Licencia,
-            this.Serie});
+            this.Nombre_Tipo_Licencia});
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsBehavior.Editable = false;
@@ -281,14 +276,6 @@
             this.Nombre_Tipo_Licencia.Visible = true;
             this.Nombre_Tipo_Licencia.VisibleIndex = 1;
             // 
-            // Serie
-            // 
-            this.Serie.Caption = "Serie";
-            this.Serie.FieldName = "Serie";
-            this.Serie.Name = "Serie";
-            this.Serie.Visible = true;
-            this.Serie.VisibleIndex = 2;
-            // 
             // panelControl1
             // 
             this.panelControl1.Controls.Add(this.groupControl1);
@@ -296,13 +283,11 @@
             this.panelControl1.Location = new System.Drawing.Point(56, 0);
             this.panelControl1.Name = "panelControl1";
             this.panelControl1.Padding = new System.Windows.Forms.Padding(10);
-            this.panelControl1.Size = new System.Drawing.Size(565, 126);
+            this.panelControl1.Size = new System.Drawing.Size(565, 107);
             this.panelControl1.TabIndex = 16;
             // 
             // groupControl1
             // 
-            this.groupControl1.Controls.Add(this.textSerie);
-            this.groupControl1.Controls.Add(this.labelControl3);
             this.groupControl1.Controls.Add(this.textNombre);
             this.groupControl1.Controls.Add(this.labelControl2);
             this.groupControl1.Controls.Add(this.textId);
@@ -310,29 +295,13 @@
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl1.Location = new System.Drawing.Point(12, 12);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(541, 102);
+            this.groupControl1.Size = new System.Drawing.Size(541, 83);
             this.groupControl1.TabIndex = 0;
             this.groupControl1.Text = "Tipo Licencia";
             // 
-            // textSerie
-            // 
-            this.textSerie.Location = new System.Drawing.Point(96, 77);
-            this.textSerie.MenuManager = this.barManager1;
-            this.textSerie.Name = "textSerie";
-            this.textSerie.Size = new System.Drawing.Size(231, 20);
-            this.textSerie.TabIndex = 5;
-            // 
-            // labelControl3
-            // 
-            this.labelControl3.Location = new System.Drawing.Point(19, 82);
-            this.labelControl3.Name = "labelControl3";
-            this.labelControl3.Size = new System.Drawing.Size(28, 13);
-            this.labelControl3.TabIndex = 4;
-            this.labelControl3.Text = "Serie:";
-            // 
             // textNombre
             // 
-            this.textNombre.Location = new System.Drawing.Point(96, 52);
+            this.textNombre.Location = new System.Drawing.Point(96, 54);
             this.textNombre.MenuManager = this.barManager1;
             this.textNombre.Name = "textNombre";
             this.textNombre.Size = new System.Drawing.Size(231, 20);
@@ -340,7 +309,7 @@
             // 
             // labelControl2
             // 
-            this.labelControl2.Location = new System.Drawing.Point(19, 57);
+            this.labelControl2.Location = new System.Drawing.Point(19, 59);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(61, 13);
             this.labelControl2.TabIndex = 2;
@@ -391,7 +360,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
             this.groupControl1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.textSerie.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textNombre.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textId.Properties)).EndInit();
             this.ResumeLayout(false);
@@ -419,11 +387,8 @@
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
         private DevExpress.XtraGrid.Columns.GridColumn Id_Tipo_Licencia;
         private DevExpress.XtraGrid.Columns.GridColumn Nombre_Tipo_Licencia;
-        private DevExpress.XtraGrid.Columns.GridColumn Serie;
         private DevExpress.XtraEditors.PanelControl panelControl1;
         private DevExpress.XtraEditors.GroupControl groupControl1;
-        private DevExpress.XtraEditors.TextEdit textSerie;
-        private DevExpress.XtraEditors.LabelControl labelControl3;
         private DevExpress.XtraEditors.TextEdit textNombre;
         private DevExpress.XtraEditors.LabelControl labelControl2;
         private DevExpress.XtraEditors.TextEdit textId;
