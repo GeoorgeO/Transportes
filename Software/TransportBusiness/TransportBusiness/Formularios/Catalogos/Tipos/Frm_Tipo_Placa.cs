@@ -14,6 +14,8 @@ namespace TransportBusiness
 {
     public partial class Frm_Tipo_Placa : DevExpress.XtraEditors.XtraForm
     {
+        public string vId_Tipo_Placa { get; set; }
+        public string vNombre_Tipo_Placa { get; set; }
         public Frm_Tipo_Placa()
         {
             InitializeComponent();
@@ -133,6 +135,20 @@ namespace TransportBusiness
         private void btnSalir_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             this.Close();
+        }
+
+        private void btnSeleccionar_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            if(textId.Text!=string.Empty && textNombre.Text!=string.Empty)
+            {
+                vId_Tipo_Placa = textId.Text;
+                vNombre_Tipo_Placa = textNombre.Text;
+                this.Close();
+            }
+            else
+            {
+                XtraMessageBox.Show("No se ha seleccionado tipo de placa");
+            }
         }
     }
 }

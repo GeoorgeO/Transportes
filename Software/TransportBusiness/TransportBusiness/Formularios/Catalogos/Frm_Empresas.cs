@@ -14,6 +14,8 @@ namespace TransportBusiness
 {
     public partial class Frm_Empresas : DevExpress.XtraEditors.XtraForm
     {
+        public string vId_Empresa { get; set; }
+        public string vNombre_Empresa { get; set; }
         public Frm_Empresas()
         {
             InitializeComponent();
@@ -133,6 +135,20 @@ namespace TransportBusiness
         private void btnSalir_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             this.Close();
+        }
+
+        private void btnSeleccionar_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            if(textId.Text!=string.Empty && textNombre.Text!=string.Empty)
+            {
+                vId_Empresa = textId.Text;
+                vNombre_Empresa = textNombre.Text;
+                this.Close();
+            }
+            else
+            {
+                XtraMessageBox.Show("No ha seleccionado una empresa");
+            }
         }
     }
 }

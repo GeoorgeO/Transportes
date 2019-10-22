@@ -143,6 +143,10 @@ namespace TransportBusiness
                 vNombre_Tipo_Transporte = textNombre.Text;
                 this.Close();
             }
+            else
+            {
+                XtraMessageBox.Show("no se ha seleccionado Tipo de transporte");
+            }
         }
     }
 }

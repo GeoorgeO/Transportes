@@ -1203,7 +1203,7 @@
             // 
             // btnEmpresaAsegu
             // 
-            this.btnEmpresaAsegu.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton7.ImageOptions.Image")));
+            this.btnEmpresaAsegu.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnEmpresaAsegu.ImageOptions.Image")));
             this.btnEmpresaAsegu.Location = new System.Drawing.Point(657, 220);
             this.btnEmpresaAsegu.Name = "btnEmpresaAsegu";
             this.btnEmpresaAsegu.Size = new System.Drawing.Size(24, 21);
@@ -1325,11 +1325,12 @@
             // 
             // btnEmpresa
             // 
-            this.btnEmpresa.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton6.ImageOptions.Image")));
+            this.btnEmpresa.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnEmpresa.ImageOptions.Image")));
             this.btnEmpresa.Location = new System.Drawing.Point(657, 90);
             this.btnEmpresa.Name = "btnEmpresa";
             this.btnEmpresa.Size = new System.Drawing.Size(24, 21);
             this.btnEmpresa.TabIndex = 37;
+            this.btnEmpresa.Click += new System.EventHandler(this.btnEmpresa_Click);
             // 
             // labelControl19
             // 
@@ -1349,7 +1350,7 @@
             // 
             // btnOperador
             // 
-            this.btnOperador.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton5.ImageOptions.Image")));
+            this.btnOperador.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnOperador.ImageOptions.Image")));
             this.btnOperador.Location = new System.Drawing.Point(657, 194);
             this.btnOperador.Name = "btnOperador";
             this.btnOperador.Size = new System.Drawing.Size(24, 21);
@@ -1397,7 +1398,7 @@
             // 
             // btnTipoTransporte
             // 
-            this.btnTipoTransporte.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton4.ImageOptions.Image")));
+            this.btnTipoTransporte.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnTipoTransporte.ImageOptions.Image")));
             this.btnTipoTransporte.Location = new System.Drawing.Point(657, 37);
             this.btnTipoTransporte.Name = "btnTipoTransporte";
             this.btnTipoTransporte.Size = new System.Drawing.Size(24, 21);
@@ -1430,7 +1431,7 @@
             // 
             // btnMarca
             // 
-            this.btnMarca.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton3.ImageOptions.Image")));
+            this.btnMarca.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnMarca.ImageOptions.Image")));
             this.btnMarca.Location = new System.Drawing.Point(296, 115);
             this.btnMarca.Name = "btnMarca";
             this.btnMarca.Size = new System.Drawing.Size(24, 21);
@@ -1471,11 +1472,12 @@
             // 
             // btnTipoActivo
             // 
-            this.btnTipoActivo.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton2.ImageOptions.Image")));
+            this.btnTipoActivo.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnTipoActivo.ImageOptions.Image")));
             this.btnTipoActivo.Location = new System.Drawing.Point(657, 63);
             this.btnTipoActivo.Name = "btnTipoActivo";
             this.btnTipoActivo.Size = new System.Drawing.Size(24, 21);
             this.btnTipoActivo.TabIndex = 15;
+            this.btnTipoActivo.Click += new System.EventHandler(this.btnTipoActivo_Click);
             // 
             // labelControl9
             // 
@@ -1535,11 +1537,12 @@
             // 
             // btnTipoPlaca
             // 
-            this.btnTipoPlaca.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
+            this.btnTipoPlaca.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnTipoPlaca.ImageOptions.Image")));
             this.btnTipoPlaca.Location = new System.Drawing.Point(657, 167);
             this.btnTipoPlaca.Name = "btnTipoPlaca";
             this.btnTipoPlaca.Size = new System.Drawing.Size(24, 21);
             this.btnTipoPlaca.TabIndex = 6;
+            this.btnTipoPlaca.Click += new System.EventHandler(this.btnTipoPlaca_Click);
             // 
             // labelControl3
             // 
@@ -1593,7 +1596,9 @@
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
             this.Name = "Frm_Activos";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Frm_Activos";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).EndInit();
