@@ -14,6 +14,8 @@ namespace TransportBusiness
 {
     public partial class Frm_Marcas : DevExpress.XtraEditors.XtraForm
     {
+        public string vid_Marca { get; set; }
+        public string vNombre_Marca { get; set; }
         public Frm_Marcas()
         {
             InitializeComponent();
@@ -103,8 +105,6 @@ namespace TransportBusiness
         {
             if (textNombre.Text.ToString().Trim().Length > 0)
             {
-
-
                 InsertarMarcas();
             }
             else
@@ -133,6 +133,20 @@ namespace TransportBusiness
         private void btnSalir_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             this.Close();
+        }
+
+        private void btnSeleccionar_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            if(textId.Text!=string.Empty && textNombre.Text!=string.Empty)
+            {
+                vid_Marca = textId.Text;
+                vNombre_Marca = textNombre.Text;
+                this.Close();
+            }
+            else
+            {
+                XtraMessageBox.Show("No se ha seleccionado una Marca");
+            }
         }
     }
 }

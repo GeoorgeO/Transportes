@@ -14,6 +14,8 @@ namespace TransportBusiness
 {
     public partial class Frm_Tipo_Transporte : DevExpress.XtraEditors.XtraForm
     {
+        public string vId_Tipo_Transporte { get; set; }
+        public string vNombre_Tipo_Transporte { get; set; }
         public Frm_Tipo_Transporte()
         {
             InitializeComponent();
@@ -84,8 +86,6 @@ namespace TransportBusiness
                     DataRow row = this.gridView1.GetDataRow(i);
                     textId.Text = row["Id_Tipo_Transporte"].ToString();
                     textNombre.Text = row["Nombre_Tipo_Transporte"].ToString();
-
-
                 }
             }
             catch (Exception ex)
@@ -133,6 +133,16 @@ namespace TransportBusiness
         private void btnSalir_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             this.Close();
+        }
+
+        private void btnSeleccionar_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            if(textId.Text!=string.Empty && textNombre.Text!=string.Empty)
+            {
+                vId_Tipo_Transporte = textId.Text;
+                vNombre_Tipo_Transporte = textNombre.Text;
+                this.Close();
+            }
         }
     }
 }

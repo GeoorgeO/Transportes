@@ -42,9 +42,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Catalogos\CLS_Empleado.cs" />
+    <Compile Include="Catalogos\CLS_Empresa.cs" />
+    <Compile Include="Catalogos\CLS_Estado.cs" />
+    <Compile Include="Catalogos\CLS_Licencia.cs" />
     <Compile Include="Catalogos\CLS_Marcas.cs" />
+    <Compile Include="Catalogos\CLS_Pais.cs" />
     <Compile Include="Tipos\CLS_Tipo_Activo.cs" />
     <Compile Include="Tipos\CLS_Tipo_Domicilio.cs" />
+    <Compile Include="Tipos\CLS_Tipo_Licencia.cs" />
     <Compile Include="Tipos\CLS_Tipo_Placa.cs" />
     <Compile Include="Conexion\CLS_AppConfig.cs" />
     <Compile Include="Tipos\CLS_Tipo_Empleado.cs" />
