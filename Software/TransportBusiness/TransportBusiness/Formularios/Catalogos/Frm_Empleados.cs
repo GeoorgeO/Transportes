@@ -253,9 +253,6 @@ namespace TransportBusiness
                     XtraMessageBox.Show("Es necesario seleccionar un Domicilio.");
                 }
             }
-
-
-           
         }
 
         private void btnLimpiar_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)

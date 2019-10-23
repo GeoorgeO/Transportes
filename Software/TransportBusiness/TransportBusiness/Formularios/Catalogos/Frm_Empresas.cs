@@ -86,21 +86,32 @@ namespace TransportBusiness
                     DataRow row = this.gridView1.GetDataRow(i);
                     textId.Text = row["Id_Empresa"].ToString();
                     textNombre.Text = row["Nombre_Empresa"].ToString();
-
-
                 }
             }
             catch (Exception ex)
             {
                 XtraMessageBox.Show(ex.Message);
             }
+            CargarDomicilio();
         }
 
         private void Frm_Empresas_Load(object sender, EventArgs e)
         {
             CargarEmpresa();
+            CargarDomicilio();
         }
-
+        private void CargarDomicilio()
+        {
+            gridControl2.DataSource = null;
+            CLS_Domicilios Domicilio = new CLS_Domicilios();
+            Domicilio.Id_Empleado = textId.Text.Trim();
+            Domicilio.id_TipoPersona = "0002";
+            Domicilio.MtdSeleccionarDomicilio();
+            if (Domicilio.Exito)
+            {
+                gridControl2.DataSource = Domicilio.Datos;
+            }
+        }
         private void btnGuardar_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             if (textNombre.Text.ToString().Trim().Length > 0)
@@ -113,25 +124,128 @@ namespace TransportBusiness
             {
                 XtraMessageBox.Show("Es necesario Agregar un nombre a la empresa.");
             }
-        }
 
-        private void btnEliminar_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-            if (textId.Text.Trim().Length > 0 && textNombre.Text.ToString().Trim().Length > 0)
+            if (xtraTabControl1.SelectedTabPage == Datos)
             {
-                EliminarEmpresa();
+                if (textNombre.Text.ToString().Trim().Length > 0)
+                {
+                    InsertarEmpresa();
+                }
+                else
+                {
+                    XtraMessageBox.Show("Es necesario Agregar un nombre a la empresa.");
+                }
             }
             else
             {
-                XtraMessageBox.Show("Es necesario seleccionar una empresa.");
+                if (textCalle.Text.ToString().Trim().Length > 0)
+                {
+                    if (textNoExterior.Text.ToString().Trim().Length > 0)
+                    {
+                        InsertarDomicilio();
+                    }
+                    else
+                    {
+                        XtraMessageBox.Show("Es necesario agregar un numero exterior.");
+                    }
+                }
+                else
+                {
+                    XtraMessageBox.Show("Es necesario Agregar una calle.");
+                }
+            }
+
+        }
+        private void InsertarDomicilio()
+        {
+            CLS_Domicilios Domicilio = new CLS_Domicilios();
+            Domicilio.Id_Domicilio = textIdDomicilio.Text.Trim();
+            Domicilio.Calle = textCalle.Text.Trim();
+            Domicilio.NoInterior = textNoInterior.Text.Trim();
+            Domicilio.NoExterior = textNoExterior.Text.Trim();
+            Domicilio.Colonia = textColonia.Text.Trim();
+            Domicilio.Codigo_Postal = textCodigoPostal.Text.Trim();
+            Domicilio.Id_Estado = textEstado.Tag.ToString().Trim();
+            Domicilio.Id_TipoDomicilio = textTipoDomicilio.Tag.ToString().Trim();
+            Domicilio.Id_Empleado = textId.Text.Trim();
+            Domicilio.id_TipoPersona = "0002";
+            Domicilio.MtdInsertarDomicilio();
+            if (Domicilio.Exito)
+            {
+                CargarDomicilio();
+                XtraMessageBox.Show("Se ha Insertado el registro con exito");
+                LimpiarCamposDomicilio();
+            }
+            else
+            {
+                XtraMessageBox.Show(Domicilio.Mensaje);
             }
         }
-
+        private void btnEliminar_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            if (xtraTabControl1.SelectedTabPage == Datos)
+            {
+                if (textId.Text.Trim().Length > 0 && textNombre.Text.ToString().Trim().Length > 0)
+                {
+                    EliminarEmpresa();
+                }
+                else
+                {
+                    XtraMessageBox.Show("Es necesario seleccionar un Empleado.");
+                }
+            }
+            else
+            {
+                if (textIdDomicilio.Text.Trim().Length > 0)
+                {
+                    EliminarDomicilio();
+                }
+                else
+                {
+                    XtraMessageBox.Show("Es necesario seleccionar un Domicilio.");
+                }
+            }
+        }
+        private void EliminarDomicilio()
+        {
+            CLS_Domicilios Domicilio = new CLS_Domicilios();
+            Domicilio.Id_Domicilio = textIdDomicilio.Text.Trim();
+            Domicilio.MtdEliminarDomicilio();
+            if (Domicilio.Exito)
+            {
+                CargarEmpresa();
+                XtraMessageBox.Show("Se ha Eliminado el registro con exito");
+                LimpiarCampos();
+            }
+            else
+            {
+                XtraMessageBox.Show(Domicilio.Mensaje);
+            }
+        }
         private void btnLimpiar_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            LimpiarCampos();
+            if (xtraTabControl1.SelectedTabPage == Datos)
+            {
+                LimpiarCampos();
+            }
+            else
+            {
+                LimpiarCamposDomicilio();
+            }
         }
-
+        private void LimpiarCamposDomicilio()
+        {
+            textIdDomicilio.Text = "";
+            textCalle.Text = "";
+            textNoInterior.Text = "";
+            textNoExterior.Text = "";
+            textEstado.Tag = "";
+            textEstado.Text = "";
+            textCodigoPostal.Text = "";
+            textColonia.Text = "";
+            textTipoDomicilio.Tag = "";
+            textTipoDomicilio.Text = "";
+        }
         private void btnSalir_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             this.Close();

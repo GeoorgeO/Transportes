@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_Empleados));
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -44,7 +43,6 @@
             this.No_Licencia = new DevExpress.XtraGrid.Columns.GridColumn();
             this.xtraTabControl1 = new DevExpress.XtraTab.XtraTabControl();
             this.xtraTabPage1 = new DevExpress.XtraTab.XtraTabPage();
-            this.groupControl3 = new DevExpress.XtraEditors.GroupControl();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.btnbusqlicencia = new DevExpress.XtraEditors.SimpleButton();
             this.textNoIdentificacion = new DevExpress.XtraEditors.TextEdit();
@@ -78,7 +76,7 @@
             this.Nombre_Estado = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Id_TipoDomicilio = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Nombre_TipoDomicilio = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
+            this.barManager1 = new DevExpress.XtraBars.BarManager();
             this.bIconos = new DevExpress.XtraBars.Bar();
             this.btnLimpiar = new DevExpress.XtraBars.BarLargeButtonItem();
             this.btnGuardar = new DevExpress.XtraBars.BarLargeButtonItem();
@@ -111,13 +109,12 @@
             this.labelControl17 = new DevExpress.XtraEditors.LabelControl();
             this.textIdDomicilio = new DevExpress.XtraEditors.TextEdit();
             this.labelControl18 = new DevExpress.XtraEditors.LabelControl();
+            this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).BeginInit();
             this.xtraTabControl1.SuspendLayout();
             this.xtraTabPage1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).BeginInit();
-            this.groupControl3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.textNoIdentificacion.Properties)).BeginInit();
@@ -145,15 +142,17 @@
             ((System.ComponentModel.ISupportInitialize)(this.textNoInterior.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textCalle.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textIdDomicilio.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
+            this.panelControl1.SuspendLayout();
             this.SuspendLayout();
             // 
             // gridControl1
             // 
             this.gridControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControl1.Location = new System.Drawing.Point(7, 25);
+            this.gridControl1.Location = new System.Drawing.Point(12, 12);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(795, 344);
+            this.gridControl1.Size = new System.Drawing.Size(785, 352);
             this.gridControl1.TabIndex = 0;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -267,22 +266,12 @@
             // 
             // xtraTabPage1
             // 
-            this.xtraTabPage1.Controls.Add(this.groupControl3);
+            this.xtraTabPage1.Controls.Add(this.panelControl1);
             this.xtraTabPage1.Controls.Add(this.groupControl1);
             this.xtraTabPage1.Name = "xtraTabPage1";
             this.xtraTabPage1.Padding = new System.Windows.Forms.Padding(5);
             this.xtraTabPage1.Size = new System.Drawing.Size(819, 521);
             this.xtraTabPage1.Text = "Datos";
-            // 
-            // groupControl3
-            // 
-            this.groupControl3.Controls.Add(this.gridControl1);
-            this.groupControl3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupControl3.Location = new System.Drawing.Point(5, 140);
-            this.groupControl3.Name = "groupControl3";
-            this.groupControl3.Padding = new System.Windows.Forms.Padding(5);
-            this.groupControl3.Size = new System.Drawing.Size(809, 376);
-            this.groupControl3.TabIndex = 1;
             // 
             // groupControl1
             // 
@@ -768,7 +757,7 @@
             // 
             // btnBusqTipoDomicilio
             // 
-            this.btnBusqTipoDomicilio.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
+            this.btnBusqTipoDomicilio.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnBusqTipoDomicilio.ImageOptions.Image")));
             this.btnBusqTipoDomicilio.Location = new System.Drawing.Point(633, 83);
             this.btnBusqTipoDomicilio.Name = "btnBusqTipoDomicilio";
             this.btnBusqTipoDomicilio.Size = new System.Drawing.Size(24, 23);
@@ -785,7 +774,7 @@
             // 
             // btnBusqEstado
             // 
-            this.btnBusqEstado.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton4.ImageOptions.Image")));
+            this.btnBusqEstado.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnBusqEstado.ImageOptions.Image")));
             this.btnBusqEstado.Location = new System.Drawing.Point(303, 111);
             this.btnBusqEstado.Name = "btnBusqEstado";
             this.btnBusqEstado.Size = new System.Drawing.Size(24, 23);
@@ -905,6 +894,16 @@
             this.labelControl18.TabIndex = 0;
             this.labelControl18.Text = "Id domicilio: ";
             // 
+            // panelControl1
+            // 
+            this.panelControl1.Controls.Add(this.gridControl1);
+            this.panelControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelControl1.Location = new System.Drawing.Point(5, 140);
+            this.panelControl1.Name = "panelControl1";
+            this.panelControl1.Padding = new System.Windows.Forms.Padding(10);
+            this.panelControl1.Size = new System.Drawing.Size(809, 376);
+            this.panelControl1.TabIndex = 2;
+            // 
             // Frm_Empleados
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -926,8 +925,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).EndInit();
             this.xtraTabControl1.ResumeLayout(false);
             this.xtraTabPage1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).EndInit();
-            this.groupControl3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
             this.groupControl1.PerformLayout();
@@ -957,6 +954,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.textNoInterior.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textCalle.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textIdDomicilio.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
+            this.panelControl1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1030,7 +1029,6 @@
         private DevExpress.XtraEditors.LabelControl labelControl17;
         private DevExpress.XtraEditors.TextEdit textIdDomicilio;
         private DevExpress.XtraEditors.LabelControl labelControl18;
-        private DevExpress.XtraEditors.GroupControl groupControl3;
         private DevExpress.XtraEditors.PanelControl panelControl2;
         private DevExpress.XtraGrid.GridControl gridControl2;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView2;
@@ -1044,5 +1042,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn Nombre_Estado;
         private DevExpress.XtraGrid.Columns.GridColumn Id_TipoDomicilio;
         private DevExpress.XtraGrid.Columns.GridColumn Nombre_TipoDomicilio;
+        private DevExpress.XtraEditors.PanelControl panelControl1;
     }
 }
