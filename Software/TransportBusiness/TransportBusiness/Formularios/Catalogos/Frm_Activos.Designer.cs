@@ -1195,6 +1195,7 @@
             // 
             // txtEmpresaAsegu
             // 
+            this.txtEmpresaAsegu.Enabled = false;
             this.txtEmpresaAsegu.Location = new System.Drawing.Point(443, 220);
             this.txtEmpresaAsegu.MenuManager = this.barManager1;
             this.txtEmpresaAsegu.Name = "txtEmpresaAsegu";
@@ -1317,6 +1318,7 @@
             // 
             // txtEmpresa
             // 
+            this.txtEmpresa.Enabled = false;
             this.txtEmpresa.Location = new System.Drawing.Point(443, 90);
             this.txtEmpresa.MenuManager = this.barManager1;
             this.txtEmpresa.Name = "txtEmpresa";
@@ -1342,6 +1344,7 @@
             // 
             // txtOperador
             // 
+            this.txtOperador.Enabled = false;
             this.txtOperador.Location = new System.Drawing.Point(443, 194);
             this.txtOperador.MenuManager = this.barManager1;
             this.txtOperador.Name = "txtOperador";
@@ -1391,6 +1394,7 @@
             // 
             // txtTipoTransporte
             // 
+            this.txtTipoTransporte.Enabled = false;
             this.txtTipoTransporte.Location = new System.Drawing.Point(443, 37);
             this.txtTipoTransporte.MenuManager = this.barManager1;
             this.txtTipoTransporte.Name = "txtTipoTransporte";
@@ -1424,6 +1428,7 @@
             // 
             // txtMarca
             // 
+            this.txtMarca.Enabled = false;
             this.txtMarca.Location = new System.Drawing.Point(89, 115);
             this.txtMarca.MenuManager = this.barManager1;
             this.txtMarca.Name = "txtMarca";
@@ -1465,6 +1470,7 @@
             // 
             // txtTipoActivo
             // 
+            this.txtTipoActivo.Enabled = false;
             this.txtTipoActivo.Location = new System.Drawing.Point(443, 63);
             this.txtTipoActivo.MenuManager = this.barManager1;
             this.txtTipoActivo.Name = "txtTipoActivo";
@@ -1530,6 +1536,7 @@
             // 
             // txtTipoPlaca
             // 
+            this.txtTipoPlaca.Enabled = false;
             this.txtTipoPlaca.Location = new System.Drawing.Point(443, 167);
             this.txtTipoPlaca.MenuManager = this.barManager1;
             this.txtTipoPlaca.Name = "txtTipoPlaca";
