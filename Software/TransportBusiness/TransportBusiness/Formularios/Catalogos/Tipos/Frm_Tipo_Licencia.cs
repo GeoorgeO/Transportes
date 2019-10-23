@@ -146,11 +146,13 @@ namespace TransportBusiness
             this.Close();
         }
 
-        private void btnSeleccionar_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        
+
+        private void btnSeleccionar_ItemClick_1(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             IdTipoLicencia = textId.Text.Trim();
             TipoLicencia = textNombre.Text.Trim();
             this.Close();
-    }
+        }
     }
 }

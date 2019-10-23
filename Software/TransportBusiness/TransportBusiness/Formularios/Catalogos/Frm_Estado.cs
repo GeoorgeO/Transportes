@@ -14,10 +14,15 @@ namespace TransportBusiness
 {
     public partial class Frm_Estado : DevExpress.XtraEditors.XtraForm
     {
-        public Frm_Estado()
+        public Boolean PaSel { get; set; }
+        public Frm_Estado(Boolean BPasel)
         {
+            this.PaSel = BPasel;
             InitializeComponent();
         }
+
+        public string IdEstado { get; set; }
+        public string Estado { get; set; }
 
         private void btnbuscar_Click(object sender, EventArgs e)
         {
@@ -151,7 +156,22 @@ namespace TransportBusiness
 
         private void Frm_Estado_Load(object sender, EventArgs e)
         {
+            if (PaSel == true)
+            {
+                btnSeleccionar.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+            }
+            else
+            {
+                btnSeleccionar.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+            }
             CargarEstado();
+        }
+
+        private void btnSeleccionar_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            IdEstado = textIdEstado.Text.Trim();
+            Estado = textEstado.Text.Trim();
+            this.Close();
         }
     }
 }

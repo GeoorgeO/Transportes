@@ -289,6 +289,9 @@
     <EmbeddedResource Include="Formularios\Catalogos\Frm_Domicilios.resx">
       <DependentUpon>Frm_Domicilios.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Catalogos\Frm_Empleados.resx">
+      <DependentUpon>Frm_Empleados.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Catalogos\Frm_Estado.resx">
       <DependentUpon>Frm_Estado.cs</DependentUpon>
     </EmbeddedResource>

@@ -9,7 +9,7 @@ ELSE
 		
 	CREATE TABLE [dbo].[Tipo_Domicilio](
 		[Id_TipoDomicilio] [char](4) NOT NULL,
-		[Nombre_TipoDomilio] [varchar](50) NULL,
+		[Nombre_TipoDomicilio] [varchar](50) NULL,
 	 CONSTRAINT [PK_Tipo_Domicilio] PRIMARY KEY CLUSTERED 
 	(
 		[Id_TipoDomicilio] ASC

@@ -12,35 +12,7 @@ namespace CapaDeDatos
         public string Id_Tipo_Domicilio { get; set; }
         public string Nombre_Tipo_Domicilio { get; set; }
 
-        public void MtdSeleccionarTiposDomicilios()
-        {
-            TipoDato _dato = new TipoDato();
-            Conexion _conexion = new Conexion(cadenaConexion);
-
-            Exito = true;
-            try
-            {
-                _conexion.NombreProcedimiento = "SP_Tipos_Domicilios_Select";
-
-                _conexion.EjecutarDataset();
-
-                if (_conexion.Exito)
-                {
-                    Datos = _conexion.Datos;
-                }
-                else
-                {
-                    Mensaje = _conexion.Mensaje;
-                    Exito = false;
-                }
-            }
-            catch (Exception e)
-            {
-                Mensaje = e.Message;
-                Exito = false;
-            }
-
-        }
+        
 
         public void MtdSeleccionarTipoDomicilio()
         {
@@ -51,8 +23,7 @@ namespace CapaDeDatos
             try
             {
                 _conexion.NombreProcedimiento = "SP_Tipo_Domicilio_Select";
-                _dato.CadenaTexto = Id_Tipo_Domicilio;
-                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_Empleado_Placa");
+               
 
                 _conexion.EjecutarDataset();
 
@@ -84,9 +55,9 @@ namespace CapaDeDatos
             {
                 _conexion.NombreProcedimiento = "SP_Tipo_Domicilio_Insert";
                 _dato.CadenaTexto = Id_Tipo_Domicilio;
-                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_Tipo_Domicilio");
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_TipoDomicilio");
                 _dato.CadenaTexto = Nombre_Tipo_Domicilio;
-                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Nombre_Tipo_Domicilio");
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Nombre_TipoDomicilio");
                 _conexion.EjecutarDataset();
 
                 if (_conexion.Exito)
@@ -116,7 +87,7 @@ namespace CapaDeDatos
             {
                 _conexion.NombreProcedimiento = "SP_Tipo_Domicilio_Delete";
                 _dato.CadenaTexto = Id_Tipo_Domicilio;
-                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_Tipo_Domicilio");
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_TipoDomicilio");
                 _conexion.EjecutarDataset();
 
                 if (_conexion.Exito)

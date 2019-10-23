@@ -388,7 +388,7 @@
             this.labelControl3.Name = "labelControl3";
             this.labelControl3.Size = new System.Drawing.Size(79, 13);
             this.labelControl3.TabIndex = 4;
-            this.labelControl3.Text = "Tipo de Licnecia:";
+            this.labelControl3.Text = "Tipo de Licencia:";
             // 
             // textNoLic
             // 

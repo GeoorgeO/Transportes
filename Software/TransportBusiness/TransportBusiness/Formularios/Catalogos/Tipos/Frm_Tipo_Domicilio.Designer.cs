@@ -1,4 +1,4 @@
-﻿namespace TransportBusiness.Formularios.Catalogos.Tipos
+﻿namespace TransportBusiness
 {
     partial class Frm_Tipo_Domicilio
     {
@@ -36,6 +36,7 @@
             this.btnGuardar = new DevExpress.XtraBars.BarLargeButtonItem();
             this.btnEliminar = new DevExpress.XtraBars.BarLargeButtonItem();
             this.btnSalir = new DevExpress.XtraBars.BarLargeButtonItem();
+            this.btnSeleccionar = new DevExpress.XtraBars.BarLargeButtonItem();
             this.bEstado = new DevExpress.XtraBars.Bar();
             this.lblProveedor = new DevExpress.XtraBars.BarStaticItem();
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
@@ -47,7 +48,7 @@
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.Id_TipoDomicilio = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.Nombre_TipoDomilio = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Nombre_TipoDomicilio = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.textNombre = new DevExpress.XtraEditors.TextEdit();
@@ -83,9 +84,10 @@
             this.btnLimpiar,
             this.btnGuardar,
             this.btnEliminar,
-            this.btnSalir});
+            this.btnSalir,
+            this.btnSeleccionar});
             this.barManager1.MainMenu = this.bIconos;
-            this.barManager1.MaxItemId = 64;
+            this.barManager1.MaxItemId = 65;
             this.barManager1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemTextEdit1});
             this.barManager1.StatusBar = this.bEstado;
@@ -102,7 +104,8 @@
             new DevExpress.XtraBars.LinkPersistInfo(this.btnLimpiar),
             new DevExpress.XtraBars.LinkPersistInfo(this.btnGuardar),
             new DevExpress.XtraBars.LinkPersistInfo(this.btnEliminar),
-            new DevExpress.XtraBars.LinkPersistInfo(this.btnSalir)});
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnSalir),
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnSeleccionar)});
             this.bIconos.OptionsBar.AllowCollapse = true;
             this.bIconos.OptionsBar.AllowQuickCustomization = false;
             this.bIconos.OptionsBar.AutoPopupMode = DevExpress.XtraBars.BarAutoPopupMode.None;
@@ -139,6 +142,7 @@
             this.btnEliminar.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnEliminar.ImageOptions.Image")));
             this.btnEliminar.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnEliminar.ImageOptions.LargeImage")));
             this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnEliminar_ItemClick);
             // 
             // btnSalir
             // 
@@ -147,6 +151,16 @@
             this.btnSalir.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnSalir.ImageOptions.Image")));
             this.btnSalir.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnSalir.ImageOptions.LargeImage")));
             this.btnSalir.Name = "btnSalir";
+            this.btnSalir.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnSalir_ItemClick);
+            // 
+            // btnSeleccionar
+            // 
+            this.btnSeleccionar.Caption = "Seleccionar";
+            this.btnSeleccionar.Id = 64;
+            this.btnSeleccionar.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnSeleccionar.ImageOptions.Image")));
+            this.btnSeleccionar.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnSeleccionar.ImageOptions.LargeImage")));
+            this.btnSeleccionar.Name = "btnSeleccionar";
+            this.btnSeleccionar.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnSeleccionar_ItemClick);
             // 
             // bEstado
             // 
@@ -190,7 +204,7 @@
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.barDockControlLeft.Location = new System.Drawing.Point(0, 0);
             this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Size = new System.Drawing.Size(56, 353);
+            this.barDockControlLeft.Size = new System.Drawing.Size(71, 353);
             // 
             // barDockControlRight
             // 
@@ -208,10 +222,10 @@
             // 
             this.panelControl2.Controls.Add(this.gridControl1);
             this.panelControl2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelControl2.Location = new System.Drawing.Point(56, 126);
+            this.panelControl2.Location = new System.Drawing.Point(71, 126);
             this.panelControl2.Name = "panelControl2";
             this.panelControl2.Padding = new System.Windows.Forms.Padding(10);
-            this.panelControl2.Size = new System.Drawing.Size(457, 227);
+            this.panelControl2.Size = new System.Drawing.Size(442, 227);
             this.panelControl2.TabIndex = 7;
             // 
             // gridControl1
@@ -221,16 +235,17 @@
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.MenuManager = this.barManager1;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(433, 203);
+            this.gridControl1.Size = new System.Drawing.Size(418, 203);
             this.gridControl1.TabIndex = 0;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
+            this.gridControl1.Click += new System.EventHandler(this.gridControl1_Click);
             // 
             // gridView1
             // 
             this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.Id_TipoDomicilio,
-            this.Nombre_TipoDomilio});
+            this.Nombre_TipoDomicilio});
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsView.ShowGroupPanel = false;
@@ -244,23 +259,23 @@
             this.Id_TipoDomicilio.Visible = true;
             this.Id_TipoDomicilio.VisibleIndex = 0;
             // 
-            // Nombre_TipoDomilio
+            // Nombre_TipoDomicilio
             // 
-            this.Nombre_TipoDomilio.Caption = "Tipo Domicilio";
-            this.Nombre_TipoDomilio.FieldName = "Nombre_TipoDomilio";
-            this.Nombre_TipoDomilio.Name = "Nombre_TipoDomilio";
-            this.Nombre_TipoDomilio.OptionsColumn.AllowEdit = false;
-            this.Nombre_TipoDomilio.Visible = true;
-            this.Nombre_TipoDomilio.VisibleIndex = 1;
+            this.Nombre_TipoDomicilio.Caption = "Tipo Domicilio";
+            this.Nombre_TipoDomicilio.FieldName = "Nombre_TipoDomicilio";
+            this.Nombre_TipoDomicilio.Name = "Nombre_TipoDomicilio";
+            this.Nombre_TipoDomicilio.OptionsColumn.AllowEdit = false;
+            this.Nombre_TipoDomicilio.Visible = true;
+            this.Nombre_TipoDomicilio.VisibleIndex = 1;
             // 
             // panelControl1
             // 
             this.panelControl1.Controls.Add(this.groupControl1);
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelControl1.Location = new System.Drawing.Point(56, 0);
+            this.panelControl1.Location = new System.Drawing.Point(71, 0);
             this.panelControl1.Name = "panelControl1";
             this.panelControl1.Padding = new System.Windows.Forms.Padding(10);
-            this.panelControl1.Size = new System.Drawing.Size(457, 126);
+            this.panelControl1.Size = new System.Drawing.Size(442, 126);
             this.panelControl1.TabIndex = 6;
             // 
             // groupControl1
@@ -272,13 +287,13 @@
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl1.Location = new System.Drawing.Point(12, 12);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(433, 102);
+            this.groupControl1.Size = new System.Drawing.Size(418, 102);
             this.groupControl1.TabIndex = 0;
             this.groupControl1.Text = "Tipo Domicilio";
             // 
             // textNombre
             // 
-            this.textNombre.Location = new System.Drawing.Point(112, 63);
+            this.textNombre.Location = new System.Drawing.Point(100, 63);
             this.textNombre.MenuManager = this.barManager1;
             this.textNombre.Name = "textNombre";
             this.textNombre.Size = new System.Drawing.Size(231, 20);
@@ -294,7 +309,8 @@
             // 
             // textId
             // 
-            this.textId.Location = new System.Drawing.Point(112, 28);
+            this.textId.Enabled = false;
+            this.textId.Location = new System.Drawing.Point(100, 28);
             this.textId.MenuManager = this.barManager1;
             this.textId.Name = "textId";
             this.textId.Size = new System.Drawing.Size(100, 20);
@@ -325,6 +341,7 @@
             this.Name = "Frm_Tipo_Domicilio";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Frm_Tipo_Domicilio";
+            this.Load += new System.EventHandler(this.Frm_Tipo_Domicilio_Load);
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).EndInit();
@@ -362,12 +379,13 @@
         private DevExpress.XtraGrid.GridControl gridControl1;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
         private DevExpress.XtraGrid.Columns.GridColumn Id_TipoDomicilio;
-        private DevExpress.XtraGrid.Columns.GridColumn Nombre_TipoDomilio;
+        private DevExpress.XtraGrid.Columns.GridColumn Nombre_TipoDomicilio;
         private DevExpress.XtraEditors.PanelControl panelControl1;
         private DevExpress.XtraEditors.GroupControl groupControl1;
         private DevExpress.XtraEditors.TextEdit textNombre;
         private DevExpress.XtraEditors.LabelControl labelControl2;
         private DevExpress.XtraEditors.TextEdit textId;
         private DevExpress.XtraEditors.LabelControl labelControl1;
+        private DevExpress.XtraBars.BarLargeButtonItem btnSeleccionar;
     }
 }
