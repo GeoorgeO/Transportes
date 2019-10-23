@@ -83,6 +83,12 @@
     <Compile Include="Conexion\Frm_InstanciaSQL.designer.cs">
       <DependentUpon>Frm_InstanciaSQL.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\Catalogos\Frm_Domicilios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Catalogos\Frm_Domicilios.Designer.cs">
+      <DependentUpon>Frm_Domicilios.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\Catalogos\Frm_Empleados.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -191,6 +197,12 @@
     <Compile Include="Formularios\Catalogos\Tipos\Frm_Tipo_Licencia.Designer.cs">
       <DependentUpon>Frm_Tipo_Licencia.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\Catalogos\Tipos\Frm_Tipo_Persona.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Catalogos\Tipos\Frm_Tipo_Persona.Designer.cs">
+      <DependentUpon>Frm_Tipo_Persona.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\Catalogos\Tipos\Frm_Tipo_Placa.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -274,6 +286,9 @@
     <EmbeddedResource Include="Conexion\Frm_InstanciaSQL.resx">
       <DependentUpon>Frm_InstanciaSQL.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Catalogos\Frm_Domicilios.resx">
+      <DependentUpon>Frm_Domicilios.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Catalogos\Frm_Estado.resx">
       <DependentUpon>Frm_Estado.cs</DependentUpon>
     </EmbeddedResource>
@@ -306,6 +321,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Catalogos\Tipos\Frm_Tipo_Licencia.resx">
       <DependentUpon>Frm_Tipo_Licencia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Catalogos\Tipos\Frm_Tipo_Persona.resx">
+      <DependentUpon>Frm_Tipo_Persona.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Catalogos\Tipos\Frm_Tipo_Placa.resx">
       <DependentUpon>Frm_Tipo_Placa.cs</DependentUpon>

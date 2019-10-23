@@ -48,6 +48,7 @@
     <Compile Include="Catalogos\CLS_Licencia.cs" />
     <Compile Include="Catalogos\CLS_Marcas.cs" />
     <Compile Include="Catalogos\CLS_Pais.cs" />
+    <Compile Include="Tipos\CLS_TipoPersona.cs" />
     <Compile Include="Tipos\CLS_Tipo_Activo.cs" />
     <Compile Include="Tipos\CLS_Tipo_Domicilio.cs" />
     <Compile Include="Tipos\CLS_Tipo_Licencia.cs" />
