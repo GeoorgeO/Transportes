@@ -9,8 +9,7 @@ ELSE
 		
 	CREATE TABLE [dbo].[Tipo_Licencia](
 		[Id_Tipo_Licencia] [char](3) NOT NULL,
-		[Nombre_Tipo_Licencia] [varchar](10) NULL,
-		[Serie] [varchar](20) NULL,
+		[Nombre_Tipo_Licencia] [varchar](10) NULL
 	 CONSTRAINT [PK_Tipo_Licencia] PRIMARY KEY CLUSTERED 
 	(
 		[Id_Tipo_Licencia] ASC

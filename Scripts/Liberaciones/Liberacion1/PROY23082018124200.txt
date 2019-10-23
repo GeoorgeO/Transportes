@@ -23,3 +23,43 @@ Scripts\Tablas\Tipo_Licencia_CreateTable.sql
 Scripts\Tablas\Tipo_Mantenimiento_CreateTable.sql
 Scripts\Tablas\Tipo_Placa_CreateTable.sql
 Scripts\Tablas\Tipo_Transporte_CreateTable.sql
+
+Scripts\Procedimientos Almacenados\SP_Empleado_Delete.sql
+Scripts\Procedimientos Almacenados\SP_Empleado_Insert.sql
+Scripts\Procedimientos Almacenados\SP_Empleado_Select.sql
+Scripts\Procedimientos Almacenados\SP_Empresa_Delete.sql
+Scripts\Procedimientos Almacenados\SP_Empresa_Insert.sql
+Scripts\Procedimientos Almacenados\SP_Empresa_Select.sql
+Scripts\Procedimientos Almacenados\SP_Estado_Delete.sql
+Scripts\Procedimientos Almacenados\SP_Estado_Insert.sql
+Scripts\Procedimientos Almacenados\SP_Estado_Select.sql
+Scripts\Procedimientos Almacenados\SP_Licencia_Delete.sql
+Scripts\Procedimientos Almacenados\SP_Licencia_Insert.sql
+Scripts\Procedimientos Almacenados\SP_Licencia_Select.sql
+Scripts\Procedimientos Almacenados\SP_Marcas_Delete.sql
+Scripts\Procedimientos Almacenados\SP_Marcas_Insert.sql
+Scripts\Procedimientos Almacenados\SP_Marcas_Select.sql
+Scripts\Procedimientos Almacenados\SP_Pais_Delete.sql
+Scripts\Procedimientos Almacenados\SP_Pais_Insert.sql
+Scripts\Procedimientos Almacenados\SP_Pais_Select.sql
+Scripts\Procedimientos Almacenados\SP_Tipo_Activo_Delete.sql
+Scripts\Procedimientos Almacenados\SP_Tipo_Activo_Insert.sql
+Scripts\Procedimientos Almacenados\SP_Tipo_Activo_Select.sql
+Scripts\Procedimientos Almacenados\SP_Tipo_Empleado_Delete.sql
+Scripts\Procedimientos Almacenados\SP_Tipo_Empleado_Insert.sql
+Scripts\Procedimientos Almacenados\SP_Tipo_Empleado_Select.sql
+Scripts\Procedimientos Almacenados\SP_Tipo_Licencia_Delete.sql
+Scripts\Procedimientos Almacenados\SP_Tipo_Licencia_Insert.sql
+Scripts\Procedimientos Almacenados\SP_Tipo_Licencia_Select.sql
+Scripts\Procedimientos Almacenados\SP_Tipo_Placa_Delete.sql
+Scripts\Procedimientos Almacenados\SP_Tipo_Placa_Insert.sql
+Scripts\Procedimientos Almacenados\SP_Tipo_Placa_Select.sql
+Scripts\Procedimientos Almacenados\SP_Tipo_Transporte_Delete.sql
+Scripts\Procedimientos Almacenados\SP_Tipo_Transporte_Insert.sql
+Scripts\Procedimientos Almacenados\SP_Tipo_Transporte_Select.sql
+Scripts\Procedimientos Almacenados\SP_TipoPersona_Delete.sql
+Scripts\Procedimientos Almacenados\SP_TipoPersona_Insert.sql
+Scripts\Procedimientos Almacenados\SP_TipoPersona_Select.sql
+Scripts\Procedimientos Almacenados\SP_Tipos_Activos_Select.sql
+Scripts\Procedimientos Almacenados\SP_Tipos_Empleados_Select.sql
+Scripts\Procedimientos Almacenados\SP_Tipos_Placas_Select.sql

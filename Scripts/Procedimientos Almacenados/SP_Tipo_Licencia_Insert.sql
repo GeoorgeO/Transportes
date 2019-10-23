@@ -16,8 +16,8 @@ GO
 create PROCEDURE [dbo].[SP_Tipo_Licencia_Insert] 
 	-- Add the parameters for the stored procedure here
 	@Id_Tipo_Licencia char(3),
-	@Nombre_Tipo_Licencia varchar(10),
-	@Serie varchar(20)
+	@Nombre_Tipo_Licencia varchar(10)
+	
 AS
 BEGIN
 	-- SET NOCOUNT ON added to prevent extra result sets from
@@ -39,8 +39,7 @@ BEGIN
 		if @Existe>0 
 		
 			UPDATE dbo.Tipo_Licencia
-		        SET Nombre_Tipo_Licencia=@Nombre_Tipo_Licencia,
-					Serie=@Serie
+		        SET Nombre_Tipo_Licencia=@Nombre_Tipo_Licencia
 		    WHERE
 		    	Id_Tipo_Licencia=@Id_Tipo_Licencia
 				
@@ -48,12 +47,10 @@ BEGIN
 		
 			INSERT INTO dbo.Tipo_Licencia
 	           (Id_Tipo_Licencia
-	           ,Nombre_Tipo_Licencia,
-			   Serie)
+	           ,Nombre_Tipo_Licencia)
 	     	VALUES
 	           (@maximo
-	           ,@Nombre_Tipo_Licencia,
-			   @Serie)
+	           ,@Nombre_Tipo_Licencia)
 		
 		commit transaction T1;
 		set @correcto=1

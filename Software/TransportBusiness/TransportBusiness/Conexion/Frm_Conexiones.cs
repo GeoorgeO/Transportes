@@ -75,10 +75,10 @@ namespace TransportBusiness
 
             try
             {
-                valServer = DesencriptarTexto.Desencriptar(RegOut.GetSetting("ConexionSQL", "ServerR"));
-                valDB = DesencriptarTexto.Desencriptar(RegOut.GetSetting("ConexionSQL", "DBaseR"));
-                valLogin = DesencriptarTexto.Desencriptar(RegOut.GetSetting("ConexionSQL", "UserR"));
-                valPass = DesencriptarTexto.Desencriptar(RegOut.GetSetting("ConexionSQL", "PasswordR"));
+                valServer = DesencriptarTexto.Desencriptar(RegOut.GetSetting("ConexionSQL", "Server"));
+                valDB = DesencriptarTexto.Desencriptar(RegOut.GetSetting("ConexionSQL", "DBase"));
+                valLogin = DesencriptarTexto.Desencriptar(RegOut.GetSetting("ConexionSQL", "User"));
+                valPass = DesencriptarTexto.Desencriptar(RegOut.GetSetting("ConexionSQL", "Password"));
             }
             catch
             {
