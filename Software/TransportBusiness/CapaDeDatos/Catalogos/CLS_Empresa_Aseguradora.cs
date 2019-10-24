@@ -6,15 +6,14 @@ using System.Threading.Tasks;
 
 namespace CapaDeDatos
 {
-    public class CLS_Agente_Empresa_Aseguradora : ConexionBase
+    public class CLS_Empresa_Aseguradora : ConexionBase
     {
-
-        public string Id_Agente_Empresa_Aseguradora { get; set; }
-        public string Nombre_Agente_Empresa_Aseguradora { get; set; }
-        public string Telefono { get; set; }
         public string Id_Empresa_Aseguradora { get; set; }
+        public string Nombre_Empresa_Aseguradora { get; set; }
+        public string Telefono { get; set; }
+        public string Telefono_Siniestros { get; set; }
 
-        public void MtdSeleccionarAgenteEmpresaAseguradora()
+        public void MtdSeleccionarEmpresaAseguradora()
         {
             TipoDato _dato = new TipoDato();
             Conexion _conexion = new Conexion(cadenaConexion);
@@ -22,7 +21,7 @@ namespace CapaDeDatos
             Exito = true;
             try
             {
-                _conexion.NombreProcedimiento = "SP_Agente_Empresa_Aseguradora_Select";
+                _conexion.NombreProcedimiento = "SP_Empresa_Aseguradora_Select";
 
                 _conexion.EjecutarDataset();
 
@@ -46,7 +45,7 @@ namespace CapaDeDatos
 
 
 
-        public void MtdInsertarAgenteEmpresaAseguradora()
+        public void MtdInsertarEmpresaAseguradora()
         {
             TipoDato _dato = new TipoDato();
             Conexion _conexion = new Conexion(cadenaConexion);
@@ -54,15 +53,15 @@ namespace CapaDeDatos
             Exito = true;
             try
             {
-                _conexion.NombreProcedimiento = "SP_Agente_Empresa_Aseguradora_Insert";
-                _dato.CadenaTexto = Id_Agente_Empresa_Aseguradora;
-                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_Agente_Empresa_Aseguradora");
-                _dato.CadenaTexto = Nombre_Agente_Empresa_Aseguradora;
-                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Nombre_Agente_Empresa_Aseguradora");
-                _dato.CadenaTexto = Telefono;
-                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Telefono");
+                _conexion.NombreProcedimiento = "SP_Empresa_Aseguradora_Insert";
                 _dato.CadenaTexto = Id_Empresa_Aseguradora;
                 _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_Empresa_Aseguradora");
+                _dato.CadenaTexto = Nombre_Empresa_Aseguradora;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Nombre_Empresa_Aseguradora");
+                _dato.CadenaTexto = Telefono;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Telefono");
+                _dato.CadenaTexto = Telefono_Siniestros;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Telefono_Siniestros");
                 _conexion.EjecutarDataset();
 
                 if (_conexion.Exito)
@@ -82,7 +81,7 @@ namespace CapaDeDatos
             }
         }
 
-        public void MtdEliminarAgenteEmpresaAseguradora()
+        public void MtdEliminarEmpresaAseguradora()
         {
             TipoDato _dato = new TipoDato();
             Conexion _conexion = new Conexion(cadenaConexion);
@@ -90,9 +89,9 @@ namespace CapaDeDatos
             Exito = true;
             try
             {
-                _conexion.NombreProcedimiento = "SP_Agente_Empresa_Aseguradora_Delete";
-                _dato.CadenaTexto = Id_Agente_Empresa_Aseguradora;
-                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_Agente_Empresa_Aseguradora");
+                _conexion.NombreProcedimiento = "SP_Empresa_Aseguradora_Delete";
+                _dato.CadenaTexto = Id_Empresa_Aseguradora;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_Empresa_Aseguradora");
                 _conexion.EjecutarDataset();
 
                 if (_conexion.Exito)

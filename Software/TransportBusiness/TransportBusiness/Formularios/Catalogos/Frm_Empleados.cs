@@ -16,6 +16,9 @@ namespace TransportBusiness
     {
         public string vId_Empleado { get; set; }
         public string vNombre_Empleado { get; set; }
+
+        const string idTipoPersona = "0001";
+
         public Frm_Empleados()
         {
             InitializeComponent();
@@ -38,7 +41,7 @@ namespace TransportBusiness
             gridControl2.DataSource = null;
             CLS_Domicilios Domicilio = new CLS_Domicilios();
             Domicilio.Id_Empleado = textIdEmpleado.Text.Trim();
-            Domicilio.id_TipoPersona = "0001";
+            Domicilio.id_TipoPersona = idTipoPersona;
             Domicilio.MtdSeleccionarDomicilio();
             if (Domicilio.Exito)
             {
@@ -83,7 +86,7 @@ namespace TransportBusiness
             Domicilio.Id_Estado = textEstado.Tag.ToString().Trim();
             Domicilio.Id_TipoDomicilio = textTipoDomicilio.Tag.ToString().Trim();
             Domicilio.Id_Empleado = textIdEmpleado.Text.Trim();
-            Domicilio.id_TipoPersona = "0001";
+            Domicilio.id_TipoPersona = idTipoPersona;
             Domicilio.MtdInsertarDomicilio();
             if (Domicilio.Exito)
             {
@@ -122,7 +125,7 @@ namespace TransportBusiness
             Domicilio.MtdEliminarDomicilio();
             if (Domicilio.Exito)
             {
-                CargarEmpleado();
+                CargarDomicilio();
                 XtraMessageBox.Show("Se ha Eliminado el registro con exito");
                 LimpiarCampos();
             }
@@ -322,7 +325,7 @@ namespace TransportBusiness
                 {
                     DataRow row = this.gridView2.GetDataRow(i);
                     textIdDomicilio.Text = row["Id_Domicilio"].ToString();
-                    textCalle.Tag = row["Calle"].ToString();
+                    textCalle.Text = row["Calle"].ToString();
                     textNoInterior.Text = row["NoInterior"].ToString();
                     textNoExterior.Text = row["NoExterior"].ToString();
                     textCodigoPostal.Text = row["Codigo_Postal"].ToString();

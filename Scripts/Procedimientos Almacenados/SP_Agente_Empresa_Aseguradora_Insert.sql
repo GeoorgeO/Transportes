@@ -32,7 +32,7 @@ BEGIN
 	begin try
 
 		declare @maximo char(6)
-		select @maximo=right(Concat('000000', isnull(max(Id_Agente_Empresa_Aseguradora),0)+1),6) from dbo.Agente_Empresa_Aseguradora
+		select @maximo=right(Concat('0000', isnull(max(Id_Agente_Empresa_Aseguradora),0)+1),4) from dbo.Agente_Empresa_Aseguradora
 
 		declare @Existe int
 		select @Existe = count(Id_Agente_Empresa_Aseguradora) from dbo.Agente_Empresa_Aseguradora a where (a.Id_Agente_Empresa_Aseguradora=@Id_Agente_Empresa_Aseguradora)

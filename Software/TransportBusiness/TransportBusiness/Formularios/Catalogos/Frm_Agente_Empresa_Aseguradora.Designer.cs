@@ -1,4 +1,4 @@
-﻿namespace TransportBusiness.Formularios.Catalogos
+﻿namespace TransportBusiness
 {
     partial class Frm_Agente_Empresa_Aseguradora
     {
@@ -49,15 +49,6 @@
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.Id_Agente_Empresa_Aseguradora = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.Nombre_Empresa_Aseguradora = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.Telefono1 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.Nombre_Empleado = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.Telefono = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.RFC = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.CURP = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.No_Identificacion = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.Id_Licencia = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.No_Licencia = new DevExpress.XtraGrid.Columns.GridColumn();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.textAseguradora = new DevExpress.XtraEditors.TextEdit();
             this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
@@ -101,6 +92,10 @@
             this.labelControl17 = new DevExpress.XtraEditors.LabelControl();
             this.textIdDomicilio = new DevExpress.XtraEditors.TextEdit();
             this.labelControl18 = new DevExpress.XtraEditors.LabelControl();
+            this.Nombre_Agente_Empresa_Aseguradora = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Telefono = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Id_Empresa_Aseguradora = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Nombre_Empresa_Aseguradora = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).BeginInit();
@@ -186,6 +181,7 @@
             this.btnLimpiar.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnLimpiar.ImageOptions.Image")));
             this.btnLimpiar.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnLimpiar.ImageOptions.LargeImage")));
             this.btnLimpiar.Name = "btnLimpiar";
+            this.btnLimpiar.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnLimpiar_ItemClick);
             // 
             // btnGuardar
             // 
@@ -194,6 +190,7 @@
             this.btnGuardar.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnGuardar.ImageOptions.Image")));
             this.btnGuardar.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnGuardar.ImageOptions.LargeImage")));
             this.btnGuardar.Name = "btnGuardar";
+            this.btnGuardar.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnGuardar_ItemClick);
             // 
             // btnEliminar
             // 
@@ -202,6 +199,7 @@
             this.btnEliminar.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnEliminar.ImageOptions.Image")));
             this.btnEliminar.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnEliminar.ImageOptions.LargeImage")));
             this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnEliminar_ItemClick);
             // 
             // btnSalir
             // 
@@ -210,6 +208,7 @@
             this.btnSalir.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnSalir.ImageOptions.Image")));
             this.btnSalir.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnSalir.ImageOptions.LargeImage")));
             this.btnSalir.Name = "btnSalir";
+            this.btnSalir.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnSalir_ItemClick);
             // 
             // bEstado
             // 
@@ -237,7 +236,7 @@
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
             this.barDockControlTop.Manager = this.barManager1;
-            this.barDockControlTop.Size = new System.Drawing.Size(710, 0);
+            this.barDockControlTop.Size = new System.Drawing.Size(733, 0);
             // 
             // barDockControlBottom
             // 
@@ -245,7 +244,7 @@
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.barDockControlBottom.Location = new System.Drawing.Point(0, 431);
             this.barDockControlBottom.Manager = this.barManager1;
-            this.barDockControlBottom.Size = new System.Drawing.Size(710, 25);
+            this.barDockControlBottom.Size = new System.Drawing.Size(733, 25);
             // 
             // barDockControlLeft
             // 
@@ -259,7 +258,7 @@
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(710, 0);
+            this.barDockControlRight.Location = new System.Drawing.Point(733, 0);
             this.barDockControlRight.Manager = this.barManager1;
             this.barDockControlRight.Size = new System.Drawing.Size(0, 431);
             // 
@@ -273,7 +272,7 @@
             this.xtraTabControl1.Location = new System.Drawing.Point(56, 0);
             this.xtraTabControl1.Name = "xtraTabControl1";
             this.xtraTabControl1.SelectedTabPage = this.xtraTabPage1;
-            this.xtraTabControl1.Size = new System.Drawing.Size(654, 431);
+            this.xtraTabControl1.Size = new System.Drawing.Size(677, 431);
             this.xtraTabControl1.TabIndex = 4;
             this.xtraTabControl1.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.xtraTabPage1,
@@ -308,20 +307,16 @@
             this.gridControl1.TabIndex = 0;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
+            this.gridControl1.Click += new System.EventHandler(this.gridControl1_Click);
             // 
             // gridView1
             // 
             this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.Id_Agente_Empresa_Aseguradora,
-            this.Nombre_Empresa_Aseguradora,
-            this.Telefono1,
-            this.Nombre_Empleado,
+            this.Nombre_Agente_Empresa_Aseguradora,
             this.Telefono,
-            this.RFC,
-            this.CURP,
-            this.No_Identificacion,
-            this.Id_Licencia,
-            this.No_Licencia});
+            this.Id_Empresa_Aseguradora,
+            this.Nombre_Empresa_Aseguradora});
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsBehavior.Editable = false;
@@ -334,74 +329,6 @@
             this.Id_Agente_Empresa_Aseguradora.Name = "Id_Agente_Empresa_Aseguradora";
             this.Id_Agente_Empresa_Aseguradora.Visible = true;
             this.Id_Agente_Empresa_Aseguradora.VisibleIndex = 0;
-            // 
-            // Nombre_Empresa_Aseguradora
-            // 
-            this.Nombre_Empresa_Aseguradora.Caption = "Aseguradora";
-            this.Nombre_Empresa_Aseguradora.FieldName = "Nombre_Empresa_Aseguradora";
-            this.Nombre_Empresa_Aseguradora.Name = "Nombre_Empresa_Aseguradora";
-            // 
-            // Telefono1
-            // 
-            this.Telefono1.Caption = "Telefono";
-            this.Telefono1.FieldName = "Telefono";
-            this.Telefono1.Name = "Telefono1";
-            this.Telefono1.Visible = true;
-            this.Telefono1.VisibleIndex = 1;
-            // 
-            // Nombre_Empleado
-            // 
-            this.Nombre_Empleado.Caption = "Empleado";
-            this.Nombre_Empleado.FieldName = "Nombre_Empleado";
-            this.Nombre_Empleado.Name = "Nombre_Empleado";
-            this.Nombre_Empleado.Visible = true;
-            this.Nombre_Empleado.VisibleIndex = 2;
-            // 
-            // Telefono
-            // 
-            this.Telefono.Caption = "Telefono";
-            this.Telefono.FieldName = "Telefono";
-            this.Telefono.Name = "Telefono";
-            this.Telefono.Visible = true;
-            this.Telefono.VisibleIndex = 3;
-            // 
-            // RFC
-            // 
-            this.RFC.Caption = "RFC";
-            this.RFC.FieldName = "RFC";
-            this.RFC.Name = "RFC";
-            this.RFC.Visible = true;
-            this.RFC.VisibleIndex = 4;
-            // 
-            // CURP
-            // 
-            this.CURP.Caption = "CURP";
-            this.CURP.FieldName = "CURP";
-            this.CURP.Name = "CURP";
-            this.CURP.Visible = true;
-            this.CURP.VisibleIndex = 5;
-            // 
-            // No_Identificacion
-            // 
-            this.No_Identificacion.Caption = "Identificación";
-            this.No_Identificacion.FieldName = "No_Identificacion";
-            this.No_Identificacion.Name = "No_Identificacion";
-            this.No_Identificacion.Visible = true;
-            this.No_Identificacion.VisibleIndex = 6;
-            // 
-            // Id_Licencia
-            // 
-            this.Id_Licencia.Caption = "Id Licencia";
-            this.Id_Licencia.FieldName = "Id_Licencia";
-            this.Id_Licencia.Name = "Id_Licencia";
-            // 
-            // No_Licencia
-            // 
-            this.No_Licencia.Caption = "Licencia";
-            this.No_Licencia.FieldName = "No_Licencia";
-            this.No_Licencia.Name = "No_Licencia";
-            this.No_Licencia.Visible = true;
-            this.No_Licencia.VisibleIndex = 7;
             // 
             // groupControl1
             // 
@@ -450,6 +377,7 @@
             this.btnbuscar.Name = "btnbuscar";
             this.btnbuscar.Size = new System.Drawing.Size(24, 21);
             this.btnbuscar.TabIndex = 6;
+            this.btnbuscar.Click += new System.EventHandler(this.btnbuscar_Click);
             // 
             // label
             // 
@@ -496,7 +424,7 @@
             this.xtraTabPage2.Controls.Add(this.groupControl2);
             this.xtraTabPage2.Name = "xtraTabPage2";
             this.xtraTabPage2.Padding = new System.Windows.Forms.Padding(5);
-            this.xtraTabPage2.Size = new System.Drawing.Size(648, 403);
+            this.xtraTabPage2.Size = new System.Drawing.Size(671, 403);
             this.xtraTabPage2.Text = "Domicilio";
             // 
             // panelControl2
@@ -506,7 +434,7 @@
             this.panelControl2.Location = new System.Drawing.Point(5, 149);
             this.panelControl2.Name = "panelControl2";
             this.panelControl2.Padding = new System.Windows.Forms.Padding(10);
-            this.panelControl2.Size = new System.Drawing.Size(638, 249);
+            this.panelControl2.Size = new System.Drawing.Size(661, 249);
             this.panelControl2.TabIndex = 16;
             // 
             // gridControl2
@@ -516,10 +444,11 @@
             this.gridControl2.MainView = this.gridView2;
             this.gridControl2.MenuManager = this.barManager1;
             this.gridControl2.Name = "gridControl2";
-            this.gridControl2.Size = new System.Drawing.Size(614, 225);
+            this.gridControl2.Size = new System.Drawing.Size(637, 225);
             this.gridControl2.TabIndex = 0;
             this.gridControl2.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView2});
+            this.gridControl2.Click += new System.EventHandler(this.gridControl2_Click);
             // 
             // gridView2
             // 
@@ -644,7 +573,7 @@
             this.groupControl2.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupControl2.Location = new System.Drawing.Point(5, 5);
             this.groupControl2.Name = "groupControl2";
-            this.groupControl2.Size = new System.Drawing.Size(638, 144);
+            this.groupControl2.Size = new System.Drawing.Size(661, 144);
             this.groupControl2.TabIndex = 1;
             this.groupControl2.Text = "Domicilio";
             // 
@@ -663,6 +592,7 @@
             this.btnBusqTipoDomicilio.Name = "btnBusqTipoDomicilio";
             this.btnBusqTipoDomicilio.Size = new System.Drawing.Size(24, 23);
             this.btnBusqTipoDomicilio.TabIndex = 18;
+            this.btnBusqTipoDomicilio.Click += new System.EventHandler(this.btnBusqTipoDomicilio_Click);
             // 
             // textTipoDomicilio
             // 
@@ -679,6 +609,7 @@
             this.btnBusqEstado.Name = "btnBusqEstado";
             this.btnBusqEstado.Size = new System.Drawing.Size(24, 23);
             this.btnBusqEstado.TabIndex = 16;
+            this.btnBusqEstado.Click += new System.EventHandler(this.btnBusqEstado_Click);
             // 
             // textCodigoPostal
             // 
@@ -793,11 +724,43 @@
             this.labelControl18.TabIndex = 0;
             this.labelControl18.Text = "Id domicilio: ";
             // 
+            // Nombre_Agente_Empresa_Aseguradora
+            // 
+            this.Nombre_Agente_Empresa_Aseguradora.Caption = "Aseguradora";
+            this.Nombre_Agente_Empresa_Aseguradora.FieldName = "Nombre_Agente_Empresa_Aseguradora";
+            this.Nombre_Agente_Empresa_Aseguradora.Name = "Nombre_Agente_Empresa_Aseguradora";
+            this.Nombre_Agente_Empresa_Aseguradora.Visible = true;
+            this.Nombre_Agente_Empresa_Aseguradora.VisibleIndex = 1;
+            // 
+            // Telefono
+            // 
+            this.Telefono.Caption = "Telefono";
+            this.Telefono.FieldName = "Telefono";
+            this.Telefono.Name = "Telefono";
+            this.Telefono.Visible = true;
+            this.Telefono.VisibleIndex = 2;
+            // 
+            // Id_Empresa_Aseguradora
+            // 
+            this.Id_Empresa_Aseguradora.Caption = "Id Aseguradora";
+            this.Id_Empresa_Aseguradora.FieldName = "Id_Empresa_Aseguradora";
+            this.Id_Empresa_Aseguradora.Name = "Id_Empresa_Aseguradora";
+            this.Id_Empresa_Aseguradora.Visible = true;
+            this.Id_Empresa_Aseguradora.VisibleIndex = 3;
+            // 
+            // Nombre_Empresa_Aseguradora
+            // 
+            this.Nombre_Empresa_Aseguradora.Caption = "Aseguradora";
+            this.Nombre_Empresa_Aseguradora.FieldName = "Nombre_Empresa_Aseguradora";
+            this.Nombre_Empresa_Aseguradora.Name = "Nombre_Empresa_Aseguradora";
+            this.Nombre_Empresa_Aseguradora.Visible = true;
+            this.Nombre_Empresa_Aseguradora.VisibleIndex = 4;
+            // 
             // Frm_Agente_Empresa_Aseguradora
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(710, 456);
+            this.ClientSize = new System.Drawing.Size(733, 456);
             this.Controls.Add(this.xtraTabControl1);
             this.Controls.Add(this.barDockControlLeft);
             this.Controls.Add(this.barDockControlRight);
@@ -805,6 +768,7 @@
             this.Controls.Add(this.barDockControlTop);
             this.Name = "Frm_Agente_Empresa_Aseguradora";
             this.Text = "Frm_Agente_Empresa_Aseguradora";
+            this.Load += new System.EventHandler(this.Frm_Agente_Empresa_Aseguradora_Load);
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).EndInit();
@@ -863,15 +827,6 @@
         private DevExpress.XtraGrid.GridControl gridControl1;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
         private DevExpress.XtraGrid.Columns.GridColumn Id_Agente_Empresa_Aseguradora;
-        private DevExpress.XtraGrid.Columns.GridColumn Nombre_Empresa_Aseguradora;
-        private DevExpress.XtraGrid.Columns.GridColumn Telefono1;
-        private DevExpress.XtraGrid.Columns.GridColumn Nombre_Empleado;
-        private DevExpress.XtraGrid.Columns.GridColumn Telefono;
-        private DevExpress.XtraGrid.Columns.GridColumn RFC;
-        private DevExpress.XtraGrid.Columns.GridColumn CURP;
-        private DevExpress.XtraGrid.Columns.GridColumn No_Identificacion;
-        private DevExpress.XtraGrid.Columns.GridColumn Id_Licencia;
-        private DevExpress.XtraGrid.Columns.GridColumn No_Licencia;
         private DevExpress.XtraEditors.GroupControl groupControl1;
         private DevExpress.XtraEditors.TextEdit textAseguradora;
         private DevExpress.XtraEditors.LabelControl labelControl7;
@@ -915,5 +870,9 @@
         private DevExpress.XtraEditors.LabelControl labelControl17;
         private DevExpress.XtraEditors.TextEdit textIdDomicilio;
         private DevExpress.XtraEditors.LabelControl labelControl18;
+        private DevExpress.XtraGrid.Columns.GridColumn Nombre_Agente_Empresa_Aseguradora;
+        private DevExpress.XtraGrid.Columns.GridColumn Telefono;
+        private DevExpress.XtraGrid.Columns.GridColumn Id_Empresa_Aseguradora;
+        private DevExpress.XtraGrid.Columns.GridColumn Nombre_Empresa_Aseguradora;
     }
 }
