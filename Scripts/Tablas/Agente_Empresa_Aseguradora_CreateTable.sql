@@ -9,7 +9,7 @@ ELSE
 		
 	CREATE TABLE [dbo].[Agente_Empresa_Aseguradora](
 		[Id_Agente_Empresa_Aseguradora] [char](4) NOT NULL,
-		[Nombre_Empresa_Aseguradora] [varchar](80) NULL,
+		[Nombre_Agente_Empresa_Aseguradora] [varchar](80) NULL,
 		[Telefono] [varchar](15) NULL,
 		[Id_Empresa_Aseguradora] [char](4) NULL,
 	 CONSTRAINT [PK_Agente_Empresa_Aseguradora] PRIMARY KEY CLUSTERED 

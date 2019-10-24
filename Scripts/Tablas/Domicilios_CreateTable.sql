@@ -8,7 +8,7 @@ ELSE
 	begin
 		
 	CREATE TABLE [dbo].[Domicilios](
-		[Id_Domicilio] [char](4) NOT NULL,
+		[Id_Domicilio] [char](6) NOT NULL,
 		[Calle] [varchar](100) NULL,
 		[NoInterior] [varchar](10) NULL,
 		[NoExterior] [varchar](10) NULL,

@@ -15,7 +15,7 @@ GO
 -- =============================================
 create PROCEDURE [dbo].[SP_Domicilio_Insert] 
 	-- Add the parameters for the stored procedure here
-	@Id_Domicilio char(4),
+	@Id_Domicilio char(6),
 	@Calle varchar(100),
 	@NoInterior varchar(10),
 	@NoExterior varchar(10),
@@ -38,7 +38,7 @@ BEGIN
 	begin try
 
 		declare @maximo char(6)
-		select @maximo=right(Concat('0000', isnull(max(Id_Domicilio),0)+1),4) from dbo.Domicilios
+		select @maximo=right(Concat('000000', isnull(max(Id_Domicilio),0)+1),6) from dbo.Domicilios
 
 		declare @Existe int
 		select @Existe = count(Id_Domicilio) from dbo.Domicilios a where (a.Id_Domicilio=@Id_Domicilio)
