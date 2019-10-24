@@ -284,7 +284,7 @@
             this.xtraTabPage1.Controls.Add(this.groupControl1);
             this.xtraTabPage1.Name = "xtraTabPage1";
             this.xtraTabPage1.Padding = new System.Windows.Forms.Padding(5);
-            this.xtraTabPage1.Size = new System.Drawing.Size(648, 403);
+            this.xtraTabPage1.Size = new System.Drawing.Size(671, 403);
             this.xtraTabPage1.Text = "Datos";
             // 
             // groupControl3
@@ -294,7 +294,7 @@
             this.groupControl3.Location = new System.Drawing.Point(5, 84);
             this.groupControl3.Name = "groupControl3";
             this.groupControl3.Padding = new System.Windows.Forms.Padding(5);
-            this.groupControl3.Size = new System.Drawing.Size(638, 314);
+            this.groupControl3.Size = new System.Drawing.Size(661, 314);
             this.groupControl3.TabIndex = 1;
             // 
             // gridControl1
@@ -303,7 +303,7 @@
             this.gridControl1.Location = new System.Drawing.Point(7, 25);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(624, 282);
+            this.gridControl1.Size = new System.Drawing.Size(647, 282);
             this.gridControl1.TabIndex = 0;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -324,7 +324,7 @@
             // 
             // Id_Agente_Empresa_Aseguradora
             // 
-            this.Id_Agente_Empresa_Aseguradora.Caption = "Id Aseguradora";
+            this.Id_Agente_Empresa_Aseguradora.Caption = "Id Agente";
             this.Id_Agente_Empresa_Aseguradora.FieldName = "Id_Agente_Empresa_Aseguradora";
             this.Id_Agente_Empresa_Aseguradora.Name = "Id_Agente_Empresa_Aseguradora";
             this.Id_Agente_Empresa_Aseguradora.Visible = true;
@@ -344,7 +344,7 @@
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupControl1.Location = new System.Drawing.Point(5, 5);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(638, 79);
+            this.groupControl1.Size = new System.Drawing.Size(661, 79);
             this.groupControl1.TabIndex = 0;
             this.groupControl1.Text = "Agente";
             // 
@@ -726,7 +726,7 @@
             // 
             // Nombre_Agente_Empresa_Aseguradora
             // 
-            this.Nombre_Agente_Empresa_Aseguradora.Caption = "Aseguradora";
+            this.Nombre_Agente_Empresa_Aseguradora.Caption = "Agente";
             this.Nombre_Agente_Empresa_Aseguradora.FieldName = "Nombre_Agente_Empresa_Aseguradora";
             this.Nombre_Agente_Empresa_Aseguradora.Name = "Nombre_Agente_Empresa_Aseguradora";
             this.Nombre_Agente_Empresa_Aseguradora.Visible = true;

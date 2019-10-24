@@ -568,7 +568,7 @@
             // 
             // Id_TipoDomicilio
             // 
-            this.Id_TipoDomicilio.Caption = "id Domicilio";
+            this.Id_TipoDomicilio.Caption = "id Tipo Domicilio";
             this.Id_TipoDomicilio.FieldName = "Id_TipoDomicilio";
             this.Id_TipoDomicilio.Name = "Id_TipoDomicilio";
             this.Id_TipoDomicilio.Visible = true;
