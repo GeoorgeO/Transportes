@@ -1,6 +1,6 @@
 ﻿namespace TransportBusiness
 {
-    partial class Frm_Agente_Empresa_Aseguradora
+    partial class Frm_Broker_Empresa_Aseguradora
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_Agente_Empresa_Aseguradora));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_Broker_Empresa_Aseguradora));
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.bIconos = new DevExpress.XtraBars.Bar();
             this.btnLimpiar = new DevExpress.XtraBars.BarLargeButtonItem();
@@ -48,16 +48,20 @@
             this.groupControl3 = new DevExpress.XtraEditors.GroupControl();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.Id_Agente_Empresa_Aseguradora = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Id_Broker_Empresa_Aseguradora = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Nombre_Broker_Empresa_Aseguradora = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Telefono = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Id_Empresa_Aseguradora = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Nombre_Empresa_Aseguradora = new DevExpress.XtraGrid.Columns.GridColumn();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.textAseguradora = new DevExpress.XtraEditors.TextEdit();
             this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
             this.textTelefono = new DevExpress.XtraEditors.TextEdit();
             this.btnbuscar = new DevExpress.XtraEditors.SimpleButton();
             this.label = new DevExpress.XtraEditors.LabelControl();
-            this.textAgente = new DevExpress.XtraEditors.TextEdit();
+            this.textBroker = new DevExpress.XtraEditors.TextEdit();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
-            this.textIdAgente = new DevExpress.XtraEditors.TextEdit();
+            this.textIdBroker = new DevExpress.XtraEditors.TextEdit();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.xtraTabPage2 = new DevExpress.XtraTab.XtraTabPage();
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
@@ -92,10 +96,6 @@
             this.labelControl17 = new DevExpress.XtraEditors.LabelControl();
             this.textIdDomicilio = new DevExpress.XtraEditors.TextEdit();
             this.labelControl18 = new DevExpress.XtraEditors.LabelControl();
-            this.Nombre_Agente_Empresa_Aseguradora = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.Telefono = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.Id_Empresa_Aseguradora = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.Nombre_Empresa_Aseguradora = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).BeginInit();
@@ -109,8 +109,8 @@
             this.groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.textAseguradora.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textTelefono.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textAgente.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textIdAgente.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textBroker.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textIdBroker.Properties)).BeginInit();
             this.xtraTabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
             this.panelControl2.SuspendLayout();
@@ -236,15 +236,15 @@
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
             this.barDockControlTop.Manager = this.barManager1;
-            this.barDockControlTop.Size = new System.Drawing.Size(733, 0);
+            this.barDockControlTop.Size = new System.Drawing.Size(745, 0);
             // 
             // barDockControlBottom
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 431);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 377);
             this.barDockControlBottom.Manager = this.barManager1;
-            this.barDockControlBottom.Size = new System.Drawing.Size(733, 25);
+            this.barDockControlBottom.Size = new System.Drawing.Size(745, 25);
             // 
             // barDockControlLeft
             // 
@@ -252,15 +252,15 @@
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.barDockControlLeft.Location = new System.Drawing.Point(0, 0);
             this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Size = new System.Drawing.Size(56, 431);
+            this.barDockControlLeft.Size = new System.Drawing.Size(56, 377);
             // 
             // barDockControlRight
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(733, 0);
+            this.barDockControlRight.Location = new System.Drawing.Point(745, 0);
             this.barDockControlRight.Manager = this.barManager1;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 431);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 377);
             // 
             // repositoryItemTextEdit1
             // 
@@ -272,8 +272,8 @@
             this.xtraTabControl1.Location = new System.Drawing.Point(56, 0);
             this.xtraTabControl1.Name = "xtraTabControl1";
             this.xtraTabControl1.SelectedTabPage = this.xtraTabPage1;
-            this.xtraTabControl1.Size = new System.Drawing.Size(677, 431);
-            this.xtraTabControl1.TabIndex = 4;
+            this.xtraTabControl1.Size = new System.Drawing.Size(689, 377);
+            this.xtraTabControl1.TabIndex = 5;
             this.xtraTabControl1.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.xtraTabPage1,
             this.xtraTabPage2});
@@ -284,7 +284,7 @@
             this.xtraTabPage1.Controls.Add(this.groupControl1);
             this.xtraTabPage1.Name = "xtraTabPage1";
             this.xtraTabPage1.Padding = new System.Windows.Forms.Padding(5);
-            this.xtraTabPage1.Size = new System.Drawing.Size(671, 403);
+            this.xtraTabPage1.Size = new System.Drawing.Size(683, 349);
             this.xtraTabPage1.Text = "Datos";
             // 
             // groupControl3
@@ -294,7 +294,7 @@
             this.groupControl3.Location = new System.Drawing.Point(5, 84);
             this.groupControl3.Name = "groupControl3";
             this.groupControl3.Padding = new System.Windows.Forms.Padding(5);
-            this.groupControl3.Size = new System.Drawing.Size(661, 314);
+            this.groupControl3.Size = new System.Drawing.Size(673, 260);
             this.groupControl3.TabIndex = 1;
             // 
             // gridControl1
@@ -303,7 +303,7 @@
             this.gridControl1.Location = new System.Drawing.Point(7, 25);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(647, 282);
+            this.gridControl1.Size = new System.Drawing.Size(659, 228);
             this.gridControl1.TabIndex = 0;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -312,8 +312,8 @@
             // gridView1
             // 
             this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.Id_Agente_Empresa_Aseguradora,
-            this.Nombre_Agente_Empresa_Aseguradora,
+            this.Id_Broker_Empresa_Aseguradora,
+            this.Nombre_Broker_Empresa_Aseguradora,
             this.Telefono,
             this.Id_Empresa_Aseguradora,
             this.Nombre_Empresa_Aseguradora});
@@ -322,13 +322,45 @@
             this.gridView1.OptionsBehavior.Editable = false;
             this.gridView1.OptionsView.ShowGroupPanel = false;
             // 
-            // Id_Agente_Empresa_Aseguradora
+            // Id_Broker_Empresa_Aseguradora
             // 
-            this.Id_Agente_Empresa_Aseguradora.Caption = "Id Agente";
-            this.Id_Agente_Empresa_Aseguradora.FieldName = "Id_Agente_Empresa_Aseguradora";
-            this.Id_Agente_Empresa_Aseguradora.Name = "Id_Agente_Empresa_Aseguradora";
-            this.Id_Agente_Empresa_Aseguradora.Visible = true;
-            this.Id_Agente_Empresa_Aseguradora.VisibleIndex = 0;
+            this.Id_Broker_Empresa_Aseguradora.Caption = "Id Broker";
+            this.Id_Broker_Empresa_Aseguradora.FieldName = "Id_Broker_Empresa_Aseguradora";
+            this.Id_Broker_Empresa_Aseguradora.Name = "Id_Broker_Empresa_Aseguradora";
+            this.Id_Broker_Empresa_Aseguradora.Visible = true;
+            this.Id_Broker_Empresa_Aseguradora.VisibleIndex = 0;
+            // 
+            // Nombre_Broker_Empresa_Aseguradora
+            // 
+            this.Nombre_Broker_Empresa_Aseguradora.Caption = "Broker";
+            this.Nombre_Broker_Empresa_Aseguradora.FieldName = "Nombre_Broker_Empresa_Aseguradora";
+            this.Nombre_Broker_Empresa_Aseguradora.Name = "Nombre_Broker_Empresa_Aseguradora";
+            this.Nombre_Broker_Empresa_Aseguradora.Visible = true;
+            this.Nombre_Broker_Empresa_Aseguradora.VisibleIndex = 1;
+            // 
+            // Telefono
+            // 
+            this.Telefono.Caption = "Telefono";
+            this.Telefono.FieldName = "Telefono";
+            this.Telefono.Name = "Telefono";
+            this.Telefono.Visible = true;
+            this.Telefono.VisibleIndex = 2;
+            // 
+            // Id_Empresa_Aseguradora
+            // 
+            this.Id_Empresa_Aseguradora.Caption = "Id Aseguradora";
+            this.Id_Empresa_Aseguradora.FieldName = "Id_Empresa_Aseguradora";
+            this.Id_Empresa_Aseguradora.Name = "Id_Empresa_Aseguradora";
+            this.Id_Empresa_Aseguradora.Visible = true;
+            this.Id_Empresa_Aseguradora.VisibleIndex = 3;
+            // 
+            // Nombre_Empresa_Aseguradora
+            // 
+            this.Nombre_Empresa_Aseguradora.Caption = "Aseguradora";
+            this.Nombre_Empresa_Aseguradora.FieldName = "Nombre_Empresa_Aseguradora";
+            this.Nombre_Empresa_Aseguradora.Name = "Nombre_Empresa_Aseguradora";
+            this.Nombre_Empresa_Aseguradora.Visible = true;
+            this.Nombre_Empresa_Aseguradora.VisibleIndex = 4;
             // 
             // groupControl1
             // 
@@ -337,14 +369,14 @@
             this.groupControl1.Controls.Add(this.textTelefono);
             this.groupControl1.Controls.Add(this.btnbuscar);
             this.groupControl1.Controls.Add(this.label);
-            this.groupControl1.Controls.Add(this.textAgente);
+            this.groupControl1.Controls.Add(this.textBroker);
             this.groupControl1.Controls.Add(this.labelControl2);
-            this.groupControl1.Controls.Add(this.textIdAgente);
+            this.groupControl1.Controls.Add(this.textIdBroker);
             this.groupControl1.Controls.Add(this.labelControl1);
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupControl1.Location = new System.Drawing.Point(5, 5);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(661, 79);
+            this.groupControl1.Size = new System.Drawing.Size(673, 79);
             this.groupControl1.TabIndex = 0;
             this.groupControl1.Text = "Agente";
             // 
@@ -387,12 +419,12 @@
             this.label.TabIndex = 4;
             this.label.Text = "Telefono:";
             // 
-            // textAgente
+            // textBroker
             // 
-            this.textAgente.Location = new System.Drawing.Point(65, 53);
-            this.textAgente.Name = "textAgente";
-            this.textAgente.Size = new System.Drawing.Size(192, 20);
-            this.textAgente.TabIndex = 3;
+            this.textBroker.Location = new System.Drawing.Point(65, 53);
+            this.textBroker.Name = "textBroker";
+            this.textBroker.Size = new System.Drawing.Size(192, 20);
+            this.textBroker.TabIndex = 3;
             // 
             // labelControl2
             // 
@@ -402,21 +434,21 @@
             this.labelControl2.TabIndex = 2;
             this.labelControl2.Text = "Nombre:";
             // 
-            // textIdAgente
+            // textIdBroker
             // 
-            this.textIdAgente.Enabled = false;
-            this.textIdAgente.Location = new System.Drawing.Point(65, 29);
-            this.textIdAgente.Name = "textIdAgente";
-            this.textIdAgente.Size = new System.Drawing.Size(100, 20);
-            this.textIdAgente.TabIndex = 1;
+            this.textIdBroker.Enabled = false;
+            this.textIdBroker.Location = new System.Drawing.Point(65, 29);
+            this.textIdBroker.Name = "textIdBroker";
+            this.textIdBroker.Size = new System.Drawing.Size(100, 20);
+            this.textIdBroker.TabIndex = 1;
             // 
             // labelControl1
             // 
             this.labelControl1.Location = new System.Drawing.Point(10, 32);
             this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(55, 13);
+            this.labelControl1.Size = new System.Drawing.Size(51, 13);
             this.labelControl1.TabIndex = 0;
-            this.labelControl1.Text = "Id Agente: ";
+            this.labelControl1.Text = "Id Broker: ";
             // 
             // xtraTabPage2
             // 
@@ -424,7 +456,7 @@
             this.xtraTabPage2.Controls.Add(this.groupControl2);
             this.xtraTabPage2.Name = "xtraTabPage2";
             this.xtraTabPage2.Padding = new System.Windows.Forms.Padding(5);
-            this.xtraTabPage2.Size = new System.Drawing.Size(671, 403);
+            this.xtraTabPage2.Size = new System.Drawing.Size(683, 349);
             this.xtraTabPage2.Text = "Domicilio";
             // 
             // panelControl2
@@ -434,7 +466,7 @@
             this.panelControl2.Location = new System.Drawing.Point(5, 149);
             this.panelControl2.Name = "panelControl2";
             this.panelControl2.Padding = new System.Windows.Forms.Padding(10);
-            this.panelControl2.Size = new System.Drawing.Size(661, 249);
+            this.panelControl2.Size = new System.Drawing.Size(673, 195);
             this.panelControl2.TabIndex = 16;
             // 
             // gridControl2
@@ -444,7 +476,7 @@
             this.gridControl2.MainView = this.gridView2;
             this.gridControl2.MenuManager = this.barManager1;
             this.gridControl2.Name = "gridControl2";
-            this.gridControl2.Size = new System.Drawing.Size(637, 225);
+            this.gridControl2.Size = new System.Drawing.Size(649, 171);
             this.gridControl2.TabIndex = 0;
             this.gridControl2.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView2});
@@ -573,7 +605,7 @@
             this.groupControl2.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupControl2.Location = new System.Drawing.Point(5, 5);
             this.groupControl2.Name = "groupControl2";
-            this.groupControl2.Size = new System.Drawing.Size(661, 144);
+            this.groupControl2.Size = new System.Drawing.Size(673, 144);
             this.groupControl2.TabIndex = 1;
             this.groupControl2.Text = "Domicilio";
             // 
@@ -724,51 +756,19 @@
             this.labelControl18.TabIndex = 0;
             this.labelControl18.Text = "Id domicilio: ";
             // 
-            // Nombre_Agente_Empresa_Aseguradora
-            // 
-            this.Nombre_Agente_Empresa_Aseguradora.Caption = "Agente";
-            this.Nombre_Agente_Empresa_Aseguradora.FieldName = "Nombre_Agente_Empresa_Aseguradora";
-            this.Nombre_Agente_Empresa_Aseguradora.Name = "Nombre_Agente_Empresa_Aseguradora";
-            this.Nombre_Agente_Empresa_Aseguradora.Visible = true;
-            this.Nombre_Agente_Empresa_Aseguradora.VisibleIndex = 1;
-            // 
-            // Telefono
-            // 
-            this.Telefono.Caption = "Telefono";
-            this.Telefono.FieldName = "Telefono";
-            this.Telefono.Name = "Telefono";
-            this.Telefono.Visible = true;
-            this.Telefono.VisibleIndex = 2;
-            // 
-            // Id_Empresa_Aseguradora
-            // 
-            this.Id_Empresa_Aseguradora.Caption = "Id Aseguradora";
-            this.Id_Empresa_Aseguradora.FieldName = "Id_Empresa_Aseguradora";
-            this.Id_Empresa_Aseguradora.Name = "Id_Empresa_Aseguradora";
-            this.Id_Empresa_Aseguradora.Visible = true;
-            this.Id_Empresa_Aseguradora.VisibleIndex = 3;
-            // 
-            // Nombre_Empresa_Aseguradora
-            // 
-            this.Nombre_Empresa_Aseguradora.Caption = "Aseguradora";
-            this.Nombre_Empresa_Aseguradora.FieldName = "Nombre_Empresa_Aseguradora";
-            this.Nombre_Empresa_Aseguradora.Name = "Nombre_Empresa_Aseguradora";
-            this.Nombre_Empresa_Aseguradora.Visible = true;
-            this.Nombre_Empresa_Aseguradora.VisibleIndex = 4;
-            // 
-            // Frm_Agente_Empresa_Aseguradora
+            // Frm_Broker_Empresa_Aseguradora
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(733, 456);
+            this.ClientSize = new System.Drawing.Size(745, 402);
             this.Controls.Add(this.xtraTabControl1);
             this.Controls.Add(this.barDockControlLeft);
             this.Controls.Add(this.barDockControlRight);
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
-            this.Name = "Frm_Agente_Empresa_Aseguradora";
-            this.Text = "Frm_Agente_Empresa_Aseguradora";
-            this.Load += new System.EventHandler(this.Frm_Agente_Empresa_Aseguradora_Load);
+            this.Name = "Frm_Broker_Empresa_Aseguradora";
+            this.Text = "Frm_Broker_Empresa_Aseguradora";
+            this.Load += new System.EventHandler(this.Frm_Broker_Empresa_Aseguradora_Load);
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).EndInit();
@@ -783,8 +783,8 @@
             this.groupControl1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.textAseguradora.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textTelefono.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textAgente.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textIdAgente.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textBroker.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textIdBroker.Properties)).EndInit();
             this.xtraTabPage2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).EndInit();
             this.panelControl2.ResumeLayout(false);
@@ -826,16 +826,20 @@
         private DevExpress.XtraEditors.GroupControl groupControl3;
         private DevExpress.XtraGrid.GridControl gridControl1;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
-        private DevExpress.XtraGrid.Columns.GridColumn Id_Agente_Empresa_Aseguradora;
+        private DevExpress.XtraGrid.Columns.GridColumn Id_Broker_Empresa_Aseguradora;
+        private DevExpress.XtraGrid.Columns.GridColumn Nombre_Broker_Empresa_Aseguradora;
+        private DevExpress.XtraGrid.Columns.GridColumn Telefono;
+        private DevExpress.XtraGrid.Columns.GridColumn Id_Empresa_Aseguradora;
+        private DevExpress.XtraGrid.Columns.GridColumn Nombre_Empresa_Aseguradora;
         private DevExpress.XtraEditors.GroupControl groupControl1;
         private DevExpress.XtraEditors.TextEdit textAseguradora;
         private DevExpress.XtraEditors.LabelControl labelControl7;
         private DevExpress.XtraEditors.TextEdit textTelefono;
         private DevExpress.XtraEditors.SimpleButton btnbuscar;
         private DevExpress.XtraEditors.LabelControl label;
-        private DevExpress.XtraEditors.TextEdit textAgente;
+        private DevExpress.XtraEditors.TextEdit textBroker;
         private DevExpress.XtraEditors.LabelControl labelControl2;
-        private DevExpress.XtraEditors.TextEdit textIdAgente;
+        private DevExpress.XtraEditors.TextEdit textIdBroker;
         private DevExpress.XtraEditors.LabelControl labelControl1;
         private DevExpress.XtraTab.XtraTabPage xtraTabPage2;
         private DevExpress.XtraEditors.PanelControl panelControl2;
@@ -870,9 +874,5 @@
         private DevExpress.XtraEditors.LabelControl labelControl17;
         private DevExpress.XtraEditors.TextEdit textIdDomicilio;
         private DevExpress.XtraEditors.LabelControl labelControl18;
-        private DevExpress.XtraGrid.Columns.GridColumn Nombre_Agente_Empresa_Aseguradora;
-        private DevExpress.XtraGrid.Columns.GridColumn Telefono;
-        private DevExpress.XtraGrid.Columns.GridColumn Id_Empresa_Aseguradora;
-        private DevExpress.XtraGrid.Columns.GridColumn Nombre_Empresa_Aseguradora;
     }
 }

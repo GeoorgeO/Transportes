@@ -22,7 +22,7 @@ create PROCEDURE [dbo].[SP_Domicilio_Insert]
 	@Colonia varchar(50),
 	@Codigo_Postal char(5),
 	@Id_Estado char(3),
-	@Id_TipoDomicilio char(3),
+	@Id_TipoDomicilio char(4),
 	@Id_Persona char(6),
 	@id_TipoPersona char(4)
 AS
