@@ -14,6 +14,22 @@ namespace TransportBusiness
 {
     public partial class Frm_Aseguradoras : DevExpress.XtraEditors.XtraForm
     {
+
+        private static Frm_Aseguradoras m_FormDefInstance;
+        public static Frm_Aseguradoras DefInstance
+        {
+            get
+            {
+                if (m_FormDefInstance == null || m_FormDefInstance.IsDisposed)
+                    m_FormDefInstance = new Frm_Aseguradoras(false);
+                return m_FormDefInstance;
+            }
+            set
+            {
+                m_FormDefInstance = value;
+            }
+        }
+
         const string idTipoPersona = "0003";
         public Boolean PaSel { get; set; }
 

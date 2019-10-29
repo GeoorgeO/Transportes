@@ -25,9 +25,9 @@ ELSE
 		[Id_Tipo_Transporte] [char](4) NULL,
 		[Poliza_Seguro] [varchar](20) NULL,
 		[Id_Empresa_Aseguradora] [char](4) NULL,
-		[Status] [char](5) NULL,
+		[Status] [char](8) NULL,
 		[Asignado] [bit] NULL,
-		[Id_Empleado] [char](4) NULL,
+		[Id_Empleado] [char](6) NULL,
 		[Id_Empresa] [char](4) NULL,
 	 CONSTRAINT [PK_Activos] PRIMARY KEY CLUSTERED 
 	(

@@ -14,6 +14,22 @@ namespace TransportBusiness
 {
     public partial class Frm_Estado : DevExpress.XtraEditors.XtraForm
     {
+
+        private static Frm_Estado m_FormDefInstance;
+        public static Frm_Estado DefInstance
+        {
+            get
+            {
+                if (m_FormDefInstance == null || m_FormDefInstance.IsDisposed)
+                    m_FormDefInstance = new Frm_Estado(false);
+                return m_FormDefInstance;
+            }
+            set
+            {
+                m_FormDefInstance = value;
+            }
+        }
+
         public Boolean PaSel { get; set; }
         public Frm_Estado(Boolean BPasel)
         {

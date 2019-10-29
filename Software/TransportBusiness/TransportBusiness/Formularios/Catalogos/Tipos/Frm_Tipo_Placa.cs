@@ -16,8 +16,12 @@ namespace TransportBusiness
     {
         public string vId_Tipo_Placa { get; set; }
         public string vNombre_Tipo_Placa { get; set; }
-        public Frm_Tipo_Placa()
+
+        public Boolean PaSel { get; set; }
+
+        public Frm_Tipo_Placa(Boolean BPasel)
         {
+            this.PaSel = BPasel;
             InitializeComponent();
         }
 
@@ -98,6 +102,14 @@ namespace TransportBusiness
 
         private void Frm_Tipo_Placa_Load(object sender, EventArgs e)
         {
+            if (PaSel == true)
+            {
+                btnSeleccionar.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+            }
+            else
+            {
+                btnSeleccionar.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+            }
             CargarTiposPlacas();
         }
 

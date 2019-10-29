@@ -16,8 +16,12 @@ namespace TransportBusiness
     {
         public string vId_Tipo_Activo { get; set; }
         public string vNombre_Tipo_Activo { get; set; }
-        public Frm_Tipo_Activo()
+
+        public Boolean PaSel { get; set; }
+
+        public Frm_Tipo_Activo(Boolean BPasel)
         {
+            this.PaSel = BPasel;
             InitializeComponent();
         }
 
@@ -99,6 +103,14 @@ namespace TransportBusiness
 
         private void Frm_Tipo_Activo_Load(object sender, EventArgs e)
         {
+            if (PaSel == true)
+            {
+                btnSeleccionar.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+            }
+            else
+            {
+                btnSeleccionar.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+            }
             CargarTiposActivos();
         }
 

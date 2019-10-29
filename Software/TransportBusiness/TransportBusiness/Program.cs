@@ -20,7 +20,7 @@ namespace TransportBusiness
 
             BonusSkins.Register();
             SkinManager.EnableFormSkins();
-            Application.Run(new Frm_Broker_Empresa_Aseguradora());
+            Application.Run(new Frm_Principal());
         }
     }
 }

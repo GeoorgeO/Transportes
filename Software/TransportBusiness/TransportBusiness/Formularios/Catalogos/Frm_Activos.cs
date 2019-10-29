@@ -8,11 +8,28 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
+using CapaDeDatos;
 
 namespace TransportBusiness
 {
     public partial class Frm_Activos : DevExpress.XtraEditors.XtraForm
     {
+
+        private static Frm_Activos m_FormDefInstance;
+        public static Frm_Activos DefInstance
+        {
+            get
+            {
+                if (m_FormDefInstance == null || m_FormDefInstance.IsDisposed)
+                    m_FormDefInstance = new Frm_Activos();
+                return m_FormDefInstance;
+            }
+            set
+            {
+                m_FormDefInstance = value;
+            }
+        }
+
         public Frm_Activos()
         {
             InitializeComponent();
@@ -29,7 +46,7 @@ namespace TransportBusiness
 
         private void btnTipoTransporte_Click(object sender, EventArgs e)
         {
-            Frm_Tipo_Transporte frm = new Frm_Tipo_Transporte();
+            Frm_Tipo_Transporte frm = new Frm_Tipo_Transporte(false);
             frm.ShowDialog();
 
             txtTipoTransporte.Text = frm.vNombre_Tipo_Transporte;
@@ -38,7 +55,7 @@ namespace TransportBusiness
 
         private void btnTipoActivo_Click(object sender, EventArgs e)
         {
-            Frm_Tipo_Activo frm = new Frm_Tipo_Activo();
+            Frm_Tipo_Activo frm = new Frm_Tipo_Activo(true);
             frm.ShowDialog();
 
             txtTipoActivo.Text = frm.vNombre_Tipo_Activo;
@@ -56,7 +73,7 @@ namespace TransportBusiness
 
         private void btnTipoPlaca_Click(object sender, EventArgs e)
         {
-            Frm_Tipo_Placa frm = new Frm_Tipo_Placa();
+            Frm_Tipo_Placa frm = new Frm_Tipo_Placa(false);
             frm.ShowDialog();
 
             txtTipoPlaca.Text = frm.vNombre_Tipo_Placa;
@@ -70,6 +87,233 @@ namespace TransportBusiness
 
             txtOperador.Text = frm.vNombre_Empleado;
             txtOperador.Tag = frm.vId_Empleado;
+        }
+
+        private void CargarActivos()
+        {
+            dtgActivos.DataSource = null;
+            CLS_Activos Activos = new CLS_Activos();
+
+            Activos.MtdSeleccionarActivos();
+            if (Activos.Exito)
+            {
+                dtgActivos.DataSource = Activos.Datos;
+            }
+        }
+
+        private string DosCero(string sVal)
+        {
+            string str = "";
+            if (sVal.Length == 1)
+            {
+                return (str = "0" + sVal);
+            }
+            return sVal;
+        }
+
+        private void InsertarActivos()
+        {
+            DateTime Fecha = Convert.ToDateTime(dtFechaAlta.Text.Trim());
+            DateTime Fecha2 = Convert.ToDateTime(txtFechaBaja.Text.Trim());
+
+            CLS_Activos Activos = new CLS_Activos();
+            Activos.Id_Activo = txtIdActivo.Text.Trim();
+            Activos.Nombre_Interno = txtNombreActivo.Text.Trim();
+            Activos.Descripcion = txtDescripcion.Text.Trim();
+            Activos.Id_Marca = txtMarca.Tag.ToString().Trim();
+            Activos.Color = txtColor.Text.Trim();
+            Activos.Costo_Unidad = Convert.ToDouble(txtCosto.Text.Trim());
+            Activos.Modelo = txtModelo.Text.Trim();
+            Activos.Serie = txtNoSerie.Text.Trim();
+            
+            Activos.Status = txtEstatus.Text.Trim();
+            Activos.Id_Tipo_Transporte = txtTipoTransporte.Tag.ToString().Trim();
+            Activos.Id_Tipo_Activo = txtTipoActivo.Tag.ToString().Trim();
+            Activos.Descripcion = txtTipoActivo.Tag.ToString().Trim();
+            Activos.Id_Empresa = txtEmpresa.Tag.ToString().Trim();
+            Activos.Tarjeta_Circulacion = txtTarjetaCirculacion.Text.Trim();
+            Activos.Placas = txtPlaca.Text.Trim();
+            Activos.Id_Tipo_Placa = txtTipoPlaca.Tag.ToString().Trim();
+            Activos.Id_Empleado = txtOperador.Tag.ToString().Trim();
+            Activos.Id_Empresa_Aseguradora = txtEmpresaAsegu.Tag.ToString().Trim();
+            Activos.Poliza_Seguro = txtPolizaSeguro.Text.Trim();
+            Activos.Fecha_Alta = Fecha.Year.ToString() + DosCero(Fecha.Month.ToString()) + DosCero(Fecha.Day.ToString());
+            Activos.Fecha_Baja = Fecha2.Year.ToString() + DosCero(Fecha2.Month.ToString()) + DosCero(Fecha2.Day.ToString());
+            if (cboAsignado.Text.Trim().Equals("Si"))
+            {
+                Activos.Asignado = "1";
+            }
+            else
+            {
+                Activos.Asignado = "0";
+            }
+            
+            Activos.MtdInsertarActivos();
+            if (Activos.Exito)
+            {
+
+                CargarActivos();
+                XtraMessageBox.Show("Se ha Insertado el registro con exito");
+                LimpiarCampos();
+            }
+            else
+            {
+                XtraMessageBox.Show(Activos.Mensaje);
+            }
+        }
+
+        private void EliminarActivos()
+        {
+            CLS_Activos Activos = new CLS_Activos();
+            Activos.Id_Activo = txtIdActivo.Text.Trim();
+            Activos.MtdEliminarActivos();
+            if (Activos.Exito)
+            {
+                CargarActivos();
+                XtraMessageBox.Show("Se ha Eliminado el registro con exito");
+                LimpiarCampos();
+            }
+            else
+            {
+                XtraMessageBox.Show(Activos.Mensaje);
+            }
+        }
+
+        private void LimpiarCampos()
+        {
+            txtIdActivo.Text = "";
+            txtNombreActivo.Text = "";
+            txtDescripcion.Text = "";
+            txtMarca.Text = "";
+            txtColor.Text = "";
+            txtCosto.Text = "";
+            txtModelo.Text = "";
+            txtNoSerie.Text = "";
+            txtEstatus.Text = "";
+            txtTipoTransporte.Text = "";
+            txtTipoActivo.Text = "";
+            txtEmpresa.Text = "";
+            txtTarjetaCirculacion.Text = "";
+            txtPlaca.Text = "";
+            txtTipoPlaca.Text = "";
+            txtOperador.Text = "";
+            txtEmpresaAsegu.Text = "";
+            txtPolizaSeguro.Text = "";
+            dtFechaAlta.Text = "";
+            txtFechaBaja.Text = "";
+        }
+
+        private void dtgActivos_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                foreach (int i in this.cardView1.GetSelectedRows())
+                {
+                    DataRow row = this.cardView1.GetDataRow(i);
+                   
+
+                    txtIdActivo.Text = row["Id_Activo"].ToString();
+                    txtNombreActivo.Text = row["Nombre_Interno"].ToString();
+                    txtDescripcion.Text = row["Descripcion"].ToString();
+                    txtMarca.Tag = row["Id_Marca"].ToString();
+                    txtMarca.Text = row["Nombre_Marca"].ToString();
+                    txtColor.Text = row["Color"].ToString();
+                    txtCosto.Text = row["Costo_Unidad"].ToString();
+                    txtModelo.Text = row["Modelo"].ToString();
+                    txtNoSerie.Text = row["Serie"].ToString();
+                    txtEstatus.Text = row["Status"].ToString();
+                    txtTipoTransporte.Tag = row["Id_Tipo_Transporte"].ToString();
+                    txtTipoTransporte.Text = row["Nombre_Tipo_Transporte"].ToString();
+                    txtTipoActivo.Tag = row["Id_Tipo_Activo"].ToString();
+                    txtTipoActivo.Text = row["Id_Tipo_Activo"].ToString();
+                    txtEmpresa.Tag = row["Id_Empresa"].ToString();
+                    txtEmpresa.Text = row["Nombre_Empresa"].ToString();
+                    txtTarjetaCirculacion.Text = row["Tarjeta_Circulacion"].ToString();
+                    txtPlaca.Text = row["Placas"].ToString();
+                    txtTipoPlaca.Tag = row["Id_Tipo_Placa"].ToString();
+                    txtTipoPlaca.Text = row["Nombre_Tipo_Placa"].ToString();
+                    txtOperador.Tag = row["Id_Empleado"].ToString();
+                    txtOperador.Text = row["Nombre_Empleado"].ToString();
+                    txtEmpresaAsegu.Tag = row["Id_Empresa_Aseguradora"].ToString();
+                    txtEmpresaAsegu.Text = row["Nombre_Empresa_Aseguradora"].ToString();
+                    txtPolizaSeguro.Text = row["Poliza_Seguro"].ToString();
+                    dtFechaAlta.Text = row["Fecha_Alta"].ToString();
+                    txtFechaBaja.Text = row["Fecha_Baja"].ToString();
+                    if (row["Asignado"].ToString().Equals("1")) {
+                        cboAsignado.Text = "Si";
+                            }
+                    else
+                    {
+                        cboAsignado.Text = "No";
+                    }
+
+
+                    if (row["Status"].ToString().Trim().Equals("ACTIVO"))
+                    {
+                        btnEliminar.Caption = "Dar de Baja";
+                    }else
+                    {
+                        btnEliminar.Caption = "Dar de Alta";
+                    }
+                }
+
+               
+            }
+            catch (Exception ex)
+            {
+                XtraMessageBox.Show(ex.Message);
+            }
+        }
+
+        private void btnGuardar_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            if (txtNombreActivo.Text.ToString().Trim().Length > 0)
+            {
+               
+
+                    InsertarActivos();
+                
+            }
+            else
+            {
+                XtraMessageBox.Show("Es necesario Agregar un nombre al Activo.");
+            }
+        }
+
+        private void btnEliminar_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            if (txtIdActivo.Text.Trim().Length > 0)
+            {
+                EliminarActivos();
+            }
+            else
+            {
+                XtraMessageBox.Show("Es necesario seleccionar un Activo.");
+            }
+        }
+
+        private void btnLimpiar_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            LimpiarCampos();
+        }
+
+        private void btnSalir_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            this.Close();
+        }
+
+        private void Frm_Activos_Load(object sender, EventArgs e)
+        {
+            CargarActivos();
+        }
+
+        private void btnEmpresaAsegu_Click(object sender, EventArgs e)
+        {
+            Frm_Aseguradoras frm = new Frm_Aseguradoras(true);
+            frm.ShowDialog();
+
+            txtEmpresaAsegu.Tag = frm.idAseguradora;
+            txtEmpresaAsegu.Text = frm.Aseguradora;
         }
     }
 }

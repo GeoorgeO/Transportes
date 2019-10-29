@@ -15,6 +15,9 @@ namespace TransportBusiness
 {
     public partial class Frm_Tipo_Persona : DevExpress.XtraEditors.XtraForm
     {
+
+
+
         public Frm_Tipo_Persona()
         {
             InitializeComponent();

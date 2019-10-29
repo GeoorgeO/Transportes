@@ -1,4 +1,4 @@
-﻿namespace TransportBusiness.Formularios.Catalogos
+﻿namespace TransportBusiness
 {
     partial class Frm_Clientes
     {

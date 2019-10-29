@@ -14,6 +14,22 @@ namespace TransportBusiness
 {
     public partial class Frm_Empresas : DevExpress.XtraEditors.XtraForm
     {
+
+        private static Frm_Empresas m_FormDefInstance;
+        public static Frm_Empresas DefInstance
+        {
+            get
+            {
+                if (m_FormDefInstance == null || m_FormDefInstance.IsDisposed)
+                    m_FormDefInstance = new Frm_Empresas();
+                return m_FormDefInstance;
+            }
+            set
+            {
+                m_FormDefInstance = value;
+            }
+        }
+
         public string vId_Empresa { get; set; }
         public string vNombre_Empresa { get; set; }
         public Frm_Empresas()
