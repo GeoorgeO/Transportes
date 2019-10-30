@@ -21,7 +21,7 @@ namespace TransportBusiness
             get
             {
                 if (m_FormDefInstance == null || m_FormDefInstance.IsDisposed)
-                    m_FormDefInstance = new Frm_Aseguradoras(false);
+                    m_FormDefInstance = new Frm_Aseguradoras();
                 return m_FormDefInstance;
             }
             set
@@ -33,9 +33,8 @@ namespace TransportBusiness
         const string idTipoPersona = "0003";
         public Boolean PaSel { get; set; }
 
-        public Frm_Aseguradoras(Boolean BPasel)
+        public Frm_Aseguradoras()
         {
-            this.PaSel = BPasel;
             InitializeComponent();
         }
 
@@ -261,6 +260,7 @@ namespace TransportBusiness
             if (xtraTabControl1.SelectedTabPage == xtraTabPage1)
             {
                 LimpiarCampos();
+                LimpiarCamposDomicilio();
             }
             else
             {

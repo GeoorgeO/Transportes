@@ -21,9 +21,8 @@ namespace TransportBusiness
 
        
 
-        public Frm_Tipo_Empleados(Boolean BPasel)
+        public Frm_Tipo_Empleados()
         {
-            this.PaSel = BPasel;
             InitializeComponent();
         }
 

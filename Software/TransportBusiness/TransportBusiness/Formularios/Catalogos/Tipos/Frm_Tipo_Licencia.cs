@@ -15,9 +15,8 @@ namespace TransportBusiness
     public partial class Frm_Tipo_Licencia : DevExpress.XtraEditors.XtraForm
     {
         public Boolean PaSel { get; set; }
-        public Frm_Tipo_Licencia(Boolean BPasel)
+        public Frm_Tipo_Licencia()
         {
-            this.PaSel = BPasel;
             InitializeComponent();
             
         }

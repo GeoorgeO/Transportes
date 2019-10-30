@@ -307,8 +307,8 @@ namespace TransportBusiness
 
         private void btnbuscar_Click(object sender, EventArgs e)
         {
-            Frm_Aseguradoras aseguradora = new Frm_Aseguradoras(true);
-
+            Frm_Aseguradoras aseguradora = new Frm_Aseguradoras();
+            aseguradora.PaSel = true;
             aseguradora.ShowDialog();
 
             textAseguradora.Tag = aseguradora.idAseguradora;
@@ -327,8 +327,8 @@ namespace TransportBusiness
 
         private void btnBusqTipoDomicilio_Click(object sender, EventArgs e)
         {
-            Frm_Tipo_Domicilio tipoDomicilio = new Frm_Tipo_Domicilio(true);
-
+            Frm_Tipo_Domicilio tipoDomicilio = new Frm_Tipo_Domicilio();
+            tipoDomicilio.PaSel = true;
             tipoDomicilio.ShowDialog();
 
             textTipoDomicilio.Tag = tipoDomicilio.IdTipoDomicilio;

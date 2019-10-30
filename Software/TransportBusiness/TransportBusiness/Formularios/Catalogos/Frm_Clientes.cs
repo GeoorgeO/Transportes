@@ -8,6 +8,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
+using CapaDeDatos;
 
 namespace TransportBusiness
 {
@@ -29,9 +30,292 @@ namespace TransportBusiness
             }
         }
 
+        const string idTipoPersona = "0006";
+
         public Frm_Clientes()
         {
             InitializeComponent();
+        }
+
+        private void CargarClientes()
+        {
+            gridControl1.DataSource = null;
+            CLS_Clientes Clientes = new CLS_Clientes();
+
+            Clientes.MtdSeleccionarClientes();
+            if (Clientes.Exito)
+            {
+                gridControl1.DataSource = Clientes.Datos;
+            }
+        }
+
+        private void CargarDomicilio()
+        {
+            gridControl2.DataSource = null;
+            CLS_Domicilios Domicilio = new CLS_Domicilios();
+            Domicilio.Id_Empleado = textIdCliente.Text.Trim();
+            Domicilio.id_TipoPersona = idTipoPersona;
+            Domicilio.MtdSeleccionarDomicilio();
+            if (Domicilio.Exito)
+            {
+                gridControl2.DataSource = Domicilio.Datos;
+            }
+        }
+
+        private void InsertarClientes()
+        {
+            CLS_Clientes Clientes = new CLS_Clientes();
+            Clientes.Id_Cliente = textIdCliente.Text.Trim();
+            Clientes.Nombre_Cliente = textCliente.Text.Trim();
+            Clientes.Telefono = textTelefono.Text.Trim();
+            Clientes.RFC_Cliente = textRFC.Text.Trim();
+            Clientes.MtdInsertarClientes();
+            if (Clientes.Exito)
+            {
+
+                CargarClientes();
+                XtraMessageBox.Show("Se ha Insertado el registro con exito");
+                LimpiarCampos();
+            }
+            else
+            {
+                XtraMessageBox.Show(Clientes.Mensaje);
+            }
+        }
+
+        private void InsertarDomicilio()
+        {
+            CLS_Domicilios Domicilio = new CLS_Domicilios();
+            Domicilio.Id_Domicilio = textIdDomicilio.Text.Trim();
+            Domicilio.Calle = textCalle.Text.Trim();
+            Domicilio.NoInterior = textNoInterior.Text.Trim();
+            Domicilio.NoExterior = textNoExterior.Text.Trim();
+            Domicilio.Colonia = textColonia.Text.Trim();
+            Domicilio.Codigo_Postal = textCodigoPostal.Text.Trim();
+            Domicilio.Id_Estado = textEstado.Tag.ToString().Trim();
+            Domicilio.Id_TipoDomicilio = textTipoDomicilio.Tag.ToString().Trim();
+            Domicilio.Id_Empleado = textIdCliente.Text.Trim();
+            Domicilio.id_TipoPersona = idTipoPersona;
+            Domicilio.MtdInsertarDomicilio();
+            if (Domicilio.Exito)
+            {
+
+                CargarDomicilio();
+                XtraMessageBox.Show("Se ha Insertado el registro con exito");
+                LimpiarCamposDomicilio();
+            }
+            else
+            {
+                XtraMessageBox.Show(Domicilio.Mensaje);
+            }
+        }
+
+        private void EliminarClientes()
+        {
+            CLS_Clientes Clientes = new CLS_Clientes();
+            Clientes.Id_Cliente = textIdCliente.Text.Trim();
+            Clientes.MtdEliminarClientes();
+            if (Clientes.Exito)
+            {
+                CargarClientes();
+                XtraMessageBox.Show("Se ha Eliminado el registro con exito");
+                LimpiarCampos();
+            }
+            else
+            {
+                XtraMessageBox.Show(Clientes.Mensaje);
+            }
+        }
+
+        private void EliminarDomicilio()
+        {
+            CLS_Domicilios Domicilio = new CLS_Domicilios();
+            Domicilio.Id_Domicilio = textIdDomicilio.Text.Trim();
+            Domicilio.MtdEliminarDomicilio();
+            if (Domicilio.Exito)
+            {
+                CargarDomicilio();
+                XtraMessageBox.Show("Se ha Eliminado el registro con exito");
+                LimpiarCampos();
+            }
+            else
+            {
+                XtraMessageBox.Show(Domicilio.Mensaje);
+            }
+        }
+
+        private void LimpiarCampos()
+        {
+            textIdCliente.Text = "";
+            textCliente.Text = "";
+            textTelefono.Text = "";
+            textRFC.Text = "";
+        }
+
+        private void LimpiarCamposDomicilio()
+        {
+            textIdDomicilio.Text = "";
+            textCalle.Text = "";
+            textNoInterior.Text = "";
+            textNoExterior.Text = "";
+            textEstado.Tag = "";
+            textEstado.Text = "";
+            textCodigoPostal.Text = "";
+            textColonia.Text = "";
+            textTipoDomicilio.Tag = "";
+            textTipoDomicilio.Text = "";
+        }
+
+        private void gridControl1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                foreach (int i in this.gridView1.GetSelectedRows())
+                {
+                    DataRow row = this.gridView1.GetDataRow(i);
+                    textIdCliente.Text = row["Id_Cliente"].ToString();
+                    textCliente.Text = row["Nombre_Cliente"].ToString();
+                    textTelefono.Text = row["RFC_Cliente"].ToString();
+                    textRFC.Text = row["Telefono"].ToString();
+                }
+            }
+            catch (Exception ex)
+            {
+                XtraMessageBox.Show(ex.Message);
+            }
+
+            CargarDomicilio();
+        }
+
+        private void btnGuardar_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+
+            if (xtraTabControl1.SelectedTabPage == xtraTabPage1)
+            {
+                if (textCliente.Text.ToString().Trim().Length > 0)
+                {
+                        InsertarClientes(); 
+                }
+                else
+                {
+                    XtraMessageBox.Show("Es necesario Agregar un nombre al cliente.");
+                }
+            }
+            else
+            {
+                if (textCalle.Text.ToString().Trim().Length > 0)
+                {
+                    if (textNoExterior.Text.ToString().Trim().Length > 0)
+                    {
+
+                        InsertarDomicilio();
+                    }
+                    else
+                    {
+                        XtraMessageBox.Show("Es necesario agregar un numero exterior.");
+                    }
+                }
+                else
+                {
+                    XtraMessageBox.Show("Es necesario Agregar una calle.");
+                }
+            }
+
+        }
+
+        private void btnEliminar_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            if (xtraTabControl1.SelectedTabPage == xtraTabPage1)
+            {
+                if (textIdCliente.Text.Trim().Length > 0)
+                {
+                    EliminarClientes();
+                }
+                else
+                {
+                    XtraMessageBox.Show("Es necesario seleccionar un Cliente.");
+                }
+            }
+            else
+            {
+                if (textIdDomicilio.Text.Trim().Length > 0)
+                {
+                    EliminarDomicilio();
+                }
+                else
+                {
+                    XtraMessageBox.Show("Es necesario seleccionar un Domicilio.");
+                }
+            }
+        }
+
+        private void btnLimpiar_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            if (xtraTabControl1.SelectedTabPage == xtraTabPage1)
+            {
+                LimpiarCampos();
+                LimpiarCamposDomicilio();
+            }
+            else
+            {
+                LimpiarCamposDomicilio();
+            }
+        }
+
+        private void btnSalir_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            this.Close();
+        }
+
+        private void Frm_Clientes_Load(object sender, EventArgs e)
+        {
+            CargarClientes();
+            CargarDomicilio();
+        }
+
+        private void gridControl2_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                foreach (int i in this.gridView2.GetSelectedRows())
+                {
+                    DataRow row = this.gridView2.GetDataRow(i);
+                    textIdDomicilio.Text = row["Id_Domicilio"].ToString();
+                    textCalle.Text = row["Calle"].ToString();
+                    textNoInterior.Text = row["NoInterior"].ToString();
+                    textNoExterior.Text = row["NoExterior"].ToString();
+                    textCodigoPostal.Text = row["Codigo_Postal"].ToString();
+                    textColonia.Text = row["Colonia"].ToString();
+                    textEstado.Tag = row["Id_Estado"].ToString();
+                    textEstado.Text = row["Nombre_Estado"].ToString();
+                    textTipoDomicilio.Tag = row["Id_TipoDomicilio"].ToString();
+                    textTipoDomicilio.Text = row["Nombre_TipoDomicilio"].ToString();
+                }
+            }
+            catch (Exception ex)
+            {
+                XtraMessageBox.Show(ex.Message);
+            }
+        }
+
+        private void btnBusqEstado_Click(object sender, EventArgs e)
+        {
+            Frm_Estado Estado = new Frm_Estado(true);
+
+            Estado.ShowDialog();
+
+            textEstado.Tag = Estado.IdEstado;
+            textEstado.Text = Estado.Estado;
+        }
+
+        private void btnBusqTipoDomicilio_Click(object sender, EventArgs e)
+        {
+            Frm_Tipo_Domicilio tipoDomicilio = new Frm_Tipo_Domicilio();
+            tipoDomicilio.PaSel = true;
+            tipoDomicilio.ShowDialog();
+
+            textTipoDomicilio.Tag = tipoDomicilio.IdTipoDomicilio;
+            textTipoDomicilio.Text = tipoDomicilio.TipoDomicilio;
         }
     }
 }

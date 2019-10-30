@@ -28,12 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_Principal));
             this.ribbonControl1 = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             this.btnVeiculos = new DevExpress.XtraBars.BarButtonItem();
             this.btnPersonal = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem4 = new DevExpress.XtraBars.BarButtonItem();
+            this.btnProveedor = new DevExpress.XtraBars.BarButtonItem();
             this.btnCliente = new DevExpress.XtraBars.BarButtonItem();
             this.btnAseguradora = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem7 = new DevExpress.XtraBars.BarButtonItem();
@@ -54,6 +55,13 @@
             this.btnTipoPlaca = new DevExpress.XtraBars.BarButtonItem();
             this.btnTipoTransporte = new DevExpress.XtraBars.BarButtonItem();
             this.btnTipoPersona = new DevExpress.XtraBars.BarButtonItem();
+            this.btnAgente = new DevExpress.XtraBars.BarButtonItem();
+            this.btnBroker = new DevExpress.XtraBars.BarButtonItem();
+            this.btnEmpresa = new DevExpress.XtraBars.BarButtonItem();
+            this.btnEstado = new DevExpress.XtraBars.BarButtonItem();
+            this.btnPais = new DevExpress.XtraBars.BarButtonItem();
+            this.btnMarca = new DevExpress.XtraBars.BarButtonItem();
+            this.btnLicencias = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -66,12 +74,9 @@
             this.ribbonPage2 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup4 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPage4 = new DevExpress.XtraBars.Ribbon.RibbonPage();
-            this.btnAgente = new DevExpress.XtraBars.BarButtonItem();
-            this.btnBroker = new DevExpress.XtraBars.BarButtonItem();
-            this.btnEmpresa = new DevExpress.XtraBars.BarButtonItem();
-            this.btnEstado = new DevExpress.XtraBars.BarButtonItem();
-            this.btnPais = new DevExpress.XtraBars.BarButtonItem();
+            this.xtraTabbedMdiManager1 = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager1)).BeginInit();
             this.SuspendLayout();
             // 
             // ribbonControl1
@@ -82,7 +87,7 @@
             this.barButtonItem1,
             this.btnVeiculos,
             this.btnPersonal,
-            this.barButtonItem4,
+            this.btnProveedor,
             this.btnCliente,
             this.btnAseguradora,
             this.barButtonItem7,
@@ -107,9 +112,11 @@
             this.btnBroker,
             this.btnEmpresa,
             this.btnEstado,
-            this.btnPais});
+            this.btnPais,
+            this.btnMarca,
+            this.btnLicencias});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.MaxItemId = 30;
+            this.ribbonControl1.MaxItemId = 32;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1,
@@ -140,19 +147,20 @@
             this.btnPersonal.Name = "btnPersonal";
             this.btnPersonal.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnPersonal_ItemClick);
             // 
-            // barButtonItem4
+            // btnProveedor
             // 
-            this.barButtonItem4.Caption = "Proveedores";
-            this.barButtonItem4.Id = 4;
-            this.barButtonItem4.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem4.ImageOptions.LargeImage")));
-            this.barButtonItem4.Name = "barButtonItem4";
+            this.btnProveedor.Caption = "Proveedores";
+            this.btnProveedor.Id = 4;
+            this.btnProveedor.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem4.ImageOptions.LargeImage")));
+            this.btnProveedor.Name = "btnProveedor";
+            this.btnProveedor.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnProveedor_ItemClick);
             // 
             // btnCliente
             // 
             this.btnCliente.Caption = "Clientes";
             this.btnCliente.Id = 5;
-            this.btnCliente.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem5.ImageOptions.Image")));
-            this.btnCliente.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem5.ImageOptions.LargeImage")));
+            this.btnCliente.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnCliente.ImageOptions.Image")));
+            this.btnCliente.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnCliente.ImageOptions.LargeImage")));
             this.btnCliente.Name = "btnCliente";
             this.btnCliente.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnCliente_ItemClick);
             // 
@@ -298,6 +306,55 @@
             this.btnTipoPersona.Name = "btnTipoPersona";
             this.btnTipoPersona.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnTipoPersona_ItemClick);
             // 
+            // btnAgente
+            // 
+            this.btnAgente.Caption = "Agente";
+            this.btnAgente.Id = 25;
+            this.btnAgente.Name = "btnAgente";
+            this.btnAgente.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnAgente_ItemClick);
+            // 
+            // btnBroker
+            // 
+            this.btnBroker.Caption = "Broker";
+            this.btnBroker.Id = 26;
+            this.btnBroker.Name = "btnBroker";
+            this.btnBroker.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnBroker_ItemClick);
+            // 
+            // btnEmpresa
+            // 
+            this.btnEmpresa.Caption = "Empresas";
+            this.btnEmpresa.Id = 27;
+            this.btnEmpresa.Name = "btnEmpresa";
+            this.btnEmpresa.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnEmpresa_ItemClick);
+            // 
+            // btnEstado
+            // 
+            this.btnEstado.Caption = "Estados";
+            this.btnEstado.Id = 28;
+            this.btnEstado.Name = "btnEstado";
+            this.btnEstado.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnEstado_ItemClick);
+            // 
+            // btnPais
+            // 
+            this.btnPais.Caption = "Paises";
+            this.btnPais.Id = 29;
+            this.btnPais.Name = "btnPais";
+            this.btnPais.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnPais_ItemClick);
+            // 
+            // btnMarca
+            // 
+            this.btnMarca.Caption = "Marcas";
+            this.btnMarca.Id = 30;
+            this.btnMarca.Name = "btnMarca";
+            this.btnMarca.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnMarca_ItemClick);
+            // 
+            // btnLicencias
+            // 
+            this.btnLicencias.Caption = "Licencias";
+            this.btnLicencias.Id = 31;
+            this.btnLicencias.Name = "btnLicencias";
+            this.btnLicencias.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnLicencias_ItemClick);
+            // 
             // ribbonPage1
             // 
             this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -311,7 +368,7 @@
             this.ribbonPageGroup1.ItemLinks.Add(this.barButtonItem1);
             this.ribbonPageGroup1.ItemLinks.Add(this.btnVeiculos);
             this.ribbonPageGroup1.ItemLinks.Add(this.btnPersonal);
-            this.ribbonPageGroup1.ItemLinks.Add(this.barButtonItem4);
+            this.ribbonPageGroup1.ItemLinks.Add(this.btnProveedor);
             this.ribbonPageGroup1.ItemLinks.Add(this.btnCliente);
             this.ribbonPageGroup1.ItemLinks.Add(this.barButtonItem7);
             this.ribbonPageGroup1.ItemLinks.Add(this.barButtonItem11);
@@ -323,6 +380,8 @@
             this.ribbonPageGroup1.ItemLinks.Add(this.btnEmpresa);
             this.ribbonPageGroup1.ItemLinks.Add(this.btnEstado);
             this.ribbonPageGroup1.ItemLinks.Add(this.btnPais);
+            this.ribbonPageGroup1.ItemLinks.Add(this.btnMarca);
+            this.ribbonPageGroup1.ItemLinks.Add(this.btnLicencias);
             this.ribbonPageGroup1.Name = "ribbonPageGroup1";
             this.ribbonPageGroup1.Text = "Catalogos";
             // 
@@ -400,40 +459,9 @@
             this.ribbonPage4.Name = "ribbonPage4";
             this.ribbonPage4.Text = "Reportes";
             // 
-            // btnAgente
+            // xtraTabbedMdiManager1
             // 
-            this.btnAgente.Caption = "Agente";
-            this.btnAgente.Id = 25;
-            this.btnAgente.Name = "btnAgente";
-            this.btnAgente.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnAgente_ItemClick);
-            // 
-            // btnBroker
-            // 
-            this.btnBroker.Caption = "Broker";
-            this.btnBroker.Id = 26;
-            this.btnBroker.Name = "btnBroker";
-            this.btnBroker.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnBroker_ItemClick);
-            // 
-            // btnEmpresa
-            // 
-            this.btnEmpresa.Caption = "Empresas";
-            this.btnEmpresa.Id = 27;
-            this.btnEmpresa.Name = "btnEmpresa";
-            this.btnEmpresa.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnEmpresa_ItemClick);
-            // 
-            // btnEstado
-            // 
-            this.btnEstado.Caption = "Estados";
-            this.btnEstado.Id = 28;
-            this.btnEstado.Name = "btnEstado";
-            this.btnEstado.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnEstado_ItemClick);
-            // 
-            // btnPais
-            // 
-            this.btnPais.Caption = "Paises";
-            this.btnPais.Id = 29;
-            this.btnPais.Name = "btnPais";
-            this.btnPais.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnPais_ItemClick);
+            this.xtraTabbedMdiManager1.MdiParent = this;
             // 
             // Frm_Principal
             // 
@@ -448,6 +476,7 @@
             this.Text = "Principal";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -461,7 +490,7 @@
         private DevExpress.XtraBars.BarButtonItem barButtonItem1;
         private DevExpress.XtraBars.BarButtonItem btnVeiculos;
         private DevExpress.XtraBars.BarButtonItem btnPersonal;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem4;
+        private DevExpress.XtraBars.BarButtonItem btnProveedor;
         private DevExpress.XtraBars.BarButtonItem btnCliente;
         private DevExpress.XtraBars.BarButtonItem btnAseguradora;
         private DevExpress.XtraBars.BarButtonItem barButtonItem7;
@@ -497,6 +526,9 @@
         private DevExpress.XtraBars.BarButtonItem btnEmpresa;
         private DevExpress.XtraBars.BarButtonItem btnEstado;
         private DevExpress.XtraBars.BarButtonItem btnPais;
+        private DevExpress.XtraTabbedMdi.XtraTabbedMdiManager xtraTabbedMdiManager1;
+        private DevExpress.XtraBars.BarButtonItem btnMarca;
+        private DevExpress.XtraBars.BarButtonItem btnLicencias;
     }
 }
 

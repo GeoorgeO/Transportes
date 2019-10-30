@@ -35,8 +35,11 @@ namespace TransportBusiness
 
         const string idTipoPersona = "0001";
 
+        public Boolean PaSel { get; set; }
+
         public Frm_Empleados()
         {
+            
             InitializeComponent();
         }
 
@@ -279,6 +282,7 @@ namespace TransportBusiness
             if (xtraTabControl1.SelectedTabPage == xtraTabPage1)
             {
                 LimpiarCampos();
+                LimpiarCamposDomicilio();
             }
             else
             {
@@ -295,14 +299,22 @@ namespace TransportBusiness
 
         private void Frm_Empleados_Load(object sender, EventArgs e)
         {
+            if (PaSel == true)
+            {
+                btnSeleccionar.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+            }
+            else
+            {
+                btnSeleccionar.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+            }
             CargarEmpleado();
             CargarDomicilio();
         }
 
         private void btnbuscar_Click(object sender, EventArgs e)
         {
-            Frm_Tipo_Empleados TipoEmpleado = new Frm_Tipo_Empleados(true);
-
+            Frm_Tipo_Empleados TipoEmpleado = new Frm_Tipo_Empleados();
+            TipoEmpleado.PaSel = true;
             TipoEmpleado.ShowDialog();
 
             textTipoEmpleado.Tag = TipoEmpleado.IdTipoEmpleado;
@@ -311,8 +323,8 @@ namespace TransportBusiness
 
         private void btnbusqlicencia_Click(object sender, EventArgs e)
         {
-            Frm_Licencias Licencia = new Frm_Licencias(true);
-
+            Frm_Licencias Licencia = new Frm_Licencias();
+            Licencia.PaSel = true;
             Licencia.ShowDialog();
 
             textLicencia.Tag = Licencia.IdLicencia;
@@ -371,8 +383,8 @@ namespace TransportBusiness
 
         private void btnBusqTipoDomicilio_Click(object sender, EventArgs e)
         {
-            Frm_Tipo_Domicilio tipoDomicilio = new Frm_Tipo_Domicilio(true);
-
+            Frm_Tipo_Domicilio tipoDomicilio = new Frm_Tipo_Domicilio();
+            tipoDomicilio.PaSel = true;
             tipoDomicilio.ShowDialog();
 
             textTipoDomicilio.Tag = tipoDomicilio.IdTipoDomicilio;

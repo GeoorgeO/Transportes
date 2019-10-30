@@ -43,42 +43,49 @@ namespace TransportBusiness
         private void btnAseguradora_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             Frm_Aseguradoras.DefInstance.MdiParent = this;
+            Frm_Aseguradoras.DefInstance.PaSel = false;
             Frm_Aseguradoras.DefInstance.Show();
         }
 
         private void btnTipoActivos_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            Frm_Tipo_Activo Frm = new Frm_Tipo_Activo(false);
+            Frm_Tipo_Activo Frm = new Frm_Tipo_Activo();
+            Frm.PaSel = false;
             Frm.ShowDialog();
         }
 
         private void btnTipoDomicilio_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            Frm_Tipo_Domicilio Frm = new Frm_Tipo_Domicilio(false);
+            Frm_Tipo_Domicilio Frm = new Frm_Tipo_Domicilio();
+            Frm.PaSel = false;
             Frm.ShowDialog();
         }
 
         private void btnTipoLicencia_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            Frm_Tipo_Licencia Frm = new Frm_Tipo_Licencia(false);
+            Frm_Tipo_Licencia Frm = new Frm_Tipo_Licencia();
+            Frm.PaSel = false;
             Frm.ShowDialog();
         }
 
         private void btnTipoPlaca_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            Frm_Tipo_Placa Frm = new Frm_Tipo_Placa(false);
+            Frm_Tipo_Placa Frm = new Frm_Tipo_Placa();
+            Frm.PaSel = false;
             Frm.ShowDialog();
         }
 
         private void btnTipoTransporte_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            Frm_Tipo_Transporte Frm = new Frm_Tipo_Transporte(false);
+            Frm_Tipo_Transporte Frm = new Frm_Tipo_Transporte();
+            Frm.PaSel = false;
             Frm.ShowDialog();
         }
 
         private void btnTipoPersona_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            Frm_Tipo_Empleados Frm = new Frm_Tipo_Empleados(false);
+            Frm_Tipo_Empleados Frm = new Frm_Tipo_Empleados();
+            Frm.PaSel = false;
             Frm.ShowDialog();
         }
 
@@ -103,7 +110,9 @@ namespace TransportBusiness
         private void btnEmpresa_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             Frm_Empresas.DefInstance.MdiParent = this;
+            Frm_Empresas.DefInstance.PaSel = false;
             Frm_Empresas.DefInstance.Show();
+
         }
 
         private void btnEstado_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -116,6 +125,26 @@ namespace TransportBusiness
         {
             Frm_Pais Frm = new Frm_Pais(false);
             Frm.ShowDialog();
+        }
+
+        private void btnMarca_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Frm_Marcas Frm = new Frm_Marcas();
+            Frm.PaSel = false;
+            Frm.ShowDialog();
+        }
+
+        private void btnLicencias_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Frm_Licencias Frm = new Frm_Licencias();
+            Frm.PaSel = false;
+            Frm.ShowDialog();
+        }
+
+        private void btnProveedor_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Frm_Proveedores.DefInstance.MdiParent = this;
+            Frm_Proveedores.DefInstance.Show();
         }
     }
 }

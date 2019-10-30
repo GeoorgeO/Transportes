@@ -83,6 +83,18 @@
     <Compile Include="Conexion\Frm_InstanciaSQL.designer.cs">
       <DependentUpon>Frm_InstanciaSQL.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\Catalogos\Frm_Agente_Empresa_Aseguradora.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Catalogos\Frm_Agente_Empresa_Aseguradora.Designer.cs">
+      <DependentUpon>Frm_Agente_Empresa_Aseguradora.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Catalogos\Frm_Broker_Empresa_Aseguradora.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Catalogos\Frm_Broker_Empresa_Aseguradora.Designer.cs">
+      <DependentUpon>Frm_Broker_Empresa_Aseguradora.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\Catalogos\Frm_Domicilios.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -286,6 +298,15 @@
     <EmbeddedResource Include="Conexion\Frm_InstanciaSQL.resx">
       <DependentUpon>Frm_InstanciaSQL.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Catalogos\Frm_Agente_Empresa_Aseguradora.resx">
+      <DependentUpon>Frm_Agente_Empresa_Aseguradora.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Catalogos\Frm_Broker_Empresa_Aseguradora.resx">
+      <DependentUpon>Frm_Broker_Empresa_Aseguradora.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Catalogos\Frm_Clientes.resx">
+      <DependentUpon>Frm_Clientes.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Catalogos\Frm_Domicilios.resx">
       <DependentUpon>Frm_Domicilios.cs</DependentUpon>
     </EmbeddedResource>
@@ -312,6 +333,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Catalogos\Frm_Pais.resx">
       <DependentUpon>Frm_Pais.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Catalogos\Frm_Proveedores.resx">
+      <DependentUpon>Frm_Proveedores.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Catalogos\Tipos\Frm_Tipo_Activo.resx">
       <DependentUpon>Frm_Tipo_Activo.cs</DependentUpon>

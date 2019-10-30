@@ -19,9 +19,8 @@ namespace TransportBusiness
 
         
 
-        public Frm_Licencias(Boolean BPasel)
+        public Frm_Licencias()
         {
-            this.PaSel = BPasel;
             InitializeComponent();
         }
 
@@ -177,8 +176,8 @@ namespace TransportBusiness
 
         private void simpleButton1_Click(object sender, EventArgs e)
         {
-            Frm_Tipo_Licencia TipLic = new Frm_Tipo_Licencia(true);
-            
+            Frm_Tipo_Licencia TipLic = new Frm_Tipo_Licencia();
+            TipLic.PaSel = true;
             TipLic.ShowDialog();
 
             textIdTipo.Text = TipLic.IdTipoLicencia;

@@ -15,9 +15,9 @@ namespace TransportBusiness
     public partial class Frm_Tipo_Domicilio : DevExpress.XtraEditors.XtraForm
     {
         public Boolean PaSel { get; set; }
-        public Frm_Tipo_Domicilio(Boolean BPasel)
+        public Frm_Tipo_Domicilio()
         {
-            this.PaSel = BPasel;
+          
             InitializeComponent();
         }
 

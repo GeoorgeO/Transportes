@@ -16,6 +16,9 @@ namespace TransportBusiness
     {
         public string vid_Marca { get; set; }
         public string vNombre_Marca { get; set; }
+
+        public Boolean PaSel { get; set; }
+
         public Frm_Marcas()
         {
             InitializeComponent();
@@ -98,6 +101,14 @@ namespace TransportBusiness
 
         private void Frm_Marcas_Load(object sender, EventArgs e)
         {
+            if (PaSel == true)
+            {
+                btnSeleccionar.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+            }
+            else
+            {
+                btnSeleccionar.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+            }
             CargarMarcas();
         }
 

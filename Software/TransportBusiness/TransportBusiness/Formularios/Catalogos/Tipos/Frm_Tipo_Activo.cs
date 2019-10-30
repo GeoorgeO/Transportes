@@ -19,9 +19,8 @@ namespace TransportBusiness
 
         public Boolean PaSel { get; set; }
 
-        public Frm_Tipo_Activo(Boolean BPasel)
+        public Frm_Tipo_Activo()
         {
-            this.PaSel = BPasel;
             InitializeComponent();
         }
 

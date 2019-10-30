@@ -38,6 +38,7 @@ namespace TransportBusiness
         private void btnMarca_Click(object sender, EventArgs e)
         {
             Frm_Marcas frm = new Frm_Marcas();
+            frm.PaSel = true;
             frm.ShowDialog();
 
             txtMarca.Text = frm.vNombre_Marca;
@@ -46,7 +47,8 @@ namespace TransportBusiness
 
         private void btnTipoTransporte_Click(object sender, EventArgs e)
         {
-            Frm_Tipo_Transporte frm = new Frm_Tipo_Transporte(false);
+            Frm_Tipo_Transporte frm = new Frm_Tipo_Transporte();
+            frm.PaSel = true;
             frm.ShowDialog();
 
             txtTipoTransporte.Text = frm.vNombre_Tipo_Transporte;
@@ -55,7 +57,8 @@ namespace TransportBusiness
 
         private void btnTipoActivo_Click(object sender, EventArgs e)
         {
-            Frm_Tipo_Activo frm = new Frm_Tipo_Activo(true);
+            Frm_Tipo_Activo frm = new Frm_Tipo_Activo();
+            frm.PaSel = true;
             frm.ShowDialog();
 
             txtTipoActivo.Text = frm.vNombre_Tipo_Activo;
@@ -65,15 +68,17 @@ namespace TransportBusiness
         private void btnEmpresa_Click(object sender, EventArgs e)
         {
             Frm_Empresas frm = new Frm_Empresas();
+            frm.PaSel = true;
             frm.ShowDialog();
-
+            
             txtEmpresa.Text = frm.vNombre_Empresa;
             txtEmpresa.Tag = frm.vId_Empresa;
         }
 
         private void btnTipoPlaca_Click(object sender, EventArgs e)
         {
-            Frm_Tipo_Placa frm = new Frm_Tipo_Placa(false);
+            Frm_Tipo_Placa frm = new Frm_Tipo_Placa();
+            frm.PaSel = true;
             frm.ShowDialog();
 
             txtTipoPlaca.Text = frm.vNombre_Tipo_Placa;
@@ -309,7 +314,8 @@ namespace TransportBusiness
 
         private void btnEmpresaAsegu_Click(object sender, EventArgs e)
         {
-            Frm_Aseguradoras frm = new Frm_Aseguradoras(true);
+            Frm_Aseguradoras frm = new Frm_Aseguradoras();
+            frm.PaSel = true;
             frm.ShowDialog();
 
             txtEmpresaAsegu.Tag = frm.idAseguradora;

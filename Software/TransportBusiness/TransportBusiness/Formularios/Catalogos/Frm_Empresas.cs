@@ -32,6 +32,9 @@ namespace TransportBusiness
 
         public string vId_Empresa { get; set; }
         public string vNombre_Empresa { get; set; }
+
+        public Boolean PaSel { get; set; }
+
         public Frm_Empresas()
         {
             InitializeComponent();
@@ -113,6 +116,14 @@ namespace TransportBusiness
 
         private void Frm_Empresas_Load(object sender, EventArgs e)
         {
+            if (PaSel == true)
+            {
+                btnSeleccionar.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+            }
+            else
+            {
+                btnSeleccionar.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+            }
             CargarEmpresa();
             CargarDomicilio();
         }
@@ -243,6 +254,7 @@ namespace TransportBusiness
             if (xtraTabControl1.SelectedTabPage == Datos)
             {
                 LimpiarCampos();
+                LimpiarCamposDomicilio();
             }
             else
             {
