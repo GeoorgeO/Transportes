@@ -42,13 +42,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Catalogos\CLS_Activos.cs" />
+    <Compile Include="Catalogos\CLS_Agente_Empresa_Aseguradora.cs" />
+    <Compile Include="Catalogos\CLS_Broker_Empresa_Aseguradora.cs" />
+    <Compile Include="Catalogos\CLS_Clientes.cs" />
     <Compile Include="Catalogos\CLS_Domicilios.cs" />
     <Compile Include="Catalogos\CLS_Empleado.cs" />
     <Compile Include="Catalogos\CLS_Empresa.cs" />
+    <Compile Include="Catalogos\CLS_Empresa_Aseguradora.cs" />
     <Compile Include="Catalogos\CLS_Estado.cs" />
     <Compile Include="Catalogos\CLS_Licencia.cs" />
     <Compile Include="Catalogos\CLS_Marcas.cs" />
     <Compile Include="Catalogos\CLS_Pais.cs" />
+    <Compile Include="Catalogos\CLS_Proveedores.cs" />
     <Compile Include="Tipos\CLS_TipoPersona.cs" />
     <Compile Include="Tipos\CLS_Tipo_Activo.cs" />
     <Compile Include="Tipos\CLS_Tipo_Domicilio.cs" />

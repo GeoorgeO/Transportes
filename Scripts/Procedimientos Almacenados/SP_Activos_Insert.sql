@@ -32,7 +32,7 @@ create PROCEDURE [dbo].[SP_Activos_Insert]
 	@Id_Tipo_Transporte char(4),
 	@Poliza_Seguro varchar(20),
 	@Id_Empresa_Aseguradora char(4),
-	@Status char(5),
+	@Status char(8),
 	@Asignado bit,
 	@Id_Empleado char(6),
 	@Id_Empresa char(4)
@@ -47,6 +47,11 @@ BEGIN
 
 	begin transaction T1;
 	begin try
+
+		if @Fecha_Baja='1900-01-01 00:00:00.000'
+			select @Fecha_Baja=null
+		else
+			select getdate()
 
 		declare @maximo char(8)
 		select @maximo=right(Concat('00000000', isnull(max(Id_Activo),0)+1),8) from dbo.Activos

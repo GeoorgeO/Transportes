@@ -33,6 +33,8 @@ namespace TransportBusiness
         public string vId_Empresa { get; set; }
         public string vNombre_Empresa { get; set; }
 
+        const string idTipoPersona = "0002";
+
         public Boolean PaSel { get; set; }
 
         public Frm_Empresas()
@@ -80,6 +82,7 @@ namespace TransportBusiness
             Empresa.MtdEliminarEmpresa();
             if (Empresa.Exito)
             {
+                EliminarDomicilioPersona();
                 CargarEmpresa();
                 XtraMessageBox.Show("Se ha Eliminado el registro con exito");
                 LimpiarCampos();
@@ -126,13 +129,14 @@ namespace TransportBusiness
             }
             CargarEmpresa();
             CargarDomicilio();
+            iniciarTags();
         }
         private void CargarDomicilio()
         {
             gridControl2.DataSource = null;
             CLS_Domicilios Domicilio = new CLS_Domicilios();
             Domicilio.Id_Empleado = textId.Text.Trim();
-            Domicilio.id_TipoPersona = "0002";
+            Domicilio.id_TipoPersona = idTipoPersona;
             Domicilio.MtdSeleccionarDomicilio();
             if (Domicilio.Exito)
             {
@@ -143,8 +147,6 @@ namespace TransportBusiness
         {
             if (textNombre.Text.ToString().Trim().Length > 0)
             {
-
-
                 InsertarEmpresa();
             }
             else
@@ -195,7 +197,7 @@ namespace TransportBusiness
             Domicilio.Id_Estado = textEstado.Tag.ToString().Trim();
             Domicilio.Id_TipoDomicilio = textTipoDomicilio.Tag.ToString().Trim();
             Domicilio.Id_Empleado = textId.Text.Trim();
-            Domicilio.id_TipoPersona = "0002";
+            Domicilio.id_TipoPersona = idTipoPersona;
             Domicilio.MtdInsertarDomicilio();
             if (Domicilio.Exito)
             {
@@ -242,13 +244,38 @@ namespace TransportBusiness
             {
                 CargarEmpresa();
                 XtraMessageBox.Show("Se ha Eliminado el registro con exito");
-                LimpiarCampos();
+                LimpiarCamposDomicilio();
             }
             else
             {
                 XtraMessageBox.Show(Domicilio.Mensaje);
             }
         }
+
+        private void iniciarTags()
+        {
+            textTipoDomicilio.Tag = "";
+            textEstado.Tag = "";
+        }
+
+        private void EliminarDomicilioPersona()
+        {
+            CLS_Domicilios Domicilio = new CLS_Domicilios();
+            Domicilio.Id_Empleado = textId.Text.Trim();
+            Domicilio.id_TipoPersona = idTipoPersona;
+            Domicilio.MtdEliminarDomicilioPersona();
+            if (Domicilio.Exito)
+            {
+                CargarDomicilio();
+
+                LimpiarCamposDomicilio();
+            }
+            else
+            {
+                XtraMessageBox.Show(Domicilio.Mensaje);
+            }
+        }
+
         private void btnLimpiar_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             if (xtraTabControl1.SelectedTabPage == Datos)

@@ -336,7 +336,7 @@
             this.Controls.Add(this.barDockControlTop);
             this.Name = "Frm_Marcas";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Frm_Marcas";
+            this.Text = "Marcas";
             this.Load += new System.EventHandler(this.Frm_Marcas_Load);
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).EndInit();

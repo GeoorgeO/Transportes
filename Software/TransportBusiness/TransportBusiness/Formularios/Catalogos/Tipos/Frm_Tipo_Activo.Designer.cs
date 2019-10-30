@@ -341,7 +341,7 @@
             this.MinimizeBox = false;
             this.Name = "Frm_Tipo_Activo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Frm_Tipo_Activo";
+            this.Text = "Tipo activos";
             this.Load += new System.EventHandler(this.Frm_Tipo_Activo_Load);
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).EndInit();

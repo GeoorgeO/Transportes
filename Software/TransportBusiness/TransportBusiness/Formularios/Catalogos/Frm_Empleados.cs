@@ -93,6 +93,14 @@ namespace TransportBusiness
             }
         }
 
+        private void iniciarTags()
+        {
+            textTipoEmpleado.Tag = "";
+            textLicencia.Tag = "";
+            textTipoDomicilio.Tag = "";
+            textEstado.Tag = "";
+        }
+
         private void InsertarDomicilio()
         {
             CLS_Domicilios Domicilio = new CLS_Domicilios();
@@ -127,6 +135,7 @@ namespace TransportBusiness
             Empleado.MtdEliminarEmpleado();
             if (Empleado.Exito)
             {
+                EliminarDomicilioPersona();
                 CargarEmpleado();
                 XtraMessageBox.Show("Se ha Eliminado el registro con exito");
                 LimpiarCampos();
@@ -146,7 +155,25 @@ namespace TransportBusiness
             {
                 CargarDomicilio();
                 XtraMessageBox.Show("Se ha Eliminado el registro con exito");
-                LimpiarCampos();
+                LimpiarCamposDomicilio();
+            }
+            else
+            {
+                XtraMessageBox.Show(Domicilio.Mensaje);
+            }
+        }
+
+        private void EliminarDomicilioPersona()
+        {
+            CLS_Domicilios Domicilio = new CLS_Domicilios();
+            Domicilio.Id_Empleado = textIdEmpleado.Text.Trim();
+            Domicilio.id_TipoPersona = idTipoPersona;
+            Domicilio.MtdEliminarDomicilioPersona();
+            if (Domicilio.Exito)
+            {
+                CargarDomicilio();
+              
+                LimpiarCamposDomicilio();
             }
             else
             {
@@ -258,6 +285,7 @@ namespace TransportBusiness
                 if (textIdEmpleado.Text.Trim().Length > 0)
                 {
                     EliminarEmpleado();
+                   
                 }
                 else
                 {
@@ -309,6 +337,7 @@ namespace TransportBusiness
             }
             CargarEmpleado();
             CargarDomicilio();
+            iniciarTags();
         }
 
         private void btnbuscar_Click(object sender, EventArgs e)

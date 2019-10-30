@@ -338,7 +338,7 @@
             this.MinimizeBox = false;
             this.Name = "Frm_Tipo_Licencia";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Frm_Tipo_Licencia";
+            this.Text = "Tipo Licencias";
             this.Load += new System.EventHandler(this.Frm_Tipo_Licencia_Load);
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).EndInit();

@@ -134,5 +134,37 @@ namespace CapaDeDatos
             }
         }
 
+        public void MtdEliminarDomicilioPersona()
+        {
+            TipoDato _dato = new TipoDato();
+            Conexion _conexion = new Conexion(cadenaConexion);
+
+            Exito = true;
+            try
+            {
+                _conexion.NombreProcedimiento = "SP_DomicilioPersona_Delete";
+                _dato.CadenaTexto = Id_Empleado;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_Empleado");
+                _dato.CadenaTexto = id_TipoPersona;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "id_TipoPersona");
+                _conexion.EjecutarDataset();
+
+                if (_conexion.Exito)
+                {
+                    Datos = _conexion.Datos;
+                }
+                else
+                {
+                    Mensaje = _conexion.Mensaje;
+                    Exito = false;
+                }
+            }
+            catch (Exception e)
+            {
+                Mensaje = e.Message;
+                Exito = false;
+            }
+        }
+
     }
 }

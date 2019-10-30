@@ -28,8 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_Empresas));
-            this.barManager1 = new DevExpress.XtraBars.BarManager();
+            this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.bIconos = new DevExpress.XtraBars.Bar();
             this.btnLimpiar = new DevExpress.XtraBars.BarLargeButtonItem();
             this.btnGuardar = new DevExpress.XtraBars.BarLargeButtonItem();
@@ -49,14 +50,27 @@
             this.Id_Empresa = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Nombre_Empresa = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
+            this.xtraTabControl1 = new DevExpress.XtraTab.XtraTabControl();
+            this.Datos = new DevExpress.XtraTab.XtraTabPage();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.textNombre = new DevExpress.XtraEditors.TextEdit();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.textId = new DevExpress.XtraEditors.TextEdit();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
-            this.xtraTabControl1 = new DevExpress.XtraTab.XtraTabControl();
-            this.Datos = new DevExpress.XtraTab.XtraTabPage();
             this.Domicilio = new DevExpress.XtraTab.XtraTabPage();
+            this.panelControl3 = new DevExpress.XtraEditors.PanelControl();
+            this.gridControl2 = new DevExpress.XtraGrid.GridControl();
+            this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.Id_Domicilio = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Calle = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.NoInterior = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.NoExterior = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Colonia = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Codigo_Postal = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Id_Estado = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Nombre_Estado = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Id_TipoDomicilio = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Nombre_TipoDomicilio = new DevExpress.XtraGrid.Columns.GridColumn();
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
             this.textColonia = new DevExpress.XtraEditors.TextEdit();
             this.btnBusqTipoDomicilio = new DevExpress.XtraEditors.SimpleButton();
@@ -76,19 +90,6 @@
             this.labelControl17 = new DevExpress.XtraEditors.LabelControl();
             this.textIdDomicilio = new DevExpress.XtraEditors.TextEdit();
             this.labelControl18 = new DevExpress.XtraEditors.LabelControl();
-            this.panelControl3 = new DevExpress.XtraEditors.PanelControl();
-            this.gridControl2 = new DevExpress.XtraGrid.GridControl();
-            this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.Id_Domicilio = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.Calle = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.NoInterior = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.NoExterior = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.Colonia = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.Codigo_Postal = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.Id_Estado = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.Nombre_Estado = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.Id_TipoDomicilio = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.Nombre_TipoDomicilio = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
@@ -97,14 +98,18 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).BeginInit();
+            this.xtraTabControl1.SuspendLayout();
+            this.Datos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.textNombre.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textId.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).BeginInit();
-            this.xtraTabControl1.SuspendLayout();
-            this.Datos.SuspendLayout();
             this.Domicilio.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).BeginInit();
+            this.panelControl3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
             this.groupControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.textColonia.Properties)).BeginInit();
@@ -115,10 +120,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.textNoInterior.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textCalle.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textIdDomicilio.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).BeginInit();
-            this.panelControl3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
             this.SuspendLayout();
             // 
             // barManager1
@@ -330,6 +331,27 @@
             this.panelControl1.Size = new System.Drawing.Size(723, 517);
             this.panelControl1.TabIndex = 14;
             // 
+            // xtraTabControl1
+            // 
+            this.xtraTabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.xtraTabControl1.Location = new System.Drawing.Point(7, 7);
+            this.xtraTabControl1.Name = "xtraTabControl1";
+            this.xtraTabControl1.SelectedTabPage = this.Datos;
+            this.xtraTabControl1.Size = new System.Drawing.Size(709, 503);
+            this.xtraTabControl1.TabIndex = 1;
+            this.xtraTabControl1.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
+            this.Datos,
+            this.Domicilio});
+            // 
+            // Datos
+            // 
+            this.Datos.Controls.Add(this.panelControl2);
+            this.Datos.Controls.Add(this.groupControl1);
+            this.Datos.Name = "Datos";
+            this.Datos.Padding = new System.Windows.Forms.Padding(5);
+            this.Datos.Size = new System.Drawing.Size(703, 475);
+            this.Datos.Text = "Datos";
+            // 
             // groupControl1
             // 
             this.groupControl1.Controls.Add(this.textNombre);
@@ -376,27 +398,6 @@
             this.labelControl1.TabIndex = 0;
             this.labelControl1.Text = "Id empresa: ";
             // 
-            // xtraTabControl1
-            // 
-            this.xtraTabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.xtraTabControl1.Location = new System.Drawing.Point(7, 7);
-            this.xtraTabControl1.Name = "xtraTabControl1";
-            this.xtraTabControl1.SelectedTabPage = this.Datos;
-            this.xtraTabControl1.Size = new System.Drawing.Size(709, 503);
-            this.xtraTabControl1.TabIndex = 1;
-            this.xtraTabControl1.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
-            this.Datos,
-            this.Domicilio});
-            // 
-            // Datos
-            // 
-            this.Datos.Controls.Add(this.panelControl2);
-            this.Datos.Controls.Add(this.groupControl1);
-            this.Datos.Name = "Datos";
-            this.Datos.Padding = new System.Windows.Forms.Padding(5);
-            this.Datos.Size = new System.Drawing.Size(703, 475);
-            this.Datos.Text = "Datos";
-            // 
             // Domicilio
             // 
             this.Domicilio.Controls.Add(this.panelControl3);
@@ -405,6 +406,128 @@
             this.Domicilio.Padding = new System.Windows.Forms.Padding(5);
             this.Domicilio.Size = new System.Drawing.Size(703, 475);
             this.Domicilio.Text = "Domicilios";
+            // 
+            // panelControl3
+            // 
+            this.panelControl3.Controls.Add(this.gridControl2);
+            this.panelControl3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelControl3.Location = new System.Drawing.Point(5, 149);
+            this.panelControl3.Name = "panelControl3";
+            this.panelControl3.Padding = new System.Windows.Forms.Padding(10);
+            this.panelControl3.Size = new System.Drawing.Size(693, 321);
+            this.panelControl3.TabIndex = 17;
+            // 
+            // gridControl2
+            // 
+            this.gridControl2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gridControl2.Location = new System.Drawing.Point(12, 12);
+            this.gridControl2.MainView = this.gridView2;
+            this.gridControl2.MenuManager = this.barManager1;
+            this.gridControl2.Name = "gridControl2";
+            this.gridControl2.Size = new System.Drawing.Size(669, 297);
+            this.gridControl2.TabIndex = 0;
+            this.gridControl2.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridView2});
+            // 
+            // gridView2
+            // 
+            this.gridView2.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.Id_Domicilio,
+            this.Calle,
+            this.NoInterior,
+            this.NoExterior,
+            this.Colonia,
+            this.Codigo_Postal,
+            this.Id_Estado,
+            this.Nombre_Estado,
+            this.Id_TipoDomicilio,
+            this.Nombre_TipoDomicilio});
+            this.gridView2.GridControl = this.gridControl2;
+            this.gridView2.Name = "gridView2";
+            this.gridView2.OptionsBehavior.Editable = false;
+            this.gridView2.OptionsView.ShowGroupPanel = false;
+            // 
+            // Id_Domicilio
+            // 
+            this.Id_Domicilio.Caption = "Id domicilio";
+            this.Id_Domicilio.FieldName = "Id_Domicilio";
+            this.Id_Domicilio.Name = "Id_Domicilio";
+            this.Id_Domicilio.OptionsColumn.AllowEdit = false;
+            this.Id_Domicilio.Visible = true;
+            this.Id_Domicilio.VisibleIndex = 0;
+            // 
+            // Calle
+            // 
+            this.Calle.Caption = "Calle";
+            this.Calle.FieldName = "Calle";
+            this.Calle.Name = "Calle";
+            this.Calle.OptionsColumn.AllowEdit = false;
+            this.Calle.Visible = true;
+            this.Calle.VisibleIndex = 1;
+            // 
+            // NoInterior
+            // 
+            this.NoInterior.Caption = "No Interior";
+            this.NoInterior.FieldName = "NoInterior";
+            this.NoInterior.Name = "NoInterior";
+            this.NoInterior.Visible = true;
+            this.NoInterior.VisibleIndex = 2;
+            // 
+            // NoExterior
+            // 
+            this.NoExterior.Caption = "No Exterior";
+            this.NoExterior.FieldName = "NoExterior";
+            this.NoExterior.Name = "NoExterior";
+            this.NoExterior.Visible = true;
+            this.NoExterior.VisibleIndex = 3;
+            // 
+            // Colonia
+            // 
+            this.Colonia.Caption = "Colonia";
+            this.Colonia.FieldName = "Colonia";
+            this.Colonia.Name = "Colonia";
+            this.Colonia.Visible = true;
+            this.Colonia.VisibleIndex = 4;
+            // 
+            // Codigo_Postal
+            // 
+            this.Codigo_Postal.Caption = "C. P.";
+            this.Codigo_Postal.FieldName = "Codigo_Postal";
+            this.Codigo_Postal.Name = "Codigo_Postal";
+            this.Codigo_Postal.Visible = true;
+            this.Codigo_Postal.VisibleIndex = 5;
+            // 
+            // Id_Estado
+            // 
+            this.Id_Estado.Caption = "Id Estado";
+            this.Id_Estado.FieldName = "Id_Estado";
+            this.Id_Estado.Name = "Id_Estado";
+            this.Id_Estado.Visible = true;
+            this.Id_Estado.VisibleIndex = 6;
+            // 
+            // Nombre_Estado
+            // 
+            this.Nombre_Estado.Caption = "Estado";
+            this.Nombre_Estado.FieldName = "Nombre_Estado";
+            this.Nombre_Estado.Name = "Nombre_Estado";
+            this.Nombre_Estado.Visible = true;
+            this.Nombre_Estado.VisibleIndex = 7;
+            // 
+            // Id_TipoDomicilio
+            // 
+            this.Id_TipoDomicilio.Caption = "id Domicilio";
+            this.Id_TipoDomicilio.FieldName = "Id_TipoDomicilio";
+            this.Id_TipoDomicilio.Name = "Id_TipoDomicilio";
+            this.Id_TipoDomicilio.Visible = true;
+            this.Id_TipoDomicilio.VisibleIndex = 8;
+            // 
+            // Nombre_TipoDomicilio
+            // 
+            this.Nombre_TipoDomicilio.Caption = "Tipo Domicilio";
+            this.Nombre_TipoDomicilio.FieldName = "Nombre_TipoDomicilio";
+            this.Nombre_TipoDomicilio.Name = "Nombre_TipoDomicilio";
+            this.Nombre_TipoDomicilio.Visible = true;
+            this.Nombre_TipoDomicilio.VisibleIndex = 9;
             // 
             // groupControl2
             // 
@@ -578,128 +701,6 @@
             this.labelControl18.TabIndex = 0;
             this.labelControl18.Text = "Id domicilio: ";
             // 
-            // panelControl3
-            // 
-            this.panelControl3.Controls.Add(this.gridControl2);
-            this.panelControl3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelControl3.Location = new System.Drawing.Point(5, 149);
-            this.panelControl3.Name = "panelControl3";
-            this.panelControl3.Padding = new System.Windows.Forms.Padding(10);
-            this.panelControl3.Size = new System.Drawing.Size(693, 321);
-            this.panelControl3.TabIndex = 17;
-            // 
-            // gridControl2
-            // 
-            this.gridControl2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControl2.Location = new System.Drawing.Point(12, 12);
-            this.gridControl2.MainView = this.gridView2;
-            this.gridControl2.MenuManager = this.barManager1;
-            this.gridControl2.Name = "gridControl2";
-            this.gridControl2.Size = new System.Drawing.Size(669, 297);
-            this.gridControl2.TabIndex = 0;
-            this.gridControl2.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView2});
-            // 
-            // gridView2
-            // 
-            this.gridView2.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.Id_Domicilio,
-            this.Calle,
-            this.NoInterior,
-            this.NoExterior,
-            this.Colonia,
-            this.Codigo_Postal,
-            this.Id_Estado,
-            this.Nombre_Estado,
-            this.Id_TipoDomicilio,
-            this.Nombre_TipoDomicilio});
-            this.gridView2.GridControl = this.gridControl2;
-            this.gridView2.Name = "gridView2";
-            this.gridView2.OptionsBehavior.Editable = false;
-            this.gridView2.OptionsView.ShowGroupPanel = false;
-            // 
-            // Id_Domicilio
-            // 
-            this.Id_Domicilio.Caption = "Id domicilio";
-            this.Id_Domicilio.FieldName = "Id_Domicilio";
-            this.Id_Domicilio.Name = "Id_Domicilio";
-            this.Id_Domicilio.OptionsColumn.AllowEdit = false;
-            this.Id_Domicilio.Visible = true;
-            this.Id_Domicilio.VisibleIndex = 0;
-            // 
-            // Calle
-            // 
-            this.Calle.Caption = "Calle";
-            this.Calle.FieldName = "Calle";
-            this.Calle.Name = "Calle";
-            this.Calle.OptionsColumn.AllowEdit = false;
-            this.Calle.Visible = true;
-            this.Calle.VisibleIndex = 1;
-            // 
-            // NoInterior
-            // 
-            this.NoInterior.Caption = "No Interior";
-            this.NoInterior.FieldName = "NoInterior";
-            this.NoInterior.Name = "NoInterior";
-            this.NoInterior.Visible = true;
-            this.NoInterior.VisibleIndex = 2;
-            // 
-            // NoExterior
-            // 
-            this.NoExterior.Caption = "No Exterior";
-            this.NoExterior.FieldName = "NoExterior";
-            this.NoExterior.Name = "NoExterior";
-            this.NoExterior.Visible = true;
-            this.NoExterior.VisibleIndex = 3;
-            // 
-            // Colonia
-            // 
-            this.Colonia.Caption = "Colonia";
-            this.Colonia.FieldName = "Colonia";
-            this.Colonia.Name = "Colonia";
-            this.Colonia.Visible = true;
-            this.Colonia.VisibleIndex = 4;
-            // 
-            // Codigo_Postal
-            // 
-            this.Codigo_Postal.Caption = "C. P.";
-            this.Codigo_Postal.FieldName = "Codigo_Postal";
-            this.Codigo_Postal.Name = "Codigo_Postal";
-            this.Codigo_Postal.Visible = true;
-            this.Codigo_Postal.VisibleIndex = 5;
-            // 
-            // Id_Estado
-            // 
-            this.Id_Estado.Caption = "Id Estado";
-            this.Id_Estado.FieldName = "Id_Estado";
-            this.Id_Estado.Name = "Id_Estado";
-            this.Id_Estado.Visible = true;
-            this.Id_Estado.VisibleIndex = 6;
-            // 
-            // Nombre_Estado
-            // 
-            this.Nombre_Estado.Caption = "Estado";
-            this.Nombre_Estado.FieldName = "Nombre_Estado";
-            this.Nombre_Estado.Name = "Nombre_Estado";
-            this.Nombre_Estado.Visible = true;
-            this.Nombre_Estado.VisibleIndex = 7;
-            // 
-            // Id_TipoDomicilio
-            // 
-            this.Id_TipoDomicilio.Caption = "id Domicilio";
-            this.Id_TipoDomicilio.FieldName = "Id_TipoDomicilio";
-            this.Id_TipoDomicilio.Name = "Id_TipoDomicilio";
-            this.Id_TipoDomicilio.Visible = true;
-            this.Id_TipoDomicilio.VisibleIndex = 8;
-            // 
-            // Nombre_TipoDomicilio
-            // 
-            this.Nombre_TipoDomicilio.Caption = "Tipo Domicilio";
-            this.Nombre_TipoDomicilio.FieldName = "Nombre_TipoDomicilio";
-            this.Nombre_TipoDomicilio.Name = "Nombre_TipoDomicilio";
-            this.Nombre_TipoDomicilio.Visible = true;
-            this.Nombre_TipoDomicilio.VisibleIndex = 9;
-            // 
             // Frm_Empresas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -715,7 +716,7 @@
             this.MinimizeBox = false;
             this.Name = "Frm_Empresas";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Frm_Empresas";
+            this.Text = "Empresas";
             this.Load += new System.EventHandler(this.Frm_Empresas_Load);
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).EndInit();
@@ -725,15 +726,19 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).EndInit();
+            this.xtraTabControl1.ResumeLayout(false);
+            this.Datos.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
             this.groupControl1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.textNombre.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textId.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).EndInit();
-            this.xtraTabControl1.ResumeLayout(false);
-            this.Datos.ResumeLayout(false);
             this.Domicilio.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).EndInit();
+            this.panelControl3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).EndInit();
             this.groupControl2.ResumeLayout(false);
             this.groupControl2.PerformLayout();
@@ -745,10 +750,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.textNoInterior.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textCalle.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textIdDomicilio.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).EndInit();
-            this.panelControl3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

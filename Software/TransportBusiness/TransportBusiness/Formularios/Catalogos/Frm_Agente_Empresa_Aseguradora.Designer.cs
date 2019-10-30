@@ -49,6 +49,10 @@
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.Id_Agente_Empresa_Aseguradora = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Nombre_Agente_Empresa_Aseguradora = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Telefono = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Id_Empresa_Aseguradora = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Nombre_Empresa_Aseguradora = new DevExpress.XtraGrid.Columns.GridColumn();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.textAseguradora = new DevExpress.XtraEditors.TextEdit();
             this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
@@ -92,10 +96,6 @@
             this.labelControl17 = new DevExpress.XtraEditors.LabelControl();
             this.textIdDomicilio = new DevExpress.XtraEditors.TextEdit();
             this.labelControl18 = new DevExpress.XtraEditors.LabelControl();
-            this.Nombre_Agente_Empresa_Aseguradora = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.Telefono = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.Id_Empresa_Aseguradora = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.Nombre_Empresa_Aseguradora = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).BeginInit();
@@ -329,6 +329,38 @@
             this.Id_Agente_Empresa_Aseguradora.Name = "Id_Agente_Empresa_Aseguradora";
             this.Id_Agente_Empresa_Aseguradora.Visible = true;
             this.Id_Agente_Empresa_Aseguradora.VisibleIndex = 0;
+            // 
+            // Nombre_Agente_Empresa_Aseguradora
+            // 
+            this.Nombre_Agente_Empresa_Aseguradora.Caption = "Agente";
+            this.Nombre_Agente_Empresa_Aseguradora.FieldName = "Nombre_Agente_Empresa_Aseguradora";
+            this.Nombre_Agente_Empresa_Aseguradora.Name = "Nombre_Agente_Empresa_Aseguradora";
+            this.Nombre_Agente_Empresa_Aseguradora.Visible = true;
+            this.Nombre_Agente_Empresa_Aseguradora.VisibleIndex = 1;
+            // 
+            // Telefono
+            // 
+            this.Telefono.Caption = "Telefono";
+            this.Telefono.FieldName = "Telefono";
+            this.Telefono.Name = "Telefono";
+            this.Telefono.Visible = true;
+            this.Telefono.VisibleIndex = 2;
+            // 
+            // Id_Empresa_Aseguradora
+            // 
+            this.Id_Empresa_Aseguradora.Caption = "Id Aseguradora";
+            this.Id_Empresa_Aseguradora.FieldName = "Id_Empresa_Aseguradora";
+            this.Id_Empresa_Aseguradora.Name = "Id_Empresa_Aseguradora";
+            this.Id_Empresa_Aseguradora.Visible = true;
+            this.Id_Empresa_Aseguradora.VisibleIndex = 3;
+            // 
+            // Nombre_Empresa_Aseguradora
+            // 
+            this.Nombre_Empresa_Aseguradora.Caption = "Aseguradora";
+            this.Nombre_Empresa_Aseguradora.FieldName = "Nombre_Empresa_Aseguradora";
+            this.Nombre_Empresa_Aseguradora.Name = "Nombre_Empresa_Aseguradora";
+            this.Nombre_Empresa_Aseguradora.Visible = true;
+            this.Nombre_Empresa_Aseguradora.VisibleIndex = 4;
             // 
             // groupControl1
             // 
@@ -724,38 +756,6 @@
             this.labelControl18.TabIndex = 0;
             this.labelControl18.Text = "Id domicilio: ";
             // 
-            // Nombre_Agente_Empresa_Aseguradora
-            // 
-            this.Nombre_Agente_Empresa_Aseguradora.Caption = "Agente";
-            this.Nombre_Agente_Empresa_Aseguradora.FieldName = "Nombre_Agente_Empresa_Aseguradora";
-            this.Nombre_Agente_Empresa_Aseguradora.Name = "Nombre_Agente_Empresa_Aseguradora";
-            this.Nombre_Agente_Empresa_Aseguradora.Visible = true;
-            this.Nombre_Agente_Empresa_Aseguradora.VisibleIndex = 1;
-            // 
-            // Telefono
-            // 
-            this.Telefono.Caption = "Telefono";
-            this.Telefono.FieldName = "Telefono";
-            this.Telefono.Name = "Telefono";
-            this.Telefono.Visible = true;
-            this.Telefono.VisibleIndex = 2;
-            // 
-            // Id_Empresa_Aseguradora
-            // 
-            this.Id_Empresa_Aseguradora.Caption = "Id Aseguradora";
-            this.Id_Empresa_Aseguradora.FieldName = "Id_Empresa_Aseguradora";
-            this.Id_Empresa_Aseguradora.Name = "Id_Empresa_Aseguradora";
-            this.Id_Empresa_Aseguradora.Visible = true;
-            this.Id_Empresa_Aseguradora.VisibleIndex = 3;
-            // 
-            // Nombre_Empresa_Aseguradora
-            // 
-            this.Nombre_Empresa_Aseguradora.Caption = "Aseguradora";
-            this.Nombre_Empresa_Aseguradora.FieldName = "Nombre_Empresa_Aseguradora";
-            this.Nombre_Empresa_Aseguradora.Name = "Nombre_Empresa_Aseguradora";
-            this.Nombre_Empresa_Aseguradora.Visible = true;
-            this.Nombre_Empresa_Aseguradora.VisibleIndex = 4;
-            // 
             // Frm_Agente_Empresa_Aseguradora
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -767,7 +767,7 @@
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
             this.Name = "Frm_Agente_Empresa_Aseguradora";
-            this.Text = "Frm_Agente_Empresa_Aseguradora";
+            this.Text = "Agentes Aseguradora";
             this.Load += new System.EventHandler(this.Frm_Agente_Empresa_Aseguradora_Load);
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).EndInit();

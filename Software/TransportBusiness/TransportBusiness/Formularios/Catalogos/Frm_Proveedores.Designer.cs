@@ -746,7 +746,7 @@
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
             this.Name = "Frm_Proveedores";
-            this.Text = "Frm_Proveedores";
+            this.Text = "Proveedores";
             this.Load += new System.EventHandler(this.Frm_Proveedores_Load);
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).EndInit();

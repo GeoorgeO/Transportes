@@ -28,9 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.SuspendLayout();
+            // 
+            // Frm_Infracciones
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Text = "Frm_Infracciones";
+            this.ClientSize = new System.Drawing.Size(284, 261);
+            this.Name = "Frm_Infracciones";
+            this.Text = "Infracciones";
+            this.ResumeLayout(false);
+
         }
 
         #endregion

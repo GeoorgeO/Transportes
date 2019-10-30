@@ -88,6 +88,7 @@ namespace TransportBusiness
         private void btnOperador_Click(object sender, EventArgs e)
         {
             Frm_Empleados frm = new Frm_Empleados();
+            frm.PaSel = true;
             frm.ShowDialog();
 
             txtOperador.Text = frm.vNombre_Empleado;
@@ -116,34 +117,114 @@ namespace TransportBusiness
             return sVal;
         }
 
+        private void iniciarTags()
+        {
+            txtMarca.Tag = "";
+            txtTipoTransporte.Tag = "";
+            txtTipoActivo.Tag = "";
+            txtEmpresa.Tag = "";
+            txtTipoPlaca.Tag = "";
+            txtOperador.Tag = "";
+            txtEmpresaAsegu.Tag = "";
+        }
+
         private void InsertarActivos()
         {
-            DateTime Fecha = Convert.ToDateTime(dtFechaAlta.Text.Trim());
-            DateTime Fecha2 = Convert.ToDateTime(txtFechaBaja.Text.Trim());
-
             CLS_Activos Activos = new CLS_Activos();
+
+            DateTime Fecha, Fecha2;
+           
+            if (dtFechaAlta.Text.Trim() == String.Empty)
+            {
+                Activos.Fecha_Alta = "";
+            }
+            else
+            {
+                Fecha = Convert.ToDateTime(dtFechaAlta.Text.Trim());
+                Activos.Fecha_Alta = Fecha.Year.ToString() + DosCero(Fecha.Month.ToString()) + DosCero(Fecha.Day.ToString());
+            }
+               
+            if (txtFechaBaja.Text.Trim() == String.Empty)
+            {
+                Activos.Fecha_Baja = "";
+            }
+            else
+            {
+                Fecha2 = Convert.ToDateTime(txtFechaBaja.Text.Trim());
+                Activos.Fecha_Baja = Fecha2.Year.ToString() + DosCero(Fecha2.Month.ToString()) + DosCero(Fecha2.Day.ToString());
+
+               
+            }
+          
             Activos.Id_Activo = txtIdActivo.Text.Trim();
             Activos.Nombre_Interno = txtNombreActivo.Text.Trim();
             Activos.Descripcion = txtDescripcion.Text.Trim();
-            Activos.Id_Marca = txtMarca.Tag.ToString().Trim();
+
+            if (txtMarca.Tag.ToString() == String.Empty)
+            {
+                Activos.Id_Marca = "";
+            }
+            else
+            {
+                Activos.Id_Marca = txtMarca.Tag.ToString().Trim();
+            }
+           
             Activos.Color = txtColor.Text.Trim();
             Activos.Costo_Unidad = Convert.ToDouble(txtCosto.Text.Trim());
             Activos.Modelo = txtModelo.Text.Trim();
             Activos.Serie = txtNoSerie.Text.Trim();
-            
             Activos.Status = txtEstatus.Text.Trim();
-            Activos.Id_Tipo_Transporte = txtTipoTransporte.Tag.ToString().Trim();
-            Activos.Id_Tipo_Activo = txtTipoActivo.Tag.ToString().Trim();
-            Activos.Descripcion = txtTipoActivo.Tag.ToString().Trim();
-            Activos.Id_Empresa = txtEmpresa.Tag.ToString().Trim();
+
+            if (txtTipoTransporte.Tag.ToString() == String.Empty)
+            {
+                Activos.Id_Tipo_Transporte = "";
+            }
+            else
+            {
+                Activos.Id_Tipo_Transporte = txtTipoTransporte.Tag.ToString().Trim();
+            }
+           
+            if (txtTipoActivo.Tag.ToString() == String.Empty)
+            {
+                Activos.Id_Tipo_Activo = "";
+            }
+            else
+            {
+                Activos.Id_Tipo_Activo = txtTipoActivo.Tag.ToString().Trim();
+            }
+            
+            if (txtEmpresa.Tag.ToString() == String.Empty)
+            {
+                Activos.Id_Empresa = "";
+            } else
+            {
+                Activos.Id_Empresa = txtEmpresa.Tag.ToString().Trim();
+            }
+                
             Activos.Tarjeta_Circulacion = txtTarjetaCirculacion.Text.Trim();
             Activos.Placas = txtPlaca.Text.Trim();
-            Activos.Id_Tipo_Placa = txtTipoPlaca.Tag.ToString().Trim();
-            Activos.Id_Empleado = txtOperador.Tag.ToString().Trim();
+
+            if (txtTipoPlaca.Tag.ToString() == String.Empty)
+            {
+                Activos.Id_Tipo_Placa = "";
+            }
+            else
+            {
+                Activos.Id_Tipo_Placa = txtTipoPlaca.Tag.ToString().Trim();
+            }
+            
+            if (txtOperador.Tag.ToString() == String.Empty)
+            {
+                Activos.Id_Empleado = "";
+            }
+            else
+            {
+                Activos.Id_Empleado = txtOperador.Tag.ToString().Trim();
+            }
+           
             Activos.Id_Empresa_Aseguradora = txtEmpresaAsegu.Tag.ToString().Trim();
             Activos.Poliza_Seguro = txtPolizaSeguro.Text.Trim();
-            Activos.Fecha_Alta = Fecha.Year.ToString() + DosCero(Fecha.Month.ToString()) + DosCero(Fecha.Day.ToString());
-            Activos.Fecha_Baja = Fecha2.Year.ToString() + DosCero(Fecha2.Month.ToString()) + DosCero(Fecha2.Day.ToString());
+            
             if (cboAsignado.Text.Trim().Equals("Si"))
             {
                 Activos.Asignado = "1";
@@ -191,10 +272,10 @@ namespace TransportBusiness
             txtDescripcion.Text = "";
             txtMarca.Text = "";
             txtColor.Text = "";
-            txtCosto.Text = "";
+            txtCosto.Text = "0";
             txtModelo.Text = "";
             txtNoSerie.Text = "";
-            txtEstatus.Text = "";
+            txtEstatus.Text = "ACTIVO";
             txtTipoTransporte.Text = "";
             txtTipoActivo.Text = "";
             txtEmpresa.Text = "";
@@ -204,7 +285,7 @@ namespace TransportBusiness
             txtOperador.Text = "";
             txtEmpresaAsegu.Text = "";
             txtPolizaSeguro.Text = "";
-            dtFechaAlta.Text = "";
+            dtFechaAlta.Text = DateTime.Today.ToShortDateString();
             txtFechaBaja.Text = "";
         }
 
@@ -274,10 +355,8 @@ namespace TransportBusiness
         {
             if (txtNombreActivo.Text.ToString().Trim().Length > 0)
             {
-               
 
                     InsertarActivos();
-                
             }
             else
             {
@@ -310,6 +389,8 @@ namespace TransportBusiness
         private void Frm_Activos_Load(object sender, EventArgs e)
         {
             CargarActivos();
+            iniciarTags();
+            dtFechaAlta.Text = DateTime.Today.ToShortDateString();
         }
 
         private void btnEmpresaAsegu_Click(object sender, EventArgs e)
@@ -320,6 +401,27 @@ namespace TransportBusiness
 
             txtEmpresaAsegu.Tag = frm.idAseguradora;
             txtEmpresaAsegu.Text = frm.Aseguradora;
+        }
+
+        private void txtFechaBaja_EditValueChanged(object sender, EventArgs e)
+        {
+            if (txtFechaBaja.Text == String.Empty)
+            {
+
+            }else
+            {
+                DateTime Fecha2;
+                Fecha2 = Convert.ToDateTime(txtFechaBaja.Text.Trim());
+
+                if (Fecha2 <= DateTime.Today)
+                {
+                    txtEstatus.Text = "INACTIVO";
+                }else
+                {
+                    txtEstatus.Text = "ACTIVO";
+                }
+            }
+           
         }
     }
 }

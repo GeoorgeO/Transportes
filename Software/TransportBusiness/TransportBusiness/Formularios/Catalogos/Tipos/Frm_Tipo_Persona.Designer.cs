@@ -182,9 +182,9 @@
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 412);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 415);
             this.barDockControlBottom.Manager = this.barManager1;
-            this.barDockControlBottom.Size = new System.Drawing.Size(500, 28);
+            this.barDockControlBottom.Size = new System.Drawing.Size(500, 25);
             // 
             // barDockControlLeft
             // 
@@ -192,7 +192,7 @@
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.barDockControlLeft.Location = new System.Drawing.Point(0, 0);
             this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Size = new System.Drawing.Size(58, 412);
+            this.barDockControlLeft.Size = new System.Drawing.Size(56, 415);
             // 
             // barDockControlRight
             // 
@@ -200,7 +200,7 @@
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
             this.barDockControlRight.Location = new System.Drawing.Point(500, 0);
             this.barDockControlRight.Manager = this.barManager1;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 412);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 415);
             // 
             // repositoryItemTextEdit1
             // 
@@ -210,10 +210,10 @@
             // 
             this.panelControl2.Controls.Add(this.gridControl1);
             this.panelControl2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelControl2.Location = new System.Drawing.Point(58, 126);
+            this.panelControl2.Location = new System.Drawing.Point(56, 126);
             this.panelControl2.Name = "panelControl2";
             this.panelControl2.Padding = new System.Windows.Forms.Padding(10);
-            this.panelControl2.Size = new System.Drawing.Size(442, 286);
+            this.panelControl2.Size = new System.Drawing.Size(444, 289);
             this.panelControl2.TabIndex = 13;
             // 
             // gridControl1
@@ -223,7 +223,7 @@
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.MenuManager = this.barManager1;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(418, 262);
+            this.gridControl1.Size = new System.Drawing.Size(420, 265);
             this.gridControl1.TabIndex = 0;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -261,10 +261,10 @@
             // 
             this.panelControl1.Controls.Add(this.groupControl1);
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelControl1.Location = new System.Drawing.Point(58, 0);
+            this.panelControl1.Location = new System.Drawing.Point(56, 0);
             this.panelControl1.Name = "panelControl1";
             this.panelControl1.Padding = new System.Windows.Forms.Padding(10);
-            this.panelControl1.Size = new System.Drawing.Size(442, 126);
+            this.panelControl1.Size = new System.Drawing.Size(444, 126);
             this.panelControl1.TabIndex = 12;
             // 
             // groupControl1
@@ -276,7 +276,7 @@
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl1.Location = new System.Drawing.Point(12, 12);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(418, 102);
+            this.groupControl1.Size = new System.Drawing.Size(420, 102);
             this.groupControl1.TabIndex = 0;
             this.groupControl1.Text = "Tipo Persona";
             // 
@@ -325,7 +325,7 @@
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
             this.Name = "Frm_Tipo_Persona";
-            this.Text = "Frm_Tipo_Persona";
+            this.Text = "Tipo Personas";
             this.Load += new System.EventHandler(this.Frm_Tipo_Persona_Load);
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).EndInit();

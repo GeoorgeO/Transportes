@@ -325,8 +325,14 @@
     <EmbeddedResource Include="Formularios\Catalogos\Frm_Empresas.resx">
       <DependentUpon>Frm_Empresas.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Catalogos\Frm_Infracciones.resx">
+      <DependentUpon>Frm_Infracciones.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Catalogos\Frm_Licencias.resx">
       <DependentUpon>Frm_Licencias.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Catalogos\Frm_Mantenimiento.resx">
+      <DependentUpon>Frm_Mantenimiento.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Catalogos\Frm_Marcas.resx">
       <DependentUpon>Frm_Marcas.cs</DependentUpon>
@@ -336,6 +342,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Catalogos\Frm_Proveedores.resx">
       <DependentUpon>Frm_Proveedores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Catalogos\Frm_Rutas.resx">
+      <DependentUpon>Frm_Rutas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Catalogos\Frm_Vehiculos.resx">
+      <DependentUpon>Frm_Vehiculos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Catalogos\Tipos\Frm_Tipo_Activo.resx">
       <DependentUpon>Frm_Tipo_Activo.cs</DependentUpon>

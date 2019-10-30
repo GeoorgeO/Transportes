@@ -87,6 +87,12 @@ namespace TransportBusiness
             }
         }
 
+        private void iniciarTags()
+        {
+            textTipoDomicilio.Tag = "";
+            textEstado.Tag = "";
+        }
+
         private void InsertarDomicilio()
         {
             CLS_Domicilios Domicilio = new CLS_Domicilios();
@@ -121,6 +127,7 @@ namespace TransportBusiness
             Aseguradora.MtdEliminarEmpresaAseguradora();
             if (Aseguradora.Exito)
             {
+                EliminarDomicilioPersona();
                 CargarAseguradora();
                 XtraMessageBox.Show("Se ha Eliminado el registro con exito");
                 LimpiarCampos();
@@ -140,7 +147,25 @@ namespace TransportBusiness
             {
                 CargarDomicilio();
                 XtraMessageBox.Show("Se ha Eliminado el registro con exito");
-                LimpiarCampos();
+                LimpiarCamposDomicilio();
+            }
+            else
+            {
+                XtraMessageBox.Show(Domicilio.Mensaje);
+            }
+        }
+
+        private void EliminarDomicilioPersona()
+        {
+            CLS_Domicilios Domicilio = new CLS_Domicilios();
+            Domicilio.Id_Empleado = textIdAseguradora.Text.Trim();
+            Domicilio.id_TipoPersona = idTipoPersona;
+            Domicilio.MtdEliminarDomicilioPersona();
+            if (Domicilio.Exito)
+            {
+                CargarDomicilio();
+
+                LimpiarCamposDomicilio();
             }
             else
             {
@@ -286,6 +311,7 @@ namespace TransportBusiness
 
             CargarAseguradora();
             CargarDomicilio();
+            iniciarTags();
         }
 
         private void gridControl2_Click(object sender, EventArgs e)

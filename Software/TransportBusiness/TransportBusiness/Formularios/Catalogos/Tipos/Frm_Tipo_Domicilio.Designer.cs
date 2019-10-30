@@ -340,7 +340,7 @@
             this.MinimizeBox = false;
             this.Name = "Frm_Tipo_Domicilio";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Frm_Tipo_Domicilio";
+            this.Text = "Tipo Domicilios";
             this.Load += new System.EventHandler(this.Frm_Tipo_Domicilio_Load);
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).EndInit();

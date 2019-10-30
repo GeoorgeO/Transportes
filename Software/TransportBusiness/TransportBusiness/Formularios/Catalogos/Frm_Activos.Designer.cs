@@ -1263,6 +1263,7 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.txtFechaBaja.Size = new System.Drawing.Size(111, 20);
             this.txtFechaBaja.TabIndex = 46;
+            this.txtFechaBaja.EditValueChanged += new System.EventHandler(this.txtFechaBaja_EditValueChanged);
             // 
             // dtFechaAlta
             // 
@@ -1295,10 +1296,11 @@
             // 
             // txtCosto
             // 
+            this.txtCosto.EditValue = "0";
             this.txtCosto.Location = new System.Drawing.Point(89, 167);
             this.txtCosto.MenuManager = this.barManager1;
             this.txtCosto.Name = "txtCosto";
-            this.txtCosto.Properties.Mask.EditMask = "c2";
+            this.txtCosto.Properties.Mask.EditMask = "n";
             this.txtCosto.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.txtCosto.Size = new System.Drawing.Size(100, 20);
             this.txtCosto.TabIndex = 42;
@@ -1617,7 +1619,7 @@
             this.Controls.Add(this.barDockControlTop);
             this.Name = "Frm_Activos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Frm_Activos";
+            this.Text = "Activos";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Frm_Activos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
