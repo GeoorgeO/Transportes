@@ -235,10 +235,10 @@
             // 
             this.panelControl2.Controls.Add(this.gridControl1);
             this.panelControl2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelControl2.Location = new System.Drawing.Point(71, 126);
+            this.panelControl2.Location = new System.Drawing.Point(71, 132);
             this.panelControl2.Name = "panelControl2";
             this.panelControl2.Padding = new System.Windows.Forms.Padding(10);
-            this.panelControl2.Size = new System.Drawing.Size(643, 280);
+            this.panelControl2.Size = new System.Drawing.Size(643, 274);
             this.panelControl2.TabIndex = 21;
             // 
             // gridControl1
@@ -248,7 +248,7 @@
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.MenuManager = this.barManager1;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(619, 256);
+            this.gridControl1.Size = new System.Drawing.Size(619, 250);
             this.gridControl1.TabIndex = 0;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -314,7 +314,7 @@
             this.panelControl1.Location = new System.Drawing.Point(71, 0);
             this.panelControl1.Name = "panelControl1";
             this.panelControl1.Padding = new System.Windows.Forms.Padding(10);
-            this.panelControl1.Size = new System.Drawing.Size(643, 126);
+            this.panelControl1.Size = new System.Drawing.Size(643, 132);
             this.panelControl1.TabIndex = 20;
             // 
             // groupControl1
@@ -332,14 +332,14 @@
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl1.Location = new System.Drawing.Point(12, 12);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(619, 102);
+            this.groupControl1.Size = new System.Drawing.Size(619, 108);
             this.groupControl1.TabIndex = 0;
             this.groupControl1.Text = "Licencia";
             // 
             // deVigencia
             // 
             this.deVigencia.EditValue = null;
-            this.deVigencia.Location = new System.Drawing.Point(406, 30);
+            this.deVigencia.Location = new System.Drawing.Point(406, 28);
             this.deVigencia.MenuManager = this.barManager1;
             this.deVigencia.Name = "deVigencia";
             this.deVigencia.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -351,7 +351,7 @@
             // 
             // labelControl4
             // 
-            this.labelControl4.Location = new System.Drawing.Point(19, 59);
+            this.labelControl4.Location = new System.Drawing.Point(19, 56);
             this.labelControl4.Name = "labelControl4";
             this.labelControl4.Size = new System.Drawing.Size(61, 13);
             this.labelControl4.TabIndex = 8;
@@ -359,7 +359,7 @@
             // 
             // textTipo
             // 
-            this.textTipo.Location = new System.Drawing.Point(168, 77);
+            this.textTipo.Location = new System.Drawing.Point(168, 76);
             this.textTipo.MenuManager = this.barManager1;
             this.textTipo.Name = "textTipo";
             this.textTipo.Size = new System.Drawing.Size(159, 20);
@@ -376,7 +376,7 @@
             // 
             // textIdTipo
             // 
-            this.textIdTipo.Location = new System.Drawing.Point(96, 77);
+            this.textIdTipo.Location = new System.Drawing.Point(96, 76);
             this.textIdTipo.MenuManager = this.barManager1;
             this.textIdTipo.Name = "textIdTipo";
             this.textIdTipo.Size = new System.Drawing.Size(37, 20);
@@ -384,7 +384,7 @@
             // 
             // labelControl3
             // 
-            this.labelControl3.Location = new System.Drawing.Point(19, 82);
+            this.labelControl3.Location = new System.Drawing.Point(19, 80);
             this.labelControl3.Name = "labelControl3";
             this.labelControl3.Size = new System.Drawing.Size(79, 13);
             this.labelControl3.TabIndex = 4;
@@ -400,7 +400,7 @@
             // 
             // labelControl2
             // 
-            this.labelControl2.Location = new System.Drawing.Point(357, 33);
+            this.labelControl2.Location = new System.Drawing.Point(357, 32);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(43, 13);
             this.labelControl2.TabIndex = 2;
@@ -417,7 +417,7 @@
             // 
             // labelControl1
             // 
-            this.labelControl1.Location = new System.Drawing.Point(19, 33);
+            this.labelControl1.Location = new System.Drawing.Point(19, 32);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(57, 13);
             this.labelControl1.TabIndex = 0;
@@ -434,6 +434,7 @@
             this.Controls.Add(this.barDockControlRight);
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Frm_Licencias";

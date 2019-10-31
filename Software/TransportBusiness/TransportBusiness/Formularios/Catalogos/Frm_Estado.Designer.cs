@@ -230,10 +230,10 @@
             // 
             this.panelControl2.Controls.Add(this.gridControl1);
             this.panelControl2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelControl2.Location = new System.Drawing.Point(71, 126);
+            this.panelControl2.Location = new System.Drawing.Point(71, 132);
             this.panelControl2.Name = "panelControl2";
             this.panelControl2.Padding = new System.Windows.Forms.Padding(10);
-            this.panelControl2.Size = new System.Drawing.Size(573, 243);
+            this.panelControl2.Size = new System.Drawing.Size(573, 237);
             this.panelControl2.TabIndex = 19;
             // 
             // gridControl1
@@ -243,7 +243,7 @@
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.MenuManager = this.barManager1;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(549, 219);
+            this.gridControl1.Size = new System.Drawing.Size(549, 213);
             this.gridControl1.TabIndex = 0;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -300,7 +300,7 @@
             this.panelControl1.Location = new System.Drawing.Point(71, 0);
             this.panelControl1.Name = "panelControl1";
             this.panelControl1.Padding = new System.Windows.Forms.Padding(10);
-            this.panelControl1.Size = new System.Drawing.Size(573, 126);
+            this.panelControl1.Size = new System.Drawing.Size(573, 132);
             this.panelControl1.TabIndex = 18;
             // 
             // groupControl1
@@ -316,7 +316,7 @@
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl1.Location = new System.Drawing.Point(12, 12);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(549, 102);
+            this.groupControl1.Size = new System.Drawing.Size(549, 108);
             this.groupControl1.TabIndex = 0;
             this.groupControl1.Text = "Estado";
             // 
@@ -397,7 +397,11 @@
             this.Controls.Add(this.barDockControlRight);
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "Frm_Estado";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Estados";
             this.Load += new System.EventHandler(this.Frm_Estado_Load);
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
