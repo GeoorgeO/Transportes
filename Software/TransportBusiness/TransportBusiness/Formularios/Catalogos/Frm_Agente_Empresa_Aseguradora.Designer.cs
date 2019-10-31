@@ -291,10 +291,10 @@
             // 
             this.groupControl3.Controls.Add(this.gridControl1);
             this.groupControl3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupControl3.Location = new System.Drawing.Point(5, 84);
+            this.groupControl3.Location = new System.Drawing.Point(5, 93);
             this.groupControl3.Name = "groupControl3";
             this.groupControl3.Padding = new System.Windows.Forms.Padding(5);
-            this.groupControl3.Size = new System.Drawing.Size(661, 314);
+            this.groupControl3.Size = new System.Drawing.Size(661, 305);
             this.groupControl3.TabIndex = 1;
             // 
             // gridControl1
@@ -303,7 +303,7 @@
             this.gridControl1.Location = new System.Drawing.Point(7, 25);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(647, 282);
+            this.gridControl1.Size = new System.Drawing.Size(647, 273);
             this.gridControl1.TabIndex = 0;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -376,7 +376,7 @@
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupControl1.Location = new System.Drawing.Point(5, 5);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(661, 79);
+            this.groupControl1.Size = new System.Drawing.Size(661, 88);
             this.groupControl1.TabIndex = 0;
             this.groupControl1.Text = "Agente";
             // 
