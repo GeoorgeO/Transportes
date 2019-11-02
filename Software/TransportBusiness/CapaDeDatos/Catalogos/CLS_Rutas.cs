@@ -1,0 +1,111 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace CapaDeDatos
+{
+    public class CLS_Rutas : ConexionBase
+    {
+
+        public string Id_Rutas { get; set; }
+        public string Nombre_Rutas { get; set; }
+        
+
+        public void MtdSeleccionarRutas()
+        {
+            TipoDato _dato = new TipoDato();
+            Conexion _conexion = new Conexion(cadenaConexion);
+
+            Exito = true;
+            try
+            {
+                _conexion.NombreProcedimiento = "SP_Rutas_Select";
+
+                _conexion.EjecutarDataset();
+
+                if (_conexion.Exito)
+                {
+                    Datos = _conexion.Datos;
+                }
+                else
+                {
+                    Mensaje = _conexion.Mensaje;
+                    Exito = false;
+                }
+            }
+            catch (Exception e)
+            {
+                Mensaje = e.Message;
+                Exito = false;
+            }
+
+        }
+
+
+
+        public void MtdInsertarRutas()
+        {
+            TipoDato _dato = new TipoDato();
+            Conexion _conexion = new Conexion(cadenaConexion);
+
+            Exito = true;
+            try
+            {
+                _conexion.NombreProcedimiento = "SP_Rutas_Insert";
+                _dato.CadenaTexto = Id_Rutas;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_Rutas");
+                _dato.CadenaTexto = Nombre_Rutas;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Nombre_Ruta");
+                _conexion.EjecutarDataset();
+
+                if (_conexion.Exito)
+                {
+                    Datos = _conexion.Datos;
+                }
+                else
+                {
+                    Mensaje = _conexion.Mensaje;
+                    Exito = false;
+                }
+            }
+            catch (Exception e)
+            {
+                Mensaje = e.Message;
+                Exito = false;
+            }
+        }
+
+        public void MtdEliminarRutas()
+        {
+            TipoDato _dato = new TipoDato();
+            Conexion _conexion = new Conexion(cadenaConexion);
+
+            Exito = true;
+            try
+            {
+                _conexion.NombreProcedimiento = "SP_Rutas_Delete";
+                _dato.CadenaTexto = Id_Rutas;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_Rutas");
+                _conexion.EjecutarDataset();
+
+                if (_conexion.Exito)
+                {
+                    Datos = _conexion.Datos;
+                }
+                else
+                {
+                    Mensaje = _conexion.Mensaje;
+                    Exito = false;
+                }
+            }
+            catch (Exception e)
+            {
+                Mensaje = e.Message;
+                Exito = false;
+            }
+        }
+
+    }
+}

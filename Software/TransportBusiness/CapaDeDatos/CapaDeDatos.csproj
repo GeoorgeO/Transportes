@@ -55,6 +55,8 @@
     <Compile Include="Catalogos\CLS_Marcas.cs" />
     <Compile Include="Catalogos\CLS_Pais.cs" />
     <Compile Include="Catalogos\CLS_Proveedores.cs" />
+    <Compile Include="Catalogos\CLS_Rutas.cs" />
+    <Compile Include="Catalogos\CLS_Rutas_Detalle.cs" />
     <Compile Include="Tipos\CLS_TipoPersona.cs" />
     <Compile Include="Tipos\CLS_Tipo_Activo.cs" />
     <Compile Include="Tipos\CLS_Tipo_Domicilio.cs" />

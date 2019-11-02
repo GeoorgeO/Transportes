@@ -1,4 +1,4 @@
-﻿namespace TransportBusiness.Formularios.Catalogos
+﻿namespace TransportBusiness
 {
     partial class Frm_Rutas
     {
@@ -51,9 +51,9 @@
             this.Id_Rutas = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Nombre_Ruta = new DevExpress.XtraGrid.Columns.GridColumn();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
-            this.textCliente = new DevExpress.XtraEditors.TextEdit();
+            this.textRuta = new DevExpress.XtraEditors.TextEdit();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
-            this.textIdCliente = new DevExpress.XtraEditors.TextEdit();
+            this.textIdRuta = new DevExpress.XtraEditors.TextEdit();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.xtraTabPage2 = new DevExpress.XtraTab.XtraTabPage();
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
@@ -63,9 +63,9 @@
             this.Nombre_Rutas_Detalle = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Secuencia = new DevExpress.XtraGrid.Columns.GridColumn();
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
-            this.textCalle = new DevExpress.XtraEditors.TextEdit();
+            this.textRutaDetalle = new DevExpress.XtraEditors.TextEdit();
             this.labelControl17 = new DevExpress.XtraEditors.LabelControl();
-            this.textIdDomicilio = new DevExpress.XtraEditors.TextEdit();
+            this.textIdRutaDetalle = new DevExpress.XtraEditors.TextEdit();
             this.labelControl18 = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).BeginInit();
@@ -78,8 +78,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.textCliente.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textIdCliente.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textRuta.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textIdRuta.Properties)).BeginInit();
             this.xtraTabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
             this.panelControl2.SuspendLayout();
@@ -87,8 +87,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
             this.groupControl2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.textCalle.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textIdDomicilio.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textRutaDetalle.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textIdRutaDetalle.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // barManager1
@@ -144,6 +144,7 @@
             this.btnLimpiar.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnLimpiar.ImageOptions.Image")));
             this.btnLimpiar.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnLimpiar.ImageOptions.LargeImage")));
             this.btnLimpiar.Name = "btnLimpiar";
+            this.btnLimpiar.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnLimpiar_ItemClick);
             // 
             // btnGuardar
             // 
@@ -152,6 +153,7 @@
             this.btnGuardar.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnGuardar.ImageOptions.Image")));
             this.btnGuardar.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnGuardar.ImageOptions.LargeImage")));
             this.btnGuardar.Name = "btnGuardar";
+            this.btnGuardar.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnGuardar_ItemClick);
             // 
             // btnEliminar
             // 
@@ -160,6 +162,7 @@
             this.btnEliminar.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnEliminar.ImageOptions.Image")));
             this.btnEliminar.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnEliminar.ImageOptions.LargeImage")));
             this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnEliminar_ItemClick);
             // 
             // btnSalir
             // 
@@ -168,6 +171,7 @@
             this.btnSalir.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnSalir.ImageOptions.Image")));
             this.btnSalir.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnSalir.ImageOptions.LargeImage")));
             this.btnSalir.Name = "btnSalir";
+            this.btnSalir.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnSalir_ItemClick);
             // 
             // bEstado
             // 
@@ -244,7 +248,7 @@
             this.xtraTabPage1.Name = "xtraTabPage1";
             this.xtraTabPage1.Padding = new System.Windows.Forms.Padding(5);
             this.xtraTabPage1.Size = new System.Drawing.Size(816, 483);
-            this.xtraTabPage1.Text = "Datos";
+            this.xtraTabPage1.Text = "Ruta";
             // 
             // groupControl3
             // 
@@ -266,6 +270,7 @@
             this.gridControl1.TabIndex = 0;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
+            this.gridControl1.Click += new System.EventHandler(this.gridControl1_Click);
             // 
             // gridView1
             // 
@@ -295,9 +300,9 @@
             // 
             // groupControl1
             // 
-            this.groupControl1.Controls.Add(this.textCliente);
+            this.groupControl1.Controls.Add(this.textRuta);
             this.groupControl1.Controls.Add(this.labelControl2);
-            this.groupControl1.Controls.Add(this.textIdCliente);
+            this.groupControl1.Controls.Add(this.textIdRuta);
             this.groupControl1.Controls.Add(this.labelControl1);
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupControl1.Location = new System.Drawing.Point(5, 5);
@@ -306,12 +311,12 @@
             this.groupControl1.TabIndex = 0;
             this.groupControl1.Text = "Ruta";
             // 
-            // textCliente
+            // textRuta
             // 
-            this.textCliente.Location = new System.Drawing.Point(54, 53);
-            this.textCliente.Name = "textCliente";
-            this.textCliente.Size = new System.Drawing.Size(192, 20);
-            this.textCliente.TabIndex = 3;
+            this.textRuta.Location = new System.Drawing.Point(54, 53);
+            this.textRuta.Name = "textRuta";
+            this.textRuta.Size = new System.Drawing.Size(192, 20);
+            this.textRuta.TabIndex = 3;
             // 
             // labelControl2
             // 
@@ -321,13 +326,13 @@
             this.labelControl2.TabIndex = 2;
             this.labelControl2.Text = "Nombre:";
             // 
-            // textIdCliente
+            // textIdRuta
             // 
-            this.textIdCliente.Enabled = false;
-            this.textIdCliente.Location = new System.Drawing.Point(54, 29);
-            this.textIdCliente.Name = "textIdCliente";
-            this.textIdCliente.Size = new System.Drawing.Size(100, 20);
-            this.textIdCliente.TabIndex = 1;
+            this.textIdRuta.Enabled = false;
+            this.textIdRuta.Location = new System.Drawing.Point(54, 29);
+            this.textIdRuta.Name = "textIdRuta";
+            this.textIdRuta.Size = new System.Drawing.Size(100, 20);
+            this.textIdRuta.TabIndex = 1;
             // 
             // labelControl1
             // 
@@ -344,7 +349,7 @@
             this.xtraTabPage2.Name = "xtraTabPage2";
             this.xtraTabPage2.Padding = new System.Windows.Forms.Padding(5);
             this.xtraTabPage2.Size = new System.Drawing.Size(816, 483);
-            this.xtraTabPage2.Text = "Domicilio";
+            this.xtraTabPage2.Text = "Detalles Ruta";
             // 
             // panelControl2
             // 
@@ -367,6 +372,7 @@
             this.gridControl2.TabIndex = 0;
             this.gridControl2.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView2});
+            this.gridControl2.Click += new System.EventHandler(this.gridControl2_Click);
             // 
             // gridView2
             // 
@@ -405,9 +411,9 @@
             // 
             // groupControl2
             // 
-            this.groupControl2.Controls.Add(this.textCalle);
+            this.groupControl2.Controls.Add(this.textRutaDetalle);
             this.groupControl2.Controls.Add(this.labelControl17);
-            this.groupControl2.Controls.Add(this.textIdDomicilio);
+            this.groupControl2.Controls.Add(this.textIdRutaDetalle);
             this.groupControl2.Controls.Add(this.labelControl18);
             this.groupControl2.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupControl2.Location = new System.Drawing.Point(5, 5);
@@ -416,13 +422,13 @@
             this.groupControl2.TabIndex = 1;
             this.groupControl2.Text = "Domicilio";
             // 
-            // textCalle
+            // textRutaDetalle
             // 
-            this.textCalle.Location = new System.Drawing.Point(83, 57);
-            this.textCalle.MenuManager = this.barManager1;
-            this.textCalle.Name = "textCalle";
-            this.textCalle.Size = new System.Drawing.Size(226, 20);
-            this.textCalle.TabIndex = 3;
+            this.textRutaDetalle.Location = new System.Drawing.Point(83, 57);
+            this.textRutaDetalle.MenuManager = this.barManager1;
+            this.textRutaDetalle.Name = "textRutaDetalle";
+            this.textRutaDetalle.Size = new System.Drawing.Size(226, 20);
+            this.textRutaDetalle.TabIndex = 3;
             // 
             // labelControl17
             // 
@@ -432,14 +438,14 @@
             this.labelControl17.TabIndex = 2;
             this.labelControl17.Text = "Ruta detalle:";
             // 
-            // textIdDomicilio
+            // textIdRutaDetalle
             // 
-            this.textIdDomicilio.Enabled = false;
-            this.textIdDomicilio.Location = new System.Drawing.Point(83, 30);
-            this.textIdDomicilio.MenuManager = this.barManager1;
-            this.textIdDomicilio.Name = "textIdDomicilio";
-            this.textIdDomicilio.Size = new System.Drawing.Size(100, 20);
-            this.textIdDomicilio.TabIndex = 1;
+            this.textIdRutaDetalle.Enabled = false;
+            this.textIdRutaDetalle.Location = new System.Drawing.Point(83, 30);
+            this.textIdRutaDetalle.MenuManager = this.barManager1;
+            this.textIdRutaDetalle.Name = "textIdRutaDetalle";
+            this.textIdRutaDetalle.Size = new System.Drawing.Size(100, 20);
+            this.textIdRutaDetalle.TabIndex = 1;
             // 
             // labelControl18
             // 
@@ -461,6 +467,7 @@
             this.Controls.Add(this.barDockControlTop);
             this.Name = "Frm_Rutas";
             this.Text = "Rutas";
+            this.Load += new System.EventHandler(this.Frm_Rutas_Load);
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).EndInit();
@@ -473,8 +480,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
             this.groupControl1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.textCliente.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textIdCliente.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textRuta.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textIdRuta.Properties)).EndInit();
             this.xtraTabPage2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).EndInit();
             this.panelControl2.ResumeLayout(false);
@@ -483,8 +490,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).EndInit();
             this.groupControl2.ResumeLayout(false);
             this.groupControl2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.textCalle.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textIdDomicilio.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textRutaDetalle.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textIdRutaDetalle.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -513,9 +520,9 @@
         private DevExpress.XtraGrid.Columns.GridColumn Id_Rutas;
         private DevExpress.XtraGrid.Columns.GridColumn Nombre_Ruta;
         private DevExpress.XtraEditors.GroupControl groupControl1;
-        private DevExpress.XtraEditors.TextEdit textCliente;
+        private DevExpress.XtraEditors.TextEdit textRuta;
         private DevExpress.XtraEditors.LabelControl labelControl2;
-        private DevExpress.XtraEditors.TextEdit textIdCliente;
+        private DevExpress.XtraEditors.TextEdit textIdRuta;
         private DevExpress.XtraEditors.LabelControl labelControl1;
         private DevExpress.XtraTab.XtraTabPage xtraTabPage2;
         private DevExpress.XtraEditors.PanelControl panelControl2;
@@ -525,9 +532,9 @@
         private DevExpress.XtraGrid.Columns.GridColumn Nombre_Rutas_Detalle;
         private DevExpress.XtraGrid.Columns.GridColumn Secuencia;
         private DevExpress.XtraEditors.GroupControl groupControl2;
-        private DevExpress.XtraEditors.TextEdit textCalle;
+        private DevExpress.XtraEditors.TextEdit textRutaDetalle;
         private DevExpress.XtraEditors.LabelControl labelControl17;
-        private DevExpress.XtraEditors.TextEdit textIdDomicilio;
+        private DevExpress.XtraEditors.TextEdit textIdRutaDetalle;
         private DevExpress.XtraEditors.LabelControl labelControl18;
     }
 }
