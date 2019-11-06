@@ -35,7 +35,8 @@ create PROCEDURE [dbo].[SP_Activos_Insert]
 	@Status char(8),
 	@Asignado bit,
 	@Id_Empleado char(6),
-	@Id_Empresa char(4)
+	@Id_Empresa char(4),
+	@Id_Factura varchar(20)
 AS
 BEGIN
 	-- SET NOCOUNT ON added to prevent extra result sets from
@@ -81,7 +82,8 @@ BEGIN
 				Status=@Status,
 				Asignado=@Asignado,
 				Id_Empleado=@Id_Empleado,
-				Id_Empresa=@Id_Empresa
+				Id_Empresa=@Id_Empresa,
+				Id_Factura=@Id_Factura
 		    WHERE
 		    	Id_Activo=@Id_Activo
 				
@@ -108,7 +110,8 @@ BEGIN
 			   ,Status
 			   ,Asignado
 			   ,Id_Empleado
-			   ,Id_Empresa)
+			   ,Id_Empresa
+			   ,Id_Factura)
 	     	VALUES
 	           (@maximo
 	           ,@Nombre_Interno
@@ -130,7 +133,8 @@ BEGIN
 			   ,@Status
 			   ,@Asignado
 			   ,@Id_Empleado
-			   ,@Id_Empresa)
+			   ,@Id_Empresa
+			   ,@Id_Factura)
 		
 		commit transaction T1;
 		set @correcto=1

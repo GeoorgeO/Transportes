@@ -16,6 +16,7 @@ ELSE
 		[CURP] [char](18) NULL,
 		[No_Identificacion] [varchar](15) NULL,
 		[Id_Licencia] [char](6) NULL,
+		[Id_Empresa] [char](4) NULL,
 	 CONSTRAINT [PK_Empleado] PRIMARY KEY CLUSTERED 
 	(
 		[Id_Empleado] ASC

@@ -61,7 +61,8 @@ BEGIN
 			A.Id_Empleado,
 			P.Nombre_Empleado,
 			A.Id_Empresa,
-			E.Nombre_Empresa
+			E.Nombre_Empresa,
+			A.Id_Factura
 		from Activos as A
 		left join Marcas as M on M.Id_Marca=A.Id_Marca
 		left join Tipo_Transporte as T on T.Id_Tipo_Transporte=A.Id_Tipo_Transporte

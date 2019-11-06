@@ -17,6 +17,7 @@ namespace CapaDeDatos
         public string CURP { get; set; }
         public string No_Identificacion { get; set; }
         public string Id_Licencia { get; set; }
+        public string Id_Empresa { get; set; }
 
         public void MtdSeleccionarEmpleado()
         {
@@ -75,7 +76,8 @@ namespace CapaDeDatos
                 _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "No_Identificacion");
                 _dato.CadenaTexto = Id_Licencia;
                 _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_Licencia");
-
+                _dato.CadenaTexto = Id_Empresa;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_Empresa");
                 _conexion.EjecutarDataset();
 
                 if (_conexion.Exito)

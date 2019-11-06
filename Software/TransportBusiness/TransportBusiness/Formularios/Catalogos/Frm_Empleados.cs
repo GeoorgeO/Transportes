@@ -52,6 +52,7 @@ namespace TransportBusiness
             if (Empleado.Exito)
             {
                 gridControl1.DataSource = Empleado.Datos;
+                
             }
         }
 

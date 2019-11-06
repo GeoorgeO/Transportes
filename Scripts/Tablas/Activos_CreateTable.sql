@@ -29,6 +29,7 @@ ELSE
 		[Asignado] [bit] NULL,
 		[Id_Empleado] [char](6) NULL,
 		[Id_Empresa] [char](4) NULL,
+		[Id_Factura] [varchar](20) NULL,
 	 CONSTRAINT [PK_Activos] PRIMARY KEY CLUSTERED 
 	(
 		[Id_Activo] ASC
