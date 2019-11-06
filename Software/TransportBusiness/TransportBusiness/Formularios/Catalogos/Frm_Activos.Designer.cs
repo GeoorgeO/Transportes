@@ -178,6 +178,9 @@
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.txtIdActivo = new DevExpress.XtraEditors.TextEdit();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl22 = new DevExpress.XtraEditors.LabelControl();
+            this.textFactura = new DevExpress.XtraEditors.TextEdit();
+            this.gridColumn27 = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
@@ -213,6 +216,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtTipoPlaca.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNombreActivo.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtIdActivo.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textFactura.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // barManager1
@@ -406,7 +410,8 @@
             this.gridColumn23,
             this.gridColumn24,
             this.gridColumn25,
-            this.gridColumn26});
+            this.gridColumn26,
+            this.gridColumn27});
             this.cardView1.FocusedCardTopFieldIndex = 0;
             this.cardView1.GridControl = this.dtgActivos;
             this.cardView1.Name = "cardView1";
@@ -1122,6 +1127,8 @@
             // 
             // groupControl1
             // 
+            this.groupControl1.Controls.Add(this.textFactura);
+            this.groupControl1.Controls.Add(this.labelControl22);
             this.groupControl1.Controls.Add(this.cboAsignado);
             this.groupControl1.Controls.Add(this.labelControl21);
             this.groupControl1.Controls.Add(this.txtEmpresaAsegu);
@@ -1606,6 +1613,30 @@
             this.labelControl1.TabIndex = 0;
             this.labelControl1.Text = "Id Activo: ";
             // 
+            // labelControl22
+            // 
+            this.labelControl22.Location = new System.Drawing.Point(705, 118);
+            this.labelControl22.Name = "labelControl22";
+            this.labelControl22.Size = new System.Drawing.Size(41, 13);
+            this.labelControl22.TabIndex = 56;
+            this.labelControl22.Text = "Factura:";
+            // 
+            // textFactura
+            // 
+            this.textFactura.Location = new System.Drawing.Point(759, 115);
+            this.textFactura.MenuManager = this.barManager1;
+            this.textFactura.Name = "textFactura";
+            this.textFactura.Size = new System.Drawing.Size(111, 20);
+            this.textFactura.TabIndex = 57;
+            // 
+            // gridColumn27
+            // 
+            this.gridColumn27.Caption = "Factura";
+            this.gridColumn27.FieldName = "Id_Factura";
+            this.gridColumn27.Name = "gridColumn27";
+            this.gridColumn27.Visible = true;
+            this.gridColumn27.VisibleIndex = 26;
+            // 
             // Frm_Activos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1658,6 +1689,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtTipoPlaca.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNombreActivo.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtIdActivo.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textFactura.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1813,5 +1845,8 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn24;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn25;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn26;
+        private DevExpress.XtraEditors.TextEdit textFactura;
+        private DevExpress.XtraEditors.LabelControl labelControl22;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn27;
     }
 }

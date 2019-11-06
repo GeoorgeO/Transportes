@@ -233,6 +233,8 @@ namespace TransportBusiness
             {
                 Activos.Asignado = "0";
             }
+
+            Activos.Id_Factura = textFactura.Text.Trim();
             
             Activos.MtdInsertarActivos();
             if (Activos.Exito)
@@ -287,6 +289,7 @@ namespace TransportBusiness
             txtPolizaSeguro.Text = "";
             dtFechaAlta.Text = DateTime.Today.ToShortDateString();
             txtFechaBaja.Text = "";
+            textFactura = "";
         }
 
         private void dtgActivos_Click(object sender, EventArgs e)
@@ -341,6 +344,7 @@ namespace TransportBusiness
                     {
                         btnEliminar.Caption = "Dar de Alta";
                     }
+                    textFactura.Text = row["Id_Factura"].ToString();
                 }
 
                

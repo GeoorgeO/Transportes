@@ -29,7 +29,7 @@ BEGIN
 	begin try
 		
 		declare @Estado char(8)
-		select @Estado=Status from dbo.Empresa where Id_Activo=@Id_Activo
+		select @Estado=Status from dbo.Activo where Id_Activo=@Id_Activo
 		
 		if @Estado='INACTIVO'
 			update dbo.Activos set Status='ACTIVO' where Id_Activo=@Id_Activo

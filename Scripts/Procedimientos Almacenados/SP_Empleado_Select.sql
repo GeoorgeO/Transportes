@@ -45,9 +45,11 @@ BEGIN
 		  ,E.Id_Licencia
 		  ,TL.No_Licencia
 		  ,E.Id_Empresa
+		  ,EPS.Nombre_Empresa
 		from Empleado as E
 		left join Tipo_Empleado as TE on E.Id_Tipo_Empleado=TE.Id_Tipo_Empleado
 		left join Licencia as TL on E.Id_Licencia=TL.Id_Licencia
+		left join Empresa as EPS on EPS.Id_Empresa=E.Id_Empresa
 
 END
 GO

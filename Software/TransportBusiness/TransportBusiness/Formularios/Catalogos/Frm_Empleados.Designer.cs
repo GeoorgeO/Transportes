@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_Empleados));
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -45,6 +46,22 @@
             this.xtraTabPage1 = new DevExpress.XtraTab.XtraTabPage();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
+            this.labelControl9 = new DevExpress.XtraEditors.LabelControl();
+            this.comboBoxEdit1 = new DevExpress.XtraEditors.ComboBoxEdit();
+            this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
+            this.bIconos = new DevExpress.XtraBars.Bar();
+            this.btnLimpiar = new DevExpress.XtraBars.BarLargeButtonItem();
+            this.btnGuardar = new DevExpress.XtraBars.BarLargeButtonItem();
+            this.btnEliminar = new DevExpress.XtraBars.BarLargeButtonItem();
+            this.btnSalir = new DevExpress.XtraBars.BarLargeButtonItem();
+            this.btnSeleccionar = new DevExpress.XtraBars.BarLargeButtonItem();
+            this.bEstado = new DevExpress.XtraBars.Bar();
+            this.lblProveedor = new DevExpress.XtraBars.BarStaticItem();
+            this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
+            this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
+            this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
+            this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
+            this.repositoryItemTextEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
             this.btnbusqlicencia = new DevExpress.XtraEditors.SimpleButton();
             this.textNoIdentificacion = new DevExpress.XtraEditors.TextEdit();
             this.textLicencia = new DevExpress.XtraEditors.TextEdit();
@@ -77,20 +94,6 @@
             this.Nombre_Estado = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Id_TipoDomicilio = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Nombre_TipoDomicilio = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.barManager1 = new DevExpress.XtraBars.BarManager();
-            this.bIconos = new DevExpress.XtraBars.Bar();
-            this.btnLimpiar = new DevExpress.XtraBars.BarLargeButtonItem();
-            this.btnGuardar = new DevExpress.XtraBars.BarLargeButtonItem();
-            this.btnEliminar = new DevExpress.XtraBars.BarLargeButtonItem();
-            this.btnSalir = new DevExpress.XtraBars.BarLargeButtonItem();
-            this.btnSeleccionar = new DevExpress.XtraBars.BarLargeButtonItem();
-            this.bEstado = new DevExpress.XtraBars.Bar();
-            this.lblProveedor = new DevExpress.XtraBars.BarStaticItem();
-            this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
-            this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
-            this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
-            this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
-            this.repositoryItemTextEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
             this.textColonia = new DevExpress.XtraEditors.TextEdit();
             this.btnBusqTipoDomicilio = new DevExpress.XtraEditors.SimpleButton();
@@ -110,7 +113,8 @@
             this.labelControl17 = new DevExpress.XtraEditors.LabelControl();
             this.textIdDomicilio = new DevExpress.XtraEditors.TextEdit();
             this.labelControl18 = new DevExpress.XtraEditors.LabelControl();
-            this.comboBoxEdit1 = new DevExpress.XtraEditors.ComboBoxEdit();
+            this.Id_Empresa = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Nombre_Empresa = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).BeginInit();
@@ -120,6 +124,9 @@
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit1.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textNoIdentificacion.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textLicencia.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textCURP.Properties)).BeginInit();
@@ -133,8 +140,6 @@
             this.panelControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
             this.groupControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.textColonia.Properties)).BeginInit();
@@ -145,7 +150,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.textNoInterior.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textCalle.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textIdDomicilio.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit1.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // gridControl1
@@ -154,7 +158,7 @@
             this.gridControl1.Location = new System.Drawing.Point(12, 12);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(792, 349);
+            this.gridControl1.Size = new System.Drawing.Size(785, 352);
             this.gridControl1.TabIndex = 0;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -172,7 +176,9 @@
             this.CURP,
             this.No_Identificacion,
             this.Id_Licencia,
-            this.No_Licencia});
+            this.No_Licencia,
+            this.Id_Empresa,
+            this.Nombre_Empresa});
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsBehavior.Editable = false;
@@ -257,10 +263,10 @@
             // xtraTabControl1
             // 
             this.xtraTabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.xtraTabControl1.Location = new System.Drawing.Point(67, 0);
+            this.xtraTabControl1.Location = new System.Drawing.Point(71, 0);
             this.xtraTabControl1.Name = "xtraTabControl1";
             this.xtraTabControl1.SelectedTabPage = this.xtraTabPage1;
-            this.xtraTabControl1.Size = new System.Drawing.Size(829, 543);
+            this.xtraTabControl1.Size = new System.Drawing.Size(825, 549);
             this.xtraTabControl1.TabIndex = 1;
             this.xtraTabControl1.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.xtraTabPage1,
@@ -272,7 +278,7 @@
             this.xtraTabPage1.Controls.Add(this.groupControl1);
             this.xtraTabPage1.Name = "xtraTabPage1";
             this.xtraTabPage1.Padding = new System.Windows.Forms.Padding(5);
-            this.xtraTabPage1.Size = new System.Drawing.Size(826, 518);
+            this.xtraTabPage1.Size = new System.Drawing.Size(819, 521);
             this.xtraTabPage1.Text = "Datos";
             // 
             // panelControl1
@@ -282,11 +288,12 @@
             this.panelControl1.Location = new System.Drawing.Point(5, 140);
             this.panelControl1.Name = "panelControl1";
             this.panelControl1.Padding = new System.Windows.Forms.Padding(10);
-            this.panelControl1.Size = new System.Drawing.Size(816, 373);
+            this.panelControl1.Size = new System.Drawing.Size(809, 376);
             this.panelControl1.TabIndex = 2;
             // 
             // groupControl1
             // 
+            this.groupControl1.Controls.Add(this.labelControl9);
             this.groupControl1.Controls.Add(this.comboBoxEdit1);
             this.groupControl1.Controls.Add(this.btnbusqlicencia);
             this.groupControl1.Controls.Add(this.textNoIdentificacion);
@@ -309,9 +316,177 @@
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupControl1.Location = new System.Drawing.Point(5, 5);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(816, 135);
+            this.groupControl1.Size = new System.Drawing.Size(809, 135);
             this.groupControl1.TabIndex = 0;
             this.groupControl1.Text = "Empleado";
+            // 
+            // labelControl9
+            // 
+            this.labelControl9.Location = new System.Drawing.Point(568, 32);
+            this.labelControl9.Name = "labelControl9";
+            this.labelControl9.Size = new System.Drawing.Size(45, 13);
+            this.labelControl9.TabIndex = 20;
+            this.labelControl9.Text = "Empresa:";
+            // 
+            // comboBoxEdit1
+            // 
+            this.comboBoxEdit1.Location = new System.Drawing.Point(614, 29);
+            this.comboBoxEdit1.MenuManager = this.barManager1;
+            this.comboBoxEdit1.Name = "comboBoxEdit1";
+            this.comboBoxEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.comboBoxEdit1.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
+            this.comboBoxEdit1.Size = new System.Drawing.Size(184, 20);
+            this.comboBoxEdit1.TabIndex = 19;
+            // 
+            // barManager1
+            // 
+            this.barManager1.Bars.AddRange(new DevExpress.XtraBars.Bar[] {
+            this.bIconos,
+            this.bEstado});
+            this.barManager1.DockControls.Add(this.barDockControlTop);
+            this.barManager1.DockControls.Add(this.barDockControlBottom);
+            this.barManager1.DockControls.Add(this.barDockControlLeft);
+            this.barManager1.DockControls.Add(this.barDockControlRight);
+            this.barManager1.Form = this;
+            this.barManager1.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
+            this.lblProveedor,
+            this.btnLimpiar,
+            this.btnGuardar,
+            this.btnEliminar,
+            this.btnSalir,
+            this.btnSeleccionar});
+            this.barManager1.MainMenu = this.bIconos;
+            this.barManager1.MaxItemId = 66;
+            this.barManager1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
+            this.repositoryItemTextEdit1});
+            this.barManager1.StatusBar = this.bEstado;
+            // 
+            // bIconos
+            // 
+            this.bIconos.BarName = "Menú principal";
+            this.bIconos.DockCol = 0;
+            this.bIconos.DockRow = 0;
+            this.bIconos.DockStyle = DevExpress.XtraBars.BarDockStyle.Left;
+            this.bIconos.FloatLocation = new System.Drawing.Point(42, 184);
+            this.bIconos.FloatSize = new System.Drawing.Size(1106, 535);
+            this.bIconos.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnLimpiar),
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnGuardar),
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnEliminar),
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnSalir),
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnSeleccionar)});
+            this.bIconos.OptionsBar.AllowCollapse = true;
+            this.bIconos.OptionsBar.AllowQuickCustomization = false;
+            this.bIconos.OptionsBar.AutoPopupMode = DevExpress.XtraBars.BarAutoPopupMode.None;
+            this.bIconos.OptionsBar.DisableClose = true;
+            this.bIconos.OptionsBar.DisableCustomization = true;
+            this.bIconos.OptionsBar.DrawBorder = false;
+            this.bIconos.OptionsBar.DrawDragBorder = false;
+            this.bIconos.OptionsBar.RotateWhenVertical = false;
+            this.bIconos.OptionsBar.UseWholeRow = true;
+            this.bIconos.Text = "Menú principal";
+            // 
+            // btnLimpiar
+            // 
+            this.btnLimpiar.Caption = "Limpiar";
+            this.btnLimpiar.Id = 50;
+            this.btnLimpiar.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnLimpiar.ImageOptions.Image")));
+            this.btnLimpiar.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnLimpiar.ImageOptions.LargeImage")));
+            this.btnLimpiar.Name = "btnLimpiar";
+            this.btnLimpiar.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnLimpiar_ItemClick);
+            // 
+            // btnGuardar
+            // 
+            this.btnGuardar.Caption = "Guardar";
+            this.btnGuardar.Id = 53;
+            this.btnGuardar.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnGuardar.ImageOptions.Image")));
+            this.btnGuardar.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnGuardar.ImageOptions.LargeImage")));
+            this.btnGuardar.Name = "btnGuardar";
+            this.btnGuardar.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnGuardar_ItemClick);
+            // 
+            // btnEliminar
+            // 
+            this.btnEliminar.Caption = "Eliminar";
+            this.btnEliminar.Id = 57;
+            this.btnEliminar.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnEliminar.ImageOptions.Image")));
+            this.btnEliminar.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnEliminar.ImageOptions.LargeImage")));
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnEliminar_ItemClick);
+            // 
+            // btnSalir
+            // 
+            this.btnSalir.Caption = "Salir";
+            this.btnSalir.Id = 63;
+            this.btnSalir.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnSalir.ImageOptions.Image")));
+            this.btnSalir.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnSalir.ImageOptions.LargeImage")));
+            this.btnSalir.Name = "btnSalir";
+            this.btnSalir.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnSalir_ItemClick);
+            // 
+            // btnSeleccionar
+            // 
+            this.btnSeleccionar.Caption = "Seleccionar";
+            this.btnSeleccionar.Id = 65;
+            this.btnSeleccionar.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnSeleccionar.ImageOptions.Image")));
+            this.btnSeleccionar.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnSeleccionar.ImageOptions.LargeImage")));
+            this.btnSeleccionar.Name = "btnSeleccionar";
+            this.btnSeleccionar.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnSeleccionar_ItemClick);
+            // 
+            // bEstado
+            // 
+            this.bEstado.BarName = "Barra de estado";
+            this.bEstado.CanDockStyle = DevExpress.XtraBars.BarCanDockStyle.Bottom;
+            this.bEstado.DockCol = 0;
+            this.bEstado.DockRow = 0;
+            this.bEstado.DockStyle = DevExpress.XtraBars.BarDockStyle.Bottom;
+            this.bEstado.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
+            new DevExpress.XtraBars.LinkPersistInfo(this.lblProveedor)});
+            this.bEstado.OptionsBar.AllowQuickCustomization = false;
+            this.bEstado.OptionsBar.DrawDragBorder = false;
+            this.bEstado.OptionsBar.UseWholeRow = true;
+            this.bEstado.Text = "Barra de estado";
+            // 
+            // lblProveedor
+            // 
+            this.lblProveedor.Caption = "Proveedor:";
+            this.lblProveedor.Id = 48;
+            this.lblProveedor.Name = "lblProveedor";
+            // 
+            // barDockControlTop
+            // 
+            this.barDockControlTop.CausesValidation = false;
+            this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
+            this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
+            this.barDockControlTop.Manager = this.barManager1;
+            this.barDockControlTop.Size = new System.Drawing.Size(896, 0);
+            // 
+            // barDockControlBottom
+            // 
+            this.barDockControlBottom.CausesValidation = false;
+            this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 549);
+            this.barDockControlBottom.Manager = this.barManager1;
+            this.barDockControlBottom.Size = new System.Drawing.Size(896, 25);
+            // 
+            // barDockControlLeft
+            // 
+            this.barDockControlLeft.CausesValidation = false;
+            this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
+            this.barDockControlLeft.Location = new System.Drawing.Point(0, 0);
+            this.barDockControlLeft.Manager = this.barManager1;
+            this.barDockControlLeft.Size = new System.Drawing.Size(71, 549);
+            // 
+            // barDockControlRight
+            // 
+            this.barDockControlRight.CausesValidation = false;
+            this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
+            this.barDockControlRight.Location = new System.Drawing.Point(896, 0);
+            this.barDockControlRight.Manager = this.barManager1;
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 549);
+            // 
+            // repositoryItemTextEdit1
+            // 
+            this.repositoryItemTextEdit1.Name = "repositoryItemTextEdit1";
             // 
             // btnbusqlicencia
             // 
@@ -458,7 +633,7 @@
             this.xtraTabPage2.Controls.Add(this.groupControl2);
             this.xtraTabPage2.Name = "xtraTabPage2";
             this.xtraTabPage2.Padding = new System.Windows.Forms.Padding(5);
-            this.xtraTabPage2.Size = new System.Drawing.Size(822, 524);
+            this.xtraTabPage2.Size = new System.Drawing.Size(819, 521);
             this.xtraTabPage2.Text = "Domicilio";
             // 
             // panelControl2
@@ -468,7 +643,7 @@
             this.panelControl2.Location = new System.Drawing.Point(5, 149);
             this.panelControl2.Name = "panelControl2";
             this.panelControl2.Padding = new System.Windows.Forms.Padding(10);
-            this.panelControl2.Size = new System.Drawing.Size(812, 370);
+            this.panelControl2.Size = new System.Drawing.Size(809, 367);
             this.panelControl2.TabIndex = 16;
             // 
             // gridControl2
@@ -478,7 +653,7 @@
             this.gridControl2.MainView = this.gridView2;
             this.gridControl2.MenuManager = this.barManager1;
             this.gridControl2.Name = "gridControl2";
-            this.gridControl2.Size = new System.Drawing.Size(788, 346);
+            this.gridControl2.Size = new System.Drawing.Size(785, 343);
             this.gridControl2.TabIndex = 0;
             this.gridControl2.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView2});
@@ -584,155 +759,6 @@
             this.Nombre_TipoDomicilio.Visible = true;
             this.Nombre_TipoDomicilio.VisibleIndex = 9;
             // 
-            // barManager1
-            // 
-            this.barManager1.Bars.AddRange(new DevExpress.XtraBars.Bar[] {
-            this.bIconos,
-            this.bEstado});
-            this.barManager1.DockControls.Add(this.barDockControlTop);
-            this.barManager1.DockControls.Add(this.barDockControlBottom);
-            this.barManager1.DockControls.Add(this.barDockControlLeft);
-            this.barManager1.DockControls.Add(this.barDockControlRight);
-            this.barManager1.Form = this;
-            this.barManager1.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
-            this.lblProveedor,
-            this.btnLimpiar,
-            this.btnGuardar,
-            this.btnEliminar,
-            this.btnSalir,
-            this.btnSeleccionar});
-            this.barManager1.MainMenu = this.bIconos;
-            this.barManager1.MaxItemId = 66;
-            this.barManager1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
-            this.repositoryItemTextEdit1});
-            this.barManager1.StatusBar = this.bEstado;
-            // 
-            // bIconos
-            // 
-            this.bIconos.BarName = "Menú principal";
-            this.bIconos.DockCol = 0;
-            this.bIconos.DockRow = 0;
-            this.bIconos.DockStyle = DevExpress.XtraBars.BarDockStyle.Left;
-            this.bIconos.FloatLocation = new System.Drawing.Point(42, 184);
-            this.bIconos.FloatSize = new System.Drawing.Size(1106, 535);
-            this.bIconos.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
-            new DevExpress.XtraBars.LinkPersistInfo(this.btnLimpiar),
-            new DevExpress.XtraBars.LinkPersistInfo(this.btnGuardar),
-            new DevExpress.XtraBars.LinkPersistInfo(this.btnEliminar),
-            new DevExpress.XtraBars.LinkPersistInfo(this.btnSalir),
-            new DevExpress.XtraBars.LinkPersistInfo(this.btnSeleccionar)});
-            this.bIconos.OptionsBar.AllowCollapse = true;
-            this.bIconos.OptionsBar.AllowQuickCustomization = false;
-            this.bIconos.OptionsBar.AutoPopupMode = DevExpress.XtraBars.BarAutoPopupMode.None;
-            this.bIconos.OptionsBar.DisableClose = true;
-            this.bIconos.OptionsBar.DisableCustomization = true;
-            this.bIconos.OptionsBar.DrawBorder = false;
-            this.bIconos.OptionsBar.DrawDragBorder = false;
-            this.bIconos.OptionsBar.RotateWhenVertical = false;
-            this.bIconos.OptionsBar.UseWholeRow = true;
-            this.bIconos.Text = "Menú principal";
-            // 
-            // btnLimpiar
-            // 
-            this.btnLimpiar.Caption = "Limpiar";
-            this.btnLimpiar.Id = 50;
-            this.btnLimpiar.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnLimpiar.ImageOptions.Image")));
-            this.btnLimpiar.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnLimpiar.ImageOptions.LargeImage")));
-            this.btnLimpiar.Name = "btnLimpiar";
-            this.btnLimpiar.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnLimpiar_ItemClick);
-            // 
-            // btnGuardar
-            // 
-            this.btnGuardar.Caption = "Guardar";
-            this.btnGuardar.Id = 53;
-            this.btnGuardar.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnGuardar.ImageOptions.Image")));
-            this.btnGuardar.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnGuardar.ImageOptions.LargeImage")));
-            this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnGuardar_ItemClick);
-            // 
-            // btnEliminar
-            // 
-            this.btnEliminar.Caption = "Eliminar";
-            this.btnEliminar.Id = 57;
-            this.btnEliminar.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnEliminar.ImageOptions.Image")));
-            this.btnEliminar.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnEliminar.ImageOptions.LargeImage")));
-            this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnEliminar_ItemClick);
-            // 
-            // btnSalir
-            // 
-            this.btnSalir.Caption = "Salir";
-            this.btnSalir.Id = 63;
-            this.btnSalir.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnSalir.ImageOptions.Image")));
-            this.btnSalir.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnSalir.ImageOptions.LargeImage")));
-            this.btnSalir.Name = "btnSalir";
-            this.btnSalir.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnSalir_ItemClick);
-            // 
-            // btnSeleccionar
-            // 
-            this.btnSeleccionar.Caption = "Seleccionar";
-            this.btnSeleccionar.Id = 65;
-            this.btnSeleccionar.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnSeleccionar.ImageOptions.Image")));
-            this.btnSeleccionar.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnSeleccionar.ImageOptions.LargeImage")));
-            this.btnSeleccionar.Name = "btnSeleccionar";
-            this.btnSeleccionar.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnSeleccionar_ItemClick);
-            // 
-            // bEstado
-            // 
-            this.bEstado.BarName = "Barra de estado";
-            this.bEstado.CanDockStyle = DevExpress.XtraBars.BarCanDockStyle.Bottom;
-            this.bEstado.DockCol = 0;
-            this.bEstado.DockRow = 0;
-            this.bEstado.DockStyle = DevExpress.XtraBars.BarDockStyle.Bottom;
-            this.bEstado.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
-            new DevExpress.XtraBars.LinkPersistInfo(this.lblProveedor)});
-            this.bEstado.OptionsBar.AllowQuickCustomization = false;
-            this.bEstado.OptionsBar.DrawDragBorder = false;
-            this.bEstado.OptionsBar.UseWholeRow = true;
-            this.bEstado.Text = "Barra de estado";
-            // 
-            // lblProveedor
-            // 
-            this.lblProveedor.Caption = "Proveedor:";
-            this.lblProveedor.Id = 48;
-            this.lblProveedor.Name = "lblProveedor";
-            // 
-            // barDockControlTop
-            // 
-            this.barDockControlTop.CausesValidation = false;
-            this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
-            this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
-            this.barDockControlTop.Manager = this.barManager1;
-            this.barDockControlTop.Size = new System.Drawing.Size(896, 0);
-            // 
-            // barDockControlBottom
-            // 
-            this.barDockControlBottom.CausesValidation = false;
-            this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 543);
-            this.barDockControlBottom.Manager = this.barManager1;
-            this.barDockControlBottom.Size = new System.Drawing.Size(896, 31);
-            // 
-            // barDockControlLeft
-            // 
-            this.barDockControlLeft.CausesValidation = false;
-            this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
-            this.barDockControlLeft.Location = new System.Drawing.Point(0, 0);
-            this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Size = new System.Drawing.Size(67, 543);
-            // 
-            // barDockControlRight
-            // 
-            this.barDockControlRight.CausesValidation = false;
-            this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(896, 0);
-            this.barDockControlRight.Manager = this.barManager1;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 543);
-            // 
-            // repositoryItemTextEdit1
-            // 
-            this.repositoryItemTextEdit1.Name = "repositoryItemTextEdit1";
-            // 
             // groupControl2
             // 
             this.groupControl2.Controls.Add(this.textColonia);
@@ -756,7 +782,7 @@
             this.groupControl2.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupControl2.Location = new System.Drawing.Point(5, 5);
             this.groupControl2.Name = "groupControl2";
-            this.groupControl2.Size = new System.Drawing.Size(812, 144);
+            this.groupControl2.Size = new System.Drawing.Size(809, 144);
             this.groupControl2.TabIndex = 1;
             this.groupControl2.Text = "Domicilio";
             // 
@@ -907,15 +933,21 @@
             this.labelControl18.TabIndex = 0;
             this.labelControl18.Text = "Id domicilio: ";
             // 
-            // comboBoxEdit1
+            // Id_Empresa
             // 
-            this.comboBoxEdit1.Location = new System.Drawing.Point(579, 29);
-            this.comboBoxEdit1.MenuManager = this.barManager1;
-            this.comboBoxEdit1.Name = "comboBoxEdit1";
-            this.comboBoxEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.comboBoxEdit1.Size = new System.Drawing.Size(157, 20);
-            this.comboBoxEdit1.TabIndex = 19;
+            this.Id_Empresa.Caption = "Id empresa";
+            this.Id_Empresa.FieldName = "Id_Empresa";
+            this.Id_Empresa.Name = "Id_Empresa";
+            this.Id_Empresa.Visible = true;
+            this.Id_Empresa.VisibleIndex = 8;
+            // 
+            // Nombre_Empresa
+            // 
+            this.Nombre_Empresa.Caption = "Empresa";
+            this.Nombre_Empresa.FieldName = "Nombre_Empresa";
+            this.Nombre_Empresa.Name = "Nombre_Empresa";
+            this.Nombre_Empresa.Visible = true;
+            this.Nombre_Empresa.VisibleIndex = 9;
             // 
             // Frm_Empleados
             // 
@@ -943,6 +975,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
             this.groupControl1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit1.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textNoIdentificacion.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textLicencia.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textCURP.Properties)).EndInit();
@@ -956,8 +991,6 @@
             this.panelControl2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridControl2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).EndInit();
             this.groupControl2.ResumeLayout(false);
             this.groupControl2.PerformLayout();
@@ -969,7 +1002,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.textNoInterior.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textCalle.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textIdDomicilio.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit1.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1058,5 +1090,8 @@
         private DevExpress.XtraGrid.Columns.GridColumn Nombre_TipoDomicilio;
         private DevExpress.XtraEditors.PanelControl panelControl1;
         private DevExpress.XtraEditors.ComboBoxEdit comboBoxEdit1;
+        private DevExpress.XtraEditors.LabelControl labelControl9;
+        private DevExpress.XtraGrid.Columns.GridColumn Id_Empresa;
+        private DevExpress.XtraGrid.Columns.GridColumn Nombre_Empresa;
     }
 }

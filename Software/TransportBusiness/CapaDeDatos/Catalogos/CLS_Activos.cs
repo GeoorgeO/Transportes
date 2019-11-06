@@ -30,6 +30,7 @@ namespace CapaDeDatos
         public string Asignado { get; set; }
         public string Id_Empleado { get; set; }
         public string Id_Empresa { get; set; }
+        public string Id_Factura { get; set; }
 
         public void MtdSeleccionarActivos()
         {
@@ -114,6 +115,8 @@ namespace CapaDeDatos
                 _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_Empleado");
                 _dato.CadenaTexto = Id_Empresa;
                 _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_Empresa");
+                _dato.CadenaTexto = Id_Factura;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_Factura");
                 _conexion.EjecutarDataset();
 
                 if (_conexion.Exito)

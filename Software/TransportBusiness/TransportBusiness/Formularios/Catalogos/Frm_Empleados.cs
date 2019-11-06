@@ -52,7 +52,21 @@ namespace TransportBusiness
             if (Empleado.Exito)
             {
                 gridControl1.DataSource = Empleado.Datos;
-                
+            }
+        }
+
+        private void CargarEmpresaEmpleado()
+        {
+            
+            CLS_Empleado Empleado = new CLS_Empleado();
+
+            Empleado.MtdSeleccionarEmpresaEmpleado();
+            if (Empleado.Exito)
+            {
+                foreach (DataRow Row in Empleado.Datos.Rows)
+                {
+                    comboBoxEdit1.Properties.Items.Add(Row["Id_Empresa"]+" - "+ Row["Nombre_Empresa"]);
+                }
             }
         }
 
@@ -80,10 +94,10 @@ namespace TransportBusiness
             Empleado.CURP = textCURP.Text.Trim();
             Empleado.No_Identificacion = textNoIdentificacion.Text.Trim();
             Empleado.Id_Licencia = textLicencia.Tag.ToString().Trim();
+            Empleado.Id_Empresa = comboBoxEdit1.Text.Substring(0, 4);
             Empleado.MtdInsertarEmpleado();
             if (Empleado.Exito)
             {
-
                 CargarEmpleado();
                 XtraMessageBox.Show("Se ha Insertado el registro con exito");
                 LimpiarCampos();
@@ -225,6 +239,7 @@ namespace TransportBusiness
                     textNoIdentificacion.Text = row["No_Identificacion"].ToString();
                     textLicencia.Tag = row["Id_Licencia"].ToString();
                     textLicencia.Text = row["No_Licencia"].ToString();
+                    comboBoxEdit1.Text = row["Id_Empresa"].ToString()+" - "+ row["Nombre_Empresa"].ToString();
                 }
             }
             catch (Exception ex)
@@ -336,9 +351,11 @@ namespace TransportBusiness
             {
                 btnSeleccionar.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
             }
+            LimpiarCampos();
             CargarEmpleado();
             CargarDomicilio();
             iniciarTags();
+            CargarEmpresaEmpleado();
         }
 
         private void btnbuscar_Click(object sender, EventArgs e)
