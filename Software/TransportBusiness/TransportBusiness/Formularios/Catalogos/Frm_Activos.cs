@@ -289,7 +289,7 @@ namespace TransportBusiness
             txtPolizaSeguro.Text = "";
             dtFechaAlta.Text = DateTime.Today.ToShortDateString();
             txtFechaBaja.Text = "";
-            textFactura = "";
+            textFactura.Text = "";
         }
 
         private void dtgActivos_Click(object sender, EventArgs e)
