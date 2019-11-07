@@ -42,6 +42,8 @@
             this.No_Identificacion = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Id_Licencia = new DevExpress.XtraGrid.Columns.GridColumn();
             this.No_Licencia = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Id_Empresa = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Nombre_Empresa = new DevExpress.XtraGrid.Columns.GridColumn();
             this.xtraTabControl1 = new DevExpress.XtraTab.XtraTabControl();
             this.xtraTabPage1 = new DevExpress.XtraTab.XtraTabPage();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
@@ -113,8 +115,20 @@
             this.labelControl17 = new DevExpress.XtraEditors.LabelControl();
             this.textIdDomicilio = new DevExpress.XtraEditors.TextEdit();
             this.labelControl18 = new DevExpress.XtraEditors.LabelControl();
-            this.Id_Empresa = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.Nombre_Empresa = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.xtraTabPage3 = new DevExpress.XtraTab.XtraTabPage();
+            this.panelControl3 = new DevExpress.XtraEditors.PanelControl();
+            this.gridControl3 = new DevExpress.XtraGrid.GridControl();
+            this.gridView3 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.Id_Contacto = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Nombre_Contacto = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Telefono3 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.groupControl3 = new DevExpress.XtraEditors.GroupControl();
+            this.textTelefonoContacto = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl20 = new DevExpress.XtraEditors.LabelControl();
+            this.textNombreContacto = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl24 = new DevExpress.XtraEditors.LabelControl();
+            this.textIdContacto = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl25 = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).BeginInit();
@@ -150,6 +164,16 @@
             ((System.ComponentModel.ISupportInitialize)(this.textNoInterior.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textCalle.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textIdDomicilio.Properties)).BeginInit();
+            this.xtraTabPage3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).BeginInit();
+            this.panelControl3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).BeginInit();
+            this.groupControl3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.textTelefonoContacto.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textNombreContacto.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textIdContacto.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // gridControl1
@@ -260,17 +284,35 @@
             this.No_Licencia.Visible = true;
             this.No_Licencia.VisibleIndex = 7;
             // 
+            // Id_Empresa
+            // 
+            this.Id_Empresa.Caption = "Id empresa";
+            this.Id_Empresa.FieldName = "Id_Empresa";
+            this.Id_Empresa.Name = "Id_Empresa";
+            this.Id_Empresa.Visible = true;
+            this.Id_Empresa.VisibleIndex = 8;
+            // 
+            // Nombre_Empresa
+            // 
+            this.Nombre_Empresa.Caption = "Empresa";
+            this.Nombre_Empresa.FieldName = "Nombre_Empresa";
+            this.Nombre_Empresa.Name = "Nombre_Empresa";
+            this.Nombre_Empresa.Visible = true;
+            this.Nombre_Empresa.VisibleIndex = 9;
+            // 
             // xtraTabControl1
             // 
             this.xtraTabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.xtraTabControl1.Location = new System.Drawing.Point(71, 0);
             this.xtraTabControl1.Name = "xtraTabControl1";
+            this.xtraTabControl1.Padding = new System.Windows.Forms.Padding(5);
             this.xtraTabControl1.SelectedTabPage = this.xtraTabPage1;
             this.xtraTabControl1.Size = new System.Drawing.Size(825, 549);
             this.xtraTabControl1.TabIndex = 1;
             this.xtraTabControl1.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.xtraTabPage1,
-            this.xtraTabPage2});
+            this.xtraTabPage2,
+            this.xtraTabPage3});
             // 
             // xtraTabPage1
             // 
@@ -933,21 +975,137 @@
             this.labelControl18.TabIndex = 0;
             this.labelControl18.Text = "Id domicilio: ";
             // 
-            // Id_Empresa
+            // xtraTabPage3
             // 
-            this.Id_Empresa.Caption = "Id empresa";
-            this.Id_Empresa.FieldName = "Id_Empresa";
-            this.Id_Empresa.Name = "Id_Empresa";
-            this.Id_Empresa.Visible = true;
-            this.Id_Empresa.VisibleIndex = 8;
+            this.xtraTabPage3.Controls.Add(this.panelControl3);
+            this.xtraTabPage3.Controls.Add(this.groupControl3);
+            this.xtraTabPage3.Name = "xtraTabPage3";
+            this.xtraTabPage3.Size = new System.Drawing.Size(819, 521);
+            this.xtraTabPage3.Text = "Contacto";
             // 
-            // Nombre_Empresa
+            // panelControl3
             // 
-            this.Nombre_Empresa.Caption = "Empresa";
-            this.Nombre_Empresa.FieldName = "Nombre_Empresa";
-            this.Nombre_Empresa.Name = "Nombre_Empresa";
-            this.Nombre_Empresa.Visible = true;
-            this.Nombre_Empresa.VisibleIndex = 9;
+            this.panelControl3.Controls.Add(this.gridControl3);
+            this.panelControl3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelControl3.Location = new System.Drawing.Point(0, 117);
+            this.panelControl3.Name = "panelControl3";
+            this.panelControl3.Padding = new System.Windows.Forms.Padding(10);
+            this.panelControl3.Size = new System.Drawing.Size(819, 404);
+            this.panelControl3.TabIndex = 18;
+            // 
+            // gridControl3
+            // 
+            this.gridControl3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gridControl3.Location = new System.Drawing.Point(12, 12);
+            this.gridControl3.MainView = this.gridView3;
+            this.gridControl3.MenuManager = this.barManager1;
+            this.gridControl3.Name = "gridControl3";
+            this.gridControl3.Size = new System.Drawing.Size(795, 380);
+            this.gridControl3.TabIndex = 0;
+            this.gridControl3.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridView3});
+            this.gridControl3.Click += new System.EventHandler(this.gridControl3_Click);
+            // 
+            // gridView3
+            // 
+            this.gridView3.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.Id_Contacto,
+            this.Nombre_Contacto,
+            this.Telefono3});
+            this.gridView3.GridControl = this.gridControl3;
+            this.gridView3.Name = "gridView3";
+            this.gridView3.OptionsBehavior.Editable = false;
+            this.gridView3.OptionsView.ShowGroupPanel = false;
+            // 
+            // Id_Contacto
+            // 
+            this.Id_Contacto.Caption = "Id Contacto";
+            this.Id_Contacto.FieldName = "Id_Contacto";
+            this.Id_Contacto.Name = "Id_Contacto";
+            this.Id_Contacto.OptionsColumn.AllowEdit = false;
+            this.Id_Contacto.Visible = true;
+            this.Id_Contacto.VisibleIndex = 0;
+            // 
+            // Nombre_Contacto
+            // 
+            this.Nombre_Contacto.Caption = "Contacto";
+            this.Nombre_Contacto.FieldName = "Nombre_Contacto";
+            this.Nombre_Contacto.Name = "Nombre_Contacto";
+            this.Nombre_Contacto.OptionsColumn.AllowEdit = false;
+            this.Nombre_Contacto.Visible = true;
+            this.Nombre_Contacto.VisibleIndex = 1;
+            // 
+            // Telefono3
+            // 
+            this.Telefono3.Caption = "Telefono";
+            this.Telefono3.FieldName = "Telefono";
+            this.Telefono3.Name = "Telefono3";
+            this.Telefono3.Visible = true;
+            this.Telefono3.VisibleIndex = 2;
+            // 
+            // groupControl3
+            // 
+            this.groupControl3.Controls.Add(this.textTelefonoContacto);
+            this.groupControl3.Controls.Add(this.labelControl20);
+            this.groupControl3.Controls.Add(this.textNombreContacto);
+            this.groupControl3.Controls.Add(this.labelControl24);
+            this.groupControl3.Controls.Add(this.textIdContacto);
+            this.groupControl3.Controls.Add(this.labelControl25);
+            this.groupControl3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.groupControl3.Location = new System.Drawing.Point(0, 0);
+            this.groupControl3.Name = "groupControl3";
+            this.groupControl3.Size = new System.Drawing.Size(819, 117);
+            this.groupControl3.TabIndex = 17;
+            this.groupControl3.Text = "Contacto";
+            // 
+            // textTelefonoContacto
+            // 
+            this.textTelefonoContacto.Location = new System.Drawing.Point(67, 83);
+            this.textTelefonoContacto.MenuManager = this.barManager1;
+            this.textTelefonoContacto.Name = "textTelefonoContacto";
+            this.textTelefonoContacto.Size = new System.Drawing.Size(226, 20);
+            this.textTelefonoContacto.TabIndex = 15;
+            // 
+            // labelControl20
+            // 
+            this.labelControl20.Location = new System.Drawing.Point(17, 86);
+            this.labelControl20.Name = "labelControl20";
+            this.labelControl20.Size = new System.Drawing.Size(46, 13);
+            this.labelControl20.TabIndex = 7;
+            this.labelControl20.Text = "Telefono:";
+            // 
+            // textNombreContacto
+            // 
+            this.textNombreContacto.Location = new System.Drawing.Point(67, 57);
+            this.textNombreContacto.MenuManager = this.barManager1;
+            this.textNombreContacto.Name = "textNombreContacto";
+            this.textNombreContacto.Size = new System.Drawing.Size(226, 20);
+            this.textNombreContacto.TabIndex = 3;
+            // 
+            // labelControl24
+            // 
+            this.labelControl24.Location = new System.Drawing.Point(17, 61);
+            this.labelControl24.Name = "labelControl24";
+            this.labelControl24.Size = new System.Drawing.Size(41, 13);
+            this.labelControl24.TabIndex = 2;
+            this.labelControl24.Text = "Nombre:";
+            // 
+            // textIdContacto
+            // 
+            this.textIdContacto.Enabled = false;
+            this.textIdContacto.Location = new System.Drawing.Point(67, 30);
+            this.textIdContacto.MenuManager = this.barManager1;
+            this.textIdContacto.Name = "textIdContacto";
+            this.textIdContacto.Size = new System.Drawing.Size(100, 20);
+            this.textIdContacto.TabIndex = 1;
+            // 
+            // labelControl25
+            // 
+            this.labelControl25.Location = new System.Drawing.Point(17, 35);
+            this.labelControl25.Name = "labelControl25";
+            this.labelControl25.Size = new System.Drawing.Size(17, 13);
+            this.labelControl25.TabIndex = 0;
+            this.labelControl25.Text = "Id: ";
             // 
             // Frm_Empleados
             // 
@@ -1002,6 +1160,17 @@
             ((System.ComponentModel.ISupportInitialize)(this.textNoInterior.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textCalle.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textIdDomicilio.Properties)).EndInit();
+            this.xtraTabPage3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).EndInit();
+            this.panelControl3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).EndInit();
+            this.groupControl3.ResumeLayout(false);
+            this.groupControl3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.textTelefonoContacto.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textNombreContacto.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textIdContacto.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1093,5 +1262,19 @@
         private DevExpress.XtraEditors.LabelControl labelControl9;
         private DevExpress.XtraGrid.Columns.GridColumn Id_Empresa;
         private DevExpress.XtraGrid.Columns.GridColumn Nombre_Empresa;
+        private DevExpress.XtraTab.XtraTabPage xtraTabPage3;
+        private DevExpress.XtraEditors.PanelControl panelControl3;
+        private DevExpress.XtraGrid.GridControl gridControl3;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView3;
+        private DevExpress.XtraGrid.Columns.GridColumn Id_Contacto;
+        private DevExpress.XtraGrid.Columns.GridColumn Nombre_Contacto;
+        private DevExpress.XtraGrid.Columns.GridColumn Telefono3;
+        private DevExpress.XtraEditors.GroupControl groupControl3;
+        private DevExpress.XtraEditors.TextEdit textTelefonoContacto;
+        private DevExpress.XtraEditors.LabelControl labelControl20;
+        private DevExpress.XtraEditors.TextEdit textNombreContacto;
+        private DevExpress.XtraEditors.LabelControl labelControl24;
+        private DevExpress.XtraEditors.TextEdit textIdContacto;
+        private DevExpress.XtraEditors.LabelControl labelControl25;
     }
 }

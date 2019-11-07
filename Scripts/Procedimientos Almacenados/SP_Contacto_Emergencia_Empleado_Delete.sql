@@ -5,15 +5,15 @@ SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
-IF  EXISTS (SELECT * FROM SYS.OBJECTS WHERE TYPE = 'P' AND NAME = 'SP_Contacto_Emergencia_Delete')
-DROP PROCEDURE SP_Contacto_Emergencia_Delete
+IF  EXISTS (SELECT * FROM SYS.OBJECTS WHERE TYPE = 'P' AND NAME = 'SP_Contacto_Emergencia_Empleado_Delete')
+DROP PROCEDURE SP_Contacto_Emergencia_Empleado_Delete
 GO
 -- =============================================
 -- Author:		<Author,,Name>
 -- Create date: <Create Date,,>
 -- Description:	<Description,,>
 -- =============================================
-create PROCEDURE [dbo].[SP_Contacto_Emergencia_Delete] 
+create PROCEDURE [dbo].[SP_Contacto_Emergencia_Empleado_Delete] 
 	-- Add the parameters for the stored procedure here
 	@Id_Empleado char(6)
 AS

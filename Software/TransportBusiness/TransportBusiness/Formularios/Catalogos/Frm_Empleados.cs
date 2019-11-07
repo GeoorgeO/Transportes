@@ -83,6 +83,18 @@ namespace TransportBusiness
             }
         }
 
+        private void CargarContacto()
+        {
+            gridControl3.DataSource = null;
+            CLS_Contacto_Emergencia Contacto = new CLS_Contacto_Emergencia();
+            Contacto.Id_Empleado = textIdEmpleado.Text.Trim();
+            Contacto.MtdSeleccionarContacto();
+            if (Contacto.Exito)
+            {
+                gridControl3.DataSource = Contacto.Datos;
+            }
+        }
+
         private void InsertarEmpleado()
         {
             CLS_Empleado Empleado = new CLS_Empleado();
@@ -132,7 +144,6 @@ namespace TransportBusiness
             Domicilio.MtdInsertarDomicilio();
             if (Domicilio.Exito)
             {
-
                 CargarDomicilio();
                 XtraMessageBox.Show("Se ha Insertado el registro con exito");
                 LimpiarCamposDomicilio();
@@ -140,6 +151,26 @@ namespace TransportBusiness
             else
             {
                 XtraMessageBox.Show(Domicilio.Mensaje);
+            }
+        }
+
+        private void InsertarContacto()
+        {
+            CLS_Contacto_Emergencia Contacto = new CLS_Contacto_Emergencia();
+            Contacto.Id_Contacto = textIdContacto.Text.Trim();
+            Contacto.Nombre_Contacto = textNombreContacto.Text.Trim();
+            Contacto.Telefono = textTelefonoContacto.Text.Trim();
+            Contacto.Id_Empleado = textIdEmpleado.Text.Trim();
+            Contacto.MtdInsertarContacto();
+            if (Contacto.Exito)
+            {
+                CargarContacto();
+                XtraMessageBox.Show("Se ha Insertado el registro con exito");
+                LimpiarCamposContacto();
+            }
+            else
+            {
+                XtraMessageBox.Show(Contacto.Mensaje);
             }
         }
 
@@ -175,6 +206,23 @@ namespace TransportBusiness
             else
             {
                 XtraMessageBox.Show(Domicilio.Mensaje);
+            }
+        }
+
+        private void EliminarContacto()
+        {
+            CLS_Contacto_Emergencia Contacto = new CLS_Contacto_Emergencia();
+            Contacto.Id_Contacto = textIdContacto.Text.Trim();
+            Contacto.MtdEliminarContacto();
+            if (Contacto.Exito)
+            {
+                CargarContacto();
+                XtraMessageBox.Show("Se ha Eliminado el registro con exito");
+                LimpiarCamposContacto();
+            }
+            else
+            {
+                XtraMessageBox.Show(Contacto.Mensaje);
             }
         }
 
@@ -222,6 +270,13 @@ namespace TransportBusiness
             textTipoDomicilio.Text = "";
         }
 
+        private void LimpiarCamposContacto()
+        {
+            textIdContacto.Text = "";
+            textNombreContacto.Text = "";
+            textTelefonoContacto.Text = "";
+        }
+
         private void gridControl1_Click(object sender, EventArgs e)
         {
             try
@@ -248,6 +303,7 @@ namespace TransportBusiness
             }
 
             CargarDomicilio();
+            CargarContacto();
         }
 
         private void btnGuardar_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -271,7 +327,7 @@ namespace TransportBusiness
                     XtraMessageBox.Show("Es necesario Agregar un nombre de empleado.");
                 }
             }
-            else
+            if (xtraTabControl1.SelectedTabPage == xtraTabPage2)
             {
                 if (textCalle.Text.ToString().Trim().Length > 0)
                 {
@@ -290,8 +346,25 @@ namespace TransportBusiness
                     XtraMessageBox.Show("Es necesario Agregar una calle.");
                 }
             }
+            if (xtraTabControl1.SelectedTabPage == xtraTabPage3)
+            {
+                if (textNombreContacto.Text.ToString().Trim().Length > 0)
+                {
+                    if (textTelefonoContacto.Text.ToString().Trim().Length > 0)
+                    {
+                        InsertarContacto();
+                    }
+                    else
+                    {
+                        XtraMessageBox.Show("Es necesario agregar un numero exterior.");
+                    }
+                }
+                else
+                {
+                    XtraMessageBox.Show("Es necesario Agregar una calle.");
+                }
+            }
 
-           
         }
 
         private void btnEliminar_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -308,7 +381,7 @@ namespace TransportBusiness
                     XtraMessageBox.Show("Es necesario seleccionar un Empleado.");
                 }
             }
-            else
+            if (xtraTabControl1.SelectedTabPage == xtraTabPage2)
             {
                 if (textIdDomicilio.Text.Trim().Length > 0)
                 {
@@ -319,6 +392,17 @@ namespace TransportBusiness
                     XtraMessageBox.Show("Es necesario seleccionar un Domicilio.");
                 }
             }
+            if (xtraTabControl1.SelectedTabPage == xtraTabPage3)
+            {
+                if (textIdContacto.Text.Trim().Length > 0)
+                {
+                    EliminarContacto();
+                }
+                else
+                {
+                    XtraMessageBox.Show("Es necesario seleccionar un contacto.");
+                }
+            }
         }
 
         private void btnLimpiar_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -327,13 +411,17 @@ namespace TransportBusiness
             {
                 LimpiarCampos();
                 LimpiarCamposDomicilio();
+                LimpiarCamposContacto();
             }
-            else
+            if (xtraTabControl1.SelectedTabPage == xtraTabPage2)
             {
                 LimpiarCamposDomicilio();
             }
+            if (xtraTabControl1.SelectedTabPage == xtraTabPage3)
+            {
+                LimpiarCamposContacto();
+            }
 
-           
         }
 
         private void btnSalir_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -436,6 +524,26 @@ namespace TransportBusiness
 
             textTipoDomicilio.Tag = tipoDomicilio.IdTipoDomicilio;
             textTipoDomicilio.Text = tipoDomicilio.TipoDomicilio;
+        }
+
+        private void gridControl3_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                foreach (int i in this.gridView3.GetSelectedRows())
+                {
+                    DataRow row = this.gridView3.GetDataRow(i);
+                    textIdContacto.Text = row["Id_Contacto"].ToString();
+                    textNombreContacto.Text = row["Nombre_Contacto"].ToString();
+                    textTelefonoContacto.Text = row["Telefono"].ToString();
+                    
+
+                }
+            }
+            catch (Exception ex)
+            {
+                XtraMessageBox.Show(ex.Message);
+            }
         }
     }
 }
