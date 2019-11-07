@@ -38,7 +38,18 @@ BEGIN
 	      ,CE.Nombre_Contacto
 		  ,CE.Telefono
 		  ,CE.Id_Empleado
+		  ,CE.Calle
+		  ,CE.NoInterior
+		  ,CE.NoExterior
+		  ,CE.Colonia
+		  ,CE.Codigo_Postal
+		  ,CE.Id_Estado
+		  ,EST.Nombre_Estado
+		  ,CE.Id_TipoDomicilio
+		  ,TD.Nombre_Tipo_Domicilio
 		from Contacto_Emergencia as CE
+		left join Estado as EST on EST.Id_Estado=CE.Id_Estado
+		left join Tipo_Domicilio as TD on TD.Id_TipoDomicilio=CE.Id_TipoDomicilio
 		where CE.Id_Empleado=@Id_Empleado
 END
 GO

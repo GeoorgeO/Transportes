@@ -18,7 +18,14 @@ create PROCEDURE [dbo].[SP_Contacto_Emergencia_Insert]
 	@Id_Contacto char(6),
 	@Nombre_Contacto varchar(80),
 	@Telefono varchar(15),
-	@Id_Empleado char(6)
+	@Id_Empleado char(6),
+	@Calle varchar(100),
+	@NoInterior varchar(10),
+	@NoExterior varchar(10),
+	@Colonia varchar(50),
+	@Codigo_Postal char(5),
+	@Id_Estado char(3),
+	@Id_TipoDomicilio char(4)
 AS
 BEGIN
 	-- SET NOCOUNT ON added to prevent extra result sets from
@@ -42,7 +49,14 @@ BEGIN
 			UPDATE dbo.Contacto_Emergencia
 		        SET Nombre_Contacto=@Nombre_Contacto,
 				Telefono=@Telefono,
-				Id_Empleado=@Id_Empleado
+				Id_Empleado=@Id_Empleado,
+				Calle=@Calle,
+				NoInterior=@NoInterior,
+				NoExterior=@NoExterior,
+				Colonia=@Colonia,
+				Codigo_Postal=@Codigo_Postal,
+				Id_Estado=@Id_Estado,
+				Id_TipoDomicilio=@Id_TipoDomicilio
 		    WHERE
 		    	Id_Contacto=@Id_Contacto
 				
@@ -52,12 +66,26 @@ BEGIN
 	           (Id_Contacto
 	           ,Nombre_Contacto
 			   ,Telefono
-			   ,Id_Empleado)
+			   ,Id_Empleado
+			   ,Calle
+			   ,NoInterior
+			   ,NoExterior
+			   ,Colonia
+			   ,Codigo_Postal
+			   ,Id_Estado
+			   ,Id_TipoDomicilio)
 	     	VALUES
 	           (@maximo
 	           ,@Nombre_Contacto
 			   ,@Telefono
-			   ,@Id_Empleado)
+			   ,@Id_Empleado
+			   ,@Calle
+			   ,@NoInterior
+			   ,@NoExterior
+			   ,@Colonia
+			   ,@Codigo_Postal
+			   ,@Id_Estado
+			   ,@Id_TipoDomicilio)
 		
 		commit transaction T1;
 		set @correcto=1

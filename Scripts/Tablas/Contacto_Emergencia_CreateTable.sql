@@ -12,6 +12,13 @@ ELSE
 		[Nombre_Contacto] [varchar](80) NULL,
 		[Telefono] [varchar](15) NULL,
 		[Id_Empleado] [char](6) NULL,
+		[Calle] [varchar](100) NULL,
+		[NoInterior] [varchar](10) NULL,
+		[NoExterior] [varchar](10) NULL,
+		[Colonia] [varchar](50) NULL,
+		[Codigo_Postal] [char](5) NULL,
+		[Id_Estado] [char](3) NULL,
+		[Id_TipoDomicilio] [char](4) NULL,
 	 CONSTRAINT [PK_Contacto] PRIMARY KEY CLUSTERED 
 	(
 		[Id_Contacto] ASC
