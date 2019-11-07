@@ -46,7 +46,7 @@ BEGIN
 		  ,CE.Id_Estado
 		  ,EST.Nombre_Estado
 		  ,CE.Id_TipoDomicilio
-		  ,TD.Nombre_Tipo_Domicilio
+		  ,TD.Nombre_TipoDomicilio
 		from Contacto_Emergencia as CE
 		left join Estado as EST on EST.Id_Estado=CE.Id_Estado
 		left join Tipo_Domicilio as TD on TD.Id_TipoDomicilio=CE.Id_TipoDomicilio

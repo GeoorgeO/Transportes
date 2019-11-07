@@ -126,6 +126,8 @@ namespace TransportBusiness
             textLicencia.Tag = "";
             textTipoDomicilio.Tag = "";
             textEstado.Tag = "";
+            textTipoDomicilioC.Tag = "";
+            textEstadoC.Tag = "";
         }
 
         private void InsertarDomicilio()
@@ -161,6 +163,13 @@ namespace TransportBusiness
             Contacto.Nombre_Contacto = textNombreContacto.Text.Trim();
             Contacto.Telefono = textTelefonoContacto.Text.Trim();
             Contacto.Id_Empleado = textIdEmpleado.Text.Trim();
+            Contacto.Calle = textCalleC.Text.Trim();
+            Contacto.NoInterior = textNInteriorC.Text.Trim();
+            Contacto.NoExterior = textNExteriorC.Text.Trim();
+            Contacto.Colonia = textColoniaC.Text.Trim();
+            Contacto.Codigo_Postal = textCPC.Text.Trim();
+            Contacto.Id_Estado = textEstadoC.Tag.ToString().Trim();
+            Contacto.Id_TipoDomicilio = textTipoDomicilioC.Tag.ToString().Trim();
             Contacto.MtdInsertarContacto();
             if (Contacto.Exito)
             {
@@ -275,6 +284,15 @@ namespace TransportBusiness
             textIdContacto.Text = "";
             textNombreContacto.Text = "";
             textTelefonoContacto.Text = "";
+            textCalleC.Text = "";
+            textNInteriorC.Text = "";
+            textNExteriorC.Text = "";
+            textColoniaC.Text = "";
+            textCPC.Text = "";
+            textEstadoC.Tag ="";
+            textEstadoC.Text = "";
+            textTipoDomicilioC.Tag = "";
+            textTipoDomicilioC.Text = "";
         }
 
         private void gridControl1_Click(object sender, EventArgs e)
@@ -497,7 +515,6 @@ namespace TransportBusiness
                     textEstado.Text = row["Nombre_Estado"].ToString();
                     textTipoDomicilio.Tag = row["Id_TipoDomicilio"].ToString();
                     textTipoDomicilio.Text = row["Nombre_TipoDomicilio"].ToString();
-                    
                 }
             }
             catch (Exception ex)
@@ -536,14 +553,41 @@ namespace TransportBusiness
                     textIdContacto.Text = row["Id_Contacto"].ToString();
                     textNombreContacto.Text = row["Nombre_Contacto"].ToString();
                     textTelefonoContacto.Text = row["Telefono"].ToString();
-                    
-
+                    textCalleC.Text = row["Calle"].ToString();
+                    textNInteriorC.Text = row["NoInterior"].ToString();
+                    textNExteriorC.Text = row["NoExterior"].ToString();
+                    textColoniaC.Text = row["Colonia"].ToString();
+                    textCPC.Text = row["Codigo_Postal"].ToString();
+                    textEstadoC.Tag = row["Id_Estado"].ToString();
+                    textEstadoC.Text = row["Nombre_Estado"].ToString();
+                    textTipoDomicilioC.Tag = row["Id_TipoDomicilio"].ToString();
+                    textTipoDomicilioC.Text = row["Nombre_TipoDomicilio"].ToString();
                 }
             }
             catch (Exception ex)
             {
                 XtraMessageBox.Show(ex.Message);
             }
+        }
+
+        private void btnBusqTipoDomicilioC_Click(object sender, EventArgs e)
+        {
+            Frm_Tipo_Domicilio tipoDomicilio = new Frm_Tipo_Domicilio();
+            tipoDomicilio.PaSel = true;
+            tipoDomicilio.ShowDialog();
+
+            textTipoDomicilioC.Tag = tipoDomicilio.IdTipoDomicilio;
+            textTipoDomicilioC.Text = tipoDomicilio.TipoDomicilio;
+        }
+
+        private void BtnBusqEstadoC_Click(object sender, EventArgs e)
+        {
+            Frm_Estado Estado = new Frm_Estado(true);
+
+            Estado.ShowDialog();
+
+            textEstadoC.Tag = Estado.IdEstado;
+            textEstadoC.Text = Estado.Estado;
         }
     }
 }
