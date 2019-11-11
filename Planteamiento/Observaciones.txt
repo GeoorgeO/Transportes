@@ -13,15 +13,15 @@ Considerar Vale y rendimiento
 
 
 Activos
-folio tarjeta circulacion agregar
-tarjeta llave agregar
+folio tarjeta circulacion agregar. listo
+tarjeta llave agregar. listo
 
 Salidas
 Agregar ayudante para bono
 
 Proveedores
-Dis de credito
+Dis de credito.  listo
 
 Clientes
-Dias de credito
+Dias de credito. listo
 
