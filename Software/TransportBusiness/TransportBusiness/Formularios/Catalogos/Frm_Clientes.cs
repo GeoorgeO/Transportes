@@ -69,6 +69,7 @@ namespace TransportBusiness
             Clientes.Nombre_Cliente = textCliente.Text.Trim();
             Clientes.Telefono = textTelefono.Text.Trim();
             Clientes.RFC_Cliente = textRFC.Text.Trim();
+            Clientes.Dias_Credito = Convert.ToInt32(textDiasCredito.Text.Trim());
             Clientes.MtdInsertarClientes();
             if (Clientes.Exito)
             {
@@ -174,6 +175,7 @@ namespace TransportBusiness
             textCliente.Text = "";
             textTelefono.Text = "";
             textRFC.Text = "";
+            textDiasCredito.Text = "0";
         }
 
         private void LimpiarCamposDomicilio()
@@ -201,6 +203,7 @@ namespace TransportBusiness
                     textCliente.Text = row["Nombre_Cliente"].ToString();
                     textTelefono.Text = row["RFC_Cliente"].ToString();
                     textRFC.Text = row["Telefono"].ToString();
+                    textDiasCredito.Text = row["Dias_Credito"].ToString();
                 }
             }
             catch (Exception ex)

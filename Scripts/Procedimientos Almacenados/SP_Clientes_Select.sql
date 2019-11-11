@@ -38,6 +38,7 @@ BEGIN
 	      ,Nombre_Cliente
 		  ,RFC_Cliente
 		  ,Telefono
+		  ,Dias_Credito
 		from Clientes
 END
 GO

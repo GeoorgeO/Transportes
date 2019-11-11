@@ -18,7 +18,8 @@ create PROCEDURE [dbo].[SP_Clientes_Insert]
 	@Id_Cliente char(6),
 	@Nombre_Cliente varchar(80),
 	@RFC_Cliente varchar(15),
-	@Telefono varchar(15)
+	@Telefono varchar(15),
+	@Dias_Credito numeric(18,0)
 AS
 BEGIN
 	-- SET NOCOUNT ON added to prevent extra result sets from
@@ -42,7 +43,8 @@ BEGIN
 			UPDATE dbo.Clientes
 		        SET Nombre_Cliente=@Nombre_Cliente,
 				Telefono=@Telefono,
-				RFC_Cliente=@RFC_Cliente
+				RFC_Cliente=@RFC_Cliente,
+				Dias_Credito=@Dias_Credito
 		    WHERE
 		    	Id_Cliente=@Id_Cliente
 				
@@ -52,12 +54,14 @@ BEGIN
 	           (Id_Cliente
 	           ,Nombre_Cliente
 			   ,Telefono
-			   ,RFC_Cliente)
+			   ,RFC_Cliente
+			   ,Dias_Credito)
 	     	VALUES
 	           (@maximo
 	           ,@Nombre_Cliente
 			   ,@Telefono
-			   ,@RFC_Cliente)
+			   ,@RFC_Cliente
+			   ,@Dias_Credito)
 		
 		commit transaction T1;
 		set @correcto=1

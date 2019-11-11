@@ -12,6 +12,7 @@ ELSE
 	[Nombre_Proveedor] [varchar](80) NULL,
 	[RFC_Proveedor] [varchar](15) NULL,
 	[Telefono] [varchar](15) NULL,
+	[Dias_Credito] [numeric](18,0) NULL,
  CONSTRAINT [PK_Proveedores] PRIMARY KEY CLUSTERED 
 (
 	[Id_Proveedor] ASC

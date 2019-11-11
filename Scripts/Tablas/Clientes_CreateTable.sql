@@ -12,6 +12,7 @@ ELSE
 		[Nombre_Cliente] [varchar](80) NULL,
 		[RFC_Cliente] [varchar](15) NULL,
 		[Telefono] [varchar](15) NULL,
+		[Dias_Credito] [numeric](18,0) NULL,
 	 CONSTRAINT [PK_Clientes] PRIMARY KEY CLUSTERED 
 	(
 		[Id_Cliente] ASC

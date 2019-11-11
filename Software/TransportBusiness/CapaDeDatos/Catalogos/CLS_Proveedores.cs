@@ -13,6 +13,7 @@ namespace CapaDeDatos
         public string Nombre_Proveedor { get; set; }
         public string RFC_Proveedor { get; set; }
         public string Telefono { get; set; }
+        public int Dias_Credito { get; set; }
 
         public void MtdSeleccionarProveedores()
         {
@@ -63,6 +64,8 @@ namespace CapaDeDatos
                 _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "RFC_Proveedor");
                 _dato.CadenaTexto = Telefono;
                 _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Telefono");
+                _dato.Entero = Dias_Credito;
+                _conexion.agregarParametro(EnumTipoDato.Entero, _dato, "Dias_Credito");
                 _conexion.EjecutarDataset();
 
                 if (_conexion.Exito)

@@ -38,6 +38,7 @@ BEGIN
 	      ,Nombre_Proveedor
 		  ,RFC_Proveedor
 		  ,Telefono
+		  ,Dias_Credito
 		from Proveedores
 END
 GO

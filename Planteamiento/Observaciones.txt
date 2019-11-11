@@ -17,7 +17,7 @@ folio tarjeta circulacion agregar
 tarjeta llave agregar
 
 Salidas
-agregar ayudante para bono
+Agregar ayudante para bono
 
 Proveedores
 Dis de credito

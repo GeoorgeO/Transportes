@@ -13,6 +13,7 @@ namespace CapaDeDatos
         public string Nombre_Cliente { get; set; }
         public string RFC_Cliente { get; set; }
         public string Telefono { get; set; }
+        public int Dias_Credito { get; set; }
 
         public void MtdSeleccionarClientes()
         {
@@ -63,6 +64,8 @@ namespace CapaDeDatos
                 _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "RFC_Cliente");
                 _dato.CadenaTexto = Telefono;
                 _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Telefono");
+                _dato.Entero = Dias_Credito;
+                _conexion.agregarParametro(EnumTipoDato.Entero, _dato, "Dias_Credito");
                 _conexion.EjecutarDataset();
 
                 if (_conexion.Exito)
