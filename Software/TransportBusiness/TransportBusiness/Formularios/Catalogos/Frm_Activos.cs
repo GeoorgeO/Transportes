@@ -310,7 +310,6 @@ namespace TransportBusiness
                     txtCosto.Text = row["Costo_Unidad"].ToString();
                     txtModelo.Text = row["Modelo"].ToString();
                     txtNoSerie.Text = row["Serie"].ToString();
-                    txtEstatus.Text = row["Status"].ToString();
                     txtTipoTransporte.Tag = row["Id_Tipo_Transporte"].ToString();
                     txtTipoTransporte.Text = row["Nombre_Tipo_Transporte"].ToString();
                     txtTipoActivo.Tag = row["Id_Tipo_Activo"].ToString();
@@ -335,7 +334,7 @@ namespace TransportBusiness
                     {
                         cboAsignado.Text = "No";
                     }
-
+                    txtEstatus.Text = row["Status"].ToString();
 
                     if (row["Status"].ToString().Trim().Equals("ACTIVO"))
                     {

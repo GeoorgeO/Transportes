@@ -15,13 +15,13 @@ namespace TransportBusiness
     public partial class Frm_Proveedores : DevExpress.XtraEditors.XtraForm
     {
 
-        private static Frm_Clientes m_FormDefInstance;
-        public static Frm_Clientes DefInstance
+        private static Frm_Proveedores m_FormDefInstance;
+        public static Frm_Proveedores DefInstance
         {
             get
             {
                 if (m_FormDefInstance == null || m_FormDefInstance.IsDisposed)
-                    m_FormDefInstance = new Frm_Clientes();
+                    m_FormDefInstance = new Frm_Proveedores();
                 return m_FormDefInstance;
             }
             set

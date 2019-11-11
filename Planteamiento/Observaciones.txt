@@ -1,0 +1,27 @@
+Activos
+Agregar folio fiscal y factura en activos. listo
+Catálogo de pólizas de seguro 
+Agregar fotografías de activo 
+
+Empleados
+Agregar a que empresa está dada de alta el empleado. listo
+Pestaña para caso de emergencias. listo
+
+Combustibles
+Considerar Vale y rendimiento
+
+
+
+Activos
+folio tarjeta circulacion agregar
+tarjeta llave agregar
+
+Salidas
+agregar ayudante para bono
+
+Proveedores
+Dis de credito
+
+Clientes
+Dias de credito
+
