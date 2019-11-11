@@ -72,6 +72,7 @@
             this.gridColumn24 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn25 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn26 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn27 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.Id_Activo = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Nombre_Interno = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -129,6 +130,8 @@
             this.bandedGridColumn26 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
+            this.textFactura = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl22 = new DevExpress.XtraEditors.LabelControl();
             this.cboAsignado = new DevExpress.XtraEditors.ComboBoxEdit();
             this.labelControl21 = new DevExpress.XtraEditors.LabelControl();
             this.txtEmpresaAsegu = new DevExpress.XtraEditors.TextEdit();
@@ -178,9 +181,12 @@
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.txtIdActivo = new DevExpress.XtraEditors.TextEdit();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl22 = new DevExpress.XtraEditors.LabelControl();
-            this.textFactura = new DevExpress.XtraEditors.TextEdit();
-            this.gridColumn27 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.labelControl23 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl24 = new DevExpress.XtraEditors.LabelControl();
+            this.textFolioCircula = new DevExpress.XtraEditors.TextEdit();
+            this.textIAVE = new DevExpress.XtraEditors.TextEdit();
+            this.gridColumn28 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn29 = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
@@ -193,6 +199,7 @@
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.textFactura.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cboAsignado.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtEmpresaAsegu.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtEstatus.Properties)).BeginInit();
@@ -216,7 +223,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtTipoPlaca.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNombreActivo.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtIdActivo.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textFactura.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textFolioCircula.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textIAVE.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // barManager1
@@ -411,7 +419,9 @@
             this.gridColumn24,
             this.gridColumn25,
             this.gridColumn26,
-            this.gridColumn27});
+            this.gridColumn27,
+            this.gridColumn28,
+            this.gridColumn29});
             this.cardView1.FocusedCardTopFieldIndex = 0;
             this.cardView1.GridControl = this.dtgActivos;
             this.cardView1.Name = "cardView1";
@@ -625,6 +635,14 @@
             this.gridColumn26.Name = "gridColumn26";
             this.gridColumn26.Visible = true;
             this.gridColumn26.VisibleIndex = 25;
+            // 
+            // gridColumn27
+            // 
+            this.gridColumn27.Caption = "Factura";
+            this.gridColumn27.FieldName = "Id_Factura";
+            this.gridColumn27.Name = "gridColumn27";
+            this.gridColumn27.Visible = true;
+            this.gridColumn27.VisibleIndex = 26;
             // 
             // gridView1
             // 
@@ -1127,6 +1145,10 @@
             // 
             // groupControl1
             // 
+            this.groupControl1.Controls.Add(this.textIAVE);
+            this.groupControl1.Controls.Add(this.textFolioCircula);
+            this.groupControl1.Controls.Add(this.labelControl24);
+            this.groupControl1.Controls.Add(this.labelControl23);
             this.groupControl1.Controls.Add(this.textFactura);
             this.groupControl1.Controls.Add(this.labelControl22);
             this.groupControl1.Controls.Add(this.cboAsignado);
@@ -1185,9 +1207,25 @@
             this.groupControl1.TabIndex = 0;
             this.groupControl1.Text = "Activo";
             // 
+            // textFactura
+            // 
+            this.textFactura.Location = new System.Drawing.Point(769, 142);
+            this.textFactura.MenuManager = this.barManager1;
+            this.textFactura.Name = "textFactura";
+            this.textFactura.Size = new System.Drawing.Size(111, 20);
+            this.textFactura.TabIndex = 57;
+            // 
+            // labelControl22
+            // 
+            this.labelControl22.Location = new System.Drawing.Point(715, 145);
+            this.labelControl22.Name = "labelControl22";
+            this.labelControl22.Size = new System.Drawing.Size(41, 13);
+            this.labelControl22.TabIndex = 56;
+            this.labelControl22.Text = "Factura:";
+            // 
             // cboAsignado
             // 
-            this.cboAsignado.Location = new System.Drawing.Point(759, 90);
+            this.cboAsignado.Location = new System.Drawing.Point(769, 117);
             this.cboAsignado.MenuManager = this.barManager1;
             this.cboAsignado.Name = "cboAsignado";
             this.cboAsignado.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -1252,16 +1290,16 @@
             // 
             // txtPlaca
             // 
-            this.txtPlaca.Location = new System.Drawing.Point(443, 141);
+            this.txtPlaca.Location = new System.Drawing.Point(769, 38);
             this.txtPlaca.MenuManager = this.barManager1;
             this.txtPlaca.Name = "txtPlaca";
-            this.txtPlaca.Size = new System.Drawing.Size(100, 20);
+            this.txtPlaca.Size = new System.Drawing.Size(111, 20);
             this.txtPlaca.TabIndex = 47;
             // 
             // txtFechaBaja
             // 
             this.txtFechaBaja.EditValue = null;
-            this.txtFechaBaja.Location = new System.Drawing.Point(759, 63);
+            this.txtFechaBaja.Location = new System.Drawing.Point(769, 90);
             this.txtFechaBaja.MenuManager = this.barManager1;
             this.txtFechaBaja.Name = "txtFechaBaja";
             this.txtFechaBaja.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -1275,7 +1313,7 @@
             // dtFechaAlta
             // 
             this.dtFechaAlta.EditValue = null;
-            this.dtFechaAlta.Location = new System.Drawing.Point(759, 37);
+            this.dtFechaAlta.Location = new System.Drawing.Point(769, 64);
             this.dtFechaAlta.MenuManager = this.barManager1;
             this.dtFechaAlta.Name = "dtFechaAlta";
             this.dtFechaAlta.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -1382,7 +1420,7 @@
             // 
             // labelControl18
             // 
-            this.labelControl18.Location = new System.Drawing.Point(705, 94);
+            this.labelControl18.Location = new System.Drawing.Point(715, 121);
             this.labelControl18.Name = "labelControl18";
             this.labelControl18.Size = new System.Drawing.Size(48, 13);
             this.labelControl18.TabIndex = 31;
@@ -1516,7 +1554,7 @@
             // 
             // labelControl8
             // 
-            this.labelControl8.Location = new System.Drawing.Point(345, 145);
+            this.labelControl8.Location = new System.Drawing.Point(712, 42);
             this.labelControl8.Name = "labelControl8";
             this.labelControl8.Size = new System.Drawing.Size(34, 13);
             this.labelControl8.TabIndex = 12;
@@ -1540,7 +1578,7 @@
             // 
             // labelControl5
             // 
-            this.labelControl5.Location = new System.Drawing.Point(705, 67);
+            this.labelControl5.Location = new System.Drawing.Point(715, 94);
             this.labelControl5.Name = "labelControl5";
             this.labelControl5.Size = new System.Drawing.Size(38, 13);
             this.labelControl5.TabIndex = 9;
@@ -1548,7 +1586,7 @@
             // 
             // labelControl4
             // 
-            this.labelControl4.Location = new System.Drawing.Point(705, 41);
+            this.labelControl4.Location = new System.Drawing.Point(715, 68);
             this.labelControl4.Name = "labelControl4";
             this.labelControl4.Size = new System.Drawing.Size(36, 13);
             this.labelControl4.TabIndex = 8;
@@ -1613,29 +1651,53 @@
             this.labelControl1.TabIndex = 0;
             this.labelControl1.Text = "Id Activo: ";
             // 
-            // labelControl22
+            // labelControl23
             // 
-            this.labelControl22.Location = new System.Drawing.Point(705, 118);
-            this.labelControl22.Name = "labelControl22";
-            this.labelControl22.Size = new System.Drawing.Size(41, 13);
-            this.labelControl22.TabIndex = 56;
-            this.labelControl22.Text = "Factura:";
+            this.labelControl23.Location = new System.Drawing.Point(715, 171);
+            this.labelControl23.Name = "labelControl23";
+            this.labelControl23.Size = new System.Drawing.Size(27, 13);
+            this.labelControl23.TabIndex = 58;
+            this.labelControl23.Text = "IAVE:";
             // 
-            // textFactura
+            // labelControl24
             // 
-            this.textFactura.Location = new System.Drawing.Point(759, 115);
-            this.textFactura.MenuManager = this.barManager1;
-            this.textFactura.Name = "textFactura";
-            this.textFactura.Size = new System.Drawing.Size(111, 20);
-            this.textFactura.TabIndex = 57;
+            this.labelControl24.Location = new System.Drawing.Point(345, 145);
+            this.labelControl24.Name = "labelControl24";
+            this.labelControl24.Size = new System.Drawing.Size(64, 13);
+            this.labelControl24.TabIndex = 59;
+            this.labelControl24.Text = "Folio Tarjeta:";
             // 
-            // gridColumn27
+            // textFolioCircula
             // 
-            this.gridColumn27.Caption = "Factura";
-            this.gridColumn27.FieldName = "Id_Factura";
-            this.gridColumn27.Name = "gridColumn27";
-            this.gridColumn27.Visible = true;
-            this.gridColumn27.VisibleIndex = 26;
+            this.textFolioCircula.Location = new System.Drawing.Point(443, 142);
+            this.textFolioCircula.MenuManager = this.barManager1;
+            this.textFolioCircula.Name = "textFolioCircula";
+            this.textFolioCircula.Size = new System.Drawing.Size(207, 20);
+            this.textFolioCircula.TabIndex = 60;
+            // 
+            // textIAVE
+            // 
+            this.textIAVE.Location = new System.Drawing.Point(769, 168);
+            this.textIAVE.MenuManager = this.barManager1;
+            this.textIAVE.Name = "textIAVE";
+            this.textIAVE.Size = new System.Drawing.Size(111, 20);
+            this.textIAVE.TabIndex = 61;
+            // 
+            // gridColumn28
+            // 
+            this.gridColumn28.Caption = "IAVE";
+            this.gridColumn28.FieldName = "IAVE";
+            this.gridColumn28.Name = "gridColumn28";
+            this.gridColumn28.Visible = true;
+            this.gridColumn28.VisibleIndex = 27;
+            // 
+            // gridColumn29
+            // 
+            this.gridColumn29.Caption = "Folio Tajeta Circulacion";
+            this.gridColumn29.FieldName = "Folio_Tarjeta_Circulacion";
+            this.gridColumn29.Name = "gridColumn29";
+            this.gridColumn29.Visible = true;
+            this.gridColumn29.VisibleIndex = 28;
             // 
             // Frm_Activos
             // 
@@ -1666,6 +1728,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
             this.groupControl1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.textFactura.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cboAsignado.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtEmpresaAsegu.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtEstatus.Properties)).EndInit();
@@ -1689,7 +1752,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtTipoPlaca.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNombreActivo.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtIdActivo.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textFactura.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textFolioCircula.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textIAVE.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1848,5 +1912,11 @@
         private DevExpress.XtraEditors.TextEdit textFactura;
         private DevExpress.XtraEditors.LabelControl labelControl22;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn27;
+        private DevExpress.XtraEditors.TextEdit textIAVE;
+        private DevExpress.XtraEditors.TextEdit textFolioCircula;
+        private DevExpress.XtraEditors.LabelControl labelControl24;
+        private DevExpress.XtraEditors.LabelControl labelControl23;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn28;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn29;
     }
 }

@@ -31,6 +31,8 @@ namespace CapaDeDatos
         public string Id_Empleado { get; set; }
         public string Id_Empresa { get; set; }
         public string Id_Factura { get; set; }
+        public string IAVE { get; set; }
+        public string Folio_Tarjeta_Circulacion { get; set; }
 
         public void MtdSeleccionarActivos()
         {
@@ -117,6 +119,10 @@ namespace CapaDeDatos
                 _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_Empresa");
                 _dato.CadenaTexto = Id_Factura;
                 _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_Factura");
+                _dato.CadenaTexto = IAVE;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "IAVE");
+                _dato.CadenaTexto = Folio_Tarjeta_Circulacion;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Folio_Tarjeta_Circulacion");
                 _conexion.EjecutarDataset();
 
                 if (_conexion.Exito)
