@@ -38,7 +38,7 @@ namespace TransportBusiness
                 if (txtUser.Text != string.Empty && txtPass.Text != string.Empty)
                 {
                     Crypto claseencripta = new Crypto();
-                    SEG_Login sLogin = new SEG_Login() { c_codigo_usu = txtUser.Text, v_passwo_usu = claseencripta.Encriptar(txtPass.Text) };
+                    SEG_Login sLogin = new SEG_Login() { Id_Usuario = txtUser.Text, Contrasena = claseencripta.Encriptar(txtPass.Text) };
                     sLogin.MtdSeleccionarUsuarioLogin();
                     if (sLogin.Exito)
                     {
@@ -121,6 +121,5 @@ namespace TransportBusiness
             SkinForm.LookAndFeel.SetSkinStyle(RegOut.GetSetting("ConexionSQL", "Sking"));
         }
 
-        
     }
 }

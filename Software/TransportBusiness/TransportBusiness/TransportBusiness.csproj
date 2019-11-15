@@ -296,11 +296,11 @@
     <Compile Include="Formularios\Seguridad\Frm_Perfiles.Designer.cs">
       <DependentUpon>Frm_Perfiles.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\Seguridad\Frm_Perfiles_Pantallas.cs">
+    <Compile Include="Formularios\Seguridad\Frm_Permisos.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\Seguridad\Frm_Perfiles_Pantallas.Designer.cs">
-      <DependentUpon>Frm_Perfiles_Pantallas.cs</DependentUpon>
+    <Compile Include="Formularios\Seguridad\Frm_Permisos.Designer.cs">
+      <DependentUpon>Frm_Permisos.cs</DependentUpon>
     </Compile>
     <Compile Include="Formularios\Seguridad\Frm_Usuarios.cs">
       <SubType>Form</SubType>
@@ -414,6 +414,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Catalogos\Tipos\Frm_Tipo_Transporte.resx">
       <DependentUpon>Frm_Tipo_Transporte.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Seguridad\Frm_Permisos.resx">
+      <DependentUpon>Frm_Permisos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Frm_Login.resx">
       <DependentUpon>Frm_Login.cs</DependentUpon>
