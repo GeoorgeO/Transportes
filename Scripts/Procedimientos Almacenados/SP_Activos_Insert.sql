@@ -36,7 +36,7 @@ create PROCEDURE [dbo].[SP_Activos_Insert]
 	@Asignado bit,
 	@Id_Empleado char(6),
 	@Id_Empresa char(4),
-	@Id_Factura varchar(20),
+	@Id_Factura varchar(50),
 	@IAVE varchar(50),
 	@Folio_Tarjeta_Circulacion varchar(20)
 AS
