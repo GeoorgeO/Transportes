@@ -415,8 +415,17 @@
     <EmbeddedResource Include="Formularios\Catalogos\Tipos\Frm_Tipo_Transporte.resx">
       <DependentUpon>Frm_Tipo_Transporte.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Seguridad\Frm_Pantallas.resx">
+      <DependentUpon>Frm_Pantallas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Seguridad\Frm_Perfiles.resx">
+      <DependentUpon>Frm_Perfiles.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Seguridad\Frm_Permisos.resx">
       <DependentUpon>Frm_Permisos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Seguridad\Frm_Usuarios.resx">
+      <DependentUpon>Frm_Usuarios.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Frm_Login.resx">
       <DependentUpon>Frm_Login.cs</DependentUpon>
