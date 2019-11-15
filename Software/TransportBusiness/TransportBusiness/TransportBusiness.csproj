@@ -43,6 +43,8 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>C:\Program Files (x86)\DevExpress 17.2\Components\Bin\Framework\DevExpress.Dialogs.v17.2.Core.dll</HintPath>
     </Reference>
+    <Reference Include="DevExpress.Pdf.v17.2.Core, Version=17.2.11.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Pdf.v17.2.Drawing, Version=17.2.11.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Printing.v17.2.Core" />
     <Reference Include="DevExpress.Utils.v17.2" />
     <Reference Include="DevExpress.XtraBars.v17.2" />
@@ -51,6 +53,7 @@
     <Reference Include="DevExpress.XtraEditors.v17.2" />
     <Reference Include="DevExpress.XtraGrid.v17.2, Version=17.2.11.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraLayout.v17.2, Version=17.2.11.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraPdfViewer.v17.2, Version=17.2.11.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraPrinting.v17.2, Version=17.2.11.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraTreeList.v17.2, Version=17.2.11.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="System" />
@@ -202,6 +205,18 @@
     </Compile>
     <Compile Include="Formularios\Catalogos\Frm_Vehiculos.Designer.cs">
       <DependentUpon>Frm_Vehiculos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Catalogos\Frm_View_PDF.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Catalogos\Frm_View_PDF.Designer.cs">
+      <DependentUpon>Frm_View_PDF.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Catalogos\Frm_View_XML.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Catalogos\Frm_View_XML.Designer.cs">
+      <DependentUpon>Frm_View_XML.cs</DependentUpon>
     </Compile>
     <Compile Include="Formularios\Catalogos\Tipos\Frm_Tipo_Activo.cs">
       <SubType>Form</SubType>
@@ -372,6 +387,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Catalogos\Frm_Vehiculos.resx">
       <DependentUpon>Frm_Vehiculos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Catalogos\Frm_View_PDF.resx">
+      <DependentUpon>Frm_View_PDF.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Catalogos\Frm_View_XML.resx">
+      <DependentUpon>Frm_View_XML.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Catalogos\Tipos\Frm_Tipo_Activo.resx">
       <DependentUpon>Frm_Tipo_Activo.cs</DependentUpon>
