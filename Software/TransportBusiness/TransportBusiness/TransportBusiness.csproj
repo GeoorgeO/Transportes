@@ -39,14 +39,20 @@
     </Reference>
     <Reference Include="DevExpress.BonusSkins.v17.2" />
     <Reference Include="DevExpress.Data.v17.2" />
+    <Reference Include="DevExpress.Dialogs.v17.2.Core, Version=17.2.11.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\DevExpress 17.2\Components\Bin\Framework\DevExpress.Dialogs.v17.2.Core.dll</HintPath>
+    </Reference>
     <Reference Include="DevExpress.Printing.v17.2.Core" />
     <Reference Include="DevExpress.Utils.v17.2" />
     <Reference Include="DevExpress.XtraBars.v17.2" />
     <Reference Include="DevExpress.Sparkline.v17.2.Core" />
+    <Reference Include="DevExpress.XtraDialogs.v17.2, Version=17.2.11.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraEditors.v17.2" />
     <Reference Include="DevExpress.XtraGrid.v17.2, Version=17.2.11.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraLayout.v17.2, Version=17.2.11.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraPrinting.v17.2, Version=17.2.11.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraTreeList.v17.2, Version=17.2.11.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -137,6 +143,12 @@
     <Compile Include="Formularios\Catalogos\Frm_Empresas.Designer.cs">
       <DependentUpon>Frm_Empresas.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\Catalogos\Frm_Galeria_Activos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Catalogos\Frm_Galeria_Activos.Designer.cs">
+      <DependentUpon>Frm_Galeria_Activos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\Catalogos\Frm_Infracciones.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -166,6 +178,12 @@
     </Compile>
     <Compile Include="Formularios\Catalogos\Frm_Marcas.Designer.cs">
       <DependentUpon>Frm_Marcas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Catalogos\Frm_PDFXML_Activos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Catalogos\Frm_PDFXML_Activos.Designer.cs">
+      <DependentUpon>Frm_PDFXML_Activos.cs</DependentUpon>
     </Compile>
     <Compile Include="Formularios\Catalogos\Frm_Proveedores.cs">
       <SubType>Form</SubType>
@@ -325,6 +343,9 @@
     <EmbeddedResource Include="Formularios\Catalogos\Frm_Empresas.resx">
       <DependentUpon>Frm_Empresas.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Catalogos\Frm_Galeria_Activos.resx">
+      <DependentUpon>Frm_Galeria_Activos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Catalogos\Frm_Infracciones.resx">
       <DependentUpon>Frm_Infracciones.cs</DependentUpon>
     </EmbeddedResource>
@@ -339,6 +360,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Catalogos\Frm_Pais.resx">
       <DependentUpon>Frm_Pais.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Catalogos\Frm_PDFXML_Activos.resx">
+      <DependentUpon>Frm_PDFXML_Activos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Catalogos\Frm_Proveedores.resx">
       <DependentUpon>Frm_Proveedores.cs</DependentUpon>

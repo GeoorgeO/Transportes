@@ -16,5 +16,6 @@ namespace CapaDeDatos
         public byte[] ImagenValor { get; set; }
         public System.Nullable<long> EnteroLargo { get; set; }
         public System.Char CaracterValor { get; set; }
+        public byte[] ArchivoValor { get; set; }
     }
 }

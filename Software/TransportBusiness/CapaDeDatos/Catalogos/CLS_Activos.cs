@@ -33,6 +33,13 @@ namespace CapaDeDatos
         public string Id_Factura { get; set; }
         public string IAVE { get; set; }
         public string Folio_Tarjeta_Circulacion { get; set; }
+        public int SerieImagen { get; set; }
+        public byte[] Imagen { get; set; }
+        public int? Opcion { get; set; }
+        public string NombreArchivoPDF { get; set; }
+        public byte[] ArchivoPDF { get; set; }
+        public string NombreArchivoXML { get; set; }
+        public byte[] ArchivoXML { get; set; }
 
         public void MtdSeleccionarActivos()
         {
@@ -63,9 +70,6 @@ namespace CapaDeDatos
             }
 
         }
-
-
-
         public void MtdInsertarActivos()
         {
             TipoDato _dato = new TipoDato();
@@ -141,7 +145,6 @@ namespace CapaDeDatos
                 Exito = false;
             }
         }
-
         public void MtdEliminarActivos()
         {
             TipoDato _dato = new TipoDato();
@@ -170,6 +173,289 @@ namespace CapaDeDatos
                 Mensaje = e.Message;
                 Exito = false;
             }
+        }
+
+        public void MtdSeleccionarActivoImagen()
+        {
+            TipoDato _dato = new TipoDato();
+            Conexion _conexion = new Conexion(cadenaConexion);
+            Exito = true;
+            try
+            {
+                _conexion.NombreProcedimiento = "SP_ActivoImagen_Select";
+                _dato.CadenaTexto = Id_Activo;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_Activo");
+                _conexion.EjecutarDataset();
+
+                if (_conexion.Exito)
+                {
+                    Datos = _conexion.Datos;
+                }
+                else
+                {
+                    Mensaje = _conexionR.Mensaje;
+                    Exito = false;
+                }
+            }
+            catch (Exception e)
+            {
+                Mensaje = e.Message;
+                Exito = false;
+            }
+
+        }
+        public void MtdInsertarActivoImagen()
+        {
+            TipoDato _dato = new TipoDato();
+            Conexion _conexion = new Conexion(cadenaConexion);
+            Exito = true;
+            try
+            {
+                _conexion.NombreProcedimiento = "SP_ActivoImagen_Insert";
+                _dato.CadenaTexto = Id_Activo;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_Activo");
+                _dato.Entero = SerieImagen;
+                _conexion.agregarParametro(EnumTipoDato.Entero, _dato, "Serie");
+                _dato.CadenaTexto = Descripcion;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Descripcion");
+                _dato.ImagenValor = Imagen;
+                _conexion.agregarParametro(EnumTipoDato.imagen, _dato, "Imagen");
+                _conexion.EjecutarDataset();
+
+                if (_conexion.Exito)
+                {
+                    Datos = _conexion.Datos;
+                }
+                else
+                {
+                    Mensaje = _conexionR.Mensaje;
+                    Exito = false;
+                }
+            }
+            catch (Exception e)
+            {
+                Mensaje = e.Message;
+                Exito = false;
+            }
+
+        }
+        public void MtdEliminarActivoImagen()
+        {
+            TipoDato _dato = new TipoDato();
+            Conexion _conexion = new Conexion(cadenaConexion);
+            Exito = true;
+            try
+            {
+                _conexion.NombreProcedimiento = "SP_ActivoImagen_Delete";
+                _dato.CadenaTexto = Id_Activo;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_Activo");
+                _dato.Entero = SerieImagen;
+                _conexion.agregarParametro(EnumTipoDato.Entero, _dato, "Serie");
+                _conexion.EjecutarDataset();
+
+                if (_conexion.Exito)
+                {
+                    Datos = _conexion.Datos;
+                }
+                else
+                {
+                    Mensaje = _conexionR.Mensaje;
+                    Exito = false;
+                }
+            }
+            catch (Exception e)
+            {
+                Mensaje = e.Message;
+                Exito = false;
+            }
+
+        }
+
+        public void MtdSeleccionarActivoArchivoPDFXML()
+        {
+            TipoDato _dato = new TipoDato();
+            Conexion _conexion = new Conexion(cadenaConexion);
+            Exito = true;
+            try
+            {
+                _conexion.NombreProcedimiento = "SP_ActivoArchivosFicales_Select";
+                _dato.CadenaTexto = Id_Activo;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_Activo");
+                _conexion.EjecutarDataset();
+
+                if (_conexion.Exito)
+                {
+                    Datos = _conexion.Datos;
+                }
+                else
+                {
+                    Mensaje = _conexionR.Mensaje;
+                    Exito = false;
+                }
+            }
+            catch (Exception e)
+            {
+                Mensaje = e.Message;
+                Exito = false;
+            }
+
+        }
+        public void MtdInsertarActivoArchivoPDFXML()
+        {
+            TipoDato _dato = new TipoDato();
+            Conexion _conexion = new Conexion(cadenaConexion);
+            Exito = true;
+            try
+            {
+                _conexion.NombreProcedimiento = "SP_ActivoArchivosFicales_Insert";
+                _dato.CadenaTexto = Id_Activo;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_Activo");
+                _conexion.EjecutarDataset();
+
+                if (_conexion.Exito)
+                {
+                    Datos = _conexion.Datos;
+                }
+                else
+                {
+                    Mensaje = _conexionR.Mensaje;
+                    Exito = false;
+                }
+            }
+            catch (Exception e)
+            {
+                Mensaje = e.Message;
+                Exito = false;
+            }
+
+        }
+        public void MtdUpdateActivoArchivoPDF()
+        {
+            TipoDato _dato = new TipoDato();
+            Conexion _conexion = new Conexion(cadenaConexion);
+            Exito = true;
+            try
+            {
+                _conexion.NombreProcedimiento = "SP_ActivoArchivosFicalesPDF_Update";
+                _dato.CadenaTexto = Id_Activo;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_Activo");
+                _dato.Entero = Opcion;
+                _conexion.agregarParametro(EnumTipoDato.Entero, _dato, "Opcion");
+                _dato.CadenaTexto = NombreArchivoPDF;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "NombreArchivoPDF");
+                _dato.ArchivoValor = ArchivoPDF;
+                _conexion.agregarParametro(EnumTipoDato.Archivo, _dato, "ArchivoPDF");
+                _conexion.EjecutarDataset();
+
+                if (_conexion.Exito)
+                {
+                    Datos = _conexion.Datos;
+                }
+                else
+                {
+                    Mensaje = _conexion.Mensaje;
+                    Exito = false;
+                }
+            }
+            catch (Exception e)
+            {
+                Mensaje = e.Message;
+                Exito = false;
+            }
+
+        }
+        public void MtdUpdateActivoArchivoXML()
+        {
+            TipoDato _dato = new TipoDato();
+            Conexion _conexion = new Conexion(cadenaConexion);
+            Exito = true;
+            try
+            {
+                _conexion.NombreProcedimiento = "SP_ActivoArchivosFicalesXML_Update";
+                _dato.CadenaTexto = Id_Activo;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_Activo");
+                _dato.Entero = Opcion;
+                _conexion.agregarParametro(EnumTipoDato.Entero, _dato, "Opcion");
+                _dato.CadenaTexto = NombreArchivoXML;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "NombreArchivoXML");
+                _dato.ArchivoValor = ArchivoXML;
+                _conexion.agregarParametro(EnumTipoDato.Archivo, _dato, "ArchivoXML");
+                _conexion.EjecutarDataset();
+
+                if (_conexion.Exito)
+                {
+                    Datos = _conexion.Datos;
+                }
+                else
+                {
+                    Mensaje = _conexionR.Mensaje;
+                    Exito = false;
+                }
+            }
+            catch (Exception e)
+            {
+                Mensaje = e.Message;
+                Exito = false;
+            }
+
+        }
+        public void MtdDeleteActivoArchivoPDF()
+        {
+            TipoDato _dato = new TipoDato();
+            Conexion _conexion = new Conexion(cadenaConexion);
+            Exito = true;
+            try
+            {
+                _conexion.NombreProcedimiento = "SP_ActivoArchivosFicalesPDF_Delete";
+                _dato.CadenaTexto = Id_Activo;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_Activo");
+                _conexion.EjecutarDataset();
+
+                if (_conexion.Exito)
+                {
+                    Datos = _conexion.Datos;
+                }
+                else
+                {
+                    Mensaje = _conexion.Mensaje;
+                    Exito = false;
+                }
+            }
+            catch (Exception e)
+            {
+                Mensaje = e.Message;
+                Exito = false;
+            }
+
+        }
+        public void MtdDeleteActivoArchivoXML()
+        {
+            TipoDato _dato = new TipoDato();
+            Conexion _conexion = new Conexion(cadenaConexion);
+            Exito = true;
+            try
+            {
+                _conexion.NombreProcedimiento = "SP_ActivoArchivosFicalesXML_Delete";
+                _dato.CadenaTexto = Id_Activo;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_Activo");
+                _conexion.EjecutarDataset();
+
+                if (_conexion.Exito)
+                {
+                    Datos = _conexion.Datos;
+                }
+                else
+                {
+                    Mensaje = _conexionR.Mensaje;
+                    Exito = false;
+                }
+            }
+            catch (Exception e)
+            {
+                Mensaje = e.Message;
+                Exito = false;
+            }
+
         }
 
     }

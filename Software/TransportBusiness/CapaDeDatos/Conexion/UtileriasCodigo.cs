@@ -13,6 +13,7 @@ namespace CapaDeDatos
         Tipodecimal,
         Boleano,
         Caracter,
-        imagen
+        imagen,
+        Archivo
     }
 }

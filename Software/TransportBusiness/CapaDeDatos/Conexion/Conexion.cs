@@ -128,6 +128,11 @@ namespace CapaDeDatos
                 parametro.SqlDbType = SqlDbType.Image;
                 parametro.Value = valor.ImagenValor;
             }
+            if (tipo == EnumTipoDato.Archivo)
+            {
+                parametro.SqlDbType = SqlDbType.VarBinary;
+                parametro.Value = valor.ArchivoValor;
+            }
         }
 
 
