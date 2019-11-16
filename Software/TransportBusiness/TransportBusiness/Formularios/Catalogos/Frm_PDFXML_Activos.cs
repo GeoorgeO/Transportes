@@ -24,14 +24,8 @@ namespace TransportBusiness
 
         private void Frm_PDFXML_Activos_Load(object sender, EventArgs e)
         {
-            vId_Activo = "00000001";
+            //vId_Activo = "00000001";
             Verificar_Registro();
-            //var responseXml = "<ResponseXML> your xml string </ResponseXML>";
-            //var path = Path.Combine(Path.GetTempPath(), "Response.xml");
-            //var responseXmlDocument = new XmlDocument();
-            //responseXmlDocument.LoadXml(responseXml);
-            //responseXmlDocument.Save(path);
-            //webBrowser1.Navigate(path);
         }
 
         private void Verificar_Registro()
@@ -179,40 +173,66 @@ namespace TransportBusiness
 
         private void btnDeletePDF_Click(object sender, EventArgs e)
         {
-            CLS_Activos udp = new CLS_Activos();
-            udp.Id_Activo = vId_Activo;
-            udp.Opcion = 0;
-            udp.NombreArchivoPDF =string.Empty;
-            udp.ArchivoPDF = null;
-            udp.MtdDeleteActivoArchivoPDF();
-            if (udp.Exito)
+            DialogResult = XtraMessageBox.Show("¿Desea eliminar el documento?", "Eliminar", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1);
+            if (DialogResult == DialogResult.Yes)
             {
-                txtNombreArchivoPDF.Text = string.Empty;
-                XtraMessageBox.Show("Se a quitado el PDF con Exito");
-            }
-            else
-            {
-                XtraMessageBox.Show(udp.Mensaje);
+                CLS_Activos udp = new CLS_Activos();
+                udp.Id_Activo = vId_Activo;
+                udp.Opcion = 0;
+                udp.NombreArchivoPDF = string.Empty;
+                udp.ArchivoPDF = null;
+                udp.MtdDeleteActivoArchivoPDF();
+                if (udp.Exito)
+                {
+                    txtNombreArchivoPDF.Text = string.Empty;
+                    XtraMessageBox.Show("Se a quitado el PDF con Exito");
+                }
+                else
+                {
+                    XtraMessageBox.Show(udp.Mensaje);
+                }
             }
         }
 
         private void btnDeleteXML_Click(object sender, EventArgs e)
         {
-            CLS_Activos udp = new CLS_Activos();
-            udp.Id_Activo = vId_Activo;
-            udp.Opcion = 0;
-            udp.NombreArchivoXML = string.Empty;
-            udp.ArchivoXML = null;
-            udp.MtdDeleteActivoArchivoXML();
-            if (udp.Exito)
+            DialogResult = XtraMessageBox.Show("¿Desea eliminar el documento?", "Eliminar", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1);
+            if (DialogResult == DialogResult.Yes)
             {
-                txtNombreArchivoPDF.Text = string.Empty;
-                XtraMessageBox.Show("Se a quitado el XML con Exito");
+                CLS_Activos udp = new CLS_Activos();
+                udp.Id_Activo = vId_Activo;
+                udp.Opcion = 0;
+                udp.NombreArchivoXML = string.Empty;
+                udp.ArchivoXML = null;
+                udp.MtdDeleteActivoArchivoXML();
+                if (udp.Exito)
+                {
+                    txtNombreArchivoPDF.Text = string.Empty;
+                    XtraMessageBox.Show("Se a quitado el XML con Exito");
+                }
+                else
+                {
+                    XtraMessageBox.Show(udp.Mensaje);
+                }
             }
-            else
-            {
-                XtraMessageBox.Show(udp.Mensaje);
-            }
+        }
+
+        private void btnViewPDF_Click(object sender, EventArgs e)
+        {
+            Frm_View_PDF frm = new Frm_View_PDF();
+            frm.Id_Activo = vId_Activo;
+            frm.ShowDialog();
+            frm.Dispose();
+            System.IO.File.Delete(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\ViewPDF.pdf");
+        }
+
+        private void btnViewXML_Click(object sender, EventArgs e)
+        {
+            Frm_View_XML frm = new Frm_View_XML();
+            frm.Id_Activo = vId_Activo;
+            frm.ShowDialog();
+            frm.Dispose();
+            System.IO.File.Delete(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\ViewXML.xml");
         }
     }
 }

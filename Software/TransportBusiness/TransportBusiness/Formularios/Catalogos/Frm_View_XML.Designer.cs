@@ -1,5 +1,5 @@
-﻿namespace TransportBusiness.Formularios.Catalogos
-{
+﻿namespace TransportBusiness
+{ 
     partial class Frm_View_XML
     {
         /// <summary>
@@ -37,17 +37,20 @@
             this.webBrowser1.Location = new System.Drawing.Point(0, 0);
             this.webBrowser1.MinimumSize = new System.Drawing.Size(20, 20);
             this.webBrowser1.Name = "webBrowser1";
-            this.webBrowser1.Size = new System.Drawing.Size(649, 641);
+            this.webBrowser1.Size = new System.Drawing.Size(758, 662);
             this.webBrowser1.TabIndex = 0;
             // 
             // Frm_View_XML
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(649, 641);
+            this.ClientSize = new System.Drawing.Size(758, 662);
             this.Controls.Add(this.webBrowser1);
             this.Name = "Frm_View_XML";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Vista Previa XML";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Shown += new System.EventHandler(this.Frm_View_XML_Shown);
             this.ResumeLayout(false);
 
         }

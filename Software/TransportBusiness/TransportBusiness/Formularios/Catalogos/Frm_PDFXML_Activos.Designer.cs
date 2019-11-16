@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_PDFXML_Activos));
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.btnDeleteXML = new DevExpress.XtraEditors.SimpleButton();
@@ -41,7 +40,7 @@
             this.btnUpPDF = new DevExpress.XtraEditors.SimpleButton();
             this.txtNombreArchivoPDF = new DevExpress.XtraEditors.TextEdit();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
-            this.OpenDialog = new DevExpress.XtraEditors.XtraOpenFileDialog(this.components);
+            this.OpenDialog = new DevExpress.XtraEditors.XtraOpenFileDialog();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtNombreArchivoXML.Properties)).BeginInit();
@@ -91,6 +90,7 @@
             this.btnViewXML.Name = "btnViewXML";
             this.btnViewXML.Size = new System.Drawing.Size(25, 23);
             this.btnViewXML.TabIndex = 7;
+            this.btnViewXML.Click += new System.EventHandler(this.btnViewXML_Click);
             // 
             // btnUPXML
             // 
@@ -124,6 +124,7 @@
             this.btnViewPDF.Name = "btnViewPDF";
             this.btnViewPDF.Size = new System.Drawing.Size(25, 23);
             this.btnViewPDF.TabIndex = 3;
+            this.btnViewPDF.Click += new System.EventHandler(this.btnViewPDF_Click);
             // 
             // btnUpPDF
             // 

@@ -1,4 +1,4 @@
-﻿namespace TransportBusiness.Formularios.Catalogos
+﻿namespace TransportBusiness
 {
     partial class Frm_View_PDF
     {
@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.pdfViewer1 = new DevExpress.XtraPdfViewer.PdfViewer();
             this.SuspendLayout();
             // 
@@ -47,7 +46,10 @@
             this.ClientSize = new System.Drawing.Size(634, 612);
             this.Controls.Add(this.pdfViewer1);
             this.Name = "Frm_View_PDF";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Vista Previa PDF";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Frm_View_PDF_FormClosed);
             this.Shown += new System.EventHandler(this.Frm_View_PDF_Shown);
             this.ResumeLayout(false);
 

@@ -101,7 +101,7 @@ namespace TransportBusiness
             group1.Caption = "Imagenes Activos";
             gc.Gallery.Groups.Add(group1);
             Serie = 0;
-            vId_Activo = "00000001";
+            //vId_Activo = "00000001";
             Cargar_Imagenes_Existentes(vId_Activo);
         }
         private void Cargar_Imagenes_Existentes(string vActivo)
@@ -130,24 +130,27 @@ namespace TransportBusiness
         }
         private void btnEliminar_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            GalleryItem item = gc.Gallery.GetCheckedItem();
-            if (item != null)
+            DialogResult = XtraMessageBox.Show("¿Desea eliminar la imagen?", "Eliminar", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1);
+            if (DialogResult == DialogResult.Yes)
             {
-                int vSerie=Convert.ToInt32(item.Caption);
-                CLS_Activos ins = new CLS_Activos();
-                ins.Id_Activo = vId_Activo;
-                ins.SerieImagen = vSerie;
-                ins.MtdEliminarActivoImagen();
-                if (!ins.Exito)
+                GalleryItem item = gc.Gallery.GetCheckedItem();
+                if (item != null)
                 {
-                    XtraMessageBox.Show(ins.Mensaje);
-                }
-                else
-                {
-                    gc.Gallery.Groups[0].Items.Remove(item);
+                    int vSerie = Convert.ToInt32(item.Caption);
+                    CLS_Activos ins = new CLS_Activos();
+                    ins.Id_Activo = vId_Activo;
+                    ins.SerieImagen = vSerie;
+                    ins.MtdEliminarActivoImagen();
+                    if (!ins.Exito)
+                    {
+                        XtraMessageBox.Show(ins.Mensaje);
+                    }
+                    else
+                    {
+                        gc.Gallery.Groups[0].Items.Remove(item);
+                    }
                 }
             }
-
         }
 
         private void btnSalir_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
