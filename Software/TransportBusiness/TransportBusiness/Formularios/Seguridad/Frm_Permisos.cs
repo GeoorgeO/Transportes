@@ -10,7 +10,7 @@ using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using CapaDeDatos;
 
-namespace CuttingBusiness
+namespace TransportBusiness
 {
     public partial class Frm_Permisos : DevExpress.XtraEditors.XtraForm
     {
