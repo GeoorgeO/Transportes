@@ -64,7 +64,8 @@ BEGIN
 			E.Nombre_Empresa,
 			A.Id_Factura,
 			A.IAVE,
-			A.Folio_Tarjeta_Circulacion
+			A.Folio_Tarjeta_Circulacion,
+			A.Id_Tarjeta_Combustible
 		from Activos as A
 		left join Marcas as M on M.Id_Marca=A.Id_Marca
 		left join Tipo_Transporte as T on T.Id_Tipo_Transporte=A.Id_Tipo_Transporte

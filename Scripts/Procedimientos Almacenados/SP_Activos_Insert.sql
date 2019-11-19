@@ -38,7 +38,8 @@ create PROCEDURE [dbo].[SP_Activos_Insert]
 	@Id_Empresa char(4),
 	@Id_Factura varchar(50),
 	@IAVE varchar(50),
-	@Folio_Tarjeta_Circulacion varchar(20)
+	@Folio_Tarjeta_Circulacion varchar(20),
+	@Id_Tarjeta_Combustible varchar(20)
 AS
 BEGIN
 	-- SET NOCOUNT ON added to prevent extra result sets from
@@ -87,7 +88,8 @@ BEGIN
 				Id_Empresa=@Id_Empresa,
 				Id_Factura=@Id_Factura,
 				IAVE=@IAVE,
-				Folio_Tarjeta_Circulacion=@Folio_Tarjeta_Circulacion
+				Folio_Tarjeta_Circulacion=@Folio_Tarjeta_Circulacion,
+				Id_Tarjeta_Combustible=@Id_Tarjeta_Combustible
 		    WHERE
 		    	Id_Activo=@Id_Activo
 				
@@ -117,7 +119,8 @@ BEGIN
 			   ,Id_Empresa
 			   ,Id_Factura
 			   ,IAVE
-			   ,Folio_Tarjeta_Circulacion)
+			   ,Folio_Tarjeta_Circulacion
+			   ,Id_Tarjeta_Combustible)
 	     	VALUES
 	           (@maximo
 	           ,@Nombre_Interno
@@ -142,7 +145,8 @@ BEGIN
 			   ,@Id_Empresa
 			   ,@Id_Factura
 			   ,@IAVE
-			   ,@Folio_Tarjeta_Circulacion)
+			   ,@Folio_Tarjeta_Circulacion
+			   ,@Id_Tarjeta_Combustible)
 		
 		commit transaction T1;
 		set @correcto=1

@@ -40,6 +40,7 @@ namespace CapaDeDatos
         public byte[] ArchivoPDF { get; set; }
         public string NombreArchivoXML { get; set; }
         public byte[] ArchivoXML { get; set; }
+        public string TargCombustibles { get; set; }
 
         public void MtdSeleccionarActivos()
         {
@@ -127,6 +128,8 @@ namespace CapaDeDatos
                 _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "IAVE");
                 _dato.CadenaTexto = Folio_Tarjeta_Circulacion;
                 _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Folio_Tarjeta_Circulacion");
+                _dato.CadenaTexto = TargCombustibles;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "TargCombustibles");
                 _conexion.EjecutarDataset();
 
                 if (_conexion.Exito)
