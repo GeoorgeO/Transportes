@@ -28,8 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_Activos));
-            this.barManager1 = new DevExpress.XtraBars.BarManager();
+            this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.bIconos = new DevExpress.XtraBars.Bar();
             this.btnLimpiar = new DevExpress.XtraBars.BarLargeButtonItem();
             this.btnGuardar = new DevExpress.XtraBars.BarLargeButtonItem();
@@ -186,6 +187,9 @@
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.txtIdActivo = new DevExpress.XtraEditors.TextEdit();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl25 = new DevExpress.XtraEditors.LabelControl();
+            this.textTargCombustible = new DevExpress.XtraEditors.TextEdit();
+            this.gridColumn30 = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
@@ -224,6 +228,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtTipoPlaca.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNombreActivo.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtIdActivo.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textTargCombustible.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // barManager1
@@ -420,7 +425,8 @@
             this.gridColumn26,
             this.gridColumn27,
             this.gridColumn28,
-            this.gridColumn29});
+            this.gridColumn29,
+            this.gridColumn30});
             this.cardView1.FocusedCardTopFieldIndex = 0;
             this.cardView1.GridControl = this.dtgActivos;
             this.cardView1.Name = "cardView1";
@@ -1160,6 +1166,8 @@
             // 
             // groupControl1
             // 
+            this.groupControl1.Controls.Add(this.textTargCombustible);
+            this.groupControl1.Controls.Add(this.labelControl25);
             this.groupControl1.Controls.Add(this.textIAVE);
             this.groupControl1.Controls.Add(this.textFolioCircula);
             this.groupControl1.Controls.Add(this.labelControl24);
@@ -1313,7 +1321,7 @@
             // 
             this.txtEstatus.EditValue = "ACTIVO";
             this.txtEstatus.Enabled = false;
-            this.txtEstatus.Location = new System.Drawing.Point(89, 245);
+            this.txtEstatus.Location = new System.Drawing.Point(772, 246);
             this.txtEstatus.MenuManager = this.barManager1;
             this.txtEstatus.Name = "txtEstatus";
             this.txtEstatus.Size = new System.Drawing.Size(108, 20);
@@ -1475,7 +1483,7 @@
             // 
             // labelControl17
             // 
-            this.labelControl17.Location = new System.Drawing.Point(26, 249);
+            this.labelControl17.Location = new System.Drawing.Point(709, 250);
             this.labelControl17.Name = "labelControl17";
             this.labelControl17.Size = new System.Drawing.Size(40, 13);
             this.labelControl17.TabIndex = 30;
@@ -1517,7 +1525,7 @@
             // 
             // labelControl14
             // 
-            this.labelControl14.Location = new System.Drawing.Point(26, 93);
+            this.labelControl14.Location = new System.Drawing.Point(12, 93);
             this.labelControl14.Name = "labelControl14";
             this.labelControl14.Size = new System.Drawing.Size(58, 13);
             this.labelControl14.TabIndex = 24;
@@ -1525,7 +1533,7 @@
             // 
             // labelControl13
             // 
-            this.labelControl13.Location = new System.Drawing.Point(26, 119);
+            this.labelControl13.Location = new System.Drawing.Point(12, 119);
             this.labelControl13.Name = "labelControl13";
             this.labelControl13.Size = new System.Drawing.Size(33, 13);
             this.labelControl13.TabIndex = 23;
@@ -1551,7 +1559,7 @@
             // 
             // labelControl12
             // 
-            this.labelControl12.Location = new System.Drawing.Point(26, 197);
+            this.labelControl12.Location = new System.Drawing.Point(12, 197);
             this.labelControl12.Name = "labelControl12";
             this.labelControl12.Size = new System.Drawing.Size(38, 13);
             this.labelControl12.TabIndex = 19;
@@ -1559,7 +1567,7 @@
             // 
             // labelControl11
             // 
-            this.labelControl11.Location = new System.Drawing.Point(26, 145);
+            this.labelControl11.Location = new System.Drawing.Point(12, 145);
             this.labelControl11.Name = "labelControl11";
             this.labelControl11.Size = new System.Drawing.Size(29, 13);
             this.labelControl11.TabIndex = 18;
@@ -1617,7 +1625,7 @@
             // 
             // labelControl6
             // 
-            this.labelControl6.Location = new System.Drawing.Point(26, 223);
+            this.labelControl6.Location = new System.Drawing.Point(12, 223);
             this.labelControl6.Name = "labelControl6";
             this.labelControl6.Size = new System.Drawing.Size(48, 13);
             this.labelControl6.TabIndex = 10;
@@ -1659,7 +1667,7 @@
             // 
             // labelControl3
             // 
-            this.labelControl3.Location = new System.Drawing.Point(26, 171);
+            this.labelControl3.Location = new System.Drawing.Point(12, 171);
             this.labelControl3.Name = "labelControl3";
             this.labelControl3.Size = new System.Drawing.Size(32, 13);
             this.labelControl3.TabIndex = 4;
@@ -1675,7 +1683,7 @@
             // 
             // labelControl2
             // 
-            this.labelControl2.Location = new System.Drawing.Point(26, 60);
+            this.labelControl2.Location = new System.Drawing.Point(12, 60);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(41, 26);
             this.labelControl2.TabIndex = 2;
@@ -1692,11 +1700,35 @@
             // 
             // labelControl1
             // 
-            this.labelControl1.Location = new System.Drawing.Point(26, 41);
+            this.labelControl1.Location = new System.Drawing.Point(12, 41);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(50, 13);
             this.labelControl1.TabIndex = 0;
             this.labelControl1.Text = "Id Activo: ";
+            // 
+            // labelControl25
+            // 
+            this.labelControl25.Location = new System.Drawing.Point(12, 249);
+            this.labelControl25.Name = "labelControl25";
+            this.labelControl25.Size = new System.Drawing.Size(75, 13);
+            this.labelControl25.TabIndex = 62;
+            this.labelControl25.Text = "T. Combustible:";
+            // 
+            // textTargCombustible
+            // 
+            this.textTargCombustible.Location = new System.Drawing.Point(89, 245);
+            this.textTargCombustible.MenuManager = this.barManager1;
+            this.textTargCombustible.Name = "textTargCombustible";
+            this.textTargCombustible.Size = new System.Drawing.Size(201, 20);
+            this.textTargCombustible.TabIndex = 63;
+            // 
+            // gridColumn30
+            // 
+            this.gridColumn30.Caption = "Tarjeta Combustible";
+            this.gridColumn30.FieldName = "Id_Tarjeta_Combustible";
+            this.gridColumn30.Name = "gridColumn30";
+            this.gridColumn30.Visible = true;
+            this.gridColumn30.VisibleIndex = 29;
             // 
             // Frm_Activos
             // 
@@ -1753,6 +1785,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtTipoPlaca.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNombreActivo.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtIdActivo.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textTargCombustible.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1917,5 +1950,8 @@
         private DevExpress.XtraEditors.LabelControl labelControl23;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn28;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn29;
+        private DevExpress.XtraEditors.TextEdit textTargCombustible;
+        private DevExpress.XtraEditors.LabelControl labelControl25;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn30;
     }
 }

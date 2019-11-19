@@ -129,7 +129,7 @@ namespace CapaDeDatos
                 _dato.CadenaTexto = Folio_Tarjeta_Circulacion;
                 _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Folio_Tarjeta_Circulacion");
                 _dato.CadenaTexto = TargCombustibles;
-                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "TargCombustibles");
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_Tarjeta_Combustible");
                 _conexion.EjecutarDataset();
 
                 if (_conexion.Exito)

@@ -237,6 +237,8 @@ namespace TransportBusiness
             Activos.Id_Factura = textFactura.Text.Trim();
             Activos.IAVE = textIAVE.Text.Trim();
             Activos.Folio_Tarjeta_Circulacion = textFolioCircula.Text.Trim();
+            Activos.TargCombustibles = textTargCombustible.Text.Trim();
+
             Activos.MtdInsertarActivos();
             if (Activos.Exito)
             {
@@ -293,6 +295,7 @@ namespace TransportBusiness
             textFactura.Text = "";
             textIAVE.Text = "";
             textFolioCircula.Text = "";
+            textTargCombustible.Text = "";
         }
 
         private void dtgActivos_Click(object sender, EventArgs e)
@@ -349,6 +352,7 @@ namespace TransportBusiness
                     textFactura.Text = row["Id_Factura"].ToString();
                     textIAVE.Text = row["IAVE"].ToString();
                     textFolioCircula.Text = row["Folio_Tarjeta_Circulacion"].ToString();
+                    textTargCombustible.Text = row["Id_Tarjeta_Combustible"].ToString();
                 }
 
                
