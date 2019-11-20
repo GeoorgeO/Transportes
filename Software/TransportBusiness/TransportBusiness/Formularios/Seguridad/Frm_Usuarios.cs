@@ -129,12 +129,9 @@ namespace TransportBusiness
 
         private void Frm_Usuarios_Load(object sender, EventArgs e)
         {
-            
             CargarPerfiles();
             CargarUsuarios();
             UsuariosLogin = "ADMIN";
-
-
         }
 
         private void gridControl1_Click(object sender, EventArgs e)
