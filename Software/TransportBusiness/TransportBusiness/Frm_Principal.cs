@@ -146,5 +146,23 @@ namespace TransportBusiness
             Frm_Proveedores.DefInstance.MdiParent = this;
             Frm_Proveedores.DefInstance.Show();
         }
+
+        private void btnPantallas_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Frm_Pantallas Pantalla = new Frm_Pantallas();
+            Pantalla.ShowDialog();
+        }
+
+        private void btnPerfiles_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Frm_Perfiles Perfiles = new Frm_Perfiles();
+            Perfiles.ShowDialog();
+        }
+
+        private void btnUsuarios_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Frm_Usuarios Usuarios = new Frm_Usuarios();
+            Usuarios.ShowDialog();
+        }
     }
 }

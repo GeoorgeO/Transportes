@@ -46,9 +46,9 @@
             this.barButtonItem13 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem14 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem15 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem16 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem17 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem18 = new DevExpress.XtraBars.BarButtonItem();
+            this.btnPantallas = new DevExpress.XtraBars.BarButtonItem();
+            this.btnPerfiles = new DevExpress.XtraBars.BarButtonItem();
+            this.btnUsuarios = new DevExpress.XtraBars.BarButtonItem();
             this.btnTipoActivos = new DevExpress.XtraBars.BarButtonItem();
             this.btnTipoDomicilio = new DevExpress.XtraBars.BarButtonItem();
             this.btnTipoLicencia = new DevExpress.XtraBars.BarButtonItem();
@@ -64,6 +64,7 @@
             this.btnLicencias = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPageGroup9 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup7 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup8 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -77,7 +78,6 @@
             this.ribbonPageGroup4 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPage4 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.xtraTabbedMdiManager1 = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
-            this.ribbonPageGroup9 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager1)).BeginInit();
             this.SuspendLayout();
@@ -102,9 +102,9 @@
             this.barButtonItem13,
             this.barButtonItem14,
             this.barButtonItem15,
-            this.barButtonItem16,
-            this.barButtonItem17,
-            this.barButtonItem18,
+            this.btnPantallas,
+            this.btnPerfiles,
+            this.btnUsuarios,
             this.btnTipoActivos,
             this.btnTipoDomicilio,
             this.btnTipoLicencia,
@@ -249,29 +249,32 @@
             this.barButtonItem15.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem15.ImageOptions.LargeImage")));
             this.barButtonItem15.Name = "barButtonItem15";
             // 
-            // barButtonItem16
+            // btnPantallas
             // 
-            this.barButtonItem16.Caption = "Pantallas";
-            this.barButtonItem16.Id = 16;
-            this.barButtonItem16.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem16.ImageOptions.Image")));
-            this.barButtonItem16.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem16.ImageOptions.LargeImage")));
-            this.barButtonItem16.Name = "barButtonItem16";
+            this.btnPantallas.Caption = "Pantallas";
+            this.btnPantallas.Id = 16;
+            this.btnPantallas.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem16.ImageOptions.Image")));
+            this.btnPantallas.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem16.ImageOptions.LargeImage")));
+            this.btnPantallas.Name = "btnPantallas";
+            this.btnPantallas.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnPantallas_ItemClick);
             // 
-            // barButtonItem17
+            // btnPerfiles
             // 
-            this.barButtonItem17.Caption = "Perfiles";
-            this.barButtonItem17.Id = 17;
-            this.barButtonItem17.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem17.ImageOptions.Image")));
-            this.barButtonItem17.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem17.ImageOptions.LargeImage")));
-            this.barButtonItem17.Name = "barButtonItem17";
+            this.btnPerfiles.Caption = "Perfiles";
+            this.btnPerfiles.Id = 17;
+            this.btnPerfiles.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem17.ImageOptions.Image")));
+            this.btnPerfiles.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem17.ImageOptions.LargeImage")));
+            this.btnPerfiles.Name = "btnPerfiles";
+            this.btnPerfiles.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnPerfiles_ItemClick);
             // 
-            // barButtonItem18
+            // btnUsuarios
             // 
-            this.barButtonItem18.Caption = "Usuarios";
-            this.barButtonItem18.Id = 18;
-            this.barButtonItem18.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem18.ImageOptions.Image")));
-            this.barButtonItem18.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem18.ImageOptions.LargeImage")));
-            this.barButtonItem18.Name = "barButtonItem18";
+            this.btnUsuarios.Caption = "Usuarios";
+            this.btnUsuarios.Id = 18;
+            this.btnUsuarios.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem18.ImageOptions.Image")));
+            this.btnUsuarios.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem18.ImageOptions.LargeImage")));
+            this.btnUsuarios.Name = "btnUsuarios";
+            this.btnUsuarios.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnUsuarios_ItemClick);
             // 
             // btnTipoActivos
             // 
@@ -398,6 +401,13 @@
             this.ribbonPageGroup1.Name = "ribbonPageGroup1";
             this.ribbonPageGroup1.Text = "Catalogos";
             // 
+            // ribbonPageGroup9
+            // 
+            this.ribbonPageGroup9.ItemLinks.Add(this.btnEstado);
+            this.ribbonPageGroup9.ItemLinks.Add(this.btnPais);
+            this.ribbonPageGroup9.Name = "ribbonPageGroup9";
+            this.ribbonPageGroup9.Text = "Domicilios";
+            // 
             // ribbonPageGroup3
             // 
             this.ribbonPageGroup3.ItemLinks.Add(this.barButtonItem14);
@@ -464,9 +474,9 @@
             // ribbonPageGroup5
             // 
             this.ribbonPageGroup5.AllowTextClipping = false;
-            this.ribbonPageGroup5.ItemLinks.Add(this.barButtonItem16);
-            this.ribbonPageGroup5.ItemLinks.Add(this.barButtonItem17);
-            this.ribbonPageGroup5.ItemLinks.Add(this.barButtonItem18);
+            this.ribbonPageGroup5.ItemLinks.Add(this.btnPantallas);
+            this.ribbonPageGroup5.ItemLinks.Add(this.btnPerfiles);
+            this.ribbonPageGroup5.ItemLinks.Add(this.btnUsuarios);
             this.ribbonPageGroup5.Name = "ribbonPageGroup5";
             this.ribbonPageGroup5.ShowCaptionButton = false;
             this.ribbonPageGroup5.Text = "Usuarios";
@@ -493,13 +503,6 @@
             // 
             this.xtraTabbedMdiManager1.ClosePageButtonShowMode = DevExpress.XtraTab.ClosePageButtonShowMode.InActiveTabPageHeader;
             this.xtraTabbedMdiManager1.MdiParent = this;
-            // 
-            // ribbonPageGroup9
-            // 
-            this.ribbonPageGroup9.ItemLinks.Add(this.btnEstado);
-            this.ribbonPageGroup9.ItemLinks.Add(this.btnPais);
-            this.ribbonPageGroup9.Name = "ribbonPageGroup9";
-            this.ribbonPageGroup9.Text = "Domicilios";
             // 
             // Frm_Principal
             // 
@@ -548,9 +551,9 @@
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup5;
         private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage4;
         private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage5;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem16;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem17;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem18;
+        private DevExpress.XtraBars.BarButtonItem btnPantallas;
+        private DevExpress.XtraBars.BarButtonItem btnPerfiles;
+        private DevExpress.XtraBars.BarButtonItem btnUsuarios;
         private DevExpress.XtraBars.BarButtonItem btnTipoActivos;
         private DevExpress.XtraBars.BarButtonItem btnTipoDomicilio;
         private DevExpress.XtraBars.BarButtonItem btnTipoLicencia;
