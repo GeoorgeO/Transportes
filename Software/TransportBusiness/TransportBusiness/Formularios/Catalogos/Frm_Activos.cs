@@ -435,5 +435,33 @@ namespace TransportBusiness
             }
            
         }
+
+        private void btnXML_Click(object sender, EventArgs e)
+        {
+            if (txtIdActivo.Text != string.Empty)
+            {
+                Frm_PDFXML_Activos frm = new Frm_PDFXML_Activos();
+                frm.vId_Activo = txtIdActivo.Text;
+                frm.ShowDialog();
+            }
+            else
+            {
+                XtraMessageBox.Show("Debe seleccionar un Activo");
+            }
+        }
+
+        private void btnGallery_Click(object sender, EventArgs e)
+        {
+            if (txtIdActivo.Text != string.Empty)
+            {
+                Frm_Galeria_Activos frm = new Frm_Galeria_Activos();
+                frm.vId_Activo = txtIdActivo.Text;
+                frm.ShowDialog();
+            }
+            else
+            {
+                XtraMessageBox.Show("Debe seleccionar un Activo");
+            }
+        }
     }
 }
