@@ -312,6 +312,7 @@ namespace TransportBusiness
             CargarAseguradora();
             CargarDomicilio();
             iniciarTags();
+            LimpiarCampos();
         }
 
         private void gridControl2_Click(object sender, EventArgs e)
@@ -355,6 +356,26 @@ namespace TransportBusiness
             {
                 xtraTabPage2.PageEnabled = true;
             }
+        }
+
+        private void btnBusqEstado_Click(object sender, EventArgs e)
+        {
+            Frm_Estado Estado = new Frm_Estado(true);
+
+            Estado.ShowDialog();
+
+            textEstado.Tag = Estado.IdEstado;
+            textEstado.Text = Estado.Estado;
+        }
+
+        private void btnBusqTipoDomicilio_Click(object sender, EventArgs e)
+        {
+            Frm_Tipo_Domicilio tipoDomicilio = new Frm_Tipo_Domicilio();
+            tipoDomicilio.PaSel = true;
+            tipoDomicilio.ShowDialog();
+
+            textTipoDomicilio.Tag = tipoDomicilio.IdTipoDomicilio;
+            textTipoDomicilio.Text = tipoDomicilio.TipoDomicilio;
         }
     }
 }

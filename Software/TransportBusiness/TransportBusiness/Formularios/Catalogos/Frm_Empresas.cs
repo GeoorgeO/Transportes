@@ -130,6 +130,7 @@ namespace TransportBusiness
             CargarEmpresa();
             CargarDomicilio();
             iniciarTags();
+            LimpiarCampos();
         }
         private void CargarDomicilio()
         {
@@ -145,15 +146,6 @@ namespace TransportBusiness
         }
         private void btnGuardar_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            if (textNombre.Text.ToString().Trim().Length > 0)
-            {
-                InsertarEmpresa();
-            }
-            else
-            {
-                XtraMessageBox.Show("Es necesario Agregar un nombre a la empresa.");
-            }
-
             if (xtraTabControl1.SelectedTabPage == Datos)
             {
                 if (textNombre.Text.ToString().Trim().Length > 0)
@@ -332,6 +324,26 @@ namespace TransportBusiness
                 Domicilio.PageEnabled = true;
                 
             }
+        }
+
+        private void btnBusqEstado_Click(object sender, EventArgs e)
+        {
+            Frm_Estado Estado = new Frm_Estado(true);
+
+            Estado.ShowDialog();
+
+            textEstado.Tag = Estado.IdEstado;
+            textEstado.Text = Estado.Estado;
+        }
+
+        private void btnBusqTipoDomicilio_Click(object sender, EventArgs e)
+        {
+            Frm_Tipo_Domicilio tipoDomicilio = new Frm_Tipo_Domicilio();
+            tipoDomicilio.PaSel = true;
+            tipoDomicilio.ShowDialog();
+
+            textTipoDomicilio.Tag = tipoDomicilio.IdTipoDomicilio;
+            textTipoDomicilio.Text = tipoDomicilio.TipoDomicilio;
         }
     }
 }

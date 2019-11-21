@@ -304,6 +304,7 @@ namespace TransportBusiness
             CargarAgente();
             CargarDomicilio();
             iniciarTags();
+            LimpiarCampos();
         }
 
         private void gridControl2_Click(object sender, EventArgs e)

@@ -26,7 +26,7 @@ namespace TransportBusiness
         private void CargarAccesos()
         {
             CLS_Perfiles_Pantallas Clase = new CLS_Perfiles_Pantallas();
-            Clase.Id_Perfil = "003";
+            Clase.Id_Perfil = "001";
             Clase.MtdSeleccionarAccesosPermisos();
             if (Clase.Exito)
             {

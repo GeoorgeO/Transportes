@@ -92,7 +92,7 @@ namespace TransportBusiness
                 {
                     CargarPerfilesPantallas();
                     XtraMessageBox.Show("Se ha Insertado el registro con exito");
-                    LimpiarCampos();
+                    //LimpiarCampos();
                 }
                
             }

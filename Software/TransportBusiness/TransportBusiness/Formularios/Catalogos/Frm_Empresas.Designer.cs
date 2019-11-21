@@ -572,6 +572,7 @@
             this.btnBusqTipoDomicilio.Name = "btnBusqTipoDomicilio";
             this.btnBusqTipoDomicilio.Size = new System.Drawing.Size(24, 23);
             this.btnBusqTipoDomicilio.TabIndex = 18;
+            this.btnBusqTipoDomicilio.Click += new System.EventHandler(this.btnBusqTipoDomicilio_Click);
             // 
             // textTipoDomicilio
             // 
@@ -588,6 +589,7 @@
             this.btnBusqEstado.Name = "btnBusqEstado";
             this.btnBusqEstado.Size = new System.Drawing.Size(24, 23);
             this.btnBusqEstado.TabIndex = 16;
+            this.btnBusqEstado.Click += new System.EventHandler(this.btnBusqEstado_Click);
             // 
             // textCodigoPostal
             // 

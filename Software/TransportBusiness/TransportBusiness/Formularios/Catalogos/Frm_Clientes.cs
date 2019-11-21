@@ -299,6 +299,7 @@ namespace TransportBusiness
             CargarClientes();
             CargarDomicilio();
             iniciarTags();
+            LimpiarCampos();
         }
 
         private void gridControl2_Click(object sender, EventArgs e)
@@ -351,7 +352,6 @@ namespace TransportBusiness
             if (textIdCliente.Text == String.Empty)
             {
                 xtraTabPage2.PageEnabled = false;
-
             }
             else
             {
