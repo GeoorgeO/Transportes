@@ -78,6 +78,8 @@
             this.ribbonPageGroup4 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPage4 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.xtraTabbedMdiManager1 = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
+            this.ribbonPageGroup10 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.btnPermisos = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager1)).BeginInit();
             this.SuspendLayout();
@@ -117,9 +119,10 @@
             this.btnEstado,
             this.btnPais,
             this.btnMarca,
-            this.btnLicencias});
+            this.btnLicencias,
+            this.btnPermisos});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.MaxItemId = 32;
+            this.ribbonControl1.MaxItemId = 33;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1,
@@ -253,8 +256,8 @@
             // 
             this.btnPantallas.Caption = "Pantallas";
             this.btnPantallas.Id = 16;
-            this.btnPantallas.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem16.ImageOptions.Image")));
-            this.btnPantallas.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem16.ImageOptions.LargeImage")));
+            this.btnPantallas.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnPantallas.ImageOptions.Image")));
+            this.btnPantallas.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnPantallas.ImageOptions.LargeImage")));
             this.btnPantallas.Name = "btnPantallas";
             this.btnPantallas.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnPantallas_ItemClick);
             // 
@@ -262,8 +265,8 @@
             // 
             this.btnPerfiles.Caption = "Perfiles";
             this.btnPerfiles.Id = 17;
-            this.btnPerfiles.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem17.ImageOptions.Image")));
-            this.btnPerfiles.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem17.ImageOptions.LargeImage")));
+            this.btnPerfiles.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnPerfiles.ImageOptions.Image")));
+            this.btnPerfiles.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnPerfiles.ImageOptions.LargeImage")));
             this.btnPerfiles.Name = "btnPerfiles";
             this.btnPerfiles.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnPerfiles_ItemClick);
             // 
@@ -271,8 +274,8 @@
             // 
             this.btnUsuarios.Caption = "Usuarios";
             this.btnUsuarios.Id = 18;
-            this.btnUsuarios.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem18.ImageOptions.Image")));
-            this.btnUsuarios.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem18.ImageOptions.LargeImage")));
+            this.btnUsuarios.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnUsuarios.ImageOptions.Image")));
+            this.btnUsuarios.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnUsuarios.ImageOptions.LargeImage")));
             this.btnUsuarios.Name = "btnUsuarios";
             this.btnUsuarios.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnUsuarios_ItemClick);
             // 
@@ -467,7 +470,8 @@
             // ribbonPage3
             // 
             this.ribbonPage3.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
-            this.ribbonPageGroup5});
+            this.ribbonPageGroup5,
+            this.ribbonPageGroup10});
             this.ribbonPage3.Name = "ribbonPage3";
             this.ribbonPage3.Text = "Seguridad";
             // 
@@ -504,6 +508,21 @@
             this.xtraTabbedMdiManager1.ClosePageButtonShowMode = DevExpress.XtraTab.ClosePageButtonShowMode.InActiveTabPageHeader;
             this.xtraTabbedMdiManager1.MdiParent = this;
             // 
+            // ribbonPageGroup10
+            // 
+            this.ribbonPageGroup10.ItemLinks.Add(this.btnPermisos);
+            this.ribbonPageGroup10.Name = "ribbonPageGroup10";
+            this.ribbonPageGroup10.Text = "ribbonPageGroup10";
+            // 
+            // btnPermisos
+            // 
+            this.btnPermisos.Caption = "Pantallas - Perfil";
+            this.btnPermisos.Id = 32;
+            this.btnPermisos.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnPermisos.ImageOptions.Image")));
+            this.btnPermisos.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnPermisos.ImageOptions.LargeImage")));
+            this.btnPermisos.Name = "btnPermisos";
+            this.btnPermisos.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnPermisos_ItemClick);
+            // 
             // Frm_Principal
             // 
             this.AllowFormGlass = DevExpress.Utils.DefaultBoolean.True;
@@ -516,6 +535,7 @@
             this.Ribbon = this.ribbonControl1;
             this.Text = "Principal";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.Frm_Principal_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager1)).EndInit();
             this.ResumeLayout(false);
@@ -573,6 +593,8 @@
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup7;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup8;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup9;
+        private DevExpress.XtraBars.BarButtonItem btnPermisos;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup10;
     }
 }
 

@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using CapaDeDatos;
 
 namespace TransportBusiness
 {
@@ -13,9 +14,44 @@ namespace TransportBusiness
     {
         public string UsuariosLogin { get; set; }
         public char UsuariosClase { get; set; }
+
+        List<string> Lista = new List<string>();
+
         public Frm_Principal()
         {
             InitializeComponent();
+        }
+
+        private void CargarAccesos()
+        {
+            CLS_Perfiles_Pantallas Clase = new CLS_Perfiles_Pantallas();
+            Clase.Id_Perfil = "001";
+            Clase.MtdSeleccionarAccesosPermisos();
+            if (Clase.Exito)
+            {
+
+               for(int x=0; x<Clase.Datos.Rows.Count; x++)
+                {
+                    Lista.Add(Clase.Datos.Rows[x][0].ToString());
+                }
+            }
+            else
+            {
+                //XtraMessageBox.Show(Clase.Mensaje);
+            }
+        }
+
+        private Boolean TieneAcceso(String valor)
+        {
+            foreach (string x in Lista)
+            {
+                if (x== valor)
+                {
+                    return true;
+                }
+               
+            }
+            return false;
         }
 
         private void barButtonItem9_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -30,8 +66,12 @@ namespace TransportBusiness
 
         private void btnVeiculos_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            Frm_Activos.DefInstance.MdiParent = this;
-            Frm_Activos.DefInstance.Show();
+            if (TieneAcceso("001"))
+            {
+                Frm_Activos.DefInstance.MdiParent = this;
+                Frm_Activos.DefInstance.Show();
+            }
+           
         }
 
         private void btnPersonal_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -163,6 +203,17 @@ namespace TransportBusiness
         {
             Frm_Usuarios Usuarios = new Frm_Usuarios();
             Usuarios.ShowDialog();
+        }
+
+        private void btnPermisos_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Frm_Permisos Permisos = new Frm_Permisos();
+            Permisos.ShowDialog();
+        }
+
+        private void Frm_Principal_Load(object sender, EventArgs e)
+        {
+            CargarAccesos();
         }
     }
 }
