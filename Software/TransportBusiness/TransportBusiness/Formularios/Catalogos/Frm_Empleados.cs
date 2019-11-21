@@ -589,5 +589,20 @@ namespace TransportBusiness
             textEstadoC.Tag = Estado.IdEstado;
             textEstadoC.Text = Estado.Estado;
         }
+
+        private void textIdEmpleado_EditValueChanged(object sender, EventArgs e)
+        {
+            if (textIdEmpleado.Text == String.Empty)
+            {
+                xtraTabPage2.PageEnabled = false;
+                xtraTabPage3.PageEnabled = false;
+            }
+            else
+            {
+                xtraTabPage2.PageEnabled = true;
+                xtraTabPage3.PageEnabled = true;
+            }
+        }
+
     }
 }

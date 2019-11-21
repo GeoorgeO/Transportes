@@ -46,6 +46,7 @@
             this.repositoryItemTextEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
             this.xtraTabControl1 = new DevExpress.XtraTab.XtraTabControl();
             this.xtraTabPage1 = new DevExpress.XtraTab.XtraTabPage();
+            this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.Id_Empresa_Aseguradora = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -94,13 +95,14 @@
             this.labelControl17 = new DevExpress.XtraEditors.LabelControl();
             this.textIdDomicilio = new DevExpress.XtraEditors.TextEdit();
             this.labelControl18 = new DevExpress.XtraEditors.LabelControl();
-            this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.panelControl3 = new DevExpress.XtraEditors.PanelControl();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).BeginInit();
             this.xtraTabControl1.SuspendLayout();
             this.xtraTabPage1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
+            this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
@@ -124,8 +126,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.textNoInterior.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textCalle.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textIdDomicilio.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
-            this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).BeginInit();
             this.panelControl3.SuspendLayout();
             this.SuspendLayout();
@@ -300,6 +300,16 @@
             this.xtraTabPage1.Size = new System.Drawing.Size(773, 424);
             this.xtraTabPage1.Text = "Datos";
             // 
+            // panelControl1
+            // 
+            this.panelControl1.Controls.Add(this.gridControl1);
+            this.panelControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelControl1.Location = new System.Drawing.Point(5, 93);
+            this.panelControl1.Name = "panelControl1";
+            this.panelControl1.Padding = new System.Windows.Forms.Padding(5);
+            this.panelControl1.Size = new System.Drawing.Size(763, 326);
+            this.panelControl1.TabIndex = 2;
+            // 
             // gridControl1
             // 
             this.gridControl1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -425,6 +435,7 @@
             this.textIdAseguradora.Name = "textIdAseguradora";
             this.textIdAseguradora.Size = new System.Drawing.Size(100, 20);
             this.textIdAseguradora.TabIndex = 1;
+            this.textIdAseguradora.EditValueChanged += new System.EventHandler(this.textIdAseguradora_EditValueChanged);
             // 
             // labelControl1
             // 
@@ -738,16 +749,6 @@
             this.labelControl18.TabIndex = 0;
             this.labelControl18.Text = "Id domicilio: ";
             // 
-            // panelControl1
-            // 
-            this.panelControl1.Controls.Add(this.gridControl1);
-            this.panelControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelControl1.Location = new System.Drawing.Point(5, 93);
-            this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Padding = new System.Windows.Forms.Padding(5);
-            this.panelControl1.Size = new System.Drawing.Size(763, 326);
-            this.panelControl1.TabIndex = 2;
-            // 
             // panelControl3
             // 
             this.panelControl3.Controls.Add(this.xtraTabControl1);
@@ -776,6 +777,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).EndInit();
             this.xtraTabControl1.ResumeLayout(false);
             this.xtraTabPage1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
+            this.panelControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
@@ -801,8 +804,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.textNoInterior.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textCalle.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textIdDomicilio.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
-            this.panelControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).EndInit();
             this.panelControl3.ResumeLayout(false);
             this.ResumeLayout(false);

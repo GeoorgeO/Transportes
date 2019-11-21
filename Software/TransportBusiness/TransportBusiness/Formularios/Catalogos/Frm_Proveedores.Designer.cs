@@ -52,7 +52,10 @@
             this.Nombre_Proveedor = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Telefono = new DevExpress.XtraGrid.Columns.GridColumn();
             this.RFC_Proveedor = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Dias_Credito = new DevExpress.XtraGrid.Columns.GridColumn();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
+            this.textDiasCredito = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.textRFC = new DevExpress.XtraEditors.TextEdit();
             this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
             this.textTelefono = new DevExpress.XtraEditors.TextEdit();
@@ -94,9 +97,6 @@
             this.labelControl17 = new DevExpress.XtraEditors.LabelControl();
             this.textIdDomicilio = new DevExpress.XtraEditors.TextEdit();
             this.labelControl18 = new DevExpress.XtraEditors.LabelControl();
-            this.textDiasCredito = new DevExpress.XtraEditors.TextEdit();
-            this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
-            this.Dias_Credito = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).BeginInit();
@@ -108,6 +108,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.textDiasCredito.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textRFC.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textTelefono.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textProveedor.Properties)).BeginInit();
@@ -127,7 +128,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.textNoInterior.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textCalle.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textIdDomicilio.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textDiasCredito.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // barManager1
@@ -356,6 +356,14 @@
             this.RFC_Proveedor.Visible = true;
             this.RFC_Proveedor.VisibleIndex = 3;
             // 
+            // Dias_Credito
+            // 
+            this.Dias_Credito.Caption = "Dias Credito";
+            this.Dias_Credito.FieldName = "Dias_Credito";
+            this.Dias_Credito.Name = "Dias_Credito";
+            this.Dias_Credito.Visible = true;
+            this.Dias_Credito.VisibleIndex = 4;
+            // 
             // groupControl1
             // 
             this.groupControl1.Controls.Add(this.textDiasCredito);
@@ -374,6 +382,23 @@
             this.groupControl1.Size = new System.Drawing.Size(708, 108);
             this.groupControl1.TabIndex = 0;
             this.groupControl1.Text = "Proveedor";
+            // 
+            // textDiasCredito
+            // 
+            this.textDiasCredito.Location = new System.Drawing.Point(79, 79);
+            this.textDiasCredito.Name = "textDiasCredito";
+            this.textDiasCredito.Properties.Mask.EditMask = "n0";
+            this.textDiasCredito.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
+            this.textDiasCredito.Size = new System.Drawing.Size(100, 20);
+            this.textDiasCredito.TabIndex = 21;
+            // 
+            // labelControl3
+            // 
+            this.labelControl3.Location = new System.Drawing.Point(10, 81);
+            this.labelControl3.Name = "labelControl3";
+            this.labelControl3.Size = new System.Drawing.Size(62, 13);
+            this.labelControl3.TabIndex = 20;
+            this.labelControl3.Text = "Dias Credito:";
             // 
             // textRFC
             // 
@@ -427,6 +452,7 @@
             this.textIdProveedor.Name = "textIdProveedor";
             this.textIdProveedor.Size = new System.Drawing.Size(100, 20);
             this.textIdProveedor.TabIndex = 1;
+            this.textIdProveedor.EditValueChanged += new System.EventHandler(this.textIdProveedor_EditValueChanged);
             // 
             // labelControl1
             // 
@@ -742,31 +768,6 @@
             this.labelControl18.TabIndex = 0;
             this.labelControl18.Text = "Id domicilio: ";
             // 
-            // textDiasCredito
-            // 
-            this.textDiasCredito.Location = new System.Drawing.Point(79, 79);
-            this.textDiasCredito.Name = "textDiasCredito";
-            this.textDiasCredito.Properties.Mask.EditMask = "n0";
-            this.textDiasCredito.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
-            this.textDiasCredito.Size = new System.Drawing.Size(100, 20);
-            this.textDiasCredito.TabIndex = 21;
-            // 
-            // labelControl3
-            // 
-            this.labelControl3.Location = new System.Drawing.Point(10, 81);
-            this.labelControl3.Name = "labelControl3";
-            this.labelControl3.Size = new System.Drawing.Size(62, 13);
-            this.labelControl3.TabIndex = 20;
-            this.labelControl3.Text = "Dias Credito:";
-            // 
-            // Dias_Credito
-            // 
-            this.Dias_Credito.Caption = "Dias Credito";
-            this.Dias_Credito.FieldName = "Dias_Credito";
-            this.Dias_Credito.Name = "Dias_Credito";
-            this.Dias_Credito.Visible = true;
-            this.Dias_Credito.VisibleIndex = 4;
-            // 
             // Frm_Proveedores
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -792,6 +793,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
             this.groupControl1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.textDiasCredito.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textRFC.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textTelefono.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textProveedor.Properties)).EndInit();
@@ -812,7 +814,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.textNoInterior.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textCalle.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textIdDomicilio.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textDiasCredito.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

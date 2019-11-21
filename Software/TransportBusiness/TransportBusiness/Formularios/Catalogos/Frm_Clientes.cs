@@ -345,5 +345,18 @@ namespace TransportBusiness
             textTipoDomicilio.Tag = tipoDomicilio.IdTipoDomicilio;
             textTipoDomicilio.Text = tipoDomicilio.TipoDomicilio;
         }
+
+        private void textIdCliente_EditValueChanged(object sender, EventArgs e)
+        {
+            if (textIdCliente.Text == String.Empty)
+            {
+                xtraTabPage2.PageEnabled = false;
+
+            }
+            else
+            {
+                xtraTabPage2.PageEnabled = true;
+            }
+        }
     }
 }

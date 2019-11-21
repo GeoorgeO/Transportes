@@ -692,6 +692,7 @@
             this.textIdEmpleado.Name = "textIdEmpleado";
             this.textIdEmpleado.Size = new System.Drawing.Size(100, 20);
             this.textIdEmpleado.TabIndex = 1;
+            this.textIdEmpleado.EditValueChanged += new System.EventHandler(this.textIdEmpleado_EditValueChanged);
             // 
             // labelControl1
             // 

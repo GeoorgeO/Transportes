@@ -389,6 +389,7 @@
             this.textId.Name = "textId";
             this.textId.Size = new System.Drawing.Size(100, 20);
             this.textId.TabIndex = 1;
+            this.textId.EditValueChanged += new System.EventHandler(this.textId_EditValueChanged);
             // 
             // labelControl1
             // 

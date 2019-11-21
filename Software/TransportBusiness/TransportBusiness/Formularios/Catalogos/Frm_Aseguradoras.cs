@@ -344,5 +344,17 @@ namespace TransportBusiness
             Aseguradora = textAseguradora.Text;
             this.Close();
         }
+
+        private void textIdAseguradora_EditValueChanged(object sender, EventArgs e)
+        {
+            if (textIdAseguradora.Text == String.Empty)
+            {
+                xtraTabPage2.PageEnabled = false;
+            }
+            else
+            {
+                xtraTabPage2.PageEnabled = true;
+            }
+        }
     }
 }

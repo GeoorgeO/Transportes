@@ -319,5 +319,19 @@ namespace TransportBusiness
                 XtraMessageBox.Show("No ha seleccionado una empresa");
             }
         }
+
+        private void textId_EditValueChanged(object sender, EventArgs e)
+        {
+            if (textId.Text == String.Empty)
+            {
+                Domicilio.PageEnabled = false;
+                
+            }
+            else
+            {
+                Domicilio.PageEnabled = true;
+                
+            }
+        }
     }
 }

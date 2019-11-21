@@ -441,6 +441,7 @@
             this.textIdBroker.Name = "textIdBroker";
             this.textIdBroker.Size = new System.Drawing.Size(100, 20);
             this.textIdBroker.TabIndex = 1;
+            this.textIdBroker.EditValueChanged += new System.EventHandler(this.textIdBroker_EditValueChanged);
             // 
             // labelControl1
             // 
