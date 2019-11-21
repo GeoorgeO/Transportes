@@ -66,7 +66,6 @@
             this.pictureEdit1.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Stretch;
             this.pictureEdit1.Size = new System.Drawing.Size(120, 121);
             this.pictureEdit1.TabIndex = 6;
-            
             this.pictureEdit1.DoubleClick += new System.EventHandler(this.pictureEdit1_DoubleClick);
             // 
             // SkinForm
@@ -227,7 +226,7 @@
             this.MinimizeBox = false;
             this.Name = "Frm_Login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Acceso BSC_Reportes";
+            this.Text = "Acceso Transportes";
             this.Load += new System.EventHandler(this.Frm_Login_Load);
             this.Shown += new System.EventHandler(this.Frm_Login_Shown);
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit1.Properties)).EndInit();

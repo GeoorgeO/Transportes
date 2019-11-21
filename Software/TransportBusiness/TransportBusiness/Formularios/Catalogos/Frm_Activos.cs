@@ -297,7 +297,41 @@ namespace TransportBusiness
             textFolioCircula.Text = "";
             textTargCombustible.Text = "";
         }
-
+        private void ActivarCampos(Boolean Valor)
+        {
+            txtIdActivo.Enabled = Valor;
+            txtNombreActivo.Enabled = Valor;
+            txtDescripcion.Enabled = Valor;
+            txtMarca.Enabled = Valor;
+            txtColor.Enabled = Valor;
+            txtCosto.Enabled = Valor;
+            txtModelo.Enabled = Valor;
+            txtNoSerie.Enabled = Valor;
+            txtEstatus.Enabled = Valor;
+            txtTipoTransporte.Enabled = Valor;
+            txtTipoActivo.Enabled = Valor;
+            txtEmpresa.Enabled = Valor;
+            txtTarjetaCirculacion.Enabled = Valor;
+            txtPlaca.Enabled = Valor;
+            txtTipoPlaca.Enabled = Valor;
+            txtOperador.Enabled = Valor;
+            txtEmpresaAsegu.Enabled = Valor;
+            txtPolizaSeguro.Enabled = Valor;
+            dtFechaAlta.Enabled = Valor;
+            txtFechaBaja.Enabled = Valor;
+            textFactura.Enabled = Valor;
+            textIAVE.Enabled = Valor;
+            textFolioCircula.Enabled = Valor;
+            textTargCombustible.Enabled = Valor;
+            cboAsignado.Enabled = Valor;
+            btnTipoTransporte.Enabled = Valor;
+            btnTipoActivo.Enabled = Valor;
+            btnEmpresa.Enabled = Valor;
+            btnTipoPlaca.Enabled = Valor;
+            btnOperador.Enabled = Valor;
+            btnEmpresaAsegu.Enabled = Valor;
+            btnMarca.Enabled = Valor;
+        }
         private void dtgActivos_Click(object sender, EventArgs e)
         {
             try
@@ -345,9 +379,11 @@ namespace TransportBusiness
                     if (row["Status"].ToString().Trim().Equals("ACTIVO"))
                     {
                         btnEliminar.Caption = "Dar de Baja";
+                        ActivarCampos(true);
                     }else
                     {
                         btnEliminar.Caption = "Dar de Alta";
+                        ActivarCampos(false);
                     }
                     textFactura.Text = row["Id_Factura"].ToString();
                     textIAVE.Text = row["IAVE"].ToString();
