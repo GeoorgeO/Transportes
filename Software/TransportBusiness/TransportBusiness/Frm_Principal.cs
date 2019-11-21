@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using CapaDeDatos;
+using DevExpress.XtraEditors;
 
 namespace TransportBusiness
 {
@@ -25,7 +26,7 @@ namespace TransportBusiness
         private void CargarAccesos()
         {
             CLS_Perfiles_Pantallas Clase = new CLS_Perfiles_Pantallas();
-            Clase.Id_Perfil = "001";
+            Clase.Id_Perfil = "003";
             Clase.MtdSeleccionarAccesosPermisos();
             if (Clase.Exito)
             {
@@ -37,7 +38,7 @@ namespace TransportBusiness
             }
             else
             {
-                //XtraMessageBox.Show(Clase.Mensaje);
+                XtraMessageBox.Show(Clase.Mensaje);
             }
         }
 
@@ -54,15 +55,8 @@ namespace TransportBusiness
             return false;
         }
 
-        private void barButtonItem9_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
+        
 
-        }
-
-        private void barButtonItem11_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-
-        }
 
         private void btnVeiculos_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
@@ -70,127 +64,257 @@ namespace TransportBusiness
             {
                 Frm_Activos.DefInstance.MdiParent = this;
                 Frm_Activos.DefInstance.Show();
+            }else
+            {
+                XtraMessageBox.Show("No Cuentas con acceso a esta Opcion [001]");
             }
            
         }
 
         private void btnPersonal_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            Frm_Empleados.DefInstance.MdiParent = this;
-            Frm_Empleados.DefInstance.Show();
+            if (TieneAcceso("002"))
+            {
+                Frm_Empleados.DefInstance.MdiParent = this;
+                Frm_Empleados.DefInstance.Show();
+            }else
+            {
+                XtraMessageBox.Show("No Cuentas con acceso a esta Opcion [002]");
+            }
+
         }
 
         private void btnAseguradora_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            Frm_Aseguradoras.DefInstance.MdiParent = this;
-            Frm_Aseguradoras.DefInstance.PaSel = false;
-            Frm_Aseguradoras.DefInstance.Show();
+            if (TieneAcceso("015"))
+            {
+                Frm_Aseguradoras.DefInstance.MdiParent = this;
+                Frm_Aseguradoras.DefInstance.PaSel = false;
+                Frm_Aseguradoras.DefInstance.Show();
+            }
+            else
+            {
+                XtraMessageBox.Show("No Cuentas con acceso a esta Opcion [015]");
+            }
         }
 
         private void btnTipoActivos_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            Frm_Tipo_Activo Frm = new Frm_Tipo_Activo();
-            Frm.PaSel = false;
-            Frm.ShowDialog();
+            if (TieneAcceso("018"))
+            {
+                Frm_Tipo_Activo Frm = new Frm_Tipo_Activo();
+                Frm.PaSel = false;
+                Frm.ShowDialog();
+            }
+            else
+            {
+                XtraMessageBox.Show("No Cuentas con acceso a esta Opcion [018]");
+            }
         }
 
         private void btnTipoDomicilio_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            Frm_Tipo_Domicilio Frm = new Frm_Tipo_Domicilio();
-            Frm.PaSel = false;
-            Frm.ShowDialog();
+            if (TieneAcceso("019"))
+            {
+                Frm_Tipo_Domicilio Frm = new Frm_Tipo_Domicilio();
+                Frm.PaSel = false;
+                Frm.ShowDialog();
+            }
+            else
+            {
+                XtraMessageBox.Show("No Cuentas con acceso a esta Opcion [019]");
+            }
         }
 
         private void btnTipoLicencia_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            Frm_Tipo_Licencia Frm = new Frm_Tipo_Licencia();
-            Frm.PaSel = false;
-            Frm.ShowDialog();
+            if (TieneAcceso("020"))
+            {
+                Frm_Tipo_Licencia Frm = new Frm_Tipo_Licencia();
+                Frm.PaSel = false;
+                Frm.ShowDialog();
+            }
+            else
+            {
+                XtraMessageBox.Show("No Cuentas con acceso a esta Opcion [020]");
+            }
         }
 
         private void btnTipoPlaca_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            Frm_Tipo_Placa Frm = new Frm_Tipo_Placa();
-            Frm.PaSel = false;
-            Frm.ShowDialog();
+            if (TieneAcceso("021"))
+            {
+                Frm_Tipo_Placa Frm = new Frm_Tipo_Placa();
+                Frm.PaSel = false;
+                Frm.ShowDialog();
+            }
+            else
+            {
+                XtraMessageBox.Show("No Cuentas con acceso a esta Opcion [021]");
+            }
         }
 
         private void btnTipoTransporte_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            Frm_Tipo_Transporte Frm = new Frm_Tipo_Transporte();
-            Frm.PaSel = false;
-            Frm.ShowDialog();
+            if (TieneAcceso("022"))
+            {
+                Frm_Tipo_Transporte Frm = new Frm_Tipo_Transporte();
+                Frm.PaSel = false;
+                Frm.ShowDialog();
+            }
+            else
+            {
+                XtraMessageBox.Show("No Cuentas con acceso a esta Opcion [022]");
+            }
         }
 
         private void btnTipoPersona_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            Frm_Tipo_Empleados Frm = new Frm_Tipo_Empleados();
-            Frm.PaSel = false;
-            Frm.ShowDialog();
+            if (TieneAcceso("023"))
+            {
+                Frm_Tipo_Empleados Frm = new Frm_Tipo_Empleados();
+                Frm.PaSel = false;
+             Frm.ShowDialog();
+            }
+            else
+            {
+                XtraMessageBox.Show("No Cuentas con acceso a esta Opcion [023]");
+            }
         }
 
         private void btnAgente_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            Frm_Agente_Empresa_Aseguradora.DefInstance.MdiParent = this;
-            Frm_Agente_Empresa_Aseguradora.DefInstance.Show();
+            if (TieneAcceso("016"))
+            {
+                Frm_Agente_Empresa_Aseguradora.DefInstance.MdiParent = this;
+                Frm_Agente_Empresa_Aseguradora.DefInstance.Show();
+            }
+            else
+            {
+                XtraMessageBox.Show("No Cuentas con acceso a esta Opcion [016]");
+            }
         }
 
         private void btnBroker_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            Frm_Broker_Empresa_Aseguradora.DefInstance.MdiParent = this;
-            Frm_Broker_Empresa_Aseguradora.DefInstance.Show();
+            if (TieneAcceso("017"))
+            {
+                Frm_Broker_Empresa_Aseguradora.DefInstance.MdiParent = this;
+                Frm_Broker_Empresa_Aseguradora.DefInstance.Show();
+            }
+            else
+            {
+                XtraMessageBox.Show("No Cuentas con acceso a esta Opcion [017]");
+            }
         }
 
         private void btnCliente_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            Frm_Clientes.DefInstance.MdiParent = this;
-            Frm_Clientes.DefInstance.Show();
+            if (TieneAcceso("013"))
+            {
+                Frm_Clientes.DefInstance.MdiParent = this;
+                Frm_Clientes.DefInstance.Show();
+            }
+            else
+            {
+                XtraMessageBox.Show("No Cuentas con acceso a esta Opcion [013]");
+            }
         }
 
         private void btnEmpresa_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            Frm_Empresas.DefInstance.MdiParent = this;
-            Frm_Empresas.DefInstance.PaSel = false;
-            Frm_Empresas.DefInstance.Show();
+            if (TieneAcceso("014"))
+            {
+                Frm_Empresas.DefInstance.MdiParent = this;
+                Frm_Empresas.DefInstance.PaSel = false;
+                Frm_Empresas.DefInstance.Show();
+            }
+            else
+            {
+                XtraMessageBox.Show("No Cuentas con acceso a esta Opcion [014]");
+            }
 
         }
 
         private void btnEstado_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            Frm_Estado.DefInstance.MdiParent = this;
-            Frm_Estado.DefInstance.Show();
+            if (TieneAcceso("009"))
+            {
+                Frm_Estado.DefInstance.MdiParent = this;
+                Frm_Estado.DefInstance.Show();
+            }
+            else
+            {
+                XtraMessageBox.Show("No Cuentas con acceso a esta Opcion [009]");
+            }
         }
 
         private void btnPais_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            Frm_Pais Frm = new Frm_Pais(false);
+            if (TieneAcceso("010"))
+            {
+                Frm_Pais Frm = new Frm_Pais(false);
             Frm.ShowDialog();
+            }
+            else
+            {
+                XtraMessageBox.Show("No Cuentas con acceso a esta Opcion [010]");
+            }
         }
 
         private void btnMarca_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            Frm_Marcas Frm = new Frm_Marcas();
-            Frm.PaSel = false;
-            Frm.ShowDialog();
+            if (TieneAcceso("007"))
+            {
+                Frm_Marcas Frm = new Frm_Marcas();
+                Frm.PaSel = false;
+                Frm.ShowDialog();
+            }
+            else
+            {
+                XtraMessageBox.Show("No Cuentas con acceso a esta Opcion [007]");
+            }
+           
         }
 
         private void btnLicencias_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            Frm_Licencias Frm = new Frm_Licencias();
-            Frm.PaSel = false;
-            Frm.ShowDialog();
+            if (TieneAcceso("008"))
+            {
+                Frm_Licencias Frm = new Frm_Licencias();
+                 Frm.PaSel = false;
+                Frm.ShowDialog();
+            }
+            else
+            {
+                XtraMessageBox.Show("No Cuentas con acceso a esta Opcion [008]");
+            }
         }
 
         private void btnProveedor_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            Frm_Proveedores.DefInstance.MdiParent = this;
-            Frm_Proveedores.DefInstance.Show();
+            if (TieneAcceso("012"))
+            {
+                Frm_Proveedores.DefInstance.MdiParent = this;
+                Frm_Proveedores.DefInstance.Show();
+            }
+            else
+            {
+                XtraMessageBox.Show("No Cuentas con acceso a esta Opcion [012]");
+            }
         }
 
         private void btnPantallas_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            Frm_Pantallas Pantalla = new Frm_Pantallas();
-            Pantalla.ShowDialog();
+            if (TieneAcceso("028"))
+            {
+                Frm_Pantallas Pantalla = new Frm_Pantallas();
+                Pantalla.ShowDialog();
+            }
+            else
+            {
+                XtraMessageBox.Show("No Cuentas con acceso a esta Opcion [028]");
+            }
         }
 
         private void btnPerfiles_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -201,8 +325,15 @@ namespace TransportBusiness
 
         private void btnUsuarios_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            Frm_Usuarios Usuarios = new Frm_Usuarios();
-            Usuarios.ShowDialog();
+            if (TieneAcceso("029"))
+            {
+                Frm_Usuarios Usuarios = new Frm_Usuarios();
+                Usuarios.ShowDialog();
+            }
+            else
+            {
+                XtraMessageBox.Show("No Cuentas con acceso a esta Opcion [029]");
+            }
         }
 
         private void btnPermisos_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -214,6 +345,114 @@ namespace TransportBusiness
         private void Frm_Principal_Load(object sender, EventArgs e)
         {
             CargarAccesos();
+        }
+
+        private void btnHerramienta_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            if (TieneAcceso("003"))
+            {
+                
+            }
+            else
+            {
+                XtraMessageBox.Show("No Cuentas con acceso a esta Opcion [003]");
+            }
+        }
+
+        private void btnRutas_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            if (TieneAcceso("004"))
+            {
+
+            }
+            else
+            {
+                XtraMessageBox.Show("No Cuentas con acceso a esta Opcion [004]");
+            }
+        }
+
+        private void btnInfracciones_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            if (TieneAcceso("005"))
+            {
+
+            }
+            else
+            {
+                XtraMessageBox.Show("No Cuentas con acceso a esta Opcion [005]");
+            }
+        }
+
+        private void btnCombustible_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            if (TieneAcceso("006"))
+            {
+
+            }
+            else
+            {
+                XtraMessageBox.Show("No Cuentas con acceso a esta Opcion [006]");
+            }
+        }
+
+        private void btnGastosIndirectos_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            if (TieneAcceso("011"))
+            {
+
+            }
+            else
+            {
+                XtraMessageBox.Show("No Cuentas con acceso a esta Opcion [011]");
+            }
+        }
+
+        private void btnSalidas_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            if (TieneAcceso("024"))
+            {
+
+            }
+            else
+            {
+                XtraMessageBox.Show("No Cuentas con acceso a esta Opcion [024]");
+            }
+        }
+
+        private void btnEntradas_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            if (TieneAcceso("025"))
+            {
+
+            }
+            else
+            {
+                XtraMessageBox.Show("No Cuentas con acceso a esta Opcion [025]");
+            }
+        }
+
+        private void btnMantenimientos_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            if (TieneAcceso("026"))
+            {
+
+            }
+            else
+            {
+                XtraMessageBox.Show("No Cuentas con acceso a esta Opcion [026]");
+            }
+        }
+
+        private void btnAsignacionHerramienta_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            if (TieneAcceso("027"))
+            {
+
+            }
+            else
+            {
+                XtraMessageBox.Show("No Cuentas con acceso a esta Opcion [027]");
+            }
         }
     }
 }

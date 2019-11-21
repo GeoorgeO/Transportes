@@ -37,15 +37,15 @@
             this.btnProveedor = new DevExpress.XtraBars.BarButtonItem();
             this.btnCliente = new DevExpress.XtraBars.BarButtonItem();
             this.btnAseguradora = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem7 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem8 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem9 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem10 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem11 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem12 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem13 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem14 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem15 = new DevExpress.XtraBars.BarButtonItem();
+            this.btnHerramienta = new DevExpress.XtraBars.BarButtonItem();
+            this.btnSalidas = new DevExpress.XtraBars.BarButtonItem();
+            this.btnEntradas = new DevExpress.XtraBars.BarButtonItem();
+            this.btnMantenimientos = new DevExpress.XtraBars.BarButtonItem();
+            this.btnRutas = new DevExpress.XtraBars.BarButtonItem();
+            this.btnInfracciones = new DevExpress.XtraBars.BarButtonItem();
+            this.btnCombustible = new DevExpress.XtraBars.BarButtonItem();
+            this.btnGastosIndirectos = new DevExpress.XtraBars.BarButtonItem();
+            this.btnAsignacionHerramienta = new DevExpress.XtraBars.BarButtonItem();
             this.btnPantallas = new DevExpress.XtraBars.BarButtonItem();
             this.btnPerfiles = new DevExpress.XtraBars.BarButtonItem();
             this.btnUsuarios = new DevExpress.XtraBars.BarButtonItem();
@@ -62,6 +62,7 @@
             this.btnPais = new DevExpress.XtraBars.BarButtonItem();
             this.btnMarca = new DevExpress.XtraBars.BarButtonItem();
             this.btnLicencias = new DevExpress.XtraBars.BarButtonItem();
+            this.btnPermisos = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup9 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -74,12 +75,11 @@
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPage3 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup5 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPageGroup10 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPage2 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup4 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPage4 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.xtraTabbedMdiManager1 = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
-            this.ribbonPageGroup10 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.btnPermisos = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager1)).BeginInit();
             this.SuspendLayout();
@@ -95,15 +95,15 @@
             this.btnProveedor,
             this.btnCliente,
             this.btnAseguradora,
-            this.barButtonItem7,
-            this.barButtonItem8,
-            this.barButtonItem9,
-            this.barButtonItem10,
-            this.barButtonItem11,
-            this.barButtonItem12,
-            this.barButtonItem13,
-            this.barButtonItem14,
-            this.barButtonItem15,
+            this.btnHerramienta,
+            this.btnSalidas,
+            this.btnEntradas,
+            this.btnMantenimientos,
+            this.btnRutas,
+            this.btnInfracciones,
+            this.btnCombustible,
+            this.btnGastosIndirectos,
+            this.btnAsignacionHerramienta,
             this.btnPantallas,
             this.btnPerfiles,
             this.btnUsuarios,
@@ -181,76 +181,83 @@
             this.btnAseguradora.Name = "btnAseguradora";
             this.btnAseguradora.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnAseguradora_ItemClick);
             // 
-            // barButtonItem7
+            // btnHerramienta
             // 
-            this.barButtonItem7.Caption = "Herramienta";
-            this.barButtonItem7.Id = 7;
-            this.barButtonItem7.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem7.ImageOptions.LargeImage")));
-            this.barButtonItem7.Name = "barButtonItem7";
+            this.btnHerramienta.Caption = "Herramienta";
+            this.btnHerramienta.Id = 7;
+            this.btnHerramienta.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnHerramienta.ImageOptions.LargeImage")));
+            this.btnHerramienta.Name = "btnHerramienta";
+            this.btnHerramienta.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnHerramienta_ItemClick);
             // 
-            // barButtonItem8
+            // btnSalidas
             // 
-            this.barButtonItem8.Caption = "Salidas";
-            this.barButtonItem8.Id = 8;
-            this.barButtonItem8.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem8.ImageOptions.Image")));
-            this.barButtonItem8.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem8.ImageOptions.LargeImage")));
-            this.barButtonItem8.Name = "barButtonItem8";
+            this.btnSalidas.Caption = "Salidas";
+            this.btnSalidas.Id = 8;
+            this.btnSalidas.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnSalidas.ImageOptions.Image")));
+            this.btnSalidas.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnSalidas.ImageOptions.LargeImage")));
+            this.btnSalidas.Name = "btnSalidas";
+            this.btnSalidas.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnSalidas_ItemClick);
             // 
-            // barButtonItem9
+            // btnEntradas
             // 
-            this.barButtonItem9.Caption = "Entradas";
-            this.barButtonItem9.Id = 9;
-            this.barButtonItem9.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem9.ImageOptions.Image")));
-            this.barButtonItem9.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem9.ImageOptions.LargeImage")));
-            this.barButtonItem9.Name = "barButtonItem9";
-            this.barButtonItem9.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem9_ItemClick);
+            this.btnEntradas.Caption = "Entradas";
+            this.btnEntradas.Id = 9;
+            this.btnEntradas.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnEntradas.ImageOptions.Image")));
+            this.btnEntradas.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnEntradas.ImageOptions.LargeImage")));
+            this.btnEntradas.Name = "btnEntradas";
+            this.btnEntradas.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnEntradas_ItemClick);
             // 
-            // barButtonItem10
+            // btnMantenimientos
             // 
-            this.barButtonItem10.Caption = "Mantenimientos";
-            this.barButtonItem10.Id = 10;
-            this.barButtonItem10.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem10.ImageOptions.Image")));
-            this.barButtonItem10.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem10.ImageOptions.LargeImage")));
-            this.barButtonItem10.Name = "barButtonItem10";
+            this.btnMantenimientos.Caption = "Mantenimientos";
+            this.btnMantenimientos.Id = 10;
+            this.btnMantenimientos.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem10.ImageOptions.Image")));
+            this.btnMantenimientos.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem10.ImageOptions.LargeImage")));
+            this.btnMantenimientos.Name = "btnMantenimientos";
+            this.btnMantenimientos.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnMantenimientos_ItemClick);
             // 
-            // barButtonItem11
+            // btnRutas
             // 
-            this.barButtonItem11.Caption = "Rutas";
-            this.barButtonItem11.Id = 11;
-            this.barButtonItem11.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem11.ImageOptions.LargeImage")));
-            this.barButtonItem11.Name = "barButtonItem11";
-            this.barButtonItem11.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem11_ItemClick);
+            this.btnRutas.Caption = "Rutas";
+            this.btnRutas.Id = 11;
+            this.btnRutas.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnRutas.ImageOptions.LargeImage")));
+            this.btnRutas.Name = "btnRutas";
+            this.btnRutas.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnRutas_ItemClick);
             // 
-            // barButtonItem12
+            // btnInfracciones
             // 
-            this.barButtonItem12.Caption = "Infracciones";
-            this.barButtonItem12.Id = 12;
-            this.barButtonItem12.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem12.ImageOptions.Image")));
-            this.barButtonItem12.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem12.ImageOptions.LargeImage")));
-            this.barButtonItem12.Name = "barButtonItem12";
+            this.btnInfracciones.Caption = "Infracciones";
+            this.btnInfracciones.Id = 12;
+            this.btnInfracciones.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnInfracciones.ImageOptions.Image")));
+            this.btnInfracciones.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnInfracciones.ImageOptions.LargeImage")));
+            this.btnInfracciones.Name = "btnInfracciones";
+            this.btnInfracciones.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnInfracciones_ItemClick);
             // 
-            // barButtonItem13
+            // btnCombustible
             // 
-            this.barButtonItem13.Caption = "Combustible";
-            this.barButtonItem13.Id = 13;
-            this.barButtonItem13.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem13.ImageOptions.Image")));
-            this.barButtonItem13.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem13.ImageOptions.LargeImage")));
-            this.barButtonItem13.Name = "barButtonItem13";
+            this.btnCombustible.Caption = "Combustible";
+            this.btnCombustible.Id = 13;
+            this.btnCombustible.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnCombustible.ImageOptions.Image")));
+            this.btnCombustible.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnCombustible.ImageOptions.LargeImage")));
+            this.btnCombustible.Name = "btnCombustible";
+            this.btnCombustible.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnCombustible_ItemClick);
             // 
-            // barButtonItem14
+            // btnGastosIndirectos
             // 
-            this.barButtonItem14.Caption = "Gasto Indirecto";
-            this.barButtonItem14.Id = 14;
-            this.barButtonItem14.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem14.ImageOptions.LargeImage")));
-            this.barButtonItem14.Name = "barButtonItem14";
+            this.btnGastosIndirectos.Caption = "Gasto Indirecto";
+            this.btnGastosIndirectos.Id = 14;
+            this.btnGastosIndirectos.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnGastosIndirectos.ImageOptions.LargeImage")));
+            this.btnGastosIndirectos.Name = "btnGastosIndirectos";
+            this.btnGastosIndirectos.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnGastosIndirectos_ItemClick);
             // 
-            // barButtonItem15
+            // btnAsignacionHerramienta
             // 
-            this.barButtonItem15.Caption = "Asignacion \r\nHerramienta";
-            this.barButtonItem15.Id = 15;
-            this.barButtonItem15.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem15.ImageOptions.Image")));
-            this.barButtonItem15.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem15.ImageOptions.LargeImage")));
-            this.barButtonItem15.Name = "barButtonItem15";
+            this.btnAsignacionHerramienta.Caption = "Asignacion \r\nHerramienta";
+            this.btnAsignacionHerramienta.Id = 15;
+            this.btnAsignacionHerramienta.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem15.ImageOptions.Image")));
+            this.btnAsignacionHerramienta.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem15.ImageOptions.LargeImage")));
+            this.btnAsignacionHerramienta.Name = "btnAsignacionHerramienta";
+            this.btnAsignacionHerramienta.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnAsignacionHerramienta_ItemClick);
             // 
             // btnPantallas
             // 
@@ -380,6 +387,15 @@
             this.btnLicencias.Name = "btnLicencias";
             this.btnLicencias.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnLicencias_ItemClick);
             // 
+            // btnPermisos
+            // 
+            this.btnPermisos.Caption = "Pantallas - Perfil";
+            this.btnPermisos.Id = 32;
+            this.btnPermisos.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnPermisos.ImageOptions.Image")));
+            this.btnPermisos.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnPermisos.ImageOptions.LargeImage")));
+            this.btnPermisos.Name = "btnPermisos";
+            this.btnPermisos.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnPermisos_ItemClick);
+            // 
             // ribbonPage1
             // 
             this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -395,10 +411,10 @@
             // 
             this.ribbonPageGroup1.ItemLinks.Add(this.btnVeiculos);
             this.ribbonPageGroup1.ItemLinks.Add(this.btnPersonal);
-            this.ribbonPageGroup1.ItemLinks.Add(this.barButtonItem7);
-            this.ribbonPageGroup1.ItemLinks.Add(this.barButtonItem11);
-            this.ribbonPageGroup1.ItemLinks.Add(this.barButtonItem12);
-            this.ribbonPageGroup1.ItemLinks.Add(this.barButtonItem13);
+            this.ribbonPageGroup1.ItemLinks.Add(this.btnHerramienta);
+            this.ribbonPageGroup1.ItemLinks.Add(this.btnRutas);
+            this.ribbonPageGroup1.ItemLinks.Add(this.btnInfracciones);
+            this.ribbonPageGroup1.ItemLinks.Add(this.btnCombustible);
             this.ribbonPageGroup1.ItemLinks.Add(this.btnMarca);
             this.ribbonPageGroup1.ItemLinks.Add(this.btnLicencias);
             this.ribbonPageGroup1.Name = "ribbonPageGroup1";
@@ -413,7 +429,7 @@
             // 
             // ribbonPageGroup3
             // 
-            this.ribbonPageGroup3.ItemLinks.Add(this.barButtonItem14);
+            this.ribbonPageGroup3.ItemLinks.Add(this.btnGastosIndirectos);
             this.ribbonPageGroup3.Name = "ribbonPageGroup3";
             this.ribbonPageGroup3.Text = "Reportes";
             // 
@@ -460,10 +476,10 @@
             // 
             // ribbonPageGroup2
             // 
-            this.ribbonPageGroup2.ItemLinks.Add(this.barButtonItem8);
-            this.ribbonPageGroup2.ItemLinks.Add(this.barButtonItem9);
-            this.ribbonPageGroup2.ItemLinks.Add(this.barButtonItem10);
-            this.ribbonPageGroup2.ItemLinks.Add(this.barButtonItem15);
+            this.ribbonPageGroup2.ItemLinks.Add(this.btnSalidas);
+            this.ribbonPageGroup2.ItemLinks.Add(this.btnEntradas);
+            this.ribbonPageGroup2.ItemLinks.Add(this.btnMantenimientos);
+            this.ribbonPageGroup2.ItemLinks.Add(this.btnAsignacionHerramienta);
             this.ribbonPageGroup2.Name = "ribbonPageGroup2";
             this.ribbonPageGroup2.Text = "Control";
             // 
@@ -484,6 +500,12 @@
             this.ribbonPageGroup5.Name = "ribbonPageGroup5";
             this.ribbonPageGroup5.ShowCaptionButton = false;
             this.ribbonPageGroup5.Text = "Usuarios";
+            // 
+            // ribbonPageGroup10
+            // 
+            this.ribbonPageGroup10.ItemLinks.Add(this.btnPermisos);
+            this.ribbonPageGroup10.Name = "ribbonPageGroup10";
+            this.ribbonPageGroup10.Text = "ribbonPageGroup10";
             // 
             // ribbonPage2
             // 
@@ -507,21 +529,6 @@
             // 
             this.xtraTabbedMdiManager1.ClosePageButtonShowMode = DevExpress.XtraTab.ClosePageButtonShowMode.InActiveTabPageHeader;
             this.xtraTabbedMdiManager1.MdiParent = this;
-            // 
-            // ribbonPageGroup10
-            // 
-            this.ribbonPageGroup10.ItemLinks.Add(this.btnPermisos);
-            this.ribbonPageGroup10.Name = "ribbonPageGroup10";
-            this.ribbonPageGroup10.Text = "ribbonPageGroup10";
-            // 
-            // btnPermisos
-            // 
-            this.btnPermisos.Caption = "Pantallas - Perfil";
-            this.btnPermisos.Id = 32;
-            this.btnPermisos.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnPermisos.ImageOptions.Image")));
-            this.btnPermisos.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnPermisos.ImageOptions.LargeImage")));
-            this.btnPermisos.Name = "btnPermisos";
-            this.btnPermisos.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnPermisos_ItemClick);
             // 
             // Frm_Principal
             // 
@@ -554,19 +561,19 @@
         private DevExpress.XtraBars.BarButtonItem btnProveedor;
         private DevExpress.XtraBars.BarButtonItem btnCliente;
         private DevExpress.XtraBars.BarButtonItem btnAseguradora;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem7;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem8;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem9;
+        private DevExpress.XtraBars.BarButtonItem btnHerramienta;
+        private DevExpress.XtraBars.BarButtonItem btnSalidas;
+        private DevExpress.XtraBars.BarButtonItem btnEntradas;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup2;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem10;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem11;
+        private DevExpress.XtraBars.BarButtonItem btnMantenimientos;
+        private DevExpress.XtraBars.BarButtonItem btnRutas;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup3;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem12;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem13;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem14;
+        private DevExpress.XtraBars.BarButtonItem btnInfracciones;
+        private DevExpress.XtraBars.BarButtonItem btnCombustible;
+        private DevExpress.XtraBars.BarButtonItem btnGastosIndirectos;
         private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage2;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup4;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem15;
+        private DevExpress.XtraBars.BarButtonItem btnAsignacionHerramienta;
         private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage3;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup5;
         private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage4;
