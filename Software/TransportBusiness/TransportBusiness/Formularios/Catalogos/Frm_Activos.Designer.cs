@@ -133,6 +133,8 @@
             this.bandedGridColumn26 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
+            this.btnGallery = new DevExpress.XtraEditors.SimpleButton();
+            this.btnXML = new DevExpress.XtraEditors.SimpleButton();
             this.textTargCombustible = new DevExpress.XtraEditors.TextEdit();
             this.labelControl25 = new DevExpress.XtraEditors.LabelControl();
             this.textIAVE = new DevExpress.XtraEditors.TextEdit();
@@ -190,8 +192,6 @@
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.txtIdActivo = new DevExpress.XtraEditors.TextEdit();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
-            this.btnXML = new DevExpress.XtraEditors.SimpleButton();
-            this.btnGallery = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
@@ -1242,13 +1242,33 @@
             this.groupControl1.TabIndex = 0;
             this.groupControl1.Text = "Activo";
             // 
+            // btnGallery
+            // 
+            this.btnGallery.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnGallery.ImageOptions.Image")));
+            this.btnGallery.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.BottomCenter;
+            this.btnGallery.Location = new System.Drawing.Point(828, 191);
+            this.btnGallery.Name = "btnGallery";
+            this.btnGallery.Size = new System.Drawing.Size(50, 50);
+            this.btnGallery.TabIndex = 65;
+            this.btnGallery.Click += new System.EventHandler(this.btnGallery_Click);
+            // 
+            // btnXML
+            // 
+            this.btnXML.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnXML.ImageOptions.Image")));
+            this.btnXML.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.BottomCenter;
+            this.btnXML.Location = new System.Drawing.Point(772, 191);
+            this.btnXML.Name = "btnXML";
+            this.btnXML.Size = new System.Drawing.Size(50, 50);
+            this.btnXML.TabIndex = 64;
+            this.btnXML.Click += new System.EventHandler(this.btnXML_Click);
+            // 
             // textTargCombustible
             // 
             this.textTargCombustible.Location = new System.Drawing.Point(89, 245);
             this.textTargCombustible.MenuManager = this.barManager1;
             this.textTargCombustible.Name = "textTargCombustible";
             this.textTargCombustible.Size = new System.Drawing.Size(201, 20);
-            this.textTargCombustible.TabIndex = 63;
+            this.textTargCombustible.TabIndex = 9;
             // 
             // labelControl25
             // 
@@ -1272,7 +1292,7 @@
             this.textFolioCircula.MenuManager = this.barManager1;
             this.textFolioCircula.Name = "textFolioCircula";
             this.textFolioCircula.Size = new System.Drawing.Size(207, 20);
-            this.textFolioCircula.TabIndex = 60;
+            this.textFolioCircula.TabIndex = 14;
             // 
             // labelControl24
             // 
@@ -1361,7 +1381,7 @@
             this.txtTarjetaCirculacion.MenuManager = this.barManager1;
             this.txtTarjetaCirculacion.Name = "txtTarjetaCirculacion";
             this.txtTarjetaCirculacion.Size = new System.Drawing.Size(207, 20);
-            this.txtTarjetaCirculacion.TabIndex = 49;
+            this.txtTarjetaCirculacion.TabIndex = 13;
             // 
             // txtPolizaSeguro
             // 
@@ -1412,7 +1432,7 @@
             this.txtColor.MenuManager = this.barManager1;
             this.txtColor.Name = "txtColor";
             this.txtColor.Size = new System.Drawing.Size(201, 20);
-            this.txtColor.TabIndex = 44;
+            this.txtColor.TabIndex = 5;
             // 
             // txtModelo
             // 
@@ -1420,7 +1440,7 @@
             this.txtModelo.MenuManager = this.barManager1;
             this.txtModelo.Name = "txtModelo";
             this.txtModelo.Size = new System.Drawing.Size(201, 20);
-            this.txtModelo.TabIndex = 43;
+            this.txtModelo.TabIndex = 7;
             // 
             // txtCosto
             // 
@@ -1431,7 +1451,7 @@
             this.txtCosto.Properties.Mask.EditMask = "n";
             this.txtCosto.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.txtCosto.Size = new System.Drawing.Size(100, 20);
-            this.txtCosto.TabIndex = 42;
+            this.txtCosto.TabIndex = 6;
             // 
             // txtDescripcion
             // 
@@ -1439,7 +1459,7 @@
             this.txtDescripcion.MenuManager = this.barManager1;
             this.txtDescripcion.Name = "txtDescripcion";
             this.txtDescripcion.Size = new System.Drawing.Size(201, 20);
-            this.txtDescripcion.TabIndex = 41;
+            this.txtDescripcion.TabIndex = 3;
             // 
             // txtNoSerie
             // 
@@ -1447,7 +1467,7 @@
             this.txtNoSerie.MenuManager = this.barManager1;
             this.txtNoSerie.Name = "txtNoSerie";
             this.txtNoSerie.Size = new System.Drawing.Size(201, 20);
-            this.txtNoSerie.TabIndex = 40;
+            this.txtNoSerie.TabIndex = 8;
             // 
             // labelControl20
             // 
@@ -1464,7 +1484,7 @@
             this.txtEmpresa.MenuManager = this.barManager1;
             this.txtEmpresa.Name = "txtEmpresa";
             this.txtEmpresa.Size = new System.Drawing.Size(207, 20);
-            this.txtEmpresa.TabIndex = 38;
+            this.txtEmpresa.TabIndex = 12;
             // 
             // btnEmpresa
             // 
@@ -1540,7 +1560,7 @@
             this.txtTipoTransporte.MenuManager = this.barManager1;
             this.txtTipoTransporte.Name = "txtTipoTransporte";
             this.txtTipoTransporte.Size = new System.Drawing.Size(207, 20);
-            this.txtTipoTransporte.TabIndex = 27;
+            this.txtTipoTransporte.TabIndex = 10;
             // 
             // btnTipoTransporte
             // 
@@ -1574,7 +1594,7 @@
             this.txtMarca.MenuManager = this.barManager1;
             this.txtMarca.Name = "txtMarca";
             this.txtMarca.Size = new System.Drawing.Size(201, 20);
-            this.txtMarca.TabIndex = 22;
+            this.txtMarca.TabIndex = 4;
             // 
             // btnMarca
             // 
@@ -1616,7 +1636,7 @@
             this.txtTipoActivo.MenuManager = this.barManager1;
             this.txtTipoActivo.Name = "txtTipoActivo";
             this.txtTipoActivo.Size = new System.Drawing.Size(207, 20);
-            this.txtTipoActivo.TabIndex = 16;
+            this.txtTipoActivo.TabIndex = 11;
             // 
             // btnTipoActivo
             // 
@@ -1707,7 +1727,7 @@
             this.txtNombreActivo.MenuManager = this.barManager1;
             this.txtNombreActivo.Name = "txtNombreActivo";
             this.txtNombreActivo.Size = new System.Drawing.Size(201, 20);
-            this.txtNombreActivo.TabIndex = 3;
+            this.txtNombreActivo.TabIndex = 2;
             // 
             // labelControl2
             // 
@@ -1733,26 +1753,6 @@
             this.labelControl1.Size = new System.Drawing.Size(50, 13);
             this.labelControl1.TabIndex = 0;
             this.labelControl1.Text = "Id Activo: ";
-            // 
-            // btnXML
-            // 
-            this.btnXML.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
-            this.btnXML.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.BottomCenter;
-            this.btnXML.Location = new System.Drawing.Point(772, 191);
-            this.btnXML.Name = "btnXML";
-            this.btnXML.Size = new System.Drawing.Size(50, 50);
-            this.btnXML.TabIndex = 64;
-            this.btnXML.Click += new System.EventHandler(this.btnXML_Click);
-            // 
-            // btnGallery
-            // 
-            this.btnGallery.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton2.ImageOptions.Image")));
-            this.btnGallery.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.BottomCenter;
-            this.btnGallery.Location = new System.Drawing.Point(828, 191);
-            this.btnGallery.Name = "btnGallery";
-            this.btnGallery.Size = new System.Drawing.Size(50, 50);
-            this.btnGallery.TabIndex = 65;
-            this.btnGallery.Click += new System.EventHandler(this.btnGallery_Click);
             // 
             // Frm_Activos
             // 

@@ -206,7 +206,6 @@ namespace TransportBusiness
                     textAseguradora.Text = row["Nombre_Empresa_Aseguradora"].ToString();
                     textTelefono.Text = row["Telefono"].ToString();
                     textTelSiniestro.Text = row["Telefono_Siniestros"].ToString();
-                   
                 }
             }
             catch (Exception ex)
@@ -223,10 +222,7 @@ namespace TransportBusiness
             {
                 if (textAseguradora.Text.ToString().Trim().Length > 0)
                 {
-                   
-
-                        InsertarAseguradora();
-                    
+                        InsertarAseguradora();  
                 }
                 else
                 {
@@ -239,7 +235,6 @@ namespace TransportBusiness
                 {
                     if (textNoExterior.Text.ToString().Trim().Length > 0)
                     {
-
                         InsertarDomicilio();
                     }
                     else

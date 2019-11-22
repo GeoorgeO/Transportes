@@ -72,9 +72,12 @@ namespace TransportBusiness
         private void InsertarUsuarios()
         {
             CLS_Usuarios Clase = new CLS_Usuarios();
+
+            Crypto ClaseEncripta = new Crypto();
+
             Clase.Id_Usuario = textUsuario.Text.Trim();
             Clase.Nombre_Usuario =textNombre.Text.Trim();
-            Clase.Contrasena = textContrasena.Text.Trim();
+            Clase.Contrasena = ClaseEncripta.Encriptar( textContrasena.Text.Trim());
             Clase.Id_Perfil = gridLookUpEdit1.EditValue.ToString();
             Clase.Creador = UsuariosLogin;
             Clase.Modificador= UsuariosLogin;
@@ -138,12 +141,15 @@ namespace TransportBusiness
         {
             try
             {
+                Crypto ClaseEncripta = new Crypto();
+
                 foreach (int i in this.gridView1.GetSelectedRows())
                 {
                     DataRow row = this.gridView1.GetDataRow(i);
                     textUsuario.Text = row["Id_Usuario"].ToString();
                     textNombre.Text = row["Nombre_Usuario"].ToString();
-                    textContrasena.Text = row["Contrasena"].ToString();
+                    textContrasena.Text = ClaseEncripta.Desencriptar(row["Contrasena"].ToString());
+                    textConfirmaContra.Text = ClaseEncripta.Desencriptar(row["Contrasena"].ToString());
                     gridLookUpEdit1.EditValue = row["Id_Perfil"].ToString();
 
                     labelActivo.Visible = true;
