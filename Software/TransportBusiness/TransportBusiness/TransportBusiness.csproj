@@ -194,10 +194,10 @@
     <Compile Include="Formularios\Catalogos\Frm_Proveedores.Designer.cs">
       <DependentUpon>Frm_Proveedores.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\Catalogos\Frm_Rutas.cs">
+    <Compile Include="Formularios\Por Realizar\Frm_Rutas.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\Catalogos\Frm_Rutas.Designer.cs">
+    <Compile Include="Formularios\Por Realizar\Frm_Rutas.Designer.cs">
       <DependentUpon>Frm_Rutas.cs</DependentUpon>
     </Compile>
     <Compile Include="Formularios\Catalogos\Frm_Vehiculos.cs">
@@ -283,6 +283,12 @@
     </Compile>
     <Compile Include="Formularios\Control\Frm_Salidas.Designer.cs">
       <DependentUpon>Frm_Salidas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Por Realizar\Frm_Rutas_Buscar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Por Realizar\Frm_Rutas_Buscar.Designer.cs">
+      <DependentUpon>Frm_Rutas_Buscar.cs</DependentUpon>
     </Compile>
     <Compile Include="Formularios\Seguridad\Frm_Pantallas.cs">
       <SubType>Form</SubType>
@@ -382,7 +388,7 @@
     <EmbeddedResource Include="Formularios\Catalogos\Frm_Proveedores.resx">
       <DependentUpon>Frm_Proveedores.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\Catalogos\Frm_Rutas.resx">
+    <EmbeddedResource Include="Formularios\Por Realizar\Frm_Rutas.resx">
       <DependentUpon>Frm_Rutas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Catalogos\Frm_Vehiculos.resx">
@@ -414,6 +420,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Catalogos\Tipos\Frm_Tipo_Transporte.resx">
       <DependentUpon>Frm_Tipo_Transporte.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Por Realizar\Frm_Rutas_Buscar.resx">
+      <DependentUpon>Frm_Rutas_Buscar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Seguridad\Frm_Pantallas.resx">
       <DependentUpon>Frm_Pantallas.cs</DependentUpon>

@@ -18,28 +18,55 @@ namespace TransportBusiness
         {
             InitializeComponent();
         }
-
-        private void CargarRutas()
+        private void MakeTablaPedidos()
         {
-            gridControl1.DataSource = null;
-            CLS_Rutas Rutas = new CLS_Rutas();
+            DataTable table = new DataTable("FirstTable");
+            DataColumn column;
+            table.Reset();
 
-            Rutas.MtdSeleccionarRutas();
-            if (Rutas.Exito)
-            {
-                gridControl1.DataSource = Rutas.Datos;
-            }
+            // DataRow row;
+            column = new DataColumn();
+            column.DataType = typeof(string);
+            column.ColumnName = "Id_Rutas";
+            column.AutoIncrement = false;
+            column.Caption = "Id_Rutas";
+            column.ReadOnly = false;
+            column.Unique = false;
+
+            table.Columns.Add(column);
+
+            column = new DataColumn();
+            column.DataType = typeof(string);
+            column.ColumnName = "Secuencia";
+            column.AutoIncrement = false;
+            column.Caption = "Secuencia";
+            column.ReadOnly = false;
+            column.Unique = false;
+
+            table.Columns.Add(column);
+
+            column = new DataColumn();
+            column.DataType = typeof(string);
+            column.ColumnName = "Nombre_Rutas_Detalle";
+            column.AutoIncrement = false;
+            column.Caption = "Nombre_Rutas_Detalle";
+            column.ReadOnly = false;
+            column.Unique = false;
+
+            table.Columns.Add(column);
+
+            dtgRutasDetalles.DataSource = table;
         }
 
         private void CargarDetalles()
         {
-            gridControl2.DataSource = null;
+            dtgRutasDetalles.DataSource = null;
             CLS_Rutas_Detalle RutasDetalle = new CLS_Rutas_Detalle();
             RutasDetalle.Id_Rutas = textIdRuta.Text.Trim();
             RutasDetalle.MtdSeleccionarRutasDetalle();
             if (RutasDetalle.Exito)
             {
-                gridControl2.DataSource = RutasDetalle.Datos;
+                dtgRutasDetalles.DataSource = RutasDetalle.Datos;
             }
         }
 
@@ -54,7 +81,7 @@ namespace TransportBusiness
             if (Rutas.Exito)
             {
 
-                CargarRutas();
+                //CargarRutas();
                 XtraMessageBox.Show("Se ha Insertado el registro con exito");
                 LimpiarCampos();
             }
@@ -71,9 +98,9 @@ namespace TransportBusiness
         private void InsertarDetalles()
         {
             CLS_Rutas_Detalle RutasDetalle = new CLS_Rutas_Detalle();
-            RutasDetalle.Id_Rutas = textIdRutaDetalle.Text.Trim();
+            RutasDetalle.Id_Rutas = textIdRuta.Text.Trim();
             RutasDetalle.Nombre_Rutas_Detalle = textRutaDetalle.Text.Trim();
-            RutasDetalle.Secuencia =("000"+ (gridView2.DataRowCount+1).ToString()).Substring(("000"+ (gridView2.DataRowCount + 1).ToString()).Length - 3) ;
+            RutasDetalle.Secuencia =("000"+ (dtgValRutasDetalles.DataRowCount+1).ToString()).Substring(("000"+ (dtgValRutasDetalles.DataRowCount + 1).ToString()).Length - 3) ;
             RutasDetalle.MtdInsertarRutasDetalle();
             if (RutasDetalle.Exito)
             {
@@ -95,7 +122,7 @@ namespace TransportBusiness
             if (Rutas.Exito)
             {
                 EliminarRutayDetalles();
-                CargarRutas();
+                //CargarRutas();
                 XtraMessageBox.Show("Se ha Eliminado el registro con exito");
                 LimpiarCampos();
                 LimpiarCamposDetalle();
@@ -109,7 +136,7 @@ namespace TransportBusiness
         private void EliminarDetalle()
         {
             CLS_Rutas_Detalle RutasDetalle = new CLS_Rutas_Detalle();
-            RutasDetalle.Id_Rutas = textIdRutaDetalle.Text.Trim();
+            RutasDetalle.Id_Rutas = textIdRuta.Text.Trim();
             RutasDetalle.Secuencia = textRutaDetalle.Tag.ToString();
             RutasDetalle.MtdEliminarRutasDetalle();
             if (RutasDetalle.Exito)
@@ -132,7 +159,7 @@ namespace TransportBusiness
             RutasDetalle.MtdEliminarRutasYDetalle();
             if (RutasDetalle.Exito)
             {
-                CargarRutas();
+                //CargarRutas();
 
                 LimpiarCamposDetalle();
             }
@@ -150,26 +177,26 @@ namespace TransportBusiness
 
         private void LimpiarCamposDetalle()
         {
-            textIdRutaDetalle.Text = "";
+            textIdRuta.Text = "";
             textRutaDetalle.Text = "";
         }
 
         private void gridControl1_Click(object sender, EventArgs e)
         {
-            try
-            {
-                foreach (int i in this.gridView1.GetSelectedRows())
-                {
-                    DataRow row = this.gridView1.GetDataRow(i);
-                    textIdRuta.Text = row["Id_Rutas"].ToString();
-                    textIdRutaDetalle.Text = row["Id_Rutas"].ToString();
-                    textRuta.Text = row["Nombre_Ruta"].ToString();
-                }
-            }
-            catch (Exception ex)
-            {
-                XtraMessageBox.Show(ex.Message);
-            }
+            //try
+            //{
+            //    foreach (int i in this.gridView1.GetSelectedRows())
+            //    {
+            //        DataRow row = this.gridView1.GetDataRow(i);
+            //        textIdRuta.Text = row["Id_Rutas"].ToString();
+            //        textIdRutaDetalle.Text = row["Id_Rutas"].ToString();
+            //        textRuta.Text = row["Nombre_Ruta"].ToString();
+            //    }
+            //}
+            //catch (Exception ex)
+            //{
+            //    XtraMessageBox.Show(ex.Message);
+            //}
 
             CargarDetalles();
         }
@@ -218,7 +245,7 @@ namespace TransportBusiness
             }
             else
             {
-                if (textIdRutaDetalle.Text.Trim().Length > 0 && textRutaDetalle.Tag.ToString().Trim().Length>0)
+                if (textIdRuta.Text.Trim().Length > 0 && textRutaDetalle.Tag.ToString().Trim().Length>0)
                 {
                     EliminarDetalle();
                 }
@@ -249,30 +276,20 @@ namespace TransportBusiness
 
         private void Frm_Rutas_Load(object sender, EventArgs e)
         {
-            CargarRutas();
+            MakeTablaPedidos();
+            //CargarRutas();
             CargarDetalles();
             iniciarTags();
         }
 
-        private void gridControl2_Click(object sender, EventArgs e)
+        private void btnBuscar_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            try
-            {
-                foreach (int i in this.gridView2.GetSelectedRows())
-                {
-                    DataRow row = this.gridView2.GetDataRow(i);
-                    textIdRutaDetalle.Text = row["Id_Rutas"].ToString();
-                    textRutaDetalle.Text = row["Nombre_Rutas_Detalle"].ToString();
-                    textRutaDetalle.Tag = row["Secuencia"].ToString();
-                   
-                }
-            }
-            catch (Exception ex)
-            {
-                XtraMessageBox.Show(ex.Message);
-            }
+            Frm_Rutas_Buscar frm = new Frm_Rutas_Buscar();
+            frm.Id_Rutas = string.Empty;
+            frm.Nombre_Ruta = string.Empty;
+            frm.ShowDialog();
+            textIdRuta.Text = frm.Id_Rutas;
+            textRuta.Text = frm.Nombre_Ruta;
         }
-
-
     }
 }
