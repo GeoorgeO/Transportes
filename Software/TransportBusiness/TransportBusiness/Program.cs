@@ -20,7 +20,7 @@ namespace TransportBusiness
 
             BonusSkins.Register();
             SkinManager.EnableFormSkins();
-            Application.Run(new Frm_Tipo_Empleados());
+            Application.Run(new Frm_Login());
         }
     }
 }
