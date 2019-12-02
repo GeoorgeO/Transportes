@@ -335,11 +335,11 @@
             // xtraTabControl1
             // 
             this.xtraTabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.xtraTabControl1.Location = new System.Drawing.Point(71, 0);
+            this.xtraTabControl1.Location = new System.Drawing.Point(73, 0);
             this.xtraTabControl1.Name = "xtraTabControl1";
             this.xtraTabControl1.Padding = new System.Windows.Forms.Padding(5);
             this.xtraTabControl1.SelectedTabPage = this.xtraTabPage1;
-            this.xtraTabControl1.Size = new System.Drawing.Size(825, 549);
+            this.xtraTabControl1.Size = new System.Drawing.Size(823, 546);
             this.xtraTabControl1.TabIndex = 1;
             this.xtraTabControl1.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.xtraTabPage1,
@@ -522,7 +522,7 @@
             // 
             // lblProveedor
             // 
-            this.lblProveedor.Caption = "Proveedor:";
+            this.lblProveedor.Caption = "Empleado:";
             this.lblProveedor.Id = 48;
             this.lblProveedor.Name = "lblProveedor";
             // 
@@ -538,9 +538,9 @@
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 549);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 546);
             this.barDockControlBottom.Manager = this.barManager1;
-            this.barDockControlBottom.Size = new System.Drawing.Size(896, 25);
+            this.barDockControlBottom.Size = new System.Drawing.Size(896, 28);
             // 
             // barDockControlLeft
             // 
@@ -548,7 +548,7 @@
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.barDockControlLeft.Location = new System.Drawing.Point(0, 0);
             this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Size = new System.Drawing.Size(71, 549);
+            this.barDockControlLeft.Size = new System.Drawing.Size(73, 546);
             // 
             // barDockControlRight
             // 
@@ -556,7 +556,7 @@
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
             this.barDockControlRight.Location = new System.Drawing.Point(896, 0);
             this.barDockControlRight.Manager = this.barManager1;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 549);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 546);
             // 
             // repositoryItemTextEdit1
             // 
@@ -708,7 +708,7 @@
             this.xtraTabPage2.Controls.Add(this.groupControl2);
             this.xtraTabPage2.Name = "xtraTabPage2";
             this.xtraTabPage2.Padding = new System.Windows.Forms.Padding(5);
-            this.xtraTabPage2.Size = new System.Drawing.Size(819, 521);
+            this.xtraTabPage2.Size = new System.Drawing.Size(821, 524);
             this.xtraTabPage2.Text = "Domicilio";
             // 
             // panelControl2
@@ -718,7 +718,7 @@
             this.panelControl2.Location = new System.Drawing.Point(5, 149);
             this.panelControl2.Name = "panelControl2";
             this.panelControl2.Padding = new System.Windows.Forms.Padding(10);
-            this.panelControl2.Size = new System.Drawing.Size(809, 367);
+            this.panelControl2.Size = new System.Drawing.Size(811, 370);
             this.panelControl2.TabIndex = 16;
             // 
             // gridControl2
@@ -728,7 +728,7 @@
             this.gridControl2.MainView = this.gridView2;
             this.gridControl2.MenuManager = this.barManager1;
             this.gridControl2.Name = "gridControl2";
-            this.gridControl2.Size = new System.Drawing.Size(785, 343);
+            this.gridControl2.Size = new System.Drawing.Size(787, 346);
             this.gridControl2.TabIndex = 0;
             this.gridControl2.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView2});
@@ -857,7 +857,7 @@
             this.groupControl2.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupControl2.Location = new System.Drawing.Point(5, 5);
             this.groupControl2.Name = "groupControl2";
-            this.groupControl2.Size = new System.Drawing.Size(809, 144);
+            this.groupControl2.Size = new System.Drawing.Size(811, 144);
             this.groupControl2.TabIndex = 1;
             this.groupControl2.Text = "Domicilio";
             // 
@@ -1013,7 +1013,7 @@
             this.xtraTabPage3.Controls.Add(this.panelControl3);
             this.xtraTabPage3.Controls.Add(this.groupControl3);
             this.xtraTabPage3.Name = "xtraTabPage3";
-            this.xtraTabPage3.Size = new System.Drawing.Size(819, 521);
+            this.xtraTabPage3.Size = new System.Drawing.Size(821, 524);
             this.xtraTabPage3.Text = "Contactos Emergencia";
             // 
             // panelControl3
@@ -1023,7 +1023,7 @@
             this.panelControl3.Location = new System.Drawing.Point(0, 166);
             this.panelControl3.Name = "panelControl3";
             this.panelControl3.Padding = new System.Windows.Forms.Padding(10);
-            this.panelControl3.Size = new System.Drawing.Size(819, 355);
+            this.panelControl3.Size = new System.Drawing.Size(821, 358);
             this.panelControl3.TabIndex = 18;
             // 
             // gridControl3
@@ -1033,7 +1033,7 @@
             this.gridControl3.MainView = this.gridView3;
             this.gridControl3.MenuManager = this.barManager1;
             this.gridControl3.Name = "gridControl3";
-            this.gridControl3.Size = new System.Drawing.Size(795, 331);
+            this.gridControl3.Size = new System.Drawing.Size(797, 334);
             this.gridControl3.TabIndex = 0;
             this.gridControl3.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView3});
@@ -1184,7 +1184,7 @@
             this.groupControl3.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupControl3.Location = new System.Drawing.Point(0, 0);
             this.groupControl3.Name = "groupControl3";
-            this.groupControl3.Size = new System.Drawing.Size(819, 166);
+            this.groupControl3.Size = new System.Drawing.Size(821, 166);
             this.groupControl3.TabIndex = 17;
             this.groupControl3.Text = "Contacto";
             // 

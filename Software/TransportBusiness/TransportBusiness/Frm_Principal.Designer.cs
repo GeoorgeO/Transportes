@@ -131,7 +131,7 @@
             this.ribbonPage3,
             this.ribbonPage2,
             this.ribbonPage4});
-            this.ribbonControl1.Size = new System.Drawing.Size(1256, 143);
+            this.ribbonControl1.Size = new System.Drawing.Size(1256, 146);
             // 
             // barButtonItem1
             // 
@@ -211,8 +211,8 @@
             // 
             this.btnMantenimientos.Caption = "Mantenimientos";
             this.btnMantenimientos.Id = 10;
-            this.btnMantenimientos.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem10.ImageOptions.Image")));
-            this.btnMantenimientos.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem10.ImageOptions.LargeImage")));
+            this.btnMantenimientos.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnMantenimientos.ImageOptions.Image")));
+            this.btnMantenimientos.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnMantenimientos.ImageOptions.LargeImage")));
             this.btnMantenimientos.Name = "btnMantenimientos";
             this.btnMantenimientos.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnMantenimientos_ItemClick);
             // 
@@ -254,8 +254,8 @@
             // 
             this.btnAsignacionHerramienta.Caption = "Asignacion \r\nHerramienta";
             this.btnAsignacionHerramienta.Id = 15;
-            this.btnAsignacionHerramienta.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem15.ImageOptions.Image")));
-            this.btnAsignacionHerramienta.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem15.ImageOptions.LargeImage")));
+            this.btnAsignacionHerramienta.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnAsignacionHerramienta.ImageOptions.Image")));
+            this.btnAsignacionHerramienta.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnAsignacionHerramienta.ImageOptions.LargeImage")));
             this.btnAsignacionHerramienta.Name = "btnAsignacionHerramienta";
             this.btnAsignacionHerramienta.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnAsignacionHerramienta_ItemClick);
             // 
@@ -326,7 +326,7 @@
             // 
             // btnTipoPersona
             // 
-            this.btnTipoPersona.Caption = "Tipos de Personas";
+            this.btnTipoPersona.Caption = "Tipos de empleados";
             this.btnTipoPersona.Id = 24;
             this.btnTipoPersona.Name = "btnTipoPersona";
             this.btnTipoPersona.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnTipoPersona_ItemClick);
@@ -389,7 +389,7 @@
             // 
             // btnPermisos
             // 
-            this.btnPermisos.Caption = "Pantallas - Perfil";
+            this.btnPermisos.Caption = "Permisos";
             this.btnPermisos.Id = 32;
             this.btnPermisos.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnPermisos.ImageOptions.Image")));
             this.btnPermisos.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnPermisos.ImageOptions.LargeImage")));
@@ -494,7 +494,6 @@
             // ribbonPageGroup5
             // 
             this.ribbonPageGroup5.AllowTextClipping = false;
-            this.ribbonPageGroup5.ItemLinks.Add(this.btnPantallas);
             this.ribbonPageGroup5.ItemLinks.Add(this.btnPerfiles);
             this.ribbonPageGroup5.ItemLinks.Add(this.btnUsuarios);
             this.ribbonPageGroup5.Name = "ribbonPageGroup5";

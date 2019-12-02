@@ -14,7 +14,7 @@ namespace TransportBusiness
     public partial class Frm_Principal : DevExpress.XtraBars.Ribbon.RibbonForm
     {
         public string UsuariosLogin { get; set; }
-        public char UsuariosClase { get; set; }
+        public string UsuariosClase { get; set; }
 
         List<string> Lista = new List<string>();
 
@@ -26,7 +26,7 @@ namespace TransportBusiness
         private void CargarAccesos()
         {
             CLS_Perfiles_Pantallas Clase = new CLS_Perfiles_Pantallas();
-            Clase.Id_Perfil = "001";
+            Clase.Id_Perfil = UsuariosClase;
             Clase.MtdSeleccionarAccesosPermisos();
             if (Clase.Exito)
             {

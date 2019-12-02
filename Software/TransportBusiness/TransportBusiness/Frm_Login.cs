@@ -45,7 +45,8 @@ namespace TransportBusiness
                         if (sLogin.Datos.Rows.Count > 0)
                         {
                             vIdUsuario = sLogin.Datos.Rows[0][0].ToString();
-                            if (sLogin.Datos.Rows[0][2].ToString() == "True")
+                           
+                            if (sLogin.Datos.Rows[0][3].ToString() == "True")
                             {
                                 vIdActivo = 1;
                             }
@@ -59,7 +60,7 @@ namespace TransportBusiness
                             if (vIdActivo == 1)
                             {
                                 frmP.UsuariosLogin = txtUser.Text;
-                                frmP.UsuariosClase = Convert.ToChar(sLogin.Datos.Rows[0][1]);
+                                frmP.UsuariosClase = sLogin.Datos.Rows[0][2].ToString();
                                 frmP.Show();
                                 this.Hide();
                             }
