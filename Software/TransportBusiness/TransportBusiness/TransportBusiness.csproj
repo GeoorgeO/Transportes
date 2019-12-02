@@ -305,7 +305,7 @@
     <Compile Include="Formularios\Seguridad\Frm_Permisos.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\Seguridad\Frm_Permisos.Designer.cs">
+    <Compile Include="Formularios\Seguridad\Frm_Permisos.designer.cs">
       <DependentUpon>Frm_Permisos.cs</DependentUpon>
     </Compile>
     <Compile Include="Formularios\Seguridad\Frm_Usuarios.cs">

@@ -11,6 +11,66 @@ namespace CapaDeDatos
         public string Id_Pantalla { get; set; }
         public string Id_Perfil { get; set; }
 
+        public void MtdSeleccionarPantallasDisponibles()
+        {
+            TipoDato _dato = new TipoDato();
+            Conexion _conexion = new Conexion(cadenaConexion);
+
+            Exito = true;
+            try
+            {
+                _conexion.NombreProcedimiento = "SP_Perfil_Pantallas_Disponibles_Select";
+                _dato.CadenaTexto = Id_Perfil;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_Perfil");
+                _conexion.EjecutarDataset();
+
+                if (_conexion.Exito)
+                {
+                    Datos = _conexion.Datos;
+                }
+                else
+                {
+                    Mensaje = _conexion.Mensaje;
+                    Exito = false;
+                }
+            }
+            catch (Exception e)
+            {
+                Mensaje = e.Message;
+                Exito = false;
+            }
+
+        }
+        public void MtdSeleccionarPantallasAsignadas()
+        {
+            TipoDato _dato = new TipoDato();
+            Conexion _conexion = new Conexion(cadenaConexion);
+
+            Exito = true;
+            try
+            {
+                _conexion.NombreProcedimiento = "SP_Perfil_Pantallas_Asignadas_Select";
+                _dato.CadenaTexto = Id_Perfil;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_Perfil");
+                _conexion.EjecutarDataset();
+
+                if (_conexion.Exito)
+                {
+                    Datos = _conexion.Datos;
+                }
+                else
+                {
+                    Mensaje = _conexion.Mensaje;
+                    Exito = false;
+                }
+            }
+            catch (Exception e)
+            {
+                Mensaje = e.Message;
+                Exito = false;
+            }
+
+        }
         public void MtdSeleccionarPerfilesPantallas()
         {
             TipoDato _dato = new TipoDato();
