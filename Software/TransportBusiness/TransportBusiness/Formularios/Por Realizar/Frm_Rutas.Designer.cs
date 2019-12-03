@@ -318,7 +318,7 @@
             this.Nombre_Rutas_Detalle.FieldName = "Nombre_Rutas_Detalle";
             this.Nombre_Rutas_Detalle.Name = "Nombre_Rutas_Detalle";
             this.Nombre_Rutas_Detalle.Visible = true;
-            this.Nombre_Rutas_Detalle.VisibleIndex = 2;
+            this.Nombre_Rutas_Detalle.VisibleIndex = 1;
             this.Nombre_Rutas_Detalle.Width = 339;
             // 
             // Secuencia
@@ -327,7 +327,7 @@
             this.Secuencia.FieldName = "Secuencia";
             this.Secuencia.Name = "Secuencia";
             this.Secuencia.Visible = true;
-            this.Secuencia.VisibleIndex = 1;
+            this.Secuencia.VisibleIndex = 0;
             this.Secuencia.Width = 337;
             // 
             // groupControl2
@@ -408,6 +408,8 @@
             this.textKM.Location = new System.Drawing.Point(459, 32);
             this.textKM.MenuManager = this.barManager1;
             this.textKM.Name = "textKM";
+            this.textKM.Properties.Mask.EditMask = "n";
+            this.textKM.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.textKM.Size = new System.Drawing.Size(107, 20);
             this.textKM.TabIndex = 7;
             // 
