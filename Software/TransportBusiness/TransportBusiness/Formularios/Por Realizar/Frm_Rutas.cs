@@ -280,7 +280,7 @@ namespace TransportBusiness
             }
             else
             {
-                XtraMessageBox.Show("Es necesario seleccionar uns ruta.");
+                XtraMessageBox.Show("Es necesario seleccionar una ruta.");
             }
 
         }
@@ -339,7 +339,7 @@ namespace TransportBusiness
                // InsertarRutas(true);
                 LimpiarCamposDetalle();
                 reorganizaSec();
-           
+                 textRutaDetalle.Focus();
         }
 
         private void dtgRutasDetalles_DoubleClick(object sender, EventArgs e)
