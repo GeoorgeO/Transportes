@@ -338,7 +338,7 @@
             this.groupControl1.Name = "groupControl1";
             this.groupControl1.Size = new System.Drawing.Size(509, 167);
             this.groupControl1.TabIndex = 0;
-            this.groupControl1.Text = "Perfil - Pantalla";
+            this.groupControl1.Text = "Datos de Usuario";
             // 
             // labelActivo
             // 

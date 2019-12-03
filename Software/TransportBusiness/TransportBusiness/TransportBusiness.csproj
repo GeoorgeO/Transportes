@@ -104,6 +104,12 @@
     <Compile Include="Formularios\Catalogos\Frm_Broker_Empresa_Aseguradora.Designer.cs">
       <DependentUpon>Frm_Broker_Empresa_Aseguradora.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\Catalogos\Frm_Combustible.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Catalogos\Frm_Combustible.Designer.cs">
+      <DependentUpon>Frm_Combustible.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\Catalogos\Frm_Domicilios.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -193,6 +199,12 @@
     </Compile>
     <Compile Include="Formularios\Catalogos\Frm_Proveedores.Designer.cs">
       <DependentUpon>Frm_Proveedores.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Frm_Servicios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Frm_Servicios.Designer.cs">
+      <DependentUpon>Frm_Servicios.cs</DependentUpon>
     </Compile>
     <Compile Include="Formularios\Por Realizar\Frm_Rutas.cs">
       <SubType>Form</SubType>
@@ -346,6 +358,9 @@
     <EmbeddedResource Include="Formularios\Catalogos\Frm_Clientes.resx">
       <DependentUpon>Frm_Clientes.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Catalogos\Frm_Combustible.resx">
+      <DependentUpon>Frm_Combustible.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Catalogos\Frm_Domicilios.resx">
       <DependentUpon>Frm_Domicilios.cs</DependentUpon>
     </EmbeddedResource>
@@ -387,6 +402,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Catalogos\Frm_Proveedores.resx">
       <DependentUpon>Frm_Proveedores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Frm_Servicios.resx">
+      <DependentUpon>Frm_Servicios.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Por Realizar\Frm_Rutas.resx">
       <DependentUpon>Frm_Rutas.cs</DependentUpon>
