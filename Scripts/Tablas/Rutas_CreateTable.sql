@@ -9,7 +9,10 @@ ELSE
 		
 	CREATE TABLE [dbo].[Rutas](
 		[Id_Rutas] [char](4) NOT NULL,
-		[Nombre_Ruta] [varchar](80) NULL,
+		[Nombre_Ruta] [varchar](80) NOT NULL,
+		[Kilometros] [numeric](18,2) NOT NULL,
+		[Origen] [varchar](80)  NULL,
+		[Destino] [varchar](80)  NULL,
 	 CONSTRAINT [PK_Rutas] PRIMARY KEY CLUSTERED 
 	(
 		[Id_Rutas] ASC

@@ -49,6 +49,9 @@
             this.dtgValRutas = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Kilometros = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Origen = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Destino = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
@@ -151,9 +154,9 @@
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 410);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 407);
             this.barDockControlBottom.Manager = this.barManager1;
-            this.barDockControlBottom.Size = new System.Drawing.Size(534, 25);
+            this.barDockControlBottom.Size = new System.Drawing.Size(534, 28);
             // 
             // barDockControlLeft
             // 
@@ -161,7 +164,7 @@
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.barDockControlLeft.Location = new System.Drawing.Point(0, 0);
             this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Size = new System.Drawing.Size(71, 410);
+            this.barDockControlLeft.Size = new System.Drawing.Size(73, 407);
             // 
             // barDockControlRight
             // 
@@ -169,7 +172,7 @@
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
             this.barDockControlRight.Location = new System.Drawing.Point(534, 0);
             this.barDockControlRight.Manager = this.barManager1;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 410);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 407);
             // 
             // btnLimpiar
             // 
@@ -203,10 +206,10 @@
             // 
             this.panelControl1.Controls.Add(this.dtgRutas);
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelControl1.Location = new System.Drawing.Point(71, 0);
+            this.panelControl1.Location = new System.Drawing.Point(73, 0);
             this.panelControl1.Name = "panelControl1";
             this.panelControl1.Padding = new System.Windows.Forms.Padding(5);
-            this.panelControl1.Size = new System.Drawing.Size(463, 410);
+            this.panelControl1.Size = new System.Drawing.Size(461, 407);
             this.panelControl1.TabIndex = 4;
             // 
             // dtgRutas
@@ -216,7 +219,7 @@
             this.dtgRutas.MainView = this.dtgValRutas;
             this.dtgRutas.MenuManager = this.barManager1;
             this.dtgRutas.Name = "dtgRutas";
-            this.dtgRutas.Size = new System.Drawing.Size(449, 396);
+            this.dtgRutas.Size = new System.Drawing.Size(447, 393);
             this.dtgRutas.TabIndex = 0;
             this.dtgRutas.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.dtgValRutas});
@@ -226,7 +229,10 @@
             // 
             this.dtgValRutas.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.gridColumn1,
-            this.gridColumn2});
+            this.gridColumn2,
+            this.Kilometros,
+            this.Origen,
+            this.Destino});
             this.dtgValRutas.GridControl = this.dtgRutas;
             this.dtgValRutas.Name = "dtgValRutas";
             this.dtgValRutas.OptionsFind.AlwaysVisible = true;
@@ -252,6 +258,30 @@
             this.gridColumn2.VisibleIndex = 1;
             this.gridColumn2.Width = 334;
             // 
+            // Kilometros
+            // 
+            this.Kilometros.Caption = "Kilometros";
+            this.Kilometros.FieldName = "Kilometros";
+            this.Kilometros.Name = "Kilometros";
+            this.Kilometros.Visible = true;
+            this.Kilometros.VisibleIndex = 2;
+            // 
+            // Origen
+            // 
+            this.Origen.Caption = "Origen";
+            this.Origen.FieldName = "Origen";
+            this.Origen.Name = "Origen";
+            this.Origen.Visible = true;
+            this.Origen.VisibleIndex = 3;
+            // 
+            // Destino
+            // 
+            this.Destino.Caption = "Destino";
+            this.Destino.FieldName = "Destino";
+            this.Destino.Name = "Destino";
+            this.Destino.Visible = true;
+            this.Destino.VisibleIndex = 4;
+            // 
             // Frm_Rutas_Buscar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -268,7 +298,7 @@
             this.Name = "Frm_Rutas_Buscar";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Rutas Buscar";
-            this.Shown += new System.EventHandler(this.Frm_Rutas_Buscar_Shown);
+            this.Load += new System.EventHandler(this.Frm_Rutas_Buscar_Load);
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
@@ -301,5 +331,8 @@
         private DevExpress.XtraBars.BarLargeButtonItem btnGuardar;
         private DevExpress.XtraBars.BarLargeButtonItem btnEliminar;
         private DevExpress.XtraEditors.Repository.RepositoryItemTextEdit repositoryItemTextEdit1;
+        private DevExpress.XtraGrid.Columns.GridColumn Kilometros;
+        private DevExpress.XtraGrid.Columns.GridColumn Origen;
+        private DevExpress.XtraGrid.Columns.GridColumn Destino;
     }
 }

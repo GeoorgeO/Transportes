@@ -16,7 +16,10 @@ GO
 create PROCEDURE [dbo].[SP_Rutas_Insert] 
 	-- Add the parameters for the stored procedure here
 	@Id_Rutas char(4),
-	@Nombre_Ruta varchar(80)
+	@Nombre_Ruta varchar(80),
+	@Kilometros numeric(18,2),
+	@Origen varchar(80),
+	@Destino varchar(80)
 AS
 BEGIN
 	-- SET NOCOUNT ON added to prevent extra result sets from
@@ -24,7 +27,7 @@ BEGIN
 	SET NOCOUNT ON;
 
     -- Insert statements for procedure here
-	declare @correcto bit
+	declare @correcto char(4)
 
 	begin transaction T1;
 	begin try
@@ -38,24 +41,40 @@ BEGIN
 		if @Existe>0 
 		
 			UPDATE dbo.Rutas
-		        SET Nombre_Ruta=@Nombre_Ruta
+		        SET Nombre_Ruta=@Nombre_Ruta,
+					Kilometros=@Kilometros,
+					Origen=@Origen,
+					Destino=@Destino
 		    WHERE
 		    	Id_Rutas=@Id_Rutas
+				
 				
 		else
 			INSERT INTO dbo.Rutas
 	           (Id_Rutas
-	           ,Nombre_Ruta)
+	           ,Nombre_Ruta
+			   ,Kilometros
+			   ,Origen
+			   ,Destino)
 	     	VALUES
 	           (@maximo
-	           ,@Nombre_Ruta)
+	           ,@Nombre_Ruta
+			   ,@Kilometros
+			   ,@Origen
+			   ,@Destino)
+			
+
+		if @Existe>0 
+			 set @correcto=@Id_Rutas
+		else
+			 set @correcto=@maximo
 		
 		commit transaction T1;
-		set @correcto=1
+		
 	end try
 	begin catch
 		rollback transaction T1;
-		set @correcto=0
+		set @correcto='-0'
 	end catch
 
 	select @correcto resultado

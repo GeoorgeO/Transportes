@@ -18,55 +18,69 @@ namespace TransportBusiness
         {
             InitializeComponent();
         }
-        private void MakeTablaPedidos()
+
+       
+
+        private void CargarTabla()
         {
-            DataTable table = new DataTable("FirstTable");
+            DataTable Tabla = new DataTable("Tabla");
             DataColumn column;
-            table.Reset();
-
-            // DataRow row;
+            Tabla.Reset();
+            // Create new DataColumn, set DataType, 
+            // ColumnName and add to DataTable.    
             column = new DataColumn();
-            column.DataType = typeof(string);
+            column.DataType = System.Type.GetType("System.String");
             column.ColumnName = "Id_Rutas";
-            column.AutoIncrement = false;
-            column.Caption = "Id_Rutas";
-            column.ReadOnly = false;
+            column.ReadOnly = true;
             column.Unique = false;
+            // Add the Column to the DataColumnCollection.
+            Tabla.Columns.Add(column);
 
-            table.Columns.Add(column);
 
+            // Create second column.
             column = new DataColumn();
-            column.DataType = typeof(string);
-            column.ColumnName = "Secuencia";
-            column.AutoIncrement = false;
-            column.Caption = "Secuencia";
-            column.ReadOnly = false;
-            column.Unique = false;
-
-            table.Columns.Add(column);
-
-            column = new DataColumn();
-            column.DataType = typeof(string);
+            column.DataType = System.Type.GetType("System.String");
             column.ColumnName = "Nombre_Rutas_Detalle";
-            column.AutoIncrement = false;
-            column.Caption = "Nombre_Rutas_Detalle";
             column.ReadOnly = false;
             column.Unique = false;
+            // Add the column to the table.
+            Tabla.Columns.Add(column);
 
-            table.Columns.Add(column);
+            // Create second column.
+            column = new DataColumn();
+            column.DataType = System.Type.GetType("System.String");
+            column.ColumnName = "Secuencia";
+            column.ReadOnly = false;
+            column.Unique = false;
+            // Add the column to the table.
+            Tabla.Columns.Add(column);
 
-            dtgRutasDetalles.DataSource = table;
+            dtgRutasDetalles.DataSource=Tabla;
+        }
+        private void AgregarDetalles()
+        {
+            dtgValRutasDetalles.AddNewRow();
+            int rowHandle = dtgValRutasDetalles.GetRowHandle(dtgValRutasDetalles.DataRowCount);
+            if (dtgValRutasDetalles.IsNewItemRow(rowHandle))
+            {
+                dtgValRutasDetalles.SetRowCellValue(rowHandle, dtgValRutasDetalles.Columns["Id_Rutas"], "");
+                dtgValRutasDetalles.SetRowCellValue(rowHandle, dtgValRutasDetalles.Columns["Nombre_Rutas_Detalle"], textRutaDetalle.Text.Trim());
+                dtgValRutasDetalles.SetRowCellValue(rowHandle, dtgValRutasDetalles.Columns["Secuencia"], "");
+
+            }
         }
 
         private void CargarDetalles()
         {
-            dtgRutasDetalles.DataSource = null;
+           
+            
             CLS_Rutas_Detalle RutasDetalle = new CLS_Rutas_Detalle();
             RutasDetalle.Id_Rutas = textIdRuta.Text.Trim();
             RutasDetalle.MtdSeleccionarRutasDetalle();
             if (RutasDetalle.Exito)
             {
                 dtgRutasDetalles.DataSource = RutasDetalle.Datos;
+               
             }
         }
 
@@ -75,38 +89,67 @@ namespace TransportBusiness
             CLS_Rutas Rutas = new CLS_Rutas();
             Rutas.Id_Rutas = textIdRuta.Text.Trim();
             Rutas.Nombre_Rutas = textRuta.Text.Trim();
-            
+            Rutas.Kilometros = Convert.ToDouble(textKM.Text);
+            Rutas.Origen = textOrigen.Text.Trim();
+            Rutas.Destino = textDestino.Text.Trim();
 
             Rutas.MtdInsertarRutas();
             if (Rutas.Exito)
             {
+                textIdRuta.Text= Rutas.Datos.Rows[0][0].ToString();
+                 EliminarDetalleAll();
 
-                //CargarRutas();
-                XtraMessageBox.Show("Se ha Insertado el registro con exito");
-                LimpiarCampos();
+                for (int x=0; x < dtgValRutasDetalles.RowCount; x++)
+                {
+                    int xRow = dtgValRutasDetalles.GetVisibleRowHandle(x);
+                    InsertarDetalles(textIdRuta.Text.Trim(), dtgValRutasDetalles.GetRowCellValue(xRow, dtgValRutasDetalles.Columns["Nombre_Rutas_Detalle"]).ToString(), dtgValRutasDetalles.GetRowCellValue(xRow, dtgValRutasDetalles.Columns["Secuencia"]).ToString());
+                }
+                
+
+
             }
             else
             {
                 XtraMessageBox.Show(Rutas.Mensaje);
             }
         }
+
+        private void EliminarDetalleAll( )
+        {
+            CLS_Rutas_Detalle Rutas = new CLS_Rutas_Detalle();
+            Rutas.Id_Rutas = textIdRuta.Text.Trim();
+            Rutas.MtdEliminarRutasDetalleALL();
+            if (Rutas.Exito)
+            {
+
+                //CargarRutas();
+                //XtraMessageBox.Show("Se ha Eliminado el registro con exito");
+                //LimpiarCampos();
+                //LimpiarCamposDetalle();
+            }
+            else
+            {
+                XtraMessageBox.Show(Rutas.Mensaje);
+            }
+        }
+
         private void iniciarTags()
         {
             textRutaDetalle.Tag = "";
         }
 
-        private void InsertarDetalles()
+        private void InsertarDetalles(string Id,string nombre,string secuencia)
         {
             CLS_Rutas_Detalle RutasDetalle = new CLS_Rutas_Detalle();
-            RutasDetalle.Id_Rutas = textIdRuta.Text.Trim();
-            RutasDetalle.Nombre_Rutas_Detalle = textRutaDetalle.Text.Trim();
-            RutasDetalle.Secuencia =("000"+ (dtgValRutasDetalles.DataRowCount+1).ToString()).Substring(("000"+ (dtgValRutasDetalles.DataRowCount + 1).ToString()).Length - 3) ;
+            RutasDetalle.Id_Rutas = Id;
+            RutasDetalle.Nombre_Rutas_Detalle = nombre;
+            RutasDetalle.Secuencia = secuencia;
             RutasDetalle.MtdInsertarRutasDetalle();
             if (RutasDetalle.Exito)
             {
-                CargarDetalles();
-                XtraMessageBox.Show("Se ha Insertado el registro con exito");
-                LimpiarCamposDetalle();
+                //AgregarDetalles();
+                //XtraMessageBox.Show("Se ha Insertado el registro con exito");
+               // LimpiarCamposDetalle();
             }
             else
             {
@@ -121,7 +164,7 @@ namespace TransportBusiness
             Rutas.MtdEliminarRutas();
             if (Rutas.Exito)
             {
-                EliminarRutayDetalles();
+                
                 //CargarRutas();
                 XtraMessageBox.Show("Se ha Eliminado el registro con exito");
                 LimpiarCampos();
@@ -136,8 +179,23 @@ namespace TransportBusiness
         private void EliminarDetalle()
         {
             CLS_Rutas_Detalle RutasDetalle = new CLS_Rutas_Detalle();
-            RutasDetalle.Id_Rutas = textIdRuta.Text.Trim();
-            RutasDetalle.Secuencia = textRutaDetalle.Tag.ToString();
+
+            try
+            {
+                foreach (int i in this.dtgValRutasDetalles.GetSelectedRows())
+                {
+                    DataRow row = this.dtgValRutasDetalles.GetDataRow(i);
+                    RutasDetalle.Id_Rutas = row["Id_Rutas"].ToString();
+                    RutasDetalle.Secuencia = row["Secuencia"].ToString();
+                    
+                }
+            }
+            catch (Exception ex)
+            {
+                XtraMessageBox.Show(ex.Message);
+            }
+
+            
             RutasDetalle.MtdEliminarRutasDetalle();
             if (RutasDetalle.Exito)
             {
@@ -151,33 +209,22 @@ namespace TransportBusiness
             }
         }
 
-        private void EliminarRutayDetalles()
-        {
-            CLS_Rutas_Detalle RutasDetalle = new CLS_Rutas_Detalle();
-            RutasDetalle.Id_Rutas = textIdRuta.Text.Trim();
-           
-            RutasDetalle.MtdEliminarRutasYDetalle();
-            if (RutasDetalle.Exito)
-            {
-                //CargarRutas();
-
-                LimpiarCamposDetalle();
-            }
-            else
-            {
-                XtraMessageBox.Show(RutasDetalle.Mensaje);
-            }
-        }
+        
 
         private void LimpiarCampos()
         {
             textIdRuta.Text = "";
             textRuta.Text = "";
+            textKM.Text = "0";
+            textOrigen.Text = "";
+            textDestino.Text = "";
+            dtgRutasDetalles.DataSource = null;
+            CargarTabla();
+
         }
 
         private void LimpiarCamposDetalle()
         {
-            textIdRuta.Text = "";
             textRutaDetalle.Text = "";
         }
 
@@ -208,65 +255,43 @@ namespace TransportBusiness
                 if (textRuta.Text.ToString().Trim().Length > 0)
                 {
                     InsertarRutas();
+                    LimpiarCampos();
                 }
                 else
                 {
                     XtraMessageBox.Show("Es necesario Agregar un nombre a la ruta.");
                 }
             }
-            else
-            {
-                if (textRutaDetalle.Text.ToString().Trim().Length > 0)
-                {
-                  
-
-                        InsertarDetalles();
-                   
-                }
-                else
-                {
-                    XtraMessageBox.Show("Es necesario Agregar un nombre al detalle de la ruta.");
-                }
-            }
+           
         }
 
         private void btnEliminar_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            if (xtraTabControl1.SelectedTabPage == xtraTabPage1)
+            if (textIdRuta.Text.Trim().Length > 0)
             {
-                if (textIdRuta.Text.Trim().Length > 0)
-                {
+                DialogResult = XtraMessageBox.Show("¿Estas seguro que deseas eliminar el detalle seleccionado?", "Salir", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1);
+            if (DialogResult == DialogResult.Yes)
+            {
+               
                     EliminarRutas();
-                }
-                else
-                {
-                    XtraMessageBox.Show("Es necesario seleccionar uns ruta.");
-                }
+                
+            }
+
             }
             else
             {
-                if (textIdRuta.Text.Trim().Length > 0 && textRutaDetalle.Tag.ToString().Trim().Length>0)
-                {
-                    EliminarDetalle();
-                }
-                else
-                {
-                    XtraMessageBox.Show("Es necesario seleccionar un Domicilio.");
-                }
+                XtraMessageBox.Show("Es necesario seleccionar uns ruta.");
             }
+
         }
 
         private void btnLimpiar_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            if (xtraTabControl1.SelectedTabPage == xtraTabPage1)
-            {
+            
                 LimpiarCampos();
                 LimpiarCamposDetalle();
-            }
-            else
-            {
-                LimpiarCamposDetalle();
-            }
+                
+          
         }
 
         private void btnSalir_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -276,10 +301,18 @@ namespace TransportBusiness
 
         private void Frm_Rutas_Load(object sender, EventArgs e)
         {
-            MakeTablaPedidos();
-            //CargarRutas();
-            CargarDetalles();
             iniciarTags();
+            CargarTabla();
+        }
+
+        private void reorganizaSec()
+        {
+            for (int x = 0; x < dtgValRutasDetalles.RowCount; x++)
+            {
+                int xRow = dtgValRutasDetalles.GetVisibleRowHandle(x);
+                dtgValRutasDetalles.SetRowCellValue(xRow, dtgValRutasDetalles.Columns["Secuencia"], string.Format("{0:000}", x + 1));
+               
+            }
         }
 
         private void btnBuscar_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -287,9 +320,51 @@ namespace TransportBusiness
             Frm_Rutas_Buscar frm = new Frm_Rutas_Buscar();
             frm.Id_Rutas = string.Empty;
             frm.Nombre_Ruta = string.Empty;
+            LimpiarCampos();
+
             frm.ShowDialog();
+           
             textIdRuta.Text = frm.Id_Rutas;
             textRuta.Text = frm.Nombre_Ruta;
+            textKM.Text = frm.vKilometros.ToString();
+            textOrigen.Text = frm.vOrigen;
+            textDestino.Text = frm.vDestino;
+            CargarDetalles();
+        }
+
+        private void btnAgregar_Click(object sender, EventArgs e)
+        {
+          
+                AgregarDetalles();
+               // InsertarRutas(true);
+                LimpiarCamposDetalle();
+                reorganizaSec();
+           
+        }
+
+        private void dtgRutasDetalles_DoubleClick(object sender, EventArgs e)
+        {
+            if (dtgValRutasDetalles.RowCount > 0)
+            {
+                try
+                {
+                    DialogResult = XtraMessageBox.Show("¿Esta seguro de que desea eliminar el detalle seleccionado?", "Elimnar", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button1);
+                    if (DialogResult == DialogResult.Yes)
+                    {
+                        dtgValRutasDetalles.DeleteRow(dtgValRutasDetalles.FocusedRowHandle);
+                        reorganizaSec();
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+        }
+
+        private void dtgRutasDetalles_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

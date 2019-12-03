@@ -29,20 +29,8 @@ BEGIN
 
 	begin transaction T1;
 	begin try
-
-		
-
-		declare @Existe int
-		select @Existe = count(Id_Rutas) from dbo.Rutas_Detalle a where (a.Id_Rutas=@Id_Rutas) and Secuencia=@Secuencia
-
-		if @Existe>0 
-		
-			UPDATE dbo.Rutas_Detalle
-		        SET Nombre_Rutas_Detalle=@Nombre_Rutas_Detalle
-		    WHERE
-		    	Id_Rutas=@Id_Rutas and Secuencia=@Secuencia
 				
-		else
+		
 			INSERT INTO dbo.Rutas_Detalle
 	           (Id_Rutas
 	           ,Nombre_Rutas_Detalle

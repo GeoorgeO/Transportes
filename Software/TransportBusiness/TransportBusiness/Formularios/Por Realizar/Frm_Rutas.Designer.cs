@@ -58,6 +58,12 @@
             this.textRutaDetalle = new DevExpress.XtraEditors.TextEdit();
             this.labelControl17 = new DevExpress.XtraEditors.LabelControl();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
+            this.textDestino = new DevExpress.XtraEditors.TextEdit();
+            this.textOrigen = new DevExpress.XtraEditors.TextEdit();
+            this.textKM = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.textRuta = new DevExpress.XtraEditors.TextEdit();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.textIdRuta = new DevExpress.XtraEditors.TextEdit();
@@ -78,6 +84,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.textRutaDetalle.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.textDestino.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textOrigen.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textKM.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textRuta.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textIdRuta.Properties)).BeginInit();
             this.SuspendLayout();
@@ -207,9 +216,9 @@
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 511);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 508);
             this.barDockControlBottom.Manager = this.barManager1;
-            this.barDockControlBottom.Size = new System.Drawing.Size(878, 25);
+            this.barDockControlBottom.Size = new System.Drawing.Size(878, 28);
             // 
             // barDockControlLeft
             // 
@@ -217,7 +226,7 @@
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.barDockControlLeft.Location = new System.Drawing.Point(0, 0);
             this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Size = new System.Drawing.Size(56, 511);
+            this.barDockControlLeft.Size = new System.Drawing.Size(58, 508);
             // 
             // barDockControlRight
             // 
@@ -225,7 +234,7 @@
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
             this.barDockControlRight.Location = new System.Drawing.Point(878, 0);
             this.barDockControlRight.Manager = this.barManager1;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 511);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 508);
             // 
             // repositoryItemTextEdit1
             // 
@@ -234,10 +243,10 @@
             // xtraTabControl1
             // 
             this.xtraTabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.xtraTabControl1.Location = new System.Drawing.Point(56, 0);
+            this.xtraTabControl1.Location = new System.Drawing.Point(58, 0);
             this.xtraTabControl1.Name = "xtraTabControl1";
             this.xtraTabControl1.SelectedTabPage = this.xtraTabPage1;
-            this.xtraTabControl1.Size = new System.Drawing.Size(822, 511);
+            this.xtraTabControl1.Size = new System.Drawing.Size(820, 508);
             this.xtraTabControl1.TabIndex = 6;
             this.xtraTabControl1.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.xtraTabPage1});
@@ -256,9 +265,9 @@
             this.panelControl1.Controls.Add(this.panelControl2);
             this.panelControl1.Controls.Add(this.groupControl2);
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelControl1.Location = new System.Drawing.Point(5, 70);
+            this.panelControl1.Location = new System.Drawing.Point(5, 101);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(806, 408);
+            this.panelControl1.Size = new System.Drawing.Size(806, 377);
             this.panelControl1.TabIndex = 1;
             // 
             // panelControl2
@@ -268,7 +277,7 @@
             this.panelControl2.Location = new System.Drawing.Point(2, 64);
             this.panelControl2.Name = "panelControl2";
             this.panelControl2.Padding = new System.Windows.Forms.Padding(10);
-            this.panelControl2.Size = new System.Drawing.Size(802, 342);
+            this.panelControl2.Size = new System.Drawing.Size(802, 311);
             this.panelControl2.TabIndex = 18;
             // 
             // dtgRutasDetalles
@@ -278,10 +287,12 @@
             this.dtgRutasDetalles.MainView = this.dtgValRutasDetalles;
             this.dtgRutasDetalles.MenuManager = this.barManager1;
             this.dtgRutasDetalles.Name = "dtgRutasDetalles";
-            this.dtgRutasDetalles.Size = new System.Drawing.Size(778, 318);
+            this.dtgRutasDetalles.Size = new System.Drawing.Size(778, 287);
             this.dtgRutasDetalles.TabIndex = 0;
             this.dtgRutasDetalles.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.dtgValRutasDetalles});
+            this.dtgRutasDetalles.Click += new System.EventHandler(this.dtgRutasDetalles_Click);
+            this.dtgRutasDetalles.DoubleClick += new System.EventHandler(this.dtgRutasDetalles_DoubleClick);
             // 
             // dtgValRutasDetalles
             // 
@@ -299,8 +310,6 @@
             this.Id_Rutas2.Caption = "Id Rutas";
             this.Id_Rutas2.FieldName = "Id_Rutas";
             this.Id_Rutas2.Name = "Id_Rutas2";
-            this.Id_Rutas2.Visible = true;
-            this.Id_Rutas2.VisibleIndex = 0;
             this.Id_Rutas2.Width = 84;
             // 
             // Nombre_Rutas_Detalle
@@ -341,6 +350,7 @@
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(28, 28);
             this.btnAgregar.TabIndex = 4;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // textRutaDetalle
             // 
@@ -360,6 +370,12 @@
             // 
             // groupControl1
             // 
+            this.groupControl1.Controls.Add(this.textDestino);
+            this.groupControl1.Controls.Add(this.textOrigen);
+            this.groupControl1.Controls.Add(this.textKM);
+            this.groupControl1.Controls.Add(this.labelControl5);
+            this.groupControl1.Controls.Add(this.labelControl4);
+            this.groupControl1.Controls.Add(this.labelControl3);
             this.groupControl1.Controls.Add(this.textRuta);
             this.groupControl1.Controls.Add(this.labelControl2);
             this.groupControl1.Controls.Add(this.textIdRuta);
@@ -367,20 +383,68 @@
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupControl1.Location = new System.Drawing.Point(5, 5);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(806, 65);
+            this.groupControl1.Size = new System.Drawing.Size(806, 96);
             this.groupControl1.TabIndex = 0;
             this.groupControl1.Text = "Ruta";
             // 
+            // textDestino
+            // 
+            this.textDestino.Location = new System.Drawing.Point(356, 63);
+            this.textDestino.MenuManager = this.barManager1;
+            this.textDestino.Name = "textDestino";
+            this.textDestino.Size = new System.Drawing.Size(210, 20);
+            this.textDestino.TabIndex = 9;
+            // 
+            // textOrigen
+            // 
+            this.textOrigen.Location = new System.Drawing.Point(86, 63);
+            this.textOrigen.MenuManager = this.barManager1;
+            this.textOrigen.Name = "textOrigen";
+            this.textOrigen.Size = new System.Drawing.Size(210, 20);
+            this.textOrigen.TabIndex = 8;
+            // 
+            // textKM
+            // 
+            this.textKM.Location = new System.Drawing.Point(459, 32);
+            this.textKM.MenuManager = this.barManager1;
+            this.textKM.Name = "textKM";
+            this.textKM.Size = new System.Drawing.Size(107, 20);
+            this.textKM.TabIndex = 7;
+            // 
+            // labelControl5
+            // 
+            this.labelControl5.Location = new System.Drawing.Point(312, 66);
+            this.labelControl5.Name = "labelControl5";
+            this.labelControl5.Size = new System.Drawing.Size(40, 13);
+            this.labelControl5.TabIndex = 6;
+            this.labelControl5.Text = "Destino:";
+            // 
+            // labelControl4
+            // 
+            this.labelControl4.Location = new System.Drawing.Point(20, 66);
+            this.labelControl4.Name = "labelControl4";
+            this.labelControl4.Size = new System.Drawing.Size(36, 13);
+            this.labelControl4.TabIndex = 5;
+            this.labelControl4.Text = "Origen:";
+            // 
+            // labelControl3
+            // 
+            this.labelControl3.Location = new System.Drawing.Point(435, 33);
+            this.labelControl3.Name = "labelControl3";
+            this.labelControl3.Size = new System.Drawing.Size(18, 13);
+            this.labelControl3.TabIndex = 4;
+            this.labelControl3.Text = "KM:";
+            // 
             // textRuta
             // 
-            this.textRuta.Location = new System.Drawing.Point(239, 31);
+            this.textRuta.Location = new System.Drawing.Point(218, 31);
             this.textRuta.Name = "textRuta";
             this.textRuta.Size = new System.Drawing.Size(192, 20);
             this.textRuta.TabIndex = 3;
             // 
             // labelControl2
             // 
-            this.labelControl2.Location = new System.Drawing.Point(192, 35);
+            this.labelControl2.Location = new System.Drawing.Point(171, 35);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(41, 13);
             this.labelControl2.TabIndex = 2;
@@ -391,7 +455,7 @@
             this.textIdRuta.Enabled = false;
             this.textIdRuta.Location = new System.Drawing.Point(86, 31);
             this.textIdRuta.Name = "textIdRuta";
-            this.textIdRuta.Size = new System.Drawing.Size(100, 20);
+            this.textIdRuta.Size = new System.Drawing.Size(79, 20);
             this.textIdRuta.TabIndex = 1;
             // 
             // labelControl1
@@ -433,6 +497,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
             this.groupControl1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.textDestino.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textOrigen.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textKM.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textRuta.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textIdRuta.Properties)).EndInit();
             this.ResumeLayout(false);
@@ -474,5 +541,11 @@
         private DevExpress.XtraEditors.LabelControl labelControl17;
         private DevExpress.XtraBars.BarLargeButtonItem btnBuscar;
         private DevExpress.XtraEditors.SimpleButton btnAgregar;
+        private DevExpress.XtraEditors.TextEdit textDestino;
+        private DevExpress.XtraEditors.TextEdit textOrigen;
+        private DevExpress.XtraEditors.TextEdit textKM;
+        private DevExpress.XtraEditors.LabelControl labelControl5;
+        private DevExpress.XtraEditors.LabelControl labelControl4;
+        private DevExpress.XtraEditors.LabelControl labelControl3;
     }
 }

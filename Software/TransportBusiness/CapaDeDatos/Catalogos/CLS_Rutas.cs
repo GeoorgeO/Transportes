@@ -11,7 +11,10 @@ namespace CapaDeDatos
 
         public string Id_Rutas { get; set; }
         public string Nombre_Rutas { get; set; }
-        
+        public double Kilometros { get; set; }
+        public string Origen { get; set; }
+        public string Destino { get; set; }
+
 
         public void MtdSeleccionarRutas()
         {
@@ -58,6 +61,12 @@ namespace CapaDeDatos
                 _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_Rutas");
                 _dato.CadenaTexto = Nombre_Rutas;
                 _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Nombre_Ruta");
+                _dato.DecimalValor = Convert.ToDecimal( Kilometros);
+                _conexion.agregarParametro(EnumTipoDato.Tipodecimal, _dato, "Kilometros");
+                _dato.CadenaTexto = Origen;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Origen");
+                _dato.CadenaTexto = Destino;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Destino");
                 _conexion.EjecutarDataset();
 
                 if (_conexion.Exito)

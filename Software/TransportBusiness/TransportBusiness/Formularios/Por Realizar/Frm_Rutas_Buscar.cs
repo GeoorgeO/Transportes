@@ -16,24 +16,17 @@ namespace TransportBusiness
     {
         public string Id_Rutas { get; set; }
         public string Nombre_Ruta  { get; set; }
+        public double vKilometros { get; set; }
+        public string vOrigen { get; set; }
+        public string vDestino { get; set; }
+
+
         public Frm_Rutas_Buscar()
         {
             InitializeComponent();
         }
 
-        private void Frm_Rutas_Buscar_Shown(object sender, EventArgs e)
-        {
-            CLS_Rutas sel = new CLS_Rutas();
-            sel.MtdSeleccionarRutas();
-            if(sel.Exito)
-            {
-                dtgRutas.DataSource = sel.Datos;
-            }
-            else
-            {
-                XtraMessageBox.Show(sel.Mensaje);
-            }
-        }
+        
 
         private void btnSeleccionar_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
@@ -49,11 +42,28 @@ namespace TransportBusiness
                     DataRow row = this.dtgValRutas.GetDataRow(i);
                     Id_Rutas = row["Id_Rutas"].ToString();
                     Nombre_Ruta = row["Nombre_Ruta"].ToString();
+                    vKilometros = Convert.ToDouble(row["Kilometros"]);
+                    vOrigen = row["Origen"].ToString();
+                    vDestino = row["Destino"].ToString();
                 }
             }
             catch (Exception ex)
             {
                 XtraMessageBox.Show(ex.Message);
+            }
+        }
+
+        private void Frm_Rutas_Buscar_Load(object sender, EventArgs e)
+        {
+            CLS_Rutas sel = new CLS_Rutas();
+            sel.MtdSeleccionarRutas();
+            if (sel.Exito)
+            {
+                dtgRutas.DataSource = sel.Datos;
+            }
+            else
+            {
+                XtraMessageBox.Show(sel.Mensaje);
             }
         }
     }

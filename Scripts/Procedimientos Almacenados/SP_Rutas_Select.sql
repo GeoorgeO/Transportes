@@ -35,7 +35,10 @@ BEGIN
     -- Insert statements for procedure here
 	
 		select Id_Rutas
-	      ,Nombre_Ruta
+	      	,Nombre_Ruta
+		  	,Kilometros
+			,Origen
+			,Destino
 		from Rutas
 END
 GO

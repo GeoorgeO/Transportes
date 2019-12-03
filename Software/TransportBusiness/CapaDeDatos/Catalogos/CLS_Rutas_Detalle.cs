@@ -113,7 +113,7 @@ namespace CapaDeDatos
             }
         }
 
-        public void MtdEliminarRutasYDetalle()
+        public void MtdEliminarRutasDetalleALL()
         {
             TipoDato _dato = new TipoDato();
             Conexion _conexion = new Conexion(cadenaConexion);
@@ -121,9 +121,10 @@ namespace CapaDeDatos
             Exito = true;
             try
             {
-                _conexion.NombreProcedimiento = "SP_Rutas_y_Detalle_Delete";
+                _conexion.NombreProcedimiento = "SP_Rutas_DetalleAll_Delete";
                 _dato.CadenaTexto = Id_Rutas;
                 _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_Rutas");
+              
                 _conexion.EjecutarDataset();
 
                 if (_conexion.Exito)
