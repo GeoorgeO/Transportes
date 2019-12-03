@@ -158,14 +158,14 @@ namespace TransportBusiness
                     {
                         labelActivo.ForeColor = System.Drawing.Color.Maroon;
                         labelActivo.Text = "Inactivo";
-                        btnEliminar.Caption = "Abilitar";
+                        btnEliminar.Caption = "Habilitar";
                         inabilitar(false);
                     }
                     else
                     {
                         labelActivo.ForeColor = System.Drawing.Color.OliveDrab;
                         labelActivo.Text = "Activo";
-                        btnEliminar.Caption = "Inabilitar";
+                        btnEliminar.Caption = "Inhabilitar";
                         inabilitar(true);
                     }
                 }
