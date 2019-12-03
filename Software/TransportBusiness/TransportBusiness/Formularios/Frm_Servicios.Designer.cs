@@ -78,6 +78,12 @@
             this.textEdit9 = new DevExpress.XtraEditors.TextEdit();
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.simpleButton3 = new DevExpress.XtraEditors.SimpleButton();
+            this.simpleButton4 = new DevExpress.XtraEditors.SimpleButton();
+            this.labelControl13 = new DevExpress.XtraEditors.LabelControl();
+            this.textEdit11 = new DevExpress.XtraEditors.TextEdit();
+            this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.barManager2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
@@ -102,6 +108,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit5.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit9.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit11.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // barManager2
@@ -214,7 +221,7 @@
             this.barDockControl1.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControl1.Location = new System.Drawing.Point(0, 0);
             this.barDockControl1.Manager = this.barManager2;
-            this.barDockControl1.Size = new System.Drawing.Size(731, 0);
+            this.barDockControl1.Size = new System.Drawing.Size(827, 0);
             // 
             // barDockControl2
             // 
@@ -222,7 +229,7 @@
             this.barDockControl2.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.barDockControl2.Location = new System.Drawing.Point(0, 529);
             this.barDockControl2.Manager = this.barManager2;
-            this.barDockControl2.Size = new System.Drawing.Size(731, 29);
+            this.barDockControl2.Size = new System.Drawing.Size(827, 29);
             // 
             // barDockControl3
             // 
@@ -236,7 +243,7 @@
             // 
             this.barDockControl5.CausesValidation = false;
             this.barDockControl5.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControl5.Location = new System.Drawing.Point(731, 0);
+            this.barDockControl5.Location = new System.Drawing.Point(827, 0);
             this.barDockControl5.Manager = this.barManager2;
             this.barDockControl5.Size = new System.Drawing.Size(0, 529);
             // 
@@ -247,7 +254,7 @@
             this.panelControl1.Location = new System.Drawing.Point(72, 0);
             this.panelControl1.Name = "panelControl1";
             this.panelControl1.Padding = new System.Windows.Forms.Padding(5);
-            this.panelControl1.Size = new System.Drawing.Size(659, 227);
+            this.panelControl1.Size = new System.Drawing.Size(755, 227);
             this.panelControl1.TabIndex = 4;
             // 
             // btnMarca
@@ -424,6 +431,8 @@
             // 
             // groupControl1
             // 
+            this.groupControl1.Controls.Add(this.simpleButton4);
+            this.groupControl1.Controls.Add(this.simpleButton3);
             this.groupControl1.Controls.Add(this.labelControl11);
             this.groupControl1.Controls.Add(this.labelControl5);
             this.groupControl1.Controls.Add(this.labelControl1);
@@ -449,12 +458,14 @@
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl1.Location = new System.Drawing.Point(7, 7);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(645, 213);
+            this.groupControl1.Size = new System.Drawing.Size(741, 213);
             this.groupControl1.TabIndex = 77;
             this.groupControl1.Text = "Datos del Servicio";
             // 
             // panelControl3
             // 
+            this.panelControl3.Controls.Add(this.labelControl13);
+            this.panelControl3.Controls.Add(this.textEdit11);
             this.panelControl3.Controls.Add(this.labelControl12);
             this.panelControl3.Controls.Add(this.textEdit9);
             this.panelControl3.Controls.Add(this.simpleButton2);
@@ -463,7 +474,7 @@
             this.panelControl3.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelControl3.Location = new System.Drawing.Point(72, 227);
             this.panelControl3.Name = "panelControl3";
-            this.panelControl3.Size = new System.Drawing.Size(659, 57);
+            this.panelControl3.Size = new System.Drawing.Size(755, 57);
             this.panelControl3.TabIndex = 6;
             // 
             // panelControl2
@@ -473,7 +484,7 @@
             this.panelControl2.Location = new System.Drawing.Point(72, 284);
             this.panelControl2.Name = "panelControl2";
             this.panelControl2.Padding = new System.Windows.Forms.Padding(5);
-            this.panelControl2.Size = new System.Drawing.Size(659, 245);
+            this.panelControl2.Size = new System.Drawing.Size(755, 245);
             this.panelControl2.TabIndex = 7;
             // 
             // gridControl1
@@ -483,7 +494,7 @@
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.MenuManager = this.barManager2;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(645, 231);
+            this.gridControl1.Size = new System.Drawing.Size(741, 231);
             this.gridControl1.TabIndex = 0;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -492,7 +503,9 @@
             // 
             this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.gridColumn1,
-            this.gridColumn2});
+            this.gridColumn2,
+            this.gridColumn3,
+            this.gridColumn4});
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsView.ShowGroupPanel = false;
@@ -515,7 +528,7 @@
             // simpleButton2
             // 
             this.simpleButton2.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton2.ImageOptions.Image")));
-            this.simpleButton2.Location = new System.Drawing.Point(462, 5);
+            this.simpleButton2.Location = new System.Drawing.Point(588, 5);
             this.simpleButton2.Name = "simpleButton2";
             this.simpleButton2.Size = new System.Drawing.Size(87, 46);
             this.simpleButton2.TabIndex = 27;
@@ -525,13 +538,13 @@
             // 
             this.labelControl12.Location = new System.Drawing.Point(293, 22);
             this.labelControl12.Name = "labelControl12";
-            this.labelControl12.Size = new System.Drawing.Size(32, 13);
+            this.labelControl12.Size = new System.Drawing.Size(42, 13);
             this.labelControl12.TabIndex = 65;
-            this.labelControl12.Text = "Costo:";
+            this.labelControl12.Text = "Costo U:";
             // 
             // textEdit9
             // 
-            this.textEdit9.Location = new System.Drawing.Point(336, 18);
+            this.textEdit9.Location = new System.Drawing.Point(338, 18);
             this.textEdit9.Name = "textEdit9";
             this.textEdit9.Size = new System.Drawing.Size(111, 20);
             this.textEdit9.TabIndex = 66;
@@ -542,21 +555,68 @@
             this.gridColumn1.Name = "gridColumn1";
             this.gridColumn1.Visible = true;
             this.gridColumn1.VisibleIndex = 0;
-            this.gridColumn1.Width = 461;
+            this.gridColumn1.Width = 397;
             // 
             // gridColumn2
             // 
-            this.gridColumn2.Caption = "Costo";
+            this.gridColumn2.Caption = "Costo U";
             this.gridColumn2.Name = "gridColumn2";
             this.gridColumn2.Visible = true;
             this.gridColumn2.VisibleIndex = 1;
-            this.gridColumn2.Width = 166;
+            this.gridColumn2.Width = 127;
+            // 
+            // simpleButton3
+            // 
+            this.simpleButton3.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton3.ImageOptions.Image")));
+            this.simpleButton3.Location = new System.Drawing.Point(623, 57);
+            this.simpleButton3.Name = "simpleButton3";
+            this.simpleButton3.Size = new System.Drawing.Size(24, 21);
+            this.simpleButton3.TabIndex = 77;
+            // 
+            // simpleButton4
+            // 
+            this.simpleButton4.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton4.ImageOptions.Image")));
+            this.simpleButton4.Location = new System.Drawing.Point(623, 109);
+            this.simpleButton4.Name = "simpleButton4";
+            this.simpleButton4.Size = new System.Drawing.Size(24, 21);
+            this.simpleButton4.TabIndex = 78;
+            // 
+            // labelControl13
+            // 
+            this.labelControl13.Location = new System.Drawing.Point(460, 21);
+            this.labelControl13.Name = "labelControl13";
+            this.labelControl13.Size = new System.Drawing.Size(47, 13);
+            this.labelControl13.TabIndex = 67;
+            this.labelControl13.Text = "Cantidad:";
+            // 
+            // textEdit11
+            // 
+            this.textEdit11.Location = new System.Drawing.Point(511, 18);
+            this.textEdit11.Name = "textEdit11";
+            this.textEdit11.Size = new System.Drawing.Size(62, 20);
+            this.textEdit11.TabIndex = 68;
+            // 
+            // gridColumn3
+            // 
+            this.gridColumn3.Caption = "Piezas";
+            this.gridColumn3.Name = "gridColumn3";
+            this.gridColumn3.Visible = true;
+            this.gridColumn3.VisibleIndex = 2;
+            this.gridColumn3.Width = 96;
+            // 
+            // gridColumn4
+            // 
+            this.gridColumn4.Caption = "Costo Total";
+            this.gridColumn4.Name = "gridColumn4";
+            this.gridColumn4.Visible = true;
+            this.gridColumn4.VisibleIndex = 3;
+            this.gridColumn4.Width = 103;
             // 
             // Frm_Servicios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(731, 558);
+            this.ClientSize = new System.Drawing.Size(827, 558);
             this.Controls.Add(this.panelControl2);
             this.Controls.Add(this.panelControl3);
             this.Controls.Add(this.panelControl1);
@@ -592,6 +652,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit5.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit9.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit11.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -647,5 +708,11 @@
         private DevExpress.XtraEditors.LabelControl labelControl12;
         private DevExpress.XtraEditors.TextEdit textEdit9;
         private DevExpress.XtraEditors.SimpleButton simpleButton2;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn3;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn4;
+        private DevExpress.XtraEditors.LabelControl labelControl13;
+        private DevExpress.XtraEditors.TextEdit textEdit11;
+        private DevExpress.XtraEditors.SimpleButton simpleButton4;
+        private DevExpress.XtraEditors.SimpleButton simpleButton3;
     }
 }

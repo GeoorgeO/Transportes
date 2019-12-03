@@ -83,6 +83,7 @@
             this.gridColumn10 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn11 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.memoEdit1 = new DevExpress.XtraEditors.MemoEdit();
+            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
@@ -118,6 +119,7 @@
             // 
             // groupControl1
             // 
+            this.groupControl1.Controls.Add(this.simpleButton1);
             this.groupControl1.Controls.Add(this.memoEdit1);
             this.groupControl1.Controls.Add(this.textEdit10);
             this.groupControl1.Controls.Add(this.labelControl11);
@@ -175,7 +177,7 @@
             // 
             this.textEdit8.Location = new System.Drawing.Point(289, 103);
             this.textEdit8.Name = "textEdit8";
-            this.textEdit8.Size = new System.Drawing.Size(218, 20);
+            this.textEdit8.Size = new System.Drawing.Size(188, 20);
             this.textEdit8.TabIndex = 53;
             // 
             // labelControl9
@@ -587,6 +589,14 @@
             this.memoEdit1.Size = new System.Drawing.Size(218, 44);
             this.memoEdit1.TabIndex = 76;
             // 
+            // simpleButton1
+            // 
+            this.simpleButton1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
+            this.simpleButton1.Location = new System.Drawing.Point(483, 102);
+            this.simpleButton1.Name = "simpleButton1";
+            this.simpleButton1.Size = new System.Drawing.Size(24, 21);
+            this.simpleButton1.TabIndex = 77;
+            // 
             // Frm_Combustible
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -682,5 +692,6 @@
         private DevExpress.XtraEditors.TextEdit textEdit10;
         private DevExpress.XtraEditors.LabelControl labelControl11;
         private DevExpress.XtraEditors.MemoEdit memoEdit1;
+        private DevExpress.XtraEditors.SimpleButton simpleButton1;
     }
 }

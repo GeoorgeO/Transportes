@@ -131,7 +131,7 @@
             this.ribbonPage3,
             this.ribbonPage2,
             this.ribbonPage4});
-            this.ribbonControl1.Size = new System.Drawing.Size(1256, 146);
+            this.ribbonControl1.Size = new System.Drawing.Size(1256, 143);
             // 
             // barButtonItem1
             // 
@@ -414,7 +414,6 @@
             this.ribbonPageGroup1.ItemLinks.Add(this.btnHerramienta);
             this.ribbonPageGroup1.ItemLinks.Add(this.btnRutas);
             this.ribbonPageGroup1.ItemLinks.Add(this.btnInfracciones);
-            this.ribbonPageGroup1.ItemLinks.Add(this.btnCombustible);
             this.ribbonPageGroup1.ItemLinks.Add(this.btnMarca);
             this.ribbonPageGroup1.ItemLinks.Add(this.btnLicencias);
             this.ribbonPageGroup1.Name = "ribbonPageGroup1";
@@ -479,6 +478,7 @@
             this.ribbonPageGroup2.ItemLinks.Add(this.btnSalidas);
             this.ribbonPageGroup2.ItemLinks.Add(this.btnEntradas);
             this.ribbonPageGroup2.ItemLinks.Add(this.btnMantenimientos);
+            this.ribbonPageGroup2.ItemLinks.Add(this.btnCombustible);
             this.ribbonPageGroup2.ItemLinks.Add(this.btnAsignacionHerramienta);
             this.ribbonPageGroup2.Name = "ribbonPageGroup2";
             this.ribbonPageGroup2.Text = "Control";
