@@ -104,6 +104,16 @@ namespace TransportBusiness
             dtgActivos.DataSource = null;
             CLS_Activos Activos = new CLS_Activos();
 
+            if (checkActivo.Checked)
+            {
+                Activos.Status = "INACTIVO";
+            }
+            else
+            {
+                Activos.Status = "ACTIVO  ";
+            }
+
+
             Activos.MtdSeleccionarActivos();
             if (Activos.Exito)
             {
@@ -300,6 +310,7 @@ namespace TransportBusiness
             textIAVE.Text = "";
             textFolioCircula.Text = "";
             textTargCombustible.Text = "";
+            ActivarCampos(true);
         }
         private void ActivarCampos(Boolean Valor)
         {
@@ -335,6 +346,8 @@ namespace TransportBusiness
             btnOperador.Enabled = Valor;
             btnEmpresaAsegu.Enabled = Valor;
             btnMarca.Enabled = Valor;
+            btnGuardar.Enabled = Valor;
+            btnSeleccionar.Enabled = Valor;
         }
         private void dtgActivos_Click(object sender, EventArgs e)
         {
@@ -524,6 +537,11 @@ namespace TransportBusiness
             {
                 XtraMessageBox.Show("No se ha seleccionado un activo");
             }
+        }
+
+        private void checkActivo_CheckedChanged(object sender, EventArgs e)
+        {
+            CargarActivos();
         }
     }
 }

@@ -16,6 +16,21 @@ namespace TransportBusiness
     {
         public Boolean PaSel { get; set; }
 
+        private static Frm_Combustible m_FormDefInstance;
+        public static Frm_Combustible DefInstance
+        {
+            get
+            {
+                if (m_FormDefInstance == null || m_FormDefInstance.IsDisposed)
+                    m_FormDefInstance = new Frm_Combustible();
+                return m_FormDefInstance;
+            }
+            set
+            {
+                m_FormDefInstance = value;
+            }
+        }
+
 
         public Frm_Combustible()
         {

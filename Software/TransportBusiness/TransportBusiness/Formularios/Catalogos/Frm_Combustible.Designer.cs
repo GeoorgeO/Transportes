@@ -32,6 +32,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_Combustible));
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
+            this.btnbusqProveedor = new DevExpress.XtraEditors.SimpleButton();
             this.btnbusqComprador = new DevExpress.XtraEditors.SimpleButton();
             this.memoObservaciones = new DevExpress.XtraEditors.MemoEdit();
             this.barManager2 = new DevExpress.XtraBars.BarManager(this.components);
@@ -80,12 +81,11 @@
             this.PrecioLitro = new DevExpress.XtraGrid.Columns.GridColumn();
             this.PrecioTotal = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Id_Activo = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Nombre_Interno = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Id_Proveedor = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Nombre_Proveedor = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Id_Factura = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Comprador = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.btnbusqProveedor = new DevExpress.XtraEditors.SimpleButton();
-            this.Nombre_Interno = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Nombre_Empleado = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Observaciones = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
@@ -115,10 +115,10 @@
             // 
             this.panelControl1.Controls.Add(this.groupControl1);
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelControl1.Location = new System.Drawing.Point(72, 0);
+            this.panelControl1.Location = new System.Drawing.Point(68, 0);
             this.panelControl1.Name = "panelControl1";
             this.panelControl1.Padding = new System.Windows.Forms.Padding(5);
-            this.panelControl1.Size = new System.Drawing.Size(884, 215);
+            this.panelControl1.Size = new System.Drawing.Size(888, 215);
             this.panelControl1.TabIndex = 4;
             // 
             // groupControl1
@@ -151,9 +151,18 @@
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl1.Location = new System.Drawing.Point(7, 7);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(870, 201);
+            this.groupControl1.Size = new System.Drawing.Size(874, 201);
             this.groupControl1.TabIndex = 0;
             this.groupControl1.Text = "Datos Combustible";
+            // 
+            // btnbusqProveedor
+            // 
+            this.btnbusqProveedor.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnbusqProveedor.ImageOptions.Image")));
+            this.btnbusqProveedor.Location = new System.Drawing.Point(483, 49);
+            this.btnbusqProveedor.Name = "btnbusqProveedor";
+            this.btnbusqProveedor.Size = new System.Drawing.Size(24, 21);
+            this.btnbusqProveedor.TabIndex = 78;
+            this.btnbusqProveedor.Click += new System.EventHandler(this.btnbusqProveedor_Click);
             // 
             // btnbusqComprador
             // 
@@ -221,8 +230,8 @@
             // 
             this.btnLimpiar.Caption = "Limpiar";
             this.btnLimpiar.Id = 50;
-            this.btnLimpiar.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barLargeButtonItem1.ImageOptions.Image")));
-            this.btnLimpiar.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barLargeButtonItem1.ImageOptions.LargeImage")));
+            this.btnLimpiar.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnLimpiar.ImageOptions.Image")));
+            this.btnLimpiar.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnLimpiar.ImageOptions.LargeImage")));
             this.btnLimpiar.Name = "btnLimpiar";
             this.btnLimpiar.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnLimpiar_ItemClick);
             // 
@@ -230,8 +239,8 @@
             // 
             this.btnGuardar.Caption = "Guardar";
             this.btnGuardar.Id = 53;
-            this.btnGuardar.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barLargeButtonItem2.ImageOptions.Image")));
-            this.btnGuardar.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barLargeButtonItem2.ImageOptions.LargeImage")));
+            this.btnGuardar.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnGuardar.ImageOptions.Image")));
+            this.btnGuardar.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnGuardar.ImageOptions.LargeImage")));
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnGuardar_ItemClick);
             // 
@@ -239,8 +248,8 @@
             // 
             this.btnEliminar.Caption = "Eliminar";
             this.btnEliminar.Id = 57;
-            this.btnEliminar.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barLargeButtonItem3.ImageOptions.Image")));
-            this.btnEliminar.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barLargeButtonItem3.ImageOptions.LargeImage")));
+            this.btnEliminar.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnEliminar.ImageOptions.Image")));
+            this.btnEliminar.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnEliminar.ImageOptions.LargeImage")));
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnEliminar_ItemClick);
             // 
@@ -248,8 +257,8 @@
             // 
             this.btnSalir.Caption = "Salir";
             this.btnSalir.Id = 63;
-            this.btnSalir.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barLargeButtonItem4.ImageOptions.Image")));
-            this.btnSalir.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barLargeButtonItem4.ImageOptions.LargeImage")));
+            this.btnSalir.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnSalir.ImageOptions.Image")));
+            this.btnSalir.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnSalir.ImageOptions.LargeImage")));
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnSalir_ItemClick);
             // 
@@ -303,7 +312,7 @@
             this.barDockControl3.Dock = System.Windows.Forms.DockStyle.Left;
             this.barDockControl3.Location = new System.Drawing.Point(0, 0);
             this.barDockControl3.Manager = this.barManager2;
-            this.barDockControl3.Size = new System.Drawing.Size(72, 487);
+            this.barDockControl3.Size = new System.Drawing.Size(68, 487);
             // 
             // barDockControl5
             // 
@@ -322,7 +331,7 @@
             // 
             // labelControl11
             // 
-            this.labelControl11.Location = new System.Drawing.Point(16, 28);
+            this.labelControl11.Location = new System.Drawing.Point(16, 29);
             this.labelControl11.Name = "labelControl11";
             this.labelControl11.Size = new System.Drawing.Size(26, 13);
             this.labelControl11.TabIndex = 56;
@@ -330,7 +339,7 @@
             // 
             // labelControl10
             // 
-            this.labelControl10.Location = new System.Drawing.Point(206, 150);
+            this.labelControl10.Location = new System.Drawing.Point(206, 151);
             this.labelControl10.Name = "labelControl10";
             this.labelControl10.Size = new System.Drawing.Size(73, 13);
             this.labelControl10.TabIndex = 54;
@@ -345,7 +354,7 @@
             // 
             // labelControl9
             // 
-            this.labelControl9.Location = new System.Drawing.Point(213, 106);
+            this.labelControl9.Location = new System.Drawing.Point(213, 107);
             this.labelControl9.Name = "labelControl9";
             this.labelControl9.Size = new System.Drawing.Size(57, 13);
             this.labelControl9.TabIndex = 52;
@@ -360,7 +369,7 @@
             // 
             // labelControl8
             // 
-            this.labelControl8.Location = new System.Drawing.Point(213, 80);
+            this.labelControl8.Location = new System.Drawing.Point(213, 81);
             this.labelControl8.Name = "labelControl8";
             this.labelControl8.Size = new System.Drawing.Size(61, 13);
             this.labelControl8.TabIndex = 50;
@@ -375,7 +384,7 @@
             // 
             // labelControl7
             // 
-            this.labelControl7.Location = new System.Drawing.Point(213, 54);
+            this.labelControl7.Location = new System.Drawing.Point(213, 55);
             this.labelControl7.Name = "labelControl7";
             this.labelControl7.Size = new System.Drawing.Size(54, 13);
             this.labelControl7.TabIndex = 48;
@@ -395,7 +404,7 @@
             // 
             // labelControl6
             // 
-            this.labelControl6.Location = new System.Drawing.Point(16, 54);
+            this.labelControl6.Location = new System.Drawing.Point(16, 55);
             this.labelControl6.Name = "labelControl6";
             this.labelControl6.Size = new System.Drawing.Size(46, 13);
             this.labelControl6.TabIndex = 46;
@@ -410,7 +419,7 @@
             // 
             // labelControl5
             // 
-            this.labelControl5.Location = new System.Drawing.Point(16, 157);
+            this.labelControl5.Location = new System.Drawing.Point(16, 158);
             this.labelControl5.Name = "labelControl5";
             this.labelControl5.Size = new System.Drawing.Size(60, 13);
             this.labelControl5.TabIndex = 29;
@@ -425,7 +434,7 @@
             // 
             // labelControl4
             // 
-            this.labelControl4.Location = new System.Drawing.Point(16, 125);
+            this.labelControl4.Location = new System.Drawing.Point(16, 126);
             this.labelControl4.Name = "labelControl4";
             this.labelControl4.Size = new System.Drawing.Size(48, 26);
             this.labelControl4.TabIndex = 27;
@@ -440,7 +449,7 @@
             // 
             // labelControl3
             // 
-            this.labelControl3.Location = new System.Drawing.Point(16, 105);
+            this.labelControl3.Location = new System.Drawing.Point(16, 106);
             this.labelControl3.Name = "labelControl3";
             this.labelControl3.Size = new System.Drawing.Size(30, 13);
             this.labelControl3.TabIndex = 25;
@@ -455,7 +464,7 @@
             // 
             // labelControl2
             // 
-            this.labelControl2.Location = new System.Drawing.Point(16, 79);
+            this.labelControl2.Location = new System.Drawing.Point(16, 80);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(57, 13);
             this.labelControl2.TabIndex = 23;
@@ -479,7 +488,7 @@
             // 
             // labelControl1
             // 
-            this.labelControl1.Location = new System.Drawing.Point(213, 29);
+            this.labelControl1.Location = new System.Drawing.Point(213, 30);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(34, 13);
             this.labelControl1.TabIndex = 0;
@@ -497,10 +506,10 @@
             // 
             this.panelControl2.Controls.Add(this.gridControl1);
             this.panelControl2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelControl2.Location = new System.Drawing.Point(72, 215);
+            this.panelControl2.Location = new System.Drawing.Point(68, 215);
             this.panelControl2.Name = "panelControl2";
             this.panelControl2.Padding = new System.Windows.Forms.Padding(5);
-            this.panelControl2.Size = new System.Drawing.Size(884, 272);
+            this.panelControl2.Size = new System.Drawing.Size(888, 272);
             this.panelControl2.TabIndex = 9;
             // 
             // gridControl1
@@ -509,7 +518,7 @@
             this.gridControl1.Location = new System.Drawing.Point(7, 7);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(870, 258);
+            this.gridControl1.Size = new System.Drawing.Size(874, 258);
             this.gridControl1.TabIndex = 0;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -593,6 +602,14 @@
             this.Id_Activo.Visible = true;
             this.Id_Activo.VisibleIndex = 1;
             // 
+            // Nombre_Interno
+            // 
+            this.Nombre_Interno.Caption = "Activo";
+            this.Nombre_Interno.FieldName = "Nombre_Interno";
+            this.Nombre_Interno.Name = "Nombre_Interno";
+            this.Nombre_Interno.Visible = true;
+            this.Nombre_Interno.VisibleIndex = 11;
+            // 
             // Id_Proveedor
             // 
             this.Id_Proveedor.Caption = "Id Factura";
@@ -624,23 +641,6 @@
             this.Comprador.Name = "Comprador";
             this.Comprador.Visible = true;
             this.Comprador.VisibleIndex = 10;
-            // 
-            // btnbusqProveedor
-            // 
-            this.btnbusqProveedor.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
-            this.btnbusqProveedor.Location = new System.Drawing.Point(483, 49);
-            this.btnbusqProveedor.Name = "btnbusqProveedor";
-            this.btnbusqProveedor.Size = new System.Drawing.Size(24, 21);
-            this.btnbusqProveedor.TabIndex = 78;
-            this.btnbusqProveedor.Click += new System.EventHandler(this.btnbusqProveedor_Click);
-            // 
-            // Nombre_Interno
-            // 
-            this.Nombre_Interno.Caption = "Activo";
-            this.Nombre_Interno.FieldName = "Nombre_Interno";
-            this.Nombre_Interno.Name = "Nombre_Interno";
-            this.Nombre_Interno.Visible = true;
-            this.Nombre_Interno.VisibleIndex = 11;
             // 
             // Nombre_Empleado
             // 

@@ -387,7 +387,8 @@ namespace TransportBusiness
         {
             if (TieneAcceso("006"))
             {
-
+                Frm_Combustible.DefInstance.MdiParent = this;
+                Frm_Combustible.DefInstance.Show();
             }
             else
             {
@@ -453,6 +454,23 @@ namespace TransportBusiness
             {
                 XtraMessageBox.Show("No Cuentas con acceso a esta Opcion [027]");
             }
+        }
+
+        private void Frm_Principal_FormClosed(object sender, FormClosedEventArgs e)
+        {
+
+            Application.Exit();
+        }
+
+        private void Frm_Principal_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            DialogResult = XtraMessageBox.Show("¿Desea salir de la aplicación?", "Salir", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1);
+            if (DialogResult == DialogResult.No)
+            {
+                e.Cancel = true;
+            }
+            MSRegistro RegIn = new MSRegistro();
+            RegIn.SaveSetting("ConexionSQL", "Sking", SkinForm.LookAndFeel.SkinName);
         }
     }
 }

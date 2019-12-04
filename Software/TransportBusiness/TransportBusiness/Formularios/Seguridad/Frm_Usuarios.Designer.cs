@@ -58,6 +58,7 @@
             this.textConfirmaContra = new DevExpress.XtraEditors.TextEdit();
             this.textContrasena = new DevExpress.XtraEditors.TextEdit();
             this.textNombre = new DevExpress.XtraEditors.TextEdit();
+            this.textUsuario = new DevExpress.XtraEditors.TextEdit();
             this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
@@ -66,7 +67,6 @@
             this.gridLookUpEdit1 = new DevExpress.XtraEditors.GridLookUpEdit();
             this.gridLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.behaviorManager1 = new DevExpress.Utils.Behaviors.BehaviorManager(this.components);
-            this.textUsuario = new DevExpress.XtraEditors.TextEdit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
@@ -81,10 +81,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.textConfirmaContra.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textContrasena.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textNombre.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textUsuario.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1View)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.behaviorManager1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textUsuario.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // barManager1
@@ -201,9 +201,9 @@
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 470);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 468);
             this.barDockControlBottom.Manager = this.barManager1;
-            this.barDockControlBottom.Size = new System.Drawing.Size(598, 25);
+            this.barDockControlBottom.Size = new System.Drawing.Size(598, 27);
             // 
             // barDockControlLeft
             // 
@@ -211,7 +211,7 @@
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.barDockControlLeft.Location = new System.Drawing.Point(0, 0);
             this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Size = new System.Drawing.Size(65, 470);
+            this.barDockControlLeft.Size = new System.Drawing.Size(63, 468);
             // 
             // barDockControlRight
             // 
@@ -219,7 +219,7 @@
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
             this.barDockControlRight.Location = new System.Drawing.Point(598, 0);
             this.barDockControlRight.Manager = this.barManager1;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 470);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 468);
             // 
             // repositoryItemTextEdit1
             // 
@@ -230,10 +230,10 @@
             this.panelControl2.Controls.Add(this.checkActivo);
             this.panelControl2.Controls.Add(this.gridControl1);
             this.panelControl2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelControl2.Location = new System.Drawing.Point(65, 191);
+            this.panelControl2.Location = new System.Drawing.Point(63, 191);
             this.panelControl2.Name = "panelControl2";
             this.panelControl2.Padding = new System.Windows.Forms.Padding(5, 30, 5, 5);
-            this.panelControl2.Size = new System.Drawing.Size(533, 279);
+            this.panelControl2.Size = new System.Drawing.Size(535, 277);
             this.panelControl2.TabIndex = 23;
             // 
             // checkActivo
@@ -253,7 +253,7 @@
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.MenuManager = this.barManager1;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(519, 240);
+            this.gridControl1.Size = new System.Drawing.Size(521, 238);
             this.gridControl1.TabIndex = 0;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -314,10 +314,10 @@
             // 
             this.panelControl1.Controls.Add(this.groupControl1);
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelControl1.Location = new System.Drawing.Point(65, 0);
+            this.panelControl1.Location = new System.Drawing.Point(63, 0);
             this.panelControl1.Name = "panelControl1";
             this.panelControl1.Padding = new System.Windows.Forms.Padding(10);
-            this.panelControl1.Size = new System.Drawing.Size(533, 191);
+            this.panelControl1.Size = new System.Drawing.Size(535, 191);
             this.panelControl1.TabIndex = 22;
             // 
             // groupControl1
@@ -336,7 +336,7 @@
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl1.Location = new System.Drawing.Point(12, 12);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(509, 167);
+            this.groupControl1.Size = new System.Drawing.Size(511, 167);
             this.groupControl1.TabIndex = 0;
             this.groupControl1.Text = "Datos de Usuario";
             // 
@@ -346,7 +346,7 @@
             this.labelActivo.Appearance.ForeColor = System.Drawing.Color.OliveDrab;
             this.labelActivo.Appearance.Options.UseFont = true;
             this.labelActivo.Appearance.Options.UseForeColor = true;
-            this.labelActivo.Location = new System.Drawing.Point(464, 23);
+            this.labelActivo.Location = new System.Drawing.Point(464, 24);
             this.labelActivo.Name = "labelActivo";
             this.labelActivo.Size = new System.Drawing.Size(36, 13);
             this.labelActivo.TabIndex = 11;
@@ -378,9 +378,18 @@
             this.textNombre.Size = new System.Drawing.Size(219, 20);
             this.textNombre.TabIndex = 8;
             // 
+            // textUsuario
+            // 
+            this.textUsuario.EditValue = "";
+            this.textUsuario.Location = new System.Drawing.Point(137, 31);
+            this.textUsuario.MenuManager = this.barManager1;
+            this.textUsuario.Name = "textUsuario";
+            this.textUsuario.Size = new System.Drawing.Size(100, 20);
+            this.textUsuario.TabIndex = 7;
+            // 
             // labelControl5
             // 
-            this.labelControl5.Location = new System.Drawing.Point(18, 113);
+            this.labelControl5.Location = new System.Drawing.Point(18, 114);
             this.labelControl5.Name = "labelControl5";
             this.labelControl5.Size = new System.Drawing.Size(110, 13);
             this.labelControl5.TabIndex = 6;
@@ -388,7 +397,7 @@
             // 
             // labelControl4
             // 
-            this.labelControl4.Location = new System.Drawing.Point(18, 87);
+            this.labelControl4.Location = new System.Drawing.Point(18, 88);
             this.labelControl4.Name = "labelControl4";
             this.labelControl4.Size = new System.Drawing.Size(60, 13);
             this.labelControl4.TabIndex = 5;
@@ -396,7 +405,7 @@
             // 
             // labelControl3
             // 
-            this.labelControl3.Location = new System.Drawing.Point(18, 61);
+            this.labelControl3.Location = new System.Drawing.Point(18, 62);
             this.labelControl3.Name = "labelControl3";
             this.labelControl3.Size = new System.Drawing.Size(41, 13);
             this.labelControl3.TabIndex = 4;
@@ -404,7 +413,7 @@
             // 
             // labelControl2
             // 
-            this.labelControl2.Location = new System.Drawing.Point(18, 35);
+            this.labelControl2.Location = new System.Drawing.Point(18, 36);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(40, 13);
             this.labelControl2.TabIndex = 3;
@@ -412,7 +421,7 @@
             // 
             // labelControl1
             // 
-            this.labelControl1.Location = new System.Drawing.Point(18, 139);
+            this.labelControl1.Location = new System.Drawing.Point(18, 140);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(28, 13);
             this.labelControl1.TabIndex = 2;
@@ -435,15 +444,6 @@
             this.gridLookUpEdit1View.Name = "gridLookUpEdit1View";
             this.gridLookUpEdit1View.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.gridLookUpEdit1View.OptionsView.ShowGroupPanel = false;
-            // 
-            // textUsuario
-            // 
-            this.textUsuario.EditValue = "";
-            this.textUsuario.Location = new System.Drawing.Point(137, 31);
-            this.textUsuario.MenuManager = this.barManager1;
-            this.textUsuario.Name = "textUsuario";
-            this.textUsuario.Size = new System.Drawing.Size(100, 20);
-            this.textUsuario.TabIndex = 7;
             // 
             // Frm_Usuarios
             // 
@@ -478,10 +478,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.textConfirmaContra.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textContrasena.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textNombre.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textUsuario.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1View)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.behaviorManager1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textUsuario.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

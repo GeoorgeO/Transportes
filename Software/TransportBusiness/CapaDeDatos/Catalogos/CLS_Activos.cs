@@ -51,7 +51,8 @@ namespace CapaDeDatos
             try
             {
                 _conexion.NombreProcedimiento = "SP_Activos_Select";
-
+                _dato.CadenaTexto = Status;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Status");
                 _conexion.EjecutarDataset();
 
                 if (_conexion.Exito)

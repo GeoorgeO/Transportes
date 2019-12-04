@@ -25,7 +25,7 @@ GO
 -- =============================================
 CREATE PROCEDURE SP_Activos_Select
 	-- Add the parameters for the stored procedure here
-	
+	@Status char(8)
 AS
 BEGIN
 	-- SET NOCOUNT ON added to prevent extra result sets from
@@ -74,6 +74,6 @@ BEGIN
 		left join Tipo_Placa as TP on TP.Id_Tipo_Placa=A.Id_Tipo_Placa
 		left join Empleado as P on P.Id_Empleado=A.Id_Empleado
 		left join Empresa_Aseguradora as EA on EA.Id_Empresa_Aseguradora=A.Id_Empresa_Aseguradora
-
+		where Status=@Status
 END
 GO
