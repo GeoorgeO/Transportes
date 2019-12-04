@@ -200,6 +200,12 @@
     <Compile Include="Formularios\Catalogos\Frm_Proveedores.Designer.cs">
       <DependentUpon>Frm_Proveedores.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\Catalogos\Tipos\Frm_Tipo_Servicio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Catalogos\Tipos\Frm_Tipo_Servicio.Designer.cs">
+      <DependentUpon>Frm_Tipo_Servicio.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\Frm_Servicios.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -402,6 +408,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Catalogos\Frm_Proveedores.resx">
       <DependentUpon>Frm_Proveedores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Catalogos\Tipos\Frm_Tipo_Servicio.resx">
+      <DependentUpon>Frm_Tipo_Servicio.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Frm_Servicios.resx">
       <DependentUpon>Frm_Servicios.cs</DependentUpon>

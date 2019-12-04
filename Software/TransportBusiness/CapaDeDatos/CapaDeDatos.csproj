@@ -64,6 +64,7 @@
     <Compile Include="Catalogos\CLS_Rutas_Detalle.cs" />
     <Compile Include="Catalogos\CLS_Usuarios.cs" />
     <Compile Include="Tipos\CLS_TipoPersona.cs" />
+    <Compile Include="Tipos\CLS_TiposServicio.cs" />
     <Compile Include="Tipos\CLS_Tipo_Activo.cs" />
     <Compile Include="Tipos\CLS_Tipo_Domicilio.cs" />
     <Compile Include="Tipos\CLS_Tipo_Licencia.cs" />
