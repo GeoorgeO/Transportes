@@ -58,7 +58,7 @@ namespace TransportBusiness
             Clase.Id_Activo = textActivo.Tag.ToString();
             Clase.Id_Proveedor = textProveedor.Tag.ToString();
             Clase.Id_Factura = textFactura.Text.ToString();
-            Clase.Comprador = textComprador.Text.ToString();
+            Clase.Comprador = textComprador.Tag.ToString();
             Clase.Observaciones = memoObservaciones.Text.ToString();
             Clase.MtdInsertarCarga_Combustible();
             if (Clase.Exito)
@@ -103,6 +103,8 @@ namespace TransportBusiness
             textProveedor.Text = "";
             textActivo.Text = "";
             memoObservaciones.Text = "";
+            iniciarTags();
+            dtFechaAlta.EditValue = DateTime.Now;
         }
 
         private void iniciarTags()
@@ -124,11 +126,15 @@ namespace TransportBusiness
                     textLT.Text = row["Litros"].ToString();
                     textPrecio.Text = row["PrecioLitro"].ToString();
                     textTotal.Text = row["PrecioTotal"].ToString();
-                    textComprador.Text = row["Comprador"].ToString();
+                    textComprador.Tag = row["Comprador"].ToString();
+                    textComprador.Text = row["Nombre_Empleado"].ToString();
                     textFactura.Text = row["Id_Factura"].ToString();
-                    textProveedor.Text = row["Id_Proveedor"].ToString();
-                    textActivo.Text = row["Id_Activo"].ToString();
+                    textProveedor.Tag = row["Id_Proveedor"].ToString();
+                    textProveedor.Text = row["Nombre_Proveedor"].ToString();
+                    textActivo.Tag = row["Id_Activo"].ToString();
+                    textActivo.Text = row["Nombre_Interno"].ToString();
                     memoObservaciones.Text = row["Observaciones"].ToString();
+                    dtFechaAlta.EditValue= row["FechaCarga"].ToString();
                 }
             }
             catch (Exception ex)
@@ -148,6 +154,7 @@ namespace TransportBusiness
                 btnSeleccionar.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
             }
             CargarCarga_Combustible();
+            LimpiarCampos();
         }
 
         private void btnGuardar_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -190,6 +197,33 @@ namespace TransportBusiness
         private void btnSalir_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             this.Close();
+        }
+
+        private void btnbusqActivo_Click(object sender, EventArgs e)
+        {
+            Frm_Activos Clase = new Frm_Activos();
+            Clase.PaSel = true;
+            Clase.ShowDialog();
+            textActivo.Tag = Clase.IdActivo;
+            textActivo.Text = Clase.Activo;
+        }
+
+        private void btnbusqProveedor_Click(object sender, EventArgs e)
+        {
+            Frm_Proveedores Clase = new Frm_Proveedores();
+            Clase.PaSel = true;
+            Clase.ShowDialog();
+            textProveedor.Tag = Clase.IdProveedor;
+            textProveedor.Text = Clase.Proveedor;
+        }
+
+        private void btnbusqComprador_Click(object sender, EventArgs e)
+        {
+            Frm_Empleados Clase = new Frm_Empleados();
+            Clase.PaSel = true;
+            Clase.ShowDialog();
+            textComprador.Tag = Clase.vId_Empleado;
+            textComprador.Text = Clase.vNombre_Empleado;
         }
     }
 }

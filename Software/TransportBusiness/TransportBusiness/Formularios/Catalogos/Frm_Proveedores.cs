@@ -14,6 +14,9 @@ namespace TransportBusiness
 {
     public partial class Frm_Proveedores : DevExpress.XtraEditors.XtraForm
     {
+        public string IdProveedor { get; set; }
+        public string Proveedor { get; set; }
+        public Boolean PaSel { get; set; }
 
         private static Frm_Proveedores m_FormDefInstance;
         public static Frm_Proveedores DefInstance
@@ -295,6 +298,14 @@ namespace TransportBusiness
 
         private void Frm_Proveedores_Load(object sender, EventArgs e)
         {
+            if (PaSel == true)
+            {
+                btnSeleccionar.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+            }
+            else
+            {
+                btnSeleccionar.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+            }
             CargarProveedores();
             CargarDomicilio();
             iniciarTags();
@@ -357,6 +368,13 @@ namespace TransportBusiness
             {
                 xtraTabPage2.PageEnabled = true;
             }
+        }
+
+        private void btnSeleccionar_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            IdProveedor = textIdProveedor.Text.Trim();
+            Proveedor = textProveedor.Text.Trim();
+            this.Close();
         }
     }
 }

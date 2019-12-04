@@ -15,6 +15,10 @@ namespace TransportBusiness
     public partial class Frm_Activos : DevExpress.XtraEditors.XtraForm
     {
 
+        public string IdActivo { get; set; }
+        public string Activo { get; set; }
+        public Boolean PaSel { get; set; }
+
         private static Frm_Activos m_FormDefInstance;
         public static Frm_Activos DefInstance
         {
@@ -436,6 +440,14 @@ namespace TransportBusiness
 
         private void Frm_Activos_Load(object sender, EventArgs e)
         {
+            if (PaSel == true)
+            {
+                btnSeleccionar.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+            }
+            else
+            {
+                btnSeleccionar.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+            }
             CargarActivos();
             iniciarTags();
             dtFechaAlta.Text = DateTime.Today.ToShortDateString();
@@ -497,6 +509,20 @@ namespace TransportBusiness
             else
             {
                 XtraMessageBox.Show("Debe seleccionar un Activo");
+            }
+        }
+
+        private void btnSeleccionar_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            if (txtIdActivo.Text != string.Empty )
+            {
+                IdActivo = txtIdActivo.Text;
+                Activo = txtNombreActivo.Text;
+                this.Close();
+            }
+            else
+            {
+                XtraMessageBox.Show("No se ha seleccionado un activo");
             }
         }
     }

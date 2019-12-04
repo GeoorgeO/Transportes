@@ -21,7 +21,6 @@ create PROCEDURE [dbo].[SP_Carga_Combustible_Insert]
 	@Litros numeric(18,2),
 	@PrecioLitro numeric(18,2),
 	@PrecioTotal numeric(18,2),
-	@Kilometraje numeric(18,2),
 	@Id_Activo char(8),
 	@Id_Proveedor char(6),
 	@Id_Factura varchar(50),
@@ -53,7 +52,6 @@ BEGIN
 				Litros=@Litros,
 				PrecioLitro=@PrecioLitro,
 				PrecioTotal=@PrecioTotal,
-				Kilometraje=@Kilometraje,
 				Id_Activo=@Id_Activo,
 				Id_Proveedor=@Id_Proveedor,
 				Id_Factura=@Id_Factura,
@@ -71,7 +69,6 @@ BEGIN
 			   ,Litros
 			   ,PrecioLitro
 			   ,PrecioTotal
-			   ,Kilometraje
 			   ,Id_Activo
 			   ,Id_Proveedor
 			   ,Id_Factura
@@ -84,7 +81,6 @@ BEGIN
 			   ,@Litros
 			   ,@PrecioLitro
 			   ,@PrecioTotal
-			   ,@Kilometraje
 			   ,@Id_Activo
 			   ,@Id_Proveedor
 			   ,@Id_Factura

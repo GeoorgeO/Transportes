@@ -73,17 +73,21 @@
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn6 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn7 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn8 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn9 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn10 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn11 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Folio = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.FechaCarga = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Kilometraje = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Litros = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.PrecioLitro = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.PrecioTotal = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Id_Activo = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Id_Proveedor = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Nombre_Proveedor = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Id_Factura = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Comprador = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.btnbusqProveedor = new DevExpress.XtraEditors.SimpleButton();
+            this.Nombre_Interno = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Nombre_Empleado = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Observaciones = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
@@ -119,6 +123,7 @@
             // 
             // groupControl1
             // 
+            this.groupControl1.Controls.Add(this.btnbusqProveedor);
             this.groupControl1.Controls.Add(this.btnbusqComprador);
             this.groupControl1.Controls.Add(this.memoObservaciones);
             this.groupControl1.Controls.Add(this.textFolio);
@@ -157,6 +162,7 @@
             this.btnbusqComprador.Name = "btnbusqComprador";
             this.btnbusqComprador.Size = new System.Drawing.Size(24, 21);
             this.btnbusqComprador.TabIndex = 77;
+            this.btnbusqComprador.Click += new System.EventHandler(this.btnbusqComprador_Click);
             // 
             // memoObservaciones
             // 
@@ -364,7 +370,7 @@
             // 
             this.textProveedor.Location = new System.Drawing.Point(289, 51);
             this.textProveedor.Name = "textProveedor";
-            this.textProveedor.Size = new System.Drawing.Size(218, 20);
+            this.textProveedor.Size = new System.Drawing.Size(188, 20);
             this.textProveedor.TabIndex = 49;
             // 
             // labelControl7
@@ -462,6 +468,7 @@
             this.btnbusqActivo.Name = "btnbusqActivo";
             this.btnbusqActivo.Size = new System.Drawing.Size(24, 21);
             this.btnbusqActivo.TabIndex = 22;
+            this.btnbusqActivo.Click += new System.EventHandler(this.btnbusqActivo_Click);
             // 
             // textActivo
             // 
@@ -511,97 +518,145 @@
             // gridView1
             // 
             this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.gridColumn1,
-            this.gridColumn2,
-            this.gridColumn3,
-            this.gridColumn4,
-            this.gridColumn5,
-            this.gridColumn6,
-            this.gridColumn7,
-            this.gridColumn8,
-            this.gridColumn9,
-            this.gridColumn10,
-            this.gridColumn11});
+            this.Folio,
+            this.FechaCarga,
+            this.Kilometraje,
+            this.Litros,
+            this.PrecioLitro,
+            this.PrecioTotal,
+            this.Id_Activo,
+            this.Nombre_Interno,
+            this.Id_Proveedor,
+            this.Nombre_Proveedor,
+            this.Id_Factura,
+            this.Comprador,
+            this.Nombre_Empleado,
+            this.Observaciones});
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
+            this.gridView1.OptionsBehavior.Editable = false;
             this.gridView1.OptionsView.ShowGroupPanel = false;
             // 
-            // gridColumn1
+            // Folio
             // 
-            this.gridColumn1.Caption = "Folio";
-            this.gridColumn1.Name = "gridColumn1";
-            this.gridColumn1.Visible = true;
-            this.gridColumn1.VisibleIndex = 0;
+            this.Folio.Caption = "Folio";
+            this.Folio.FieldName = "Folio";
+            this.Folio.Name = "Folio";
+            this.Folio.Visible = true;
+            this.Folio.VisibleIndex = 0;
             // 
-            // gridColumn2
+            // FechaCarga
             // 
-            this.gridColumn2.Caption = "F. Carga";
-            this.gridColumn2.Name = "gridColumn2";
-            this.gridColumn2.Visible = true;
-            this.gridColumn2.VisibleIndex = 2;
+            this.FechaCarga.Caption = "F. Carga";
+            this.FechaCarga.FieldName = "FechaCarga";
+            this.FechaCarga.Name = "FechaCarga";
+            this.FechaCarga.Visible = true;
+            this.FechaCarga.VisibleIndex = 2;
             // 
-            // gridColumn3
+            // Kilometraje
             // 
-            this.gridColumn3.Caption = "Km";
-            this.gridColumn3.Name = "gridColumn3";
-            this.gridColumn3.Visible = true;
-            this.gridColumn3.VisibleIndex = 3;
+            this.Kilometraje.Caption = "Kilometraje";
+            this.Kilometraje.FieldName = "Kilometraje";
+            this.Kilometraje.Name = "Kilometraje";
+            this.Kilometraje.Visible = true;
+            this.Kilometraje.VisibleIndex = 3;
             // 
-            // gridColumn4
+            // Litros
             // 
-            this.gridColumn4.Caption = "Litros";
-            this.gridColumn4.Name = "gridColumn4";
-            this.gridColumn4.Visible = true;
-            this.gridColumn4.VisibleIndex = 4;
+            this.Litros.Caption = "Litros";
+            this.Litros.FieldName = "Litros";
+            this.Litros.Name = "Litros";
+            this.Litros.Visible = true;
+            this.Litros.VisibleIndex = 4;
             // 
-            // gridColumn5
+            // PrecioLitro
             // 
-            this.gridColumn5.Caption = "Precio por litro";
-            this.gridColumn5.Name = "gridColumn5";
-            this.gridColumn5.Visible = true;
-            this.gridColumn5.VisibleIndex = 5;
+            this.PrecioLitro.Caption = "Precio por litro";
+            this.PrecioLitro.FieldName = "PrecioLitro";
+            this.PrecioLitro.Name = "PrecioLitro";
+            this.PrecioLitro.Visible = true;
+            this.PrecioLitro.VisibleIndex = 5;
             // 
-            // gridColumn6
+            // PrecioTotal
             // 
-            this.gridColumn6.Caption = "Precio Total";
-            this.gridColumn6.Name = "gridColumn6";
-            this.gridColumn6.Visible = true;
-            this.gridColumn6.VisibleIndex = 6;
+            this.PrecioTotal.Caption = "Precio Total";
+            this.PrecioTotal.FieldName = "PrecioTotal";
+            this.PrecioTotal.Name = "PrecioTotal";
+            this.PrecioTotal.Visible = true;
+            this.PrecioTotal.VisibleIndex = 6;
             // 
-            // gridColumn7
+            // Id_Activo
             // 
-            this.gridColumn7.Caption = "Activo";
-            this.gridColumn7.Name = "gridColumn7";
-            this.gridColumn7.Visible = true;
-            this.gridColumn7.VisibleIndex = 1;
+            this.Id_Activo.Caption = "Activo";
+            this.Id_Activo.FieldName = "Id_Activo";
+            this.Id_Activo.Name = "Id_Activo";
+            this.Id_Activo.Visible = true;
+            this.Id_Activo.VisibleIndex = 1;
             // 
-            // gridColumn8
+            // Id_Proveedor
             // 
-            this.gridColumn8.Caption = "Ref. Factura";
-            this.gridColumn8.Name = "gridColumn8";
-            this.gridColumn8.Visible = true;
-            this.gridColumn8.VisibleIndex = 7;
+            this.Id_Proveedor.Caption = "Id Factura";
+            this.Id_Proveedor.FieldName = "Id_Proveedor";
+            this.Id_Proveedor.Name = "Id_Proveedor";
+            this.Id_Proveedor.Visible = true;
+            this.Id_Proveedor.VisibleIndex = 7;
             // 
-            // gridColumn9
+            // Nombre_Proveedor
             // 
-            this.gridColumn9.Caption = "Comprador";
-            this.gridColumn9.Name = "gridColumn9";
-            this.gridColumn9.Visible = true;
-            this.gridColumn9.VisibleIndex = 8;
+            this.Nombre_Proveedor.Caption = "Proveedor";
+            this.Nombre_Proveedor.FieldName = "Nombre_Proveedor";
+            this.Nombre_Proveedor.Name = "Nombre_Proveedor";
+            this.Nombre_Proveedor.Visible = true;
+            this.Nombre_Proveedor.VisibleIndex = 8;
             // 
-            // gridColumn10
+            // Id_Factura
             // 
-            this.gridColumn10.Caption = "Proveedor";
-            this.gridColumn10.Name = "gridColumn10";
-            this.gridColumn10.Visible = true;
-            this.gridColumn10.VisibleIndex = 9;
+            this.Id_Factura.Caption = "Id_Factura";
+            this.Id_Factura.FieldName = "Id_Factura";
+            this.Id_Factura.Name = "Id_Factura";
+            this.Id_Factura.Visible = true;
+            this.Id_Factura.VisibleIndex = 9;
             // 
-            // gridColumn11
+            // Comprador
             // 
-            this.gridColumn11.Caption = "Info. Adicional";
-            this.gridColumn11.Name = "gridColumn11";
-            this.gridColumn11.Visible = true;
-            this.gridColumn11.VisibleIndex = 10;
+            this.Comprador.Caption = "Id Comprador";
+            this.Comprador.FieldName = "Comprador";
+            this.Comprador.Name = "Comprador";
+            this.Comprador.Visible = true;
+            this.Comprador.VisibleIndex = 10;
+            // 
+            // btnbusqProveedor
+            // 
+            this.btnbusqProveedor.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
+            this.btnbusqProveedor.Location = new System.Drawing.Point(483, 49);
+            this.btnbusqProveedor.Name = "btnbusqProveedor";
+            this.btnbusqProveedor.Size = new System.Drawing.Size(24, 21);
+            this.btnbusqProveedor.TabIndex = 78;
+            this.btnbusqProveedor.Click += new System.EventHandler(this.btnbusqProveedor_Click);
+            // 
+            // Nombre_Interno
+            // 
+            this.Nombre_Interno.Caption = "Activo";
+            this.Nombre_Interno.FieldName = "Nombre_Interno";
+            this.Nombre_Interno.Name = "Nombre_Interno";
+            this.Nombre_Interno.Visible = true;
+            this.Nombre_Interno.VisibleIndex = 11;
+            // 
+            // Nombre_Empleado
+            // 
+            this.Nombre_Empleado.Caption = "Comprador";
+            this.Nombre_Empleado.FieldName = "Nombre_Empleado";
+            this.Nombre_Empleado.Name = "Nombre_Empleado";
+            this.Nombre_Empleado.Visible = true;
+            this.Nombre_Empleado.VisibleIndex = 12;
+            // 
+            // Observaciones
+            // 
+            this.Observaciones.Caption = "Observaciones";
+            this.Observaciones.FieldName = "Observaciones";
+            this.Observaciones.Name = "Observaciones";
+            this.Observaciones.Visible = true;
+            this.Observaciones.VisibleIndex = 13;
             // 
             // Frm_Combustible
             // 
@@ -685,20 +740,24 @@
         private DevExpress.XtraEditors.LabelControl labelControl7;
         private DevExpress.XtraEditors.DateEdit dtFechaAlta;
         private DevExpress.XtraEditors.LabelControl labelControl6;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn3;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn4;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn5;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn6;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn7;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn8;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn9;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn10;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn11;
+        private DevExpress.XtraGrid.Columns.GridColumn Folio;
+        private DevExpress.XtraGrid.Columns.GridColumn FechaCarga;
+        private DevExpress.XtraGrid.Columns.GridColumn Kilometraje;
+        private DevExpress.XtraGrid.Columns.GridColumn Litros;
+        private DevExpress.XtraGrid.Columns.GridColumn PrecioLitro;
+        private DevExpress.XtraGrid.Columns.GridColumn PrecioTotal;
+        private DevExpress.XtraGrid.Columns.GridColumn Id_Activo;
+        private DevExpress.XtraGrid.Columns.GridColumn Id_Proveedor;
+        private DevExpress.XtraGrid.Columns.GridColumn Nombre_Proveedor;
+        private DevExpress.XtraGrid.Columns.GridColumn Id_Factura;
+        private DevExpress.XtraGrid.Columns.GridColumn Comprador;
         private DevExpress.XtraEditors.TextEdit textFolio;
         private DevExpress.XtraEditors.LabelControl labelControl11;
         private DevExpress.XtraEditors.MemoEdit memoObservaciones;
         private DevExpress.XtraEditors.SimpleButton btnbusqComprador;
+        private DevExpress.XtraEditors.SimpleButton btnbusqProveedor;
+        private DevExpress.XtraGrid.Columns.GridColumn Nombre_Interno;
+        private DevExpress.XtraGrid.Columns.GridColumn Nombre_Empleado;
+        private DevExpress.XtraGrid.Columns.GridColumn Observaciones;
     }
 }
