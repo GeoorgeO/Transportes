@@ -109,7 +109,7 @@ namespace CapaDeDatos
             Exito = true;
             try
             {
-                _conexion.NombreProcedimiento = "SP_Pais_Delete";
+                _conexion.NombreProcedimiento = "SP_Servicios_Delete";
                 _dato.CadenaTexto = Folio;
                 _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Folio");
                 _conexion.EjecutarDataset();

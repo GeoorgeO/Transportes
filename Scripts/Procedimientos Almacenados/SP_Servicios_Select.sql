@@ -49,7 +49,7 @@ BEGIN
 			Comprador,
 			E.Nombre_Empleado,
 			Observaciones 
-		from Carga_Combustible as S
+		from Servicios as S
 		left join Activos as A on S.Id_Activo=A.Id_Activo
 		left join Proveedores as P on S.Id_Proveedor=P.Id_Proveedor
 		left join Empleado as E on S.Comprador=E.Id_Empleado

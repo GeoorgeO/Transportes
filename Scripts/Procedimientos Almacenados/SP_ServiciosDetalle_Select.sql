@@ -35,6 +35,7 @@ BEGIN
     -- Insert statements for procedure here
 	
 		select Folio,
+			Nombre_ServicioDetalle,
 			Secuencia,
 			Costo,
 			Piezas,

@@ -24,8 +24,8 @@ create PROCEDURE [dbo].[SP_Servicios_Insert]
 	@Id_Proveedor char(6),
 	@Id_Factura varchar(50),
 	@Comprador char(6),
-	@Observaciones varchar(100),
-AS
+	@Observaciones varchar(100)
+as
 BEGIN
 	-- SET NOCOUNT ON added to prevent extra result sets from
 	-- interfering with SELECT statements.
@@ -51,7 +51,6 @@ BEGIN
 				PrecioTotal=@PrecioTotal,
 				Kilometraje=@Kilometraje,
 				FechaServicio=@FechaServicio,
-				Id_Activo=@Id_Activo,
 				Id_Proveedor=@Id_Proveedor,
 				Id_Factura=@Id_Factura,
 				Comprador=@Comprador,
@@ -67,7 +66,6 @@ BEGIN
 			   ,Id_TipoServicio
 			   ,PrecioTotal
 			   ,Kilometraje
-			   ,PrecioTotal
 			   ,FechaServicio
 			   ,Id_Proveedor
 			   ,Id_Factura
@@ -79,7 +77,6 @@ BEGIN
 			   ,@Id_TipoServicio
 			   ,@PrecioTotal
 			   ,@Kilometraje
-			   ,@PrecioTotal
 			   ,@FechaServicio
 			   ,@Id_Proveedor
 			   ,@Id_Factura

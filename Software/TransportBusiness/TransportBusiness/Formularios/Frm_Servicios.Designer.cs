@@ -1,4 +1,4 @@
-﻿namespace TransportBusiness.Formularios
+﻿namespace TransportBusiness
 {
     partial class Frm_Servicios
     {
@@ -32,11 +32,12 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_Servicios));
             this.barManager2 = new DevExpress.XtraBars.BarManager(this.components);
             this.bar1 = new DevExpress.XtraBars.Bar();
-            this.barLargeButtonItem1 = new DevExpress.XtraBars.BarLargeButtonItem();
-            this.barLargeButtonItem2 = new DevExpress.XtraBars.BarLargeButtonItem();
-            this.barLargeButtonItem3 = new DevExpress.XtraBars.BarLargeButtonItem();
-            this.barLargeButtonItem4 = new DevExpress.XtraBars.BarLargeButtonItem();
-            this.barLargeButtonItem5 = new DevExpress.XtraBars.BarLargeButtonItem();
+            this.btnLimpiar = new DevExpress.XtraBars.BarLargeButtonItem();
+            this.barLargeButtonItem6 = new DevExpress.XtraBars.BarLargeButtonItem();
+            this.btnGuardar = new DevExpress.XtraBars.BarLargeButtonItem();
+            this.btnEliminar = new DevExpress.XtraBars.BarLargeButtonItem();
+            this.btnSalir = new DevExpress.XtraBars.BarLargeButtonItem();
+            this.btnSeleccionar = new DevExpress.XtraBars.BarLargeButtonItem();
             this.bar2 = new DevExpress.XtraBars.Bar();
             this.barStaticItem1 = new DevExpress.XtraBars.BarStaticItem();
             this.barDockControl1 = new DevExpress.XtraBars.BarDockControl();
@@ -45,66 +46,68 @@
             this.barDockControl5 = new DevExpress.XtraBars.BarDockControl();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
-            this.simpleButton4 = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton3 = new DevExpress.XtraEditors.SimpleButton();
+            this.btnBusqComprador = new DevExpress.XtraEditors.SimpleButton();
+            this.btnBusqProveedor = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl11 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
-            this.memoEdit1 = new DevExpress.XtraEditors.MemoEdit();
-            this.textEdit1 = new DevExpress.XtraEditors.TextEdit();
-            this.textEdit8 = new DevExpress.XtraEditors.TextEdit();
-            this.btnMarca = new DevExpress.XtraEditors.SimpleButton();
+            this.memoObservaciones = new DevExpress.XtraEditors.MemoEdit();
+            this.textActivo = new DevExpress.XtraEditors.TextEdit();
+            this.textComprador = new DevExpress.XtraEditors.TextEdit();
+            this.btnBusqActivo = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl9 = new DevExpress.XtraEditors.LabelControl();
-            this.textEdit10 = new DevExpress.XtraEditors.TextEdit();
-            this.textEdit7 = new DevExpress.XtraEditors.TextEdit();
+            this.textFolio = new DevExpress.XtraEditors.TextEdit();
+            this.textFactura = new DevExpress.XtraEditors.TextEdit();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
-            this.textEdit2 = new DevExpress.XtraEditors.TextEdit();
-            this.textEdit6 = new DevExpress.XtraEditors.TextEdit();
-            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
+            this.textTipoServicio = new DevExpress.XtraEditors.TextEdit();
+            this.textProveedor = new DevExpress.XtraEditors.TextEdit();
+            this.btnBusqTipo = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.dtFechaAlta = new DevExpress.XtraEditors.DateEdit();
-            this.textEdit3 = new DevExpress.XtraEditors.TextEdit();
+            this.textPTotal = new DevExpress.XtraEditors.TextEdit();
             this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
-            this.textEdit4 = new DevExpress.XtraEditors.TextEdit();
+            this.textKM = new DevExpress.XtraEditors.TextEdit();
             this.panelControl3 = new DevExpress.XtraEditors.PanelControl();
             this.labelControl13 = new DevExpress.XtraEditors.LabelControl();
-            this.textEdit11 = new DevExpress.XtraEditors.TextEdit();
+            this.textCantidad = new DevExpress.XtraEditors.TextEdit();
             this.labelControl12 = new DevExpress.XtraEditors.LabelControl();
-            this.textEdit9 = new DevExpress.XtraEditors.TextEdit();
-            this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
+            this.textCosto = new DevExpress.XtraEditors.TextEdit();
+            this.btnAgregar = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl10 = new DevExpress.XtraEditors.LabelControl();
-            this.textEdit5 = new DevExpress.XtraEditors.TextEdit();
+            this.textServicio = new DevExpress.XtraEditors.TextEdit();
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Folio = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Secuencia = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Nombre_ServicioDetalle = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Costo = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Piezas = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Total = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.barManager2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.memoEdit1.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit8.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit10.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit7.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit6.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.memoObservaciones.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textActivo.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textComprador.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textFolio.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textFactura.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textTipoServicio.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textProveedor.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtFechaAlta.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtFechaAlta.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit3.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit4.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textPTotal.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textKM.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).BeginInit();
             this.panelControl3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit11.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit9.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit5.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textCantidad.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textCosto.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textServicio.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
             this.panelControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
@@ -122,13 +125,14 @@
             this.barManager2.DockControls.Add(this.barDockControl5);
             this.barManager2.Form = this;
             this.barManager2.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
-            this.barLargeButtonItem1,
-            this.barLargeButtonItem2,
-            this.barLargeButtonItem3,
-            this.barLargeButtonItem4,
-            this.barLargeButtonItem5,
-            this.barStaticItem1});
-            this.barManager2.MaxItemId = 0;
+            this.btnLimpiar,
+            this.btnGuardar,
+            this.btnEliminar,
+            this.btnSalir,
+            this.btnSeleccionar,
+            this.barStaticItem1,
+            this.barLargeButtonItem6});
+            this.barManager2.MaxItemId = 1;
             // 
             // bar1
             // 
@@ -139,11 +143,12 @@
             this.bar1.FloatLocation = new System.Drawing.Point(42, 184);
             this.bar1.FloatSize = new System.Drawing.Size(1106, 535);
             this.bar1.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
-            new DevExpress.XtraBars.LinkPersistInfo(this.barLargeButtonItem1),
-            new DevExpress.XtraBars.LinkPersistInfo(this.barLargeButtonItem2),
-            new DevExpress.XtraBars.LinkPersistInfo(this.barLargeButtonItem3),
-            new DevExpress.XtraBars.LinkPersistInfo(this.barLargeButtonItem4),
-            new DevExpress.XtraBars.LinkPersistInfo(this.barLargeButtonItem5)});
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnLimpiar),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barLargeButtonItem6),
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnGuardar),
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnEliminar),
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnSalir),
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnSeleccionar)});
             this.bar1.OptionsBar.AllowCollapse = true;
             this.bar1.OptionsBar.AllowQuickCustomization = false;
             this.bar1.OptionsBar.AutoPopupMode = DevExpress.XtraBars.BarAutoPopupMode.None;
@@ -155,45 +160,58 @@
             this.bar1.OptionsBar.UseWholeRow = true;
             this.bar1.Text = "Menú principal";
             // 
-            // barLargeButtonItem1
+            // btnLimpiar
             // 
-            this.barLargeButtonItem1.Caption = "Limpiar";
-            this.barLargeButtonItem1.Id = 50;
-            this.barLargeButtonItem1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barLargeButtonItem1.ImageOptions.Image")));
-            this.barLargeButtonItem1.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barLargeButtonItem1.ImageOptions.LargeImage")));
-            this.barLargeButtonItem1.Name = "barLargeButtonItem1";
+            this.btnLimpiar.Caption = "Limpiar";
+            this.btnLimpiar.Id = 50;
+            this.btnLimpiar.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnLimpiar.ImageOptions.Image")));
+            this.btnLimpiar.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnLimpiar.ImageOptions.LargeImage")));
+            this.btnLimpiar.Name = "btnLimpiar";
+            this.btnLimpiar.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnLimpiar_ItemClick);
             // 
-            // barLargeButtonItem2
+            // barLargeButtonItem6
             // 
-            this.barLargeButtonItem2.Caption = "Guardar";
-            this.barLargeButtonItem2.Id = 53;
-            this.barLargeButtonItem2.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barLargeButtonItem2.ImageOptions.Image")));
-            this.barLargeButtonItem2.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barLargeButtonItem2.ImageOptions.LargeImage")));
-            this.barLargeButtonItem2.Name = "barLargeButtonItem2";
+            this.barLargeButtonItem6.Caption = "Buscar";
+            this.barLargeButtonItem6.Id = 0;
+            this.barLargeButtonItem6.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barLargeButtonItem6.ImageOptions.Image")));
+            this.barLargeButtonItem6.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barLargeButtonItem6.ImageOptions.LargeImage")));
+            this.barLargeButtonItem6.Name = "barLargeButtonItem6";
+            this.barLargeButtonItem6.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barLargeButtonItem6_ItemClick);
             // 
-            // barLargeButtonItem3
+            // btnGuardar
             // 
-            this.barLargeButtonItem3.Caption = "Eliminar";
-            this.barLargeButtonItem3.Id = 57;
-            this.barLargeButtonItem3.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barLargeButtonItem3.ImageOptions.Image")));
-            this.barLargeButtonItem3.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barLargeButtonItem3.ImageOptions.LargeImage")));
-            this.barLargeButtonItem3.Name = "barLargeButtonItem3";
+            this.btnGuardar.Caption = "Guardar";
+            this.btnGuardar.Id = 53;
+            this.btnGuardar.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnGuardar.ImageOptions.Image")));
+            this.btnGuardar.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnGuardar.ImageOptions.LargeImage")));
+            this.btnGuardar.Name = "btnGuardar";
+            this.btnGuardar.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnGuardar_ItemClick);
             // 
-            // barLargeButtonItem4
+            // btnEliminar
             // 
-            this.barLargeButtonItem4.Caption = "Salir";
-            this.barLargeButtonItem4.Id = 63;
-            this.barLargeButtonItem4.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barLargeButtonItem4.ImageOptions.Image")));
-            this.barLargeButtonItem4.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barLargeButtonItem4.ImageOptions.LargeImage")));
-            this.barLargeButtonItem4.Name = "barLargeButtonItem4";
+            this.btnEliminar.Caption = "Eliminar";
+            this.btnEliminar.Id = 57;
+            this.btnEliminar.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnEliminar.ImageOptions.Image")));
+            this.btnEliminar.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnEliminar.ImageOptions.LargeImage")));
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnEliminar_ItemClick);
             // 
-            // barLargeButtonItem5
+            // btnSalir
             // 
-            this.barLargeButtonItem5.Caption = "Seleccionar";
-            this.barLargeButtonItem5.Id = 65;
-            this.barLargeButtonItem5.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barLargeButtonItem5.ImageOptions.Image")));
-            this.barLargeButtonItem5.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barLargeButtonItem5.ImageOptions.LargeImage")));
-            this.barLargeButtonItem5.Name = "barLargeButtonItem5";
+            this.btnSalir.Caption = "Salir";
+            this.btnSalir.Id = 63;
+            this.btnSalir.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnSalir.ImageOptions.Image")));
+            this.btnSalir.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnSalir.ImageOptions.LargeImage")));
+            this.btnSalir.Name = "btnSalir";
+            this.btnSalir.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnSalir_ItemClick);
+            // 
+            // btnSeleccionar
+            // 
+            this.btnSeleccionar.Caption = "Seleccionar";
+            this.btnSeleccionar.Id = 65;
+            this.btnSeleccionar.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnSeleccionar.ImageOptions.Image")));
+            this.btnSeleccionar.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnSeleccionar.ImageOptions.LargeImage")));
+            this.btnSeleccionar.Name = "btnSeleccionar";
             // 
             // bar2
             // 
@@ -237,7 +255,7 @@
             this.barDockControl3.Dock = System.Windows.Forms.DockStyle.Left;
             this.barDockControl3.Location = new System.Drawing.Point(0, 0);
             this.barDockControl3.Manager = this.barManager2;
-            this.barDockControl3.Size = new System.Drawing.Size(68, 529);
+            this.barDockControl3.Size = new System.Drawing.Size(72, 529);
             // 
             // barDockControl5
             // 
@@ -251,60 +269,62 @@
             // 
             this.panelControl1.Controls.Add(this.groupControl1);
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelControl1.Location = new System.Drawing.Point(68, 0);
+            this.panelControl1.Location = new System.Drawing.Point(72, 0);
             this.panelControl1.Name = "panelControl1";
             this.panelControl1.Padding = new System.Windows.Forms.Padding(5);
-            this.panelControl1.Size = new System.Drawing.Size(759, 227);
+            this.panelControl1.Size = new System.Drawing.Size(755, 227);
             this.panelControl1.TabIndex = 4;
             // 
             // groupControl1
             // 
-            this.groupControl1.Controls.Add(this.simpleButton4);
-            this.groupControl1.Controls.Add(this.simpleButton3);
+            this.groupControl1.Controls.Add(this.btnBusqComprador);
+            this.groupControl1.Controls.Add(this.btnBusqProveedor);
             this.groupControl1.Controls.Add(this.labelControl11);
             this.groupControl1.Controls.Add(this.labelControl5);
             this.groupControl1.Controls.Add(this.labelControl1);
-            this.groupControl1.Controls.Add(this.memoEdit1);
-            this.groupControl1.Controls.Add(this.textEdit1);
-            this.groupControl1.Controls.Add(this.textEdit8);
-            this.groupControl1.Controls.Add(this.btnMarca);
+            this.groupControl1.Controls.Add(this.memoObservaciones);
+            this.groupControl1.Controls.Add(this.textActivo);
+            this.groupControl1.Controls.Add(this.textComprador);
+            this.groupControl1.Controls.Add(this.btnBusqActivo);
             this.groupControl1.Controls.Add(this.labelControl9);
-            this.groupControl1.Controls.Add(this.textEdit10);
-            this.groupControl1.Controls.Add(this.textEdit7);
+            this.groupControl1.Controls.Add(this.textFolio);
+            this.groupControl1.Controls.Add(this.textFactura);
             this.groupControl1.Controls.Add(this.labelControl2);
             this.groupControl1.Controls.Add(this.labelControl8);
-            this.groupControl1.Controls.Add(this.textEdit2);
-            this.groupControl1.Controls.Add(this.textEdit6);
-            this.groupControl1.Controls.Add(this.simpleButton1);
+            this.groupControl1.Controls.Add(this.textTipoServicio);
+            this.groupControl1.Controls.Add(this.textProveedor);
+            this.groupControl1.Controls.Add(this.btnBusqTipo);
             this.groupControl1.Controls.Add(this.labelControl7);
             this.groupControl1.Controls.Add(this.labelControl3);
             this.groupControl1.Controls.Add(this.dtFechaAlta);
-            this.groupControl1.Controls.Add(this.textEdit3);
+            this.groupControl1.Controls.Add(this.textPTotal);
             this.groupControl1.Controls.Add(this.labelControl6);
             this.groupControl1.Controls.Add(this.labelControl4);
-            this.groupControl1.Controls.Add(this.textEdit4);
+            this.groupControl1.Controls.Add(this.textKM);
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl1.Location = new System.Drawing.Point(7, 7);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(745, 213);
+            this.groupControl1.Size = new System.Drawing.Size(741, 213);
             this.groupControl1.TabIndex = 77;
             this.groupControl1.Text = "Datos del Servicio";
             // 
-            // simpleButton4
+            // btnBusqComprador
             // 
-            this.simpleButton4.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton4.ImageOptions.Image")));
-            this.simpleButton4.Location = new System.Drawing.Point(623, 109);
-            this.simpleButton4.Name = "simpleButton4";
-            this.simpleButton4.Size = new System.Drawing.Size(24, 21);
-            this.simpleButton4.TabIndex = 78;
+            this.btnBusqComprador.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton4.ImageOptions.Image")));
+            this.btnBusqComprador.Location = new System.Drawing.Point(623, 109);
+            this.btnBusqComprador.Name = "btnBusqComprador";
+            this.btnBusqComprador.Size = new System.Drawing.Size(24, 21);
+            this.btnBusqComprador.TabIndex = 78;
+            this.btnBusqComprador.Click += new System.EventHandler(this.btnBusqComprador_Click);
             // 
-            // simpleButton3
+            // btnBusqProveedor
             // 
-            this.simpleButton3.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton3.ImageOptions.Image")));
-            this.simpleButton3.Location = new System.Drawing.Point(623, 57);
-            this.simpleButton3.Name = "simpleButton3";
-            this.simpleButton3.Size = new System.Drawing.Size(24, 21);
-            this.simpleButton3.TabIndex = 77;
+            this.btnBusqProveedor.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton3.ImageOptions.Image")));
+            this.btnBusqProveedor.Location = new System.Drawing.Point(623, 57);
+            this.btnBusqProveedor.Name = "btnBusqProveedor";
+            this.btnBusqProveedor.Size = new System.Drawing.Size(24, 21);
+            this.btnBusqProveedor.TabIndex = 77;
+            this.btnBusqProveedor.Click += new System.EventHandler(this.btnBusqProveedor_Click);
             // 
             // labelControl11
             // 
@@ -330,35 +350,36 @@
             this.labelControl1.TabIndex = 23;
             this.labelControl1.Text = "Activo:";
             // 
-            // memoEdit1
+            // memoObservaciones
             // 
-            this.memoEdit1.Location = new System.Drawing.Point(399, 137);
-            this.memoEdit1.MenuManager = this.barManager2;
-            this.memoEdit1.Name = "memoEdit1";
-            this.memoEdit1.Size = new System.Drawing.Size(218, 53);
-            this.memoEdit1.TabIndex = 75;
+            this.memoObservaciones.Location = new System.Drawing.Point(399, 137);
+            this.memoObservaciones.MenuManager = this.barManager2;
+            this.memoObservaciones.Name = "memoObservaciones";
+            this.memoObservaciones.Size = new System.Drawing.Size(218, 53);
+            this.memoObservaciones.TabIndex = 75;
             // 
-            // textEdit1
+            // textActivo
             // 
-            this.textEdit1.Location = new System.Drawing.Point(87, 58);
-            this.textEdit1.Name = "textEdit1";
-            this.textEdit1.Size = new System.Drawing.Size(188, 20);
-            this.textEdit1.TabIndex = 24;
+            this.textActivo.Location = new System.Drawing.Point(87, 58);
+            this.textActivo.Name = "textActivo";
+            this.textActivo.Size = new System.Drawing.Size(188, 20);
+            this.textActivo.TabIndex = 24;
             // 
-            // textEdit8
+            // textComprador
             // 
-            this.textEdit8.Location = new System.Drawing.Point(399, 110);
-            this.textEdit8.Name = "textEdit8";
-            this.textEdit8.Size = new System.Drawing.Size(218, 20);
-            this.textEdit8.TabIndex = 74;
+            this.textComprador.Location = new System.Drawing.Point(399, 110);
+            this.textComprador.Name = "textComprador";
+            this.textComprador.Size = new System.Drawing.Size(218, 20);
+            this.textComprador.TabIndex = 74;
             // 
-            // btnMarca
+            // btnBusqActivo
             // 
-            this.btnMarca.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnMarca.ImageOptions.Image")));
-            this.btnMarca.Location = new System.Drawing.Point(281, 58);
-            this.btnMarca.Name = "btnMarca";
-            this.btnMarca.Size = new System.Drawing.Size(24, 21);
-            this.btnMarca.TabIndex = 25;
+            this.btnBusqActivo.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnMarca.ImageOptions.Image")));
+            this.btnBusqActivo.Location = new System.Drawing.Point(281, 58);
+            this.btnBusqActivo.Name = "btnBusqActivo";
+            this.btnBusqActivo.Size = new System.Drawing.Size(24, 21);
+            this.btnBusqActivo.TabIndex = 25;
+            this.btnBusqActivo.Click += new System.EventHandler(this.btnBusqActivo_Click);
             // 
             // labelControl9
             // 
@@ -368,19 +389,19 @@
             this.labelControl9.TabIndex = 73;
             this.labelControl9.Text = "Comprador:";
             // 
-            // textEdit10
+            // textFolio
             // 
-            this.textEdit10.Location = new System.Drawing.Point(87, 32);
-            this.textEdit10.Name = "textEdit10";
-            this.textEdit10.Size = new System.Drawing.Size(111, 20);
-            this.textEdit10.TabIndex = 59;
+            this.textFolio.Location = new System.Drawing.Point(87, 32);
+            this.textFolio.Name = "textFolio";
+            this.textFolio.Size = new System.Drawing.Size(111, 20);
+            this.textFolio.TabIndex = 59;
             // 
-            // textEdit7
+            // textFactura
             // 
-            this.textEdit7.Location = new System.Drawing.Point(399, 84);
-            this.textEdit7.Name = "textEdit7";
-            this.textEdit7.Size = new System.Drawing.Size(111, 20);
-            this.textEdit7.TabIndex = 72;
+            this.textFactura.Location = new System.Drawing.Point(399, 84);
+            this.textFactura.Name = "textFactura";
+            this.textFactura.Size = new System.Drawing.Size(111, 20);
+            this.textFactura.TabIndex = 72;
             // 
             // labelControl2
             // 
@@ -398,27 +419,28 @@
             this.labelControl8.TabIndex = 71;
             this.labelControl8.Text = "Ref Factura:";
             // 
-            // textEdit2
+            // textTipoServicio
             // 
-            this.textEdit2.Location = new System.Drawing.Point(87, 84);
-            this.textEdit2.Name = "textEdit2";
-            this.textEdit2.Size = new System.Drawing.Size(188, 20);
-            this.textEdit2.TabIndex = 61;
+            this.textTipoServicio.Location = new System.Drawing.Point(87, 84);
+            this.textTipoServicio.Name = "textTipoServicio";
+            this.textTipoServicio.Size = new System.Drawing.Size(188, 20);
+            this.textTipoServicio.TabIndex = 61;
             // 
-            // textEdit6
+            // textProveedor
             // 
-            this.textEdit6.Location = new System.Drawing.Point(399, 58);
-            this.textEdit6.Name = "textEdit6";
-            this.textEdit6.Size = new System.Drawing.Size(218, 20);
-            this.textEdit6.TabIndex = 70;
+            this.textProveedor.Location = new System.Drawing.Point(399, 58);
+            this.textProveedor.Name = "textProveedor";
+            this.textProveedor.Size = new System.Drawing.Size(218, 20);
+            this.textProveedor.TabIndex = 70;
             // 
-            // simpleButton1
+            // btnBusqTipo
             // 
-            this.simpleButton1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
-            this.simpleButton1.Location = new System.Drawing.Point(281, 84);
-            this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(24, 21);
-            this.simpleButton1.TabIndex = 62;
+            this.btnBusqTipo.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
+            this.btnBusqTipo.Location = new System.Drawing.Point(281, 84);
+            this.btnBusqTipo.Name = "btnBusqTipo";
+            this.btnBusqTipo.Size = new System.Drawing.Size(24, 21);
+            this.btnBusqTipo.TabIndex = 62;
+            this.btnBusqTipo.Click += new System.EventHandler(this.btnBusqTipo_Click);
             // 
             // labelControl7
             // 
@@ -448,12 +470,12 @@
             this.dtFechaAlta.Size = new System.Drawing.Size(111, 20);
             this.dtFechaAlta.TabIndex = 68;
             // 
-            // textEdit3
+            // textPTotal
             // 
-            this.textEdit3.Location = new System.Drawing.Point(87, 110);
-            this.textEdit3.Name = "textEdit3";
-            this.textEdit3.Size = new System.Drawing.Size(111, 20);
-            this.textEdit3.TabIndex = 64;
+            this.textPTotal.Location = new System.Drawing.Point(87, 110);
+            this.textPTotal.Name = "textPTotal";
+            this.textPTotal.Size = new System.Drawing.Size(111, 20);
+            this.textPTotal.TabIndex = 64;
             // 
             // labelControl6
             // 
@@ -471,26 +493,26 @@
             this.labelControl4.TabIndex = 65;
             this.labelControl4.Text = "Kilometraje:";
             // 
-            // textEdit4
+            // textKM
             // 
-            this.textEdit4.Location = new System.Drawing.Point(87, 136);
-            this.textEdit4.Name = "textEdit4";
-            this.textEdit4.Size = new System.Drawing.Size(111, 20);
-            this.textEdit4.TabIndex = 66;
+            this.textKM.Location = new System.Drawing.Point(87, 136);
+            this.textKM.Name = "textKM";
+            this.textKM.Size = new System.Drawing.Size(111, 20);
+            this.textKM.TabIndex = 66;
             // 
             // panelControl3
             // 
             this.panelControl3.Controls.Add(this.labelControl13);
-            this.panelControl3.Controls.Add(this.textEdit11);
+            this.panelControl3.Controls.Add(this.textCantidad);
             this.panelControl3.Controls.Add(this.labelControl12);
-            this.panelControl3.Controls.Add(this.textEdit9);
-            this.panelControl3.Controls.Add(this.simpleButton2);
+            this.panelControl3.Controls.Add(this.textCosto);
+            this.panelControl3.Controls.Add(this.btnAgregar);
             this.panelControl3.Controls.Add(this.labelControl10);
-            this.panelControl3.Controls.Add(this.textEdit5);
+            this.panelControl3.Controls.Add(this.textServicio);
             this.panelControl3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelControl3.Location = new System.Drawing.Point(68, 227);
+            this.panelControl3.Location = new System.Drawing.Point(72, 227);
             this.panelControl3.Name = "panelControl3";
-            this.panelControl3.Size = new System.Drawing.Size(759, 57);
+            this.panelControl3.Size = new System.Drawing.Size(755, 57);
             this.panelControl3.TabIndex = 6;
             // 
             // labelControl13
@@ -501,12 +523,12 @@
             this.labelControl13.TabIndex = 67;
             this.labelControl13.Text = "Cantidad:";
             // 
-            // textEdit11
+            // textCantidad
             // 
-            this.textEdit11.Location = new System.Drawing.Point(511, 18);
-            this.textEdit11.Name = "textEdit11";
-            this.textEdit11.Size = new System.Drawing.Size(62, 20);
-            this.textEdit11.TabIndex = 68;
+            this.textCantidad.Location = new System.Drawing.Point(511, 18);
+            this.textCantidad.Name = "textCantidad";
+            this.textCantidad.Size = new System.Drawing.Size(62, 20);
+            this.textCantidad.TabIndex = 68;
             // 
             // labelControl12
             // 
@@ -516,21 +538,22 @@
             this.labelControl12.TabIndex = 65;
             this.labelControl12.Text = "Costo U:";
             // 
-            // textEdit9
+            // textCosto
             // 
-            this.textEdit9.Location = new System.Drawing.Point(338, 18);
-            this.textEdit9.Name = "textEdit9";
-            this.textEdit9.Size = new System.Drawing.Size(111, 20);
-            this.textEdit9.TabIndex = 66;
+            this.textCosto.Location = new System.Drawing.Point(338, 18);
+            this.textCosto.Name = "textCosto";
+            this.textCosto.Size = new System.Drawing.Size(111, 20);
+            this.textCosto.TabIndex = 66;
             // 
-            // simpleButton2
+            // btnAgregar
             // 
-            this.simpleButton2.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton2.ImageOptions.Image")));
-            this.simpleButton2.Location = new System.Drawing.Point(588, 5);
-            this.simpleButton2.Name = "simpleButton2";
-            this.simpleButton2.Size = new System.Drawing.Size(87, 46);
-            this.simpleButton2.TabIndex = 27;
-            this.simpleButton2.Text = "Agregar";
+            this.btnAgregar.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnAgregar.ImageOptions.Image")));
+            this.btnAgregar.Location = new System.Drawing.Point(588, 5);
+            this.btnAgregar.Name = "btnAgregar";
+            this.btnAgregar.Size = new System.Drawing.Size(87, 46);
+            this.btnAgregar.TabIndex = 27;
+            this.btnAgregar.Text = "Agregar";
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // labelControl10
             // 
@@ -540,21 +563,21 @@
             this.labelControl10.TabIndex = 25;
             this.labelControl10.Text = "Servicio:";
             // 
-            // textEdit5
+            // textServicio
             // 
-            this.textEdit5.Location = new System.Drawing.Point(94, 18);
-            this.textEdit5.Name = "textEdit5";
-            this.textEdit5.Size = new System.Drawing.Size(188, 20);
-            this.textEdit5.TabIndex = 26;
+            this.textServicio.Location = new System.Drawing.Point(94, 18);
+            this.textServicio.Name = "textServicio";
+            this.textServicio.Size = new System.Drawing.Size(188, 20);
+            this.textServicio.TabIndex = 26;
             // 
             // panelControl2
             // 
             this.panelControl2.Controls.Add(this.gridControl1);
             this.panelControl2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelControl2.Location = new System.Drawing.Point(68, 284);
+            this.panelControl2.Location = new System.Drawing.Point(72, 284);
             this.panelControl2.Name = "panelControl2";
             this.panelControl2.Padding = new System.Windows.Forms.Padding(5);
-            this.panelControl2.Size = new System.Drawing.Size(759, 245);
+            this.panelControl2.Size = new System.Drawing.Size(755, 245);
             this.panelControl2.TabIndex = 7;
             // 
             // gridControl1
@@ -564,53 +587,75 @@
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.MenuManager = this.barManager2;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(745, 231);
+            this.gridControl1.Size = new System.Drawing.Size(741, 231);
             this.gridControl1.TabIndex = 0;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
+            this.gridControl1.Click += new System.EventHandler(this.gridControl1_Click);
+            this.gridControl1.DoubleClick += new System.EventHandler(this.gridControl1_DoubleClick);
             // 
             // gridView1
             // 
             this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.gridColumn1,
-            this.gridColumn2,
-            this.gridColumn3,
-            this.gridColumn4});
+            this.Folio,
+            this.Secuencia,
+            this.Nombre_ServicioDetalle,
+            this.Costo,
+            this.Piezas,
+            this.Total});
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsView.ShowGroupPanel = false;
             // 
-            // gridColumn1
+            // Folio
             // 
-            this.gridColumn1.Caption = "Servicio";
-            this.gridColumn1.Name = "gridColumn1";
-            this.gridColumn1.Visible = true;
-            this.gridColumn1.VisibleIndex = 0;
-            this.gridColumn1.Width = 397;
+            this.Folio.Caption = "Folio";
+            this.Folio.FieldName = "Folio";
+            this.Folio.Name = "Folio";
             // 
-            // gridColumn2
+            // Secuencia
             // 
-            this.gridColumn2.Caption = "Costo U";
-            this.gridColumn2.Name = "gridColumn2";
-            this.gridColumn2.Visible = true;
-            this.gridColumn2.VisibleIndex = 1;
-            this.gridColumn2.Width = 127;
+            this.Secuencia.Caption = "Secuencia";
+            this.Secuencia.FieldName = "Secuencia";
+            this.Secuencia.Name = "Secuencia";
+            this.Secuencia.Visible = true;
+            this.Secuencia.VisibleIndex = 4;
             // 
-            // gridColumn3
+            // Nombre_ServicioDetalle
             // 
-            this.gridColumn3.Caption = "Piezas";
-            this.gridColumn3.Name = "gridColumn3";
-            this.gridColumn3.Visible = true;
-            this.gridColumn3.VisibleIndex = 2;
-            this.gridColumn3.Width = 96;
+            this.Nombre_ServicioDetalle.Caption = "Servicio";
+            this.Nombre_ServicioDetalle.FieldName = "Nombre_ServicioDetalle";
+            this.Nombre_ServicioDetalle.Name = "Nombre_ServicioDetalle";
+            this.Nombre_ServicioDetalle.Visible = true;
+            this.Nombre_ServicioDetalle.VisibleIndex = 0;
+            this.Nombre_ServicioDetalle.Width = 397;
             // 
-            // gridColumn4
+            // Costo
             // 
-            this.gridColumn4.Caption = "Costo Total";
-            this.gridColumn4.Name = "gridColumn4";
-            this.gridColumn4.Visible = true;
-            this.gridColumn4.VisibleIndex = 3;
-            this.gridColumn4.Width = 103;
+            this.Costo.Caption = "Costo U";
+            this.Costo.FieldName = "Costo";
+            this.Costo.Name = "Costo";
+            this.Costo.Visible = true;
+            this.Costo.VisibleIndex = 1;
+            this.Costo.Width = 127;
+            // 
+            // Piezas
+            // 
+            this.Piezas.Caption = "Piezas";
+            this.Piezas.FieldName = "Piezas";
+            this.Piezas.Name = "Piezas";
+            this.Piezas.Visible = true;
+            this.Piezas.VisibleIndex = 2;
+            this.Piezas.Width = 96;
+            // 
+            // Total
+            // 
+            this.Total.Caption = "Costo Total";
+            this.Total.FieldName = "Total";
+            this.Total.Name = "Total";
+            this.Total.Visible = true;
+            this.Total.VisibleIndex = 3;
+            this.Total.Width = 103;
             // 
             // Frm_Servicios
             // 
@@ -626,29 +671,30 @@
             this.Controls.Add(this.barDockControl1);
             this.Name = "Frm_Servicios";
             this.Text = "Servicios / Mantenimiento";
+            this.Load += new System.EventHandler(this.Frm_Servicios_Load);
             ((System.ComponentModel.ISupportInitialize)(this.barManager2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
             this.groupControl1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.memoEdit1.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit8.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit10.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit7.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit6.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.memoObservaciones.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textActivo.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textComprador.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textFolio.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textFactura.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textTipoServicio.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textProveedor.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtFechaAlta.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtFechaAlta.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit3.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit4.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textPTotal.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textKM.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).EndInit();
             this.panelControl3.ResumeLayout(false);
             this.panelControl3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit11.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit9.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit5.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textCantidad.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textCosto.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textServicio.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).EndInit();
             this.panelControl2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
@@ -662,11 +708,11 @@
 
         private DevExpress.XtraBars.BarManager barManager2;
         public DevExpress.XtraBars.Bar bar1;
-        private DevExpress.XtraBars.BarLargeButtonItem barLargeButtonItem1;
-        private DevExpress.XtraBars.BarLargeButtonItem barLargeButtonItem2;
-        private DevExpress.XtraBars.BarLargeButtonItem barLargeButtonItem3;
-        private DevExpress.XtraBars.BarLargeButtonItem barLargeButtonItem4;
-        private DevExpress.XtraBars.BarLargeButtonItem barLargeButtonItem5;
+        private DevExpress.XtraBars.BarLargeButtonItem btnLimpiar;
+        private DevExpress.XtraBars.BarLargeButtonItem btnGuardar;
+        private DevExpress.XtraBars.BarLargeButtonItem btnEliminar;
+        private DevExpress.XtraBars.BarLargeButtonItem btnSalir;
+        private DevExpress.XtraBars.BarLargeButtonItem btnSeleccionar;
         private DevExpress.XtraBars.Bar bar2;
         private DevExpress.XtraBars.BarStaticItem barStaticItem1;
         private DevExpress.XtraBars.BarDockControl barDockControl1;
@@ -674,45 +720,48 @@
         private DevExpress.XtraBars.BarDockControl barDockControl3;
         private DevExpress.XtraBars.BarDockControl barDockControl5;
         private DevExpress.XtraEditors.PanelControl panelControl1;
-        private DevExpress.XtraEditors.SimpleButton btnMarca;
-        private DevExpress.XtraEditors.TextEdit textEdit1;
+        private DevExpress.XtraEditors.SimpleButton btnBusqActivo;
+        private DevExpress.XtraEditors.TextEdit textActivo;
         private DevExpress.XtraEditors.LabelControl labelControl1;
-        private DevExpress.XtraEditors.TextEdit textEdit3;
+        private DevExpress.XtraEditors.TextEdit textPTotal;
         private DevExpress.XtraEditors.LabelControl labelControl3;
-        private DevExpress.XtraEditors.SimpleButton simpleButton1;
-        private DevExpress.XtraEditors.TextEdit textEdit2;
+        private DevExpress.XtraEditors.SimpleButton btnBusqTipo;
+        private DevExpress.XtraEditors.TextEdit textTipoServicio;
         private DevExpress.XtraEditors.LabelControl labelControl2;
-        private DevExpress.XtraEditors.TextEdit textEdit10;
+        private DevExpress.XtraEditors.TextEdit textFolio;
         private DevExpress.XtraEditors.LabelControl labelControl11;
-        private DevExpress.XtraEditors.TextEdit textEdit4;
+        private DevExpress.XtraEditors.TextEdit textKM;
         private DevExpress.XtraEditors.LabelControl labelControl4;
         private DevExpress.XtraEditors.DateEdit dtFechaAlta;
         private DevExpress.XtraEditors.LabelControl labelControl6;
         private DevExpress.XtraEditors.LabelControl labelControl5;
-        private DevExpress.XtraEditors.MemoEdit memoEdit1;
-        private DevExpress.XtraEditors.TextEdit textEdit8;
+        private DevExpress.XtraEditors.MemoEdit memoObservaciones;
+        private DevExpress.XtraEditors.TextEdit textComprador;
         private DevExpress.XtraEditors.LabelControl labelControl9;
-        private DevExpress.XtraEditors.TextEdit textEdit7;
+        private DevExpress.XtraEditors.TextEdit textFactura;
         private DevExpress.XtraEditors.LabelControl labelControl8;
-        private DevExpress.XtraEditors.TextEdit textEdit6;
+        private DevExpress.XtraEditors.TextEdit textProveedor;
         private DevExpress.XtraEditors.LabelControl labelControl7;
         private DevExpress.XtraEditors.PanelControl panelControl2;
         private DevExpress.XtraGrid.GridControl gridControl1;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
         private DevExpress.XtraEditors.PanelControl panelControl3;
         private DevExpress.XtraEditors.LabelControl labelControl10;
-        private DevExpress.XtraEditors.TextEdit textEdit5;
+        private DevExpress.XtraEditors.TextEdit textServicio;
         private DevExpress.XtraEditors.GroupControl groupControl1;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
+        private DevExpress.XtraGrid.Columns.GridColumn Nombre_ServicioDetalle;
+        private DevExpress.XtraGrid.Columns.GridColumn Costo;
         private DevExpress.XtraEditors.LabelControl labelControl12;
-        private DevExpress.XtraEditors.TextEdit textEdit9;
-        private DevExpress.XtraEditors.SimpleButton simpleButton2;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn3;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn4;
+        private DevExpress.XtraEditors.TextEdit textCosto;
+        private DevExpress.XtraEditors.SimpleButton btnAgregar;
+        private DevExpress.XtraGrid.Columns.GridColumn Piezas;
+        private DevExpress.XtraGrid.Columns.GridColumn Total;
         private DevExpress.XtraEditors.LabelControl labelControl13;
-        private DevExpress.XtraEditors.TextEdit textEdit11;
-        private DevExpress.XtraEditors.SimpleButton simpleButton4;
-        private DevExpress.XtraEditors.SimpleButton simpleButton3;
+        private DevExpress.XtraEditors.TextEdit textCantidad;
+        private DevExpress.XtraEditors.SimpleButton btnBusqComprador;
+        private DevExpress.XtraEditors.SimpleButton btnBusqProveedor;
+        private DevExpress.XtraBars.BarLargeButtonItem barLargeButtonItem6;
+        private DevExpress.XtraGrid.Columns.GridColumn Folio;
+        private DevExpress.XtraGrid.Columns.GridColumn Secuencia;
     }
 }

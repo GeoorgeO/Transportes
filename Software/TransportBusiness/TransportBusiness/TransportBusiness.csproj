@@ -212,6 +212,12 @@
     <Compile Include="Formularios\Frm_Servicios.Designer.cs">
       <DependentUpon>Frm_Servicios.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\Frm_Servicios_Buscar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Frm_Servicios_Buscar.Designer.cs">
+      <DependentUpon>Frm_Servicios_Buscar.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\Por Realizar\Frm_Rutas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -414,6 +420,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Frm_Servicios.resx">
       <DependentUpon>Frm_Servicios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Frm_Servicios_Buscar.resx">
+      <DependentUpon>Frm_Servicios_Buscar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Por Realizar\Frm_Rutas.resx">
       <DependentUpon>Frm_Rutas.cs</DependentUpon>

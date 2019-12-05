@@ -16,10 +16,11 @@ GO
 create PROCEDURE [dbo].[SP_ServiciosDetalle_Insert] 
 	-- Add the parameters for the stored procedure here
 	@Folio char(10),
+	@Nombre_ServicioDetalle varchar(80),
 	@Secuencia numeric(10,0),
 	@Costo numeric(18,2),
 	@Piezas numeric(18,2),
-	@Total numeric(18,2),
+	@Total numeric(18,2)
 AS
 BEGIN
 	-- SET NOCOUNT ON added to prevent extra result sets from
@@ -35,12 +36,14 @@ BEGIN
 		
 			INSERT INTO dbo.ServiciosDetalle
 	           (Folio
+			   ,Nombre_ServicioDetalle
 	           ,Secuencia
 			   ,Costo
 			   ,Piezas
 			   ,Total)
 	     	VALUES
 	           (@Folio
+			   ,@Nombre_ServicioDetalle
 	           ,@Secuencia
 			   ,@Costo
 			   ,@Piezas
