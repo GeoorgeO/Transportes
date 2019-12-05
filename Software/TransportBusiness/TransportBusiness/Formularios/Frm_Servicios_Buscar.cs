@@ -103,5 +103,36 @@ namespace TransportBusiness
             }
 
         }
+
+        private void btnSalir_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            vFolio = String.Empty;
+            vKilometraje = 0;
+            vId_TipoServicio = "";
+            vNombre_TipoServicio = "";
+            vPrecioTotal = 0;
+            vId_Activo ="";
+            vNombre_Interno = "";
+            vFechaServicio = DateTime.Now.ToString();
+            vId_Proveedor = "";
+            vNombre_Proveedor = "";
+            vId_Factura = "";
+            vComprador = "";
+            vNombre_Empleado = "";
+            vObservaciones = "";
+            this.Close();
+        }
+
+        private void btnSeleccionar_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            if (vFolio!=null )
+            {
+                this.Close();
+            }
+            else
+            {
+                XtraMessageBox.Show("No se selecciono ningun dato.");
+            }
+        }
     }
 }

@@ -121,6 +121,7 @@
             this.btnSeleccionar.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnSeleccionar.ImageOptions.Image")));
             this.btnSeleccionar.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnSeleccionar.ImageOptions.LargeImage")));
             this.btnSeleccionar.Name = "btnSeleccionar";
+            this.btnSeleccionar.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnSeleccionar_ItemClick);
             // 
             // btnSalir
             // 
@@ -129,6 +130,7 @@
             this.btnSalir.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnSalir.ImageOptions.Image")));
             this.btnSalir.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnSalir.ImageOptions.LargeImage")));
             this.btnSalir.Name = "btnSalir";
+            this.btnSalir.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnSalir_ItemClick);
             // 
             // bEstado
             // 
@@ -252,6 +254,7 @@
             this.Observaciones});
             this.dtgValRutas.GridControl = this.dtgRutas;
             this.dtgValRutas.Name = "dtgValRutas";
+            this.dtgValRutas.OptionsBehavior.Editable = false;
             this.dtgValRutas.OptionsFind.AlwaysVisible = true;
             this.dtgValRutas.OptionsView.ShowGroupPanel = false;
             // 

@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using CapaDeDatos;
 
+
 namespace TransportBusiness
 {
     public partial class Frm_Servicios : DevExpress.XtraEditors.XtraForm
@@ -95,14 +96,20 @@ namespace TransportBusiness
             return sVal;
         }
 
-        private void CargarServicios()
+        private void sumarTotal()
         {
-            
+            double Total;
+            Total = 0;
+            for (int x = 0; x < gridView1.RowCount; x++)
+            {
+                int xRow = gridView1.GetVisibleRowHandle(x);
+                Total=Total+Convert.ToDouble(gridView1.GetRowCellValue(xRow, gridView1.Columns["Total"]).ToString());
+            }
+            textPTotal.Text = Total.ToString();
         }
 
         private void CargarServiciosDetalle(string Folio)
         {
-            gridControl1.DataSource = null;
             CLS_ServiciosDetalle Clase = new CLS_ServiciosDetalle();
             Clase.Folio = Folio;
             Clase.MtdSeleccionarServiciosDetalle();
@@ -173,7 +180,6 @@ namespace TransportBusiness
             Clase.MtdEliminarServicios();
             if (Clase.Exito)
             {
-                CargarServicios();
                 XtraMessageBox.Show("Se ha Eliminado el registro con exito");
                 LimpiarCampos();
                 LimpiarDetalle();
@@ -214,6 +220,8 @@ namespace TransportBusiness
             memoObservaciones.Text = "";
             dtFechaAlta.EditValue = DateTime.Now;
             iniciarTags();
+            gridControl1.DataSource = null;
+            CargarTabla();
         }
 
         private void iniciarTags()
@@ -259,6 +267,7 @@ namespace TransportBusiness
 
         private void btnGuardar_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            textServicio.Focus();
             if (textActivo.Tag.ToString().Trim().Length > 0)
             {
                 if (textTipoServicio.Tag.ToString().Trim().Length > 0)
@@ -311,6 +320,7 @@ namespace TransportBusiness
             LimpiarDetalle();
             reorganizaSec();
             textServicio.Focus();
+            sumarTotal();
         }
 
         private void AgregarDetalles()
@@ -350,6 +360,7 @@ namespace TransportBusiness
                     {
                         gridView1.DeleteRow(gridView1.FocusedRowHandle);
                         reorganizaSec();
+                        sumarTotal();
                     }
                 }
                 catch (Exception ex)
@@ -418,6 +429,29 @@ namespace TransportBusiness
             textComprador.Text = frm.vNombre_Empleado;
             memoObservaciones.Text = frm.vObservaciones;
             CargarServiciosDetalle(frm.vFolio);
+        }
+
+        private void gridView1_CellValueChanged(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)
+        {
+            
+
+            double tCosto;
+            double tPiezas;
+                
+            if(e.Column.Caption == "Costo U" || e.Column.Caption == "Piezas")
+            {
+                for (int x = 0; x < gridView1.RowCount; x++)
+                {
+                    int xRow = gridView1.GetVisibleRowHandle(x);
+                    DataRow row = this.gridView1.GetDataRow(xRow);
+                    tCosto = Convert.ToDouble(row["Costo"].ToString());
+                    tPiezas = Convert.ToDouble(row["Piezas"].ToString());
+
+                    gridView1.SetRowCellValue(xRow, gridView1.Columns["Total"], tCosto * tPiezas);
+                }
+
+            }
+            sumarTotal();
         }
     }
 }

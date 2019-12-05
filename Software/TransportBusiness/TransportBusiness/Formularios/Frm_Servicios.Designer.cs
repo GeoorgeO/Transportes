@@ -310,7 +310,7 @@
             // 
             // btnBusqComprador
             // 
-            this.btnBusqComprador.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton4.ImageOptions.Image")));
+            this.btnBusqComprador.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnBusqComprador.ImageOptions.Image")));
             this.btnBusqComprador.Location = new System.Drawing.Point(623, 109);
             this.btnBusqComprador.Name = "btnBusqComprador";
             this.btnBusqComprador.Size = new System.Drawing.Size(24, 21);
@@ -319,7 +319,7 @@
             // 
             // btnBusqProveedor
             // 
-            this.btnBusqProveedor.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton3.ImageOptions.Image")));
+            this.btnBusqProveedor.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnBusqProveedor.ImageOptions.Image")));
             this.btnBusqProveedor.Location = new System.Drawing.Point(623, 57);
             this.btnBusqProveedor.Name = "btnBusqProveedor";
             this.btnBusqProveedor.Size = new System.Drawing.Size(24, 21);
@@ -374,7 +374,7 @@
             // 
             // btnBusqActivo
             // 
-            this.btnBusqActivo.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnMarca.ImageOptions.Image")));
+            this.btnBusqActivo.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnBusqActivo.ImageOptions.Image")));
             this.btnBusqActivo.Location = new System.Drawing.Point(281, 58);
             this.btnBusqActivo.Name = "btnBusqActivo";
             this.btnBusqActivo.Size = new System.Drawing.Size(24, 21);
@@ -391,6 +391,7 @@
             // 
             // textFolio
             // 
+            this.textFolio.Enabled = false;
             this.textFolio.Location = new System.Drawing.Point(87, 32);
             this.textFolio.Name = "textFolio";
             this.textFolio.Size = new System.Drawing.Size(111, 20);
@@ -435,7 +436,7 @@
             // 
             // btnBusqTipo
             // 
-            this.btnBusqTipo.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
+            this.btnBusqTipo.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnBusqTipo.ImageOptions.Image")));
             this.btnBusqTipo.Location = new System.Drawing.Point(281, 84);
             this.btnBusqTipo.Name = "btnBusqTipo";
             this.btnBusqTipo.Size = new System.Drawing.Size(24, 21);
@@ -472,6 +473,7 @@
             // 
             // textPTotal
             // 
+            this.textPTotal.Enabled = false;
             this.textPTotal.Location = new System.Drawing.Point(87, 110);
             this.textPTotal.Name = "textPTotal";
             this.textPTotal.Size = new System.Drawing.Size(111, 20);
@@ -606,6 +608,7 @@
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsView.ShowGroupPanel = false;
+            this.gridView1.CellValueChanged += new DevExpress.XtraGrid.Views.Base.CellValueChangedEventHandler(this.gridView1_CellValueChanged);
             // 
             // Folio
             // 
@@ -618,6 +621,7 @@
             this.Secuencia.Caption = "Secuencia";
             this.Secuencia.FieldName = "Secuencia";
             this.Secuencia.Name = "Secuencia";
+            this.Secuencia.OptionsColumn.AllowEdit = false;
             this.Secuencia.Visible = true;
             this.Secuencia.VisibleIndex = 4;
             // 
