@@ -363,7 +363,8 @@ namespace TransportBusiness
         {
             if (TieneAcceso("004"))
             {
-
+                Frm_Rutas.DefInstance.MdiParent = this;
+                Frm_Rutas.DefInstance.Show();
             }
             else
             {
@@ -436,7 +437,8 @@ namespace TransportBusiness
         {
             if (TieneAcceso("026"))
             {
-
+                Frm_Servicios.DefInstance.MdiParent = this;
+                Frm_Servicios.DefInstance.Show();
             }
             else
             {

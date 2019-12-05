@@ -19,7 +19,20 @@ namespace TransportBusiness
             InitializeComponent();
         }
 
-       
+        private static Frm_Rutas m_FormDefInstance;
+        public static Frm_Rutas DefInstance
+        {
+            get
+            {
+                if (m_FormDefInstance == null || m_FormDefInstance.IsDisposed)
+                    m_FormDefInstance = new Frm_Rutas();
+                return m_FormDefInstance;
+            }
+            set
+            {
+                m_FormDefInstance = value;
+            }
+        }
 
         private void CargarTabla()
         {
