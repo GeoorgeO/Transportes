@@ -279,6 +279,7 @@ namespace TransportBusiness
             }
             CargarTabla();
             iniciarTags();
+            LimpiarCampos();
         }
 
         private void btnGuardar_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
