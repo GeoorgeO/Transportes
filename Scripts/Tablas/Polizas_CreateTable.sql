@@ -13,6 +13,7 @@ ELSE
 		[Fecha_Fin] datetime NOT NULL,
 		[Id_Activo] [char](8) NULL,
 		[Status] [bit] NOT NULL,
+		[Id_Empresa_Aseguradora] [char](4) NOT NULL,
 	 CONSTRAINT [PK_Poliza] PRIMARY KEY CLUSTERED 
 	(
 		[Poliza_Seguro] ASC

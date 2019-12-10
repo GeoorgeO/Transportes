@@ -5,22 +5,18 @@ SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
-IF  EXISTS (SELECT * FROM SYS.OBJECTS WHERE TYPE = 'P' AND NAME = 'SP_Polizas_Insert')
-DROP PROCEDURE SP_Polizas_Insert
+IF  EXISTS (SELECT * FROM SYS.OBJECTS WHERE TYPE = 'P' AND NAME = 'SP_PolizasUpdateActivo_Insert')
+DROP PROCEDURE SP_PolizasUpdateActivo_Insert
 GO
 -- =============================================
 -- Author:		<Author,,Name>
 -- Create date: <Create Date,,>
 -- Description:	<Description,,>
 -- =============================================
-create PROCEDURE [dbo].[SP_Polizas_Insert] 
+create PROCEDURE [dbo].[SP_PolizasUpdateActivo_Insert] 
 	-- Add the parameters for the stored procedure here
 	@Poliza_Seguro varchar(20),
-	@Fecha_Inicio datetime,
-	@Fecha_Fin datetime,
-	@Id_Activo char(8),
-	@Estatus bit,
-	@Id_Empresa_Aseguradora char(4)
+	@Id_Activo char(8)
 AS
 BEGIN
 	-- SET NOCOUNT ON added to prevent extra result sets from
@@ -33,36 +29,14 @@ BEGIN
 	begin transaction T1;
 	begin try
 
-
-		declare @Existe int
-		select @Existe = count(Poliza_Seguro) from dbo.Polizas a where (a.Poliza_Seguro=@Poliza_Seguro)
-
-		if @Existe>0 
+		
 		
 			UPDATE dbo.Polizas
-		        SET Fecha_Inicio=@Fecha_Inicio,
-				Fecha_Fin=@Fecha_Fin,
-				Id_Activo=@Id_Activo,
-				Id_Empresa_Aseguradora=@Id_Empresa_Aseguradora
+		        SET Id_Activo=@Id_Activo
 		    WHERE
 		    	Poliza_Seguro=@Poliza_Seguro
 				
-		else
 		
-			INSERT INTO dbo.Polizas
-	           (Poliza_Seguro
-	           ,Fecha_Inicio
-			   ,Fecha_Fin
-			   ,Id_Activo
-			   ,Estatus
-			   ,Id_Empresa_Aseguradora)
-	     	VALUES
-	           (@Poliza_Seguro
-	           ,@Fecha_Inicio
-			   ,@Fecha_Fin
-			   ,@Id_Activo
-			   ,1
-			   ,@Id_Empresa_Aseguradora)
 		
 		commit transaction T1;
 		set @correcto=1

@@ -135,6 +135,7 @@
             this.bandedGridColumn26 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
+            this.btnBusqPoliza = new DevExpress.XtraEditors.SimpleButton();
             this.btnGallery = new DevExpress.XtraEditors.SimpleButton();
             this.btnXML = new DevExpress.XtraEditors.SimpleButton();
             this.textTargCombustible = new DevExpress.XtraEditors.TextEdit();
@@ -148,7 +149,6 @@
             this.cboAsignado = new DevExpress.XtraEditors.ComboBoxEdit();
             this.labelControl21 = new DevExpress.XtraEditors.LabelControl();
             this.txtEmpresaAsegu = new DevExpress.XtraEditors.TextEdit();
-            this.btnEmpresaAsegu = new DevExpress.XtraEditors.SimpleButton();
             this.txtEstatus = new DevExpress.XtraEditors.TextEdit();
             this.txtTarjetaCirculacion = new DevExpress.XtraEditors.TextEdit();
             this.txtPolizaSeguro = new DevExpress.XtraEditors.TextEdit();
@@ -194,7 +194,6 @@
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.txtIdActivo = new DevExpress.XtraEditors.TextEdit();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
-            this.btnBusqPoliza = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
@@ -1216,7 +1215,6 @@
             this.groupControl1.Controls.Add(this.cboAsignado);
             this.groupControl1.Controls.Add(this.labelControl21);
             this.groupControl1.Controls.Add(this.txtEmpresaAsegu);
-            this.groupControl1.Controls.Add(this.btnEmpresaAsegu);
             this.groupControl1.Controls.Add(this.txtEstatus);
             this.groupControl1.Controls.Add(this.txtTarjetaCirculacion);
             this.groupControl1.Controls.Add(this.txtPolizaSeguro);
@@ -1268,6 +1266,15 @@
             this.groupControl1.Size = new System.Drawing.Size(945, 286);
             this.groupControl1.TabIndex = 0;
             this.groupControl1.Text = "Activo";
+            // 
+            // btnBusqPoliza
+            // 
+            this.btnBusqPoliza.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnBusqPoliza.ImageOptions.Image")));
+            this.btnBusqPoliza.Location = new System.Drawing.Point(657, 246);
+            this.btnBusqPoliza.Name = "btnBusqPoliza";
+            this.btnBusqPoliza.Size = new System.Drawing.Size(24, 21);
+            this.btnBusqPoliza.TabIndex = 66;
+            this.btnBusqPoliza.Click += new System.EventHandler(this.btnBusqPoliza_Click);
             // 
             // btnGallery
             // 
@@ -1382,15 +1389,6 @@
             this.txtEmpresaAsegu.Name = "txtEmpresaAsegu";
             this.txtEmpresaAsegu.Size = new System.Drawing.Size(207, 20);
             this.txtEmpresaAsegu.TabIndex = 53;
-            // 
-            // btnEmpresaAsegu
-            // 
-            this.btnEmpresaAsegu.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnEmpresaAsegu.ImageOptions.Image")));
-            this.btnEmpresaAsegu.Location = new System.Drawing.Point(657, 220);
-            this.btnEmpresaAsegu.Name = "btnEmpresaAsegu";
-            this.btnEmpresaAsegu.Size = new System.Drawing.Size(24, 21);
-            this.btnEmpresaAsegu.TabIndex = 52;
-            this.btnEmpresaAsegu.Click += new System.EventHandler(this.btnEmpresaAsegu_Click);
             // 
             // txtEstatus
             // 
@@ -1781,15 +1779,6 @@
             this.labelControl1.TabIndex = 0;
             this.labelControl1.Text = "Id Activo: ";
             // 
-            // btnBusqPoliza
-            // 
-            this.btnBusqPoliza.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
-            this.btnBusqPoliza.Location = new System.Drawing.Point(657, 246);
-            this.btnBusqPoliza.Name = "btnBusqPoliza";
-            this.btnBusqPoliza.Size = new System.Drawing.Size(24, 21);
-            this.btnBusqPoliza.TabIndex = 66;
-            this.btnBusqPoliza.Click += new System.EventHandler(this.btnBusqPoliza_Click);
-            // 
             // Frm_Activos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1946,7 +1935,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn Empresa;
         private DevExpress.XtraEditors.LabelControl labelControl21;
         private DevExpress.XtraEditors.TextEdit txtEmpresaAsegu;
-        private DevExpress.XtraEditors.SimpleButton btnEmpresaAsegu;
         private DevExpress.XtraEditors.ComboBoxEdit cboAsignado;
         private DevExpress.XtraGrid.Views.BandedGrid.BandedGridView bandedGridView1;
         private DevExpress.XtraGrid.Views.BandedGrid.GridBand gridBand1;

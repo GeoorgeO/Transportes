@@ -256,7 +256,7 @@ namespace TransportBusiness
             Activos.MtdInsertarActivos();
             if (Activos.Exito)
             {
-
+                ActualizaActivoPoliza();
                 CargarActivos();
                 XtraMessageBox.Show("Se ha Insertado el registro con exito");
                 LimpiarCampos();
@@ -281,6 +281,24 @@ namespace TransportBusiness
             else
             {
                 XtraMessageBox.Show(Activos.Mensaje);
+            }
+        }
+
+        private void ActualizaActivoPoliza()
+        {
+            CLS_Polizas Polizas = new CLS_Polizas();
+            Polizas.Id_Activo = txtIdActivo.Text.Trim();
+            Polizas.Poliza_Seguro = txtPolizaSeguro.Text.Trim();
+            Polizas.MtdUpdateActivoPoliza();
+            if (Polizas.Exito)
+            {
+              
+                //XtraMessageBox.Show("Se ha Eliminado el registro con exito");
+               
+            }
+            else
+            {
+                XtraMessageBox.Show(Polizas.Mensaje);
             }
         }
 
@@ -344,7 +362,7 @@ namespace TransportBusiness
             btnEmpresa.Enabled = Valor;
             btnTipoPlaca.Enabled = Valor;
             btnOperador.Enabled = Valor;
-            btnEmpresaAsegu.Enabled = Valor;
+           
             btnMarca.Enabled = Valor;
             btnGuardar.Enabled = Valor;
             btnSeleccionar.Enabled = Valor;
@@ -468,12 +486,7 @@ namespace TransportBusiness
 
         private void btnEmpresaAsegu_Click(object sender, EventArgs e)
         {
-            Frm_Aseguradoras frm = new Frm_Aseguradoras();
-            frm.PaSel = true;
-            frm.ShowDialog();
-
-            txtEmpresaAsegu.Tag = frm.idAseguradora;
-            txtEmpresaAsegu.Text = frm.Aseguradora;
+            
         }
 
         private void txtFechaBaja_EditValueChanged(object sender, EventArgs e)
@@ -549,9 +562,10 @@ namespace TransportBusiness
             Frm_Polizas frm = new Frm_Polizas();
             frm.PaSel = true;
             frm.ShowDialog();
-
             
             txtPolizaSeguro.Text = frm.IdPoliza;
+            txtEmpresaAsegu.Tag = frm.IdAseguradora;
+            txtEmpresaAsegu.Text = frm.Aseguradora;
         }
     }
 }

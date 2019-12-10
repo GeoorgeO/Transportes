@@ -17,6 +17,8 @@ namespace TransportBusiness
         public string IdPoliza { get; set; }
         public string FInicio { get; set; }
         public string Ffin {get; set;}
+        public string IdAseguradora { get; set; }
+        public string Aseguradora { get; set; }
         public Boolean PaSel { get; set; }
 
         public Frm_Polizas()
@@ -75,6 +77,7 @@ namespace TransportBusiness
                 Polizas.Estatus = "1";
            
             Polizas.Id_Activo = labelActivo.Tag.ToString();
+            Polizas.Id_Empresa_Aseguradora = txtEmpresaAsegu.Tag.ToString();
             Polizas.MtdInsertarPolizas();
             if (Polizas.Exito)
             {
@@ -113,6 +116,8 @@ namespace TransportBusiness
             labelActivo.Tag = "";
             labelStatus.Text = "";
             textId.Enabled = true;
+            txtEmpresaAsegu.Text = "";
+            txtEmpresaAsegu.Tag = "";
         }
 
         private void gridControl1_Click(object sender, EventArgs e)
@@ -128,7 +133,8 @@ namespace TransportBusiness
                     labelActivo.Tag = row["Id_Activo"].ToString();
                     labelActivo.Text = row["Nombre_Interno"].ToString();
                     labelStatus.Text = row["Estatus"].ToString();
-
+                    txtEmpresaAsegu.Tag = row["Id_Empresa_Aseguradora"].ToString();
+                    txtEmpresaAsegu.Text = row["Nombre_Empresa_Aseguradora"].ToString();
 
                     if (row["Estatus"].ToString().Equals("False"))
                     {
@@ -211,16 +217,34 @@ namespace TransportBusiness
 
         private void btnSeleccionar_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            IdPoliza = textId.Text.Trim();
-            FInicio = Convert.ToDateTime(dateFin.Text.Trim()).Year.ToString() + DosCero(Convert.ToDateTime(dateFin.Text.Trim()).Month.ToString()) + DosCero(Convert.ToDateTime(dateFin.Text.Trim()).Day.ToString());
-            Ffin = Convert.ToDateTime(dateInicio.Text.Trim()).Year.ToString() + DosCero(Convert.ToDateTime(dateInicio.Text.Trim()).Month.ToString()) + DosCero(Convert.ToDateTime(dateInicio.Text.Trim()).Day.ToString());
-            this.Close();
+            if(Convert.ToInt32(DateTime.Now.Year.ToString() + DosCero(DateTime.Now.Month.ToString()) + DosCero(DateTime.Now.Day.ToString())) >= Convert.ToInt32(Convert.ToDateTime(dateInicio.EditValue).Year.ToString() + DosCero(Convert.ToDateTime(dateInicio.EditValue).Month.ToString()) + DosCero(Convert.ToDateTime(dateInicio.EditValue).Day.ToString())) && Convert.ToInt32(DateTime.Now.Year.ToString() + DosCero(DateTime.Now.Month.ToString()) + DosCero(DateTime.Now.Day.ToString())) <= Convert.ToInt32(Convert.ToDateTime(dateFin.EditValue).Year.ToString() + DosCero(Convert.ToDateTime(dateFin.EditValue).Month.ToString()) + DosCero(Convert.ToDateTime(dateFin.EditValue).Day.ToString())))
+            {
+                IdPoliza = textId.Text.Trim();
+                FInicio = Convert.ToDateTime(dateFin.Text.Trim()).Year.ToString() + DosCero(Convert.ToDateTime(dateFin.Text.Trim()).Month.ToString()) + DosCero(Convert.ToDateTime(dateFin.Text.Trim()).Day.ToString());
+                Ffin = Convert.ToDateTime(dateInicio.Text.Trim()).Year.ToString() + DosCero(Convert.ToDateTime(dateInicio.Text.Trim()).Month.ToString()) + DosCero(Convert.ToDateTime(dateInicio.Text.Trim()).Day.ToString());
+                IdAseguradora = txtEmpresaAsegu.Tag.ToString();
+                Aseguradora = txtEmpresaAsegu.Text.Trim();
+                this.Close();
+            }else
+            {
+                XtraMessageBox.Show("No esta vigente la poliza de seguro seleccionada.");
+            }
+           
         }
 
         private void checkActivo_CheckedChanged(object sender, EventArgs e)
         {
-            CargarPolizas();
-            
+            CargarPolizas();   
+        }
+
+        private void btnEmpresaAsegu_Click(object sender, EventArgs e)
+        {
+            Frm_Aseguradoras frm = new Frm_Aseguradoras();
+            frm.PaSel = true;
+            frm.ShowDialog();
+
+            txtEmpresaAsegu.Tag = frm.idAseguradora;
+            txtEmpresaAsegu.Text = frm.Aseguradora;
         }
     }
 }

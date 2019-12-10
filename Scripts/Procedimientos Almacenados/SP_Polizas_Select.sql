@@ -25,7 +25,7 @@ GO
 -- =============================================
 CREATE PROCEDURE SP_Polizas_Select
 	-- Add the parameters for the stored procedure here
-	@Status bit
+	@Estatus bit
 AS
 BEGIN
 	-- SET NOCOUNT ON added to prevent extra result sets from
@@ -39,9 +39,12 @@ BEGIN
 			P.Fecha_Fin,
 			P.Id_Activo,
 			A.Nombre_Interno,
-			P.Estatus
+			P.Estatus,
+			P.Id_Empresa_Aseguradora,
+			EA.Nombre_Empresa_Aseguradora
 		from Polizas as P
 		left join Activos as A on A.Id_Activo=P.Id_Activo
-		where P.Estatus=@Status
+		left join Empresa_Aseguradora as EA on EA.Id_Empresa_Aseguradora=A.Id_Empresa_Aseguradora
+		where P.Estatus=@Estatus
 END
 GO

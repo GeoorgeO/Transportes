@@ -45,30 +45,37 @@
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
             this.repositoryItemTextEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
+            this.checkActivo = new DevExpress.XtraEditors.CheckEdit();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.Poliza_Seguro = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Fecha_Inicio = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Fecha_Fin = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Id_Activo = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Nombre_Interno = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Estatus = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
+            this.labelActivo = new DevExpress.XtraEditors.LabelControl();
+            this.label1 = new System.Windows.Forms.Label();
+            this.labelStatus = new DevExpress.XtraEditors.LabelControl();
             this.dateFin = new DevExpress.XtraEditors.DateEdit();
             this.dateInicio = new DevExpress.XtraEditors.DateEdit();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.textId = new DevExpress.XtraEditors.TextEdit();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
-            this.checkActivo = new DevExpress.XtraEditors.CheckEdit();
-            this.labelStatus = new DevExpress.XtraEditors.LabelControl();
-            this.label1 = new System.Windows.Forms.Label();
-            this.labelActivo = new DevExpress.XtraEditors.LabelControl();
-            this.Nombre_Interno = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
+            this.txtEmpresaAsegu = new DevExpress.XtraEditors.TextEdit();
+            this.btnEmpresaAsegu = new DevExpress.XtraEditors.SimpleButton();
+            this.Id_Empresa_Aseguradora = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Nombre_Empresa_Aseguradora = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
             this.panelControl2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.checkActivo.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
@@ -80,7 +87,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dateInicio.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateInicio.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textId.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.checkActivo.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtEmpresaAsegu.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // barManager1
@@ -243,6 +250,16 @@
             this.panelControl2.Size = new System.Drawing.Size(647, 330);
             this.panelControl2.TabIndex = 19;
             // 
+            // checkActivo
+            // 
+            this.checkActivo.Location = new System.Drawing.Point(15, 3);
+            this.checkActivo.MenuManager = this.barManager1;
+            this.checkActivo.Name = "checkActivo";
+            this.checkActivo.Properties.Caption = "Inactivos";
+            this.checkActivo.Size = new System.Drawing.Size(75, 19);
+            this.checkActivo.TabIndex = 4;
+            this.checkActivo.CheckedChanged += new System.EventHandler(this.checkActivo_CheckedChanged);
+            // 
             // gridControl1
             // 
             this.gridControl1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -264,7 +281,9 @@
             this.Fecha_Fin,
             this.Id_Activo,
             this.Nombre_Interno,
-            this.Estatus});
+            this.Estatus,
+            this.Id_Empresa_Aseguradora,
+            this.Nombre_Empresa_Aseguradora});
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsBehavior.Editable = false;
@@ -300,13 +319,19 @@
             this.Id_Activo.FieldName = "Id_Activo";
             this.Id_Activo.Name = "Id_Activo";
             // 
+            // Nombre_Interno
+            // 
+            this.Nombre_Interno.Caption = "Activo";
+            this.Nombre_Interno.FieldName = "Nombre_Interno";
+            this.Nombre_Interno.Name = "Nombre_Interno";
+            // 
             // Estatus
             // 
             this.Estatus.Caption = "Estatus";
             this.Estatus.FieldName = "Estatus";
             this.Estatus.Name = "Estatus";
             this.Estatus.Visible = true;
-            this.Estatus.VisibleIndex = 4;
+            this.Estatus.VisibleIndex = 3;
             // 
             // panelControl1
             // 
@@ -320,6 +345,10 @@
             // 
             // groupControl1
             // 
+            this.groupControl1.Controls.Add(this.simpleButton1);
+            this.groupControl1.Controls.Add(this.btnEmpresaAsegu);
+            this.groupControl1.Controls.Add(this.txtEmpresaAsegu);
+            this.groupControl1.Controls.Add(this.labelControl4);
             this.groupControl1.Controls.Add(this.labelActivo);
             this.groupControl1.Controls.Add(this.label1);
             this.groupControl1.Controls.Add(this.labelStatus);
@@ -336,10 +365,38 @@
             this.groupControl1.TabIndex = 0;
             this.groupControl1.Text = "Poliza";
             // 
+            // labelActivo
+            // 
+            this.labelActivo.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.labelActivo.Location = new System.Drawing.Point(399, 57);
+            this.labelActivo.Name = "labelActivo";
+            this.labelActivo.Size = new System.Drawing.Size(171, 13);
+            this.labelActivo.TabIndex = 8;
+            this.labelActivo.Visible = false;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(339, 57);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(41, 13);
+            this.label1.TabIndex = 7;
+            this.label1.Text = "Activo:";
+            this.label1.Visible = false;
+            // 
+            // labelStatus
+            // 
+            this.labelStatus.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.labelStatus.Location = new System.Drawing.Point(522, 57);
+            this.labelStatus.Name = "labelStatus";
+            this.labelStatus.Size = new System.Drawing.Size(86, 13);
+            this.labelStatus.TabIndex = 6;
+            this.labelStatus.Visible = false;
+            // 
             // dateFin
             // 
             this.dateFin.EditValue = null;
-            this.dateFin.Location = new System.Drawing.Point(202, 63);
+            this.dateFin.Location = new System.Drawing.Point(221, 54);
             this.dateFin.MenuManager = this.barManager1;
             this.dateFin.Name = "dateFin";
             this.dateFin.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -352,7 +409,7 @@
             // dateInicio
             // 
             this.dateInicio.EditValue = null;
-            this.dateInicio.Location = new System.Drawing.Point(61, 63);
+            this.dateInicio.Location = new System.Drawing.Point(66, 54);
             this.dateInicio.MenuManager = this.barManager1;
             this.dateInicio.Name = "dateInicio";
             this.dateInicio.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -364,7 +421,7 @@
             // 
             // labelControl3
             // 
-            this.labelControl3.Location = new System.Drawing.Point(169, 66);
+            this.labelControl3.Location = new System.Drawing.Point(186, 57);
             this.labelControl3.Name = "labelControl3";
             this.labelControl3.Size = new System.Drawing.Size(31, 13);
             this.labelControl3.TabIndex = 3;
@@ -372,7 +429,7 @@
             // 
             // labelControl2
             // 
-            this.labelControl2.Location = new System.Drawing.Point(19, 66);
+            this.labelControl2.Location = new System.Drawing.Point(19, 57);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(42, 13);
             this.labelControl2.TabIndex = 2;
@@ -380,7 +437,7 @@
             // 
             // textId
             // 
-            this.textId.Location = new System.Drawing.Point(61, 28);
+            this.textId.Location = new System.Drawing.Point(66, 28);
             this.textId.MenuManager = this.barManager1;
             this.textId.Name = "textId";
             this.textId.Size = new System.Drawing.Size(100, 20);
@@ -394,49 +451,54 @@
             this.labelControl1.TabIndex = 0;
             this.labelControl1.Text = "N°: ";
             // 
-            // checkActivo
+            // labelControl4
             // 
-            this.checkActivo.Location = new System.Drawing.Point(15, 3);
-            this.checkActivo.MenuManager = this.barManager1;
-            this.checkActivo.Name = "checkActivo";
-            this.checkActivo.Properties.Caption = "Inactivos";
-            this.checkActivo.Size = new System.Drawing.Size(75, 19);
-            this.checkActivo.TabIndex = 4;
-            this.checkActivo.CheckedChanged += new System.EventHandler(this.checkActivo_CheckedChanged);
+            this.labelControl4.Location = new System.Drawing.Point(186, 31);
+            this.labelControl4.Name = "labelControl4";
+            this.labelControl4.Size = new System.Drawing.Size(66, 13);
+            this.labelControl4.TabIndex = 9;
+            this.labelControl4.Text = "Aseguradora:";
             // 
-            // labelStatus
+            // txtEmpresaAsegu
             // 
-            this.labelStatus.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelStatus.Location = new System.Drawing.Point(400, 23);
-            this.labelStatus.Name = "labelStatus";
-            this.labelStatus.Size = new System.Drawing.Size(86, 13);
-            this.labelStatus.TabIndex = 6;
-            this.labelStatus.Visible = false;
+            this.txtEmpresaAsegu.Location = new System.Drawing.Point(257, 28);
+            this.txtEmpresaAsegu.MenuManager = this.barManager1;
+            this.txtEmpresaAsegu.Name = "txtEmpresaAsegu";
+            this.txtEmpresaAsegu.Size = new System.Drawing.Size(155, 20);
+            this.txtEmpresaAsegu.TabIndex = 10;
             // 
-            // label1
+            // btnEmpresaAsegu
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(340, 66);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(41, 13);
-            this.label1.TabIndex = 7;
-            this.label1.Text = "Activo:";
-            this.label1.Visible = false;
+            this.btnEmpresaAsegu.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnEmpresaAsegu.ImageOptions.Image")));
+            this.btnEmpresaAsegu.Location = new System.Drawing.Point(418, 27);
+            this.btnEmpresaAsegu.Name = "btnEmpresaAsegu";
+            this.btnEmpresaAsegu.Size = new System.Drawing.Size(24, 21);
+            this.btnEmpresaAsegu.TabIndex = 53;
+            this.btnEmpresaAsegu.Click += new System.EventHandler(this.btnEmpresaAsegu_Click);
             // 
-            // labelActivo
+            // Id_Empresa_Aseguradora
             // 
-            this.labelActivo.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelActivo.Location = new System.Drawing.Point(400, 66);
-            this.labelActivo.Name = "labelActivo";
-            this.labelActivo.Size = new System.Drawing.Size(171, 13);
-            this.labelActivo.TabIndex = 8;
-            this.labelActivo.Visible = false;
+            this.Id_Empresa_Aseguradora.Caption = "Id Aseguradora";
+            this.Id_Empresa_Aseguradora.FieldName = "Id_Empresa_Aseguradora";
+            this.Id_Empresa_Aseguradora.Name = "Id_Empresa_Aseguradora";
+            this.Id_Empresa_Aseguradora.Visible = true;
+            this.Id_Empresa_Aseguradora.VisibleIndex = 4;
             // 
-            // Nombre_Interno
+            // Nombre_Empresa_Aseguradora
             // 
-            this.Nombre_Interno.Caption = "Activo";
-            this.Nombre_Interno.FieldName = "Nombre_Interno";
-            this.Nombre_Interno.Name = "Nombre_Interno";
+            this.Nombre_Empresa_Aseguradora.Caption = "Aseguradora";
+            this.Nombre_Empresa_Aseguradora.FieldName = "Nombre_Empresa_Aseguradora";
+            this.Nombre_Empresa_Aseguradora.Name = "Nombre_Empresa_Aseguradora";
+            this.Nombre_Empresa_Aseguradora.Visible = true;
+            this.Nombre_Empresa_Aseguradora.VisibleIndex = 5;
+            // 
+            // simpleButton1
+            // 
+            this.simpleButton1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
+            this.simpleButton1.Location = new System.Drawing.Point(462, 27);
+            this.simpleButton1.Name = "simpleButton1";
+            this.simpleButton1.Size = new System.Drawing.Size(42, 39);
+            this.simpleButton1.TabIndex = 54;
             // 
             // Frm_Polizas
             // 
@@ -456,6 +518,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).EndInit();
             this.panelControl2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.checkActivo.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
@@ -468,7 +531,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dateInicio.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateInicio.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textId.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.checkActivo.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtEmpresaAsegu.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -511,5 +574,11 @@
         private System.Windows.Forms.Label label1;
         private DevExpress.XtraEditors.LabelControl labelStatus;
         private DevExpress.XtraGrid.Columns.GridColumn Nombre_Interno;
+        private DevExpress.XtraEditors.TextEdit txtEmpresaAsegu;
+        private DevExpress.XtraEditors.LabelControl labelControl4;
+        private DevExpress.XtraEditors.SimpleButton btnEmpresaAsegu;
+        private DevExpress.XtraGrid.Columns.GridColumn Id_Empresa_Aseguradora;
+        private DevExpress.XtraGrid.Columns.GridColumn Nombre_Empresa_Aseguradora;
+        private DevExpress.XtraEditors.SimpleButton simpleButton1;
     }
 }
