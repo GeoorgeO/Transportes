@@ -44,7 +44,7 @@ BEGIN
 			EA.Nombre_Empresa_Aseguradora
 		from Polizas as P
 		left join Activos as A on A.Id_Activo=P.Id_Activo
-		left join Empresa_Aseguradora as EA on EA.Id_Empresa_Aseguradora=A.Id_Empresa_Aseguradora
+		left join Empresa_Aseguradora as EA on EA.Id_Empresa_Aseguradora=P.Id_Empresa_Aseguradora
 		where P.Estatus=@Estatus
 END
 GO

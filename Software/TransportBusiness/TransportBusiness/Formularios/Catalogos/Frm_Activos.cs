@@ -335,20 +335,12 @@ namespace TransportBusiness
             txtIdActivo.Enabled = Valor;
             txtNombreActivo.Enabled = Valor;
             txtDescripcion.Enabled = Valor;
-            txtMarca.Enabled = Valor;
             txtColor.Enabled = Valor;
             txtCosto.Enabled = Valor;
             txtModelo.Enabled = Valor;
             txtNoSerie.Enabled = Valor;
-            txtEstatus.Enabled = Valor;
-            txtTipoTransporte.Enabled = Valor;
-            txtTipoActivo.Enabled = Valor;
-            txtEmpresa.Enabled = Valor;
             txtTarjetaCirculacion.Enabled = Valor;
             txtPlaca.Enabled = Valor;
-            txtTipoPlaca.Enabled = Valor;
-            txtOperador.Enabled = Valor;
-            txtEmpresaAsegu.Enabled = Valor;
             txtPolizaSeguro.Enabled = Valor;
             dtFechaAlta.Enabled = Valor;
             txtFechaBaja.Enabled = Valor;
@@ -361,8 +353,7 @@ namespace TransportBusiness
             btnTipoActivo.Enabled = Valor;
             btnEmpresa.Enabled = Valor;
             btnTipoPlaca.Enabled = Valor;
-            btnOperador.Enabled = Valor;
-           
+            btnOperador.Enabled = Valor; 
             btnMarca.Enabled = Valor;
             btnGuardar.Enabled = Valor;
             btnSeleccionar.Enabled = Valor;
