@@ -45,6 +45,7 @@
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
             this.repositoryItemTextEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
+            this.checkActivo = new DevExpress.XtraEditors.CheckEdit();
             this.dtgActivos = new DevExpress.XtraGrid.GridControl();
             this.cardView1 = new DevExpress.XtraGrid.Views.Card.CardView();
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -193,11 +194,12 @@
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.txtIdActivo = new DevExpress.XtraEditors.TextEdit();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
-            this.checkActivo = new DevExpress.XtraEditors.CheckEdit();
+            this.btnBusqPoliza = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
             this.panelControl2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.checkActivo.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtgActivos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cardView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
@@ -233,7 +235,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtTipoPlaca.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNombreActivo.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtIdActivo.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.checkActivo.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // barManager1
@@ -361,9 +362,9 @@
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 537);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 539);
             this.barDockControlBottom.Manager = this.barManager1;
-            this.barDockControlBottom.Size = new System.Drawing.Size(1032, 27);
+            this.barDockControlBottom.Size = new System.Drawing.Size(1032, 25);
             // 
             // barDockControlLeft
             // 
@@ -371,7 +372,7 @@
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.barDockControlLeft.Location = new System.Drawing.Point(0, 0);
             this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Size = new System.Drawing.Size(71, 537);
+            this.barDockControlLeft.Size = new System.Drawing.Size(73, 539);
             // 
             // barDockControlRight
             // 
@@ -379,7 +380,7 @@
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
             this.barDockControlRight.Location = new System.Drawing.Point(1032, 0);
             this.barDockControlRight.Manager = this.barManager1;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 537);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 539);
             // 
             // repositoryItemTextEdit1
             // 
@@ -390,11 +391,21 @@
             this.panelControl2.Controls.Add(this.checkActivo);
             this.panelControl2.Controls.Add(this.dtgActivos);
             this.panelControl2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelControl2.Location = new System.Drawing.Point(71, 300);
+            this.panelControl2.Location = new System.Drawing.Point(73, 300);
             this.panelControl2.Name = "panelControl2";
             this.panelControl2.Padding = new System.Windows.Forms.Padding(5, 20, 5, 5);
-            this.panelControl2.Size = new System.Drawing.Size(961, 237);
+            this.panelControl2.Size = new System.Drawing.Size(959, 239);
             this.panelControl2.TabIndex = 21;
+            // 
+            // checkActivo
+            // 
+            this.checkActivo.Location = new System.Drawing.Point(19, 3);
+            this.checkActivo.MenuManager = this.barManager1;
+            this.checkActivo.Name = "checkActivo";
+            this.checkActivo.Properties.Caption = "Inactivos";
+            this.checkActivo.Size = new System.Drawing.Size(75, 19);
+            this.checkActivo.TabIndex = 3;
+            this.checkActivo.CheckedChanged += new System.EventHandler(this.checkActivo_CheckedChanged);
             // 
             // dtgActivos
             // 
@@ -403,7 +414,7 @@
             this.dtgActivos.MainView = this.cardView1;
             this.dtgActivos.MenuManager = this.barManager1;
             this.dtgActivos.Name = "dtgActivos";
-            this.dtgActivos.Size = new System.Drawing.Size(947, 208);
+            this.dtgActivos.Size = new System.Drawing.Size(945, 210);
             this.dtgActivos.TabIndex = 0;
             this.dtgActivos.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.cardView1,
@@ -1183,14 +1194,15 @@
             // 
             this.panelControl1.Controls.Add(this.groupControl1);
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelControl1.Location = new System.Drawing.Point(71, 0);
+            this.panelControl1.Location = new System.Drawing.Point(73, 0);
             this.panelControl1.Name = "panelControl1";
             this.panelControl1.Padding = new System.Windows.Forms.Padding(5);
-            this.panelControl1.Size = new System.Drawing.Size(961, 300);
+            this.panelControl1.Size = new System.Drawing.Size(959, 300);
             this.panelControl1.TabIndex = 20;
             // 
             // groupControl1
             // 
+            this.groupControl1.Controls.Add(this.btnBusqPoliza);
             this.groupControl1.Controls.Add(this.btnGallery);
             this.groupControl1.Controls.Add(this.btnXML);
             this.groupControl1.Controls.Add(this.textTargCombustible);
@@ -1253,7 +1265,7 @@
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl1.Location = new System.Drawing.Point(7, 7);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(947, 286);
+            this.groupControl1.Size = new System.Drawing.Size(945, 286);
             this.groupControl1.TabIndex = 0;
             this.groupControl1.Text = "Activo";
             // 
@@ -1769,15 +1781,14 @@
             this.labelControl1.TabIndex = 0;
             this.labelControl1.Text = "Id Activo: ";
             // 
-            // checkActivo
+            // btnBusqPoliza
             // 
-            this.checkActivo.Location = new System.Drawing.Point(19, 3);
-            this.checkActivo.MenuManager = this.barManager1;
-            this.checkActivo.Name = "checkActivo";
-            this.checkActivo.Properties.Caption = "Inactivos";
-            this.checkActivo.Size = new System.Drawing.Size(75, 19);
-            this.checkActivo.TabIndex = 3;
-            this.checkActivo.CheckedChanged += new System.EventHandler(this.checkActivo_CheckedChanged);
+            this.btnBusqPoliza.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
+            this.btnBusqPoliza.Location = new System.Drawing.Point(657, 246);
+            this.btnBusqPoliza.Name = "btnBusqPoliza";
+            this.btnBusqPoliza.Size = new System.Drawing.Size(24, 21);
+            this.btnBusqPoliza.TabIndex = 66;
+            this.btnBusqPoliza.Click += new System.EventHandler(this.btnBusqPoliza_Click);
             // 
             // Frm_Activos
             // 
@@ -1800,6 +1811,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).EndInit();
             this.panelControl2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.checkActivo.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtgActivos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cardView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
@@ -1836,7 +1848,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtTipoPlaca.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNombreActivo.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtIdActivo.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.checkActivo.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2008,5 +2019,6 @@
         private DevExpress.XtraEditors.SimpleButton btnXML;
         private DevExpress.XtraBars.BarLargeButtonItem btnSeleccionar;
         private DevExpress.XtraEditors.CheckEdit checkActivo;
+        private DevExpress.XtraEditors.SimpleButton btnBusqPoliza;
     }
 }

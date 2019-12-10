@@ -318,10 +318,11 @@ namespace TransportBusiness
                 {
                     DataRow row = this.gridView2.GetDataRow(i);
                     textIdDomicilio.Text = row["Id_Domicilio"].ToString();
-                    textCalle.Tag = row["Calle"].ToString();
+                    textCalle.Text = row["Calle"].ToString();
                     textNoInterior.Text = row["NoInterior"].ToString();
                     textNoExterior.Text = row["NoExterior"].ToString();
                     textCodigoPostal.Text = row["Codigo_Postal"].ToString();
+                    textColonia.Text = row["Colonia"].ToString();
                     textEstado.Tag = row["Id_Estado"].ToString();
                     textEstado.Text = row["Nombre_Estado"].ToString();
                     textTipoDomicilio.Tag = row["Id_TipoDomicilio"].ToString();

@@ -543,5 +543,15 @@ namespace TransportBusiness
         {
             CargarActivos();
         }
+
+        private void btnBusqPoliza_Click(object sender, EventArgs e)
+        {
+            Frm_Polizas frm = new Frm_Polizas();
+            frm.PaSel = true;
+            frm.ShowDialog();
+
+            
+            txtPolizaSeguro.Text = frm.IdPoliza;
+        }
     }
 }

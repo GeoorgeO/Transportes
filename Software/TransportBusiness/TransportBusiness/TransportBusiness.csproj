@@ -194,6 +194,12 @@
     <Compile Include="Formularios\Catalogos\Frm_PDFXML_Activos.Designer.cs">
       <DependentUpon>Frm_PDFXML_Activos.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\Catalogos\Frm_Polizas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Catalogos\Frm_Polizas.Designer.cs">
+      <DependentUpon>Frm_Polizas.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\Catalogos\Frm_Proveedores.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -411,6 +417,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Catalogos\Frm_PDFXML_Activos.resx">
       <DependentUpon>Frm_PDFXML_Activos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Catalogos\Frm_Polizas.resx">
+      <DependentUpon>Frm_Polizas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Catalogos\Frm_Proveedores.resx">
       <DependentUpon>Frm_Proveedores.cs</DependentUpon>
