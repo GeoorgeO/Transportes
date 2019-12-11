@@ -47,8 +47,8 @@
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.Id_Marca = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.Nombre_Marca = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Id_GastoDirecto = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Nombre_GastoDirecto = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.textNombre = new DevExpress.XtraEditors.TextEdit();
@@ -244,28 +244,28 @@
             // gridView1
             // 
             this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.Id_Marca,
-            this.Nombre_Marca});
+            this.Id_GastoDirecto,
+            this.Nombre_GastoDirecto});
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsBehavior.Editable = false;
             this.gridView1.OptionsView.ShowGroupPanel = false;
             // 
-            // Id_Marca
+            // Id_GastoDirecto
             // 
-            this.Id_Marca.Caption = "Id Gasto Directo";
-            this.Id_Marca.FieldName = "Id_Gasto_Directo";
-            this.Id_Marca.Name = "Id_Marca";
-            this.Id_Marca.Visible = true;
-            this.Id_Marca.VisibleIndex = 0;
+            this.Id_GastoDirecto.Caption = "Id Gasto Directo";
+            this.Id_GastoDirecto.FieldName = "Id_GastoDirecto";
+            this.Id_GastoDirecto.Name = "Id_GastoDirecto";
+            this.Id_GastoDirecto.Visible = true;
+            this.Id_GastoDirecto.VisibleIndex = 0;
             // 
-            // Nombre_Marca
+            // Nombre_GastoDirecto
             // 
-            this.Nombre_Marca.Caption = "Gasto Directo";
-            this.Nombre_Marca.FieldName = "Nombre_Gasto_Directo";
-            this.Nombre_Marca.Name = "Nombre_Marca";
-            this.Nombre_Marca.Visible = true;
-            this.Nombre_Marca.VisibleIndex = 1;
+            this.Nombre_GastoDirecto.Caption = "Gasto Directo";
+            this.Nombre_GastoDirecto.FieldName = "Nombre_GastoDirecto";
+            this.Nombre_GastoDirecto.Name = "Nombre_GastoDirecto";
+            this.Nombre_GastoDirecto.Visible = true;
+            this.Nombre_GastoDirecto.VisibleIndex = 1;
             // 
             // panelControl1
             // 
@@ -377,8 +377,8 @@
         private DevExpress.XtraEditors.PanelControl panelControl2;
         private DevExpress.XtraGrid.GridControl gridControl1;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
-        private DevExpress.XtraGrid.Columns.GridColumn Id_Marca;
-        private DevExpress.XtraGrid.Columns.GridColumn Nombre_Marca;
+        private DevExpress.XtraGrid.Columns.GridColumn Id_GastoDirecto;
+        private DevExpress.XtraGrid.Columns.GridColumn Nombre_GastoDirecto;
         private DevExpress.XtraEditors.PanelControl panelControl1;
         private DevExpress.XtraEditors.GroupControl groupControl1;
         private DevExpress.XtraEditors.TextEdit textNombre;

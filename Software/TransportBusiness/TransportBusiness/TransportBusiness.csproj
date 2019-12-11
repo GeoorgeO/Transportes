@@ -212,6 +212,18 @@
     <Compile Include="Formularios\Catalogos\Tipos\Frm_Tipo_Servicio.Designer.cs">
       <DependentUpon>Frm_Tipo_Servicio.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\Control\Frm_Gasto_Directo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Control\Frm_Gasto_Directo.Designer.cs">
+      <DependentUpon>Frm_Gasto_Directo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Control\Frm_Gasto_Indirecto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Control\Frm_Gasto_Indirecto.Designer.cs">
+      <DependentUpon>Frm_Gasto_Indirecto.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\Frm_Servicios.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -415,8 +427,11 @@
     <EmbeddedResource Include="Formularios\Catalogos\Tipos\Frm_Tipo_Servicio.resx">
       <DependentUpon>Frm_Tipo_Servicio.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\Control\Frm_Salidas.resx">
-      <DependentUpon>Frm_Salidas.cs</DependentUpon>
+    <EmbeddedResource Include="Formularios\Control\Frm_Gasto_Directo.resx">
+      <DependentUpon>Frm_Gasto_Directo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Control\Frm_Gasto_Indirecto.resx">
+      <DependentUpon>Frm_Gasto_Indirecto.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Frm_Servicios.resx">
       <DependentUpon>Frm_Servicios.cs</DependentUpon>

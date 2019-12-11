@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_Gasto_Directo));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_Gasto_Indirecto));
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.bIconos = new DevExpress.XtraBars.Bar();
             this.btnLimpiar = new DevExpress.XtraBars.BarLargeButtonItem();
@@ -47,8 +47,8 @@
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.Id_Marca = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.Nombre_Marca = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Id_GastoIndirecto = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Nombre_GastoIndirecto = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.textNombre = new DevExpress.XtraEditors.TextEdit();
@@ -224,18 +224,18 @@
             this.panelControl2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelControl2.Location = new System.Drawing.Point(71, 110);
             this.panelControl2.Name = "panelControl2";
-            this.panelControl2.Padding = new System.Windows.Forms.Padding(10);
+            this.panelControl2.Padding = new System.Windows.Forms.Padding(5);
             this.panelControl2.Size = new System.Drawing.Size(494, 330);
             this.panelControl2.TabIndex = 15;
             // 
             // gridControl1
             // 
             this.gridControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControl1.Location = new System.Drawing.Point(12, 12);
+            this.gridControl1.Location = new System.Drawing.Point(7, 7);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.MenuManager = this.barManager1;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(470, 306);
+            this.gridControl1.Size = new System.Drawing.Size(480, 316);
             this.gridControl1.TabIndex = 0;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -244,28 +244,28 @@
             // gridView1
             // 
             this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.Id_Marca,
-            this.Nombre_Marca});
+            this.Id_GastoIndirecto,
+            this.Nombre_GastoIndirecto});
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsBehavior.Editable = false;
             this.gridView1.OptionsView.ShowGroupPanel = false;
             // 
-            // Id_Marca
+            // Id_GastoIndirecto
             // 
-            this.Id_Marca.Caption = "Id Gasto Directo";
-            this.Id_Marca.FieldName = "Id_Gasto_Directo";
-            this.Id_Marca.Name = "Id_Marca";
-            this.Id_Marca.Visible = true;
-            this.Id_Marca.VisibleIndex = 0;
+            this.Id_GastoIndirecto.Caption = "Id Gasto Directo";
+            this.Id_GastoIndirecto.FieldName = "Id_GastoIndirecto";
+            this.Id_GastoIndirecto.Name = "Id_GastoIndirecto";
+            this.Id_GastoIndirecto.Visible = true;
+            this.Id_GastoIndirecto.VisibleIndex = 0;
             // 
-            // Nombre_Marca
+            // Nombre_GastoIndirecto
             // 
-            this.Nombre_Marca.Caption = "Gasto Directo";
-            this.Nombre_Marca.FieldName = "Nombre_Gasto_Directo";
-            this.Nombre_Marca.Name = "Nombre_Marca";
-            this.Nombre_Marca.Visible = true;
-            this.Nombre_Marca.VisibleIndex = 1;
+            this.Nombre_GastoIndirecto.Caption = "Gasto Directo";
+            this.Nombre_GastoIndirecto.FieldName = "Nombre_GastoIndirecto";
+            this.Nombre_GastoIndirecto.Name = "Nombre_GastoIndirecto";
+            this.Nombre_GastoIndirecto.Visible = true;
+            this.Nombre_GastoIndirecto.VisibleIndex = 1;
             // 
             // panelControl1
             // 
@@ -273,7 +273,7 @@
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelControl1.Location = new System.Drawing.Point(71, 0);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Padding = new System.Windows.Forms.Padding(10);
+            this.panelControl1.Padding = new System.Windows.Forms.Padding(5);
             this.panelControl1.Size = new System.Drawing.Size(494, 110);
             this.panelControl1.TabIndex = 14;
             // 
@@ -284,9 +284,9 @@
             this.groupControl1.Controls.Add(this.textId);
             this.groupControl1.Controls.Add(this.labelControl1);
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupControl1.Location = new System.Drawing.Point(12, 12);
+            this.groupControl1.Location = new System.Drawing.Point(7, 7);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(470, 86);
+            this.groupControl1.Size = new System.Drawing.Size(480, 96);
             this.groupControl1.TabIndex = 0;
             this.groupControl1.Text = "Gasto Directo";
             // 
@@ -323,7 +323,7 @@
             this.labelControl1.TabIndex = 0;
             this.labelControl1.Text = "Id gasto directo: ";
             // 
-            // Frm_Gasto_Directo
+            // Frm_Gasto_Indirecto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -337,7 +337,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "Frm_Gasto_Directo";
+            this.Name = "Frm_Gasto_Indirecto";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Marcas";
             this.Load += new System.EventHandler(this.Frm_Marcas_Load);
@@ -377,8 +377,8 @@
         private DevExpress.XtraEditors.PanelControl panelControl2;
         private DevExpress.XtraGrid.GridControl gridControl1;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
-        private DevExpress.XtraGrid.Columns.GridColumn Id_Marca;
-        private DevExpress.XtraGrid.Columns.GridColumn Nombre_Marca;
+        private DevExpress.XtraGrid.Columns.GridColumn Id_GastoIndirecto;
+        private DevExpress.XtraGrid.Columns.GridColumn Nombre_GastoIndirecto;
         private DevExpress.XtraEditors.PanelControl panelControl1;
         private DevExpress.XtraEditors.GroupControl groupControl1;
         private DevExpress.XtraEditors.TextEdit textNombre;

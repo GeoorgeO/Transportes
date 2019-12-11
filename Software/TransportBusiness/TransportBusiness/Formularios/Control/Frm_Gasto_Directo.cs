@@ -14,8 +14,8 @@ namespace TransportBusiness
 {
     public partial class Frm_Gasto_Directo : DevExpress.XtraEditors.XtraForm
     {
-        public string vid_Marca { get; set; }
-        public string vNombre_Marca { get; set; }
+        public string vid_GastoDirecto { get; set; }
+        public string vNombre_GastoDirecto { get; set; }
 
         public Boolean PaSel { get; set; }
 
@@ -24,53 +24,53 @@ namespace TransportBusiness
             InitializeComponent();
         }
 
-        private void CargarMarcas()
+        private void CargarGastosDirectos()
         {
             gridControl1.DataSource = null;
-            CLS_Marcas Marcas = new CLS_Marcas();
+            CLS_GastosDirectos GastosDirectos = new CLS_GastosDirectos();
 
-            Marcas.MtdSeleccionarMarcas();
-            if (Marcas.Exito)
+            GastosDirectos.MtdSeleccionarGastosDirectos();
+            if (GastosDirectos.Exito)
             {
-                gridControl1.DataSource = Marcas.Datos;
+                gridControl1.DataSource = GastosDirectos.Datos;
             }
         }
 
 
 
-        private void InsertarMarcas()
+        private void InsertarGastosDirectos()
         {
-            CLS_Marcas Marcas = new CLS_Marcas();
-            Marcas.Id_Marca = textId.Text.Trim();
-            Marcas.Nombre_Marca = textNombre.Text.Trim();
-            Marcas.MtdInsertarMarcas();
-            if (Marcas.Exito)
+            CLS_GastosDirectos GastosDirectos = new CLS_GastosDirectos();
+            GastosDirectos.Id_GastoDirecto = textId.Text.Trim();
+            GastosDirectos.Nombre_GastoDirecto = textNombre.Text.Trim();
+            GastosDirectos.MtdInsertarGastosDirectos();
+            if (GastosDirectos.Exito)
             {
 
-                CargarMarcas();
+                CargarGastosDirectos();
                 XtraMessageBox.Show("Se ha Insertado el registro con exito");
                 LimpiarCampos();
             }
             else
             {
-                XtraMessageBox.Show(Marcas.Mensaje);
+                XtraMessageBox.Show(GastosDirectos.Mensaje);
             }
         }
 
-        private void EliminarMarcas()
+        private void EliminarGastosDirectos()
         {
-            CLS_Marcas Marcas = new CLS_Marcas();
-            Marcas.Id_Marca = textId.Text.Trim();
-            Marcas.MtdEliminarMarcas();
-            if (Marcas.Exito)
+            CLS_GastosDirectos GastosDirectos = new CLS_GastosDirectos();
+            GastosDirectos.Id_GastoDirecto = textId.Text.Trim();
+            GastosDirectos.MtdEliminarGastosDirectos();
+            if (GastosDirectos.Exito)
             {
-                CargarMarcas();
+                CargarGastosDirectos();
                 XtraMessageBox.Show("Se ha Eliminado el registro con exito");
                 LimpiarCampos();
             }
             else
             {
-                XtraMessageBox.Show(Marcas.Mensaje);
+                XtraMessageBox.Show(GastosDirectos.Mensaje);
             }
         }
 
@@ -87,8 +87,8 @@ namespace TransportBusiness
                 foreach (int i in this.gridView1.GetSelectedRows())
                 {
                     DataRow row = this.gridView1.GetDataRow(i);
-                    textId.Text = row["Id_Marca"].ToString();
-                    textNombre.Text = row["Nombre_Marca"].ToString();
+                    textId.Text = row["Id_GastoDirecto"].ToString();
+                    textNombre.Text = row["Nombre_GastoDirecto"].ToString();
 
 
                 }
@@ -109,18 +109,18 @@ namespace TransportBusiness
             {
                 btnSeleccionar.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
             }
-            CargarMarcas();
+            CargarGastosDirectos();
         }
 
         private void btnGuardar_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             if (textNombre.Text.ToString().Trim().Length > 0)
             {
-                InsertarMarcas();
+                InsertarGastosDirectos();
             }
             else
             {
-                XtraMessageBox.Show("Es necesario Agregar una marca.");
+                XtraMessageBox.Show("Es necesario Agregar una GastoDirecto.");
             }
         }
 
@@ -128,11 +128,11 @@ namespace TransportBusiness
         {
             if (textId.Text.Trim().Length > 0 && textNombre.Text.ToString().Trim().Length > 0)
             {
-                EliminarMarcas();
+                EliminarGastosDirectos();
             }
             else
             {
-                XtraMessageBox.Show("Es necesario seleccionar una marca.");
+                XtraMessageBox.Show("Es necesario seleccionar una GastoDirecto.");
             }
         }
 
@@ -150,13 +150,13 @@ namespace TransportBusiness
         {
             if(textId.Text!=string.Empty && textNombre.Text!=string.Empty)
             {
-                vid_Marca = textId.Text;
-                vNombre_Marca = textNombre.Text;
+                vid_GastoDirecto = textId.Text;
+                vNombre_GastoDirecto = textNombre.Text;
                 this.Close();
             }
             else
             {
-                XtraMessageBox.Show("No se ha seleccionado una Marca");
+                XtraMessageBox.Show("No se ha seleccionado una GastoDirecto");
             }
         }
     }
