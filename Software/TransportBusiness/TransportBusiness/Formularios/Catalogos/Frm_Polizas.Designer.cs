@@ -45,6 +45,7 @@
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
             this.repositoryItemTextEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
+            this.checkvigentes = new DevExpress.XtraEditors.CheckEdit();
             this.checkActivo = new DevExpress.XtraEditors.CheckEdit();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -54,8 +55,14 @@
             this.Id_Activo = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Nombre_Interno = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Estatus = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Id_Empresa_Aseguradora = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Nombre_Empresa_Aseguradora = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
+            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
+            this.btnEmpresaAsegu = new DevExpress.XtraEditors.SimpleButton();
+            this.txtEmpresaAsegu = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
             this.labelActivo = new DevExpress.XtraEditors.LabelControl();
             this.label1 = new System.Windows.Forms.Label();
             this.labelStatus = new DevExpress.XtraEditors.LabelControl();
@@ -65,16 +72,11 @@
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.textId = new DevExpress.XtraEditors.TextEdit();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
-            this.txtEmpresaAsegu = new DevExpress.XtraEditors.TextEdit();
-            this.btnEmpresaAsegu = new DevExpress.XtraEditors.SimpleButton();
-            this.Id_Empresa_Aseguradora = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.Nombre_Empresa_Aseguradora = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
             this.panelControl2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.checkvigentes.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.checkActivo.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
@@ -82,12 +84,12 @@
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtEmpresaAsegu.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateFin.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateFin.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateInicio.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateInicio.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textId.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtEmpresaAsegu.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // barManager1
@@ -241,6 +243,7 @@
             // 
             // panelControl2
             // 
+            this.panelControl2.Controls.Add(this.checkvigentes);
             this.panelControl2.Controls.Add(this.checkActivo);
             this.panelControl2.Controls.Add(this.gridControl1);
             this.panelControl2.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -249,6 +252,16 @@
             this.panelControl2.Padding = new System.Windows.Forms.Padding(5, 20, 5, 5);
             this.panelControl2.Size = new System.Drawing.Size(647, 330);
             this.panelControl2.TabIndex = 19;
+            // 
+            // checkvigentes
+            // 
+            this.checkvigentes.Location = new System.Drawing.Point(108, 3);
+            this.checkvigentes.MenuManager = this.barManager1;
+            this.checkvigentes.Name = "checkvigentes";
+            this.checkvigentes.Properties.Caption = "Vigentes";
+            this.checkvigentes.Size = new System.Drawing.Size(75, 19);
+            this.checkvigentes.TabIndex = 5;
+            this.checkvigentes.CheckedChanged += new System.EventHandler(this.checkvigentes_CheckedChanged);
             // 
             // checkActivo
             // 
@@ -330,8 +343,22 @@
             this.Estatus.Caption = "Estatus";
             this.Estatus.FieldName = "Estatus";
             this.Estatus.Name = "Estatus";
-            this.Estatus.Visible = true;
-            this.Estatus.VisibleIndex = 3;
+            // 
+            // Id_Empresa_Aseguradora
+            // 
+            this.Id_Empresa_Aseguradora.Caption = "Id Aseguradora";
+            this.Id_Empresa_Aseguradora.FieldName = "Id_Empresa_Aseguradora";
+            this.Id_Empresa_Aseguradora.Name = "Id_Empresa_Aseguradora";
+            this.Id_Empresa_Aseguradora.Visible = true;
+            this.Id_Empresa_Aseguradora.VisibleIndex = 3;
+            // 
+            // Nombre_Empresa_Aseguradora
+            // 
+            this.Nombre_Empresa_Aseguradora.Caption = "Aseguradora";
+            this.Nombre_Empresa_Aseguradora.FieldName = "Nombre_Empresa_Aseguradora";
+            this.Nombre_Empresa_Aseguradora.Name = "Nombre_Empresa_Aseguradora";
+            this.Nombre_Empresa_Aseguradora.Visible = true;
+            this.Nombre_Empresa_Aseguradora.VisibleIndex = 4;
             // 
             // panelControl1
             // 
@@ -364,6 +391,39 @@
             this.groupControl1.Size = new System.Drawing.Size(633, 89);
             this.groupControl1.TabIndex = 0;
             this.groupControl1.Text = "Poliza";
+            // 
+            // simpleButton1
+            // 
+            this.simpleButton1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
+            this.simpleButton1.Location = new System.Drawing.Point(462, 27);
+            this.simpleButton1.Name = "simpleButton1";
+            this.simpleButton1.Size = new System.Drawing.Size(42, 39);
+            this.simpleButton1.TabIndex = 54;
+            // 
+            // btnEmpresaAsegu
+            // 
+            this.btnEmpresaAsegu.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnEmpresaAsegu.ImageOptions.Image")));
+            this.btnEmpresaAsegu.Location = new System.Drawing.Point(418, 27);
+            this.btnEmpresaAsegu.Name = "btnEmpresaAsegu";
+            this.btnEmpresaAsegu.Size = new System.Drawing.Size(24, 21);
+            this.btnEmpresaAsegu.TabIndex = 53;
+            this.btnEmpresaAsegu.Click += new System.EventHandler(this.btnEmpresaAsegu_Click);
+            // 
+            // txtEmpresaAsegu
+            // 
+            this.txtEmpresaAsegu.Location = new System.Drawing.Point(257, 28);
+            this.txtEmpresaAsegu.MenuManager = this.barManager1;
+            this.txtEmpresaAsegu.Name = "txtEmpresaAsegu";
+            this.txtEmpresaAsegu.Size = new System.Drawing.Size(155, 20);
+            this.txtEmpresaAsegu.TabIndex = 10;
+            // 
+            // labelControl4
+            // 
+            this.labelControl4.Location = new System.Drawing.Point(186, 31);
+            this.labelControl4.Name = "labelControl4";
+            this.labelControl4.Size = new System.Drawing.Size(66, 13);
+            this.labelControl4.TabIndex = 9;
+            this.labelControl4.Text = "Aseguradora:";
             // 
             // labelActivo
             // 
@@ -451,55 +511,6 @@
             this.labelControl1.TabIndex = 0;
             this.labelControl1.Text = "N°: ";
             // 
-            // labelControl4
-            // 
-            this.labelControl4.Location = new System.Drawing.Point(186, 31);
-            this.labelControl4.Name = "labelControl4";
-            this.labelControl4.Size = new System.Drawing.Size(66, 13);
-            this.labelControl4.TabIndex = 9;
-            this.labelControl4.Text = "Aseguradora:";
-            // 
-            // txtEmpresaAsegu
-            // 
-            this.txtEmpresaAsegu.Location = new System.Drawing.Point(257, 28);
-            this.txtEmpresaAsegu.MenuManager = this.barManager1;
-            this.txtEmpresaAsegu.Name = "txtEmpresaAsegu";
-            this.txtEmpresaAsegu.Size = new System.Drawing.Size(155, 20);
-            this.txtEmpresaAsegu.TabIndex = 10;
-            // 
-            // btnEmpresaAsegu
-            // 
-            this.btnEmpresaAsegu.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnEmpresaAsegu.ImageOptions.Image")));
-            this.btnEmpresaAsegu.Location = new System.Drawing.Point(418, 27);
-            this.btnEmpresaAsegu.Name = "btnEmpresaAsegu";
-            this.btnEmpresaAsegu.Size = new System.Drawing.Size(24, 21);
-            this.btnEmpresaAsegu.TabIndex = 53;
-            this.btnEmpresaAsegu.Click += new System.EventHandler(this.btnEmpresaAsegu_Click);
-            // 
-            // Id_Empresa_Aseguradora
-            // 
-            this.Id_Empresa_Aseguradora.Caption = "Id Aseguradora";
-            this.Id_Empresa_Aseguradora.FieldName = "Id_Empresa_Aseguradora";
-            this.Id_Empresa_Aseguradora.Name = "Id_Empresa_Aseguradora";
-            this.Id_Empresa_Aseguradora.Visible = true;
-            this.Id_Empresa_Aseguradora.VisibleIndex = 4;
-            // 
-            // Nombre_Empresa_Aseguradora
-            // 
-            this.Nombre_Empresa_Aseguradora.Caption = "Aseguradora";
-            this.Nombre_Empresa_Aseguradora.FieldName = "Nombre_Empresa_Aseguradora";
-            this.Nombre_Empresa_Aseguradora.Name = "Nombre_Empresa_Aseguradora";
-            this.Nombre_Empresa_Aseguradora.Visible = true;
-            this.Nombre_Empresa_Aseguradora.VisibleIndex = 5;
-            // 
-            // simpleButton1
-            // 
-            this.simpleButton1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
-            this.simpleButton1.Location = new System.Drawing.Point(462, 27);
-            this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(42, 39);
-            this.simpleButton1.TabIndex = 54;
-            // 
             // Frm_Polizas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -518,6 +529,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).EndInit();
             this.panelControl2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.checkvigentes.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.checkActivo.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
@@ -526,12 +538,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
             this.groupControl1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtEmpresaAsegu.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateFin.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateFin.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateInicio.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateInicio.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textId.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtEmpresaAsegu.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -557,7 +569,6 @@
         private DevExpress.XtraGrid.GridControl gridControl1;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
         private DevExpress.XtraGrid.Columns.GridColumn Poliza_Seguro;
-        private DevExpress.XtraGrid.Columns.GridColumn Fecha_Inicio;
         private DevExpress.XtraEditors.PanelControl panelControl1;
         private DevExpress.XtraEditors.GroupControl groupControl1;
         private DevExpress.XtraEditors.LabelControl labelControl2;
@@ -580,5 +591,7 @@
         private DevExpress.XtraGrid.Columns.GridColumn Id_Empresa_Aseguradora;
         private DevExpress.XtraGrid.Columns.GridColumn Nombre_Empresa_Aseguradora;
         private DevExpress.XtraEditors.SimpleButton simpleButton1;
+        private DevExpress.XtraEditors.CheckEdit checkvigentes;
+        private DevExpress.XtraGrid.Columns.GridColumn Fecha_Inicio;
     }
 }

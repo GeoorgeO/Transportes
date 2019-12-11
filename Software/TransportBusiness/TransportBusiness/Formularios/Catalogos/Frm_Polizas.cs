@@ -120,6 +120,23 @@ namespace TransportBusiness
             txtEmpresaAsegu.Tag = "";
         }
 
+
+        private void vigentes()
+        {
+            for (int x=0; x<gridView1.RowCount; x++)
+            {
+                int xRow = gridView1.GetVisibleRowHandle(x);
+                if (Convert.ToInt32(DateTime.Now.Year.ToString() + DosCero(DateTime.Now.Month.ToString()) + DosCero(DateTime.Now.Day.ToString())) >= Convert.ToInt32(Convert.ToDateTime(gridView1.GetRowCellValue(xRow, gridView1.Columns["Fecha_Inicio"])).Year.ToString() + DosCero(Convert.ToDateTime(gridView1.GetRowCellValue(xRow, gridView1.Columns["Fecha_Inicio"])).Month.ToString()) + DosCero(Convert.ToDateTime(gridView1.GetRowCellValue(xRow, gridView1.Columns["Fecha_Inicio"])).Day.ToString())) && Convert.ToInt32(DateTime.Now.Year.ToString() + DosCero(DateTime.Now.Month.ToString()) + DosCero(DateTime.Now.Day.ToString())) <= Convert.ToInt32(Convert.ToDateTime(gridView1.GetRowCellValue(xRow, gridView1.Columns["Fecha_Fin"])).Year.ToString() + DosCero(Convert.ToDateTime(gridView1.GetRowCellValue(xRow, gridView1.Columns["Fecha_Fin"])).Month.ToString()) + DosCero(Convert.ToDateTime(gridView1.GetRowCellValue(xRow, gridView1.Columns["Fecha_Fin"])).Day.ToString())))
+                {
+
+                }else
+                {
+                    gridView1.DeleteRow(xRow);
+                }
+                    
+            }
+        }
+
         private void gridControl1_Click(object sender, EventArgs e)
         {
             try
@@ -245,6 +262,19 @@ namespace TransportBusiness
 
             txtEmpresaAsegu.Tag = frm.idAseguradora;
             txtEmpresaAsegu.Text = frm.Aseguradora;
+        }
+
+        private void checkvigentes_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkvigentes.Checked)
+            {
+                vigentes();
+            }
+            else
+            {
+                CargarPolizas();
+            }
+           
         }
     }
 }
