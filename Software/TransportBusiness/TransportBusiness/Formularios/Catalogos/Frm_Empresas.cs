@@ -328,8 +328,8 @@ namespace TransportBusiness
 
         private void btnBusqEstado_Click(object sender, EventArgs e)
         {
-            Frm_Estado Estado = new Frm_Estado(true);
-
+            Frm_Estado Estado = new Frm_Estado();
+            Estado.PaSel = true;
             Estado.ShowDialog();
 
             textEstado.Tag = Estado.IdEstado;
