@@ -106,11 +106,29 @@
     <Compile Include="Formularios\Catalogos\Frm_Broker_Empresa_Aseguradora.Designer.cs">
       <DependentUpon>Frm_Broker_Empresa_Aseguradora.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\Catalogos\Frm_Calidad.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Catalogos\Frm_Calidad.designer.cs">
+      <DependentUpon>Frm_Calidad.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Catalogos\Frm_Ciudad.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Catalogos\Frm_Ciudad.designer.cs">
+      <DependentUpon>Frm_Ciudad.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\Catalogos\Frm_Combustible.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Formularios\Catalogos\Frm_Combustible.Designer.cs">
       <DependentUpon>Frm_Combustible.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Catalogos\Frm_Cultivo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Catalogos\Frm_Cultivo.designer.cs">
+      <DependentUpon>Frm_Cultivo.cs</DependentUpon>
     </Compile>
     <Compile Include="Formularios\Catalogos\Frm_Domicilios.cs">
       <SubType>Form</SubType>
@@ -160,6 +178,12 @@
     <Compile Include="Formularios\Catalogos\Frm_Galeria_Activos.Designer.cs">
       <DependentUpon>Frm_Galeria_Activos.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\Catalogos\Frm_Huertas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Catalogos\Frm_Huertas.designer.cs">
+      <DependentUpon>Frm_Huertas.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\Catalogos\Frm_Infracciones.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -201,6 +225,12 @@
     </Compile>
     <Compile Include="Formularios\Catalogos\Frm_Polizas.Designer.cs">
       <DependentUpon>Frm_Polizas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Catalogos\Frm_Productor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Catalogos\Frm_Productor.designer.cs">
+      <DependentUpon>Frm_Productor.cs</DependentUpon>
     </Compile>
     <Compile Include="Formularios\Catalogos\Frm_Proveedores.cs">
       <SubType>Form</SubType>
@@ -375,11 +405,20 @@
     <EmbeddedResource Include="Formularios\Catalogos\Frm_Broker_Empresa_Aseguradora.resx">
       <DependentUpon>Frm_Broker_Empresa_Aseguradora.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Catalogos\Frm_Calidad.resx">
+      <DependentUpon>Frm_Calidad.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Catalogos\Frm_Ciudad.resx">
+      <DependentUpon>Frm_Ciudad.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Catalogos\Frm_Clientes.resx">
       <DependentUpon>Frm_Clientes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Catalogos\Frm_Combustible.resx">
       <DependentUpon>Frm_Combustible.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Catalogos\Frm_Cultivo.resx">
+      <DependentUpon>Frm_Cultivo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Catalogos\Frm_Domicilios.resx">
       <DependentUpon>Frm_Domicilios.cs</DependentUpon>
@@ -402,6 +441,9 @@
     <EmbeddedResource Include="Formularios\Catalogos\Frm_Galeria_Activos.resx">
       <DependentUpon>Frm_Galeria_Activos.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Catalogos\Frm_Huertas.resx">
+      <DependentUpon>Frm_Huertas.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Catalogos\Frm_Infracciones.resx">
       <DependentUpon>Frm_Infracciones.cs</DependentUpon>
     </EmbeddedResource>
@@ -422,6 +464,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Catalogos\Frm_Polizas.resx">
       <DependentUpon>Frm_Polizas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Catalogos\Frm_Productor.resx">
+      <DependentUpon>Frm_Productor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Catalogos\Frm_Proveedores.resx">
       <DependentUpon>Frm_Proveedores.cs</DependentUpon>
