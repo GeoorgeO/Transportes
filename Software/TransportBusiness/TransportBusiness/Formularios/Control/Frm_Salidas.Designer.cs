@@ -70,9 +70,9 @@
             this.labelControl12 = new DevExpress.XtraEditors.LabelControl();
             this.textEdit10 = new DevExpress.XtraEditors.TextEdit();
             this.textEdit11 = new DevExpress.XtraEditors.TextEdit();
-            this.simpleButton4 = new DevExpress.XtraEditors.SimpleButton();
+            this.btnBusqClientes = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl10 = new DevExpress.XtraEditors.LabelControl();
-            this.textEdit9 = new DevExpress.XtraEditors.TextEdit();
+            this.textCliente = new DevExpress.XtraEditors.TextEdit();
             this.labelControl9 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
             this.textDestino = new DevExpress.XtraEditors.TextEdit();
@@ -222,7 +222,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.textEdit13.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit10.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit11.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit9.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textCliente.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textDestino.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textOrigen.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textRuta.Properties)).BeginInit();
@@ -487,9 +487,9 @@
             this.groupControl1.Controls.Add(this.labelControl12);
             this.groupControl1.Controls.Add(this.textEdit10);
             this.groupControl1.Controls.Add(this.textEdit11);
-            this.groupControl1.Controls.Add(this.simpleButton4);
+            this.groupControl1.Controls.Add(this.btnBusqClientes);
             this.groupControl1.Controls.Add(this.labelControl10);
-            this.groupControl1.Controls.Add(this.textEdit9);
+            this.groupControl1.Controls.Add(this.textCliente);
             this.groupControl1.Controls.Add(this.labelControl9);
             this.groupControl1.Controls.Add(this.labelControl8);
             this.groupControl1.Controls.Add(this.textDestino);
@@ -640,7 +640,7 @@
             // 
             // btnBusqAyudante
             // 
-            this.btnBusqAyudante.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton12.ImageOptions.Image")));
+            this.btnBusqAyudante.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnBusqAyudante.ImageOptions.Image")));
             this.btnBusqAyudante.Location = new System.Drawing.Point(414, 133);
             this.btnBusqAyudante.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnBusqAyudante.Name = "btnBusqAyudante";
@@ -747,14 +747,15 @@
             this.textEdit11.Size = new System.Drawing.Size(117, 22);
             this.textEdit11.TabIndex = 58;
             // 
-            // simpleButton4
+            // btnBusqClientes
             // 
-            this.simpleButton4.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton4.ImageOptions.Image")));
-            this.simpleButton4.Location = new System.Drawing.Point(811, 135);
-            this.simpleButton4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.simpleButton4.Name = "simpleButton4";
-            this.simpleButton4.Size = new System.Drawing.Size(28, 28);
-            this.simpleButton4.TabIndex = 57;
+            this.btnBusqClientes.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnBusqClientes.ImageOptions.Image")));
+            this.btnBusqClientes.Location = new System.Drawing.Point(811, 135);
+            this.btnBusqClientes.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnBusqClientes.Name = "btnBusqClientes";
+            this.btnBusqClientes.Size = new System.Drawing.Size(28, 28);
+            this.btnBusqClientes.TabIndex = 57;
+            this.btnBusqClientes.Click += new System.EventHandler(this.btnBusqClientes_Click);
             // 
             // labelControl10
             // 
@@ -765,14 +766,14 @@
             this.labelControl10.TabIndex = 56;
             this.labelControl10.Text = "Cliente:";
             // 
-            // textEdit9
+            // textCliente
             // 
-            this.textEdit9.Location = new System.Drawing.Point(545, 137);
-            this.textEdit9.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.textEdit9.MenuManager = this.barManager1;
-            this.textEdit9.Name = "textEdit9";
-            this.textEdit9.Size = new System.Drawing.Size(259, 22);
-            this.textEdit9.TabIndex = 55;
+            this.textCliente.Location = new System.Drawing.Point(545, 137);
+            this.textCliente.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.textCliente.MenuManager = this.barManager1;
+            this.textCliente.Name = "textCliente";
+            this.textCliente.Size = new System.Drawing.Size(259, 22);
+            this.textCliente.TabIndex = 55;
             // 
             // labelControl9
             // 
@@ -812,7 +813,7 @@
             // 
             // btnBusqRuta
             // 
-            this.btnBusqRuta.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton3.ImageOptions.Image")));
+            this.btnBusqRuta.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnBusqRuta.ImageOptions.Image")));
             this.btnBusqRuta.Location = new System.Drawing.Point(811, 38);
             this.btnBusqRuta.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnBusqRuta.Name = "btnBusqRuta";
@@ -2122,7 +2123,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.textEdit13.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit10.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit11.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit9.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textCliente.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textDestino.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textOrigen.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textRuta.Properties)).EndInit();
@@ -2269,9 +2270,9 @@
         private DevExpress.XtraEditors.LabelControl labelControl12;
         private DevExpress.XtraEditors.TextEdit textEdit10;
         private DevExpress.XtraEditors.TextEdit textEdit11;
-        private DevExpress.XtraEditors.SimpleButton simpleButton4;
+        private DevExpress.XtraEditors.SimpleButton btnBusqClientes;
         private DevExpress.XtraEditors.LabelControl labelControl10;
-        private DevExpress.XtraEditors.TextEdit textEdit9;
+        private DevExpress.XtraEditors.TextEdit textCliente;
         private DevExpress.XtraEditors.LabelControl labelControl9;
         private DevExpress.XtraEditors.LabelControl labelControl8;
         private DevExpress.XtraEditors.TextEdit textDestino;

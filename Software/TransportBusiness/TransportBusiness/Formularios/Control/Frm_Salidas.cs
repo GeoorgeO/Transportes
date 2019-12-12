@@ -57,5 +57,14 @@ namespace TransportBusiness
             textOrigen.Text = frm.vOrigen;
             textDestino.Text = frm.vDestino;
         }
+
+        private void btnBusqClientes_Click(object sender, EventArgs e)
+        {
+            Frm_Clientes frm = new Frm_Clientes();
+            frm.PaSel = true;
+            frm.ShowDialog();
+            textCliente.Tag = frm.IdCliente;
+            textCliente.Text = frm.Cliente;
+        }
     }
 }

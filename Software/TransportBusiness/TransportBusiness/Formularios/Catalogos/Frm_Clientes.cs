@@ -15,6 +15,10 @@ namespace TransportBusiness
     public partial class Frm_Clientes : DevExpress.XtraEditors.XtraForm
     {
 
+        public string IdCliente{ get; set; }
+        public string Cliente { get; set; }
+        public Boolean PaSel { get; set; }
+
         private static Frm_Clientes m_FormDefInstance;
         public static Frm_Clientes DefInstance
         {
@@ -296,6 +300,14 @@ namespace TransportBusiness
 
         private void Frm_Clientes_Load(object sender, EventArgs e)
         {
+            if (PaSel == true)
+            {
+                btnSeleccionar.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+            }
+            else
+            {
+                btnSeleccionar.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+            }
             CargarClientes();
             CargarDomicilio();
             iniciarTags();
@@ -357,6 +369,14 @@ namespace TransportBusiness
             {
                 xtraTabPage2.PageEnabled = true;
             }
+        }
+
+        private void btnSeleccionar_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            IdCliente = textIdCliente.Text.Trim();
+            Cliente = textCliente.Text.Trim();
+           
+            this.Close();
         }
     }
 }
