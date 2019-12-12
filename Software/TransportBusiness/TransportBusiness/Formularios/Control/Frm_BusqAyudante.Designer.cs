@@ -1,6 +1,6 @@
 ﻿namespace TransportBusiness
-{ 
-    partial class Frm_Rutas_Buscar
+{
+    partial class Frm_BusqAyudante
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_Rutas_Buscar));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_BusqAyudante));
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.bIconos = new DevExpress.XtraBars.Bar();
             this.btnSeleccionar = new DevExpress.XtraBars.BarLargeButtonItem();
@@ -47,11 +47,18 @@
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.dtgRutas = new DevExpress.XtraGrid.GridControl();
             this.dtgValRutas = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.Kilometros = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.Origen = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.Destino = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Id_Empleado = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Id_Tipo_Empleado = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Nombre_Tipo_Empleado = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Nombre_Empleado = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Telefono = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.RFC = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.CURP = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.No_Identificacion = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Id_Licencia = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.No_Licencia = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Id_Empresa = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Nombre_Empresa = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
@@ -150,16 +157,16 @@
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
             this.barDockControlTop.Manager = this.barManager1;
             this.barDockControlTop.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.barDockControlTop.Size = new System.Drawing.Size(623, 0);
+            this.barDockControlTop.Size = new System.Drawing.Size(694, 0);
             // 
             // barDockControlBottom
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 501);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 341);
             this.barDockControlBottom.Manager = this.barManager1;
             this.barDockControlBottom.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.barDockControlBottom.Size = new System.Drawing.Size(623, 34);
+            this.barDockControlBottom.Size = new System.Drawing.Size(694, 34);
             // 
             // barDockControlLeft
             // 
@@ -168,16 +175,16 @@
             this.barDockControlLeft.Location = new System.Drawing.Point(0, 0);
             this.barDockControlLeft.Manager = this.barManager1;
             this.barDockControlLeft.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.barDockControlLeft.Size = new System.Drawing.Size(87, 501);
+            this.barDockControlLeft.Size = new System.Drawing.Size(87, 341);
             // 
             // barDockControlRight
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(623, 0);
+            this.barDockControlRight.Location = new System.Drawing.Point(694, 0);
             this.barDockControlRight.Manager = this.barManager1;
             this.barDockControlRight.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 501);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 341);
             // 
             // btnLimpiar
             // 
@@ -214,9 +221,9 @@
             this.panelControl1.Location = new System.Drawing.Point(87, 0);
             this.panelControl1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Padding = new System.Windows.Forms.Padding(6, 6, 6, 6);
-            this.panelControl1.Size = new System.Drawing.Size(536, 501);
-            this.panelControl1.TabIndex = 4;
+            this.panelControl1.Padding = new System.Windows.Forms.Padding(6);
+            this.panelControl1.Size = new System.Drawing.Size(607, 341);
+            this.panelControl1.TabIndex = 6;
             // 
             // dtgRutas
             // 
@@ -227,7 +234,7 @@
             this.dtgRutas.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dtgRutas.MenuManager = this.barManager1;
             this.dtgRutas.Name = "dtgRutas";
-            this.dtgRutas.Size = new System.Drawing.Size(520, 485);
+            this.dtgRutas.Size = new System.Drawing.Size(591, 325);
             this.dtgRutas.TabIndex = 0;
             this.dtgRutas.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.dtgValRutas});
@@ -236,78 +243,133 @@
             // dtgValRutas
             // 
             this.dtgValRutas.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.gridColumn1,
-            this.gridColumn2,
-            this.Kilometros,
-            this.Origen,
-            this.Destino});
+            this.Id_Empleado,
+            this.Id_Tipo_Empleado,
+            this.Nombre_Tipo_Empleado,
+            this.Nombre_Empleado,
+            this.Telefono,
+            this.RFC,
+            this.CURP,
+            this.No_Identificacion,
+            this.Id_Licencia,
+            this.No_Licencia,
+            this.Id_Empresa,
+            this.Nombre_Empresa});
             this.dtgValRutas.GridControl = this.dtgRutas;
             this.dtgValRutas.Name = "dtgValRutas";
+            this.dtgValRutas.OptionsBehavior.Editable = false;
             this.dtgValRutas.OptionsFind.AlwaysVisible = true;
             this.dtgValRutas.OptionsView.ShowGroupPanel = false;
             // 
-            // gridColumn1
+            // Id_Empleado
             // 
-            this.gridColumn1.Caption = "Id Rutas";
-            this.gridColumn1.FieldName = "Id_Rutas";
-            this.gridColumn1.Name = "gridColumn1";
-            this.gridColumn1.OptionsColumn.AllowEdit = false;
-            this.gridColumn1.Visible = true;
-            this.gridColumn1.VisibleIndex = 0;
-            this.gridColumn1.Width = 97;
+            this.Id_Empleado.Caption = "Id Empleado";
+            this.Id_Empleado.FieldName = "Id_Empleado";
+            this.Id_Empleado.Name = "Id_Empleado";
+            this.Id_Empleado.Visible = true;
+            this.Id_Empleado.VisibleIndex = 0;
             // 
-            // gridColumn2
+            // Id_Tipo_Empleado
             // 
-            this.gridColumn2.Caption = "Nombre Ruta";
-            this.gridColumn2.FieldName = "Nombre_Ruta";
-            this.gridColumn2.Name = "gridColumn2";
-            this.gridColumn2.OptionsColumn.AllowEdit = false;
-            this.gridColumn2.Visible = true;
-            this.gridColumn2.VisibleIndex = 1;
-            this.gridColumn2.Width = 334;
+            this.Id_Tipo_Empleado.Caption = "Id Tipo Empleado";
+            this.Id_Tipo_Empleado.FieldName = "Id_Tipo_Empleado";
+            this.Id_Tipo_Empleado.Name = "Id_Tipo_Empleado";
+            this.Id_Tipo_Empleado.Visible = true;
+            this.Id_Tipo_Empleado.VisibleIndex = 1;
             // 
-            // Kilometros
+            // Nombre_Tipo_Empleado
             // 
-            this.Kilometros.Caption = "Kilometros";
-            this.Kilometros.FieldName = "Kilometros";
-            this.Kilometros.Name = "Kilometros";
-            this.Kilometros.Visible = true;
-            this.Kilometros.VisibleIndex = 2;
+            this.Nombre_Tipo_Empleado.Caption = "Tipo Empleado";
+            this.Nombre_Tipo_Empleado.FieldName = "Nombre_Tipo_Empleado";
+            this.Nombre_Tipo_Empleado.Name = "Nombre_Tipo_Empleado";
+            this.Nombre_Tipo_Empleado.Visible = true;
+            this.Nombre_Tipo_Empleado.VisibleIndex = 11;
             // 
-            // Origen
+            // Nombre_Empleado
             // 
-            this.Origen.Caption = "Origen";
-            this.Origen.FieldName = "Origen";
-            this.Origen.Name = "Origen";
-            this.Origen.Visible = true;
-            this.Origen.VisibleIndex = 3;
+            this.Nombre_Empleado.Caption = "Empleado";
+            this.Nombre_Empleado.FieldName = "Nombre_Empleado";
+            this.Nombre_Empleado.Name = "Nombre_Empleado";
+            this.Nombre_Empleado.Visible = true;
+            this.Nombre_Empleado.VisibleIndex = 2;
             // 
-            // Destino
+            // Telefono
             // 
-            this.Destino.Caption = "Destino";
-            this.Destino.FieldName = "Destino";
-            this.Destino.Name = "Destino";
-            this.Destino.Visible = true;
-            this.Destino.VisibleIndex = 4;
+            this.Telefono.Caption = "Telefono";
+            this.Telefono.FieldName = "Telefono";
+            this.Telefono.Name = "Telefono";
+            this.Telefono.Visible = true;
+            this.Telefono.VisibleIndex = 3;
             // 
-            // Frm_Rutas_Buscar
+            // RFC
+            // 
+            this.RFC.Caption = "RFC";
+            this.RFC.FieldName = "RFC";
+            this.RFC.Name = "RFC";
+            this.RFC.Visible = true;
+            this.RFC.VisibleIndex = 4;
+            // 
+            // CURP
+            // 
+            this.CURP.Caption = "CURP";
+            this.CURP.FieldName = "CURP";
+            this.CURP.Name = "CURP";
+            this.CURP.Visible = true;
+            this.CURP.VisibleIndex = 5;
+            // 
+            // No_Identificacion
+            // 
+            this.No_Identificacion.Caption = "No Identificacion";
+            this.No_Identificacion.FieldName = "No_Identificacion";
+            this.No_Identificacion.Name = "No_Identificacion";
+            this.No_Identificacion.Visible = true;
+            this.No_Identificacion.VisibleIndex = 6;
+            // 
+            // Id_Licencia
+            // 
+            this.Id_Licencia.Caption = "Id Licencia";
+            this.Id_Licencia.FieldName = "Id_Licencia";
+            this.Id_Licencia.Name = "Id_Licencia";
+            this.Id_Licencia.Visible = true;
+            this.Id_Licencia.VisibleIndex = 7;
+            // 
+            // No_Licencia
+            // 
+            this.No_Licencia.Caption = "No Licencia";
+            this.No_Licencia.FieldName = "No_Licencia";
+            this.No_Licencia.Name = "No_Licencia";
+            this.No_Licencia.Visible = true;
+            this.No_Licencia.VisibleIndex = 8;
+            // 
+            // Id_Empresa
+            // 
+            this.Id_Empresa.Caption = "Id Empresa";
+            this.Id_Empresa.FieldName = "Id_Empresa";
+            this.Id_Empresa.Name = "Id_Empresa";
+            this.Id_Empresa.Visible = true;
+            this.Id_Empresa.VisibleIndex = 9;
+            // 
+            // Nombre_Empresa
+            // 
+            this.Nombre_Empresa.Caption = "Empresa";
+            this.Nombre_Empresa.FieldName = "Nombre_Empresa";
+            this.Nombre_Empresa.Name = "Nombre_Empresa";
+            this.Nombre_Empresa.Visible = true;
+            this.Nombre_Empresa.VisibleIndex = 10;
+            // 
+            // Frm_BusqAyudante
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(623, 535);
+            this.ClientSize = new System.Drawing.Size(694, 375);
             this.Controls.Add(this.panelControl1);
             this.Controls.Add(this.barDockControlLeft);
             this.Controls.Add(this.barDockControlRight);
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.MaximizeBox = false;
-            this.MinimizeBox = false;
-            this.Name = "Frm_Rutas_Buscar";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Rutas Buscar";
-            this.Load += new System.EventHandler(this.Frm_Rutas_Buscar_Load);
+            this.Name = "Frm_BusqAyudante";
+            this.Text = "Frm_BusqAyudante";
+            this.Load += new System.EventHandler(this.Frm_BusqAyudante_Load);
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
@@ -331,17 +393,24 @@
         private DevExpress.XtraBars.BarDockControl barDockControlBottom;
         private DevExpress.XtraBars.BarDockControl barDockControlLeft;
         private DevExpress.XtraBars.BarDockControl barDockControlRight;
-        private DevExpress.XtraEditors.PanelControl panelControl1;
-        private DevExpress.XtraGrid.GridControl dtgRutas;
-        private DevExpress.XtraGrid.Views.Grid.GridView dtgValRutas;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
         private DevExpress.XtraBars.BarLargeButtonItem btnLimpiar;
         private DevExpress.XtraBars.BarLargeButtonItem btnGuardar;
         private DevExpress.XtraBars.BarLargeButtonItem btnEliminar;
         private DevExpress.XtraEditors.Repository.RepositoryItemTextEdit repositoryItemTextEdit1;
-        private DevExpress.XtraGrid.Columns.GridColumn Kilometros;
-        private DevExpress.XtraGrid.Columns.GridColumn Origen;
-        private DevExpress.XtraGrid.Columns.GridColumn Destino;
+        private DevExpress.XtraEditors.PanelControl panelControl1;
+        private DevExpress.XtraGrid.GridControl dtgRutas;
+        private DevExpress.XtraGrid.Views.Grid.GridView dtgValRutas;
+        private DevExpress.XtraGrid.Columns.GridColumn Id_Empleado;
+        private DevExpress.XtraGrid.Columns.GridColumn Id_Tipo_Empleado;
+        private DevExpress.XtraGrid.Columns.GridColumn Nombre_Tipo_Empleado;
+        private DevExpress.XtraGrid.Columns.GridColumn Nombre_Empleado;
+        private DevExpress.XtraGrid.Columns.GridColumn Telefono;
+        private DevExpress.XtraGrid.Columns.GridColumn RFC;
+        private DevExpress.XtraGrid.Columns.GridColumn CURP;
+        private DevExpress.XtraGrid.Columns.GridColumn No_Identificacion;
+        private DevExpress.XtraGrid.Columns.GridColumn Id_Licencia;
+        private DevExpress.XtraGrid.Columns.GridColumn No_Licencia;
+        private DevExpress.XtraGrid.Columns.GridColumn Id_Empresa;
+        private DevExpress.XtraGrid.Columns.GridColumn Nombre_Empresa;
     }
 }

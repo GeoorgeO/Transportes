@@ -70,6 +70,7 @@
     <Compile Include="Catalogos\CLS_Proveedores.cs" />
     <Compile Include="Catalogos\CLS_Rutas.cs" />
     <Compile Include="Catalogos\CLS_Rutas_Detalle.cs" />
+    <Compile Include="Catalogos\CLS_Salidas.cs" />
     <Compile Include="Catalogos\CLS_Servicios.cs" />
     <Compile Include="Catalogos\CLS_ServiciosDetalle.cs" />
     <Compile Include="Catalogos\CLS_Usuarios.cs" />

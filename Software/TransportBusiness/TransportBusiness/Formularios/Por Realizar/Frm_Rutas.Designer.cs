@@ -37,6 +37,7 @@
             this.btnGuardar = new DevExpress.XtraBars.BarLargeButtonItem();
             this.btnEliminar = new DevExpress.XtraBars.BarLargeButtonItem();
             this.btnSalir = new DevExpress.XtraBars.BarLargeButtonItem();
+            this.btnSeleccionar = new DevExpress.XtraBars.BarLargeButtonItem();
             this.bEstado = new DevExpress.XtraBars.Bar();
             this.lblProveedor = new DevExpress.XtraBars.BarStaticItem();
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
@@ -107,9 +108,10 @@
             this.btnBuscar,
             this.btnGuardar,
             this.btnEliminar,
-            this.btnSalir});
+            this.btnSalir,
+            this.btnSeleccionar});
             this.barManager1.MainMenu = this.bIconos;
-            this.barManager1.MaxItemId = 66;
+            this.barManager1.MaxItemId = 67;
             this.barManager1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemTextEdit1});
             this.barManager1.StatusBar = this.bEstado;
@@ -184,6 +186,15 @@
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnSalir_ItemClick);
             // 
+            // btnSeleccionar
+            // 
+            this.btnSeleccionar.Caption = "Seleccionar";
+            this.btnSeleccionar.Id = 66;
+            this.btnSeleccionar.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnSeleccionar.ImageOptions.Image")));
+            this.btnSeleccionar.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnSeleccionar.ImageOptions.LargeImage")));
+            this.btnSeleccionar.Name = "btnSeleccionar";
+            
+            // 
             // bEstado
             // 
             this.bEstado.BarName = "Barra de estado";
@@ -210,15 +221,17 @@
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
             this.barDockControlTop.Manager = this.barManager1;
-            this.barDockControlTop.Size = new System.Drawing.Size(878, 0);
+            this.barDockControlTop.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.barDockControlTop.Size = new System.Drawing.Size(1024, 0);
             // 
             // barDockControlBottom
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 508);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 626);
             this.barDockControlBottom.Manager = this.barManager1;
-            this.barDockControlBottom.Size = new System.Drawing.Size(878, 28);
+            this.barDockControlBottom.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.barDockControlBottom.Size = new System.Drawing.Size(1024, 34);
             // 
             // barDockControlLeft
             // 
@@ -226,15 +239,17 @@
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.barDockControlLeft.Location = new System.Drawing.Point(0, 0);
             this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Size = new System.Drawing.Size(58, 508);
+            this.barDockControlLeft.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.barDockControlLeft.Size = new System.Drawing.Size(67, 626);
             // 
             // barDockControlRight
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(878, 0);
+            this.barDockControlRight.Location = new System.Drawing.Point(1024, 0);
             this.barDockControlRight.Manager = this.barManager1;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 508);
+            this.barDockControlRight.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 626);
             // 
             // repositoryItemTextEdit1
             // 
@@ -243,10 +258,11 @@
             // xtraTabControl1
             // 
             this.xtraTabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.xtraTabControl1.Location = new System.Drawing.Point(58, 0);
+            this.xtraTabControl1.Location = new System.Drawing.Point(67, 0);
+            this.xtraTabControl1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.xtraTabControl1.Name = "xtraTabControl1";
             this.xtraTabControl1.SelectedTabPage = this.xtraTabPage1;
-            this.xtraTabControl1.Size = new System.Drawing.Size(820, 508);
+            this.xtraTabControl1.Size = new System.Drawing.Size(957, 626);
             this.xtraTabControl1.TabIndex = 6;
             this.xtraTabControl1.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.xtraTabPage1});
@@ -255,9 +271,10 @@
             // 
             this.xtraTabPage1.Controls.Add(this.panelControl1);
             this.xtraTabPage1.Controls.Add(this.groupControl1);
+            this.xtraTabPage1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.xtraTabPage1.Name = "xtraTabPage1";
-            this.xtraTabPage1.Padding = new System.Windows.Forms.Padding(5);
-            this.xtraTabPage1.Size = new System.Drawing.Size(816, 483);
+            this.xtraTabPage1.Padding = new System.Windows.Forms.Padding(6);
+            this.xtraTabPage1.Size = new System.Drawing.Size(950, 592);
             this.xtraTabPage1.Text = "Captura de Ruta";
             // 
             // panelControl1
@@ -265,29 +282,33 @@
             this.panelControl1.Controls.Add(this.panelControl2);
             this.panelControl1.Controls.Add(this.groupControl2);
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelControl1.Location = new System.Drawing.Point(5, 101);
+            this.panelControl1.Location = new System.Drawing.Point(6, 124);
+            this.panelControl1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(806, 377);
+            this.panelControl1.Size = new System.Drawing.Size(938, 462);
             this.panelControl1.TabIndex = 1;
             // 
             // panelControl2
             // 
             this.panelControl2.Controls.Add(this.dtgRutasDetalles);
             this.panelControl2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelControl2.Location = new System.Drawing.Point(2, 64);
+            this.panelControl2.Location = new System.Drawing.Point(2, 78);
+            this.panelControl2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panelControl2.Name = "panelControl2";
-            this.panelControl2.Padding = new System.Windows.Forms.Padding(10);
-            this.panelControl2.Size = new System.Drawing.Size(802, 311);
+            this.panelControl2.Padding = new System.Windows.Forms.Padding(12);
+            this.panelControl2.Size = new System.Drawing.Size(934, 382);
             this.panelControl2.TabIndex = 18;
             // 
             // dtgRutasDetalles
             // 
             this.dtgRutasDetalles.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dtgRutasDetalles.Location = new System.Drawing.Point(12, 12);
+            this.dtgRutasDetalles.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.dtgRutasDetalles.Location = new System.Drawing.Point(14, 14);
             this.dtgRutasDetalles.MainView = this.dtgValRutasDetalles;
+            this.dtgRutasDetalles.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dtgRutasDetalles.MenuManager = this.barManager1;
             this.dtgRutasDetalles.Name = "dtgRutasDetalles";
-            this.dtgRutasDetalles.Size = new System.Drawing.Size(778, 287);
+            this.dtgRutasDetalles.Size = new System.Drawing.Size(906, 354);
             this.dtgRutasDetalles.TabIndex = 0;
             this.dtgRutasDetalles.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.dtgValRutasDetalles});
@@ -337,8 +358,9 @@
             this.groupControl2.Controls.Add(this.labelControl17);
             this.groupControl2.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupControl2.Location = new System.Drawing.Point(2, 2);
+            this.groupControl2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.groupControl2.Name = "groupControl2";
-            this.groupControl2.Size = new System.Drawing.Size(802, 62);
+            this.groupControl2.Size = new System.Drawing.Size(934, 76);
             this.groupControl2.TabIndex = 17;
             this.groupControl2.Text = "Ruta Detalle:";
             // 
@@ -346,25 +368,28 @@
             // 
             this.btnAgregar.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnAgregar.ImageOptions.Image")));
             this.btnAgregar.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.BottomCenter;
-            this.btnAgregar.Location = new System.Drawing.Point(435, 25);
+            this.btnAgregar.Location = new System.Drawing.Point(507, 31);
+            this.btnAgregar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(28, 28);
+            this.btnAgregar.Size = new System.Drawing.Size(33, 34);
             this.btnAgregar.TabIndex = 4;
             this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // textRutaDetalle
             // 
-            this.textRutaDetalle.Location = new System.Drawing.Point(84, 29);
+            this.textRutaDetalle.Location = new System.Drawing.Point(98, 36);
+            this.textRutaDetalle.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textRutaDetalle.MenuManager = this.barManager1;
             this.textRutaDetalle.Name = "textRutaDetalle";
-            this.textRutaDetalle.Size = new System.Drawing.Size(345, 20);
+            this.textRutaDetalle.Size = new System.Drawing.Size(402, 22);
             this.textRutaDetalle.TabIndex = 3;
             // 
             // labelControl17
             // 
-            this.labelControl17.Location = new System.Drawing.Point(18, 34);
+            this.labelControl17.Location = new System.Drawing.Point(21, 42);
+            this.labelControl17.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.labelControl17.Name = "labelControl17";
-            this.labelControl17.Size = new System.Drawing.Size(62, 13);
+            this.labelControl17.Size = new System.Drawing.Size(73, 16);
             this.labelControl17.TabIndex = 2;
             this.labelControl17.Text = "Ruta detalle:";
             // 
@@ -381,103 +406,115 @@
             this.groupControl1.Controls.Add(this.textIdRuta);
             this.groupControl1.Controls.Add(this.labelControl1);
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.groupControl1.Location = new System.Drawing.Point(5, 5);
+            this.groupControl1.Location = new System.Drawing.Point(6, 6);
+            this.groupControl1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(806, 96);
+            this.groupControl1.Size = new System.Drawing.Size(938, 118);
             this.groupControl1.TabIndex = 0;
             this.groupControl1.Text = "Ruta";
             // 
             // textDestino
             // 
-            this.textDestino.Location = new System.Drawing.Point(356, 63);
+            this.textDestino.Location = new System.Drawing.Point(415, 78);
+            this.textDestino.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textDestino.MenuManager = this.barManager1;
             this.textDestino.Name = "textDestino";
-            this.textDestino.Size = new System.Drawing.Size(210, 20);
+            this.textDestino.Size = new System.Drawing.Size(245, 22);
             this.textDestino.TabIndex = 9;
             // 
             // textOrigen
             // 
-            this.textOrigen.Location = new System.Drawing.Point(86, 63);
+            this.textOrigen.Location = new System.Drawing.Point(100, 78);
+            this.textOrigen.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textOrigen.MenuManager = this.barManager1;
             this.textOrigen.Name = "textOrigen";
-            this.textOrigen.Size = new System.Drawing.Size(210, 20);
+            this.textOrigen.Size = new System.Drawing.Size(245, 22);
             this.textOrigen.TabIndex = 8;
             // 
             // textKM
             // 
-            this.textKM.Location = new System.Drawing.Point(459, 32);
+            this.textKM.Location = new System.Drawing.Point(535, 39);
+            this.textKM.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textKM.MenuManager = this.barManager1;
             this.textKM.Name = "textKM";
             this.textKM.Properties.Mask.EditMask = "n";
             this.textKM.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
-            this.textKM.Size = new System.Drawing.Size(107, 20);
+            this.textKM.Size = new System.Drawing.Size(125, 22);
             this.textKM.TabIndex = 7;
             // 
             // labelControl5
             // 
-            this.labelControl5.Location = new System.Drawing.Point(312, 66);
+            this.labelControl5.Location = new System.Drawing.Point(364, 81);
+            this.labelControl5.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.labelControl5.Name = "labelControl5";
-            this.labelControl5.Size = new System.Drawing.Size(40, 13);
+            this.labelControl5.Size = new System.Drawing.Size(47, 16);
             this.labelControl5.TabIndex = 6;
             this.labelControl5.Text = "Destino:";
             // 
             // labelControl4
             // 
-            this.labelControl4.Location = new System.Drawing.Point(20, 66);
+            this.labelControl4.Location = new System.Drawing.Point(23, 81);
+            this.labelControl4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.labelControl4.Name = "labelControl4";
-            this.labelControl4.Size = new System.Drawing.Size(36, 13);
+            this.labelControl4.Size = new System.Drawing.Size(43, 16);
             this.labelControl4.TabIndex = 5;
             this.labelControl4.Text = "Origen:";
             // 
             // labelControl3
             // 
-            this.labelControl3.Location = new System.Drawing.Point(435, 33);
+            this.labelControl3.Location = new System.Drawing.Point(507, 41);
+            this.labelControl3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.labelControl3.Name = "labelControl3";
-            this.labelControl3.Size = new System.Drawing.Size(18, 13);
+            this.labelControl3.Size = new System.Drawing.Size(22, 16);
             this.labelControl3.TabIndex = 4;
             this.labelControl3.Text = "KM:";
             // 
             // textRuta
             // 
-            this.textRuta.Location = new System.Drawing.Point(218, 31);
+            this.textRuta.Location = new System.Drawing.Point(254, 38);
+            this.textRuta.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textRuta.Name = "textRuta";
-            this.textRuta.Size = new System.Drawing.Size(192, 20);
+            this.textRuta.Size = new System.Drawing.Size(224, 22);
             this.textRuta.TabIndex = 3;
             // 
             // labelControl2
             // 
-            this.labelControl2.Location = new System.Drawing.Point(171, 35);
+            this.labelControl2.Location = new System.Drawing.Point(199, 43);
+            this.labelControl2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(41, 13);
+            this.labelControl2.Size = new System.Drawing.Size(50, 16);
             this.labelControl2.TabIndex = 2;
             this.labelControl2.Text = "Nombre:";
             // 
             // textIdRuta
             // 
             this.textIdRuta.Enabled = false;
-            this.textIdRuta.Location = new System.Drawing.Point(86, 31);
+            this.textIdRuta.Location = new System.Drawing.Point(100, 38);
+            this.textIdRuta.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textIdRuta.Name = "textIdRuta";
-            this.textIdRuta.Size = new System.Drawing.Size(79, 20);
+            this.textIdRuta.Size = new System.Drawing.Size(92, 22);
             this.textIdRuta.TabIndex = 1;
             // 
             // labelControl1
             // 
-            this.labelControl1.Location = new System.Drawing.Point(20, 35);
+            this.labelControl1.Location = new System.Drawing.Point(23, 43);
+            this.labelControl1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(43, 13);
+            this.labelControl1.Size = new System.Drawing.Size(50, 16);
             this.labelControl1.TabIndex = 0;
             this.labelControl1.Text = "Id Ruta: ";
             // 
             // Frm_Rutas
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(878, 536);
+            this.ClientSize = new System.Drawing.Size(1024, 660);
             this.Controls.Add(this.xtraTabControl1);
             this.Controls.Add(this.barDockControlLeft);
             this.Controls.Add(this.barDockControlRight);
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "Frm_Rutas";
             this.Text = "Rutas";
             this.Load += new System.EventHandler(this.Frm_Rutas_Load);
@@ -549,5 +586,6 @@
         private DevExpress.XtraEditors.LabelControl labelControl5;
         private DevExpress.XtraEditors.LabelControl labelControl4;
         private DevExpress.XtraEditors.LabelControl labelControl3;
+        private DevExpress.XtraBars.BarLargeButtonItem btnSeleccionar;
     }
 }

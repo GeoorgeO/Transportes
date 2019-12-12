@@ -14,6 +14,8 @@ namespace TransportBusiness
 {
     public partial class Frm_Rutas : DevExpress.XtraEditors.XtraForm
     {
+        
+
         public Frm_Rutas()
         {
             InitializeComponent();
@@ -314,6 +316,7 @@ namespace TransportBusiness
 
         private void Frm_Rutas_Load(object sender, EventArgs e)
         {
+            
             iniciarTags();
             CargarTabla();
         }
@@ -379,5 +382,7 @@ namespace TransportBusiness
         {
 
         }
+
+       
     }
 }

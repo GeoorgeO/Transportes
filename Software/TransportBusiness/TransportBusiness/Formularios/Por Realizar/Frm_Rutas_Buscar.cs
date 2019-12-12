@@ -66,5 +66,15 @@ namespace TransportBusiness
                 XtraMessageBox.Show(sel.Mensaje);
             }
         }
+
+        private void btnSalir_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Id_Rutas ="";
+            Nombre_Ruta = "";
+            vKilometros = 0;
+            vOrigen = "";
+            vDestino = "";
+            this.Close();
+        }
     }
 }
