@@ -15,22 +15,22 @@ GO
 -- =============================================
 create PROCEDURE [dbo].[SP_Salidas_Insert] 
 	-- Add the parameters for the stored procedure here
-	Id_Salida char(10),
-	Fecha_Salida datetime,
-	Id_Activo_Principal char(8),
-	Id_Operador char(6),
-	Id_Ayudante char(6),
-	Id_Activo_Secundario,
-	Id_Activo_Adicional,
-	Id_Ruta char(4),
-	Id_MotivoSalida,
-	Id_Cliente char(6),
-	km_Inicio numeric(18,2),
-	km_Fin numeric(18,2),
-	Dias_Viaje numeric(18,2),
-	Lts_Km numeric(18,2),
-	Id_Huerta char(5),
-	Observaciones varchar(100)
+	@Id_Salida char(10),
+	@Fecha_Salida datetime,
+	@Id_Activo_Principal char(8),
+	@Id_Operador char(6),
+	@Id_Ayudante char(6),
+	@Id_Activo_Secundario char(8), 
+	@Id_Activo_Adicional char(8),
+	@Id_Ruta char(4),
+	@Id_MotivoSalida char(3),
+	@Id_Cliente char(6),
+	@km_Inicio numeric(18,2),
+	@km_Fin numeric(18,2),
+	@Dias_Viaje numeric(18,2),
+	@Lts_Km numeric(18,2),
+	@Id_Huerta char(5),
+	@Observaciones varchar(100)
 as
 BEGIN
 	-- SET NOCOUNT ON added to prevent extra result sets from

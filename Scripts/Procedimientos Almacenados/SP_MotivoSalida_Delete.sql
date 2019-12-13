@@ -5,15 +5,15 @@ SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
-IF  EXISTS (SELECT * FROM SYS.OBJECTS WHERE TYPE = 'P' AND NAME = 'SP_MotivosSalida_Delete')
-DROP PROCEDURE SP_MotivosSalida_Delete
+IF  EXISTS (SELECT * FROM SYS.OBJECTS WHERE TYPE = 'P' AND NAME = 'SP_MotivoSalida_Delete')
+DROP PROCEDURE SP_MotivoSalida_Delete
 GO
 -- =============================================
 -- Author:		<Author,,Name>
 -- Create date: <Create Date,,>
 -- Description:	<Description,,>
 -- =============================================
-create PROCEDURE [dbo].[SP_MotivosSalida_Delete] 
+create PROCEDURE [dbo].[SP_MotivoSalida_Delete] 
 	-- Add the parameters for the stored procedure here
 	@Id_MotivoSalida char(3)
 AS
@@ -28,7 +28,7 @@ BEGIN
 	begin transaction T2;
 	begin try
 		
-		delete from dbo.MotivosSalida where Id_MotivoSalida=@Id_MotivoSalida
+		delete from dbo.MotivoSalida where Id_MotivoSalida=@Id_MotivoSalida
 
 		commit transaction T2;
 		set @correcto=1

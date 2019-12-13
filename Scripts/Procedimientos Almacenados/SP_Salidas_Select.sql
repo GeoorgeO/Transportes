@@ -1,0 +1,70 @@
+USE [Transportes]
+GO
+-- ================================================
+-- Template generated from Template Explorer using:
+-- Create Procedure (New Menu).SQL
+--
+-- Use the Specify Values for Template Parameters 
+-- command (Ctrl-Shift-M) to fill in the parameter 
+-- values below.
+--
+-- This block of comments will not be included in
+-- the definition of the procedure.
+-- ================================================
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF  EXISTS (SELECT * FROM SYS.OBJECTS WHERE TYPE = 'P' AND NAME = 'SP_Salidas_Select')
+DROP PROCEDURE SP_Salidas_Select
+GO
+-- =============================================
+-- Author:		<Author,,Name>
+-- Create date: <Create Date,,>
+-- Description:	<Description,,>
+-- =============================================
+CREATE PROCEDURE SP_Salidas_Select
+	-- Add the parameters for the stored procedure here
+AS
+BEGIN
+	-- SET NOCOUNT ON added to prevent extra result sets from
+	-- interfering with SELECT statements.
+	SET NOCOUNT ON;
+
+    -- Insert statements for procedure here
+	
+		select Id_Salida,
+			Fecha_Salida,
+			S.Id_Activo_Principal,
+			Nombre_Activo_Principal=(select Nombre_interno from Activos where Id_Activo=S.Id_Activo_Principal),
+			S.Id_Operador,
+			Nombre_Operador=(select Nombre_empleado from Empleado where Id_empleado=S.Id_Operador),
+			S.Id_Ayudante,
+			Nombre_Ayudante=(select Nombre_empleado from Empleado where Id_empleado=S.Id_Ayudante),
+			S.Id_Activo_Secundario,
+			Nombre_Activo_Secundario=(select Nombre_interno from Activos where Id_Activo=S.Id_Activo_Secundario), 
+			S.Id_Activo_Adicional,
+			Nombre_Activo_Adicional=(select Nombre_interno from Activos where Id_Activo=S.Id_Activo_Adicional), 
+			S.Id_Ruta,
+			R.Nombre_Ruta,
+			R.Origen,
+			R.Destino,
+			S.Id_MotivoSalida,
+			M.Nombre_MotivoSalida,
+			S.Id_Cliente,
+			C.Nombre_Cliente
+			km_Inicio,
+			km_Fin,
+			Dias_Viaje,
+			Lts_Km,
+			S.Id_Huerta,
+			H.Nombre_Huerta,
+			Observaciones
+		from Salidas as S
+		left join Rutas as R on R.Id_Rutas=S.Id_Ruta
+		left join MotivoSalida as M on M.Id_MotivoSalida=S.Id_MotivoSalida
+		left join Clientes as C on C.Id_Cliente=S.Id_Cliente
+		left join Huerta as H on H.Id_Huerta=S.Id_Huerta
+		
+END
+GO

@@ -5,15 +5,15 @@ SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
-IF  EXISTS (SELECT * FROM SYS.OBJECTS WHERE TYPE = 'P' AND NAME = 'SP_MotivosSalida_Insert')
-DROP PROCEDURE SP_MotivosSalida_Insert
+IF  EXISTS (SELECT * FROM SYS.OBJECTS WHERE TYPE = 'P' AND NAME = 'SP_MotivoSalida_Insert')
+DROP PROCEDURE SP_MotivoSalida_Insert
 GO
 -- =============================================
 -- Author:		<Author,,Name>
 -- Create date: <Create Date,,>
 -- Description:	<Description,,>
 -- =============================================
-create PROCEDURE [dbo].[SP_MotivosSalida_Insert] 
+create PROCEDURE [dbo].[SP_MotivoSalida_Insert] 
 	-- Add the parameters for the stored procedure here
 	@Id_MotivoSalida char(3),
 	@Nombre_MotivoSalida varchar(80)
@@ -30,21 +30,21 @@ BEGIN
 	begin try
 
 		declare @maximo char(3)
-		select @maximo=right(Concat('000', isnull(max(Id_MotivoSalida),0)+1),3) from dbo.MotivosSalida
+		select @maximo=right(Concat('000', isnull(max(Id_MotivoSalida),0)+1),3) from dbo.MotivoSalida
 
 		declare @Existe int
-		select @Existe = count(Id_MotivoSalida) from dbo.MotivosSalida a where (a.Id_MotivoSalida=@Id_MotivoSalida)
+		select @Existe = count(Id_MotivoSalida) from dbo.MotivoSalida a where (a.Id_MotivoSalida=@Id_MotivoSalida)
 
 		if @Existe>0 
 		
-			UPDATE dbo.MotivosSalida
+			UPDATE dbo.MotivoSalida
 		        SET Nombre_MotivoSalida=@Nombre_MotivoSalida
 		    WHERE
 		    	Id_MotivoSalida=@Id_MotivoSalida
 				
 		else
 		
-			INSERT INTO dbo.MotivosSalida
+			INSERT INTO dbo.MotivoSalida
 	           (Id_MotivoSalida
 	           ,Nombre_MotivoSalida)
 	     	VALUES

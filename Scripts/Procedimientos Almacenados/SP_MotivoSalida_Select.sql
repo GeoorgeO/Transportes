@@ -15,15 +15,15 @@ SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
-IF  EXISTS (SELECT * FROM SYS.OBJECTS WHERE TYPE = 'P' AND NAME = 'SP_MotivosSalida_Select')
-DROP PROCEDURE SP_MotivosSalida_Select
+IF  EXISTS (SELECT * FROM SYS.OBJECTS WHERE TYPE = 'P' AND NAME = 'SP_MotivoSalida_Select')
+DROP PROCEDURE SP_MotivoSalida_Select
 GO
 -- =============================================
 -- Author:		<Author,,Name>
 -- Create date: <Create Date,,>
 -- Description:	<Description,,>
 -- =============================================
-CREATE PROCEDURE SP_MotivosSalida_Select
+CREATE PROCEDURE SP_MotivoSalida_Select
 	-- Add the parameters for the stored procedure here
 	
 AS
@@ -35,8 +35,8 @@ BEGIN
     -- Insert statements for procedure here
 	
 		select Id_MotivoSalida
-	      ,Nombre_Pais 
-		from Nombre_MotivoSalida
+	      ,Nombre_MotivoSalida 
+		from MotivoSalida
 
 END
 GO

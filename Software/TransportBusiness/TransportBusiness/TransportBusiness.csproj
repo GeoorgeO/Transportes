@@ -244,6 +244,24 @@
     <Compile Include="Formularios\Catalogos\Tipos\Frm_Tipo_Servicio.Designer.cs">
       <DependentUpon>Frm_Tipo_Servicio.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\Control\Frm_BusqActivoSinRuta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Control\Frm_BusqActivoSinRuta.Designer.cs">
+      <DependentUpon>Frm_BusqActivoSinRuta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Control\Frm_BusqAyudante.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Control\Frm_BusqAyudante.Designer.cs">
+      <DependentUpon>Frm_BusqAyudante.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Control\Frm_BusqSalidas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Control\Frm_BusqSalidas.Designer.cs">
+      <DependentUpon>Frm_BusqSalidas.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\Control\Frm_Gasto_Directo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -473,6 +491,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Catalogos\Tipos\Frm_Tipo_Servicio.resx">
       <DependentUpon>Frm_Tipo_Servicio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Control\Frm_BusqActivoSinRuta.resx">
+      <DependentUpon>Frm_BusqActivoSinRuta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Control\Frm_BusqAyudante.resx">
+      <DependentUpon>Frm_BusqAyudante.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Control\Frm_BusqSalidas.resx">
+      <DependentUpon>Frm_BusqSalidas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Control\Frm_Check_List.resx">
       <DependentUpon>Frm_Check_List.cs</DependentUpon>
