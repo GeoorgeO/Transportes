@@ -46,7 +46,6 @@
             this.repositoryItemTextEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
-            this.labelActivo = new DevExpress.XtraEditors.LabelControl();
             this.separatorControl1 = new DevExpress.XtraEditors.SeparatorControl();
             this.cboEstado = new DevExpress.XtraEditors.GridLookUpEdit();
             this.gridView3 = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -121,6 +120,8 @@
             this.gridColumn27 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn28 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn29 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.labelActivo = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
@@ -349,18 +350,6 @@
             this.groupControl1.TabIndex = 0;
             this.groupControl1.Text = "Datos";
             // 
-            // labelActivo
-            // 
-            this.labelActivo.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelActivo.Appearance.ForeColor = System.Drawing.Color.Maroon;
-            this.labelActivo.Appearance.Options.UseFont = true;
-            this.labelActivo.Appearance.Options.UseForeColor = true;
-            this.labelActivo.Location = new System.Drawing.Point(305, 48);
-            this.labelActivo.Name = "labelActivo";
-            this.labelActivo.Size = new System.Drawing.Size(42, 16);
-            this.labelActivo.TabIndex = 36;
-            this.labelActivo.Text = "Activo";
-            // 
             // separatorControl1
             // 
             this.separatorControl1.LineOrientation = System.Windows.Forms.Orientation.Vertical;
@@ -544,8 +533,6 @@
             this.txtLonguitud.Location = new System.Drawing.Point(63, 75);
             this.txtLonguitud.MenuManager = this.barManager1;
             this.txtLonguitud.Name = "txtLonguitud";
-            this.txtLonguitud.Properties.Mask.EditMask = "f5";
-            this.txtLonguitud.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.txtLonguitud.Size = new System.Drawing.Size(138, 20);
             this.txtLonguitud.TabIndex = 16;
             // 
@@ -562,8 +549,6 @@
             this.txtLatitud.Location = new System.Drawing.Point(63, 49);
             this.txtLatitud.MenuManager = this.barManager1;
             this.txtLatitud.Name = "txtLatitud";
-            this.txtLatitud.Properties.Mask.EditMask = "f5";
-            this.txtLatitud.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.txtLatitud.Size = new System.Drawing.Size(138, 20);
             this.txtLatitud.TabIndex = 14;
             // 
@@ -580,8 +565,6 @@
             this.txtASMN.Location = new System.Drawing.Point(63, 23);
             this.txtASMN.MenuManager = this.barManager1;
             this.txtASMN.Name = "txtASMN";
-            this.txtASMN.Properties.Mask.EditMask = "f2";
-            this.txtASMN.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.txtASMN.Size = new System.Drawing.Size(94, 20);
             this.txtASMN.TabIndex = 12;
             // 
@@ -614,8 +597,6 @@
             this.txtNorte.Location = new System.Drawing.Point(57, 101);
             this.txtNorte.MenuManager = this.barManager1;
             this.txtNorte.Name = "txtNorte";
-            this.txtNorte.Properties.Mask.EditMask = "f2";
-            this.txtNorte.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.txtNorte.Size = new System.Drawing.Size(101, 20);
             this.txtNorte.TabIndex = 18;
             // 
@@ -632,8 +613,6 @@
             this.txtEste.Location = new System.Drawing.Point(57, 75);
             this.txtEste.MenuManager = this.barManager1;
             this.txtEste.Name = "txtEste";
-            this.txtEste.Properties.Mask.EditMask = "f2";
-            this.txtEste.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.txtEste.Size = new System.Drawing.Size(101, 20);
             this.txtEste.TabIndex = 16;
             // 
@@ -666,8 +645,6 @@
             this.txtZona.Location = new System.Drawing.Point(57, 23);
             this.txtZona.MenuManager = this.barManager1;
             this.txtZona.Name = "txtZona";
-            this.txtZona.Properties.Mask.EditMask = "f2";
-            this.txtZona.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.txtZona.Size = new System.Drawing.Size(59, 20);
             this.txtZona.TabIndex = 12;
             // 
@@ -798,7 +775,6 @@
             // 
             // txtCodigo
             // 
-            this.txtCodigo.Enabled = false;
             this.txtCodigo.Location = new System.Drawing.Point(75, 46);
             this.txtCodigo.MenuManager = this.barManager1;
             this.txtCodigo.Name = "txtCodigo";
@@ -828,18 +804,18 @@
             this.panelControl2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelControl2.Location = new System.Drawing.Point(71, 294);
             this.panelControl2.Name = "panelControl2";
-            this.panelControl2.Padding = new System.Windows.Forms.Padding(5);
+            this.panelControl2.Padding = new System.Windows.Forms.Padding(5, 30, 5, 5);
             this.panelControl2.Size = new System.Drawing.Size(947, 243);
             this.panelControl2.TabIndex = 9;
             // 
             // dtgHuertas
             // 
             this.dtgHuertas.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dtgHuertas.Location = new System.Drawing.Point(7, 7);
+            this.dtgHuertas.Location = new System.Drawing.Point(7, 32);
             this.dtgHuertas.MainView = this.dtgValHuertas;
             this.dtgHuertas.MenuManager = this.barManager1;
             this.dtgHuertas.Name = "dtgHuertas";
-            this.dtgHuertas.Size = new System.Drawing.Size(933, 229);
+            this.dtgHuertas.Size = new System.Drawing.Size(933, 204);
             this.dtgHuertas.TabIndex = 0;
             this.dtgHuertas.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.dtgValHuertas});
@@ -1048,6 +1024,18 @@
             this.gridColumn29.VisibleIndex = 15;
             this.gridColumn29.Width = 65;
             // 
+            // labelActivo
+            // 
+            this.labelActivo.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelActivo.Appearance.ForeColor = System.Drawing.Color.Maroon;
+            this.labelActivo.Appearance.Options.UseFont = true;
+            this.labelActivo.Appearance.Options.UseForeColor = true;
+            this.labelActivo.Location = new System.Drawing.Point(305, 48);
+            this.labelActivo.Name = "labelActivo";
+            this.labelActivo.Size = new System.Drawing.Size(42, 16);
+            this.labelActivo.TabIndex = 36;
+            this.labelActivo.Text = "Activo";
+            // 
             // Frm_Huertas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1157,6 +1145,7 @@
         private DevExpress.XtraEditors.TextEdit txtCodigo;
         private DevExpress.XtraEditors.LabelControl labelControl1;
         private DevExpress.XtraEditors.SimpleButton btnProductor;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private DevExpress.XtraEditors.GridLookUpEdit cboCultivo;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView2;
         private DevExpress.XtraEditors.GridLookUpEdit cboCalidad;

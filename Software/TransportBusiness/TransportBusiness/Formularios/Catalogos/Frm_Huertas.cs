@@ -9,7 +9,6 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using CapaDeDatos;
-using DevExpress.XtraEditors.Mask;
 
 namespace TransportBusiness
 {
@@ -98,33 +97,6 @@ namespace TransportBusiness
             cboCultivo.EditValue = Valor;
             cboCultivo.Properties.DataSource = Datos;
         }
-        private void DarFormatoCampos()
-        {
-            txtZona.Text = "0";
-            txtZona.Properties.Mask.MaskType = MaskType.Numeric;
-            txtZona.Properties.Mask.EditMask = "###,###0.00";
-            txtZona.Properties.Mask.UseMaskAsDisplayFormat = true;
-            txtEste.Text = "0";
-            txtEste.Properties.Mask.MaskType = MaskType.Numeric;
-            txtEste.Properties.Mask.EditMask = "###,###0.00";
-            txtEste.Properties.Mask.UseMaskAsDisplayFormat = true;
-            txtNorte.Text = "0";
-            txtNorte.Properties.Mask.MaskType = MaskType.Numeric;
-            txtNorte.Properties.Mask.EditMask = "###,###0.00";
-            txtNorte.Properties.Mask.UseMaskAsDisplayFormat = true;
-            txtASMN.Text = "0";
-            txtASMN.Properties.Mask.MaskType = MaskType.Numeric;
-            txtASMN.Properties.Mask.EditMask = "###,###0.00";
-            txtASMN.Properties.Mask.UseMaskAsDisplayFormat = true;
-            txtLatitud.Text = "0";
-            txtLatitud.Properties.Mask.MaskType = MaskType.Numeric;
-            txtLatitud.Properties.Mask.EditMask = "###,###0.00000";
-            txtLatitud.Properties.Mask.UseMaskAsDisplayFormat = true;
-            txtLonguitud.Text = "0";
-            txtLonguitud.Properties.Mask.MaskType = MaskType.Numeric;
-            txtLonguitud.Properties.Mask.EditMask = "###,###0.00000";
-            txtLonguitud.Properties.Mask.UseMaskAsDisplayFormat = true;
-        }
         private void Frm_Huertas_Shown(object sender, EventArgs e)
         {
             if (PaSel == true)
@@ -139,8 +111,6 @@ namespace TransportBusiness
             CargarCiudad(null);
             CargarCalidad(null);
             CargarCultivo(null);
-            DarFormatoCampos();
-            CargarHuertas();
         }
 
         private void btnLimpiar_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -268,7 +238,7 @@ namespace TransportBusiness
         {
             dtgHuertas.DataSource = null;
             CLS_Huerta Clase = new CLS_Huerta();
-            Clase.Activo = "1";
+
             Clase.MtdSeleccionarHuerta();
             if (Clase.Exito)
             {
@@ -286,13 +256,13 @@ namespace TransportBusiness
             Clase.Id_Ciudad = cboCiudad.EditValue.ToString();
             Clase.Id_Calidad = cboCalidad.EditValue.ToString();
             Clase.Id_Cultivo = cboCultivo.EditValue.ToString();
-            Clase.zona_Huerta =Convert.ToDecimal(txtZona.Text);
+            Clase.zona_Huerta =Convert.ToInt32(txtZona.Text);
             Clase.banda_Huerta = txtBanda.Text;
-            Clase.este_Huerta =Convert.ToDecimal(txtEste.Text);
-            Clase.norte_Huerta =Convert.ToDecimal(txtNorte.Text);
-            Clase.asnm_Huerta = Convert.ToDecimal(txtASMN.Text);
-            Clase.latitud_Huerta = Convert.ToDecimal(txtLatitud.Text);
-            Clase.longitud_Huerta = Convert.ToDecimal(txtLonguitud.Text);
+            Clase.este_Huerta =Convert.ToInt32(txtEste.Text);
+            Clase.norte_Huerta =Convert.ToInt32(txtNorte.Text);
+            Clase.asnm_Huerta = Convert.ToInt32(txtASMN.Text);
+            Clase.latitud_Huerta = txtLatitud.Text;
+            Clase.longitud_Huerta = txtLonguitud.Text;
             Clase.MtdInsertarHuerta();
 
             if (Clase.Exito)
