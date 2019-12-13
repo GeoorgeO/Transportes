@@ -1,6 +1,6 @@
 ﻿namespace TransportBusiness
 {
-    partial class Frm_Calidad
+    partial class Frm_MotivoSalida
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_Calidad));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_MotivoSalida));
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.bIconos = new DevExpress.XtraBars.Bar();
             this.btnLimpiar = new DevExpress.XtraBars.BarLargeButtonItem();
@@ -47,8 +47,8 @@
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.Id_Calidad = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.Nombre_Calidad = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Id_MotivoSalida = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Nombre_MotivodeSalida = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.textNombre = new DevExpress.XtraEditors.TextEdit();
@@ -244,29 +244,29 @@
             // gridView1
             // 
             this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.Id_Calidad,
-            this.Nombre_Calidad});
+            this.Id_MotivoSalida,
+            this.Nombre_MotivodeSalida});
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsView.ShowGroupPanel = false;
             // 
-            // Id_Calidad
+            // Id_MotivoSalida
             // 
-            this.Id_Calidad.Caption = "Id Calidad";
-            this.Id_Calidad.FieldName = "Id_Calidad";
-            this.Id_Calidad.Name = "Id_Calidad";
-            this.Id_Calidad.OptionsColumn.AllowEdit = false;
-            this.Id_Calidad.Visible = true;
-            this.Id_Calidad.VisibleIndex = 0;
+            this.Id_MotivoSalida.Caption = "Id Motivo de Salida";
+            this.Id_MotivoSalida.FieldName = "Id_MotivoSalida";
+            this.Id_MotivoSalida.Name = "Id_MotivoSalida";
+            this.Id_MotivoSalida.OptionsColumn.AllowEdit = false;
+            this.Id_MotivoSalida.Visible = true;
+            this.Id_MotivoSalida.VisibleIndex = 0;
             // 
-            // Nombre_Calidad
+            // Nombre_MotivodeSalida
             // 
-            this.Nombre_Calidad.Caption = "Calidad";
-            this.Nombre_Calidad.FieldName = "Nombre_Calidad";
-            this.Nombre_Calidad.Name = "Nombre_Calidad";
-            this.Nombre_Calidad.OptionsColumn.AllowEdit = false;
-            this.Nombre_Calidad.Visible = true;
-            this.Nombre_Calidad.VisibleIndex = 1;
+            this.Nombre_MotivodeSalida.Caption = "Motivo de Salida";
+            this.Nombre_MotivodeSalida.FieldName = "Nombre_MotivoSalida";
+            this.Nombre_MotivodeSalida.Name = "Nombre_MotivodeSalida";
+            this.Nombre_MotivodeSalida.OptionsColumn.AllowEdit = false;
+            this.Nombre_MotivodeSalida.Visible = true;
+            this.Nombre_MotivodeSalida.VisibleIndex = 1;
             // 
             // panelControl1
             // 
@@ -289,13 +289,14 @@
             this.groupControl1.Name = "groupControl1";
             this.groupControl1.Size = new System.Drawing.Size(418, 82);
             this.groupControl1.TabIndex = 0;
-            this.groupControl1.Text = "Calidad";
+            this.groupControl1.Text = "Motivo de Salida";
             // 
             // textNombre
             // 
-            this.textNombre.Location = new System.Drawing.Point(79, 54);
+            this.textNombre.Location = new System.Drawing.Point(123, 54);
             this.textNombre.MenuManager = this.barManager1;
             this.textNombre.Name = "textNombre";
+            this.textNombre.Properties.MaxLength = 30;
             this.textNombre.Size = new System.Drawing.Size(231, 20);
             this.textNombre.TabIndex = 3;
             // 
@@ -303,14 +304,14 @@
             // 
             this.labelControl2.Location = new System.Drawing.Point(19, 58);
             this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(39, 13);
+            this.labelControl2.Size = new System.Drawing.Size(82, 13);
             this.labelControl2.TabIndex = 2;
-            this.labelControl2.Text = "Calidad:";
+            this.labelControl2.Text = "Motivo de Salida:";
             // 
             // textId
             // 
             this.textId.Enabled = false;
-            this.textId.Location = new System.Drawing.Point(79, 28);
+            this.textId.Location = new System.Drawing.Point(123, 28);
             this.textId.MenuManager = this.barManager1;
             this.textId.Name = "textId";
             this.textId.Size = new System.Drawing.Size(100, 20);
@@ -320,11 +321,11 @@
             // 
             this.labelControl1.Location = new System.Drawing.Point(19, 31);
             this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(55, 13);
+            this.labelControl1.Size = new System.Drawing.Size(98, 13);
             this.labelControl1.TabIndex = 0;
-            this.labelControl1.Text = "Id Calidad: ";
+            this.labelControl1.Text = "Id Motivo de Salida: ";
             // 
-            // Frm_Calidad
+            // Frm_MotivoSalida
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -338,10 +339,10 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "Frm_Calidad";
+            this.Name = "Frm_MotivoSalida";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Calidad";
-            this.Load += new System.EventHandler(this.Frm_Calidad_Load);
+            this.Text = "Motivo de Salida";
+            this.Load += new System.EventHandler(this.Frm_MotivoSalida_Load);
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).EndInit();
@@ -378,8 +379,8 @@
         private DevExpress.XtraEditors.PanelControl panelControl2;
         private DevExpress.XtraGrid.GridControl gridControl1;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
-        private DevExpress.XtraGrid.Columns.GridColumn Id_Calidad;
-        private DevExpress.XtraGrid.Columns.GridColumn Nombre_Calidad;
+        private DevExpress.XtraGrid.Columns.GridColumn Id_MotivoSalida;
+        private DevExpress.XtraGrid.Columns.GridColumn Nombre_MotivodeSalida;
         private DevExpress.XtraEditors.PanelControl panelControl1;
         private DevExpress.XtraEditors.GroupControl groupControl1;
         private DevExpress.XtraEditors.TextEdit textNombre;
