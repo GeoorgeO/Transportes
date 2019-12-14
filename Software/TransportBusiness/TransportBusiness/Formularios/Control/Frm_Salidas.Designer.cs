@@ -1161,6 +1161,8 @@
             this.textImporte.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textImporte.MenuManager = this.barManager1;
             this.textImporte.Name = "textImporte";
+            this.textImporte.Properties.Mask.EditMask = "n";
+            this.textImporte.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.textImporte.Size = new System.Drawing.Size(117, 22);
             this.textImporte.TabIndex = 56;
             // 
@@ -1530,6 +1532,8 @@
             this.textImporteV.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textImporteV.MenuManager = this.barManager1;
             this.textImporteV.Name = "textImporteV";
+            this.textImporteV.Properties.Mask.EditMask = "n";
+            this.textImporteV.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.textImporteV.Size = new System.Drawing.Size(117, 22);
             this.textImporteV.TabIndex = 61;
             // 
@@ -1827,6 +1831,8 @@
             this.textEdit22.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textEdit22.MenuManager = this.barManager1;
             this.textEdit22.Name = "textEdit22";
+            this.textEdit22.Properties.Mask.EditMask = "n";
+            this.textEdit22.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.textEdit22.Size = new System.Drawing.Size(117, 22);
             this.textEdit22.TabIndex = 67;
             // 
