@@ -202,6 +202,12 @@
     <Compile Include="Formularios\Catalogos\Frm_Mantenimiento.Designer.cs">
       <DependentUpon>Frm_Mantenimiento.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\Catalogos\Frm_MotivoSalida.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Catalogos\Frm_MotivoSalida.designer.cs">
+      <DependentUpon>Frm_MotivoSalida.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\Catalogos\Frm_Pais.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -473,6 +479,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Catalogos\Frm_Marcas.resx">
       <DependentUpon>Frm_Marcas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Catalogos\Frm_MotivoSalida.resx">
+      <DependentUpon>Frm_MotivoSalida.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Catalogos\Frm_Pais.resx">
       <DependentUpon>Frm_Pais.cs</DependentUpon>

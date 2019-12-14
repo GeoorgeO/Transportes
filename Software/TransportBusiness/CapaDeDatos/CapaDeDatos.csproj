@@ -62,6 +62,7 @@
     <Compile Include="Catalogos\CLS_Huerta.cs" />
     <Compile Include="Catalogos\CLS_Licencia.cs" />
     <Compile Include="Catalogos\CLS_Marcas.cs" />
+    <Compile Include="Catalogos\CLS_MotivoSalidas.cs" />
     <Compile Include="Catalogos\CLS_Pais.cs" />
     <Compile Include="Catalogos\CLS_Pantallas.cs" />
     <Compile Include="Catalogos\CLS_Perfiles.cs" />
@@ -71,6 +72,11 @@
     <Compile Include="Catalogos\CLS_Rutas.cs" />
     <Compile Include="Catalogos\CLS_Rutas_Detalle.cs" />
     <Compile Include="Catalogos\CLS_Salidas.cs" />
+    <Compile Include="Catalogos\CLS_Salidas_Diesel.cs" />
+    <Compile Include="Catalogos\CLS_Salidas_Honorarios.cs" />
+    <Compile Include="Catalogos\CLS_Salidas_OtrosGastos.cs" />
+    <Compile Include="Catalogos\CLS_Salidas_RevisionUnidad.cs" />
+    <Compile Include="Catalogos\CLS_Salidas_Viaticos.cs" />
     <Compile Include="Catalogos\CLS_Servicios.cs" />
     <Compile Include="Catalogos\CLS_ServiciosDetalle.cs" />
     <Compile Include="Catalogos\CLS_Usuarios.cs" />
