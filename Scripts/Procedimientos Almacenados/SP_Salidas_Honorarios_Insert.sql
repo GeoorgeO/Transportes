@@ -16,7 +16,6 @@ GO
 create PROCEDURE [dbo].[SP_Salidas_Honorarios_Insert] 
 	-- Add the parameters for the stored procedure here
 	@Id_Salida char(10),
-	@Concepto varchar(40),
 	@Importe numeric(18, 2)
 	
 AS

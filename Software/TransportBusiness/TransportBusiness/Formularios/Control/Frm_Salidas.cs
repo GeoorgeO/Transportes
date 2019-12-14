@@ -133,6 +133,7 @@ namespace TransportBusiness
             gridDiesel.DataSource = null;
             gridOtrosGastos.DataSource = null;
             gridViaticos.DataSource = null;
+            gridHonorario.DataSource = null;
         }
 
         private void btnBusqAyudante_Click(object sender, EventArgs e)
@@ -266,6 +267,7 @@ namespace TransportBusiness
             CargarSalidasOtrosGastos();
             CargarSalidasViaticos();
             CargarSalidasRevisionUnidad();
+            CargarSalidasHonorario();
         }
 
         private void btnMotivoSalida_Click(object sender, EventArgs e)
@@ -404,6 +406,7 @@ namespace TransportBusiness
             if (Clase.Exito)
             {
                 CargarSalidasOtrosGastos();
+                InsertarSalidasHonorarioPagoOperador();
                 limpiarSalidasOtrosGastos();
                 XtraMessageBox.Show("Se ha Insertado el registro con exito");
 
@@ -424,6 +427,7 @@ namespace TransportBusiness
             {
                 gridOtrosGastos.DataSource = Clase.Datos;
             }
+            CalculaSaldoOperador();
         }
 
         private void limpiarSalidasOtrosGastos()
@@ -445,6 +449,7 @@ namespace TransportBusiness
             if (Clase.Exito)
             {
                 CargarSalidasOtrosGastos();
+                InsertarSalidasHonorarioPagoOperador();
                 XtraMessageBox.Show("Se ha Eliminado el registro con exito");
             }
             else
@@ -527,6 +532,7 @@ namespace TransportBusiness
             {
                 gridViaticos.DataSource = Clase.Datos;
             }
+            CalculaSaldoOperador();
         }
 
         private void limpiarSalidasViaticos()
@@ -745,6 +751,203 @@ namespace TransportBusiness
         private void textCombustible_EditValueChanged_1(object sender, EventArgs e)
         {
             arcScaleComponent1.Value = Convert.ToInt32(textCombustible.Text);
+        }
+
+        private decimal CalculaPagadoPorOperador()
+        {
+            decimal TPagoOperador = 0;
+            for(int x = 0; x < gridView3.RowCount; x++)
+            {
+                int xRow = gridView3.GetVisibleRowHandle(x);
+                
+                if (gridView3.GetRowCellValue(xRow, gridView3.Columns["PagoOperador"]).ToString().Equals("True"))
+                {
+                    TPagoOperador = TPagoOperador + Convert.ToDecimal(gridView3.GetRowCellValue(xRow, gridView3.Columns["Importe"]));
+                }
+                
+            }
+            return TPagoOperador;
+        }
+
+        private decimal CalculaViaticos()
+        {
+            decimal TViaticos = 0;
+            for (int x = 0; x < gridView4.RowCount; x++)
+            {
+                int xRow = gridView4.GetVisibleRowHandle(x);
+
+                
+                    TViaticos = TViaticos + Convert.ToDecimal(gridView4.GetRowCellValue(xRow, gridView4.Columns["Importe"]));
+                
+
+            }
+            return TViaticos;
+        }
+
+        private decimal CalculaHonorarios()
+        {
+            decimal Thonorarios = 0;
+            for (int x = 0; x < gridView5.RowCount; x++)
+            {
+                int xRow = gridView5.GetVisibleRowHandle(x);
+
+                if (gridView5.GetRowCellValue(xRow, gridView5.Columns["Concepto"]).ToString().Equals("HONORARIOS AL OPERADOR"))
+                {
+                    Thonorarios = Thonorarios + Convert.ToDecimal(gridView5.GetRowCellValue(xRow, gridView5.Columns["Importe"]));
+                }
+
+            }
+            return Thonorarios;
+        }
+
+        private void CalculaSaldoOperador()
+        {
+            decimal TSaldoOperador = 0;
+           
+            TSaldoOperador = (CalculaHonorarios() - CalculaViaticos()) + CalculaPagadoPorOperador();
+
+            labelSaldoOperdor.Text = TSaldoOperador.ToString();
+        }
+
+        private void InsertarSalidasHonorarioPagoOperador()
+        {
+            CLS_Salidas_Honorarios Clase = new CLS_Salidas_Honorarios();
+
+            Clase.Id_Salida = textFolio.Text.Trim();
+           
+            Clase.Importe = CalculaPagadoPorOperador();
+            
+            Clase.MtdInsertarSalidas_Honorarios_PagoOperador();
+
+            if (Clase.Exito)
+            {
+                
+                CargarSalidasHonorario();
+            }
+            else
+            {
+                XtraMessageBox.Show(Clase.Mensaje);
+            }
+        }
+
+        private void InsertarSalidasHonorario()
+        {
+            CLS_Salidas_Honorarios Clase = new CLS_Salidas_Honorarios();
+
+            Clase.Id_Salida = textFolio.Text.Trim();
+            Clase.Importe = Convert.ToDecimal(textImporteH.Text);
+
+            Clase.MtdInsertarSalidas_Honorarios();
+
+            if (Clase.Exito)
+            {
+                CargarSalidasHonorario();
+                limpiarSalidasHonorario();
+                XtraMessageBox.Show("Se ha Insertado el registro con exito");
+
+            }
+            else
+            {
+                XtraMessageBox.Show(Clase.Mensaje);
+            }
+        }
+
+        private void limpiarSalidasHonorario()
+        {
+            textImporteH.Text = "0";
+            textImporteH.Focus();
+        }
+
+        private void CargarSalidasHonorario()
+        {
+            gridHonorario.DataSource = null;
+            CLS_Salidas_Honorarios Clase = new CLS_Salidas_Honorarios();
+            Clase.Id_Salida = textFolio.Text.Trim();
+            Clase.MtdSeleccionarSalidas_Honorarios();
+            if (Clase.Exito)
+            {
+                gridHonorario.DataSource = Clase.Datos;
+            }
+            CalculaSaldoOperador();
+        }
+
+        private void EliminarSalidasHonorario(string Salida, string Id_Honorario)
+        {
+            CLS_Salidas_Honorarios Clase = new CLS_Salidas_Honorarios();
+            Clase.Id_Salida = Salida;
+            Clase.Id_Honorario = Id_Honorario;
+            Clase.MtdEliminarSalidas_Honorarios();
+            if (Clase.Exito)
+            {
+                InsertarSalidasHonorarioPagoOperador();
+                CargarSalidasViaticos();
+                XtraMessageBox.Show("Se ha Eliminado el registro con exito");
+            }
+            else
+            {
+                XtraMessageBox.Show(Clase.Mensaje);
+            }
+        }
+
+        private void btnAgregaHonorario_Click(object sender, EventArgs e)
+        {
+            InsertarSalidasHonorarioPagoOperador();
+            if (Convert.ToDecimal(textImporteH.Text) > 0)
+            {
+                InsertarSalidasHonorario();
+            }
+            else
+            {
+                XtraMessageBox.Show("El importe debe ser mayor que cero.");
+            }
+        }
+
+        private void gridHonorario_DoubleClick(object sender, EventArgs e)
+        {
+            try
+            {
+                Boolean pasaValidacion = false;
+                foreach (int i in this.gridView5.GetSelectedRows())
+                {
+                    DataRow row = this.gridView5.GetDataRow(i);
+                    if (row["Concepto"].ToString().Trim().Equals("GASTOS PAGADOS POR OPERADOR"))
+                    {
+                        XtraMessageBox.Show("No se puede eliminar este concepto");
+
+                    }else
+                    {
+                        pasaValidacion = true;
+                    }
+
+                }
+                if (pasaValidacion == true)
+                {
+                   
+                    DialogResult = XtraMessageBox.Show("¿Esta seguro de que desea eliminar el detalle seleccionado?", "Elimnar", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button1);
+                    if (DialogResult == DialogResult.Yes)
+                    {
+                        foreach (int i in this.gridView5.GetSelectedRows())
+                        {
+                            DataRow row = this.gridView5.GetDataRow(i);
+                            EliminarSalidasHonorario(row["Id_Salida"].ToString().Trim(), row["Id_Honorario"].ToString().Trim());
+
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                XtraMessageBox.Show(ex.Message);
+            }
+        }
+
+        private void btnBusqHuerta_Click(object sender, EventArgs e)
+        {
+            Frm_Huertas frm = new Frm_Huertas();
+            frm.PaSel = true;
+            frm.ShowDialog();
+            textHuerta.Tag = frm.IdHuerta;
+            textHuerta.Text = frm.Huerta;
         }
     }
 }

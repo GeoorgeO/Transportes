@@ -346,8 +346,6 @@
             this.Nombre_Ayudante.Caption = "Ayudante";
             this.Nombre_Ayudante.FieldName = "Nombre_Ayudante";
             this.Nombre_Ayudante.Name = "Nombre_Ayudante";
-            this.Nombre_Ayudante.Visible = true;
-            this.Nombre_Ayudante.VisibleIndex = 4;
             // 
             // Id_Activo_Secundario
             // 
@@ -391,7 +389,7 @@
             this.Origen.FieldName = "Origen";
             this.Origen.Name = "Origen";
             this.Origen.Visible = true;
-            this.Origen.VisibleIndex = 5;
+            this.Origen.VisibleIndex = 4;
             // 
             // Destino
             // 
@@ -399,7 +397,7 @@
             this.Destino.FieldName = "Destino";
             this.Destino.Name = "Destino";
             this.Destino.Visible = true;
-            this.Destino.VisibleIndex = 6;
+            this.Destino.VisibleIndex = 5;
             // 
             // Id_MotivoSalida
             // 
@@ -412,8 +410,6 @@
             this.Nombre_MotivoSalida.Caption = "Motivo Salida";
             this.Nombre_MotivoSalida.FieldName = "Nombre_MotivoSalida";
             this.Nombre_MotivoSalida.Name = "Nombre_MotivoSalida";
-            this.Nombre_MotivoSalida.Visible = true;
-            this.Nombre_MotivoSalida.VisibleIndex = 7;
             // 
             // Id_Cliente
             // 
@@ -426,8 +422,6 @@
             this.Nombre_Cliente.Caption = "Cliente";
             this.Nombre_Cliente.FieldName = "Nombre_Cliente";
             this.Nombre_Cliente.Name = "Nombre_Cliente";
-            this.Nombre_Cliente.Visible = true;
-            this.Nombre_Cliente.VisibleIndex = 8;
             // 
             // km_Inicio
             // 
@@ -464,8 +458,6 @@
             this.Nombre_Huerta.Caption = "Huerta";
             this.Nombre_Huerta.FieldName = "Nombre_Huerta";
             this.Nombre_Huerta.Name = "Nombre_Huerta";
-            this.Nombre_Huerta.Visible = true;
-            this.Nombre_Huerta.VisibleIndex = 9;
             // 
             // Observaciones
             // 
@@ -473,7 +465,7 @@
             this.Observaciones.FieldName = "Observaciones";
             this.Observaciones.Name = "Observaciones";
             this.Observaciones.Visible = true;
-            this.Observaciones.VisibleIndex = 10;
+            this.Observaciones.VisibleIndex = 6;
             // 
             // Frm_BusqSalidas
             // 

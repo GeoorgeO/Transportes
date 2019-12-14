@@ -328,8 +328,6 @@
             this.Fecha_Alta.Caption = "Fecha Alta";
             this.Fecha_Alta.FieldName = "Fecha_Alta";
             this.Fecha_Alta.Name = "Fecha_Alta";
-            this.Fecha_Alta.Visible = true;
-            this.Fecha_Alta.VisibleIndex = 3;
             // 
             // Fecha_Baja
             // 
@@ -343,23 +341,19 @@
             this.Serie.FieldName = "Serie";
             this.Serie.Name = "Serie";
             this.Serie.Visible = true;
-            this.Serie.VisibleIndex = 5;
+            this.Serie.VisibleIndex = 2;
             // 
             // Tarjeta_Circulacion
             // 
             this.Tarjeta_Circulacion.Caption = "T Circulacion";
             this.Tarjeta_Circulacion.FieldName = "Tarjeta_Circulacion";
             this.Tarjeta_Circulacion.Name = "Tarjeta_Circulacion";
-            this.Tarjeta_Circulacion.Visible = true;
-            this.Tarjeta_Circulacion.VisibleIndex = 6;
             // 
             // Placas
             // 
             this.Placas.Caption = "Placas";
             this.Placas.FieldName = "Placas";
             this.Placas.Name = "Placas";
-            this.Placas.Visible = true;
-            this.Placas.VisibleIndex = 7;
             // 
             // Id_Tipo_Placa
             // 
@@ -372,8 +366,6 @@
             this.Nombre_Tipo_Placa.Caption = "Tipo Placa";
             this.Nombre_Tipo_Placa.FieldName = "Nombre_Tipo_Placa";
             this.Nombre_Tipo_Placa.Name = "Nombre_Tipo_Placa";
-            this.Nombre_Tipo_Placa.Visible = true;
-            this.Nombre_Tipo_Placa.VisibleIndex = 8;
             // 
             // Id_Tipo_Activo
             // 
@@ -387,15 +379,13 @@
             this.Nombre_Tipo_Activo.FieldName = "Nombre_Tipo_Activo";
             this.Nombre_Tipo_Activo.Name = "Nombre_Tipo_Activo";
             this.Nombre_Tipo_Activo.Visible = true;
-            this.Nombre_Tipo_Activo.VisibleIndex = 9;
+            this.Nombre_Tipo_Activo.VisibleIndex = 3;
             // 
             // Color
             // 
             this.Color.Caption = "Color";
             this.Color.FieldName = "Color";
             this.Color.Name = "Color";
-            this.Color.Visible = true;
-            this.Color.VisibleIndex = 10;
             // 
             // Modelo
             // 
@@ -403,7 +393,7 @@
             this.Modelo.FieldName = "Modelo";
             this.Modelo.Name = "Modelo";
             this.Modelo.Visible = true;
-            this.Modelo.VisibleIndex = 11;
+            this.Modelo.VisibleIndex = 4;
             // 
             // Id_Marca
             // 
@@ -417,7 +407,7 @@
             this.Nombre_Marca.FieldName = "Nombre_Marca";
             this.Nombre_Marca.Name = "Nombre_Marca";
             this.Nombre_Marca.Visible = true;
-            this.Nombre_Marca.VisibleIndex = 12;
+            this.Nombre_Marca.VisibleIndex = 5;
             // 
             // Descripcion
             // 
@@ -425,7 +415,7 @@
             this.Descripcion.FieldName = "Descripcion";
             this.Descripcion.Name = "Descripcion";
             this.Descripcion.Visible = true;
-            this.Descripcion.VisibleIndex = 13;
+            this.Descripcion.VisibleIndex = 6;
             // 
             // Id_Tipo_Transporte
             // 
@@ -439,7 +429,7 @@
             this.Nombre_Tipo_Transporte.FieldName = "Nombre_Tipo_Transporte";
             this.Nombre_Tipo_Transporte.Name = "Nombre_Tipo_Transporte";
             this.Nombre_Tipo_Transporte.Visible = true;
-            this.Nombre_Tipo_Transporte.VisibleIndex = 14;
+            this.Nombre_Tipo_Transporte.VisibleIndex = 7;
             // 
             // Poliza_Seguro
             // 
@@ -458,8 +448,6 @@
             this.Nombre_Empresa_Aseguradora.Caption = "Aseguradora";
             this.Nombre_Empresa_Aseguradora.FieldName = "Nombre_Empresa_Aseguradora";
             this.Nombre_Empresa_Aseguradora.Name = "Nombre_Empresa_Aseguradora";
-            this.Nombre_Empresa_Aseguradora.Visible = true;
-            this.Nombre_Empresa_Aseguradora.VisibleIndex = 16;
             // 
             // Status
             // 
@@ -485,23 +473,19 @@
             this.Nombre_Empleado.FieldName = "Nombre_Empleado";
             this.Nombre_Empleado.Name = "Nombre_Empleado";
             this.Nombre_Empleado.Visible = true;
-            this.Nombre_Empleado.VisibleIndex = 19;
+            this.Nombre_Empleado.VisibleIndex = 8;
             // 
             // Id_Empresa
             // 
             this.Id_Empresa.Caption = "Id Empresa";
             this.Id_Empresa.FieldName = "Id_Empresa";
             this.Id_Empresa.Name = "Id_Empresa";
-            this.Id_Empresa.Visible = true;
-            this.Id_Empresa.VisibleIndex = 20;
             // 
             // Nombre_Empresa
             // 
             this.Nombre_Empresa.Caption = "Empresa";
             this.Nombre_Empresa.FieldName = "Nombre_Empresa";
             this.Nombre_Empresa.Name = "Nombre_Empresa";
-            this.Nombre_Empresa.Visible = true;
-            this.Nombre_Empresa.VisibleIndex = 21;
             // 
             // Id_Factura
             // 
@@ -514,24 +498,18 @@
             this.IAVE.Caption = "IAVE";
             this.IAVE.FieldName = "IAVE";
             this.IAVE.Name = "IAVE";
-            this.IAVE.Visible = true;
-            this.IAVE.VisibleIndex = 23;
             // 
             // Folio_Tarjeta_Circulacion
             // 
             this.Folio_Tarjeta_Circulacion.Caption = "Tarjeta Circulacion";
             this.Folio_Tarjeta_Circulacion.FieldName = "Folio_Tarjeta_Circulacion";
             this.Folio_Tarjeta_Circulacion.Name = "Folio_Tarjeta_Circulacion";
-            this.Folio_Tarjeta_Circulacion.Visible = true;
-            this.Folio_Tarjeta_Circulacion.VisibleIndex = 24;
             // 
             // Id_Tarjeta_Combustible
             // 
             this.Id_Tarjeta_Combustible.Caption = "Id Tarjeta Combustible";
             this.Id_Tarjeta_Combustible.FieldName = "Id_Tarjeta_Combustible";
             this.Id_Tarjeta_Combustible.Name = "Id_Tarjeta_Combustible";
-            this.Id_Tarjeta_Combustible.Visible = true;
-            this.Id_Tarjeta_Combustible.VisibleIndex = 25;
             // 
             // Frm_BusqActivoSinRuta
             // 

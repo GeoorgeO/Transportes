@@ -16,6 +16,10 @@ namespace TransportBusiness
     public partial class Frm_Huertas : DevExpress.XtraEditors.XtraForm
     {
         public Boolean PaSel { get; set; }
+
+        public string IdHuerta { get; set; }
+        public string Huerta { get; set; }
+
         public Frm_Huertas()
         {
             InitializeComponent();
@@ -377,7 +381,7 @@ namespace TransportBusiness
                 foreach (int i in this.dtgValHuertas.GetSelectedRows())
                 {
                     DataRow row = this.dtgValHuertas.GetDataRow(i);
-                    txtCodigo.Text= row["Id_Cultivo"].ToString();
+                    txtCodigo.Text= row["Id_Huerta"].ToString();
                     txtNombreHuerta.Text=row["Nombre_Huerta"].ToString(); 
                     txtRegistro.Text=row["Registro_Huerta"].ToString(); 
                     txtNombreProductor.Tag = row["Id_Duenio"].ToString();
@@ -412,6 +416,13 @@ namespace TransportBusiness
             {
                 XtraMessageBox.Show(ex.Message);
             }
+        }
+
+        private void btnSeleccionar_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            IdHuerta = txtCodigo.Text.Trim();
+            Huerta = txtNombreHuerta.Text.Trim();
+            this.Close();
         }
     }
 }

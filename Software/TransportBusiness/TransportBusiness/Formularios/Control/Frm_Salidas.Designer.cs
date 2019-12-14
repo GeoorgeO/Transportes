@@ -51,7 +51,7 @@
             this.memoObservaciones = new DevExpress.XtraEditors.MemoEdit();
             this.labelControl29 = new DevExpress.XtraEditors.LabelControl();
             this.textMunicipio = new DevExpress.XtraEditors.TextEdit();
-            this.simpleButton14 = new DevExpress.XtraEditors.SimpleButton();
+            this.btnBusqHuerta = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl30 = new DevExpress.XtraEditors.LabelControl();
             this.textHuerta = new DevExpress.XtraEditors.TextEdit();
             this.btnMotivoSalida = new DevExpress.XtraEditors.SimpleButton();
@@ -104,6 +104,7 @@
             this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.Ticket = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Id_Salida = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Importe = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panelControl3 = new DevExpress.XtraEditors.PanelControl();
             this.btnSalidaDiesel = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl16 = new DevExpress.XtraEditors.LabelControl();
@@ -115,6 +116,12 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.gridOtrosGastos = new DevExpress.XtraGrid.GridControl();
             this.gridView3 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.TicketG = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Id_SalidaG = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Id_GastoDirecto = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Nombre_GastoDirecto = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.ImporteG = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.PagoOperador = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panelControl6 = new DevExpress.XtraEditors.PanelControl();
             this.checkPagadoOperador = new DevExpress.XtraEditors.CheckEdit();
             this.labelControl22 = new DevExpress.XtraEditors.LabelControl();
@@ -130,6 +137,11 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.gridViaticos = new DevExpress.XtraGrid.GridControl();
             this.gridView4 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.Id_Viatico = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Id_Salida3 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.PagadoPor = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.FechaPago = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.ImporteV = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panelControl8 = new DevExpress.XtraEditors.PanelControl();
             this.btnAgregaViatico = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl21 = new DevExpress.XtraEditors.LabelControl();
@@ -141,14 +153,16 @@
             this.xtraTabPage4 = new DevExpress.XtraTab.XtraTabPage();
             this.panelControl7 = new DevExpress.XtraEditors.PanelControl();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.gridControl5 = new DevExpress.XtraGrid.GridControl();
+            this.gridHonorario = new DevExpress.XtraGrid.GridControl();
             this.gridView5 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.gridColumn9 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn10 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Id_SalidaH = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.ConceptoH = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.ImporteH = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Id_Honorario = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panelControl10 = new DevExpress.XtraEditors.PanelControl();
-            this.simpleButton9 = new DevExpress.XtraEditors.SimpleButton();
+            this.btnAgregaHonorario = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl23 = new DevExpress.XtraEditors.LabelControl();
-            this.textEdit21 = new DevExpress.XtraEditors.TextEdit();
+            this.textImporteH = new DevExpress.XtraEditors.TextEdit();
             this.xtraTabPage5 = new DevExpress.XtraTab.XtraTabPage();
             this.panelControl9 = new DevExpress.XtraEditors.PanelControl();
             this.panel5 = new System.Windows.Forms.Panel();
@@ -174,6 +188,7 @@
             this.labelControl25 = new DevExpress.XtraEditors.LabelControl();
             this.xtraTabPage6 = new DevExpress.XtraTab.XtraTabPage();
             this.panelControl11 = new DevExpress.XtraEditors.PanelControl();
+            this.btnGuardarCheck = new DevExpress.XtraEditors.SimpleButton();
             this.Indicador = new DevExpress.XtraGauges.Win.GaugeControl();
             this.cGauge1 = new DevExpress.XtraGauges.Win.Gauges.Circular.CircularGauge();
             this.arcScaleBackgroundLayerComponent1 = new DevExpress.XtraGauges.Win.Gauges.Circular.ArcScaleBackgroundLayerComponent();
@@ -198,19 +213,8 @@
             this.barLargeButtonItem8 = new DevExpress.XtraBars.BarLargeButtonItem();
             this.barStaticItem2 = new DevExpress.XtraBars.BarStaticItem();
             this.barDockControl8 = new DevExpress.XtraBars.BarDockControl();
-            this.Importe = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.TicketG = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.Id_SalidaG = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.Id_GastoDirecto = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.ImporteG = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.PagoOperador = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.Nombre_GastoDirecto = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.Id_Salida3 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.PagadoPor = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.FechaPago = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.ImporteV = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.Id_Viatico = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.btnGuardarCheck = new DevExpress.XtraEditors.SimpleButton();
+            this.label1 = new System.Windows.Forms.Label();
+            this.labelSaldoOperdor = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
@@ -281,11 +285,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.panelControl7)).BeginInit();
             this.panelControl7.SuspendLayout();
             this.panel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridHonorario)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl10)).BeginInit();
             this.panelControl10.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit21.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textImporteH.Properties)).BeginInit();
             this.xtraTabPage5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl9)).BeginInit();
             this.panelControl9.SuspendLayout();
@@ -476,7 +480,7 @@
             this.groupControl1.Controls.Add(this.memoObservaciones);
             this.groupControl1.Controls.Add(this.labelControl29);
             this.groupControl1.Controls.Add(this.textMunicipio);
-            this.groupControl1.Controls.Add(this.simpleButton14);
+            this.groupControl1.Controls.Add(this.btnBusqHuerta);
             this.groupControl1.Controls.Add(this.labelControl30);
             this.groupControl1.Controls.Add(this.textHuerta);
             this.groupControl1.Controls.Add(this.btnMotivoSalida);
@@ -581,14 +585,15 @@
             this.textMunicipio.Size = new System.Drawing.Size(273, 22);
             this.textMunicipio.TabIndex = 77;
             // 
-            // simpleButton14
+            // btnBusqHuerta
             // 
-            this.simpleButton14.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton14.ImageOptions.Image")));
-            this.simpleButton14.Location = new System.Drawing.Point(1218, 38);
-            this.simpleButton14.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.simpleButton14.Name = "simpleButton14";
-            this.simpleButton14.Size = new System.Drawing.Size(28, 28);
-            this.simpleButton14.TabIndex = 76;
+            this.btnBusqHuerta.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton14.ImageOptions.Image")));
+            this.btnBusqHuerta.Location = new System.Drawing.Point(1218, 38);
+            this.btnBusqHuerta.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnBusqHuerta.Name = "btnBusqHuerta";
+            this.btnBusqHuerta.Size = new System.Drawing.Size(28, 28);
+            this.btnBusqHuerta.TabIndex = 76;
+            this.btnBusqHuerta.Click += new System.EventHandler(this.btnBusqHuerta_Click);
             // 
             // labelControl30
             // 
@@ -610,7 +615,7 @@
             // 
             // btnMotivoSalida
             // 
-            this.btnMotivoSalida.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton13.ImageOptions.Image")));
+            this.btnMotivoSalida.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnMotivoSalida.ImageOptions.Image")));
             this.btnMotivoSalida.Location = new System.Drawing.Point(811, 103);
             this.btnMotivoSalida.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnMotivoSalida.Name = "btnMotivoSalida";
@@ -1109,6 +1114,14 @@
             this.Id_Salida.FieldName = "Id_Salida";
             this.Id_Salida.Name = "Id_Salida";
             // 
+            // Importe
+            // 
+            this.Importe.Caption = "Importe";
+            this.Importe.FieldName = "Importe";
+            this.Importe.Name = "Importe";
+            this.Importe.Visible = true;
+            this.Importe.VisibleIndex = 1;
+            // 
             // panelControl3
             // 
             this.panelControl3.Controls.Add(this.btnSalidaDiesel);
@@ -1230,6 +1243,50 @@
             this.gridView3.OptionsView.ShowFooter = true;
             this.gridView3.OptionsView.ShowGroupPanel = false;
             // 
+            // TicketG
+            // 
+            this.TicketG.Caption = "Ticket";
+            this.TicketG.FieldName = "Ticket";
+            this.TicketG.Name = "TicketG";
+            this.TicketG.Visible = true;
+            this.TicketG.VisibleIndex = 0;
+            // 
+            // Id_SalidaG
+            // 
+            this.Id_SalidaG.Caption = "Id Salida";
+            this.Id_SalidaG.FieldName = "Id_Salida";
+            this.Id_SalidaG.Name = "Id_SalidaG";
+            // 
+            // Id_GastoDirecto
+            // 
+            this.Id_GastoDirecto.Caption = "Id GastoDirecto";
+            this.Id_GastoDirecto.FieldName = "Id_GastoDirecto";
+            this.Id_GastoDirecto.Name = "Id_GastoDirecto";
+            // 
+            // Nombre_GastoDirecto
+            // 
+            this.Nombre_GastoDirecto.Caption = "GastoDirecto";
+            this.Nombre_GastoDirecto.FieldName = "Nombre_GastoDirecto";
+            this.Nombre_GastoDirecto.Name = "Nombre_GastoDirecto";
+            this.Nombre_GastoDirecto.Visible = true;
+            this.Nombre_GastoDirecto.VisibleIndex = 5;
+            // 
+            // ImporteG
+            // 
+            this.ImporteG.Caption = "Importe";
+            this.ImporteG.FieldName = "Importe";
+            this.ImporteG.Name = "ImporteG";
+            this.ImporteG.Visible = true;
+            this.ImporteG.VisibleIndex = 3;
+            // 
+            // PagoOperador
+            // 
+            this.PagoOperador.Caption = "Pagodo por operador";
+            this.PagoOperador.FieldName = "PagoOperador";
+            this.PagoOperador.Name = "PagoOperador";
+            this.PagoOperador.Visible = true;
+            this.PagoOperador.VisibleIndex = 4;
+            // 
             // panelControl6
             // 
             this.panelControl6.Controls.Add(this.checkPagadoOperador);
@@ -1310,7 +1367,7 @@
             // 
             // btnBusqGastos
             // 
-            this.btnBusqGastos.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton6.ImageOptions.Image")));
+            this.btnBusqGastos.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnBusqGastos.ImageOptions.Image")));
             this.btnBusqGastos.Location = new System.Drawing.Point(455, 12);
             this.btnBusqGastos.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnBusqGastos.Name = "btnBusqGastos";
@@ -1392,8 +1449,45 @@
             this.ImporteV});
             this.gridView4.GridControl = this.gridViaticos;
             this.gridView4.Name = "gridView4";
+            this.gridView4.OptionsBehavior.Editable = false;
             this.gridView4.OptionsView.ShowFooter = true;
             this.gridView4.OptionsView.ShowGroupPanel = false;
+            // 
+            // Id_Viatico
+            // 
+            this.Id_Viatico.Caption = "N°";
+            this.Id_Viatico.FieldName = "Id_Viatico";
+            this.Id_Viatico.Name = "Id_Viatico";
+            // 
+            // Id_Salida3
+            // 
+            this.Id_Salida3.Caption = "Id Salida";
+            this.Id_Salida3.FieldName = "Id_Salida";
+            this.Id_Salida3.Name = "Id_Salida3";
+            // 
+            // PagadoPor
+            // 
+            this.PagadoPor.Caption = "Pagado Por";
+            this.PagadoPor.FieldName = "PagadoPor";
+            this.PagadoPor.Name = "PagadoPor";
+            this.PagadoPor.Visible = true;
+            this.PagadoPor.VisibleIndex = 1;
+            // 
+            // FechaPago
+            // 
+            this.FechaPago.Caption = "Fecha Pago";
+            this.FechaPago.FieldName = "FechaPago";
+            this.FechaPago.Name = "FechaPago";
+            this.FechaPago.Visible = true;
+            this.FechaPago.VisibleIndex = 2;
+            // 
+            // ImporteV
+            // 
+            this.ImporteV.Caption = "Importe";
+            this.ImporteV.FieldName = "Importe";
+            this.ImporteV.Name = "ImporteV";
+            this.ImporteV.Visible = true;
+            this.ImporteV.VisibleIndex = 3;
             // 
             // panelControl8
             // 
@@ -1503,7 +1597,7 @@
             // 
             // panel4
             // 
-            this.panel4.Controls.Add(this.gridControl5);
+            this.panel4.Controls.Add(this.gridHonorario);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel4.Location = new System.Drawing.Point(8, 8);
             this.panel4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -1511,49 +1605,69 @@
             this.panel4.Size = new System.Drawing.Size(548, 284);
             this.panel4.TabIndex = 0;
             // 
-            // gridControl5
+            // gridHonorario
             // 
-            this.gridControl5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControl5.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.gridControl5.Location = new System.Drawing.Point(0, 0);
-            this.gridControl5.MainView = this.gridView5;
-            this.gridControl5.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.gridControl5.MenuManager = this.barManager1;
-            this.gridControl5.Name = "gridControl5";
-            this.gridControl5.Size = new System.Drawing.Size(548, 284);
-            this.gridControl5.TabIndex = 0;
-            this.gridControl5.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridHonorario.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gridHonorario.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.gridHonorario.Location = new System.Drawing.Point(0, 0);
+            this.gridHonorario.MainView = this.gridView5;
+            this.gridHonorario.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.gridHonorario.MenuManager = this.barManager1;
+            this.gridHonorario.Name = "gridHonorario";
+            this.gridHonorario.Size = new System.Drawing.Size(548, 284);
+            this.gridHonorario.TabIndex = 0;
+            this.gridHonorario.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView5});
+            this.gridHonorario.DoubleClick += new System.EventHandler(this.gridHonorario_DoubleClick);
             // 
             // gridView5
             // 
             this.gridView5.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.gridColumn9,
-            this.gridColumn10});
-            this.gridView5.GridControl = this.gridControl5;
+            this.Id_SalidaH,
+            this.ConceptoH,
+            this.ImporteH,
+            this.Id_Honorario});
+            this.gridView5.GridControl = this.gridHonorario;
             this.gridView5.Name = "gridView5";
+            this.gridView5.OptionsBehavior.Editable = false;
             this.gridView5.OptionsView.ShowFooter = true;
             this.gridView5.OptionsView.ShowGroupPanel = false;
             // 
-            // gridColumn9
+            // Id_SalidaH
             // 
-            this.gridColumn9.Caption = "Concepto";
-            this.gridColumn9.Name = "gridColumn9";
-            this.gridColumn9.Visible = true;
-            this.gridColumn9.VisibleIndex = 0;
+            this.Id_SalidaH.Caption = "Id Salida";
+            this.Id_SalidaH.FieldName = "Id_Salida";
+            this.Id_SalidaH.Name = "Id_SalidaH";
             // 
-            // gridColumn10
+            // ConceptoH
             // 
-            this.gridColumn10.Caption = "Importe";
-            this.gridColumn10.Name = "gridColumn10";
-            this.gridColumn10.Visible = true;
-            this.gridColumn10.VisibleIndex = 1;
+            this.ConceptoH.Caption = "Concepto";
+            this.ConceptoH.FieldName = "Concepto";
+            this.ConceptoH.Name = "ConceptoH";
+            this.ConceptoH.Visible = true;
+            this.ConceptoH.VisibleIndex = 1;
+            // 
+            // ImporteH
+            // 
+            this.ImporteH.Caption = "Importe";
+            this.ImporteH.FieldName = "Importe";
+            this.ImporteH.Name = "ImporteH";
+            this.ImporteH.Visible = true;
+            this.ImporteH.VisibleIndex = 2;
+            // 
+            // Id_Honorario
+            // 
+            this.Id_Honorario.Caption = "Id Honorario";
+            this.Id_Honorario.FieldName = "Id_Honorario";
+            this.Id_Honorario.Name = "Id_Honorario";
             // 
             // panelControl10
             // 
-            this.panelControl10.Controls.Add(this.simpleButton9);
+            this.panelControl10.Controls.Add(this.labelSaldoOperdor);
+            this.panelControl10.Controls.Add(this.label1);
+            this.panelControl10.Controls.Add(this.btnAgregaHonorario);
             this.panelControl10.Controls.Add(this.labelControl23);
-            this.panelControl10.Controls.Add(this.textEdit21);
+            this.panelControl10.Controls.Add(this.textImporteH);
             this.panelControl10.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelControl10.Location = new System.Drawing.Point(6, 6);
             this.panelControl10.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -1561,14 +1675,15 @@
             this.panelControl10.Size = new System.Drawing.Size(1291, 62);
             this.panelControl10.TabIndex = 2;
             // 
-            // simpleButton9
+            // btnAgregaHonorario
             // 
-            this.simpleButton9.Location = new System.Drawing.Point(196, 16);
-            this.simpleButton9.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.simpleButton9.Name = "simpleButton9";
-            this.simpleButton9.Size = new System.Drawing.Size(87, 28);
-            this.simpleButton9.TabIndex = 65;
-            this.simpleButton9.Text = "Agregar";
+            this.btnAgregaHonorario.Location = new System.Drawing.Point(196, 16);
+            this.btnAgregaHonorario.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnAgregaHonorario.Name = "btnAgregaHonorario";
+            this.btnAgregaHonorario.Size = new System.Drawing.Size(87, 28);
+            this.btnAgregaHonorario.TabIndex = 65;
+            this.btnAgregaHonorario.Text = "Agregar";
+            this.btnAgregaHonorario.Click += new System.EventHandler(this.btnAgregaHonorario_Click);
             // 
             // labelControl23
             // 
@@ -1579,14 +1694,16 @@
             this.labelControl23.TabIndex = 64;
             this.labelControl23.Text = "Importe:";
             // 
-            // textEdit21
+            // textImporteH
             // 
-            this.textEdit21.Location = new System.Drawing.Point(72, 18);
-            this.textEdit21.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.textEdit21.MenuManager = this.barManager1;
-            this.textEdit21.Name = "textEdit21";
-            this.textEdit21.Size = new System.Drawing.Size(117, 22);
-            this.textEdit21.TabIndex = 63;
+            this.textImporteH.Location = new System.Drawing.Point(72, 18);
+            this.textImporteH.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.textImporteH.MenuManager = this.barManager1;
+            this.textImporteH.Name = "textImporteH";
+            this.textImporteH.Properties.Mask.EditMask = "n";
+            this.textImporteH.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
+            this.textImporteH.Size = new System.Drawing.Size(117, 22);
+            this.textImporteH.TabIndex = 63;
             // 
             // xtraTabPage5
             // 
@@ -1844,6 +1961,16 @@
             this.panelControl11.Size = new System.Drawing.Size(1291, 362);
             this.panelControl11.TabIndex = 0;
             // 
+            // btnGuardarCheck
+            // 
+            this.btnGuardarCheck.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnGuardarCheck.ImageOptions.Image")));
+            this.btnGuardarCheck.Location = new System.Drawing.Point(224, 273);
+            this.btnGuardarCheck.Name = "btnGuardarCheck";
+            this.btnGuardarCheck.Size = new System.Drawing.Size(112, 37);
+            this.btnGuardarCheck.TabIndex = 14;
+            this.btnGuardarCheck.Text = "Guardar";
+            this.btnGuardarCheck.Click += new System.EventHandler(this.btnGuardarCheck_Click);
+            // 
             // Indicador
             // 
             this.Indicador.Gauges.AddRange(new DevExpress.XtraGauges.Base.IGauge[] {
@@ -2090,111 +2217,24 @@
             this.barDockControl8.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.barDockControl8.Size = new System.Drawing.Size(0, 698);
             // 
-            // Importe
+            // label1
             // 
-            this.Importe.Caption = "Importe";
-            this.Importe.FieldName = "Importe";
-            this.Importe.Name = "Importe";
-            this.Importe.Visible = true;
-            this.Importe.VisibleIndex = 1;
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(347, 19);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(127, 17);
+            this.label1.TabIndex = 66;
+            this.label1.Text = "Saldo del operador:";
             // 
-            // TicketG
+            // labelSaldoOperdor
             // 
-            this.TicketG.Caption = "Ticket";
-            this.TicketG.FieldName = "Ticket";
-            this.TicketG.Name = "TicketG";
-            this.TicketG.Visible = true;
-            this.TicketG.VisibleIndex = 0;
-            // 
-            // Id_SalidaG
-            // 
-            this.Id_SalidaG.Caption = "Id Salida";
-            this.Id_SalidaG.FieldName = "Id_Salida";
-            this.Id_SalidaG.Name = "Id_SalidaG";
-            this.Id_SalidaG.Visible = true;
-            this.Id_SalidaG.VisibleIndex = 1;
-            // 
-            // Id_GastoDirecto
-            // 
-            this.Id_GastoDirecto.Caption = "Id GastoDirecto";
-            this.Id_GastoDirecto.FieldName = "Id_GastoDirecto";
-            this.Id_GastoDirecto.Name = "Id_GastoDirecto";
-            this.Id_GastoDirecto.Visible = true;
-            this.Id_GastoDirecto.VisibleIndex = 2;
-            // 
-            // ImporteG
-            // 
-            this.ImporteG.Caption = "Importe";
-            this.ImporteG.FieldName = "Importe";
-            this.ImporteG.Name = "ImporteG";
-            this.ImporteG.Visible = true;
-            this.ImporteG.VisibleIndex = 3;
-            // 
-            // PagoOperador
-            // 
-            this.PagoOperador.Caption = "Pagodo por operador";
-            this.PagoOperador.FieldName = "PagoOperador";
-            this.PagoOperador.Name = "PagoOperador";
-            this.PagoOperador.Visible = true;
-            this.PagoOperador.VisibleIndex = 4;
-            // 
-            // Nombre_GastoDirecto
-            // 
-            this.Nombre_GastoDirecto.Caption = "GastoDirecto";
-            this.Nombre_GastoDirecto.FieldName = "Nombre_GastoDirecto";
-            this.Nombre_GastoDirecto.Name = "Nombre_GastoDirecto";
-            this.Nombre_GastoDirecto.Visible = true;
-            this.Nombre_GastoDirecto.VisibleIndex = 5;
-            // 
-            // Id_Salida3
-            // 
-            this.Id_Salida3.Caption = "Id Salida";
-            this.Id_Salida3.FieldName = "Id_Salida";
-            this.Id_Salida3.Name = "Id_Salida3";
-            this.Id_Salida3.Visible = true;
-            this.Id_Salida3.VisibleIndex = 0;
-            // 
-            // PagadoPor
-            // 
-            this.PagadoPor.Caption = "Pagado Por";
-            this.PagadoPor.FieldName = "PagadoPor";
-            this.PagadoPor.Name = "PagadoPor";
-            this.PagadoPor.Visible = true;
-            this.PagadoPor.VisibleIndex = 1;
-            // 
-            // FechaPago
-            // 
-            this.FechaPago.Caption = "Fecha Pago";
-            this.FechaPago.FieldName = "FechaPago";
-            this.FechaPago.Name = "FechaPago";
-            this.FechaPago.Visible = true;
-            this.FechaPago.VisibleIndex = 2;
-            // 
-            // ImporteV
-            // 
-            this.ImporteV.Caption = "Importe";
-            this.ImporteV.FieldName = "Importe";
-            this.ImporteV.Name = "ImporteV";
-            this.ImporteV.Visible = true;
-            this.ImporteV.VisibleIndex = 3;
-            // 
-            // Id_Viatico
-            // 
-            this.Id_Viatico.Caption = "N°";
-            this.Id_Viatico.FieldName = "Id_Viatico";
-            this.Id_Viatico.Name = "Id_Viatico";
-            this.Id_Viatico.Visible = true;
-            this.Id_Viatico.VisibleIndex = 4;
-            // 
-            // btnGuardarCheck
-            // 
-            this.btnGuardarCheck.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
-            this.btnGuardarCheck.Location = new System.Drawing.Point(224, 273);
-            this.btnGuardarCheck.Name = "btnGuardarCheck";
-            this.btnGuardarCheck.Size = new System.Drawing.Size(112, 37);
-            this.btnGuardarCheck.TabIndex = 14;
-            this.btnGuardarCheck.Text = "Guardar";
-            this.btnGuardarCheck.Click += new System.EventHandler(this.btnGuardarCheck_Click);
+            this.labelSaldoOperdor.AutoSize = true;
+            this.labelSaldoOperdor.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Bold);
+            this.labelSaldoOperdor.Location = new System.Drawing.Point(480, 20);
+            this.labelSaldoOperdor.Name = "labelSaldoOperdor";
+            this.labelSaldoOperdor.Size = new System.Drawing.Size(17, 17);
+            this.labelSaldoOperdor.TabIndex = 67;
+            this.labelSaldoOperdor.Text = "0";
             // 
             // Frm_Salidas
             // 
@@ -2286,12 +2326,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.panelControl7)).EndInit();
             this.panelControl7.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridHonorario)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl10)).EndInit();
             this.panelControl10.ResumeLayout(false);
             this.panelControl10.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit21.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textImporteH.Properties)).EndInit();
             this.xtraTabPage5.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl9)).EndInit();
             this.panelControl9.ResumeLayout(false);
@@ -2432,10 +2472,8 @@
         private DevExpress.XtraEditors.TextEdit textPagadoX;
         private DevExpress.XtraEditors.PanelControl panelControl7;
         private System.Windows.Forms.Panel panel4;
-        private DevExpress.XtraGrid.GridControl gridControl5;
+        private DevExpress.XtraGrid.GridControl gridHonorario;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView5;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn9;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn10;
         private DevExpress.XtraEditors.PanelControl panelControl9;
         private System.Windows.Forms.Panel panel5;
         private DevExpress.XtraGrid.GridControl gridControl6;
@@ -2445,9 +2483,9 @@
         private DevExpress.XtraEditors.LabelControl labelControl22;
         private DevExpress.XtraEditors.TextEdit textTicketG;
         private DevExpress.XtraEditors.CheckEdit checkPagadoOperador;
-        private DevExpress.XtraEditors.SimpleButton simpleButton9;
+        private DevExpress.XtraEditors.SimpleButton btnAgregaHonorario;
         private DevExpress.XtraEditors.LabelControl labelControl23;
-        private DevExpress.XtraEditors.TextEdit textEdit21;
+        private DevExpress.XtraEditors.TextEdit textImporteH;
         private DevExpress.XtraEditors.LabelControl labelControl26;
         private DevExpress.XtraEditors.TextEdit textEdit22;
         private DevExpress.XtraEditors.SimpleButton simpleButton10;
@@ -2464,7 +2502,7 @@
         private DevExpress.XtraEditors.SimpleButton btnBusqSalida;
         private DevExpress.XtraEditors.LabelControl labelControl29;
         private DevExpress.XtraEditors.TextEdit textMunicipio;
-        private DevExpress.XtraEditors.SimpleButton simpleButton14;
+        private DevExpress.XtraEditors.SimpleButton btnBusqHuerta;
         private DevExpress.XtraEditors.LabelControl labelControl30;
         private DevExpress.XtraEditors.TextEdit textHuerta;
         private DevExpress.XtraEditors.SimpleButton btnMotivoSalida;
@@ -2512,5 +2550,11 @@
         private DevExpress.XtraGrid.Columns.GridColumn FechaPago;
         private DevExpress.XtraGrid.Columns.GridColumn ImporteV;
         private DevExpress.XtraEditors.SimpleButton btnGuardarCheck;
+        private DevExpress.XtraGrid.Columns.GridColumn Id_SalidaH;
+        private DevExpress.XtraGrid.Columns.GridColumn ConceptoH;
+        private DevExpress.XtraGrid.Columns.GridColumn ImporteH;
+        private DevExpress.XtraGrid.Columns.GridColumn Id_Honorario;
+        private System.Windows.Forms.Label labelSaldoOperdor;
+        private System.Windows.Forms.Label label1;
     }
 }

@@ -15,7 +15,7 @@ GO
 -- =============================================
 create PROCEDURE [dbo].[SP_Salidas_Honorarios_Delete] 
 	-- Add the parameters for the stored procedure here
-	@Id_Honorarios numeric(10,0),
+	@Id_Honorario numeric(10,0),
 	@Id_Salida char(10)
 AS
 BEGIN
@@ -29,7 +29,7 @@ BEGIN
 	begin transaction T2;
 	begin try
 		
-		delete from dbo.Salidas_Honorarios where Id_Honorarios=@Id_Honorarios and Id_Salida=@Id_Salida
+		delete from dbo.Salidas_Honorarios where Id_Honorario=@Id_Honorario and Id_Salida=@Id_Salida
 
 		commit transaction T2;
 		set @correcto=1
