@@ -576,12 +576,14 @@
             this.btnCalidad.Caption = "Calidad";
             this.btnCalidad.Id = 34;
             this.btnCalidad.Name = "btnCalidad";
+            this.btnCalidad.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnCalidad_ItemClick);
             // 
             // btnCultivo
             // 
             this.btnCultivo.Caption = "Cultivo";
             this.btnCultivo.Id = 35;
             this.btnCultivo.Name = "btnCultivo";
+            this.btnCultivo.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnCultivo_ItemClick);
             // 
             // btnProductor
             // 

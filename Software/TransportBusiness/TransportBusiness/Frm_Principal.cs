@@ -514,5 +514,31 @@ namespace TransportBusiness
                 XtraMessageBox.Show("No Cuentas con acceso a esta Opcion [031]");
             }
         }
+
+        private void btnCalidad_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            if (TieneAcceso("033"))
+            {
+                Frm_Calidad Permisos = new Frm_Calidad();
+                Permisos.ShowDialog();
+            }
+            else
+            {
+                XtraMessageBox.Show("No Cuentas con acceso a esta Opcion [033]");
+            }
+        }
+
+        private void btnCultivo_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            if (TieneAcceso("032"))
+            {
+                Frm_Cultivo Permisos = new Frm_Cultivo();
+                Permisos.ShowDialog();
+            }
+            else
+            {
+                XtraMessageBox.Show("No Cuentas con acceso a esta Opcion [033]");
+            }
+        }
     }
 }
