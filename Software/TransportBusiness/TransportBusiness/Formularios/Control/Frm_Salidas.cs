@@ -16,8 +16,8 @@ namespace TransportBusiness
     public partial class Frm_Salidas : DevExpress.XtraEditors.XtraForm
     {
 
-        string RutaPDF, NombrePDF;
-        string RutaXML, NombreXML;
+        string RutaPDF="", NombrePDF="";
+        string RutaXML="", NombreXML="";
 
         Byte[] ArchivoPDFGlobal = null;
         Byte[] ArchivoXMLGlobal = null;
@@ -123,6 +123,7 @@ namespace TransportBusiness
             arcScaleComponent1.MaxValue = 100;
             arcScaleComponent1.MinValue = 0;
             limpiarSalidasRevisionUnidad();
+            limpiarSalidasFacturas();
         }
 
         private void limpiarCampos()
@@ -992,18 +993,24 @@ namespace TransportBusiness
                 //textEdit.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.
                 XtraInputBoxArgs args = new XtraInputBoxArgs();
                 // set required Input Box options 
-                args.Caption = "Ingrese el nombre del Archivo";
-                args.Prompt = "Descripción";
-                args.DefaultButtonIndex = 0;
-                //args.Showing += Args_Showing;
-                // initialize a DateEdit editor with custom settings 
-                TextEdit editor = new TextEdit();
-                args.Editor = editor;
-                // a default DateEdit value 
-                args.DefaultResponse = "Archivo PDF";
-                // display an Input Box with the custom editor
-                args.Editor = textEdit;
-                var result2 = XtraInputBox.Show(args).ToString();
+                var result2="";
+                do
+                {
+                    args.Caption = "Ingrese el nombre del Archivo";
+                    args.Prompt = "Descripción";
+                    args.DefaultButtonIndex = 0;
+                    //args.Showing += Args_Showing;
+                    // initialize a DateEdit editor with custom settings 
+                    TextEdit editor = new TextEdit();
+                    args.Editor = editor;
+                    // a default DateEdit value 
+                    args.DefaultResponse = "Archivo PDF";
+                    // display an Input Box with the custom editor
+                    args.Editor = textEdit;
+                    result2 = XtraInputBox.Show(args).ToString();
+                } while (result2.Length==0 );
+               
+               
                 if (result2 != null)
                 {
                     NombrePDF = result2;
@@ -1051,18 +1058,22 @@ namespace TransportBusiness
                 //textEdit.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.
                 XtraInputBoxArgs args = new XtraInputBoxArgs();
                 // set required Input Box options 
-                args.Caption = "Ingrese el nombre del Archivo";
-                args.Prompt = "Descripción";
-                args.DefaultButtonIndex = 0;
-                //args.Showing += Args_Showing;
-                // initialize a DateEdit editor with custom settings 
-                TextEdit editor = new TextEdit();
-                args.Editor = editor;
-                // a default DateEdit value 
-                args.DefaultResponse = "Archivo XML";
-                // display an Input Box with the custom editor
-                args.Editor = textEdit;
-                var result2 = XtraInputBox.Show(args).ToString();
+                var result2 = "";
+                do
+                {
+                    args.Caption = "Ingrese el nombre del Archivo";
+                    args.Prompt = "Descripción";
+                    args.DefaultButtonIndex = 0;
+                    //args.Showing += Args_Showing;
+                    // initialize a DateEdit editor with custom settings 
+                    TextEdit editor = new TextEdit();
+                    args.Editor = editor;
+                    // a default DateEdit value 
+                    args.DefaultResponse = "Archivo XML";
+                    // display an Input Box with the custom editor
+                    args.Editor = textEdit;
+                    result2 = XtraInputBox.Show(args).ToString();
+                } while (result2.Length == 0);
                 if (result2 != null)
                 {
                     NombreXML = result2;
@@ -1088,12 +1099,18 @@ namespace TransportBusiness
                     //{
                     //    XtraMessageBox.Show(udp.Mensaje);
                     //}
+                }else
+                {
+
                 }
             }
+            XtraMessageBox.Show(ArchivoPDFGlobal.Length.ToString());
         }
 
         private void btnAgregarFacturas_Click(object sender, EventArgs e)
         {
+            if (ArchivoPDFGlobal != null) { XtraMessageBox.Show(ArchivoPDFGlobal.Length.ToString()); }
+            
             CLS_Salidas_Facturas Clase = new CLS_Salidas_Facturas();
 
             Byte[] ArchivoPDF=null;
@@ -1102,18 +1119,21 @@ namespace TransportBusiness
             FileStream fsPDF=null;
             FileStream fsXML=null;
 
+            Boolean noentroPDF = true,noentroXML=true;
+
             if (RutaPDF.Length > 0)
             {
                 //txtNombreArchivoPDF.Text = result2;
                 //string ar = OpenDialog.FileName;
-                fsPDF = new FileStream(RutaPDF, FileMode.Open);
+                fsPDF = new FileStream(RutaPDF, FileMode.Open, FileAccess.Read);
                 //Creamos un array de bytes para almacenar los datos leídos por fs.
                 ArchivoPDF = new byte[fsPDF.Length];
                 //Y guardamos los datos en el array data
-                fsPDF.Read(ArchivoPDF, 0, Convert.ToInt32(fsPDF.Length));
+                fsPDF.Read(ArchivoPDF, 0, (int)fsPDF.Length);
             }else
             {
                 ArchivoPDF =ArchivoPDFGlobal;
+                noentroPDF = false;
             }
             if (RutaXML.Length > 0)
             {
@@ -1125,12 +1145,28 @@ namespace TransportBusiness
             }else
             {
                 ArchivoXML = ArchivoXMLGlobal;
+                noentroXML = false;
             }
 
             Clase.Id_Salida = textFolio.Text.Trim();
-            Clase.FacturaPDF = ArchivoPDF;
+            if (ArchivoPDF!=null)
+            {
+                Clase.FacturaPDF = ArchivoPDF;
+            }
+            else
+            {
+                Clase.FacturaPDF = Encoding.UTF8.GetBytes("");
+            }
             Clase.FacturaPDFNombre = NombrePDF;
-            Clase.FacturaXML = ArchivoXML;
+            if (ArchivoXML!=null)
+            {
+                Clase.FacturaXML = ArchivoXML;
+            }
+            else
+            {
+                Clase.FacturaXML = Encoding.UTF8.GetBytes("");
+            }
+            
             Clase.FacturaXMLNombre = NombreXML;
             Clase.Importe = Convert.ToDecimal(textImporteF.Text);
             Clase.Id_Archivo = Convert.ToDecimal(labelIdArchivo.Text);
@@ -1149,8 +1185,15 @@ namespace TransportBusiness
             {
                 XtraMessageBox.Show(Clase.Mensaje);
             }
-            fsXML.Close();
-            fsPDF.Close();
+            if (noentroXML)
+            {
+                fsXML.Close();
+            }
+            if (noentroPDF)
+            {
+                fsPDF.Close();
+            }
+            
         }
 
         private void btnViewPDF_Click(object sender, EventArgs e)
@@ -1184,8 +1227,11 @@ namespace TransportBusiness
                     DataRow row = this.gridView6.GetDataRow(i);
                     
                     txtNombreArchivoPDF.Text = row["FacturaPDFNombre"].ToString();
+                    NombrePDF= row["FacturaPDFNombre"].ToString();
                     txtNombreArchivoXML.Text = row["FacturaXMLNombre"].ToString();
-                    ArchivoPDFGlobal=Encoding.UTF8.GetBytes(row["FacturaPDF"].ToString());
+                    NombreXML= row["FacturaXMLNombre"].ToString();
+                    ArchivoPDFGlobal =Encoding.UTF8.GetBytes(row["FacturaPDF"].ToString());
+                    XtraMessageBox.Show(row["FacturaPDF"].ToString());
                     ArchivoXMLGlobal = Encoding.UTF8.GetBytes(row["FacturaXML"].ToString());
                     textImporteF.Text= row["Importe"].ToString();
                     labelIdArchivo.Text= row["Id_Archivo"].ToString();
@@ -1225,6 +1271,7 @@ namespace TransportBusiness
 
         private void gridFacturas_DoubleClick(object sender, EventArgs e)
         {
+            limpiarSalidasFacturas();
             try
             {
                 DialogResult = XtraMessageBox.Show("¿Esta seguro de que desea eliminar el detalle seleccionado?", "Elimnar", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button1);
@@ -1250,8 +1297,12 @@ namespace TransportBusiness
             labelIdArchivo.Text = "0";
             txtNombreArchivoPDF.Text = "";
             txtNombreArchivoXML.Text = "";
-
-
+            RutaPDF = "";
+            RutaXML = "";
+            NombrePDF = "";
+            NombreXML = "";
+            ArchivoPDFGlobal = null;
+            ArchivoXMLGlobal = null;
         }
 
         private void EliminarSalidasFacturas(string Salida, string Id_Archivo)
