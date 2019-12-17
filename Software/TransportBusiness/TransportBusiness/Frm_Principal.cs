@@ -475,5 +475,44 @@ namespace TransportBusiness
             MSRegistro RegIn = new MSRegistro();
             RegIn.SaveSetting("ConexionSQL", "Sking", SkinForm.LookAndFeel.SkinName);
         }
+
+        private void btnGastoDirecto_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            if (TieneAcceso("034"))
+            {
+                Frm_Gasto_Directo Permisos = new Frm_Gasto_Directo();
+                Permisos.ShowDialog();
+            }
+            else
+            {
+                XtraMessageBox.Show("No Cuentas con acceso a esta Opcion [034]");
+            }
+        }
+
+        private void btnProductor_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            if (TieneAcceso("030"))
+            {
+                Frm_Gasto_Directo Permisos = new Frm_Gasto_Directo();
+                Permisos.ShowDialog();
+            }
+            else
+            {
+                XtraMessageBox.Show("No Cuentas con acceso a esta Opcion [030]");
+            }
+        }
+
+        private void btnHuertas_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            if (TieneAcceso("031"))
+            {
+                Frm_Huertas.DefInstance.MdiParent = this;
+                Frm_Huertas.DefInstance.Show();
+            }
+            else
+            {
+                XtraMessageBox.Show("No Cuentas con acceso a esta Opcion [031]");
+            }
+        }
     }
 }

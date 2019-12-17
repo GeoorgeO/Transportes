@@ -81,6 +81,12 @@
             this.ribbonPage4 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.xtraTabbedMdiManager1 = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
             this.SkinForm = new DevExpress.LookAndFeel.DefaultLookAndFeel(this.components);
+            this.ribbonPageGroup11 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.btnHuertas = new DevExpress.XtraBars.BarButtonItem();
+            this.btnCalidad = new DevExpress.XtraBars.BarButtonItem();
+            this.btnCultivo = new DevExpress.XtraBars.BarButtonItem();
+            this.btnProductor = new DevExpress.XtraBars.BarButtonItem();
+            this.btnGastoDirecto = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager1)).BeginInit();
             this.SuspendLayout();
@@ -121,9 +127,14 @@
             this.btnPais,
             this.btnMarca,
             this.btnLicencias,
-            this.btnPermisos});
+            this.btnPermisos,
+            this.btnHuertas,
+            this.btnCalidad,
+            this.btnCultivo,
+            this.btnProductor,
+            this.btnGastoDirecto});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.MaxItemId = 33;
+            this.ribbonControl1.MaxItemId = 38;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1,
@@ -132,6 +143,7 @@
             this.ribbonPage3,
             this.ribbonPage2,
             this.ribbonPage4});
+            this.ribbonControl1.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.Office2007;
             this.ribbonControl1.Size = new System.Drawing.Size(1250, 144);
             // 
             // barButtonItem1
@@ -410,14 +422,16 @@
             // 
             // ribbonPageGroup1
             // 
+            this.ribbonPageGroup1.AllowTextClipping = false;
             this.ribbonPageGroup1.ItemLinks.Add(this.btnVeiculos);
             this.ribbonPageGroup1.ItemLinks.Add(this.btnPersonal);
-            this.ribbonPageGroup1.ItemLinks.Add(this.btnHerramienta);
             this.ribbonPageGroup1.ItemLinks.Add(this.btnRutas);
-            this.ribbonPageGroup1.ItemLinks.Add(this.btnInfracciones);
             this.ribbonPageGroup1.ItemLinks.Add(this.btnMarca);
+            this.ribbonPageGroup1.ItemLinks.Add(this.btnHerramienta);
+            this.ribbonPageGroup1.ItemLinks.Add(this.btnInfracciones);
             this.ribbonPageGroup1.ItemLinks.Add(this.btnLicencias);
             this.ribbonPageGroup1.Name = "ribbonPageGroup1";
+            this.ribbonPageGroup1.ShowCaptionButton = false;
             this.ribbonPageGroup1.Text = "Catalogos";
             // 
             // ribbonPageGroup9
@@ -430,6 +444,7 @@
             // ribbonPageGroup3
             // 
             this.ribbonPageGroup3.ItemLinks.Add(this.btnGastosIndirectos);
+            this.ribbonPageGroup3.ItemLinks.Add(this.btnGastoDirecto);
             this.ribbonPageGroup3.Name = "ribbonPageGroup3";
             this.ribbonPageGroup3.Text = "Reportes";
             // 
@@ -438,6 +453,7 @@
             this.ribbonPageGroup7.ItemLinks.Add(this.btnProveedor);
             this.ribbonPageGroup7.ItemLinks.Add(this.btnCliente);
             this.ribbonPageGroup7.ItemLinks.Add(this.btnEmpresa);
+            this.ribbonPageGroup7.ItemLinks.Add(this.btnProductor);
             this.ribbonPageGroup7.Name = "ribbonPageGroup7";
             this.ribbonPageGroup7.Text = "Externos";
             // 
@@ -452,12 +468,14 @@
             // ribbonPage6
             // 
             this.ribbonPage6.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
-            this.ribbonPageGroup6});
+            this.ribbonPageGroup6,
+            this.ribbonPageGroup11});
             this.ribbonPage6.Name = "ribbonPage6";
             this.ribbonPage6.Text = "Catalogos Perifericos";
             // 
             // ribbonPageGroup6
             // 
+            this.ribbonPageGroup6.AllowTextClipping = false;
             this.ribbonPageGroup6.ItemLinks.Add(this.btnTipoActivos);
             this.ribbonPageGroup6.ItemLinks.Add(this.btnTipoDomicilio);
             this.ribbonPageGroup6.ItemLinks.Add(this.btnTipoLicencia);
@@ -465,6 +483,7 @@
             this.ribbonPageGroup6.ItemLinks.Add(this.btnTipoTransporte);
             this.ribbonPageGroup6.ItemLinks.Add(this.btnTipoPersona);
             this.ribbonPageGroup6.Name = "ribbonPageGroup6";
+            this.ribbonPageGroup6.ShowCaptionButton = false;
             this.ribbonPageGroup6.Text = "Tipos";
             // 
             // ribbonPage5
@@ -534,6 +553,53 @@
             // 
             this.SkinForm.EnableBonusSkins = true;
             this.SkinForm.LookAndFeel.SkinName = "Office 2010 Silver";
+            // 
+            // ribbonPageGroup11
+            // 
+            this.ribbonPageGroup11.AllowTextClipping = false;
+            this.ribbonPageGroup11.ItemLinks.Add(this.btnHuertas);
+            this.ribbonPageGroup11.ItemLinks.Add(this.btnCalidad);
+            this.ribbonPageGroup11.ItemLinks.Add(this.btnCultivo);
+            this.ribbonPageGroup11.Name = "ribbonPageGroup11";
+            this.ribbonPageGroup11.ShowCaptionButton = false;
+            this.ribbonPageGroup11.Text = "Campo";
+            // 
+            // btnHuertas
+            // 
+            this.btnHuertas.Caption = "Huertas";
+            this.btnHuertas.Id = 33;
+            this.btnHuertas.Name = "btnHuertas";
+            this.btnHuertas.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnHuertas_ItemClick);
+            // 
+            // btnCalidad
+            // 
+            this.btnCalidad.Caption = "Calidad";
+            this.btnCalidad.Id = 34;
+            this.btnCalidad.Name = "btnCalidad";
+            // 
+            // btnCultivo
+            // 
+            this.btnCultivo.Caption = "Cultivo";
+            this.btnCultivo.Id = 35;
+            this.btnCultivo.Name = "btnCultivo";
+            // 
+            // btnProductor
+            // 
+            this.btnProductor.Caption = "Productor";
+            this.btnProductor.Id = 36;
+            this.btnProductor.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem4.ImageOptions.Image")));
+            this.btnProductor.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem4.ImageOptions.LargeImage")));
+            this.btnProductor.Name = "btnProductor";
+            this.btnProductor.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnProductor_ItemClick);
+            // 
+            // btnGastoDirecto
+            // 
+            this.btnGastoDirecto.Caption = "Gastos Directos";
+            this.btnGastoDirecto.Id = 37;
+            this.btnGastoDirecto.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem4.ImageOptions.Image1")));
+            this.btnGastoDirecto.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem4.ImageOptions.LargeImage1")));
+            this.btnGastoDirecto.Name = "btnGastoDirecto";
+            this.btnGastoDirecto.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnGastoDirecto_ItemClick);
             // 
             // Frm_Principal
             // 
@@ -610,6 +676,12 @@
         private DevExpress.XtraBars.BarButtonItem btnPermisos;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup10;
         private DevExpress.LookAndFeel.DefaultLookAndFeel SkinForm;
+        private DevExpress.XtraBars.BarButtonItem btnHuertas;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup11;
+        private DevExpress.XtraBars.BarButtonItem btnCalidad;
+        private DevExpress.XtraBars.BarButtonItem btnCultivo;
+        private DevExpress.XtraBars.BarButtonItem btnProductor;
+        private DevExpress.XtraBars.BarButtonItem btnGastoDirecto;
     }
 }
 
