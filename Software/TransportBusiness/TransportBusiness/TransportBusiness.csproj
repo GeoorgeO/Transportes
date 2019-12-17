@@ -280,6 +280,18 @@
     <Compile Include="Formularios\Control\Frm_Gasto_Indirecto.Designer.cs">
       <DependentUpon>Frm_Gasto_Indirecto.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\Control\Frm_ViewPDFSalidas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Control\Frm_ViewPDFSalidas.Designer.cs">
+      <DependentUpon>Frm_ViewPDFSalidas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Control\Frm_ViewXMLSalidas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Control\Frm_ViewXMLSalidas.Designer.cs">
+      <DependentUpon>Frm_ViewXMLSalidas.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\Frm_Servicios.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -521,6 +533,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Control\Frm_Salidas.resx">
       <DependentUpon>Frm_Salidas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Control\Frm_ViewPDFSalidas.resx">
+      <DependentUpon>Frm_ViewPDFSalidas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Control\Frm_ViewXMLSalidas.resx">
+      <DependentUpon>Frm_ViewXMLSalidas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Frm_Servicios.resx">
       <DependentUpon>Frm_Servicios.cs</DependentUpon>

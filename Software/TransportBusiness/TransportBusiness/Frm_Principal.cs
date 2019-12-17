@@ -413,7 +413,8 @@ namespace TransportBusiness
         {
             if (TieneAcceso("024"))
             {
-
+                Frm_Salidas.DefInstance.MdiParent = this;
+                Frm_Salidas.DefInstance.Show();
             }
             else
             {

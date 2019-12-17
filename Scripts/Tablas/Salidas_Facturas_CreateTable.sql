@@ -10,8 +10,11 @@ ELSE
 	CREATE TABLE [dbo].[Salidas_Facturas](
 		[Id_Salida] [char](10) NOT NULL,
 		[FacturaPDF] [varbinary](max) NULL,
+		[FacturaPDFNombre] [varchar](80) NULL,
 		[FacturaXML] [varbinary](max) NULL,
-		[Importe] [numeric](18, 2) NULL
+		[FacturaXMLNombre] [varchar](80) NULL,
+		[Importe] [numeric](18, 2) NULL,
+		[Id_Archivo] [numeric](10,0) NOT NULL
 	)
 
 	end

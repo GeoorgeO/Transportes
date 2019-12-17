@@ -73,6 +73,7 @@
     <Compile Include="Catalogos\CLS_Rutas_Detalle.cs" />
     <Compile Include="Catalogos\CLS_Salidas.cs" />
     <Compile Include="Catalogos\CLS_Salidas_Diesel.cs" />
+    <Compile Include="Catalogos\CLS_Salidas_Facturas.cs" />
     <Compile Include="Catalogos\CLS_Salidas_Honorarios.cs" />
     <Compile Include="Catalogos\CLS_Salidas_OtrosGastos.cs" />
     <Compile Include="Catalogos\CLS_Salidas_RevisionUnidad.cs" />
