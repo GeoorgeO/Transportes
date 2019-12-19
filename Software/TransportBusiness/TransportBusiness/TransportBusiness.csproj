@@ -262,6 +262,12 @@
     <Compile Include="Formularios\Control\Frm_BusqAyudante.Designer.cs">
       <DependentUpon>Frm_BusqAyudante.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\Control\Frm_BusqEntradas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Control\Frm_BusqEntradas.Designer.cs">
+      <DependentUpon>Frm_BusqEntradas.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\Control\Frm_BusqSalidas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -519,11 +525,17 @@
     <EmbeddedResource Include="Formularios\Control\Frm_BusqAyudante.resx">
       <DependentUpon>Frm_BusqAyudante.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Control\Frm_BusqEntradas.resx">
+      <DependentUpon>Frm_BusqEntradas.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Control\Frm_BusqSalidas.resx">
       <DependentUpon>Frm_BusqSalidas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Control\Frm_Check_List.resx">
       <DependentUpon>Frm_Check_List.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Control\Frm_Entradas.resx">
+      <DependentUpon>Frm_Entradas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Control\Frm_Gasto_Directo.resx">
       <DependentUpon>Frm_Gasto_Directo.cs</DependentUpon>

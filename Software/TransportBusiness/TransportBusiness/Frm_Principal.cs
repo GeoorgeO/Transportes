@@ -493,7 +493,7 @@ namespace TransportBusiness
         {
             if (TieneAcceso("030"))
             {
-                Frm_Gasto_Directo Permisos = new Frm_Gasto_Directo();
+                Frm_Productor Permisos = new Frm_Productor();
                 Permisos.ShowDialog();
             }
             else
