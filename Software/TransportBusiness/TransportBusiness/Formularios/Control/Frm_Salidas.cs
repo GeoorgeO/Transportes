@@ -156,6 +156,7 @@ namespace TransportBusiness
             arcScaleComponent1.MinValue = 0;
             limpiarSalidasRevisionUnidad();
             limpiarSalidasFacturas();
+            cboMoneda.Text = "Pesos";
         }
 
         private void limpiarCampos()
