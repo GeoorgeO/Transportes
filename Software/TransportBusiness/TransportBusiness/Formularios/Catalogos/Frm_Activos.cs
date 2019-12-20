@@ -282,7 +282,7 @@ namespace TransportBusiness
             CLS_HistorialOperadores Clase = new CLS_HistorialOperadores();
 
             Clase.Id_Operador = txtOperador.Tag.ToString();
-            Clase.Id_Activo = txtIdActivo.Tag.ToString();
+            Clase.Id_Activo = txtIdActivo.Text;
             Clase.Tipo = "A";
 
             Clase.MtdInsertarHistorialOperadores();
