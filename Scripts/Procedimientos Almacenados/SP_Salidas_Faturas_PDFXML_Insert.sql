@@ -21,7 +21,8 @@ create PROCEDURE [dbo].[SP_Salidas_Faturas_PDFXML_Insert]
 	@FacturaXML varbinary(max),
 	@FacturaXMLNombre varchar(80),
 	@Importe numeric(18, 2),
-	@Id_Archivo numeric(10,0)
+	@Id_Archivo numeric(10,0),
+	@Moneda char(1)
 AS
 BEGIN
 	-- SET NOCOUNT ON added to prevent extra result sets from
@@ -47,7 +48,8 @@ BEGIN
 				FacturaPDFNombre=@FacturaPDFNombre,
 				FacturaXML=@FacturaXML,
 				FacturaXMLNombre=@FacturaXMLNombre,
-				Importe=@Importe
+				Importe=@Importe,
+				Moneda=@Moneda
 			where Id_Salida=@Id_Salida and Id_Archivo=@Id_Archivo
 			
 		else
@@ -59,7 +61,8 @@ BEGIN
 			   ,FacturaXML
 			   ,FacturaXMLNombre
 			   ,Importe
-			   ,Id_Archivo)
+			   ,Id_Archivo
+			   ,Moneda)
 	     	VALUES
 	           (@Id_Salida
 	           ,@FacturaPDF
@@ -67,7 +70,8 @@ BEGIN
 			   ,@FacturaXML
 			   ,@FacturaXMLNombre
 			   ,@Importe
-			   ,@maximo)
+			   ,@maximo
+			   ,@Moneda)
 		
 		commit transaction T1;
 		set @correcto=1

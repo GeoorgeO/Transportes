@@ -1,22 +1,23 @@
-USE [Transportes]
+USE [AvoHarvest]
 GO
 /****** Object:  StoredProcedure [dbo].[SP_BSC_ClienteGeneral]    Script Date: 25/08/2018 12:40:29 p. m. ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
-IF  EXISTS (SELECT * FROM SYS.OBJECTS WHERE TYPE = 'P' AND NAME = 'SP_Salidas_Faturas_PDFXML_View_Select')
-DROP PROCEDURE SP_Salidas_Faturas_PDFXML_View_Select
+IF  EXISTS (SELECT * FROM SYS.OBJECTS WHERE TYPE = 'P' AND NAME = 'SP_ReservaProductoSalida_Insert')
+DROP PROCEDURE SP_ReservaProductoSalida_Insert
 GO
 -- =============================================
 -- Author:		<Author,,Name>
 -- Create date: <Create Date,,>
 -- Description:	<Description,,>
 -- =============================================
-create PROCEDURE [dbo].[SP_Salidas_Faturas_PDFXML_View_Select] 
+create PROCEDURE [dbo].[SP_ReservaProductoSalida_Insert] 
 	-- Add the parameters for the stored procedure here
-	@Id_Salida char(10),
-	@Id_Archivo numeric(10,0)
+	@Id_Producto char(8),
+	@Cantidad numeric(18,0),
+	@EquipoReservo varchar(80)
 AS
 BEGIN
 	-- SET NOCOUNT ON added to prevent extra result sets from
@@ -28,18 +29,15 @@ BEGIN
 
 	begin transaction T1;
 	begin try
-		
-			Select Id_Salida
-	           ,FacturaPDF
-			   ,FacturaPDFNombre
-			   ,FacturaXML
-			   ,FacturaXMLNombre
-			   ,Importe
-			   ,Id_Archivo
-			   ,Moneda
-			from dbo.Salidas_Facturas 
-			where Id_Salida=@Id_Salida
-			and Id_Archivo=@Id_Archivo
+
+			INSERT INTO dbo.Pais
+	           (Id_Producto
+	           ,Cantidad
+			   ,EquipoReservo)
+	     	VALUES
+	           (@Id_Producto
+	           ,@Cantidad
+			   ,@EquipoReservo)
 		
 		commit transaction T1;
 		set @correcto=1

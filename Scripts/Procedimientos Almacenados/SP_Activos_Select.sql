@@ -45,7 +45,7 @@ BEGIN
 			A.Id_Tipo_Placa,
 			TP.Nombre_Tipo_Placa,
 			A.Id_Tipo_Activo,
-			TA.Nombre_Tipo_Activo
+			TA.Nombre_Tipo_Activo,
 			Color,
 			Modelo,
 			A.Id_Marca,

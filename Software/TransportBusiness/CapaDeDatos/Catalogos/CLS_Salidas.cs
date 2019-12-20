@@ -25,6 +25,7 @@ namespace CapaDeDatos
         public decimal Lts_Km { get; set; }
         public string Id_Huerta { get; set; }
         public string Observaciones { get; set; }
+        public string EnRuta { get; set; }
 
         public void MtdSeleccionarSalida()
         {
@@ -98,6 +99,8 @@ namespace CapaDeDatos
                 _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_Huerta");
                 _dato.CadenaTexto = Observaciones;
                 _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Observaciones");
+                _dato.CadenaTexto = EnRuta;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "EnRuta");
                 _conexion.EjecutarDataset();
                 if (_conexion.Exito)
                 {

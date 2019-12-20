@@ -19,6 +19,9 @@ namespace TransportBusiness
         string RutaPDF="", NombrePDF="";
         string RutaXML="", NombreXML="";
 
+        string OperadorAnterior = "",ActivoAnterior="";
+
+
         Byte[] ArchivoPDFGlobal = null;
         Byte[] ArchivoXMLGlobal = null;
 
@@ -85,7 +88,7 @@ namespace TransportBusiness
             Clase.Lts_Km = Convert.ToDecimal(textLts.Text);
             Clase.Id_Huerta = textHuerta.Tag.ToString();
             Clase.Observaciones= memoObservaciones.Text.ToString();
-
+            Clase.EnRuta = "1";
             Clase.MtdInsertarSalidas();
 
             if (Clase.Exito)
@@ -93,6 +96,17 @@ namespace TransportBusiness
                 //CargarCiudad();
                 XtraMessageBox.Show("Se ha Insertado el registro con exito");
                 textFolio.Text = Clase.Datos.Rows[0][0].ToString();
+                
+                    if (OperadorAnterior.Equals(textOperador.Tag.ToString()))
+                    {
+                        
+                    }
+                    else
+                    {
+                        InsertarHistorialOperadores();
+                    }
+                
+                
             }
             else
             {
@@ -100,7 +114,25 @@ namespace TransportBusiness
             }
         }
 
-        
+        private void InsertarHistorialOperadores()
+        {
+            CLS_HistorialOperadores Clase = new CLS_HistorialOperadores();
+
+            Clase.Id_Operador = textOperador.Tag.ToString();
+            Clase.Id_Activo = textActivoPrincipal.Tag.ToString();
+            Clase.Tipo = "S";
+           
+            Clase.MtdInsertarHistorialOperadores();
+
+            if (Clase.Exito)
+            {
+                OperadorAnterior = textOperador.Tag.ToString();
+            }
+            else
+            {
+                XtraMessageBox.Show(Clase.Mensaje);
+            }
+        }
 
         private void textFolio_EditValueChanged(object sender, EventArgs e)
         {
@@ -158,6 +190,9 @@ namespace TransportBusiness
             gridOtrosGastos.DataSource = null;
             gridViaticos.DataSource = null;
             gridHonorario.DataSource = null;
+            OperadorAnterior = "";
+            ActivoAnterior = "";
+            
         }
 
         private void btnBusqAyudante_Click(object sender, EventArgs e)
@@ -196,6 +231,8 @@ namespace TransportBusiness
             textActivoPrincipal.Text = frm.Activo;
             textOperador.Tag = frm.IdOPerador;
             textOperador.Text = frm.Operador;
+            ActivoAnterior= frm.IdActivo;
+            OperadorAnterior= frm.IdOPerador;
         }
 
         private void btnBusqActivoSec_Click(object sender, EventArgs e)
@@ -253,6 +290,7 @@ namespace TransportBusiness
         {
             limpiarCampos();
             limpiarSalidasRevisionUnidad();
+            limpiarSalidasFacturas();
         }
 
         private void btnBusqSalida_Click(object sender, EventArgs e)
@@ -263,8 +301,10 @@ namespace TransportBusiness
             textFolio.Text= frm.vId_Salida;
             dtFechaSalida.EditValue=Convert.ToDateTime(frm.vFecha_Salida);
             textActivoPrincipal.Tag=frm.vId_Activo_Principal;
+            ActivoAnterior= frm.vId_Activo_Principal; 
             textActivoPrincipal.Text=frm.vNombre_Activo_Principal;
             textOperador.Tag=frm.vId_Operador;
+            OperadorAnterior= frm.vId_Operador;
             textOperador.Text=frm.vNombre_Operador;
             textAyudante.Tag=frm.vId_Ayudante;
             textAyudante.Text=frm.vNombre_Ayudante;
@@ -1104,12 +1144,12 @@ namespace TransportBusiness
 
                 }
             }
-            XtraMessageBox.Show(ArchivoPDFGlobal.Length.ToString());
+            
         }
 
         private void btnAgregarFacturas_Click(object sender, EventArgs e)
         {
-            if (ArchivoPDFGlobal != null) { XtraMessageBox.Show(ArchivoPDFGlobal.Length.ToString()); }
+            
             
             CLS_Salidas_Facturas Clase = new CLS_Salidas_Facturas();
 
@@ -1170,7 +1210,14 @@ namespace TransportBusiness
             Clase.FacturaXMLNombre = NombreXML;
             Clase.Importe = Convert.ToDecimal(textImporteF.Text);
             Clase.Id_Archivo = Convert.ToDecimal(labelIdArchivo.Text);
-
+            if (cboMoneda.Text.Equals("Pesos"))
+            {
+                Clase.Moneda = "P";
+            }else
+            {
+                Clase.Moneda = "D";
+            }
+            
 
             Clase.MtdInsertarSalidasArchivoPDFXML();
 
@@ -1230,12 +1277,17 @@ namespace TransportBusiness
                     NombrePDF= row["FacturaPDFNombre"].ToString();
                     txtNombreArchivoXML.Text = row["FacturaXMLNombre"].ToString();
                     NombreXML= row["FacturaXMLNombre"].ToString();
-                    ArchivoPDFGlobal =Encoding.UTF8.GetBytes(row["FacturaPDF"].ToString());
-                    XtraMessageBox.Show(row["FacturaPDF"].ToString());
-                    ArchivoXMLGlobal = Encoding.UTF8.GetBytes(row["FacturaXML"].ToString());
+                    ArchivoPDFGlobal = (byte[])row["FacturaPDF"];
+                    ArchivoXMLGlobal = (byte[])(row["FacturaXML"]);
                     textImporteF.Text= row["Importe"].ToString();
                     labelIdArchivo.Text= row["Id_Archivo"].ToString();
-
+                    if (row["Moneda"].ToString().Equals("P"))
+                    {
+                        cboMoneda.Text = "Pesos";
+                    }else
+                    {
+                        cboMoneda.Text = "Dólares";
+                    }
                 }
             }
             catch (Exception ex)
@@ -1291,6 +1343,16 @@ namespace TransportBusiness
             }
         }
 
+        private void btnBusqOperador_Click(object sender, EventArgs e)
+        {
+            Frm_Empleados frm = new Frm_Empleados();
+            frm.PaSel = true;
+            frm.ShowDialog();
+
+            textOperador.Text = frm.vNombre_Empleado;
+            textOperador.Tag = frm.vId_Empleado;
+        }
+
         private void limpiarSalidasFacturas()
         {
             textImporteF.Text = "0";
@@ -1304,6 +1366,8 @@ namespace TransportBusiness
             ArchivoPDFGlobal = null;
             ArchivoXMLGlobal = null;
         }
+
+       
 
         private void EliminarSalidasFacturas(string Salida, string Id_Archivo)
         {
@@ -1326,5 +1390,8 @@ namespace TransportBusiness
         {
 
         }
+
+       
+    
     }
 }

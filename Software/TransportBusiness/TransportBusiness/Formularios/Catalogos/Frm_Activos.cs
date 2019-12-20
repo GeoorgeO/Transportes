@@ -19,6 +19,8 @@ namespace TransportBusiness
         public string Activo { get; set; }
         public Boolean PaSel { get; set; }
 
+        string OperadorAnterior = "", ActivoAnterior = "";
+
         private static Frm_Activos m_FormDefInstance;
         public static Frm_Activos DefInstance
         {
@@ -256,6 +258,14 @@ namespace TransportBusiness
             Activos.MtdInsertarActivos();
             if (Activos.Exito)
             {
+                if (OperadorAnterior.Equals(txtOperador.Tag.ToString()))
+                {
+                    
+                }
+                else
+                {
+                    InsertarHistorialOperadores();
+                }
                 ActualizaActivoPoliza();
                 CargarActivos();
                 XtraMessageBox.Show("Se ha Insertado el registro con exito");
@@ -264,6 +274,26 @@ namespace TransportBusiness
             else
             {
                 XtraMessageBox.Show(Activos.Mensaje);
+            }
+        }
+
+        private void InsertarHistorialOperadores()
+        {
+            CLS_HistorialOperadores Clase = new CLS_HistorialOperadores();
+
+            Clase.Id_Operador = txtOperador.Tag.ToString();
+            Clase.Id_Activo = txtIdActivo.Tag.ToString();
+            Clase.Tipo = "A";
+
+            Clase.MtdInsertarHistorialOperadores();
+
+            if (Clase.Exito)
+            {
+                
+            }
+            else
+            {
+                XtraMessageBox.Show(Clase.Mensaje);
             }
         }
 
@@ -329,6 +359,7 @@ namespace TransportBusiness
             textFolioCircula.Text = "";
             textTargCombustible.Text = "";
             ActivarCampos(true);
+            OperadorAnterior = "";
         }
         private void ActivarCampos(Boolean Valor)
         {
@@ -387,6 +418,7 @@ namespace TransportBusiness
                     txtTipoPlaca.Tag = row["Id_Tipo_Placa"].ToString();
                     txtTipoPlaca.Text = row["Nombre_Tipo_Placa"].ToString();
                     txtOperador.Tag = row["Id_Empleado"].ToString();
+                    OperadorAnterior= row["Id_Empleado"].ToString();
                     txtOperador.Text = row["Nombre_Empleado"].ToString();
                     txtEmpresaAsegu.Tag = row["Id_Empresa_Aseguradora"].ToString();
                     txtEmpresaAsegu.Text = row["Nombre_Empresa_Aseguradora"].ToString();

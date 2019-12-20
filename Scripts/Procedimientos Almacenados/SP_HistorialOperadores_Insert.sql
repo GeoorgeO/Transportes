@@ -5,18 +5,19 @@ SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
-IF  EXISTS (SELECT * FROM SYS.OBJECTS WHERE TYPE = 'P' AND NAME = 'SP_Salidas_Faturas_PDFXML_View_Select')
-DROP PROCEDURE SP_Salidas_Faturas_PDFXML_View_Select
+IF  EXISTS (SELECT * FROM SYS.OBJECTS WHERE TYPE = 'P' AND NAME = 'SP_HistorialOperadores_Insert')
+DROP PROCEDURE SP_HistorialOperadores_Insert
 GO
 -- =============================================
 -- Author:		<Author,,Name>
 -- Create date: <Create Date,,>
 -- Description:	<Description,,>
 -- =============================================
-create PROCEDURE [dbo].[SP_Salidas_Faturas_PDFXML_View_Select] 
+create PROCEDURE [dbo].[SP_HistorialOperadores_Insert] 
 	-- Add the parameters for the stored procedure here
-	@Id_Salida char(10),
-	@Id_Archivo numeric(10,0)
+	@Id_Operador char(6),
+	@Id_Activo char(8),
+	@Tipo char(1)
 AS
 BEGIN
 	-- SET NOCOUNT ON added to prevent extra result sets from
@@ -28,18 +29,16 @@ BEGIN
 
 	begin transaction T1;
 	begin try
-		
-			Select Id_Salida
-	           ,FacturaPDF
-			   ,FacturaPDFNombre
-			   ,FacturaXML
-			   ,FacturaXMLNombre
-			   ,Importe
-			   ,Id_Archivo
-			   ,Moneda
-			from dbo.Salidas_Facturas 
-			where Id_Salida=@Id_Salida
-			and Id_Archivo=@Id_Archivo
+			INSERT INTO dbo.HistorialOperadores
+	           (Id_Operador
+	           ,Id_Activo
+			   ,FechaAsignada
+			   ,Tipo)
+	     	VALUES
+	           (@Id_Operador
+	           ,@Id_Activo
+			   ,getdate()
+			   ,@Tipo)
 		
 		commit transaction T1;
 		set @correcto=1

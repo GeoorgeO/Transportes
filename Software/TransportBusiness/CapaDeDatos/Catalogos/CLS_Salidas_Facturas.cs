@@ -15,6 +15,7 @@ namespace CapaDeDatos
         public string FacturaXMLNombre { get; set; }
         public decimal Importe { get; set; }
         public decimal Id_Archivo { get; set; }
+        public string Moneda { get; set; }
 
         public void MtdSeleccionarSalidasArchivoPDFXML()
         {
@@ -100,6 +101,8 @@ namespace CapaDeDatos
                 _conexion.agregarParametro(EnumTipoDato.Tipodecimal, _dato, "Importe");
                 _dato.DecimalValor = Id_Archivo;
                 _conexion.agregarParametro(EnumTipoDato.Tipodecimal, _dato, "Id_Archivo");
+                _dato.CadenaTexto = Moneda;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Moneda");
                 _conexion.EjecutarDataset();
 
                 if (_conexion.Exito)

@@ -30,7 +30,8 @@ create PROCEDURE [dbo].[SP_Salidas_Insert]
 	@Dias_Viaje numeric(18,2),
 	@Lts_Km numeric(18,2),
 	@Id_Huerta char(5),
-	@Observaciones varchar(100)
+	@Observaciones varchar(100),
+	@EnRuta bit
 as
 BEGIN
 	-- SET NOCOUNT ON added to prevent extra result sets from
@@ -100,6 +101,11 @@ BEGIN
 			   ,@km_Fin
 			   ,@Id_Huerta
 			   ,@Observaciones)
+			   
+		if @Existe>0 	   
+			select 0
+		else
+			update Activos set EnRuta=@EnRuta where Id_Activo=@Id_Activo_Principal or Id_Activo=@Id_Activo_Secundario or Id_Activo=@Id_Activo_Adicional
 			   
 		if @Existe>0 
 			set @correcto=@Id_Salida

@@ -35,6 +35,7 @@ BEGIN
 			   ,FacturaXMLNombre
 			   ,Importe
 			   ,Id_Archivo
+			   ,Moneda
 			from dbo.Salidas_Facturas 
 			where Id_Salida=@Id_Salida
 		

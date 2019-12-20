@@ -14,7 +14,8 @@ ELSE
 		[FacturaXML] [varbinary](max) NULL,
 		[FacturaXMLNombre] [varchar](80) NULL,
 		[Importe] [numeric](18, 2) NULL,
-		[Id_Archivo] [numeric](10,0) NOT NULL
+		[Id_Archivo] [numeric](10,0) NOT NULL,
+		[Moneda] [char](1) NOT NUll
 	)
 
 	end

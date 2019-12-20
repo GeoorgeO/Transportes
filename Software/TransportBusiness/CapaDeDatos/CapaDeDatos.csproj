@@ -59,6 +59,7 @@
     <Compile Include="Catalogos\CLS_Estado.cs" />
     <Compile Include="Catalogos\CLS_GastosDirectos.cs" />
     <Compile Include="Catalogos\CLS_GastosIndirectos.cs" />
+    <Compile Include="Catalogos\CLS_HistorialOperadores.cs" />
     <Compile Include="Catalogos\CLS_Huerta.cs" />
     <Compile Include="Catalogos\CLS_Licencia.cs" />
     <Compile Include="Catalogos\CLS_Marcas.cs" />
