@@ -45,6 +45,11 @@
             this.repositoryItemTextEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
+            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
+            this.dtFechaEntrada = new DevExpress.XtraEditors.DateEdit();
+            this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
+            this.textEdit1 = new DevExpress.XtraEditors.TextEdit();
             this.btnBusqSalida = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
             this.textActivoAdicional = new DevExpress.XtraEditors.TextEdit();
@@ -54,24 +59,23 @@
             this.textActivoPrincipal = new DevExpress.XtraEditors.TextEdit();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.textFolio = new DevExpress.XtraEditors.TextEdit();
-            this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
-            this.textEdit1 = new DevExpress.XtraEditors.TextEdit();
-            this.dtFechaEntrada = new DevExpress.XtraEditors.DateEdit();
-            this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
-            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
+            this.dateEdit1 = new DevExpress.XtraEditors.DateEdit();
+            this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtFechaEntrada.Properties.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtFechaEntrada.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textActivoAdicional.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textActivoSec.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textActivoPrincipal.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textFolio.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dtFechaEntrada.Properties.CalendarTimeProperties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dtFechaEntrada.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dateEdit1.Properties.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dateEdit1.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // barManager1
@@ -219,6 +223,8 @@
             // 
             // groupControl1
             // 
+            this.groupControl1.Controls.Add(this.dateEdit1);
+            this.groupControl1.Controls.Add(this.labelControl7);
             this.groupControl1.Controls.Add(this.simpleButton1);
             this.groupControl1.Controls.Add(this.dtFechaEntrada);
             this.groupControl1.Controls.Add(this.labelControl6);
@@ -240,100 +246,18 @@
             this.groupControl1.TabIndex = 0;
             this.groupControl1.Text = "Entrada Activos en Ruta";
             // 
-            // btnBusqSalida
+            // simpleButton1
             // 
-            this.btnBusqSalida.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnBusqSalida.ImageOptions.Image")));
-            this.btnBusqSalida.Location = new System.Drawing.Point(218, 34);
-            this.btnBusqSalida.Name = "btnBusqSalida";
-            this.btnBusqSalida.Size = new System.Drawing.Size(24, 23);
-            this.btnBusqSalida.TabIndex = 76;
-            // 
-            // labelControl4
-            // 
-            this.labelControl4.Location = new System.Drawing.Point(26, 144);
-            this.labelControl4.Name = "labelControl4";
-            this.labelControl4.Size = new System.Drawing.Size(77, 13);
-            this.labelControl4.TabIndex = 75;
-            this.labelControl4.Text = "Activo Adcional:";
-            // 
-            // textActivoAdicional
-            // 
-            this.textActivoAdicional.Location = new System.Drawing.Point(121, 139);
-            this.textActivoAdicional.MenuManager = this.barManager1;
-            this.textActivoAdicional.Name = "textActivoAdicional";
-            this.textActivoAdicional.Size = new System.Drawing.Size(234, 20);
-            this.textActivoAdicional.TabIndex = 74;
-            // 
-            // labelControl3
-            // 
-            this.labelControl3.Location = new System.Drawing.Point(26, 118);
-            this.labelControl3.Name = "labelControl3";
-            this.labelControl3.Size = new System.Drawing.Size(90, 13);
-            this.labelControl3.TabIndex = 73;
-            this.labelControl3.Text = "Activo Secundario:";
-            // 
-            // textActivoSec
-            // 
-            this.textActivoSec.Location = new System.Drawing.Point(121, 113);
-            this.textActivoSec.MenuManager = this.barManager1;
-            this.textActivoSec.Name = "textActivoSec";
-            this.textActivoSec.Size = new System.Drawing.Size(234, 20);
-            this.textActivoSec.TabIndex = 72;
-            // 
-            // labelControl2
-            // 
-            this.labelControl2.Location = new System.Drawing.Point(26, 92);
-            this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(76, 13);
-            this.labelControl2.TabIndex = 71;
-            this.labelControl2.Text = "Activo Principal:";
-            // 
-            // textActivoPrincipal
-            // 
-            this.textActivoPrincipal.Location = new System.Drawing.Point(121, 87);
-            this.textActivoPrincipal.MenuManager = this.barManager1;
-            this.textActivoPrincipal.Name = "textActivoPrincipal";
-            this.textActivoPrincipal.Size = new System.Drawing.Size(234, 20);
-            this.textActivoPrincipal.TabIndex = 70;
-            // 
-            // labelControl1
-            // 
-            this.labelControl1.Location = new System.Drawing.Point(26, 40);
-            this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(67, 13);
-            this.labelControl1.TabIndex = 69;
-            this.labelControl1.Text = "Folio Entrada:";
-            // 
-            // textFolio
-            // 
-            this.textFolio.Enabled = false;
-            this.textFolio.Location = new System.Drawing.Point(121, 35);
-            this.textFolio.MenuManager = this.barManager1;
-            this.textFolio.Name = "textFolio";
-            this.textFolio.Size = new System.Drawing.Size(92, 20);
-            this.textFolio.TabIndex = 68;
-            // 
-            // labelControl5
-            // 
-            this.labelControl5.Location = new System.Drawing.Point(26, 66);
-            this.labelControl5.Name = "labelControl5";
-            this.labelControl5.Size = new System.Drawing.Size(57, 13);
-            this.labelControl5.TabIndex = 78;
-            this.labelControl5.Text = "Folio Salida:";
-            // 
-            // textEdit1
-            // 
-            this.textEdit1.Enabled = false;
-            this.textEdit1.Location = new System.Drawing.Point(121, 61);
-            this.textEdit1.MenuManager = this.barManager1;
-            this.textEdit1.Name = "textEdit1";
-            this.textEdit1.Size = new System.Drawing.Size(92, 20);
-            this.textEdit1.TabIndex = 77;
+            this.simpleButton1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
+            this.simpleButton1.Location = new System.Drawing.Point(219, 60);
+            this.simpleButton1.Name = "simpleButton1";
+            this.simpleButton1.Size = new System.Drawing.Size(24, 23);
+            this.simpleButton1.TabIndex = 81;
             // 
             // dtFechaEntrada
             // 
             this.dtFechaEntrada.EditValue = null;
-            this.dtFechaEntrada.Location = new System.Drawing.Point(316, 33);
+            this.dtFechaEntrada.Location = new System.Drawing.Point(316, 35);
             this.dtFechaEntrada.MenuManager = this.barManager1;
             this.dtFechaEntrada.Name = "dtFechaEntrada";
             this.dtFechaEntrada.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -351,13 +275,116 @@
             this.labelControl6.TabIndex = 79;
             this.labelControl6.Text = "F. Entrada:";
             // 
-            // simpleButton1
+            // labelControl5
             // 
-            this.simpleButton1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
-            this.simpleButton1.Location = new System.Drawing.Point(219, 60);
-            this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(24, 23);
-            this.simpleButton1.TabIndex = 81;
+            this.labelControl5.Location = new System.Drawing.Point(26, 65);
+            this.labelControl5.Name = "labelControl5";
+            this.labelControl5.Size = new System.Drawing.Size(57, 13);
+            this.labelControl5.TabIndex = 78;
+            this.labelControl5.Text = "Folio Salida:";
+            // 
+            // textEdit1
+            // 
+            this.textEdit1.Enabled = false;
+            this.textEdit1.Location = new System.Drawing.Point(121, 61);
+            this.textEdit1.MenuManager = this.barManager1;
+            this.textEdit1.Name = "textEdit1";
+            this.textEdit1.Size = new System.Drawing.Size(92, 20);
+            this.textEdit1.TabIndex = 77;
+            // 
+            // btnBusqSalida
+            // 
+            this.btnBusqSalida.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnBusqSalida.ImageOptions.Image")));
+            this.btnBusqSalida.Location = new System.Drawing.Point(218, 34);
+            this.btnBusqSalida.Name = "btnBusqSalida";
+            this.btnBusqSalida.Size = new System.Drawing.Size(24, 23);
+            this.btnBusqSalida.TabIndex = 76;
+            // 
+            // labelControl4
+            // 
+            this.labelControl4.Location = new System.Drawing.Point(26, 143);
+            this.labelControl4.Name = "labelControl4";
+            this.labelControl4.Size = new System.Drawing.Size(77, 13);
+            this.labelControl4.TabIndex = 75;
+            this.labelControl4.Text = "Activo Adcional:";
+            // 
+            // textActivoAdicional
+            // 
+            this.textActivoAdicional.Location = new System.Drawing.Point(121, 139);
+            this.textActivoAdicional.MenuManager = this.barManager1;
+            this.textActivoAdicional.Name = "textActivoAdicional";
+            this.textActivoAdicional.Size = new System.Drawing.Size(234, 20);
+            this.textActivoAdicional.TabIndex = 74;
+            // 
+            // labelControl3
+            // 
+            this.labelControl3.Location = new System.Drawing.Point(26, 117);
+            this.labelControl3.Name = "labelControl3";
+            this.labelControl3.Size = new System.Drawing.Size(90, 13);
+            this.labelControl3.TabIndex = 73;
+            this.labelControl3.Text = "Activo Secundario:";
+            // 
+            // textActivoSec
+            // 
+            this.textActivoSec.Location = new System.Drawing.Point(121, 113);
+            this.textActivoSec.MenuManager = this.barManager1;
+            this.textActivoSec.Name = "textActivoSec";
+            this.textActivoSec.Size = new System.Drawing.Size(234, 20);
+            this.textActivoSec.TabIndex = 72;
+            // 
+            // labelControl2
+            // 
+            this.labelControl2.Location = new System.Drawing.Point(26, 91);
+            this.labelControl2.Name = "labelControl2";
+            this.labelControl2.Size = new System.Drawing.Size(76, 13);
+            this.labelControl2.TabIndex = 71;
+            this.labelControl2.Text = "Activo Principal:";
+            // 
+            // textActivoPrincipal
+            // 
+            this.textActivoPrincipal.Location = new System.Drawing.Point(121, 87);
+            this.textActivoPrincipal.MenuManager = this.barManager1;
+            this.textActivoPrincipal.Name = "textActivoPrincipal";
+            this.textActivoPrincipal.Size = new System.Drawing.Size(234, 20);
+            this.textActivoPrincipal.TabIndex = 70;
+            // 
+            // labelControl1
+            // 
+            this.labelControl1.Location = new System.Drawing.Point(26, 39);
+            this.labelControl1.Name = "labelControl1";
+            this.labelControl1.Size = new System.Drawing.Size(67, 13);
+            this.labelControl1.TabIndex = 69;
+            this.labelControl1.Text = "Folio Entrada:";
+            // 
+            // textFolio
+            // 
+            this.textFolio.Enabled = false;
+            this.textFolio.Location = new System.Drawing.Point(121, 35);
+            this.textFolio.MenuManager = this.barManager1;
+            this.textFolio.Name = "textFolio";
+            this.textFolio.Size = new System.Drawing.Size(92, 20);
+            this.textFolio.TabIndex = 68;
+            // 
+            // dateEdit1
+            // 
+            this.dateEdit1.EditValue = null;
+            this.dateEdit1.Location = new System.Drawing.Point(316, 61);
+            this.dateEdit1.MenuManager = this.barManager1;
+            this.dateEdit1.Name = "dateEdit1";
+            this.dateEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dateEdit1.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dateEdit1.Size = new System.Drawing.Size(89, 20);
+            this.dateEdit1.TabIndex = 83;
+            // 
+            // labelControl7
+            // 
+            this.labelControl7.Location = new System.Drawing.Point(255, 65);
+            this.labelControl7.Name = "labelControl7";
+            this.labelControl7.Size = new System.Drawing.Size(45, 13);
+            this.labelControl7.TabIndex = 82;
+            this.labelControl7.Text = "F. Cruce:";
             // 
             // Frm_Entradas
             // 
@@ -381,13 +408,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
             this.groupControl1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtFechaEntrada.Properties.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtFechaEntrada.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textActivoAdicional.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textActivoSec.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textActivoPrincipal.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textFolio.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dtFechaEntrada.Properties.CalendarTimeProperties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dtFechaEntrada.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dateEdit1.Properties.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dateEdit1.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -424,5 +453,7 @@
         private DevExpress.XtraEditors.DateEdit dtFechaEntrada;
         private DevExpress.XtraEditors.LabelControl labelControl6;
         private DevExpress.XtraEditors.SimpleButton simpleButton1;
+        private DevExpress.XtraEditors.DateEdit dateEdit1;
+        private DevExpress.XtraEditors.LabelControl labelControl7;
     }
 }

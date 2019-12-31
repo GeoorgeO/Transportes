@@ -100,6 +100,18 @@
     <Compile Include="Formularios\Catalogos\Frm_Agente_Empresa_Aseguradora.Designer.cs">
       <DependentUpon>Frm_Agente_Empresa_Aseguradora.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\Catalogos\Frm_Asigna_Tarjeta_IAVE.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Catalogos\Frm_Asigna_Tarjeta_IAVE.Designer.cs">
+      <DependentUpon>Frm_Asigna_Tarjeta_IAVE.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Catalogos\Frm_Asigna_Tarjeta_Combustible.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Catalogos\Frm_Asigna_Tarjeta_Combustible.Designer.cs">
+      <DependentUpon>Frm_Asigna_Tarjeta_Combustible.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\Catalogos\Frm_Broker_Empresa_Aseguradora.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -243,6 +255,18 @@
     </Compile>
     <Compile Include="Formularios\Catalogos\Frm_Proveedores.Designer.cs">
       <DependentUpon>Frm_Proveedores.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Catalogos\Frm_Tarjetas_Combustible.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Catalogos\Frm_Tarjetas_Combustible.Designer.cs">
+      <DependentUpon>Frm_Tarjetas_Combustible.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Catalogos\Frm_Tarjetas_IAVE.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Catalogos\Frm_Tarjetas_IAVE.Designer.cs">
+      <DependentUpon>Frm_Tarjetas_IAVE.cs</DependentUpon>
     </Compile>
     <Compile Include="Formularios\Catalogos\Tipos\Frm_Tipo_Servicio.cs">
       <SubType>Form</SubType>
@@ -444,6 +468,12 @@
     <EmbeddedResource Include="Formularios\Catalogos\Frm_Agente_Empresa_Aseguradora.resx">
       <DependentUpon>Frm_Agente_Empresa_Aseguradora.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Catalogos\Frm_Asigna_Tarjeta_Combustible.resx">
+      <DependentUpon>Frm_Asigna_Tarjeta_Combustible.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Catalogos\Frm_Asigna_Tarjeta_IAVE.resx">
+      <DependentUpon>Frm_Asigna_Tarjeta_IAVE.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Catalogos\Frm_Broker_Empresa_Aseguradora.resx">
       <DependentUpon>Frm_Broker_Empresa_Aseguradora.cs</DependentUpon>
     </EmbeddedResource>
@@ -515,6 +545,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Catalogos\Frm_Proveedores.resx">
       <DependentUpon>Frm_Proveedores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Catalogos\Frm_Tarjetas_Combustible.resx">
+      <DependentUpon>Frm_Tarjetas_Combustible.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Catalogos\Frm_Tarjetas_IAVE.resx">
+      <DependentUpon>Frm_Tarjetas_IAVE.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Catalogos\Tipos\Frm_Tipo_Servicio.resx">
       <DependentUpon>Frm_Tipo_Servicio.cs</DependentUpon>
