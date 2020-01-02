@@ -13,7 +13,7 @@ ELSE
 		[Id_Empresa] [char](4) NOT NULL,
 		[Monto_Min] [numeric](18,2) NULL,
 		[Monto_Max] [numeric](18,2) NULL,
-	 CONSTRAINT [PK_Tarjetas_IAVE] PRIMARY KEY CLUSTERED 
+	 CONSTRAINT [PK_Tarjetas_Combustible] PRIMARY KEY CLUSTERED 
 	(
 		[Id_Tarjeta_Combustible] ASC
 	)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]

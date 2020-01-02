@@ -5,17 +5,17 @@ SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
-IF  EXISTS (SELECT * FROM SYS.OBJECTS WHERE TYPE = 'P' AND NAME = 'SP_Tarjetas_IAVE_Delete')
-DROP PROCEDURE SP_Tarjetas_IAVE_Delete
+IF  EXISTS (SELECT * FROM SYS.OBJECTS WHERE TYPE = 'P' AND NAME = 'SP_Tarjetas_Combustible_Delete')
+DROP PROCEDURE SP_Tarjetas_Combustible_Delete
 GO
 -- =============================================
 -- Author:		<Author,,Name>
 -- Create date: <Create Date,,>
 -- Description:	<Description,,>
 -- =============================================
-create PROCEDURE [dbo].[SP_Tarjetas_IAVE_Delete] 
+create PROCEDURE [dbo].[SP_Tarjetas_Combustible_Delete] 
 	-- Add the parameters for the stored procedure here
-	@IAVE varchar(50)
+	@Id_Tarjeta_Combustible varchar(20)
 AS
 BEGIN
 	-- SET NOCOUNT ON added to prevent extra result sets from
@@ -28,7 +28,7 @@ BEGIN
 	begin transaction T2;
 	begin try
 		
-		delete from dbo.Tarjetas_IAVE where IAVE=@IAVE
+		delete from dbo.Tarjetas_Combustible where Id_Tarjeta_Combustible=@Id_Tarjeta_Combustible
 
 		commit transaction T2;
 		set @correcto=1
