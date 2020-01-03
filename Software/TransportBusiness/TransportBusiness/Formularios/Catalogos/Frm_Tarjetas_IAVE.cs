@@ -20,6 +20,7 @@ namespace TransportBusiness
         }
 
         public Boolean PaSel { get; set; }
+        public string vIAVE { get; set; }
 
         private void CargarIAVE()
         {
@@ -114,6 +115,7 @@ namespace TransportBusiness
                 btnSeleccionar.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
             }
             CargarIAVE();
+            LimpiarCampos();
         }
 
         private void gridControl1_Click(object sender, EventArgs e)
@@ -178,6 +180,20 @@ namespace TransportBusiness
         private void btnSalir_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             this.Close();
+        }
+
+        private void btnSeleccionar_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            if (textIAVE.Enabled == false)
+            {
+                vIAVE = textIAVE.Text.Trim();
+                this.Close();
+            }
+            else
+            {
+                XtraMessageBox.Show("No ha seleccionado una IAVE");
+            }
+
         }
     }
 }

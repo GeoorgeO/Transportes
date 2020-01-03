@@ -43,6 +43,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Catalogos\CLS_Activos.cs" />
+    <Compile Include="Catalogos\CLS_Activos_IAVES.cs" />
     <Compile Include="Catalogos\CLS_Agente_Empresa_Aseguradora.cs" />
     <Compile Include="Catalogos\CLS_Broker_Empresa_Aseguradora.cs" />
     <Compile Include="Catalogos\CLS_Calidades.cs" />

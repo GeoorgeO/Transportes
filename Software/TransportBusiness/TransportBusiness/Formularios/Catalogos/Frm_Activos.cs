@@ -580,6 +580,14 @@ namespace TransportBusiness
             CargarActivos();
         }
 
+        private void btnTIAVE_Click(object sender, EventArgs e)
+        {
+            Frm_Asigna_Tarjeta_IAVE Clase = new Frm_Asigna_Tarjeta_IAVE();
+            Clase.IdActivo = txtIdActivo.Text.Trim();
+            Clase.Activo = txtNombreActivo.Text.Trim();
+            Clase.ShowDialog(); 
+        }
+
         private void btnBusqPoliza_Click(object sender, EventArgs e)
         {
             Frm_Polizas frm = new Frm_Polizas();
