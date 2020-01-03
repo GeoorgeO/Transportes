@@ -6,14 +6,14 @@ using System.Threading.Tasks;
 
 namespace CapaDeDatos
 {
-    public class CLS_Activos_IAVES : ConexionBase
+    public class CLS_Activos_TCombustible : ConexionBase
     {
 
-        public string IAVE { get; set; }
+        public string Id_Tarjeta_Combustible { get; set; }
         public string Id_Activo { get; set; }
-        public string IAVEold { get; set; }
+        public string Id_Tarjeta_Combustibleold { get; set; }
 
-        public void MtdSeleccionarActivos_IAVES()
+        public void MtdSeleccionarActivos_TCombustible()
         {
             TipoDato _dato = new TipoDato();
             Conexion _conexion = new Conexion(cadenaConexion);
@@ -21,7 +21,7 @@ namespace CapaDeDatos
             Exito = true;
             try
             {
-                _conexion.NombreProcedimiento = "SP_Activos_IAVES_Select";
+                _conexion.NombreProcedimiento = "SP_Activos_TCombustible_Select";
                 _dato.CadenaTexto = Id_Activo;
                 _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_Activo");
                 _conexion.EjecutarDataset();
@@ -46,7 +46,7 @@ namespace CapaDeDatos
 
 
 
-        public void MtdInsertarActivos_IAVES()
+        public void MtdInsertarActivos_TCombustible()
         {
             TipoDato _dato = new TipoDato();
             Conexion _conexion = new Conexion(cadenaConexion);
@@ -54,13 +54,13 @@ namespace CapaDeDatos
             Exito = true;
             try
             {
-                _conexion.NombreProcedimiento = "SP_Activos_IAVES_Insert";
-                _dato.CadenaTexto = IAVE;
-                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "IAVE");
+                _conexion.NombreProcedimiento = "SP_Activos_TCombustible_Insert";
+                _dato.CadenaTexto = Id_Tarjeta_Combustible;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_Tarjeta_Combustible");
                 _dato.CadenaTexto = Id_Activo;
                 _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_Activo");
-                _dato.CadenaTexto = IAVEold;
-                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "IAVEold");
+                _dato.CadenaTexto = Id_Tarjeta_Combustibleold;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_Tarjeta_Combustibleold");
                 _conexion.EjecutarDataset();
 
                 if (_conexion.Exito)
@@ -80,7 +80,7 @@ namespace CapaDeDatos
             }
         }
 
-        public void MtdEliminarActivos_IAVES()
+        public void MtdEliminarActivos_TCombustible()
         {
             TipoDato _dato = new TipoDato();
             Conexion _conexion = new Conexion(cadenaConexion);
@@ -88,9 +88,9 @@ namespace CapaDeDatos
             Exito = true;
             try
             {
-                _conexion.NombreProcedimiento = "SP_Activos_IAVES_Delete";
-                _dato.CadenaTexto = IAVE;
-                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "IAVE");
+                _conexion.NombreProcedimiento = "SP_Activos_TCombustible_Delete";
+                _dato.CadenaTexto = Id_Tarjeta_Combustible;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_Tarjeta_Combustible");
                 _dato.CadenaTexto = Id_Activo;
                 _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_Activo");
                 _conexion.EjecutarDataset();

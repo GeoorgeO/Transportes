@@ -49,6 +49,7 @@
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.Id_Tarjeta_Combustible = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Id_Empresa = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Nombre_Empresa = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Monto_Min = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Monto_Max = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Vigencia = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -65,7 +66,6 @@
             this.btnBusqEmpresa = new DevExpress.XtraEditors.SimpleButton();
             this.textEmpresa = new DevExpress.XtraEditors.TextEdit();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
-            this.Nombre_Empresa = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
@@ -175,6 +175,7 @@
             this.btnSeleccionar.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnSeleccionar.ImageOptions.Image")));
             this.btnSeleccionar.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnSeleccionar.ImageOptions.LargeImage")));
             this.btnSeleccionar.Name = "btnSeleccionar";
+            this.btnSeleccionar.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnSeleccionar_ItemClick);
             // 
             // bEstado
             // 
@@ -243,7 +244,7 @@
             this.panelControl2.Location = new System.Drawing.Point(87, 181);
             this.panelControl2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panelControl2.Name = "panelControl2";
-            this.panelControl2.Padding = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.panelControl2.Padding = new System.Windows.Forms.Padding(6);
             this.panelControl2.Size = new System.Drawing.Size(686, 393);
             this.panelControl2.TabIndex = 9;
             // 
@@ -290,6 +291,14 @@
             this.Id_Empresa.FieldName = "Id_Empresa";
             this.Id_Empresa.Name = "Id_Empresa";
             // 
+            // Nombre_Empresa
+            // 
+            this.Nombre_Empresa.Caption = "Empresa";
+            this.Nombre_Empresa.FieldName = "Nombre_Empresa";
+            this.Nombre_Empresa.Name = "Nombre_Empresa";
+            this.Nombre_Empresa.Visible = true;
+            this.Nombre_Empresa.VisibleIndex = 1;
+            // 
             // Monto_Min
             // 
             this.Monto_Min.Caption = "Monto Minimo";
@@ -321,7 +330,7 @@
             this.panelControl1.Location = new System.Drawing.Point(87, 0);
             this.panelControl1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Padding = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.panelControl1.Padding = new System.Windows.Forms.Padding(6);
             this.panelControl1.Size = new System.Drawing.Size(686, 181);
             this.panelControl1.TabIndex = 8;
             // 
@@ -425,7 +434,7 @@
             // 
             // btnBusqEmpresa
             // 
-            this.btnBusqEmpresa.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnBusqProveedor.ImageOptions.Image")));
+            this.btnBusqEmpresa.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnBusqEmpresa.ImageOptions.Image")));
             this.btnBusqEmpresa.Location = new System.Drawing.Point(349, 33);
             this.btnBusqEmpresa.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnBusqEmpresa.Name = "btnBusqEmpresa";
@@ -451,14 +460,6 @@
             this.labelControl1.Size = new System.Drawing.Size(55, 16);
             this.labelControl1.TabIndex = 54;
             this.labelControl1.Text = "Empresa:";
-            // 
-            // Nombre_Empresa
-            // 
-            this.Nombre_Empresa.Caption = "Empresa";
-            this.Nombre_Empresa.FieldName = "Nombre_Empresa";
-            this.Nombre_Empresa.Name = "Nombre_Empresa";
-            this.Nombre_Empresa.Visible = true;
-            this.Nombre_Empresa.VisibleIndex = 1;
             // 
             // Frm_Tarjetas_Combustible
             // 

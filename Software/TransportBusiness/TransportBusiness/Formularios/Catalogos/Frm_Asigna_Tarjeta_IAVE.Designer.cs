@@ -232,7 +232,7 @@
             this.panelControl1.Location = new System.Drawing.Point(67, 0);
             this.panelControl1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Padding = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.panelControl1.Padding = new System.Windows.Forms.Padding(6);
             this.panelControl1.Size = new System.Drawing.Size(695, 156);
             this.panelControl1.TabIndex = 4;
             // 
@@ -327,7 +327,7 @@
             this.panelControl2.Location = new System.Drawing.Point(67, 156);
             this.panelControl2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panelControl2.Name = "panelControl2";
-            this.panelControl2.Padding = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.panelControl2.Padding = new System.Windows.Forms.Padding(6);
             this.panelControl2.Size = new System.Drawing.Size(695, 412);
             this.panelControl2.TabIndex = 5;
             // 
@@ -354,6 +354,7 @@
             this.IAVE});
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
+            this.gridView1.OptionsBehavior.Editable = false;
             this.gridView1.OptionsView.ShowGroupPanel = false;
             // 
             // Id_Activo
@@ -375,7 +376,7 @@
             // IAVE
             // 
             this.IAVE.Caption = "IAVE";
-            this.IAVE.FieldName = "Nombre_IAVE";
+            this.IAVE.FieldName = "IAVE";
             this.IAVE.Name = "IAVE";
             this.IAVE.Visible = true;
             this.IAVE.VisibleIndex = 2;

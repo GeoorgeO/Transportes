@@ -48,6 +48,13 @@ namespace TransportBusiness
         private void InsertarAsignaIAVE()
         {
             CLS_Activos_IAVES Clase = new CLS_Activos_IAVES();
+            if (TarjetaSelect.Length>0)
+            {
+                Clase.IAVEold = TarjetaSelect;
+            }else
+            {
+                Clase.IAVEold = textIAVE.Text.Trim();
+            }
             Clase.IAVE = textIAVE.Text.Trim();
             Clase.Id_Activo = IdActivo;
            
@@ -70,7 +77,7 @@ namespace TransportBusiness
             CLS_Activos_IAVES Clase = new CLS_Activos_IAVES();
             Clase.IAVE = textIAVE.Text.Trim();
             Clase.Id_Activo = IdActivo;
-            Clase.MtdInsertarActivos_IAVES();
+            Clase.MtdEliminarActivos_IAVES();
             if (Clase.Exito)
             {
                 CargarAsignaIAVE();
@@ -86,8 +93,6 @@ namespace TransportBusiness
         private void LimpiarCampos()
         {
             textIAVE.Text = "";
-            textIdActivo.Tag = "";
-            textActivo.Text = "";
             TarjetaSelect = "";
         }
 

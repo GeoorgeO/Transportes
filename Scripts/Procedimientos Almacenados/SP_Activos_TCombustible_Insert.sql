@@ -5,19 +5,19 @@ SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
-IF  EXISTS (SELECT * FROM SYS.OBJECTS WHERE TYPE = 'P' AND NAME = 'SP_Activos_IAVES_Insert')
-DROP PROCEDURE SP_Activos_IAVES_Insert
+IF  EXISTS (SELECT * FROM SYS.OBJECTS WHERE TYPE = 'P' AND NAME = 'SP_Activos_TCombustible_Insert')
+DROP PROCEDURE SP_Activos_TCombustible_Insert
 GO
 -- =============================================
 -- Author:		<Author,,Name>
 -- Create date: <Create Date,,>
 -- Description:	<Description,,>
 -- =============================================
-create PROCEDURE [dbo].[SP_Activos_IAVES_Insert] 
+create PROCEDURE [dbo].[SP_Activos_TCombustible_Insert] 
 	-- Add the parameters for the stored procedure here
 	@Id_Activo char(8),
-	@IAVE varchar(50),
-	@IAVEold varchar(50)
+	@Id_Tarjeta_Combustible varchar(20),
+	@Id_Tarjeta_Combustibleold varchar(20)
 AS
 BEGIN
 	-- SET NOCOUNT ON added to prevent extra result sets from
@@ -32,23 +32,23 @@ BEGIN
 
 
 		declare @Existe int
-		select @Existe = count(IAVE) from dbo.Activos_IAVES  where (Id_Activo=@Id_Activo and IAVE=@IAVEold)
+		select @Existe = count(Id_Tarjeta_Combustible) from dbo.Activos_TCombustible  where (Id_Activo=@Id_Activo and Id_Tarjeta_Combustible=@Id_Tarjeta_Combustibleold)
 
 		if @Existe>0 
 		
-			UPDATE dbo.Activos_IAVES
-		        SET IAVE=@IAVE
+			UPDATE dbo.Activos_TCombustible
+		        SET Id_Tarjeta_Combustible=@Id_Tarjeta_Combustible
 		    WHERE
-		    	Id_Activo=@Id_Activo and IAVE=@IAVEold
+		    	Id_Activo=@Id_Activo and Id_Tarjeta_Combustible=@Id_Tarjeta_Combustibleold
 				
 		else
 		
-			INSERT INTO dbo.Activos_IAVES
+			INSERT INTO dbo.Activos_TCombustible
 	           (Id_Activo
-	           ,IAVE)
+	           ,Id_Tarjeta_Combustible)
 	     	VALUES
 	           (@Id_Activo
-	           ,@IAVE)
+	           ,@Id_Tarjeta_Combustible)
 		
 		commit transaction T1;
 		set @correcto=1

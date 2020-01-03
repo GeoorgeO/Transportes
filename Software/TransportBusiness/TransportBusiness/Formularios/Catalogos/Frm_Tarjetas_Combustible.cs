@@ -16,6 +16,7 @@ namespace TransportBusiness
     {
 
         public Boolean PaSel { get; set; }
+        public string vTCombustible { get; set; }
 
         public Frm_Tarjetas_Combustible()
         {
@@ -115,6 +116,7 @@ namespace TransportBusiness
                 btnSeleccionar.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
             }
             CargarTarjeta();
+            LimpiarCampos();
         }
 
         private void gridControl1_Click(object sender, EventArgs e)
@@ -179,6 +181,19 @@ namespace TransportBusiness
         private void btnSalir_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             this.Close();
+        }
+
+        private void btnSeleccionar_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            if (textFolio.Enabled == false)
+            {
+                vTCombustible = textFolio.Text.Trim();
+                this.Close();
+            }
+            else
+            {
+                XtraMessageBox.Show("No ha seleccionado una Tarjeta");
+            }
         }
     }
 }

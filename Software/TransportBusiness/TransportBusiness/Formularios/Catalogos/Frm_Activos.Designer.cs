@@ -1299,6 +1299,7 @@
             this.btnTCombustible.Size = new System.Drawing.Size(121, 23);
             this.btnTCombustible.TabIndex = 67;
             this.btnTCombustible.Text = "T. Combustible";
+            this.btnTCombustible.Click += new System.EventHandler(this.btnTCombustible_Click);
             // 
             // btnBusqPoliza
             // 

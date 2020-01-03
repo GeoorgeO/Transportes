@@ -582,10 +582,31 @@ namespace TransportBusiness
 
         private void btnTIAVE_Click(object sender, EventArgs e)
         {
-            Frm_Asigna_Tarjeta_IAVE Clase = new Frm_Asigna_Tarjeta_IAVE();
-            Clase.IdActivo = txtIdActivo.Text.Trim();
-            Clase.Activo = txtNombreActivo.Text.Trim();
-            Clase.ShowDialog(); 
+            if (txtIdActivo.Text.Trim().Length > 0)
+            {
+                Frm_Asigna_Tarjeta_IAVE Clase = new Frm_Asigna_Tarjeta_IAVE();
+                Clase.IdActivo = txtIdActivo.Text.Trim();
+                Clase.Activo = txtNombreActivo.Text.Trim();
+                Clase.ShowDialog();
+            }else
+            {
+                XtraMessageBox.Show("No se ha seleccionado un activo");
+            }
+        }
+
+        private void btnTCombustible_Click(object sender, EventArgs e)
+        {
+            if (txtIdActivo.Text.Trim().Length > 0)
+            {
+                Frm_Asigna_Tarjeta_Combustible Clase = new Frm_Asigna_Tarjeta_Combustible();
+                Clase.IdActivo = txtIdActivo.Text.Trim();
+                Clase.Activo = txtNombreActivo.Text.Trim();
+                Clase.ShowDialog();
+            }
+            else
+            {
+                XtraMessageBox.Show("No se ha seleccionado un activo");
+            }
         }
 
         private void btnBusqPoliza_Click(object sender, EventArgs e)
