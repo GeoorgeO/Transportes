@@ -392,7 +392,10 @@
             this.Controls.Add(this.barDockControlRight);
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "Frm_Asigna_Tarjeta_IAVE";
             this.Text = "Asigna Tarjerta IAVE";
             this.Load += new System.EventHandler(this.Frm_Asigna_Tarjeta_IAVE_Load);

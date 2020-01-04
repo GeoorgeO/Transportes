@@ -30,9 +30,7 @@ ELSE
 		[Id_Empleado] [char](6) NULL,
 		[Id_Empresa] [char](4) NULL,
 		[Id_Factura] [varchar](50) NULL,
-		[IAVE] [varchar](50) NULL,
 		[Folio_Tarjeta_Circulacion] [varchar](20) NULL,
-		[Id_Tarjeta_Combustible] [varchar](20) NULL,
 		[EnRuta] [bit] NULL,
 	 CONSTRAINT [PK_Activos] PRIMARY KEY CLUSTERED 
 	(

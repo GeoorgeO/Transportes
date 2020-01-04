@@ -232,7 +232,7 @@
             this.panelControl2.Location = new System.Drawing.Point(67, 156);
             this.panelControl2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panelControl2.Name = "panelControl2";
-            this.panelControl2.Padding = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.panelControl2.Padding = new System.Windows.Forms.Padding(6);
             this.panelControl2.Size = new System.Drawing.Size(695, 412);
             this.panelControl2.TabIndex = 7;
             // 
@@ -296,7 +296,7 @@
             this.panelControl1.Location = new System.Drawing.Point(67, 0);
             this.panelControl1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Padding = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.panelControl1.Padding = new System.Windows.Forms.Padding(6);
             this.panelControl1.Size = new System.Drawing.Size(695, 156);
             this.panelControl1.TabIndex = 6;
             // 
@@ -395,7 +395,10 @@
             this.Controls.Add(this.barDockControlRight);
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "Frm_Asigna_Tarjeta_Combustible";
             this.Text = "Asigna Tarjeta Combustible";
             this.Load += new System.EventHandler(this.Frm_Asigna_Tarjeta_Combustible_Load);

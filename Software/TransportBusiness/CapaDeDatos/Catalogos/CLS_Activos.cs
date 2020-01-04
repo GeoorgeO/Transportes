@@ -31,7 +31,6 @@ namespace CapaDeDatos
         public string Id_Empleado { get; set; }
         public string Id_Empresa { get; set; }
         public string Id_Factura { get; set; }
-        public string IAVE { get; set; }
         public string Folio_Tarjeta_Circulacion { get; set; }
         public int SerieImagen { get; set; }
         public byte[] Imagen { get; set; }
@@ -40,7 +39,6 @@ namespace CapaDeDatos
         public byte[] ArchivoPDF { get; set; }
         public string NombreArchivoXML { get; set; }
         public byte[] ArchivoXML { get; set; }
-        public string TargCombustibles { get; set; }
 
         public void MtdSeleccionarActivos()
         {
@@ -154,12 +152,8 @@ namespace CapaDeDatos
                 _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_Empresa");
                 _dato.CadenaTexto = Id_Factura;
                 _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_Factura");
-                _dato.CadenaTexto = IAVE;
-                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "IAVE");
                 _dato.CadenaTexto = Folio_Tarjeta_Circulacion;
                 _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Folio_Tarjeta_Circulacion");
-                _dato.CadenaTexto = TargCombustibles;
-                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_Tarjeta_Combustible");
                 _conexion.EjecutarDataset();
 
                 if (_conexion.Exito)

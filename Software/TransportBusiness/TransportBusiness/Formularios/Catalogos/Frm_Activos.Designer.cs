@@ -75,9 +75,7 @@
             this.gridColumn25 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn26 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn27 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn28 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn29 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn30 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.Id_Activo = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Nombre_Interno = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -140,12 +138,8 @@
             this.btnBusqPoliza = new DevExpress.XtraEditors.SimpleButton();
             this.btnGallery = new DevExpress.XtraEditors.SimpleButton();
             this.btnXML = new DevExpress.XtraEditors.SimpleButton();
-            this.textTargCombustible = new DevExpress.XtraEditors.TextEdit();
-            this.labelControl25 = new DevExpress.XtraEditors.LabelControl();
-            this.textIAVE = new DevExpress.XtraEditors.TextEdit();
             this.textFolioCircula = new DevExpress.XtraEditors.TextEdit();
             this.labelControl24 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl23 = new DevExpress.XtraEditors.LabelControl();
             this.textFactura = new DevExpress.XtraEditors.TextEdit();
             this.labelControl22 = new DevExpress.XtraEditors.LabelControl();
             this.cboAsignado = new DevExpress.XtraEditors.ComboBoxEdit();
@@ -209,8 +203,6 @@
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.textTargCombustible.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textIAVE.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textFolioCircula.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textFactura.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cboAsignado.Properties)).BeginInit();
@@ -461,9 +453,7 @@
             this.gridColumn25,
             this.gridColumn26,
             this.gridColumn27,
-            this.gridColumn28,
-            this.gridColumn29,
-            this.gridColumn30});
+            this.gridColumn29});
             this.cardView1.FocusedCardTopFieldIndex = 0;
             this.cardView1.GridControl = this.dtgActivos;
             this.cardView1.Name = "cardView1";
@@ -686,29 +676,13 @@
             this.gridColumn27.Visible = true;
             this.gridColumn27.VisibleIndex = 26;
             // 
-            // gridColumn28
-            // 
-            this.gridColumn28.Caption = "IAVE";
-            this.gridColumn28.FieldName = "IAVE";
-            this.gridColumn28.Name = "gridColumn28";
-            this.gridColumn28.Visible = true;
-            this.gridColumn28.VisibleIndex = 27;
-            // 
             // gridColumn29
             // 
             this.gridColumn29.Caption = "Folio Tajeta Circulacion";
             this.gridColumn29.FieldName = "Folio_Tarjeta_Circulacion";
             this.gridColumn29.Name = "gridColumn29";
             this.gridColumn29.Visible = true;
-            this.gridColumn29.VisibleIndex = 28;
-            // 
-            // gridColumn30
-            // 
-            this.gridColumn30.Caption = "Tarjeta Combustible";
-            this.gridColumn30.FieldName = "Id_Tarjeta_Combustible";
-            this.gridColumn30.Name = "gridColumn30";
-            this.gridColumn30.Visible = true;
-            this.gridColumn30.VisibleIndex = 29;
+            this.gridColumn29.VisibleIndex = 27;
             // 
             // gridView1
             // 
@@ -1217,12 +1191,8 @@
             this.groupControl1.Controls.Add(this.btnBusqPoliza);
             this.groupControl1.Controls.Add(this.btnGallery);
             this.groupControl1.Controls.Add(this.btnXML);
-            this.groupControl1.Controls.Add(this.textTargCombustible);
-            this.groupControl1.Controls.Add(this.labelControl25);
-            this.groupControl1.Controls.Add(this.textIAVE);
             this.groupControl1.Controls.Add(this.textFolioCircula);
             this.groupControl1.Controls.Add(this.labelControl24);
-            this.groupControl1.Controls.Add(this.labelControl23);
             this.groupControl1.Controls.Add(this.textFactura);
             this.groupControl1.Controls.Add(this.labelControl22);
             this.groupControl1.Controls.Add(this.cboAsignado);
@@ -1333,36 +1303,6 @@
             this.btnXML.TabIndex = 64;
             this.btnXML.Click += new System.EventHandler(this.btnXML_Click);
             // 
-            // textTargCombustible
-            // 
-            this.textTargCombustible.Location = new System.Drawing.Point(450, 22);
-            this.textTargCombustible.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.textTargCombustible.MenuManager = this.barManager1;
-            this.textTargCombustible.Name = "textTargCombustible";
-            this.textTargCombustible.Size = new System.Drawing.Size(234, 22);
-            this.textTargCombustible.TabIndex = 9;
-            this.textTargCombustible.Visible = false;
-            // 
-            // labelControl25
-            // 
-            this.labelControl25.Location = new System.Drawing.Point(360, 28);
-            this.labelControl25.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.labelControl25.Name = "labelControl25";
-            this.labelControl25.Size = new System.Drawing.Size(91, 16);
-            this.labelControl25.TabIndex = 62;
-            this.labelControl25.Text = "T. Combustible:";
-            this.labelControl25.Visible = false;
-            // 
-            // textIAVE
-            // 
-            this.textIAVE.Location = new System.Drawing.Point(753, 23);
-            this.textIAVE.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.textIAVE.MenuManager = this.barManager1;
-            this.textIAVE.Name = "textIAVE";
-            this.textIAVE.Size = new System.Drawing.Size(129, 22);
-            this.textIAVE.TabIndex = 61;
-            this.textIAVE.Visible = false;
-            // 
             // textFolioCircula
             // 
             this.textFolioCircula.Location = new System.Drawing.Point(517, 142);
@@ -1380,16 +1320,6 @@
             this.labelControl24.Size = new System.Drawing.Size(78, 16);
             this.labelControl24.TabIndex = 59;
             this.labelControl24.Text = "Folio Tarjeta:";
-            // 
-            // labelControl23
-            // 
-            this.labelControl23.Location = new System.Drawing.Point(690, 28);
-            this.labelControl23.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.labelControl23.Name = "labelControl23";
-            this.labelControl23.Size = new System.Drawing.Size(32, 16);
-            this.labelControl23.TabIndex = 58;
-            this.labelControl23.Text = "IAVE:";
-            this.labelControl23.Visible = false;
             // 
             // textFactura
             // 
@@ -1908,8 +1838,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
             this.groupControl1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.textTargCombustible.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textIAVE.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textFolioCircula.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textFactura.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cboAsignado.Properties)).EndInit();
@@ -2092,15 +2020,9 @@
         private DevExpress.XtraEditors.TextEdit textFactura;
         private DevExpress.XtraEditors.LabelControl labelControl22;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn27;
-        private DevExpress.XtraEditors.TextEdit textIAVE;
         private DevExpress.XtraEditors.TextEdit textFolioCircula;
         private DevExpress.XtraEditors.LabelControl labelControl24;
-        private DevExpress.XtraEditors.LabelControl labelControl23;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn28;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn29;
-        private DevExpress.XtraEditors.TextEdit textTargCombustible;
-        private DevExpress.XtraEditors.LabelControl labelControl25;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn30;
         private DevExpress.XtraEditors.SimpleButton btnGallery;
         private DevExpress.XtraEditors.SimpleButton btnXML;
         private DevExpress.XtraBars.BarLargeButtonItem btnSeleccionar;

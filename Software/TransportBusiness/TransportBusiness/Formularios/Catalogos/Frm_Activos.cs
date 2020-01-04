@@ -251,9 +251,9 @@ namespace TransportBusiness
             }
 
             Activos.Id_Factura = textFactura.Text.Trim();
-            Activos.IAVE = textIAVE.Text.Trim();
+            
             Activos.Folio_Tarjeta_Circulacion = textFolioCircula.Text.Trim();
-            Activos.TargCombustibles = textTargCombustible.Text.Trim();
+            
 
             Activos.MtdInsertarActivos();
             if (Activos.Exito)
@@ -355,9 +355,9 @@ namespace TransportBusiness
             dtFechaAlta.Text = DateTime.Today.ToShortDateString();
             txtFechaBaja.Text = "";
             textFactura.Text = "";
-            textIAVE.Text = "";
+           
             textFolioCircula.Text = "";
-            textTargCombustible.Text = "";
+            
             ActivarCampos(true);
             OperadorAnterior = "";
         }
@@ -376,9 +376,9 @@ namespace TransportBusiness
             dtFechaAlta.Enabled = Valor;
             txtFechaBaja.Enabled = Valor;
             textFactura.Enabled = Valor;
-            textIAVE.Enabled = Valor;
+           
             textFolioCircula.Enabled = Valor;
-            textTargCombustible.Enabled = Valor;
+            
             cboAsignado.Enabled = Valor;
             btnTipoTransporte.Enabled = Valor;
             btnTipoActivo.Enabled = Valor;
@@ -444,9 +444,9 @@ namespace TransportBusiness
                         ActivarCampos(false);
                     }
                     textFactura.Text = row["Id_Factura"].ToString();
-                    textIAVE.Text = row["IAVE"].ToString();
+                    
                     textFolioCircula.Text = row["Folio_Tarjeta_Circulacion"].ToString();
-                    textTargCombustible.Text = row["Id_Tarjeta_Combustible"].ToString();
+                   
                 }
 
                
