@@ -28,9 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_BusqEntradas));
-            this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
+            this.barManager1 = new DevExpress.XtraBars.BarManager();
             this.bIconos = new DevExpress.XtraBars.Bar();
             this.btnSeleccionar = new DevExpress.XtraBars.BarLargeButtonItem();
             this.btnSalir = new DevExpress.XtraBars.BarLargeButtonItem();
@@ -47,6 +46,16 @@
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.dtgRutas = new DevExpress.XtraGrid.GridControl();
             this.dtgValRutas = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.Id_Entrada = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Id_Salida = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Fecha_Entrada = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Fecha_Cruce = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Id_Activo_P = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Nombre_Activo_P = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Id_Activo_1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Nombre_Activo_1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Nombre_Activo_2 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Id_Activo_2 = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
@@ -204,7 +213,7 @@
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelControl1.Location = new System.Drawing.Point(71, 0);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Padding = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.panelControl1.Padding = new System.Windows.Forms.Padding(5);
             this.panelControl1.Size = new System.Drawing.Size(598, 310);
             this.panelControl1.TabIndex = 8;
             // 
@@ -223,11 +232,96 @@
             // 
             // dtgValRutas
             // 
+            this.dtgValRutas.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.Id_Entrada,
+            this.Id_Salida,
+            this.Fecha_Entrada,
+            this.Fecha_Cruce,
+            this.Id_Activo_P,
+            this.Nombre_Activo_P,
+            this.Id_Activo_1,
+            this.Nombre_Activo_1,
+            this.Id_Activo_2,
+            this.Nombre_Activo_2});
             this.dtgValRutas.GridControl = this.dtgRutas;
             this.dtgValRutas.Name = "dtgValRutas";
             this.dtgValRutas.OptionsBehavior.Editable = false;
             this.dtgValRutas.OptionsFind.AlwaysVisible = true;
             this.dtgValRutas.OptionsView.ShowGroupPanel = false;
+            // 
+            // Id_Entrada
+            // 
+            this.Id_Entrada.Caption = "Id Entrada";
+            this.Id_Entrada.FieldName = "Id_Entrada";
+            this.Id_Entrada.Name = "Id_Entrada";
+            this.Id_Entrada.Visible = true;
+            this.Id_Entrada.VisibleIndex = 0;
+            // 
+            // Id_Salida
+            // 
+            this.Id_Salida.Caption = "Id Salida";
+            this.Id_Salida.FieldName = "Id_Salida";
+            this.Id_Salida.Name = "Id_Salida";
+            this.Id_Salida.Visible = true;
+            this.Id_Salida.VisibleIndex = 1;
+            // 
+            // Fecha_Entrada
+            // 
+            this.Fecha_Entrada.Caption = "Fecha Entrada";
+            this.Fecha_Entrada.FieldName = "Fecha_Entrada";
+            this.Fecha_Entrada.Name = "Fecha_Entrada";
+            this.Fecha_Entrada.Visible = true;
+            this.Fecha_Entrada.VisibleIndex = 2;
+            // 
+            // Fecha_Cruce
+            // 
+            this.Fecha_Cruce.Caption = "Fecha_Cruce";
+            this.Fecha_Cruce.FieldName = "Fecha_Cruce";
+            this.Fecha_Cruce.Name = "Fecha_Cruce";
+            this.Fecha_Cruce.Visible = true;
+            this.Fecha_Cruce.VisibleIndex = 3;
+            // 
+            // Id_Activo_P
+            // 
+            this.Id_Activo_P.Caption = "Id Activo P";
+            this.Id_Activo_P.FieldName = "Id_Activo_P";
+            this.Id_Activo_P.Name = "Id_Activo_P";
+            // 
+            // Nombre_Activo_P
+            // 
+            this.Nombre_Activo_P.Caption = "Activo Principal";
+            this.Nombre_Activo_P.FieldName = "Nombre_Activo_P";
+            this.Nombre_Activo_P.Name = "Nombre_Activo_P";
+            this.Nombre_Activo_P.Visible = true;
+            this.Nombre_Activo_P.VisibleIndex = 4;
+            // 
+            // Id_Activo_1
+            // 
+            this.Id_Activo_1.Caption = "Id Activo 1";
+            this.Id_Activo_1.FieldName = "Id_Activo_1";
+            this.Id_Activo_1.Name = "Id_Activo_1";
+            // 
+            // Nombre_Activo_1
+            // 
+            this.Nombre_Activo_1.Caption = "Activo Secundario";
+            this.Nombre_Activo_1.FieldName = "Nombre_Activo_1";
+            this.Nombre_Activo_1.Name = "Nombre_Activo_1";
+            this.Nombre_Activo_1.Visible = true;
+            this.Nombre_Activo_1.VisibleIndex = 5;
+            // 
+            // Nombre_Activo_2
+            // 
+            this.Nombre_Activo_2.Caption = "Activo Adicional";
+            this.Nombre_Activo_2.FieldName = "Nombre_Activo_2";
+            this.Nombre_Activo_2.Name = "Nombre_Activo_2";
+            this.Nombre_Activo_2.Visible = true;
+            this.Nombre_Activo_2.VisibleIndex = 6;
+            // 
+            // Id_Activo_2
+            // 
+            this.Id_Activo_2.Caption = "Id Activo 2";
+            this.Id_Activo_2.FieldName = "Id_Activo_2";
+            this.Id_Activo_2.Name = "Id_Activo_2";
             // 
             // Frm_BusqEntradas
             // 
@@ -242,6 +336,7 @@
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Frm_BusqEntradas";
             this.Text = "Busqueda de Entradas";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Frm_BusqEntradas_FormClosed);
             this.Load += new System.EventHandler(this.Frm_BusqEntradas_Load);
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).EndInit();
@@ -273,5 +368,15 @@
         private DevExpress.XtraEditors.PanelControl panelControl1;
         private DevExpress.XtraGrid.GridControl dtgRutas;
         private DevExpress.XtraGrid.Views.Grid.GridView dtgValRutas;
+        private DevExpress.XtraGrid.Columns.GridColumn Id_Entrada;
+        private DevExpress.XtraGrid.Columns.GridColumn Id_Salida;
+        private DevExpress.XtraGrid.Columns.GridColumn Fecha_Entrada;
+        private DevExpress.XtraGrid.Columns.GridColumn Fecha_Cruce;
+        private DevExpress.XtraGrid.Columns.GridColumn Id_Activo_P;
+        private DevExpress.XtraGrid.Columns.GridColumn Nombre_Activo_P;
+        private DevExpress.XtraGrid.Columns.GridColumn Id_Activo_1;
+        private DevExpress.XtraGrid.Columns.GridColumn Nombre_Activo_1;
+        private DevExpress.XtraGrid.Columns.GridColumn Id_Activo_2;
+        private DevExpress.XtraGrid.Columns.GridColumn Nombre_Activo_2;
     }
 }

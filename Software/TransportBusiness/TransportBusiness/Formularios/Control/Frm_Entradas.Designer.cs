@@ -1,4 +1,4 @@
-﻿namespace TransportBusiness.Formularios.Control
+﻿namespace TransportBusiness
 {
     partial class Frm_Entradas
     {
@@ -28,9 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_Entradas));
-            this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
+            this.barManager1 = new DevExpress.XtraBars.BarManager();
             this.bIconos = new DevExpress.XtraBars.Bar();
             this.btnLimpiar = new DevExpress.XtraBars.BarLargeButtonItem();
             this.btnGuardar = new DevExpress.XtraBars.BarLargeButtonItem();
@@ -45,11 +44,13 @@
             this.repositoryItemTextEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
+            this.dtFechaCruce = new DevExpress.XtraEditors.DateEdit();
+            this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.dtFechaEntrada = new DevExpress.XtraEditors.DateEdit();
             this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
-            this.textEdit1 = new DevExpress.XtraEditors.TextEdit();
+            this.textSalida = new DevExpress.XtraEditors.TextEdit();
             this.btnBusqSalida = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
             this.textActivoAdicional = new DevExpress.XtraEditors.TextEdit();
@@ -58,24 +59,22 @@
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.textActivoPrincipal = new DevExpress.XtraEditors.TextEdit();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
-            this.textFolio = new DevExpress.XtraEditors.TextEdit();
-            this.dateEdit1 = new DevExpress.XtraEditors.DateEdit();
-            this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
+            this.textEntrada = new DevExpress.XtraEditors.TextEdit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtFechaCruce.Properties.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtFechaCruce.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtFechaEntrada.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtFechaEntrada.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textSalida.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textActivoAdicional.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textActivoSec.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textActivoPrincipal.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textFolio.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEdit1.Properties.CalendarTimeProperties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEdit1.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEntrada.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // barManager1
@@ -223,13 +222,13 @@
             // 
             // groupControl1
             // 
-            this.groupControl1.Controls.Add(this.dateEdit1);
+            this.groupControl1.Controls.Add(this.dtFechaCruce);
             this.groupControl1.Controls.Add(this.labelControl7);
             this.groupControl1.Controls.Add(this.simpleButton1);
             this.groupControl1.Controls.Add(this.dtFechaEntrada);
             this.groupControl1.Controls.Add(this.labelControl6);
             this.groupControl1.Controls.Add(this.labelControl5);
-            this.groupControl1.Controls.Add(this.textEdit1);
+            this.groupControl1.Controls.Add(this.textSalida);
             this.groupControl1.Controls.Add(this.btnBusqSalida);
             this.groupControl1.Controls.Add(this.labelControl4);
             this.groupControl1.Controls.Add(this.textActivoAdicional);
@@ -238,13 +237,34 @@
             this.groupControl1.Controls.Add(this.labelControl2);
             this.groupControl1.Controls.Add(this.textActivoPrincipal);
             this.groupControl1.Controls.Add(this.labelControl1);
-            this.groupControl1.Controls.Add(this.textFolio);
+            this.groupControl1.Controls.Add(this.textEntrada);
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl1.Location = new System.Drawing.Point(12, 12);
             this.groupControl1.Name = "groupControl1";
             this.groupControl1.Size = new System.Drawing.Size(529, 174);
             this.groupControl1.TabIndex = 0;
             this.groupControl1.Text = "Entrada Activos en Ruta";
+            // 
+            // dtFechaCruce
+            // 
+            this.dtFechaCruce.EditValue = null;
+            this.dtFechaCruce.Location = new System.Drawing.Point(316, 61);
+            this.dtFechaCruce.MenuManager = this.barManager1;
+            this.dtFechaCruce.Name = "dtFechaCruce";
+            this.dtFechaCruce.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dtFechaCruce.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dtFechaCruce.Size = new System.Drawing.Size(89, 20);
+            this.dtFechaCruce.TabIndex = 83;
+            // 
+            // labelControl7
+            // 
+            this.labelControl7.Location = new System.Drawing.Point(255, 65);
+            this.labelControl7.Name = "labelControl7";
+            this.labelControl7.Size = new System.Drawing.Size(45, 13);
+            this.labelControl7.TabIndex = 82;
+            this.labelControl7.Text = "F. Cruce:";
             // 
             // simpleButton1
             // 
@@ -283,14 +303,14 @@
             this.labelControl5.TabIndex = 78;
             this.labelControl5.Text = "Folio Salida:";
             // 
-            // textEdit1
+            // textSalida
             // 
-            this.textEdit1.Enabled = false;
-            this.textEdit1.Location = new System.Drawing.Point(121, 61);
-            this.textEdit1.MenuManager = this.barManager1;
-            this.textEdit1.Name = "textEdit1";
-            this.textEdit1.Size = new System.Drawing.Size(92, 20);
-            this.textEdit1.TabIndex = 77;
+            this.textSalida.Enabled = false;
+            this.textSalida.Location = new System.Drawing.Point(121, 61);
+            this.textSalida.MenuManager = this.barManager1;
+            this.textSalida.Name = "textSalida";
+            this.textSalida.Size = new System.Drawing.Size(92, 20);
+            this.textSalida.TabIndex = 77;
             // 
             // btnBusqSalida
             // 
@@ -299,6 +319,7 @@
             this.btnBusqSalida.Name = "btnBusqSalida";
             this.btnBusqSalida.Size = new System.Drawing.Size(24, 23);
             this.btnBusqSalida.TabIndex = 76;
+            this.btnBusqSalida.Click += new System.EventHandler(this.btnBusqSalida_Click);
             // 
             // labelControl4
             // 
@@ -310,6 +331,7 @@
             // 
             // textActivoAdicional
             // 
+            this.textActivoAdicional.Enabled = false;
             this.textActivoAdicional.Location = new System.Drawing.Point(121, 139);
             this.textActivoAdicional.MenuManager = this.barManager1;
             this.textActivoAdicional.Name = "textActivoAdicional";
@@ -326,6 +348,7 @@
             // 
             // textActivoSec
             // 
+            this.textActivoSec.Enabled = false;
             this.textActivoSec.Location = new System.Drawing.Point(121, 113);
             this.textActivoSec.MenuManager = this.barManager1;
             this.textActivoSec.Name = "textActivoSec";
@@ -342,6 +365,7 @@
             // 
             // textActivoPrincipal
             // 
+            this.textActivoPrincipal.Enabled = false;
             this.textActivoPrincipal.Location = new System.Drawing.Point(121, 87);
             this.textActivoPrincipal.MenuManager = this.barManager1;
             this.textActivoPrincipal.Name = "textActivoPrincipal";
@@ -356,35 +380,14 @@
             this.labelControl1.TabIndex = 69;
             this.labelControl1.Text = "Folio Entrada:";
             // 
-            // textFolio
+            // textEntrada
             // 
-            this.textFolio.Enabled = false;
-            this.textFolio.Location = new System.Drawing.Point(121, 35);
-            this.textFolio.MenuManager = this.barManager1;
-            this.textFolio.Name = "textFolio";
-            this.textFolio.Size = new System.Drawing.Size(92, 20);
-            this.textFolio.TabIndex = 68;
-            // 
-            // dateEdit1
-            // 
-            this.dateEdit1.EditValue = null;
-            this.dateEdit1.Location = new System.Drawing.Point(316, 61);
-            this.dateEdit1.MenuManager = this.barManager1;
-            this.dateEdit1.Name = "dateEdit1";
-            this.dateEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dateEdit1.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dateEdit1.Size = new System.Drawing.Size(89, 20);
-            this.dateEdit1.TabIndex = 83;
-            // 
-            // labelControl7
-            // 
-            this.labelControl7.Location = new System.Drawing.Point(255, 65);
-            this.labelControl7.Name = "labelControl7";
-            this.labelControl7.Size = new System.Drawing.Size(45, 13);
-            this.labelControl7.TabIndex = 82;
-            this.labelControl7.Text = "F. Cruce:";
+            this.textEntrada.Enabled = false;
+            this.textEntrada.Location = new System.Drawing.Point(121, 35);
+            this.textEntrada.MenuManager = this.barManager1;
+            this.textEntrada.Name = "textEntrada";
+            this.textEntrada.Size = new System.Drawing.Size(92, 20);
+            this.textEntrada.TabIndex = 68;
             // 
             // Frm_Entradas
             // 
@@ -408,15 +411,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
             this.groupControl1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtFechaCruce.Properties.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtFechaCruce.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtFechaEntrada.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtFechaEntrada.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textSalida.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textActivoAdicional.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textActivoSec.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textActivoPrincipal.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textFolio.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEdit1.Properties.CalendarTimeProperties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEdit1.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEntrada.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -440,7 +443,7 @@
         private DevExpress.XtraEditors.PanelControl panelControl1;
         private DevExpress.XtraEditors.GroupControl groupControl1;
         private DevExpress.XtraEditors.LabelControl labelControl5;
-        private DevExpress.XtraEditors.TextEdit textEdit1;
+        private DevExpress.XtraEditors.TextEdit textSalida;
         private DevExpress.XtraEditors.SimpleButton btnBusqSalida;
         private DevExpress.XtraEditors.LabelControl labelControl4;
         private DevExpress.XtraEditors.TextEdit textActivoAdicional;
@@ -449,11 +452,11 @@
         private DevExpress.XtraEditors.LabelControl labelControl2;
         private DevExpress.XtraEditors.TextEdit textActivoPrincipal;
         private DevExpress.XtraEditors.LabelControl labelControl1;
-        private DevExpress.XtraEditors.TextEdit textFolio;
+        private DevExpress.XtraEditors.TextEdit textEntrada;
         private DevExpress.XtraEditors.DateEdit dtFechaEntrada;
         private DevExpress.XtraEditors.LabelControl labelControl6;
         private DevExpress.XtraEditors.SimpleButton simpleButton1;
-        private DevExpress.XtraEditors.DateEdit dateEdit1;
+        private DevExpress.XtraEditors.DateEdit dtFechaCruce;
         private DevExpress.XtraEditors.LabelControl labelControl7;
     }
 }
