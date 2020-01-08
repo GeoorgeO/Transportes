@@ -18,10 +18,10 @@ create PROCEDURE [dbo].[SP_Entradas_Insert]
 	@Id_Entrada char(10),
 	@Id_Salida char(10),
 	@Fecha_Entrada datetime,
-	@Fecha_Cruce datetime,
 	@Id_Activo_P char(8),
 	@Id_Activo_1 char(8),
-	@Id_Activo_2 char(8)
+	@Id_Activo_2 char(8),
+	@EnRuta bit
 AS
 BEGIN
 	-- SET NOCOUNT ON added to prevent extra result sets from
@@ -34,7 +34,7 @@ BEGIN
 	begin transaction T1;
 	begin try
 
-		declare @maximo char(4)
+		declare @maximo char(10)
 		select @maximo=right(Concat('0000000000', isnull(max(Id_Entrada),0)+1),10) from dbo.Entradas
 
 		declare @Existe int
@@ -44,8 +44,7 @@ BEGIN
 		
 			UPDATE dbo.Entradas
 		        SET Id_Salida=@Id_Salida,
-				Fecha_Entrada=@Fecha_Entrada,
-				Fecha_Cruce=@Fecha_Cruce
+				Fecha_Entrada=@Fecha_Entrada
 		    WHERE
 		    	Id_Entrada=@Id_Entrada
 				
@@ -55,18 +54,23 @@ BEGIN
 	           (Id_Entrada
 	           ,Id_Salida
 			   ,Fecha_Entrada
-			   ,Fecha_Cruce
 			   ,Id_Activo_P
 			   ,Id_Activo_1
 			   ,Id_Activo_2)
 	     	VALUES
-	           (@Id_Entrada
+	           (@maximo
 	           ,@Id_Salida
 			   ,@Fecha_Entrada
-			   ,@Fecha_Cruce
 			   ,@Id_Activo_P
 			   ,@Id_Activo_1
 			   ,@Id_Activo_2)
+			   
+		if @Existe>0 	   
+			select 0
+		else
+			update Activos set EnRuta=@EnRuta where Id_Activo=@Id_Activo_P or Id_Activo=@Id_Activo_1 or Id_Activo=@Id_Activo_2
+			   
+		
 		
 		commit transaction T1;
 		set @correcto=1

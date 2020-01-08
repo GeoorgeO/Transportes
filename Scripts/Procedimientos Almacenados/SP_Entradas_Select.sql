@@ -37,7 +37,6 @@ BEGIN
 		select Id_Entrada
 	      ,Id_Salida
 		  ,Fecha_Entrada
-		  ,Fecha_Cruce
 		  ,Id_Activo_P=(select Id_Activo_P from Activos where Id_Activo=E.Id_Activo_P)
 		  ,Nombre_Activo_P=(select Nombre_Interno from Activos where Id_Activo=E.Id_Activo_P)
 		  ,Id_Activo_1=(select Id_Activo_P from Activos where Id_Activo=E.Id_Activo_1)

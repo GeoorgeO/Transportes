@@ -28,8 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_BusqEntradas));
-            this.barManager1 = new DevExpress.XtraBars.BarManager();
+            this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.bIconos = new DevExpress.XtraBars.Bar();
             this.btnSeleccionar = new DevExpress.XtraBars.BarLargeButtonItem();
             this.btnSalir = new DevExpress.XtraBars.BarLargeButtonItem();
@@ -49,13 +50,12 @@
             this.Id_Entrada = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Id_Salida = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Fecha_Entrada = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.Fecha_Cruce = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Id_Activo_P = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Nombre_Activo_P = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Id_Activo_1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Nombre_Activo_1 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.Nombre_Activo_2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Id_Activo_2 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Nombre_Activo_2 = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
@@ -153,15 +153,17 @@
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
             this.barDockControlTop.Manager = this.barManager1;
-            this.barDockControlTop.Size = new System.Drawing.Size(669, 0);
+            this.barDockControlTop.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.barDockControlTop.Size = new System.Drawing.Size(780, 0);
             // 
             // barDockControlBottom
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 310);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 378);
             this.barDockControlBottom.Manager = this.barManager1;
-            this.barDockControlBottom.Size = new System.Drawing.Size(669, 25);
+            this.barDockControlBottom.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.barDockControlBottom.Size = new System.Drawing.Size(780, 34);
             // 
             // barDockControlLeft
             // 
@@ -169,15 +171,17 @@
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.barDockControlLeft.Location = new System.Drawing.Point(0, 0);
             this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Size = new System.Drawing.Size(71, 310);
+            this.barDockControlLeft.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.barDockControlLeft.Size = new System.Drawing.Size(87, 378);
             // 
             // barDockControlRight
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(669, 0);
+            this.barDockControlRight.Location = new System.Drawing.Point(780, 0);
             this.barDockControlRight.Manager = this.barManager1;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 310);
+            this.barDockControlRight.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 378);
             // 
             // btnLimpiar
             // 
@@ -211,20 +215,23 @@
             // 
             this.panelControl1.Controls.Add(this.dtgRutas);
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelControl1.Location = new System.Drawing.Point(71, 0);
+            this.panelControl1.Location = new System.Drawing.Point(87, 0);
+            this.panelControl1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Padding = new System.Windows.Forms.Padding(5);
-            this.panelControl1.Size = new System.Drawing.Size(598, 310);
+            this.panelControl1.Padding = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.panelControl1.Size = new System.Drawing.Size(693, 378);
             this.panelControl1.TabIndex = 8;
             // 
             // dtgRutas
             // 
             this.dtgRutas.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dtgRutas.Location = new System.Drawing.Point(7, 7);
+            this.dtgRutas.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.dtgRutas.Location = new System.Drawing.Point(8, 8);
             this.dtgRutas.MainView = this.dtgValRutas;
+            this.dtgRutas.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dtgRutas.MenuManager = this.barManager1;
             this.dtgRutas.Name = "dtgRutas";
-            this.dtgRutas.Size = new System.Drawing.Size(584, 296);
+            this.dtgRutas.Size = new System.Drawing.Size(677, 362);
             this.dtgRutas.TabIndex = 0;
             this.dtgRutas.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.dtgValRutas});
@@ -236,7 +243,6 @@
             this.Id_Entrada,
             this.Id_Salida,
             this.Fecha_Entrada,
-            this.Fecha_Cruce,
             this.Id_Activo_P,
             this.Nombre_Activo_P,
             this.Id_Activo_1,
@@ -273,14 +279,6 @@
             this.Fecha_Entrada.Visible = true;
             this.Fecha_Entrada.VisibleIndex = 2;
             // 
-            // Fecha_Cruce
-            // 
-            this.Fecha_Cruce.Caption = "Fecha_Cruce";
-            this.Fecha_Cruce.FieldName = "Fecha_Cruce";
-            this.Fecha_Cruce.Name = "Fecha_Cruce";
-            this.Fecha_Cruce.Visible = true;
-            this.Fecha_Cruce.VisibleIndex = 3;
-            // 
             // Id_Activo_P
             // 
             this.Id_Activo_P.Caption = "Id Activo P";
@@ -293,7 +291,7 @@
             this.Nombre_Activo_P.FieldName = "Nombre_Activo_P";
             this.Nombre_Activo_P.Name = "Nombre_Activo_P";
             this.Nombre_Activo_P.Visible = true;
-            this.Nombre_Activo_P.VisibleIndex = 4;
+            this.Nombre_Activo_P.VisibleIndex = 3;
             // 
             // Id_Activo_1
             // 
@@ -307,15 +305,7 @@
             this.Nombre_Activo_1.FieldName = "Nombre_Activo_1";
             this.Nombre_Activo_1.Name = "Nombre_Activo_1";
             this.Nombre_Activo_1.Visible = true;
-            this.Nombre_Activo_1.VisibleIndex = 5;
-            // 
-            // Nombre_Activo_2
-            // 
-            this.Nombre_Activo_2.Caption = "Activo Adicional";
-            this.Nombre_Activo_2.FieldName = "Nombre_Activo_2";
-            this.Nombre_Activo_2.Name = "Nombre_Activo_2";
-            this.Nombre_Activo_2.Visible = true;
-            this.Nombre_Activo_2.VisibleIndex = 6;
+            this.Nombre_Activo_1.VisibleIndex = 4;
             // 
             // Id_Activo_2
             // 
@@ -323,11 +313,19 @@
             this.Id_Activo_2.FieldName = "Id_Activo_2";
             this.Id_Activo_2.Name = "Id_Activo_2";
             // 
+            // Nombre_Activo_2
+            // 
+            this.Nombre_Activo_2.Caption = "Activo Adicional";
+            this.Nombre_Activo_2.FieldName = "Nombre_Activo_2";
+            this.Nombre_Activo_2.Name = "Nombre_Activo_2";
+            this.Nombre_Activo_2.Visible = true;
+            this.Nombre_Activo_2.VisibleIndex = 5;
+            // 
             // Frm_BusqEntradas
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(669, 335);
+            this.ClientSize = new System.Drawing.Size(780, 412);
             this.Controls.Add(this.panelControl1);
             this.Controls.Add(this.barDockControlLeft);
             this.Controls.Add(this.barDockControlRight);
@@ -371,7 +369,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn Id_Entrada;
         private DevExpress.XtraGrid.Columns.GridColumn Id_Salida;
         private DevExpress.XtraGrid.Columns.GridColumn Fecha_Entrada;
-        private DevExpress.XtraGrid.Columns.GridColumn Fecha_Cruce;
         private DevExpress.XtraGrid.Columns.GridColumn Id_Activo_P;
         private DevExpress.XtraGrid.Columns.GridColumn Nombre_Activo_P;
         private DevExpress.XtraGrid.Columns.GridColumn Id_Activo_1;
