@@ -334,10 +334,10 @@
     <Compile Include="Formularios\Frm_Servicios_Buscar.Designer.cs">
       <DependentUpon>Frm_Servicios_Buscar.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\Por Realizar\Frm_Rutas.cs">
+    <Compile Include="Formularios\Catalogos\Frm_Rutas.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\Por Realizar\Frm_Rutas.Designer.cs">
+    <Compile Include="Formularios\Catalogos\Frm_Rutas.Designer.cs">
       <DependentUpon>Frm_Rutas.cs</DependentUpon>
     </Compile>
     <Compile Include="Formularios\Catalogos\Frm_View_PDF.cs">
@@ -412,10 +412,10 @@
     <Compile Include="Formularios\Control\Frm_Salidas.Designer.cs">
       <DependentUpon>Frm_Salidas.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\Por Realizar\Frm_Rutas_Buscar.cs">
+    <Compile Include="Formularios\Catalogos\Frm_Rutas_Buscar.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\Por Realizar\Frm_Rutas_Buscar.Designer.cs">
+    <Compile Include="Formularios\Catalogos\Frm_Rutas_Buscar.Designer.cs">
       <DependentUpon>Frm_Rutas_Buscar.cs</DependentUpon>
     </Compile>
     <Compile Include="Formularios\Seguridad\Frm_Pantallas.cs">
@@ -594,7 +594,7 @@
     <EmbeddedResource Include="Formularios\Frm_Servicios_Buscar.resx">
       <DependentUpon>Frm_Servicios_Buscar.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\Por Realizar\Frm_Rutas.resx">
+    <EmbeddedResource Include="Formularios\Catalogos\Frm_Rutas.resx">
       <DependentUpon>Frm_Rutas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Catalogos\Frm_View_PDF.resx">
@@ -624,7 +624,7 @@
     <EmbeddedResource Include="Formularios\Catalogos\Tipos\Frm_Tipo_Transporte.resx">
       <DependentUpon>Frm_Tipo_Transporte.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\Por Realizar\Frm_Rutas_Buscar.resx">
+    <EmbeddedResource Include="Formularios\Catalogos\Frm_Rutas_Buscar.resx">
       <DependentUpon>Frm_Rutas_Buscar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Seguridad\Frm_Pantallas.resx">
@@ -665,7 +665,9 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Formularios\Por Realizar\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.
