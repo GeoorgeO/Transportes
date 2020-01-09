@@ -1354,6 +1354,71 @@ namespace TransportBusiness
             textOperador.Tag = frm.vId_Empleado;
         }
 
+        private void btnUpPDFG_Click(object sender, EventArgs e)
+        {
+            OpenDialog.Filter = "Portable Document Format (*.PDF)|*.PDF";
+            OpenDialog.FilterIndex = 1;
+            OpenDialog.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments); ;
+            OpenDialog.Title = "Cargar Documento PDF";
+            OpenDialog.CheckFileExists = false;
+            OpenDialog.Multiselect = false;
+            DialogResult result = OpenDialog.ShowDialog();
+            if (result == DialogResult.OK)
+            {
+                TextEdit textEdit = new TextEdit();
+                textEdit.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Regular;
+                textEdit.Properties.MaxLength = 100;
+                //textEdit.Properties.Mask.EditMask = "f0";
+                //textEdit.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.
+                XtraInputBoxArgs args = new XtraInputBoxArgs();
+                // set required Input Box options 
+                var result2 = "";
+                do
+                {
+                    args.Caption = "Ingrese el nombre del Archivo";
+                    args.Prompt = "Descripción";
+                    args.DefaultButtonIndex = 0;
+                    //args.Showing += Args_Showing;
+                    // initialize a DateEdit editor with custom settings 
+                    TextEdit editor = new TextEdit();
+                    args.Editor = editor;
+                    // a default DateEdit value 
+                    args.DefaultResponse = "Archivo PDF";
+                    // display an Input Box with the custom editor
+                    args.Editor = textEdit;
+                    result2 = XtraInputBox.Show(args).ToString();
+                } while (result2.Length == 0);
+
+
+                if (result2 != null)
+                {
+                    NombrePDF = result2;
+                    RutaPDF = OpenDialog.FileName;
+                    textNombreArchivoPDF.Text = result2;
+                    //string ar = OpenDialog.FileName;
+                    //FileStream fs = new FileStream(ar, FileMode.Open);
+                    ////Creamos un array de bytes para almacenar los datos leídos por fs.
+                    //Byte[] Archivo = new byte[fs.Length];
+                    ////Y guardamos los datos en el array data
+                    //fs.Read(Archivo, 0, Convert.ToInt32(fs.Length));
+                    //CLS_Activos udp = new CLS_Activos();
+                    //udp.Id_Activo = ;
+                    //udp.Opcion = 1;
+                    //udp.NombreArchivoPDF = txtNombreArchivoPDF.Text;
+                    //udp.ArchivoPDF = Archivo;
+                    //udp.MtdUpdateActivoArchivoPDF();
+                    //if (udp.Exito)
+                    //{
+                    //    XtraMessageBox.Show("Se a agregado el PDF con Exito");
+                    //}
+                    //else
+                    //{
+                    //    XtraMessageBox.Show(udp.Mensaje);
+                    //}
+                }
+            }
+        }
+
         private void limpiarSalidasFacturas()
         {
             textImporteF.Text = "0";

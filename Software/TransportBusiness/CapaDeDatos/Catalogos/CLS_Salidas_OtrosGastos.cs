@@ -13,6 +13,12 @@ namespace CapaDeDatos
         public decimal Importe { get; set; }
         public string Id_GastoDirecto { get; set; }
         public string PagoOperador { get; set; }
+        public string Otros_Gastos { get; set; }
+        public byte[] FacturaPDF { get; set; }
+        public string FacturaPDFNombre { get; set; }
+        public byte[] FacturaXML { get; set; }
+        public string FacturaXMLNombre { get; set; }
+        public string Moneda { get; set; }
 
         public void MtdSeleccionarSalidas_OtrosGastos()
         {
@@ -66,6 +72,18 @@ namespace CapaDeDatos
                 _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_GastoDirecto");
                 _dato.CadenaTexto = PagoOperador;
                 _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "PagoOperador");
+                _dato.ArchivoValor = FacturaPDF;
+                _conexion.agregarParametro(EnumTipoDato.Archivo, _dato, "FacturaPDF");
+                _dato.CadenaTexto = FacturaPDFNombre;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "FacturaPDFNombre");
+                _dato.ArchivoValor = FacturaXML;
+                _conexion.agregarParametro(EnumTipoDato.Archivo, _dato, "FacturaXML");
+                _dato.CadenaTexto = FacturaXMLNombre;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "FacturaXMLNombre");
+                _dato.CadenaTexto = Moneda;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Moneda");
+                _dato.CadenaTexto = Otros_Gastos;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Otros_Gastos");
                 _conexion.EjecutarDataset();
 
                 if (_conexion.Exito)

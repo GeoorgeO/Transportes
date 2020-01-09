@@ -34,6 +34,12 @@ BEGIN
 			   ,G.Nombre_GastoDirecto
 			   ,Importe
 			   ,PagoOperador
+			   ,Otros_Gastos,
+				Moneda,
+				FacturaPDF,
+				FacturaPDFNombre,
+				FacturaXML,
+				FacturaXMLNombre
 			from dbo.Salidas_OtrosGastos as S
 			left join GastosDirectos as G on G.Id_GastoDirecto=S.Id_GastoDirecto
 			where Id_Salida=@Id_Salida

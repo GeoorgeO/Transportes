@@ -13,6 +13,12 @@ ELSE
 		[Id_GastoDirecto] [char](4) NOT NULL,
 		[Importe] [numeric](18, 2) NULL,
 		[PagoOperador] [bit] NOT NULL,
+		[Otros_Gastos] [varchar](80) NULL,
+		[Moneda] [char](1) NOT NUll,
+		[FacturaPDF] [varbinary](max) NULL,
+		[FacturaPDFNombre] [varchar](80) NULL,
+		[FacturaXML] [varbinary](max) NULL,
+		[FacturaXMLNombre] [varchar](80) NULL,
 	 CONSTRAINT [PK_SalidasOtrosGastos] PRIMARY KEY CLUSTERED 
 	(
 		[Ticket] ASC,

@@ -19,7 +19,13 @@ create PROCEDURE [dbo].[SP_Salidas_OtrosGastos_Insert]
 	@Id_Salida char(10),
 	@Id_GastoDirecto char(4),
 	@Importe numeric(18, 2),
-	@PagoOperador bit
+	@PagoOperador bit,
+	@Otros_Gastos varchar(80),
+	@Moneda char(1),
+	@FacturaPDF varbinary(max),
+	@FacturaPDFNombre varchar(80),
+	@FacturaXML varbinary(max),
+	@FacturaXMLNombre varchar(80)
 AS
 BEGIN
 	-- SET NOCOUNT ON added to prevent extra result sets from
@@ -37,13 +43,25 @@ BEGIN
 	           ,Id_Salida
 			   ,Id_GastoDirecto
 			   ,Importe
-			   ,PagoOperador)
+			   ,PagoOperador
+			   ,Otros_Gastos,
+				Moneda,
+				FacturaPDF,
+				FacturaPDFNombre,
+				FacturaXML,
+				FacturaXMLNombre)
 	     	VALUES
 	           (@Ticket
 	           ,@Id_Salida
 			   ,@Id_GastoDirecto
 			   ,@Importe
-			   ,@PagoOperador)
+			   ,@PagoOperador
+			   ,@Otros_Gastos,
+				@Moneda,
+				@FacturaPDF,
+				@FacturaPDFNombre,
+				@FacturaXML,
+				@FacturaXMLNombre)
 		
 		commit transaction T1;
 		set @correcto=1

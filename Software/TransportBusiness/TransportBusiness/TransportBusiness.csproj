@@ -394,12 +394,6 @@
     <Compile Include="Formularios\Catalogos\Tipos\Frm_Tipo_Transporte.Designer.cs">
       <DependentUpon>Frm_Tipo_Transporte.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\Control\Frm_Check_List.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Formularios\Control\Frm_Check_List.Designer.cs">
-      <DependentUpon>Frm_Check_List.cs</DependentUpon>
-    </Compile>
     <Compile Include="Formularios\Control\Frm_Entradas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -566,9 +560,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Control\Frm_BusqSalidas.resx">
       <DependentUpon>Frm_BusqSalidas.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\Control\Frm_Check_List.resx">
-      <DependentUpon>Frm_Check_List.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Control\Frm_Entradas.resx">
       <DependentUpon>Frm_Entradas.cs</DependentUpon>
