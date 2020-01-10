@@ -51,6 +51,39 @@ namespace CapaDeDatos
 
         }
 
+        public void MtdSeleccionarSalidasArchivoPDFXMLView()
+        {
+            TipoDato _dato = new TipoDato();
+            Conexion _conexion = new Conexion(cadenaConexion);
+            Exito = true;
+            try
+            {
+                _conexion.NombreProcedimiento = "SP_Salidas_OtrosGastos_View_Select";
+                _dato.CadenaTexto = Id_Salida;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_Salida");
+                _dato.CadenaTexto = Ticket;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Ticket");
+                _conexion.EjecutarDataset();
+
+                if (_conexion.Exito)
+                {
+                    Datos = _conexion.Datos;
+                }
+                else
+                {
+                    Mensaje = _conexionR.Mensaje;
+                    Exito = false;
+                }
+            }
+            catch (Exception e)
+            {
+                Mensaje = e.Message;
+                Exito = false;
+            }
+
+        }
+
+
 
 
         public void MtdInsertarSalidas_OtrosGastos()

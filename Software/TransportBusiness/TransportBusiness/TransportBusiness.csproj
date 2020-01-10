@@ -196,23 +196,11 @@
     <Compile Include="Formularios\Catalogos\Frm_Huertas.designer.cs">
       <DependentUpon>Frm_Huertas.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\Catalogos\Frm_Infracciones.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Formularios\Catalogos\Frm_Infracciones.Designer.cs">
-      <DependentUpon>Frm_Infracciones.cs</DependentUpon>
-    </Compile>
     <Compile Include="Formularios\Catalogos\Frm_Licencias.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Formularios\Catalogos\Frm_Licencias.Designer.cs">
       <DependentUpon>Frm_Licencias.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Formularios\Catalogos\Frm_Mantenimiento.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Formularios\Catalogos\Frm_Mantenimiento.Designer.cs">
-      <DependentUpon>Frm_Mantenimiento.cs</DependentUpon>
     </Compile>
     <Compile Include="Formularios\Catalogos\Frm_MotivoSalida.cs">
       <SubType>Form</SubType>
@@ -412,6 +400,24 @@
     <Compile Include="Formularios\Catalogos\Frm_Rutas_Buscar.Designer.cs">
       <DependentUpon>Frm_Rutas_Buscar.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\Por Realizar\Frm_Check_List.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Por Realizar\Frm_Check_List.Designer.cs">
+      <DependentUpon>Frm_Check_List.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Por Realizar\Frm_Infracciones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Por Realizar\Frm_Infracciones.Designer.cs">
+      <DependentUpon>Frm_Infracciones.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Por Realizar\Frm_Mantenimiento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Por Realizar\Frm_Mantenimiento.Designer.cs">
+      <DependentUpon>Frm_Mantenimiento.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\Seguridad\Frm_Pantallas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -510,14 +516,8 @@
     <EmbeddedResource Include="Formularios\Catalogos\Frm_Huertas.resx">
       <DependentUpon>Frm_Huertas.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\Catalogos\Frm_Infracciones.resx">
-      <DependentUpon>Frm_Infracciones.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Catalogos\Frm_Licencias.resx">
       <DependentUpon>Frm_Licencias.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\Catalogos\Frm_Mantenimiento.resx">
-      <DependentUpon>Frm_Mantenimiento.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Catalogos\Frm_Marcas.resx">
       <DependentUpon>Frm_Marcas.cs</DependentUpon>
@@ -618,6 +618,15 @@
     <EmbeddedResource Include="Formularios\Catalogos\Frm_Rutas_Buscar.resx">
       <DependentUpon>Frm_Rutas_Buscar.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Por Realizar\Frm_Check_List.resx">
+      <DependentUpon>Frm_Check_List.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Por Realizar\Frm_Infracciones.resx">
+      <DependentUpon>Frm_Infracciones.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Por Realizar\Frm_Mantenimiento.resx">
+      <DependentUpon>Frm_Mantenimiento.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Seguridad\Frm_Pantallas.resx">
       <DependentUpon>Frm_Pantallas.cs</DependentUpon>
     </EmbeddedResource>
@@ -656,9 +665,7 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Formularios\Por Realizar\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.

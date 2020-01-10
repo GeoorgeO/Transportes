@@ -187,5 +187,40 @@ namespace TransportBusiness
                 XtraMessageBox.Show(ex.Message);
             }
         }
+
+        private void Frm_BusqSalidas_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            if (vId_Salida.Length <= 0)
+            {
+                vId_Salida = "";
+                vFecha_Salida = "";
+                vId_Activo_Principal = "";
+                vNombre_Activo_Principal = "";
+                vId_Operador = "";
+                vNombre_Operador = "";
+                vId_Ayudante = "";
+                vNombre_Ayudante = "";
+                vId_Activo_Secundario = "";
+                vNombre_Activo_Secundario = "";
+                vId_Activo_Adicional = "";
+                vNombre_Activo_Adicional = "";
+                vId_Ruta = "";
+                vNombre_Ruta = "";
+                vOrigen = "";
+                vDestino = "";
+                vId_MotivoSalida = "";
+                vNombre_MotivoSalida = "";
+                vId_Cliente = "";
+                vNombre_Cliente = "";
+                vkm_Inicio = 0;
+                vkm_Fin = 0;
+                vDias_Viaje = 0;
+                vLts_Km = 0;
+                vId_Huerta = "";
+                vNombre_Huerta = "";
+                vObservaciones = "";
+            }
+            
+        }
     }
 }

@@ -19,11 +19,17 @@ namespace TransportBusiness
         string RutaPDF="", NombrePDF="";
         string RutaXML="", NombreXML="";
 
+        string RutaPDFG = "", NombrePDFG = "";
+        string RutaXMLG = "", NombreXMLG = "";
+
         string OperadorAnterior = "",ActivoAnterior="";
 
 
         Byte[] ArchivoPDFGlobal = null;
         Byte[] ArchivoXMLGlobal = null;
+
+        Byte[] ArchivoPDFGlobalG = null;
+        Byte[] ArchivoXMLGlobalG = null;
 
         private static Frm_Salidas m_FormDefInstance;
         public static Frm_Salidas DefInstance
@@ -292,6 +298,10 @@ namespace TransportBusiness
             limpiarCampos();
             limpiarSalidasRevisionUnidad();
             limpiarSalidasFacturas();
+            limpiarSalidasHonorario();
+            limpiarSalidasOtrosGastos();
+            limpiarSalidasViaticos();
+            limpiarSalidas_diesel();
         }
 
         private void btnBusqSalida_Click(object sender, EventArgs e)
@@ -300,7 +310,10 @@ namespace TransportBusiness
 
             frm.ShowDialog();
             textFolio.Text= frm.vId_Salida;
-            dtFechaSalida.EditValue=Convert.ToDateTime(frm.vFecha_Salida);
+            if (frm.vFecha_Salida.Length > 0)
+            {
+                dtFechaSalida.EditValue = Convert.ToDateTime(frm.vFecha_Salida);
+            }
             textActivoPrincipal.Tag=frm.vId_Activo_Principal;
             ActivoAnterior= frm.vId_Activo_Principal; 
             textActivoPrincipal.Text=frm.vNombre_Activo_Principal;
@@ -457,6 +470,14 @@ namespace TransportBusiness
             Clase.Id_Salida = textFolio.Text.Trim();
             Clase.Ticket = textTicketG.Text.ToString();
             Clase.Importe = Convert.ToDecimal(textImporteG.Text);
+            if (cbMonedaG.Text.Equals("Pesos"))
+            {
+                Clase.Moneda = "P";
+            }
+            else
+            {
+                Clase.Moneda = "D";
+            }
             Clase.Id_GastoDirecto = textGastos.Tag.ToString();
             if (checkPagadoOperador.Checked)
             {
@@ -466,7 +487,66 @@ namespace TransportBusiness
             {
                 Clase.PagoOperador = "0";
             }
-            
+            Clase.Otros_Gastos = textOtrosGastos.Text.Trim();
+
+            Byte[] ArchivoPDF = null;
+            Byte[] ArchivoXML = null;
+
+            FileStream fsPDF = null;
+            FileStream fsXML = null;
+
+            Boolean noentroPDF = true, noentroXML = true;
+
+            if (RutaPDFG.Length > 0)
+            {
+                //txtNombreArchivoPDF.Text = result2;
+                //string ar = OpenDialog.FileName;
+                fsPDF = new FileStream(RutaPDFG, FileMode.Open, FileAccess.Read);
+                //Creamos un array de bytes para almacenar los datos leídos por fs.
+                ArchivoPDF = new byte[fsPDF.Length];
+                //Y guardamos los datos en el array data
+                fsPDF.Read(ArchivoPDF, 0, (int)fsPDF.Length);
+            }
+            else
+            {
+                ArchivoPDF = ArchivoPDFGlobalG;
+                noentroPDF = false;
+            }
+            if (RutaXMLG.Length > 0)
+            {
+                fsXML = new FileStream(RutaXMLG, FileMode.Open);
+                //Creamos un array de bytes para almacenar los datos leídos por fs.
+                ArchivoXML = new byte[fsXML.Length];
+                //Y guardamos los datos en el array data
+                fsXML.Read(ArchivoXML, 0, Convert.ToInt32(fsXML.Length));
+            }
+            else
+            {
+                ArchivoXML = ArchivoXMLGlobalG;
+                noentroXML = false;
+            }
+
+            Clase.Id_Salida = textFolio.Text.Trim();
+            if (ArchivoPDF != null)
+            {
+                Clase.FacturaPDF = ArchivoPDF;
+            }
+            else
+            {
+                Clase.FacturaPDF = Encoding.UTF8.GetBytes("");
+            }
+            Clase.FacturaPDFNombre = NombrePDFG;
+            if (ArchivoXML != null)
+            {
+                Clase.FacturaXML = ArchivoXML;
+            }
+            else
+            {
+                Clase.FacturaXML = Encoding.UTF8.GetBytes("");
+            }
+
+            Clase.FacturaXMLNombre = NombreXMLG;
+
             Clase.MtdInsertarSalidas_OtrosGastos();
 
             if (Clase.Exito)
@@ -480,6 +560,14 @@ namespace TransportBusiness
             else
             {
                 XtraMessageBox.Show(Clase.Mensaje);
+            }
+            if (noentroXML)
+            {
+                fsXML.Close();
+            }
+            if (noentroPDF)
+            {
+                fsPDF.Close();
             }
         }
 
@@ -504,6 +592,17 @@ namespace TransportBusiness
             checkPagadoOperador.Checked = false;
             textGastos.Tag = "";
             textGastos.Text = "";
+            textOtrosGastos.Text = "";
+            cbMonedaG.Text = "Pesos";
+            textNombreArchivoPDF.Text = "";
+            textNombreArchivoXML.Text = "";
+            RutaPDFG = "";
+            RutaXMLG = "";
+            NombrePDFG = "";
+            NombreXMLG = "";
+            ArchivoPDFGlobalG = null;
+            ArchivoXMLGlobalG = null;
+            textTicketG.Enabled = true;
         }
 
         private void EliminarSalidasOtrosGastos(string Salida, string ticket)
@@ -516,6 +615,7 @@ namespace TransportBusiness
             {
                 CargarSalidasOtrosGastos();
                 InsertarSalidasHonorarioPagoOperador();
+                limpiarSalidasOtrosGastos();
                 XtraMessageBox.Show("Se ha Eliminado el registro con exito");
             }
             else
@@ -1249,6 +1349,7 @@ namespace TransportBusiness
             Frm_ViewPDFSalidas frm = new Frm_ViewPDFSalidas();
             frm.Id_Salida = textFolio.Text.Trim();
             frm.Id_Archivo = Convert.ToDecimal(labelIdArchivo.Text);
+            frm.Ventana = "Facturas";
             frm.ShowDialog();
             frm.Dispose();
             System.IO.File.Delete(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\ViewPDF.pdf");
@@ -1302,6 +1403,7 @@ namespace TransportBusiness
             Frm_ViewXMLSalidas frm = new Frm_ViewXMLSalidas();
             frm.Id_Salida = textFolio.Text.Trim();
             frm.Id_Archivo=Convert.ToDecimal(labelIdArchivo.Text);
+            frm.Ventana = "Facturas";
             frm.ShowDialog();
             frm.Dispose();
             System.IO.File.Delete(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\ViewXML.xml");
@@ -1392,8 +1494,8 @@ namespace TransportBusiness
 
                 if (result2 != null)
                 {
-                    NombrePDF = result2;
-                    RutaPDF = OpenDialog.FileName;
+                    NombrePDFG = result2;
+                    RutaPDFG = OpenDialog.FileName;
                     textNombreArchivoPDF.Text = result2;
                     //string ar = OpenDialog.FileName;
                     //FileStream fs = new FileStream(ar, FileMode.Open);
@@ -1417,6 +1519,134 @@ namespace TransportBusiness
                     //}
                 }
             }
+        }
+
+        private void btnViewPDFG_Click(object sender, EventArgs e)
+        {
+            Frm_ViewPDFSalidas frm = new Frm_ViewPDFSalidas();
+            frm.Id_Salida = textFolio.Text.Trim();
+            frm.Ticket = textTicketG.Text.Trim();
+            frm.Ventana = "OtrosGastos";
+            frm.ShowDialog();
+            frm.Dispose();
+            System.IO.File.Delete(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\ViewPDF.pdf");
+        }
+
+        private void gridOtrosGastos_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                foreach (int i in this.gridView3.GetSelectedRows())
+                {
+                    DataRow row = this.gridView3.GetDataRow(i);
+
+                    textNombreArchivoPDF.Text = row["FacturaPDFNombre"].ToString();
+                    NombrePDFG = row["FacturaPDFNombre"].ToString();
+                    textNombreArchivoXML.Text = row["FacturaXMLNombre"].ToString();
+                    NombreXMLG = row["FacturaXMLNombre"].ToString();
+                    ArchivoPDFGlobalG = (byte[])row["FacturaPDF"];
+                    ArchivoXMLGlobalG = (byte[])(row["FacturaXML"]);
+                    textImporteG.Text = row["Importe"].ToString();
+                    textTicketG.Text = row["Ticket"].ToString();
+                    textGastos.Tag = row["Id_GastoDirecto"].ToString();
+                    textGastos.Text = row["Nombre_GastoDirecto"].ToString();
+                    textOtrosGastos.Text = row["Otros_Gastos"].ToString();
+                    if (row["Moneda"].ToString().Equals("P"))
+                    {
+                        cbMonedaG.Text = "Pesos";
+                    }
+                    else
+                    {
+                        cbMonedaG.Text = "Dólares";
+                    }
+
+                    textTicketG.Enabled = false;
+                }
+            }
+            catch (Exception ex)
+            {
+                XtraMessageBox.Show(ex.Message);
+            }
+        }
+
+       
+
+        private void btnUPXMLG_Click(object sender, EventArgs e)
+        {
+            OpenDialog.Filter = "eXtensible Markup Language (*.XML)|*.XML";
+            OpenDialog.FilterIndex = 1;
+            OpenDialog.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyPictures); ;
+            OpenDialog.Title = "Cargar Documento XML";
+            OpenDialog.CheckFileExists = false;
+            OpenDialog.Multiselect = false;
+            DialogResult result = OpenDialog.ShowDialog();
+            if (result == DialogResult.OK)
+            {
+                TextEdit textEdit = new TextEdit();
+                textEdit.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Regular;
+                textEdit.Properties.MaxLength = 100;
+                //textEdit.Properties.Mask.EditMask = "f0";
+                //textEdit.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.
+                XtraInputBoxArgs args = new XtraInputBoxArgs();
+                // set required Input Box options 
+                var result2 = "";
+                do
+                {
+                    args.Caption = "Ingrese el nombre del Archivo";
+                    args.Prompt = "Descripción";
+                    args.DefaultButtonIndex = 0;
+                    //args.Showing += Args_Showing;
+                    // initialize a DateEdit editor with custom settings 
+                    TextEdit editor = new TextEdit();
+                    args.Editor = editor;
+                    // a default DateEdit value 
+                    args.DefaultResponse = "Archivo XML";
+                    // display an Input Box with the custom editor
+                    args.Editor = textEdit;
+                    result2 = XtraInputBox.Show(args).ToString();
+                } while (result2.Length == 0);
+                if (result2 != null)
+                {
+                    NombreXMLG = result2;
+                    RutaXMLG = OpenDialog.FileName;
+                    textNombreArchivoXML.Text = result2;
+                    //string ar = OpenDialog.FileName;
+                    //FileStream fs = new FileStream(ar, FileMode.Open);
+                    ////Creamos un array de bytes para almacenar los datos leídos por fs.
+                    //Byte[] Archivo = new byte[fs.Length];
+                    ////Y guardamos los datos en el array data
+                    //fs.Read(Archivo, 0, Convert.ToInt32(fs.Length));
+                    //CLS_Activos udp = new CLS_Activos();
+                    //udp.Id_Activo = vId_Activo;
+                    //udp.Opcion = 1;
+                    //udp.NombreArchivoXML = txtNombreArchivoXML.Text;
+                    //udp.ArchivoXML = Archivo;
+                    //udp.MtdUpdateActivoArchivoXML();
+                    //if (udp.Exito)
+                    //{
+                    //    XtraMessageBox.Show("Se a agregado el PDF con Exito");
+                    //}
+                    //else
+                    //{
+                    //    XtraMessageBox.Show(udp.Mensaje);
+                    //}
+                }
+                else
+                {
+
+                }
+            }
+        }
+
+        private void btnViewXMLG_Click(object sender, EventArgs e)
+        {
+            Frm_ViewXMLSalidas frm = new Frm_ViewXMLSalidas();
+            frm.Id_Salida = textFolio.Text.Trim();
+            frm.Ticket = textTicketG.Text.Trim();
+            frm.Ventana = "OtrosGastos";
+            frm.ShowDialog();
+            frm.Dispose();
+            System.IO.File.Delete(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\ViewXML.xml");
         }
 
         private void limpiarSalidasFacturas()

@@ -178,10 +178,10 @@
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 377);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 378);
             this.barDockControlBottom.Manager = this.barManager1;
             this.barDockControlBottom.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.barDockControlBottom.Size = new System.Drawing.Size(781, 35);
+            this.barDockControlBottom.Size = new System.Drawing.Size(781, 34);
             // 
             // barDockControlLeft
             // 
@@ -190,7 +190,7 @@
             this.barDockControlLeft.Location = new System.Drawing.Point(0, 0);
             this.barDockControlLeft.Manager = this.barManager1;
             this.barDockControlLeft.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.barDockControlLeft.Size = new System.Drawing.Size(85, 377);
+            this.barDockControlLeft.Size = new System.Drawing.Size(87, 378);
             // 
             // barDockControlRight
             // 
@@ -199,7 +199,7 @@
             this.barDockControlRight.Location = new System.Drawing.Point(781, 0);
             this.barDockControlRight.Manager = this.barManager1;
             this.barDockControlRight.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 377);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 378);
             // 
             // btnLimpiar
             // 
@@ -233,11 +233,11 @@
             // 
             this.panelControl1.Controls.Add(this.dtgRutas);
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelControl1.Location = new System.Drawing.Point(85, 0);
+            this.panelControl1.Location = new System.Drawing.Point(87, 0);
             this.panelControl1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panelControl1.Name = "panelControl1";
             this.panelControl1.Padding = new System.Windows.Forms.Padding(6);
-            this.panelControl1.Size = new System.Drawing.Size(696, 377);
+            this.panelControl1.Size = new System.Drawing.Size(694, 378);
             this.panelControl1.TabIndex = 8;
             // 
             // dtgRutas
@@ -249,7 +249,7 @@
             this.dtgRutas.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dtgRutas.MenuManager = this.barManager1;
             this.dtgRutas.Name = "dtgRutas";
-            this.dtgRutas.Size = new System.Drawing.Size(680, 361);
+            this.dtgRutas.Size = new System.Drawing.Size(678, 362);
             this.dtgRutas.TabIndex = 0;
             this.dtgRutas.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.dtgValRutas});
@@ -479,6 +479,7 @@
             this.Controls.Add(this.barDockControlTop);
             this.Name = "Frm_BusqSalidas";
             this.Text = "Frm_BusqSalidas";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Frm_BusqSalidas_FormClosed);
             this.Load += new System.EventHandler(this.Frm_BusqSalidas_Load);
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).EndInit();

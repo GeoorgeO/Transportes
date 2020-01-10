@@ -17,6 +17,8 @@ namespace TransportBusiness
 
         public string Id_Salida { get; set; }
         public decimal Id_Archivo { get; set; }
+        public string Ventana { get; set; }
+        public string Ticket { get; set; }
 
         public Frm_ViewPDFSalidas()
         {
@@ -25,20 +27,43 @@ namespace TransportBusiness
 
         private void Frm_ViewPDFSalidas_Load(object sender, EventArgs e)
         {
-            CLS_Salidas_Facturas sel = new CLS_Salidas_Facturas();
-            sel.Id_Salida = Id_Salida;
-            sel.Id_Archivo = Id_Archivo;
-            sel.MtdSeleccionarSalidasArchivoPDFXMLView();
-            if (sel.Exito)
+            
+            if (Ventana.Equals("OtrosGastos"))
             {
-                if (sel.Datos.Rows.Count > 0 && sel.Datos.Rows[0]["FacturaPDF"] != null)
+                CLS_Salidas_OtrosGastos sel = new CLS_Salidas_OtrosGastos();
+                sel.Id_Salida = Id_Salida;
+                sel.Ticket = Ticket;
+                sel.MtdSeleccionarSalidasArchivoPDFXMLView();
+                if (sel.Exito)
                 {
-                    byte[] bytes = (byte[])sel.Datos.Rows[0]["FacturaPDF"];
+                    if (sel.Datos.Rows.Count > 0 && sel.Datos.Rows[0]["FacturaPDF"] != null)
+                    {
+                        byte[] bytes = (byte[])sel.Datos.Rows[0]["FacturaPDF"];
 
-                    System.IO.File.WriteAllBytes(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\ViewPDF.pdf", bytes);
-                    this.pdfViewer1.LoadDocument(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\ViewPDF.pdf");
+                        System.IO.File.WriteAllBytes(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\ViewPDF.pdf", bytes);
+                        this.pdfViewer1.LoadDocument(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\ViewPDF.pdf");
+                    }
                 }
             }
+            else
+            {
+                CLS_Salidas_Facturas sel = new CLS_Salidas_Facturas();
+                sel.Id_Salida = Id_Salida;
+                sel.Id_Archivo = Id_Archivo;
+                sel.MtdSeleccionarSalidasArchivoPDFXMLView();
+                if (sel.Exito)
+                {
+                    if (sel.Datos.Rows.Count > 0 && sel.Datos.Rows[0]["FacturaPDF"] != null)
+                    {
+                        byte[] bytes = (byte[])sel.Datos.Rows[0]["FacturaPDF"];
+
+                        System.IO.File.WriteAllBytes(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\ViewPDF.pdf", bytes);
+                        this.pdfViewer1.LoadDocument(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\ViewPDF.pdf");
+                    }
+                }
+            }
+            
+            
         }
     }
 }

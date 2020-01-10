@@ -34,10 +34,38 @@ BEGIN
 
     -- Insert statements for procedure here
 	declare @correcto bit
+	
+	declare @Existe int
+	select @Existe = count(Id_Salida) from dbo.Salidas_OtrosGastos  where (Id_Salida=@Id_Salida and Ticket=@Ticket)
+
+	if len(@FacturaPDFNombre)=0 
+		set @FacturaPDFNombre=NULL
+	if len(@FacturaPDFNombre)=0 
+		set @FacturaPDF=NULL
+	if len(@FacturaXMLNombre)=0 
+		set @FacturaXMLNombre=NULL
+	if len(@FacturaXMLNombre)=0 
+		set @FacturaXML=NULL
 
 	begin transaction T1;
 	begin try
 		
+		if @Existe>0 
+		
+			UPDATE dbo.Salidas_OtrosGastos
+		        SET Id_GastoDirecto=@Id_GastoDirecto,
+				Importe=@Importe,
+				PagoOperador=@PagoOperador,
+				Otros_Gastos=@Otros_Gastos,
+				Moneda=@Moneda,
+				FacturaPDFNombre=@FacturaPDFNombre,
+				FacturaPDF=@FacturaPDF,
+				FacturaXMLNombre=@FacturaXMLNombre,
+				FacturaXML=@FacturaXML
+		    WHERE
+		    	Id_Salida=@Id_Salida and Ticket=@Ticket
+				
+		else
 			INSERT INTO dbo.Salidas_OtrosGastos
 	           (Ticket
 	           ,Id_Salida
