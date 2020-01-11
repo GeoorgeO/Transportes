@@ -1623,6 +1623,7 @@
             this.textGastos.Name = "textGastos";
             this.textGastos.Size = new System.Drawing.Size(195, 22);
             this.textGastos.TabIndex = 19;
+            this.textGastos.EditValueChanged += new System.EventHandler(this.textGastos_EditValueChanged);
             // 
             // xtraTabPage3
             // 

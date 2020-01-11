@@ -426,7 +426,8 @@ namespace TransportBusiness
         {
             if (TieneAcceso("025"))
             {
-
+                Frm_Entradas frm = new Frm_Entradas();
+                frm.ShowDialog();
             }
             else
             {

@@ -630,7 +630,14 @@ namespace TransportBusiness
             {
                 if (Convert.ToDecimal(textImporteG.Text) > 0)
                 {
-                    InsertarSalidasOtrosGastos();
+                    if (recorrerPaNoDuplica())
+                    {
+                        InsertarSalidasOtrosGastos();
+                    }else
+                    {
+                        XtraMessageBox.Show("Folio de ticket ya agregado en la lista. Verifique por favor.");
+                    }
+                    
                 }
                 else
                 {
@@ -641,6 +648,21 @@ namespace TransportBusiness
             {
                 XtraMessageBox.Show("Es necesario teclear el numero de ticket.");
             }
+        }
+
+        private Boolean recorrerPaNoDuplica()
+        {
+            for (int x = 0; x < gridView3.RowCount; x++)
+            {
+                int xRow = gridView3.GetVisibleRowHandle(x);
+
+                if (gridView3.GetRowCellValue(xRow, gridView3.Columns["Ticket"]).ToString().Equals(textTicketG.Text.Trim()))
+                {
+                    return false;
+                }
+
+            }
+            return true;
         }
 
         private void gridOtrosGastos_DoubleClick(object sender, EventArgs e)
@@ -1544,8 +1566,9 @@ namespace TransportBusiness
                     NombrePDFG = row["FacturaPDFNombre"].ToString();
                     textNombreArchivoXML.Text = row["FacturaXMLNombre"].ToString();
                     NombreXMLG = row["FacturaXMLNombre"].ToString();
-                    ArchivoPDFGlobalG = (byte[])row["FacturaPDF"];
-                    ArchivoXMLGlobalG = (byte[])(row["FacturaXML"]);
+                    if (row["FacturaPDF"].ToString().Length>0) { ArchivoPDFGlobalG = (byte[])row["FacturaPDF"]; }
+                    if (row["FacturaXML"].ToString().Length > 0) { ArchivoXMLGlobalG = (byte[])(row["FacturaXML"]); }
+                    
                     textImporteG.Text = row["Importe"].ToString();
                     textTicketG.Text = row["Ticket"].ToString();
                     textGastos.Tag = row["Id_GastoDirecto"].ToString();
@@ -1569,7 +1592,17 @@ namespace TransportBusiness
             }
         }
 
-       
+        private void textGastos_EditValueChanged(object sender, EventArgs e)
+        {
+            if (textGastos.Text.Contains("Otros Gastos") && textGastos.Text.Trim().Length>0)
+            {
+                textOtrosGastos.Enabled = true;
+            }else
+            {
+                textOtrosGastos.Enabled = false;
+                textOtrosGastos.Text = "";
+            }
+        }
 
         private void btnUPXMLG_Click(object sender, EventArgs e)
         {
