@@ -76,9 +76,7 @@
             this.Id_Empresa = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Nombre_Empresa = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Id_Factura = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.IAVE = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Folio_Tarjeta_Circulacion = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.Id_Tarjeta_Combustible = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
@@ -292,9 +290,7 @@
             this.Id_Empresa,
             this.Nombre_Empresa,
             this.Id_Factura,
-            this.IAVE,
-            this.Folio_Tarjeta_Circulacion,
-            this.Id_Tarjeta_Combustible});
+            this.Folio_Tarjeta_Circulacion});
             this.dtgValRutas.GridControl = this.dtgRutas;
             this.dtgValRutas.Name = "dtgValRutas";
             this.dtgValRutas.OptionsBehavior.Editable = false;
@@ -493,23 +489,11 @@
             this.Id_Factura.FieldName = "Id_Factura";
             this.Id_Factura.Name = "Id_Factura";
             // 
-            // IAVE
-            // 
-            this.IAVE.Caption = "IAVE";
-            this.IAVE.FieldName = "IAVE";
-            this.IAVE.Name = "IAVE";
-            // 
             // Folio_Tarjeta_Circulacion
             // 
             this.Folio_Tarjeta_Circulacion.Caption = "Tarjeta Circulacion";
             this.Folio_Tarjeta_Circulacion.FieldName = "Folio_Tarjeta_Circulacion";
             this.Folio_Tarjeta_Circulacion.Name = "Folio_Tarjeta_Circulacion";
-            // 
-            // Id_Tarjeta_Combustible
-            // 
-            this.Id_Tarjeta_Combustible.Caption = "Id Tarjeta Combustible";
-            this.Id_Tarjeta_Combustible.FieldName = "Id_Tarjeta_Combustible";
-            this.Id_Tarjeta_Combustible.Name = "Id_Tarjeta_Combustible";
             // 
             // Frm_BusqActivoSinRuta
             // 
@@ -583,8 +567,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn Id_Empresa;
         private DevExpress.XtraGrid.Columns.GridColumn Nombre_Empresa;
         private DevExpress.XtraGrid.Columns.GridColumn Id_Factura;
-        private DevExpress.XtraGrid.Columns.GridColumn IAVE;
         private DevExpress.XtraGrid.Columns.GridColumn Folio_Tarjeta_Circulacion;
-        private DevExpress.XtraGrid.Columns.GridColumn Id_Tarjeta_Combustible;
     }
 }
