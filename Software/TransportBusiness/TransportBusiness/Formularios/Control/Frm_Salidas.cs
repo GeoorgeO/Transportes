@@ -403,7 +403,14 @@ namespace TransportBusiness
             {
                 if (Convert.ToDecimal(textImporte.Text)>0)
                 {
-                    InsertarSalidasDiesel();
+                    if (recorrerPaNoDuplicaG())
+                    {
+                        InsertarSalidasDiesel();
+                    }
+                    else
+                    {
+                        XtraMessageBox.Show("Folio de ticket ya agregado en la lista. Verifique por favor.");
+                    }
                 }
                 else
                 {
@@ -630,7 +637,7 @@ namespace TransportBusiness
             {
                 if (Convert.ToDecimal(textImporteG.Text) > 0)
                 {
-                    if (recorrerPaNoDuplica())
+                    if (recorrerPaNoDuplicaG())
                     {
                         InsertarSalidasOtrosGastos();
                     }else
@@ -650,13 +657,28 @@ namespace TransportBusiness
             }
         }
 
-        private Boolean recorrerPaNoDuplica()
+        private Boolean recorrerPaNoDuplicaG()
         {
             for (int x = 0; x < gridView3.RowCount; x++)
             {
                 int xRow = gridView3.GetVisibleRowHandle(x);
 
                 if (gridView3.GetRowCellValue(xRow, gridView3.Columns["Ticket"]).ToString().Equals(textTicketG.Text.Trim()))
+                {
+                    return false;
+                }
+
+            }
+            return true;
+        }
+
+        private Boolean recorrerPaNoDuplicaD()
+        {
+            for (int x = 0; x < gridView2.RowCount; x++)
+            {
+                int xRow = gridView2.GetVisibleRowHandle(x);
+
+                if (gridView2.GetRowCellValue(xRow, gridView2.Columns["Ticket"]).ToString().Equals(textTicket.Text.Trim()))
                 {
                     return false;
                 }
