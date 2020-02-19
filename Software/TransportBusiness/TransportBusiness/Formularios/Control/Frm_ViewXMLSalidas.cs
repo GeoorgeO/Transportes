@@ -19,6 +19,7 @@ namespace TransportBusiness
         public decimal Id_Archivo { get; set; }
         public string Ventana { get; set; }
         public string Ticket { get; set; }
+        
 
         public Frm_ViewXMLSalidas()
         {
@@ -46,7 +47,7 @@ namespace TransportBusiness
                     }
                 }
             }
-            else
+            if (Ventana.Equals("Facturas"))
             {
                 CLS_Salidas_Facturas sel = new CLS_Salidas_Facturas();
                 sel.Id_Salida = Id_Salida;
@@ -65,7 +66,27 @@ namespace TransportBusiness
                     }
                 }
             }
-                
+            if (Ventana.Equals("Cruces"))
+            {
+                CLS_Salidas_Cruces sel = new CLS_Salidas_Cruces();
+                sel.Id_Salida = Id_Salida;
+                sel.Id_Archivo = Id_Archivo;
+                sel.MtdSeleccionarSalidasArchivoPDFXMLView();
+                if (sel.Exito)
+                {
+                    if (sel.Datos.Rows.Count > 0 && sel.Datos.Rows[0]["FacturaXML"] != null)
+                    {
+                        byte[] bytes = (byte[])sel.Datos.Rows[0]["FacturaXML"];
+
+                        System.IO.File.WriteAllBytes(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\ViewXML.xml", bytes);
+                        webBrowser1.Navigate(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\ViewXML.xml");
+
+
+                    }
+                }
+            }
+
+
         }
     }
 }

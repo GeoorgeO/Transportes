@@ -22,6 +22,9 @@ namespace TransportBusiness
         string RutaPDFG = "", NombrePDFG = "";
         string RutaXMLG = "", NombreXMLG = "";
 
+        string RutaPDFC = "", NombrePDFC = "";
+        string RutaXMLC = "", NombreXMLC = "";
+
         string OperadorAnterior = "",ActivoAnterior="";
 
 
@@ -30,6 +33,9 @@ namespace TransportBusiness
 
         Byte[] ArchivoPDFGlobalG = null;
         Byte[] ArchivoXMLGlobalG = null;
+
+        Byte[] ArchivoPDFGlobalC = null;
+        Byte[] ArchivoXMLGlobalC = null;
 
         private static Frm_Salidas m_FormDefInstance;
         public static Frm_Salidas DefInstance
@@ -197,6 +203,7 @@ namespace TransportBusiness
             gridOtrosGastos.DataSource = null;
             gridViaticos.DataSource = null;
             gridHonorario.DataSource = null;
+            gridCruce.DataSource = null;
             OperadorAnterior = "";
             ActivoAnterior = "";
             
@@ -302,6 +309,7 @@ namespace TransportBusiness
             limpiarSalidasOtrosGastos();
             limpiarSalidasViaticos();
             limpiarSalidas_diesel();
+            limpiarSalidasCruce();
         }
 
         private void btnBusqSalida_Click(object sender, EventArgs e)
@@ -347,6 +355,7 @@ namespace TransportBusiness
             CargarSalidasRevisionUnidad();
             CargarSalidasHonorario();
             CargarSalidasFacturas();
+            CargarSalidasCruces();
         }
 
         private void btnMotivoSalida_Click(object sender, EventArgs e)
@@ -623,6 +632,24 @@ namespace TransportBusiness
                 CargarSalidasOtrosGastos();
                 InsertarSalidasHonorarioPagoOperador();
                 limpiarSalidasOtrosGastos();
+                XtraMessageBox.Show("Se ha Eliminado el registro con exito");
+            }
+            else
+            {
+                XtraMessageBox.Show(Clase.Mensaje);
+            }
+        }
+
+        private void EliminarSalidasCruces(string Salida, int Archivo)
+        {
+            CLS_Salidas_Cruces Clase = new CLS_Salidas_Cruces();
+            Clase.Id_Salida = Salida;
+            Clase.Id_Archivo = Archivo;
+            Clase.MtdDeleteSalidasArchivoPDFXML();
+            if (Clase.Exito)
+            {
+                CargarSalidasCruces();
+                limpiarSalidasCruce();
                 XtraMessageBox.Show("Se ha Eliminado el registro con exito");
             }
             else
@@ -1294,8 +1321,6 @@ namespace TransportBusiness
 
         private void btnAgregarFacturas_Click(object sender, EventArgs e)
         {
-            
-            
             CLS_Salidas_Facturas Clase = new CLS_Salidas_Facturas();
 
             Byte[] ArchivoPDF=null;
@@ -1408,6 +1433,18 @@ namespace TransportBusiness
             if (Clase.Exito)
             {
                 gridFacturas.DataSource = Clase.Datos;
+            }
+        }
+
+        private void CargarSalidasCruces()
+        {
+            gridCruce.DataSource = null;
+            CLS_Salidas_Cruces Clase = new CLS_Salidas_Cruces();
+            Clase.Id_Salida = textFolio.Text.Trim();
+            Clase.MtdSeleccionarSalidasArchivoPDFXML();
+            if (Clase.Exito)
+            {
+                gridCruce.DataSource = Clase.Datos;
             }
         }
 
@@ -1614,6 +1651,313 @@ namespace TransportBusiness
             }
         }
 
+        private void btnUpPDFC_Click(object sender, EventArgs e)
+        {
+            OpenDialog.Filter = "Portable Document Format (*.PDF)|*.PDF";
+            OpenDialog.FilterIndex = 1;
+            OpenDialog.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments); ;
+            OpenDialog.Title = "Cargar Documento PDF";
+            OpenDialog.CheckFileExists = false;
+            OpenDialog.Multiselect = false;
+            DialogResult result = OpenDialog.ShowDialog();
+            if (result == DialogResult.OK)
+            {
+                TextEdit textEdit = new TextEdit();
+                textEdit.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Regular;
+                textEdit.Properties.MaxLength = 100;
+                //textEdit.Properties.Mask.EditMask = "f0";
+                //textEdit.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.
+                XtraInputBoxArgs args = new XtraInputBoxArgs();
+                // set required Input Box options 
+                var result2 = "";
+                do
+                {
+                    args.Caption = "Ingrese el nombre del Archivo";
+                    args.Prompt = "Descripción";
+                    args.DefaultButtonIndex = 0;
+                    //args.Showing += Args_Showing;
+                    // initialize a DateEdit editor with custom settings 
+                    TextEdit editor = new TextEdit();
+                    args.Editor = editor;
+                    // a default DateEdit value 
+                    args.DefaultResponse = "Archivo PDF";
+                    // display an Input Box with the custom editor
+                    args.Editor = textEdit;
+                    result2 = XtraInputBox.Show(args).ToString();
+                } while (result2.Length == 0);
+
+
+                if (result2 != null)
+                {
+                    NombrePDFC = result2;
+                    RutaPDFC = OpenDialog.FileName;
+                    txtNombreArchivoPDFC.Text = result2;
+                    //string ar = OpenDialog.FileName;
+                    //FileStream fs = new FileStream(ar, FileMode.Open);
+                    ////Creamos un array de bytes para almacenar los datos leídos por fs.
+                    //Byte[] Archivo = new byte[fs.Length];
+                    ////Y guardamos los datos en el array data
+                    //fs.Read(Archivo, 0, Convert.ToInt32(fs.Length));
+                    //CLS_Activos udp = new CLS_Activos();
+                    //udp.Id_Activo = ;
+                    //udp.Opcion = 1;
+                    //udp.NombreArchivoPDF = txtNombreArchivoPDF.Text;
+                    //udp.ArchivoPDF = Archivo;
+                    //udp.MtdUpdateActivoArchivoPDF();
+                    //if (udp.Exito)
+                    //{
+                    //    XtraMessageBox.Show("Se a agregado el PDF con Exito");
+                    //}
+                    //else
+                    //{
+                    //    XtraMessageBox.Show(udp.Mensaje);
+                    //}
+                }
+            }
+        }
+
+        private void btnUpXMLC_Click(object sender, EventArgs e)
+        {
+            OpenDialog.Filter = "eXtensible Markup Language (*.XML)|*.XML";
+            OpenDialog.FilterIndex = 1;
+            OpenDialog.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments); ;
+            OpenDialog.Title = "Cargar Documento XML";
+            OpenDialog.CheckFileExists = false;
+            OpenDialog.Multiselect = false;
+            DialogResult result = OpenDialog.ShowDialog();
+            if (result == DialogResult.OK)
+            {
+                TextEdit textEdit = new TextEdit();
+                textEdit.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Regular;
+                textEdit.Properties.MaxLength = 100;
+                //textEdit.Properties.Mask.EditMask = "f0";
+                //textEdit.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.
+                XtraInputBoxArgs args = new XtraInputBoxArgs();
+                // set required Input Box options 
+                var result2 = "";
+                do
+                {
+                    args.Caption = "Ingrese el nombre del Archivo";
+                    args.Prompt = "Descripción";
+                    args.DefaultButtonIndex = 0;
+                    //args.Showing += Args_Showing;
+                    // initialize a DateEdit editor with custom settings 
+                    TextEdit editor = new TextEdit();
+                    args.Editor = editor;
+                    // a default DateEdit value 
+                    args.DefaultResponse = "Archivo XML";
+                    // display an Input Box with the custom editor
+                    args.Editor = textEdit;
+                    result2 = XtraInputBox.Show(args).ToString();
+                } while (result2.Length == 0);
+                if (result2 != null)
+                {
+                    NombreXMLC = result2;
+                    RutaXMLC = OpenDialog.FileName;
+                    txtNombreArchivoXMLC.Text = result2;
+                    //string ar = OpenDialog.FileName;
+                    //FileStream fs = new FileStream(ar, FileMode.Open);
+                    ////Creamos un array de bytes para almacenar los datos leídos por fs.
+                    //Byte[] Archivo = new byte[fs.Length];
+                    ////Y guardamos los datos en el array data
+                    //fs.Read(Archivo, 0, Convert.ToInt32(fs.Length));
+                    //CLS_Activos udp = new CLS_Activos();
+                    //udp.Id_Activo = vId_Activo;
+                    //udp.Opcion = 1;
+                    //udp.NombreArchivoXML = txtNombreArchivoXML.Text;
+                    //udp.ArchivoXML = Archivo;
+                    //udp.MtdUpdateActivoArchivoXML();
+                    //if (udp.Exito)
+                    //{
+                    //    XtraMessageBox.Show("Se a agregado el PDF con Exito");
+                    //}
+                    //else
+                    //{
+                    //    XtraMessageBox.Show(udp.Mensaje);
+                    //}
+                }
+                else
+                {
+
+                }
+            }
+        }
+
+        private void btnViewPDFC_Click(object sender, EventArgs e)
+        {
+            Frm_ViewPDFSalidas frm = new Frm_ViewPDFSalidas();
+            frm.Id_Salida = textFolio.Text.Trim();
+            frm.Id_Archivo = Convert.ToInt32(labelId_Archivo.Text.Trim());
+            frm.Ventana = "Cruces";
+            frm.ShowDialog();
+            frm.Dispose();
+            System.IO.File.Delete(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\ViewPDF.pdf");
+        }
+
+        private void btnViewXMLC_Click(object sender, EventArgs e)
+        {
+            Frm_ViewXMLSalidas frm = new Frm_ViewXMLSalidas();
+            frm.Id_Salida = textFolio.Text.Trim();
+            frm.Id_Archivo = Convert.ToInt32(labelId_Archivo.Text.Trim());
+            frm.Ventana = "Cruces";
+            frm.ShowDialog();
+            frm.Dispose();
+            System.IO.File.Delete(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\ViewXML.xml");
+        }
+
+        private void btnAgregarCruce_Click(object sender, EventArgs e)
+        {
+            CLS_Salidas_Cruces Clase = new CLS_Salidas_Cruces();
+
+            Byte[] ArchivoPDFC = null;
+            Byte[] ArchivoXMLC = null;
+
+            FileStream fsPDF = null;
+            FileStream fsXML = null;
+
+            Boolean noentroPDF = true, noentroXML = true;
+
+            if (RutaPDFC.Length > 0)
+            {
+                //txtNombreArchivoPDF.Text = result2;
+                //string ar = OpenDialog.FileName;
+                fsPDF = new FileStream(RutaPDFC, FileMode.Open, FileAccess.Read);
+                //Creamos un array de bytes para almacenar los datos leídos por fs.
+                ArchivoPDFC = new byte[fsPDF.Length];
+                //Y guardamos los datos en el array data
+                fsPDF.Read(ArchivoPDFC, 0, (int)fsPDF.Length);
+            }
+            else
+            {
+                ArchivoPDFC = ArchivoPDFGlobalC;
+                noentroPDF = false;
+            }
+            if (RutaXMLC.Length > 0)
+            {
+                fsXML = new FileStream(RutaXMLC, FileMode.Open);
+                //Creamos un array de bytes para almacenar los datos leídos por fs.
+                ArchivoXMLC = new byte[fsXML.Length];
+                //Y guardamos los datos en el array data
+                fsXML.Read(ArchivoXMLC, 0, Convert.ToInt32(fsXML.Length));
+            }
+            else
+            {
+                ArchivoXMLC = ArchivoXMLGlobalC;
+                noentroXML = false;
+            }
+
+            Clase.Id_Salida = textFolio.Text.Trim();
+            if (ArchivoPDFC != null)
+            {
+                Clase.FacturaPDF = ArchivoPDFC;
+            }
+            else
+            {
+                Clase.FacturaPDF = Encoding.UTF8.GetBytes("");
+            }
+            Clase.FacturaPDFNombre = NombrePDFC;
+            if (ArchivoXMLC != null)
+            {
+                Clase.FacturaXML = ArchivoXMLC;
+            }
+            else
+            {
+                Clase.FacturaXML = Encoding.UTF8.GetBytes("");
+            }
+
+            Clase.FacturaXMLNombre = NombreXMLC;
+            Clase.Importe = Convert.ToDecimal(textImporteC.Text);
+            
+                DateTime Fecha = Convert.ToDateTime(dateFacturaC.Text.Trim());
+            Clase.Fecha_Cruce  = Fecha.Year.ToString() + DosCero(Fecha.Month.ToString()) + DosCero(Fecha.Day.ToString());
+            Clase.Id_Archivo = Convert.ToInt32( labelId_Archivo.Text);
+            if (cboMonedaC.Text.Equals("Pesos"))
+            {
+                Clase.Moneda = "P";
+            }
+            else
+            {
+                Clase.Moneda = "D";
+            }
+
+
+            Clase.MtdInsertarSalidasArchivoPDFXML();
+
+            if (Clase.Exito)
+            {
+                CargarSalidasCruces();
+                limpiarSalidasCruce();
+                XtraMessageBox.Show("Se ha Insertado el registro con exito");
+
+            }
+            else
+            {
+                XtraMessageBox.Show(Clase.Mensaje);
+            }
+            if (noentroXML)
+            {
+                fsXML.Close();
+            }
+            if (noentroPDF)
+            {
+                fsPDF.Close();
+            }
+        }
+
+        private void gridCruce_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                foreach (int i in this.gridView1.GetSelectedRows())
+                {
+                    DataRow row = this.gridView1.GetDataRow(i);
+
+                    txtNombreArchivoPDFC.Text = row["FacturaPDFNombre"].ToString();
+                    NombrePDFC = row["FacturaPDFNombre"].ToString();
+                    txtNombreArchivoXMLC.Text = row["FacturaXMLNombre"].ToString();
+                    NombreXMLC = row["FacturaXMLNombre"].ToString();
+                    ArchivoPDFGlobalC = (byte[])row["FacturaPDF"];
+                    ArchivoXMLGlobalC = (byte[])(row["FacturaXML"]);
+                    textImporteC.Text = row["Importe"].ToString();
+                    dateFacturaC.Text = row["Fecha_Cruce"].ToString();
+                    labelId_Archivo.Text = row["Id_Archivo"].ToString();
+                    if (row["Moneda"].ToString().Equals("P"))
+                    {
+                        cboMonedaC.Text = "Pesos";
+                    }
+                    else
+                    {
+                        cboMonedaC.Text = "Dólares";
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                XtraMessageBox.Show(ex.Message);
+            }
+        }
+
+        private void gridCruce_DoubleClick(object sender, EventArgs e)
+        {
+            try
+            {
+                DialogResult = XtraMessageBox.Show("¿Esta seguro de que desea eliminar el Cruce seleccionado?", "Elimnar", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button1);
+                if (DialogResult == DialogResult.Yes)
+                {
+                    foreach (int i in this.gridView1.GetSelectedRows())
+                    {
+                        DataRow row = this.gridView1.GetDataRow(i);
+                        EliminarSalidasOtrosGastos(row["Id_Salida"].ToString().Trim(), row["Id_Archivo"].ToString().Trim());
+
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                XtraMessageBox.Show(ex.Message);
+            }
+        }
+
         private void textGastos_EditValueChanged(object sender, EventArgs e)
         {
             if (textGastos.Text.Contains("Otros Gastos") && textGastos.Text.Trim().Length>0)
@@ -1718,7 +2062,19 @@ namespace TransportBusiness
             ArchivoXMLGlobal = null;
         }
 
-       
+       private void limpiarSalidasCruce()
+        {
+            txtNombreArchivoPDFC.Text = "";
+            txtNombreArchivoXMLC.Text = "";
+            labelId_Archivo.Text = "0";
+            textImporteC.Text = "0";
+            RutaPDFC = "";
+            RutaXMLC = "";
+            NombrePDFC = "";
+            NombreXMLC = "";
+            ArchivoPDFGlobalC = null;
+            ArchivoXMLGlobalC = null;
+        }
 
         private void EliminarSalidasFacturas(string Salida, string Id_Archivo)
         {
