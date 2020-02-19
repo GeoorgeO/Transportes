@@ -17,6 +17,7 @@ ELSE
 		[FacturaXMLNombre] [varchar](80) NULL,
 		[Fecha_Cruce][datetime] NULL,
 		[Id_Archivo] [numeric](10,0) NOT NULL,
+		[Diferido][bit] NULL,
 	 CONSTRAINT [PK_SalidasCruces] PRIMARY KEY CLUSTERED 
 	(
 		[Id_Archivo] ASC,

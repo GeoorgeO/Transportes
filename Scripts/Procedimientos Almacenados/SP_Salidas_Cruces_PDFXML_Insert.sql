@@ -23,7 +23,8 @@ create PROCEDURE [dbo].[SP_Salidas_Cruces_PDFXML_Insert]
 	@Importe numeric(18, 2),
 	@Moneda char(1),
 	@Fecha_Cruce datetime,
-	@Id_Archivo numeric(10,0)
+	@Id_Archivo numeric(10,0),
+	@Diferido bit
 AS
 BEGIN
 	-- SET NOCOUNT ON added to prevent extra result sets from
@@ -51,7 +52,8 @@ BEGIN
 				FacturaXMLNombre=@FacturaXMLNombre,
 				Importe=@Importe,
 				Moneda=@Moneda,
-				Fecha_Cruce=@Fecha_Cruce
+				Fecha_Cruce=@Fecha_Cruce,
+				Diferido=@Diferido
 			where Id_Salida=@Id_Salida and Id_Archivo=@Id_Archivo
 			
 		else
@@ -65,7 +67,8 @@ BEGIN
 			   ,Importe
 			   ,Fecha_Cruce
 			   ,Moneda
-			   ,Id_Archivo)
+			   ,Id_Archivo
+			   ,Diferido)
 	     	VALUES
 	           (@Id_Salida
 	           ,@FacturaPDF
@@ -75,7 +78,8 @@ BEGIN
 			   ,@Importe
 			   ,@Fecha_Cruce
 			   ,@Moneda
-			   ,@maximo)
+			   ,@maximo
+			   ,@Diferido)
 		
 		commit transaction T1;
 		set @correcto=1

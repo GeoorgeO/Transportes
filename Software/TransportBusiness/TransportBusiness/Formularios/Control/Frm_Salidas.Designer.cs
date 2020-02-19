@@ -233,16 +233,23 @@
             this.checkAnticongelante = new DevExpress.XtraEditors.CheckEdit();
             this.checkLiquidoDireccion = new DevExpress.XtraEditors.CheckEdit();
             this.checkAceite = new DevExpress.XtraEditors.CheckEdit();
-            this.barLargeButtonItem5 = new DevExpress.XtraBars.BarLargeButtonItem();
-            this.barLargeButtonItem6 = new DevExpress.XtraBars.BarLargeButtonItem();
-            this.barLargeButtonItem7 = new DevExpress.XtraBars.BarLargeButtonItem();
-            this.barLargeButtonItem8 = new DevExpress.XtraBars.BarLargeButtonItem();
-            this.barStaticItem2 = new DevExpress.XtraBars.BarStaticItem();
-            this.barDockControl8 = new DevExpress.XtraBars.BarDockControl();
-            this.OpenDialog = new DevExpress.XtraEditors.XtraOpenFileDialog(this.components);
             this.xtraTabPage7 = new DevExpress.XtraTab.XtraTabPage();
-            this.panelControl14 = new DevExpress.XtraEditors.PanelControl();
             this.panelControl15 = new DevExpress.XtraEditors.PanelControl();
+            this.gridCruce = new DevExpress.XtraGrid.GridControl();
+            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn6 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn7 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn8 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Fecha_Cruce = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.panelControl14 = new DevExpress.XtraEditors.PanelControl();
+            this.labelId_Archivo = new DevExpress.XtraEditors.LabelControl();
+            this.dateFacturaC = new DevExpress.XtraEditors.DateEdit();
+            this.labelControl43 = new DevExpress.XtraEditors.LabelControl();
             this.cboMonedaC = new DevExpress.XtraEditors.ComboBoxEdit();
             this.labelControl37 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl40 = new DevExpress.XtraEditors.LabelControl();
@@ -256,20 +263,16 @@
             this.btnUpPDFC = new DevExpress.XtraEditors.SimpleButton();
             this.txtNombreArchivoPDFC = new DevExpress.XtraEditors.TextEdit();
             this.labelControl42 = new DevExpress.XtraEditors.LabelControl();
-            this.dateFacturaC = new DevExpress.XtraEditors.DateEdit();
-            this.labelControl43 = new DevExpress.XtraEditors.LabelControl();
-            this.gridCruce = new DevExpress.XtraGrid.GridControl();
-            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn6 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn7 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn8 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.Fecha_Cruce = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.labelId_Archivo = new DevExpress.XtraEditors.LabelControl();
+            this.barLargeButtonItem5 = new DevExpress.XtraBars.BarLargeButtonItem();
+            this.barLargeButtonItem6 = new DevExpress.XtraBars.BarLargeButtonItem();
+            this.barLargeButtonItem7 = new DevExpress.XtraBars.BarLargeButtonItem();
+            this.barLargeButtonItem8 = new DevExpress.XtraBars.BarLargeButtonItem();
+            this.barStaticItem2 = new DevExpress.XtraBars.BarStaticItem();
+            this.barDockControl8 = new DevExpress.XtraBars.BarDockControl();
+            this.OpenDialog = new DevExpress.XtraEditors.XtraOpenFileDialog(this.components);
+            this.rbDiferido = new System.Windows.Forms.RadioButton();
+            this.rbTotal = new System.Windows.Forms.RadioButton();
+            this.Diferido = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
@@ -381,18 +384,18 @@
             ((System.ComponentModel.ISupportInitialize)(this.checkLiquidoDireccion.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.checkAceite.Properties)).BeginInit();
             this.xtraTabPage7.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl14)).BeginInit();
-            this.panelControl14.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl15)).BeginInit();
             this.panelControl15.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridCruce)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl14)).BeginInit();
+            this.panelControl14.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dateFacturaC.Properties.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dateFacturaC.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cboMonedaC.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textImporteC.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNombreArchivoXMLC.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNombreArchivoPDFC.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateFacturaC.Properties.CalendarTimeProperties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateFacturaC.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridCruce)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // barManager1
@@ -2379,56 +2382,6 @@
             this.checkAceite.Size = new System.Drawing.Size(102, 19);
             this.checkAceite.TabIndex = 0;
             // 
-            // barLargeButtonItem5
-            // 
-            this.barLargeButtonItem5.Caption = "Limpiar";
-            this.barLargeButtonItem5.Id = 50;
-            this.barLargeButtonItem5.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barLargeButtonItem5.ImageOptions.Image")));
-            this.barLargeButtonItem5.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barLargeButtonItem5.ImageOptions.LargeImage")));
-            this.barLargeButtonItem5.Name = "barLargeButtonItem5";
-            // 
-            // barLargeButtonItem6
-            // 
-            this.barLargeButtonItem6.Caption = "Guardar";
-            this.barLargeButtonItem6.Id = 53;
-            this.barLargeButtonItem6.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barLargeButtonItem6.ImageOptions.Image")));
-            this.barLargeButtonItem6.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barLargeButtonItem6.ImageOptions.LargeImage")));
-            this.barLargeButtonItem6.Name = "barLargeButtonItem6";
-            // 
-            // barLargeButtonItem7
-            // 
-            this.barLargeButtonItem7.Caption = "Eliminar";
-            this.barLargeButtonItem7.Id = 57;
-            this.barLargeButtonItem7.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barLargeButtonItem7.ImageOptions.Image")));
-            this.barLargeButtonItem7.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barLargeButtonItem7.ImageOptions.LargeImage")));
-            this.barLargeButtonItem7.Name = "barLargeButtonItem7";
-            // 
-            // barLargeButtonItem8
-            // 
-            this.barLargeButtonItem8.Caption = "Salir";
-            this.barLargeButtonItem8.Id = 63;
-            this.barLargeButtonItem8.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barLargeButtonItem8.ImageOptions.Image")));
-            this.barLargeButtonItem8.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barLargeButtonItem8.ImageOptions.LargeImage")));
-            this.barLargeButtonItem8.Name = "barLargeButtonItem8";
-            // 
-            // barStaticItem2
-            // 
-            this.barStaticItem2.Caption = "Proveedor:";
-            this.barStaticItem2.Id = 48;
-            this.barStaticItem2.Name = "barStaticItem2";
-            // 
-            // barDockControl8
-            // 
-            this.barDockControl8.CausesValidation = false;
-            this.barDockControl8.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControl8.Location = new System.Drawing.Point(1204, 0);
-            this.barDockControl8.Manager = null;
-            this.barDockControl8.Size = new System.Drawing.Size(0, 570);
-            // 
-            // OpenDialog
-            // 
-            this.OpenDialog.FileName = "xtraOpenFileDialog1";
-            // 
             // xtraTabPage7
             // 
             this.xtraTabPage7.Controls.Add(this.panelControl15);
@@ -2438,30 +2391,6 @@
             this.xtraTabPage7.Size = new System.Drawing.Size(1118, 305);
             this.xtraTabPage7.Text = "Cruce";
             // 
-            // panelControl14
-            // 
-            this.panelControl14.Controls.Add(this.labelId_Archivo);
-            this.panelControl14.Controls.Add(this.dateFacturaC);
-            this.panelControl14.Controls.Add(this.labelControl43);
-            this.panelControl14.Controls.Add(this.cboMonedaC);
-            this.panelControl14.Controls.Add(this.labelControl37);
-            this.panelControl14.Controls.Add(this.labelControl40);
-            this.panelControl14.Controls.Add(this.textImporteC);
-            this.panelControl14.Controls.Add(this.btnAgregarCruce);
-            this.panelControl14.Controls.Add(this.btnViewXMLC);
-            this.panelControl14.Controls.Add(this.btnUpXMLC);
-            this.panelControl14.Controls.Add(this.txtNombreArchivoXMLC);
-            this.panelControl14.Controls.Add(this.labelControl41);
-            this.panelControl14.Controls.Add(this.btnViewPDFC);
-            this.panelControl14.Controls.Add(this.btnUpPDFC);
-            this.panelControl14.Controls.Add(this.txtNombreArchivoPDFC);
-            this.panelControl14.Controls.Add(this.labelControl42);
-            this.panelControl14.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelControl14.Location = new System.Drawing.Point(5, 5);
-            this.panelControl14.Name = "panelControl14";
-            this.panelControl14.Size = new System.Drawing.Size(1108, 67);
-            this.panelControl14.TabIndex = 0;
-            // 
             // panelControl15
             // 
             this.panelControl15.Controls.Add(this.gridCruce);
@@ -2470,146 +2399,6 @@
             this.panelControl15.Name = "panelControl15";
             this.panelControl15.Size = new System.Drawing.Size(1108, 228);
             this.panelControl15.TabIndex = 1;
-            // 
-            // cboMonedaC
-            // 
-            this.cboMonedaC.Location = new System.Drawing.Point(615, 38);
-            this.cboMonedaC.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.cboMonedaC.MenuManager = this.barManager1;
-            this.cboMonedaC.Name = "cboMonedaC";
-            this.cboMonedaC.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.cboMonedaC.Properties.Items.AddRange(new object[] {
-            "Pesos",
-            "Dólares"});
-            this.cboMonedaC.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
-            this.cboMonedaC.Size = new System.Drawing.Size(86, 20);
-            this.cboMonedaC.TabIndex = 84;
-            // 
-            // labelControl37
-            // 
-            this.labelControl37.Location = new System.Drawing.Point(571, 42);
-            this.labelControl37.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.labelControl37.Name = "labelControl37";
-            this.labelControl37.Size = new System.Drawing.Size(42, 13);
-            this.labelControl37.TabIndex = 83;
-            this.labelControl37.Text = "Moneda:";
-            // 
-            // labelControl40
-            // 
-            this.labelControl40.Location = new System.Drawing.Point(410, 42);
-            this.labelControl40.Name = "labelControl40";
-            this.labelControl40.Size = new System.Drawing.Size(42, 13);
-            this.labelControl40.TabIndex = 82;
-            this.labelControl40.Text = "Importe:";
-            // 
-            // textImporteC
-            // 
-            this.textImporteC.Location = new System.Drawing.Point(456, 38);
-            this.textImporteC.MenuManager = this.barManager1;
-            this.textImporteC.Name = "textImporteC";
-            this.textImporteC.Properties.Mask.EditMask = "n";
-            this.textImporteC.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
-            this.textImporteC.Size = new System.Drawing.Size(94, 20);
-            this.textImporteC.TabIndex = 81;
-            // 
-            // btnAgregarCruce
-            // 
-            this.btnAgregarCruce.Location = new System.Drawing.Point(726, 36);
-            this.btnAgregarCruce.Name = "btnAgregarCruce";
-            this.btnAgregarCruce.Size = new System.Drawing.Size(75, 23);
-            this.btnAgregarCruce.TabIndex = 80;
-            this.btnAgregarCruce.Text = "Agregar";
-            this.btnAgregarCruce.Click += new System.EventHandler(this.btnAgregarCruce_Click);
-            // 
-            // btnViewXMLC
-            // 
-            this.btnViewXMLC.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton2.ImageOptions.Image")));
-            this.btnViewXMLC.Location = new System.Drawing.Point(364, 37);
-            this.btnViewXMLC.Name = "btnViewXMLC";
-            this.btnViewXMLC.Size = new System.Drawing.Size(25, 23);
-            this.btnViewXMLC.TabIndex = 79;
-            this.btnViewXMLC.Click += new System.EventHandler(this.btnViewXMLC_Click);
-            // 
-            // btnUpXMLC
-            // 
-            this.btnUpXMLC.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton3.ImageOptions.Image")));
-            this.btnUpXMLC.Location = new System.Drawing.Point(333, 37);
-            this.btnUpXMLC.Name = "btnUpXMLC";
-            this.btnUpXMLC.Size = new System.Drawing.Size(25, 23);
-            this.btnUpXMLC.TabIndex = 78;
-            this.btnUpXMLC.Click += new System.EventHandler(this.btnUpXMLC_Click);
-            // 
-            // txtNombreArchivoXMLC
-            // 
-            this.txtNombreArchivoXMLC.Enabled = false;
-            this.txtNombreArchivoXMLC.Location = new System.Drawing.Point(37, 38);
-            this.txtNombreArchivoXMLC.Name = "txtNombreArchivoXMLC";
-            this.txtNombreArchivoXMLC.Size = new System.Drawing.Size(285, 20);
-            this.txtNombreArchivoXMLC.TabIndex = 77;
-            // 
-            // labelControl41
-            // 
-            this.labelControl41.Location = new System.Drawing.Point(11, 42);
-            this.labelControl41.Name = "labelControl41";
-            this.labelControl41.Size = new System.Drawing.Size(19, 13);
-            this.labelControl41.TabIndex = 76;
-            this.labelControl41.Text = "XML";
-            // 
-            // btnViewPDFC
-            // 
-            this.btnViewPDFC.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton4.ImageOptions.Image")));
-            this.btnViewPDFC.Location = new System.Drawing.Point(364, 11);
-            this.btnViewPDFC.Name = "btnViewPDFC";
-            this.btnViewPDFC.Size = new System.Drawing.Size(25, 23);
-            this.btnViewPDFC.TabIndex = 75;
-            this.btnViewPDFC.Click += new System.EventHandler(this.btnViewPDFC_Click);
-            // 
-            // btnUpPDFC
-            // 
-            this.btnUpPDFC.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton5.ImageOptions.Image")));
-            this.btnUpPDFC.Location = new System.Drawing.Point(333, 11);
-            this.btnUpPDFC.Name = "btnUpPDFC";
-            this.btnUpPDFC.Size = new System.Drawing.Size(25, 23);
-            this.btnUpPDFC.TabIndex = 74;
-            this.btnUpPDFC.Click += new System.EventHandler(this.btnUpPDFC_Click);
-            // 
-            // txtNombreArchivoPDFC
-            // 
-            this.txtNombreArchivoPDFC.Enabled = false;
-            this.txtNombreArchivoPDFC.Location = new System.Drawing.Point(37, 12);
-            this.txtNombreArchivoPDFC.Name = "txtNombreArchivoPDFC";
-            this.txtNombreArchivoPDFC.Size = new System.Drawing.Size(285, 20);
-            this.txtNombreArchivoPDFC.TabIndex = 73;
-            // 
-            // labelControl42
-            // 
-            this.labelControl42.Location = new System.Drawing.Point(12, 16);
-            this.labelControl42.Name = "labelControl42";
-            this.labelControl42.Size = new System.Drawing.Size(19, 13);
-            this.labelControl42.TabIndex = 72;
-            this.labelControl42.Text = "PDF";
-            // 
-            // dateFacturaC
-            // 
-            this.dateFacturaC.EditValue = null;
-            this.dateFacturaC.Location = new System.Drawing.Point(456, 12);
-            this.dateFacturaC.MenuManager = this.barManager1;
-            this.dateFacturaC.Name = "dateFacturaC";
-            this.dateFacturaC.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dateFacturaC.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dateFacturaC.Size = new System.Drawing.Size(94, 20);
-            this.dateFacturaC.TabIndex = 86;
-            // 
-            // labelControl43
-            // 
-            this.labelControl43.Location = new System.Drawing.Point(410, 16);
-            this.labelControl43.Name = "labelControl43";
-            this.labelControl43.Size = new System.Drawing.Size(33, 13);
-            this.labelControl43.TabIndex = 85;
-            this.labelControl43.Text = "Fecha:";
             // 
             // gridCruce
             // 
@@ -2636,7 +2425,8 @@
             this.gridColumn6,
             this.gridColumn7,
             this.gridColumn8,
-            this.Fecha_Cruce});
+            this.Fecha_Cruce,
+            this.Diferido});
             this.gridView1.GridControl = this.gridCruce;
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsBehavior.Editable = false;
@@ -2707,6 +2497,32 @@
             this.Fecha_Cruce.Visible = true;
             this.Fecha_Cruce.VisibleIndex = 4;
             // 
+            // panelControl14
+            // 
+            this.panelControl14.Controls.Add(this.rbTotal);
+            this.panelControl14.Controls.Add(this.rbDiferido);
+            this.panelControl14.Controls.Add(this.labelId_Archivo);
+            this.panelControl14.Controls.Add(this.dateFacturaC);
+            this.panelControl14.Controls.Add(this.labelControl43);
+            this.panelControl14.Controls.Add(this.cboMonedaC);
+            this.panelControl14.Controls.Add(this.labelControl37);
+            this.panelControl14.Controls.Add(this.labelControl40);
+            this.panelControl14.Controls.Add(this.textImporteC);
+            this.panelControl14.Controls.Add(this.btnAgregarCruce);
+            this.panelControl14.Controls.Add(this.btnViewXMLC);
+            this.panelControl14.Controls.Add(this.btnUpXMLC);
+            this.panelControl14.Controls.Add(this.txtNombreArchivoXMLC);
+            this.panelControl14.Controls.Add(this.labelControl41);
+            this.panelControl14.Controls.Add(this.btnViewPDFC);
+            this.panelControl14.Controls.Add(this.btnUpPDFC);
+            this.panelControl14.Controls.Add(this.txtNombreArchivoPDFC);
+            this.panelControl14.Controls.Add(this.labelControl42);
+            this.panelControl14.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelControl14.Location = new System.Drawing.Point(5, 5);
+            this.panelControl14.Name = "panelControl14";
+            this.panelControl14.Size = new System.Drawing.Size(1108, 67);
+            this.panelControl14.TabIndex = 0;
+            // 
             // labelId_Archivo
             // 
             this.labelId_Archivo.Location = new System.Drawing.Point(906, 4);
@@ -2716,6 +2532,226 @@
             this.labelId_Archivo.TabIndex = 87;
             this.labelId_Archivo.Text = "0";
             this.labelId_Archivo.Visible = false;
+            // 
+            // dateFacturaC
+            // 
+            this.dateFacturaC.EditValue = null;
+            this.dateFacturaC.Location = new System.Drawing.Point(456, 12);
+            this.dateFacturaC.MenuManager = this.barManager1;
+            this.dateFacturaC.Name = "dateFacturaC";
+            this.dateFacturaC.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dateFacturaC.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dateFacturaC.Size = new System.Drawing.Size(94, 20);
+            this.dateFacturaC.TabIndex = 86;
+            // 
+            // labelControl43
+            // 
+            this.labelControl43.Location = new System.Drawing.Point(410, 16);
+            this.labelControl43.Name = "labelControl43";
+            this.labelControl43.Size = new System.Drawing.Size(33, 13);
+            this.labelControl43.TabIndex = 85;
+            this.labelControl43.Text = "Fecha:";
+            // 
+            // cboMonedaC
+            // 
+            this.cboMonedaC.Location = new System.Drawing.Point(615, 38);
+            this.cboMonedaC.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cboMonedaC.MenuManager = this.barManager1;
+            this.cboMonedaC.Name = "cboMonedaC";
+            this.cboMonedaC.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cboMonedaC.Properties.Items.AddRange(new object[] {
+            "Pesos",
+            "Dólares"});
+            this.cboMonedaC.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
+            this.cboMonedaC.Size = new System.Drawing.Size(86, 20);
+            this.cboMonedaC.TabIndex = 84;
+            // 
+            // labelControl37
+            // 
+            this.labelControl37.Location = new System.Drawing.Point(571, 42);
+            this.labelControl37.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.labelControl37.Name = "labelControl37";
+            this.labelControl37.Size = new System.Drawing.Size(42, 13);
+            this.labelControl37.TabIndex = 83;
+            this.labelControl37.Text = "Moneda:";
+            // 
+            // labelControl40
+            // 
+            this.labelControl40.Location = new System.Drawing.Point(410, 42);
+            this.labelControl40.Name = "labelControl40";
+            this.labelControl40.Size = new System.Drawing.Size(42, 13);
+            this.labelControl40.TabIndex = 82;
+            this.labelControl40.Text = "Importe:";
+            // 
+            // textImporteC
+            // 
+            this.textImporteC.Location = new System.Drawing.Point(456, 38);
+            this.textImporteC.MenuManager = this.barManager1;
+            this.textImporteC.Name = "textImporteC";
+            this.textImporteC.Properties.Mask.EditMask = "n";
+            this.textImporteC.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
+            this.textImporteC.Size = new System.Drawing.Size(94, 20);
+            this.textImporteC.TabIndex = 81;
+            // 
+            // btnAgregarCruce
+            // 
+            this.btnAgregarCruce.Location = new System.Drawing.Point(726, 36);
+            this.btnAgregarCruce.Name = "btnAgregarCruce";
+            this.btnAgregarCruce.Size = new System.Drawing.Size(75, 23);
+            this.btnAgregarCruce.TabIndex = 80;
+            this.btnAgregarCruce.Text = "Agregar";
+            this.btnAgregarCruce.Click += new System.EventHandler(this.btnAgregarCruce_Click);
+            // 
+            // btnViewXMLC
+            // 
+            this.btnViewXMLC.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnViewXMLC.ImageOptions.Image")));
+            this.btnViewXMLC.Location = new System.Drawing.Point(364, 37);
+            this.btnViewXMLC.Name = "btnViewXMLC";
+            this.btnViewXMLC.Size = new System.Drawing.Size(25, 23);
+            this.btnViewXMLC.TabIndex = 79;
+            this.btnViewXMLC.Click += new System.EventHandler(this.btnViewXMLC_Click);
+            // 
+            // btnUpXMLC
+            // 
+            this.btnUpXMLC.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnUpXMLC.ImageOptions.Image")));
+            this.btnUpXMLC.Location = new System.Drawing.Point(333, 37);
+            this.btnUpXMLC.Name = "btnUpXMLC";
+            this.btnUpXMLC.Size = new System.Drawing.Size(25, 23);
+            this.btnUpXMLC.TabIndex = 78;
+            this.btnUpXMLC.Click += new System.EventHandler(this.btnUpXMLC_Click);
+            // 
+            // txtNombreArchivoXMLC
+            // 
+            this.txtNombreArchivoXMLC.Enabled = false;
+            this.txtNombreArchivoXMLC.Location = new System.Drawing.Point(37, 38);
+            this.txtNombreArchivoXMLC.Name = "txtNombreArchivoXMLC";
+            this.txtNombreArchivoXMLC.Size = new System.Drawing.Size(285, 20);
+            this.txtNombreArchivoXMLC.TabIndex = 77;
+            // 
+            // labelControl41
+            // 
+            this.labelControl41.Location = new System.Drawing.Point(11, 42);
+            this.labelControl41.Name = "labelControl41";
+            this.labelControl41.Size = new System.Drawing.Size(19, 13);
+            this.labelControl41.TabIndex = 76;
+            this.labelControl41.Text = "XML";
+            // 
+            // btnViewPDFC
+            // 
+            this.btnViewPDFC.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnViewPDFC.ImageOptions.Image")));
+            this.btnViewPDFC.Location = new System.Drawing.Point(364, 11);
+            this.btnViewPDFC.Name = "btnViewPDFC";
+            this.btnViewPDFC.Size = new System.Drawing.Size(25, 23);
+            this.btnViewPDFC.TabIndex = 75;
+            this.btnViewPDFC.Click += new System.EventHandler(this.btnViewPDFC_Click);
+            // 
+            // btnUpPDFC
+            // 
+            this.btnUpPDFC.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnUpPDFC.ImageOptions.Image")));
+            this.btnUpPDFC.Location = new System.Drawing.Point(333, 11);
+            this.btnUpPDFC.Name = "btnUpPDFC";
+            this.btnUpPDFC.Size = new System.Drawing.Size(25, 23);
+            this.btnUpPDFC.TabIndex = 74;
+            this.btnUpPDFC.Click += new System.EventHandler(this.btnUpPDFC_Click);
+            // 
+            // txtNombreArchivoPDFC
+            // 
+            this.txtNombreArchivoPDFC.Enabled = false;
+            this.txtNombreArchivoPDFC.Location = new System.Drawing.Point(37, 12);
+            this.txtNombreArchivoPDFC.Name = "txtNombreArchivoPDFC";
+            this.txtNombreArchivoPDFC.Size = new System.Drawing.Size(285, 20);
+            this.txtNombreArchivoPDFC.TabIndex = 73;
+            // 
+            // labelControl42
+            // 
+            this.labelControl42.Location = new System.Drawing.Point(12, 16);
+            this.labelControl42.Name = "labelControl42";
+            this.labelControl42.Size = new System.Drawing.Size(19, 13);
+            this.labelControl42.TabIndex = 72;
+            this.labelControl42.Text = "PDF";
+            // 
+            // barLargeButtonItem5
+            // 
+            this.barLargeButtonItem5.Caption = "Limpiar";
+            this.barLargeButtonItem5.Id = 50;
+            this.barLargeButtonItem5.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barLargeButtonItem5.ImageOptions.Image")));
+            this.barLargeButtonItem5.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barLargeButtonItem5.ImageOptions.LargeImage")));
+            this.barLargeButtonItem5.Name = "barLargeButtonItem5";
+            // 
+            // barLargeButtonItem6
+            // 
+            this.barLargeButtonItem6.Caption = "Guardar";
+            this.barLargeButtonItem6.Id = 53;
+            this.barLargeButtonItem6.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barLargeButtonItem6.ImageOptions.Image")));
+            this.barLargeButtonItem6.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barLargeButtonItem6.ImageOptions.LargeImage")));
+            this.barLargeButtonItem6.Name = "barLargeButtonItem6";
+            // 
+            // barLargeButtonItem7
+            // 
+            this.barLargeButtonItem7.Caption = "Eliminar";
+            this.barLargeButtonItem7.Id = 57;
+            this.barLargeButtonItem7.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barLargeButtonItem7.ImageOptions.Image")));
+            this.barLargeButtonItem7.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barLargeButtonItem7.ImageOptions.LargeImage")));
+            this.barLargeButtonItem7.Name = "barLargeButtonItem7";
+            // 
+            // barLargeButtonItem8
+            // 
+            this.barLargeButtonItem8.Caption = "Salir";
+            this.barLargeButtonItem8.Id = 63;
+            this.barLargeButtonItem8.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barLargeButtonItem8.ImageOptions.Image")));
+            this.barLargeButtonItem8.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barLargeButtonItem8.ImageOptions.LargeImage")));
+            this.barLargeButtonItem8.Name = "barLargeButtonItem8";
+            // 
+            // barStaticItem2
+            // 
+            this.barStaticItem2.Caption = "Proveedor:";
+            this.barStaticItem2.Id = 48;
+            this.barStaticItem2.Name = "barStaticItem2";
+            // 
+            // barDockControl8
+            // 
+            this.barDockControl8.CausesValidation = false;
+            this.barDockControl8.Dock = System.Windows.Forms.DockStyle.Right;
+            this.barDockControl8.Location = new System.Drawing.Point(1204, 0);
+            this.barDockControl8.Manager = null;
+            this.barDockControl8.Size = new System.Drawing.Size(0, 570);
+            // 
+            // OpenDialog
+            // 
+            this.OpenDialog.FileName = "xtraOpenFileDialog1";
+            // 
+            // rbDiferido
+            // 
+            this.rbDiferido.AutoSize = true;
+            this.rbDiferido.Location = new System.Drawing.Point(571, 16);
+            this.rbDiferido.Name = "rbDiferido";
+            this.rbDiferido.Size = new System.Drawing.Size(62, 17);
+            this.rbDiferido.TabIndex = 88;
+            this.rbDiferido.Text = "Diferido";
+            this.rbDiferido.UseVisualStyleBackColor = true;
+            // 
+            // rbTotal
+            // 
+            this.rbTotal.AutoSize = true;
+            this.rbTotal.Checked = true;
+            this.rbTotal.Location = new System.Drawing.Point(657, 16);
+            this.rbTotal.Name = "rbTotal";
+            this.rbTotal.Size = new System.Drawing.Size(49, 17);
+            this.rbTotal.TabIndex = 89;
+            this.rbTotal.TabStop = true;
+            this.rbTotal.Text = "Total";
+            this.rbTotal.UseVisualStyleBackColor = true;
+            // 
+            // Diferido
+            // 
+            this.Diferido.Caption = "Diferido";
+            this.Diferido.FieldName = "Diferido";
+            this.Diferido.Name = "Diferido";
+            this.Diferido.Visible = true;
+            this.Diferido.VisibleIndex = 5;
             // 
             // Frm_Salidas
             // 
@@ -2852,19 +2888,19 @@
             ((System.ComponentModel.ISupportInitialize)(this.checkLiquidoDireccion.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.checkAceite.Properties)).EndInit();
             this.xtraTabPage7.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl15)).EndInit();
+            this.panelControl15.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.gridCruce)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl14)).EndInit();
             this.panelControl14.ResumeLayout(false);
             this.panelControl14.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl15)).EndInit();
-            this.panelControl15.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dateFacturaC.Properties.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dateFacturaC.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cboMonedaC.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textImporteC.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNombreArchivoXMLC.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNombreArchivoPDFC.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateFacturaC.Properties.CalendarTimeProperties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateFacturaC.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridCruce)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -3112,5 +3148,8 @@
         private DevExpress.XtraEditors.TextEdit txtNombreArchivoPDFC;
         private DevExpress.XtraEditors.LabelControl labelControl42;
         private DevExpress.XtraEditors.LabelControl labelId_Archivo;
+        private System.Windows.Forms.RadioButton rbTotal;
+        private System.Windows.Forms.RadioButton rbDiferido;
+        private DevExpress.XtraGrid.Columns.GridColumn Diferido;
     }
 }

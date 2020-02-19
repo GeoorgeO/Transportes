@@ -1879,7 +1879,15 @@ namespace TransportBusiness
             {
                 Clase.Moneda = "D";
             }
-
+            if (rbDiferido.Checked)
+            {
+                Clase.Diferido = "1";
+            }
+            else
+            {
+                Clase.Diferido = "0";
+            }
+            
 
             Clase.MtdInsertarSalidasArchivoPDFXML();
 
@@ -1929,6 +1937,13 @@ namespace TransportBusiness
                     {
                         cboMonedaC.Text = "Dólares";
                     }
+                    if (row["Diferido"].ToString().Equals("True")){
+                        rbDiferido.Checked = true;
+                    }
+                    else
+                    {
+                        rbTotal.Checked = true;
+                    }
                 }
             }
             catch (Exception ex)
@@ -1948,7 +1963,6 @@ namespace TransportBusiness
                     {
                         DataRow row = this.gridView1.GetDataRow(i);
                         EliminarSalidasCruces(row["Id_Salida"].ToString().Trim(), Convert.ToInt32(row["Id_Archivo"]));
-
                     }
                 }
             }

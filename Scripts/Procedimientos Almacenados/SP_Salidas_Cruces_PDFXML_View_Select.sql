@@ -38,6 +38,7 @@ BEGIN
 			   ,Moneda
 			   ,Fecha_Cruce
 			   ,Id_Archivo
+			   ,Diferido
 			from dbo.Salidas_Cruces 
 			where Id_Salida=@Id_Salida
 			and Id_Archivo=@Id_Archivo
