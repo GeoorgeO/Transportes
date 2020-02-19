@@ -1947,7 +1947,7 @@ namespace TransportBusiness
                     foreach (int i in this.gridView1.GetSelectedRows())
                     {
                         DataRow row = this.gridView1.GetDataRow(i);
-                        EliminarSalidasOtrosGastos(row["Id_Salida"].ToString().Trim(), row["Id_Archivo"].ToString().Trim());
+                        EliminarSalidasCruces(row["Id_Salida"].ToString().Trim(), Convert.ToInt32(row["Id_Archivo"]));
 
                     }
                 }
