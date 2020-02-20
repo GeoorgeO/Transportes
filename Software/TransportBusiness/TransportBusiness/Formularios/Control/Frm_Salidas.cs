@@ -2107,10 +2107,7 @@ namespace TransportBusiness
             }
         }
 
-        private void btnDeletePDF_Click(object sender, EventArgs e)
-        {
-
-        }
+        
 
        
     
