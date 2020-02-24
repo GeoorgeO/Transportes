@@ -15,7 +15,11 @@ ELSE
 		[FacturaXMLNombre] [varchar](80) NULL,
 		[Importe] [numeric](18, 2) NULL,
 		[Id_Archivo] [numeric](10,0) NOT NULL,
-		[Moneda] [char](1) NOT NUll
+		[Moneda] [char](1) NOT NUll,
+		[Fecha_Factura] [datetime] NULL,
+		[Fecha_Cobro] [datetime] NULL,
+		[Diferido] [bit] NULL,
+		[Fecha_Pago] [datetime] NULL
 	)
 
 	end

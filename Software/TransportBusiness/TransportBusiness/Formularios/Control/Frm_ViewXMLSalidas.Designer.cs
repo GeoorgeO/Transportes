@@ -35,20 +35,21 @@
             // 
             this.webBrowser1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.webBrowser1.Location = new System.Drawing.Point(0, 0);
-            this.webBrowser1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.webBrowser1.MinimumSize = new System.Drawing.Size(23, 25);
+            this.webBrowser1.MinimumSize = new System.Drawing.Size(20, 20);
             this.webBrowser1.Name = "webBrowser1";
-            this.webBrowser1.Size = new System.Drawing.Size(560, 562);
+            this.webBrowser1.Size = new System.Drawing.Size(480, 457);
             this.webBrowser1.TabIndex = 1;
             // 
             // Frm_ViewXMLSalidas
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(560, 562);
+            this.ClientSize = new System.Drawing.Size(480, 457);
             this.Controls.Add(this.webBrowser1);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Frm_ViewXMLSalidas";
             this.Text = "Frm_ViewXMLSalidas";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Frm_ViewXMLSalidas_Load);
             this.ResumeLayout(false);
 

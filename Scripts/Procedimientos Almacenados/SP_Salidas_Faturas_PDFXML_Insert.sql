@@ -22,7 +22,11 @@ create PROCEDURE [dbo].[SP_Salidas_Faturas_PDFXML_Insert]
 	@FacturaXMLNombre varchar(80),
 	@Importe numeric(18, 2),
 	@Id_Archivo numeric(10,0),
-	@Moneda char(1)
+	@Moneda char(1),
+	@Diferido bit,
+	@Fecha_Factura varchar(15),
+	@Fecha_Cobro varchar(15),
+	@Fecha_Pago varchar(15)
 AS
 BEGIN
 	-- SET NOCOUNT ON added to prevent extra result sets from
@@ -40,6 +44,13 @@ BEGIN
 
 		declare @Existe int
 		select @Existe = count(Id_Archivo) from dbo.Salidas_Facturas  where (Id_Salida=@Id_Salida and Id_Archivo=@Id_Archivo)
+		
+		if len(@Fecha_Factura)=0 
+			set @Fecha_Factura=NULL
+		if len(@Fecha_Cobro)=0 
+			set @Fecha_Cobro=NULL
+		if len(@Fecha_Pago)=0 
+			set @Fecha_Pago=NULL
 
 		if @Existe>0 
 		
@@ -49,7 +60,11 @@ BEGIN
 				FacturaXML=@FacturaXML,
 				FacturaXMLNombre=@FacturaXMLNombre,
 				Importe=@Importe,
-				Moneda=@Moneda
+				Moneda=@Moneda,
+				Diferido=@Diferido,
+				Fecha_Factura=@Fecha_Factura,
+				Fecha_Cobro=@Fecha_Cobro,
+				Fecha_Pago=@Fecha_Pago
 			where Id_Salida=@Id_Salida and Id_Archivo=@Id_Archivo
 			
 		else
@@ -62,7 +77,11 @@ BEGIN
 			   ,FacturaXMLNombre
 			   ,Importe
 			   ,Id_Archivo
-			   ,Moneda)
+			   ,Moneda
+			   ,Diferido
+			   ,Fecha_Factura
+			   ,Fecha_Cobro
+			   ,Fecha_Pago)
 	     	VALUES
 	           (@Id_Salida
 	           ,@FacturaPDF
@@ -71,7 +90,11 @@ BEGIN
 			   ,@FacturaXMLNombre
 			   ,@Importe
 			   ,@maximo
-			   ,@Moneda)
+			   ,@Moneda
+			   ,@Diferido
+			   ,@Fecha_Factura
+			   ,@Fecha_Cobro
+			   ,@Fecha_Pago)
 		
 		commit transaction T1;
 		set @correcto=1

@@ -16,6 +16,10 @@ namespace CapaDeDatos
         public decimal Importe { get; set; }
         public decimal Id_Archivo { get; set; }
         public string Moneda { get; set; }
+        public string Diferido { get; set; }
+        public string Fecha_Factura { get; set; }
+        public string Fecha_Pago { get; set; }
+        public string Fecha_Cobro { get; set; }
 
         public void MtdSeleccionarSalidasArchivoPDFXML()
         {
@@ -103,6 +107,14 @@ namespace CapaDeDatos
                 _conexion.agregarParametro(EnumTipoDato.Tipodecimal, _dato, "Id_Archivo");
                 _dato.CadenaTexto = Moneda;
                 _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Moneda");
+                _dato.CadenaTexto = Diferido;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Diferido");
+                _dato.CadenaTexto = Fecha_Factura;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Fecha_Factura");
+                _dato.CadenaTexto = Fecha_Cobro;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Fecha_Cobro");
+                _dato.CadenaTexto = Fecha_Pago;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Fecha_Pago");
                 _conexion.EjecutarDataset();
 
                 if (_conexion.Exito)

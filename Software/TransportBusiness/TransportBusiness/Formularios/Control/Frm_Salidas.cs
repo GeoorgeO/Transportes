@@ -155,6 +155,13 @@ namespace TransportBusiness
             {
                 xtraTabControl1.Enabled = false;
             }
+            limpiarSalidasCruce();
+            limpiarSalidasFacturas();
+            limpiarSalidasHonorario();
+            limpiarSalidasOtrosGastos();
+            limpiarSalidasRevisionUnidad();
+            limpiarSalidasViaticos();
+            limpiarSalidas_diesel();
         }
 
         private void Frm_Salidas_Load(object sender, EventArgs e)
@@ -314,6 +321,7 @@ namespace TransportBusiness
 
         private void btnBusqSalida_Click(object sender, EventArgs e)
         {
+            
             Frm_BusqSalidas frm = new Frm_BusqSalidas();
 
             frm.ShowDialog();
@@ -349,6 +357,7 @@ namespace TransportBusiness
             textHuerta.Text=frm.vNombre_Huerta;
             memoObservaciones.Text=frm.vObservaciones;
 
+            
             CargarSalidas_Diesel();
             CargarSalidasOtrosGastos();
             CargarSalidasViaticos();
@@ -356,6 +365,7 @@ namespace TransportBusiness
             CargarSalidasHonorario();
             CargarSalidasFacturas();
             CargarSalidasCruces();
+            
         }
 
         private void btnMotivoSalida_Click(object sender, EventArgs e)
@@ -1387,7 +1397,46 @@ namespace TransportBusiness
             {
                 Clase.Moneda = "D";
             }
-            
+
+            if (rbDiferidoF.Checked)
+            {
+                Clase.Diferido = "1";
+            }
+            else
+            {
+                Clase.Diferido = "0";
+            }
+
+            DateTime Fecha;
+           
+
+            if (dateFactura.EditValue == null)
+            {
+                Clase.Fecha_Factura = String.Empty;
+            }else
+            {
+               Fecha = Convert.ToDateTime(dateFactura.Text.Trim());
+               Clase.Fecha_Factura = Fecha.Year.ToString() + DosCero(Fecha.Month.ToString()) + DosCero(Fecha.Day.ToString());
+            }
+            if (dateCobro.EditValue == null)
+            {
+                Clase.Fecha_Cobro = String.Empty;
+            }
+            else
+            {
+                Fecha = Convert.ToDateTime(dateCobro.Text.Trim());
+                Clase.Fecha_Cobro = Fecha.Year.ToString() + DosCero(Fecha.Month.ToString()) + DosCero(Fecha.Day.ToString());
+            }
+            if (datePago.EditValue == null)
+            {
+                Clase.Fecha_Pago = String.Empty;
+            }
+            else
+            {
+                Fecha = Convert.ToDateTime(datePago.Text.Trim());
+                Clase.Fecha_Pago = Fecha.Year.ToString() + DosCero(Fecha.Month.ToString()) + DosCero(Fecha.Day.ToString());
+            }
+
 
             Clase.MtdInsertarSalidasArchivoPDFXML();
 
@@ -1396,7 +1445,6 @@ namespace TransportBusiness
                 CargarSalidasFacturas();
                 limpiarSalidasFacturas();
                 XtraMessageBox.Show("Se ha Insertado el registro con exito");
-
             }
             else
             {
@@ -1471,6 +1519,42 @@ namespace TransportBusiness
                     {
                         cboMoneda.Text = "Dólares";
                     }
+
+                    if (row["Diferido"].ToString().Equals("True"))
+                    {
+                        rbDiferidoF.Checked = true;
+                    }
+                    else
+                    {
+                        rbTotalF.Checked = true;
+                    }
+
+                    if (row["Fecha_Factura"].ToString() == String.Empty)
+                    {
+
+                    }
+                    else
+                    {
+                        dateFactura.EditValue = Convert.ToDateTime(row["Fecha_Factura"]);
+                    }
+                   
+                    if (row["Fecha_Cobro"].ToString() == String.Empty)
+                    {
+
+                    }else
+                    {
+                        dateCobro.EditValue = Convert.ToDateTime(row["Fecha_Cobro"]);
+                    }
+                        
+                    if (row["Fecha_Pago"].ToString()==String.Empty)
+                    {
+
+                    }else
+                    {
+                        datePago.EditValue = Convert.ToDateTime(row["Fecha_Pago"]);
+                        checkPagada.Checked = true;
+                    }
+                    
                 }
             }
             catch (Exception ex)
@@ -1952,6 +2036,20 @@ namespace TransportBusiness
             }
         }
 
+        private void checkPagada_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkPagada.Checked)
+            {
+                datePago.Enabled = true;
+                datePago.EditValue = DateTime.Now;
+            }
+            else
+            {
+                datePago.EditValue = null;
+                datePago.Enabled = false;
+            }
+        }
+
         private void gridCruce_DoubleClick(object sender, EventArgs e)
         {
             try
@@ -2074,6 +2172,10 @@ namespace TransportBusiness
             NombreXML = "";
             ArchivoPDFGlobal = null;
             ArchivoXMLGlobal = null;
+            checkPagada.Checked = false;
+            dateFactura.EditValue = DateTime.Now;
+            dateCobro.EditValue = null;
+            rbTotalF.Checked = true;
         }
 
        private void limpiarSalidasCruce()

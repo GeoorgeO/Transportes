@@ -37,6 +37,10 @@ BEGIN
 			   ,Importe
 			   ,Id_Archivo
 			   ,Moneda
+			   ,Diferido
+			   ,Fecha_Factura
+			   ,Fecha_Cobro
+			   ,Fecha_Pago
 			from dbo.Salidas_Facturas 
 			where Id_Salida=@Id_Salida
 			and Id_Archivo=@Id_Archivo
