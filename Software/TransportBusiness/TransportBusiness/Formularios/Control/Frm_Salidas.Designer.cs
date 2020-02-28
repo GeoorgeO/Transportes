@@ -1523,6 +1523,7 @@
             this.checkPagadoOperador.Properties.Caption = "Pagado por Operador";
             this.checkPagadoOperador.Size = new System.Drawing.Size(144, 19);
             this.checkPagadoOperador.TabIndex = 63;
+            
             // 
             // labelControl22
             // 

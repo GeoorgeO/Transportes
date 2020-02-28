@@ -8,7 +8,7 @@ ELSE
 	begin
 		
 	CREATE TABLE [dbo].[Salidas_OtrosGastos](
-		[Ticket] [varchar](15) NOT NULL,
+		[Ticket] [varchar](20) NOT NULL,
 		[Id_Salida] [char](10) NOT NULL,
 		[Id_GastoDirecto] [char](4) NOT NULL,
 		[Importe] [numeric](18, 2) NULL,

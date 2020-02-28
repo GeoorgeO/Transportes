@@ -27,6 +27,7 @@ namespace TransportBusiness
 
         string OperadorAnterior = "",ActivoAnterior="";
 
+        Boolean editaG = false;
 
         Byte[] ArchivoPDFGlobal = null;
         Byte[] ArchivoXMLGlobal = null;
@@ -357,7 +358,6 @@ namespace TransportBusiness
             textHuerta.Text=frm.vNombre_Huerta;
             memoObservaciones.Text=frm.vObservaciones;
 
-            
             CargarSalidas_Diesel();
             CargarSalidasOtrosGastos();
             CargarSalidasViaticos();
@@ -580,6 +580,7 @@ namespace TransportBusiness
                 CargarSalidasOtrosGastos();
                 InsertarSalidasHonorarioPagoOperador();
                 limpiarSalidasOtrosGastos();
+                editaG = false;
                 XtraMessageBox.Show("Se ha Insertado el registro con exito");
 
             }
@@ -674,7 +675,7 @@ namespace TransportBusiness
             {
                 if (Convert.ToDecimal(textImporteG.Text) > 0)
                 {
-                    if (recorrerPaNoDuplicaG())
+                    if (recorrerPaNoDuplicaG() || editaG==true)
                     {
                         InsertarSalidasOtrosGastos();
                     }else
@@ -1725,8 +1726,16 @@ namespace TransportBusiness
                     {
                         cbMonedaG.Text = "Dólares";
                     }
+                    if (row["PagoOperador"].ToString().Equals("True"))
+                    {
+                        checkPagadoOperador.Checked = true;
+                    }else
+                    {
+                        checkPagadoOperador.Checked = false;
+                    }
 
                     textTicketG.Enabled = false;
+                    editaG = true;
                 }
             }
             catch (Exception ex)
@@ -2049,6 +2058,8 @@ namespace TransportBusiness
                 datePago.Enabled = false;
             }
         }
+
+        
 
         private void gridCruce_DoubleClick(object sender, EventArgs e)
         {

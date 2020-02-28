@@ -15,7 +15,7 @@ GO
 -- =============================================
 create PROCEDURE [dbo].[SP_Salidas_OtrosGastos_Delete] 
 	-- Add the parameters for the stored procedure here
-	@Ticket varchar(15),
+	@Ticket varchar(20),
 	@Id_Salida char(10)
 AS
 BEGIN
