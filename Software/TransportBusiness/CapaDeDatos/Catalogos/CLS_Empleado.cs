@@ -18,6 +18,7 @@ namespace CapaDeDatos
         public string No_Identificacion { get; set; }
         public string Id_Licencia { get; set; }
         public string Id_Empresa { get; set; }
+        public string Activo { get; set; }
 
         public void MtdSeleccionarEmpleado()
         {
@@ -28,7 +29,8 @@ namespace CapaDeDatos
             try
             {
                 _conexion.NombreProcedimiento = "SP_Empleado_Select";
-
+                _dato.CadenaTexto = Activo;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Activo");
                 _conexion.EjecutarDataset();
 
                 if (_conexion.Exito)
@@ -134,6 +136,8 @@ namespace CapaDeDatos
                 _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_Licencia");
                 _dato.CadenaTexto = Id_Empresa;
                 _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_Empresa");
+                _dato.CadenaTexto = Activo;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Activo");
                 _conexion.EjecutarDataset();
 
                 if (_conexion.Exito)

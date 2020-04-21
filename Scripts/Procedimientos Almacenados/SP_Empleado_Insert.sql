@@ -23,7 +23,8 @@ create PROCEDURE [dbo].[SP_Empleado_Insert]
 	@CURP char(18),
 	@No_Identificacion varchar(15),
 	@Id_Licencia char(6),
-	@Id_Empresa char(4)
+	@Id_Empresa char(4),
+	@Activo bit
 AS
 BEGIN
 	-- SET NOCOUNT ON added to prevent extra result sets from
@@ -52,7 +53,8 @@ BEGIN
 				CURP=@CURP,
 				No_Identificacion=@No_Identificacion,
 				Id_Licencia=@Id_Licencia,
-				Id_Empresa=@Id_Empresa
+				Id_Empresa=@Id_Empresa,
+				Activo=@Activo
 		    WHERE
 		    	Id_Empleado=@Id_Empleado
 				
@@ -67,7 +69,8 @@ BEGIN
 			   ,CURP
 			   ,No_Identificacion
 			   ,Id_Licencia
-			   ,Id_Empresa)
+			   ,Id_Empresa
+			   ,Activo)
 	     	VALUES
 	           (@maximo
 	           ,@Id_Tipo_Empleado
@@ -77,7 +80,8 @@ BEGIN
 			   ,@CURP
 			   ,@No_Identificacion
 			   ,@Id_Licencia
-			   ,@Id_Empresa)
+			   ,@Id_Empresa
+			   ,1)
 		
 		commit transaction T1;
 		set @correcto=1

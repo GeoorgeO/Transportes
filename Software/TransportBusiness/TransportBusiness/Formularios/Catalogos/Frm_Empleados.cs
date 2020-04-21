@@ -47,7 +47,15 @@ namespace TransportBusiness
         {
             gridControl1.DataSource = null;
             CLS_Empleado Empleado = new CLS_Empleado();
-
+            if (checkActivo.Checked)
+            {
+                Empleado.Activo = "0";
+            }
+            else
+            {
+                Empleado.Activo = "1";
+            }
+            
             Empleado.MtdSeleccionarEmpleado();
             if (Empleado.Exito)
             {
@@ -107,6 +115,46 @@ namespace TransportBusiness
             Empleado.No_Identificacion = textNoIdentificacion.Text.Trim();
             Empleado.Id_Licencia = textLicencia.Tag.ToString().Trim();
             Empleado.Id_Empresa = comboBoxEdit1.Text.Substring(0, 4);
+            if (labelEstatus.Text.Equals("Estatus: Activo"))
+            {
+                Empleado.Activo = "1";
+            }else
+            {
+                Empleado.Activo = "0";
+            }
+            Empleado.MtdInsertarEmpleado();
+            if (Empleado.Exito)
+            {
+                CargarEmpleado();
+                XtraMessageBox.Show("Se ha Insertado el registro con exito");
+                LimpiarCampos();
+            }
+            else
+            {
+                XtraMessageBox.Show(Empleado.Mensaje);
+            }
+        }
+
+        private void bajaaltaEmpleados()
+        {
+            CLS_Empleado Empleado = new CLS_Empleado();
+            Empleado.Id_Empleado = textIdEmpleado.Text.Trim();
+            Empleado.Id_Tipo_Empleado = textTipoEmpleado.Tag.ToString().Trim();
+            Empleado.Nombre_Empleado = textEmpleado.Text.Trim();
+            Empleado.Telefono = textTelefono.Text.Trim();
+            Empleado.RFC = textRFC.Text.Trim();
+            Empleado.CURP = textCURP.Text.Trim();
+            Empleado.No_Identificacion = textNoIdentificacion.Text.Trim();
+            Empleado.Id_Licencia = textLicencia.Tag.ToString().Trim();
+            Empleado.Id_Empresa = comboBoxEdit1.Text.Substring(0, 4);
+            if (checkActivo.Checked)
+            {
+                Empleado.Activo = "1";
+            }
+            else
+            {
+                Empleado.Activo = "0";
+            }
             Empleado.MtdInsertarEmpleado();
             if (Empleado.Exito)
             {
@@ -313,6 +361,19 @@ namespace TransportBusiness
                     textLicencia.Tag = row["Id_Licencia"].ToString();
                     textLicencia.Text = row["No_Licencia"].ToString();
                     comboBoxEdit1.Text = row["Id_Empresa"].ToString()+" - "+ row["Nombre_Empresa"].ToString();
+                    if (Convert.ToBoolean(row["Activo"]))
+                    {
+                        labelEstatus.Text = "Estatus: Activo";
+                        btnEliminar.Caption = "Dar baja";
+                        btnGuardar.Enabled = true;
+                    }
+                    else
+                    {
+                        labelEstatus.Text = "Estatus: Inactivo";
+                        btnEliminar.Caption = "Dar alta";
+                        btnGuardar.Enabled = false;
+                    }
+                    
                 }
             }
             catch (Exception ex)
@@ -391,8 +452,8 @@ namespace TransportBusiness
             {
                 if (textIdEmpleado.Text.Trim().Length > 0)
                 {
-                    EliminarEmpleado();
-                   
+                    //EliminarEmpleado();
+                    bajaaltaEmpleados();
                 }
                 else
                 {
@@ -604,5 +665,9 @@ namespace TransportBusiness
             }
         }
 
+        private void checkActivo_CheckedChanged(object sender, EventArgs e)
+        {
+            CargarEmpleado();
+        }
     }
 }

@@ -25,7 +25,7 @@ GO
 -- =============================================
 CREATE PROCEDURE SP_Empleado_Select
 	-- Add the parameters for the stored procedure here
-	
+	@Activo bit
 AS
 BEGIN
 	-- SET NOCOUNT ON added to prevent extra result sets from
@@ -46,10 +46,11 @@ BEGIN
 		  ,TL.No_Licencia
 		  ,E.Id_Empresa
 		  ,EPS.Nombre_Empresa
+		  ,E.Activo
 		from Empleado as E
 		left join Tipo_Empleado as TE on E.Id_Tipo_Empleado=TE.Id_Tipo_Empleado
 		left join Licencia as TL on E.Id_Licencia=TL.Id_Licencia
 		left join Empresa as EPS on EPS.Id_Empresa=E.Id_Empresa
-
+		where Activo=@Activo
 END
 GO
