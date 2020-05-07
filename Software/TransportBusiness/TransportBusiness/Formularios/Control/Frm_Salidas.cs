@@ -324,7 +324,7 @@ namespace TransportBusiness
         {
             
             Frm_BusqSalidas frm = new Frm_BusqSalidas();
-
+            frm.filtro = 0;
             frm.ShowDialog();
             textFolio.Text= frm.vId_Salida;
             if (frm.vFecha_Salida.Length > 0)
@@ -382,6 +382,7 @@ namespace TransportBusiness
             Clase.Id_Salida = textFolio.Text.Trim();
             Clase.Ticket = textTicket.Text.ToString();
             Clase.Importe = Convert.ToDecimal(textImporte.Text);
+            Clase.Litros = Convert.ToDecimal(textLitros.Text);
             Clase.MtdInsertarSalidas_Diesel();
 
             if (Clase.Exito)
@@ -413,6 +414,7 @@ namespace TransportBusiness
         {
             textTicket.Text = "";
             textImporte.Text = "0";
+            textLitros.Text = "0";
             textTicket.Focus();
         }
 

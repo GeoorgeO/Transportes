@@ -26,6 +26,7 @@ namespace CapaDeDatos
         public string Id_Huerta { get; set; }
         public string Observaciones { get; set; }
         public string EnRuta { get; set; }
+        public int filtro { get; set; }
 
         public void MtdSeleccionarSalida()
         {
@@ -36,6 +37,8 @@ namespace CapaDeDatos
             try
             {
                 _conexion.NombreProcedimiento = "SP_Salidas_Select";
+                _dato.Entero = filtro;
+                _conexion.agregarParametro(EnumTipoDato.Entero, _dato, "filtro");
                 _conexion.EjecutarDataset();
 
                 if (_conexion.Exito)

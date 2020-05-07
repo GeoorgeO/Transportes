@@ -31,6 +31,7 @@ BEGIN
 			Select Ticket
 	           ,Id_Salida
 			   ,Importe
+			   ,Litros
 			from dbo.Salidas_Diesel
 			where Id_Salida=@Id_Salida
 		

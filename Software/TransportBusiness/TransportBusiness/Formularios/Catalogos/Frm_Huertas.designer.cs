@@ -103,8 +103,8 @@
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn17 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Id_Duenio = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Nombre_Duenio = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn18 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn19 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -120,7 +120,7 @@
             this.gridColumn26 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn27 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn28 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn29 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Activa_Huerta = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
@@ -282,9 +282,9 @@
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 529);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 531);
             this.barDockControlBottom.Manager = this.barManager1;
-            this.barDockControlBottom.Size = new System.Drawing.Size(1012, 27);
+            this.barDockControlBottom.Size = new System.Drawing.Size(1012, 25);
             // 
             // barDockControlLeft
             // 
@@ -292,7 +292,7 @@
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.barDockControlLeft.Location = new System.Drawing.Point(0, 0);
             this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Size = new System.Drawing.Size(69, 529);
+            this.barDockControlLeft.Size = new System.Drawing.Size(71, 531);
             // 
             // barDockControlRight
             // 
@@ -300,7 +300,7 @@
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
             this.barDockControlRight.Location = new System.Drawing.Point(1012, 0);
             this.barDockControlRight.Manager = this.barManager1;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 529);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 531);
             // 
             // repositoryItemTextEdit1
             // 
@@ -310,10 +310,10 @@
             // 
             this.panelControl1.Controls.Add(this.groupControl1);
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelControl1.Location = new System.Drawing.Point(69, 0);
+            this.panelControl1.Location = new System.Drawing.Point(71, 0);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Padding = new System.Windows.Forms.Padding(5, 5, 5, 5);
-            this.panelControl1.Size = new System.Drawing.Size(943, 294);
+            this.panelControl1.Padding = new System.Windows.Forms.Padding(5);
+            this.panelControl1.Size = new System.Drawing.Size(941, 294);
             this.panelControl1.TabIndex = 4;
             // 
             // groupControl1
@@ -346,7 +346,7 @@
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl1.Location = new System.Drawing.Point(7, 7);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(929, 280);
+            this.groupControl1.Size = new System.Drawing.Size(927, 280);
             this.groupControl1.TabIndex = 0;
             this.groupControl1.Text = "Datos";
             // 
@@ -827,10 +827,10 @@
             // 
             this.panelControl2.Controls.Add(this.dtgHuertas);
             this.panelControl2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelControl2.Location = new System.Drawing.Point(69, 294);
+            this.panelControl2.Location = new System.Drawing.Point(71, 294);
             this.panelControl2.Name = "panelControl2";
-            this.panelControl2.Padding = new System.Windows.Forms.Padding(5, 5, 5, 5);
-            this.panelControl2.Size = new System.Drawing.Size(943, 235);
+            this.panelControl2.Padding = new System.Windows.Forms.Padding(5);
+            this.panelControl2.Size = new System.Drawing.Size(941, 237);
             this.panelControl2.TabIndex = 9;
             // 
             // dtgHuertas
@@ -840,7 +840,7 @@
             this.dtgHuertas.MainView = this.dtgValHuertas;
             this.dtgHuertas.MenuManager = this.barManager1;
             this.dtgHuertas.Name = "dtgHuertas";
-            this.dtgHuertas.Size = new System.Drawing.Size(929, 221);
+            this.dtgHuertas.Size = new System.Drawing.Size(927, 223);
             this.dtgHuertas.TabIndex = 0;
             this.dtgHuertas.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.dtgValHuertas});
@@ -852,8 +852,8 @@
             this.gridColumn1,
             this.gridColumn2,
             this.gridColumn3,
-            this.gridColumn17,
-            this.gridColumn4,
+            this.Id_Duenio,
+            this.Nombre_Duenio,
             this.gridColumn18,
             this.gridColumn5,
             this.gridColumn19,
@@ -869,9 +869,10 @@
             this.gridColumn26,
             this.gridColumn27,
             this.gridColumn28,
-            this.gridColumn29});
+            this.Activa_Huerta});
             this.dtgValHuertas.GridControl = this.dtgHuertas;
             this.dtgValHuertas.Name = "dtgValHuertas";
+            this.dtgValHuertas.OptionsBehavior.Editable = false;
             this.dtgValHuertas.OptionsFind.AlwaysVisible = true;
             this.dtgValHuertas.OptionsView.ShowGroupPanel = false;
             // 
@@ -902,20 +903,20 @@
             this.gridColumn3.VisibleIndex = 1;
             this.gridColumn3.Width = 224;
             // 
-            // gridColumn17
+            // Id_Duenio
             // 
-            this.gridColumn17.Caption = "Id_Duenio";
-            this.gridColumn17.FieldName = "Id_Duenio";
-            this.gridColumn17.Name = "gridColumn17";
+            this.Id_Duenio.Caption = "Id_Duenio";
+            this.Id_Duenio.FieldName = "Id_Duenio";
+            this.Id_Duenio.Name = "Id_Duenio";
             // 
-            // gridColumn4
+            // Nombre_Duenio
             // 
-            this.gridColumn4.Caption = "Productor";
-            this.gridColumn4.FieldName = "Nombre_Duenio";
-            this.gridColumn4.Name = "gridColumn4";
-            this.gridColumn4.Visible = true;
-            this.gridColumn4.VisibleIndex = 3;
-            this.gridColumn4.Width = 38;
+            this.Nombre_Duenio.Caption = "Productor";
+            this.Nombre_Duenio.FieldName = "Nombre_Duenio";
+            this.Nombre_Duenio.Name = "Nombre_Duenio";
+            this.Nombre_Duenio.Visible = true;
+            this.Nombre_Duenio.VisibleIndex = 3;
+            this.Nombre_Duenio.Width = 38;
             // 
             // gridColumn18
             // 
@@ -1040,14 +1041,14 @@
             this.gridColumn28.VisibleIndex = 14;
             this.gridColumn28.Width = 38;
             // 
-            // gridColumn29
+            // Activa_Huerta
             // 
-            this.gridColumn29.Caption = "Activa_Huerta";
-            this.gridColumn29.FieldName = "Activa_Huerta";
-            this.gridColumn29.Name = "gridColumn29";
-            this.gridColumn29.Visible = true;
-            this.gridColumn29.VisibleIndex = 15;
-            this.gridColumn29.Width = 65;
+            this.Activa_Huerta.Caption = "Activa_Huerta";
+            this.Activa_Huerta.FieldName = "Activa_Huerta";
+            this.Activa_Huerta.Name = "Activa_Huerta";
+            this.Activa_Huerta.Visible = true;
+            this.Activa_Huerta.VisibleIndex = 15;
+            this.Activa_Huerta.Width = 65;
             // 
             // Frm_Huertas
             // 
@@ -1170,7 +1171,7 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn3;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn4;
+        private DevExpress.XtraGrid.Columns.GridColumn Nombre_Duenio;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn5;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn6;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn7;
@@ -1183,7 +1184,7 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn14;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn15;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn16;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn17;
+        private DevExpress.XtraGrid.Columns.GridColumn Id_Duenio;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn18;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn19;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn20;
@@ -1195,7 +1196,7 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn26;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn27;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn28;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn29;
+        private DevExpress.XtraGrid.Columns.GridColumn Activa_Huerta;
         private DevExpress.XtraBars.BarLargeButtonItem btnSeleccionar;
         private DevExpress.XtraEditors.LabelControl labelActivo;
     }

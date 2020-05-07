@@ -285,6 +285,9 @@
             this.barStaticItem2 = new DevExpress.XtraBars.BarStaticItem();
             this.barDockControl8 = new DevExpress.XtraBars.BarDockControl();
             this.OpenDialog = new DevExpress.XtraEditors.XtraOpenFileDialog(this.components);
+            this.Litros = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.labelControl47 = new DevExpress.XtraEditors.LabelControl();
+            this.textLitros = new DevExpress.XtraEditors.TextEdit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
@@ -414,6 +417,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.textImporteC.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNombreArchivoXMLC.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNombreArchivoPDFC.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textLitros.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // barManager1
@@ -1142,7 +1146,8 @@
             this.gridView2.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.Ticket,
             this.Id_Salida,
-            this.Importe});
+            this.Importe,
+            this.Litros});
             this.gridView2.GridControl = this.gridDiesel;
             this.gridView2.Name = "gridView2";
             this.gridView2.OptionsBehavior.Editable = false;
@@ -1168,11 +1173,15 @@
             this.Importe.Caption = "Importe";
             this.Importe.FieldName = "Importe";
             this.Importe.Name = "Importe";
+            this.Importe.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "Importe", "Total={0:#.##}")});
             this.Importe.Visible = true;
             this.Importe.VisibleIndex = 1;
             // 
             // panelControl3
             // 
+            this.panelControl3.Controls.Add(this.textLitros);
+            this.panelControl3.Controls.Add(this.labelControl47);
             this.panelControl3.Controls.Add(this.btnSalidaDiesel);
             this.panelControl3.Controls.Add(this.labelControl16);
             this.panelControl3.Controls.Add(this.textImporte);
@@ -1186,7 +1195,7 @@
             // 
             // btnSalidaDiesel
             // 
-            this.btnSalidaDiesel.Location = new System.Drawing.Point(333, 8);
+            this.btnSalidaDiesel.Location = new System.Drawing.Point(480, 8);
             this.btnSalidaDiesel.Name = "btnSalidaDiesel";
             this.btnSalidaDiesel.Size = new System.Drawing.Size(75, 23);
             this.btnSalidaDiesel.TabIndex = 58;
@@ -1195,7 +1204,7 @@
             // 
             // labelControl16
             // 
-            this.labelControl16.Location = new System.Drawing.Point(179, 14);
+            this.labelControl16.Location = new System.Drawing.Point(179, 15);
             this.labelControl16.Name = "labelControl16";
             this.labelControl16.Size = new System.Drawing.Size(42, 13);
             this.labelControl16.TabIndex = 57;
@@ -1203,7 +1212,7 @@
             // 
             // textImporte
             // 
-            this.textImporte.Location = new System.Drawing.Point(227, 12);
+            this.textImporte.Location = new System.Drawing.Point(223, 12);
             this.textImporte.MenuManager = this.barManager1;
             this.textImporte.Name = "textImporte";
             this.textImporte.Properties.Mask.EditMask = "n";
@@ -1221,7 +1230,7 @@
             // 
             // textTicket
             // 
-            this.textTicket.Location = new System.Drawing.Point(68, 12);
+            this.textTicket.Location = new System.Drawing.Point(65, 12);
             this.textTicket.MenuManager = this.barManager1;
             this.textTicket.Name = "textTicket";
             this.textTicket.Size = new System.Drawing.Size(100, 20);
@@ -1323,6 +1332,8 @@
             this.ImporteG.Caption = "Importe";
             this.ImporteG.FieldName = "Importe";
             this.ImporteG.Name = "ImporteG";
+            this.ImporteG.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "Importe", "Total={0:#.##}")});
             this.ImporteG.Visible = true;
             this.ImporteG.VisibleIndex = 1;
             // 
@@ -1523,7 +1534,6 @@
             this.checkPagadoOperador.Properties.Caption = "Pagado por Operador";
             this.checkPagadoOperador.Size = new System.Drawing.Size(144, 19);
             this.checkPagadoOperador.TabIndex = 63;
-            
             // 
             // labelControl22
             // 
@@ -1685,6 +1695,8 @@
             this.ImporteV.Caption = "Importe";
             this.ImporteV.FieldName = "Importe";
             this.ImporteV.Name = "ImporteV";
+            this.ImporteV.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "Importe", "Total={0:#.##}")});
             this.ImporteV.Visible = true;
             this.ImporteV.VisibleIndex = 2;
             // 
@@ -1840,6 +1852,8 @@
             this.ImporteH.Caption = "Importe";
             this.ImporteH.FieldName = "Importe";
             this.ImporteH.Name = "ImporteH";
+            this.ImporteH.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "Importe", "Total={0:#.##}")});
             this.ImporteH.Visible = true;
             this.ImporteH.VisibleIndex = 1;
             // 
@@ -2001,6 +2015,8 @@
             this.ImporteF.Caption = "Importe";
             this.ImporteF.FieldName = "Importe";
             this.ImporteF.Name = "ImporteF";
+            this.ImporteF.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "Importe", "Total={0:#.##}")});
             this.ImporteF.Visible = true;
             this.ImporteF.VisibleIndex = 2;
             // 
@@ -2623,6 +2639,8 @@
             this.gridColumn6.Caption = "Importe";
             this.gridColumn6.FieldName = "Importe";
             this.gridColumn6.Name = "gridColumn6";
+            this.gridColumn6.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "Importe", "Total={0:#.##}")});
             this.gridColumn6.Visible = true;
             this.gridColumn6.VisibleIndex = 2;
             // 
@@ -2904,6 +2922,33 @@
             // 
             this.OpenDialog.FileName = "xtraOpenFileDialog1";
             // 
+            // Litros
+            // 
+            this.Litros.Caption = "Litros";
+            this.Litros.FieldName = "Litros";
+            this.Litros.Name = "Litros";
+            this.Litros.Visible = true;
+            this.Litros.VisibleIndex = 2;
+            // 
+            // labelControl47
+            // 
+            this.labelControl47.Location = new System.Drawing.Point(340, 15);
+            this.labelControl47.Name = "labelControl47";
+            this.labelControl47.Size = new System.Drawing.Size(30, 13);
+            this.labelControl47.TabIndex = 59;
+            this.labelControl47.Text = "Litros:";
+            // 
+            // textLitros
+            // 
+            this.textLitros.EditValue = "0";
+            this.textLitros.Location = new System.Drawing.Point(373, 12);
+            this.textLitros.MenuManager = this.barManager1;
+            this.textLitros.Name = "textLitros";
+            this.textLitros.Properties.Mask.EditMask = "n";
+            this.textLitros.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
+            this.textLitros.Size = new System.Drawing.Size(100, 20);
+            this.textLitros.TabIndex = 60;
+            // 
             // Frm_Salidas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -3058,6 +3103,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.textImporteC.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNombreArchivoXMLC.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNombreArchivoPDFC.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textLitros.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -3320,5 +3366,8 @@
         private DevExpress.XtraGrid.Columns.GridColumn Fecha_Factura;
         private DevExpress.XtraGrid.Columns.GridColumn Fecha_Cobro;
         private DevExpress.XtraGrid.Columns.GridColumn Fecha_Pago;
+        private DevExpress.XtraGrid.Columns.GridColumn Litros;
+        private DevExpress.XtraEditors.TextEdit textLitros;
+        private DevExpress.XtraEditors.LabelControl labelControl47;
     }
 }

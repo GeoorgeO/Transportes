@@ -43,6 +43,8 @@ namespace TransportBusiness
         public string vNombre_Huerta { get; set; }
         public string vObservaciones { get; set; }
 
+        public int filtro { get; set; }
+
         public Frm_BusqSalidas()
         {
             InitializeComponent();
@@ -51,6 +53,7 @@ namespace TransportBusiness
         private void Frm_BusqSalidas_Load(object sender, EventArgs e)
         {
             CLS_Salidas sel = new CLS_Salidas();
+            sel.filtro = filtro;
             sel.MtdSeleccionarSalida();
             if (sel.Exito)
             {

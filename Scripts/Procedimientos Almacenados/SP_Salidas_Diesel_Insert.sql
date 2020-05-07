@@ -17,7 +17,8 @@ create PROCEDURE [dbo].[SP_Salidas_Diesel_Insert]
 	-- Add the parameters for the stored procedure here
 	@Ticket varchar(15),
 	@Id_Salida char(10),
-	@Importe numeric(18, 2)
+	@Importe numeric(18, 2),
+	@Litros numeric(18, 2)
 AS
 BEGIN
 	-- SET NOCOUNT ON added to prevent extra result sets from
@@ -33,11 +34,13 @@ BEGIN
 			INSERT INTO dbo.Salidas_Diesel
 	           (Ticket
 	           ,Id_Salida
-			   ,Importe)
+			   ,Importe
+			   ,Litros)
 	     	VALUES
 	           (@Ticket
 	           ,@Id_Salida
-			   ,@Importe)
+			   ,@Importe
+			   ,@Litros)
 		
 		commit transaction T1;
 		set @correcto=1

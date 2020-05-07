@@ -50,6 +50,16 @@ BEGIN
 		declare @Existe int
 		select @Existe = count(Id_Salida) from dbo.Salidas a where (a.Id_Salida=@Id_Salida)
 
+		declare @activoant char(8)
+		declare @secundarioant char(8)
+		declare @adicionalant char(8)
+
+		if @Existe>0 	   
+			select @activoant = a.Id_Activo_Principal,@secundarioant=a.Id_Activo_Secundario, @adicionalant=a.Id_Activo_Adicional from dbo.Salidas a where (a.Id_Salida=@Id_Salida)
+		else
+			select @activoant= @Id_Activo_Principal,@secundarioant=@Id_Activo_Secundario,@adicionalant=@Id_Activo_Adicional
+
+
 		if @Existe>0 
 		
 			UPDATE dbo.Salidas
@@ -101,11 +111,29 @@ BEGIN
 			   ,@km_Fin
 			   ,@Id_Huerta
 			   ,@Observaciones)
-			   
-		if @Existe>0 	   
-			select 0
-		else
+
+		   
+		declare @yano integer
+		select @yano = count(a.Id_Entrada) from dbo.Entradas a where (a.Id_Salida=@Id_Salida)
+		if @yano=0
 			update Activos set EnRuta=@EnRuta where Id_Activo=@Id_Activo_Principal or Id_Activo=@Id_Activo_Secundario or Id_Activo=@Id_Activo_Adicional
+		else
+			update Activos set EnRuta=0 where Id_Activo='-1'
+
+		if @activoant=@Id_Activo_Principal
+			update Activos set EnRuta=0 where Id_Activo='-1'
+		else
+			update Activos set EnRuta=0 where Id_Activo=@activoant
+
+		if @secundarioant=@Id_Activo_Secundario
+			update Activos set EnRuta=0 where Id_Activo='-1'
+		else
+			update Activos set EnRuta=0 where Id_Activo=@secundarioant
+
+		if @adicionalant=@Id_Activo_Adicional
+			update Activos set EnRuta=0 where Id_Activo='-1'
+		else
+			update Activos set EnRuta=0 where Id_Activo=@adicionalant
 			   
 		if @Existe>0 
 			set @correcto=@Id_Salida

@@ -107,6 +107,7 @@ namespace TransportBusiness
         private void btnBusqSalida_Click_1(object sender, EventArgs e)
         {
             Frm_BusqSalidas frm = new Frm_BusqSalidas();
+            frm.filtro = 1;
             frm.ShowDialog();
             textSalida.Text = frm.vId_Salida;
             textActivoPrincipal.Text = frm.vNombre_Activo_Principal;

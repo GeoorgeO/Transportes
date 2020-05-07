@@ -11,6 +11,7 @@ ELSE
 		[Ticket] [varchar](15) NOT NULL,
 		[Id_Salida] [char](10) NOT NULL,
 		[Importe] [numeric](18, 2) NULL,
+		[Litros] [numeric](18,2) NULL,
 	 CONSTRAINT [PK_SalidasDiesel] PRIMARY KEY CLUSTERED 
 	(
 		[Ticket] ASC,
