@@ -5,17 +5,18 @@ SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
-IF  EXISTS (SELECT * FROM SYS.OBJECTS WHERE TYPE = 'P' AND NAME = 'SP_Salidas_OtrosGastos_Select')
-DROP PROCEDURE SP_Salidas_OtrosGastos_Select
+IF  EXISTS (SELECT * FROM SYS.OBJECTS WHERE TYPE = 'P' AND NAME = 'SP_Tipo_Cambio_Insert')
+DROP PROCEDURE SP_Tipo_Cambio_Insert
 GO
 -- =============================================
 -- Author:		<Author,,Name>
 -- Create date: <Create Date,,>
 -- Description:	<Description,,>
 -- =============================================
-create PROCEDURE [dbo].[SP_Salidas_OtrosGastos_Select] 
+create PROCEDURE [dbo].[SP_Tipo_Cambio_Insert] 
 	-- Add the parameters for the stored procedure here
-	@Id_Salida char(10)
+	@Fecha datetime,
+	@Tipo_Cambio numeric(12,4)
 AS
 BEGIN
 	-- SET NOCOUNT ON added to prevent extra result sets from
@@ -27,23 +28,27 @@ BEGIN
 
 	begin transaction T1;
 	begin try
+
 		
-			Select Ticket
-	           ,Id_Salida
-			   ,S.Id_GastoDirecto
-			   ,G.Nombre_GastoDirecto
-			   ,Importe
-			   ,PagoOperador
-			   ,Otros_Gastos,
-				Moneda,
-				FacturaPDF,
-				FacturaPDFNombre,
-				FacturaXML,
-				FacturaXMLNombre,
-				Fecha_Factura
-			from dbo.Salidas_OtrosGastos as S
-			left join GastosDirectos as G on G.Id_GastoDirecto=S.Id_GastoDirecto
-			where Id_Salida=@Id_Salida
+
+		declare @Existe int
+		select @Existe = count(Fecha) from dbo.Tipo_Cambio a where (a.Fecha=@Fecha)
+
+		if @Existe>0 
+		
+			UPDATE dbo.Tipo_Cambio
+		        SET Tipo_Cambio=@Tipo_Cambio
+		    WHERE
+		    	Fecha=@Fecha
+				
+		else
+		
+			INSERT INTO dbo.Tipo_Cambio
+	           (Fecha
+	           ,Tipo_Cambio)
+	     	VALUES
+	           (@Fecha
+	           ,@Tipo_Cambio)
 		
 		commit transaction T1;
 		set @correcto=1

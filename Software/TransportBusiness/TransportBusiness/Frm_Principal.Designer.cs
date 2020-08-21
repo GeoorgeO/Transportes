@@ -68,6 +68,8 @@
             this.btnCultivo = new DevExpress.XtraBars.BarButtonItem();
             this.btnProductor = new DevExpress.XtraBars.BarButtonItem();
             this.btnGastoDirecto = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
+            this.btnTipoCambio = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup9 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -87,7 +89,6 @@
             this.ribbonPage4 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.xtraTabbedMdiManager1 = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
             this.SkinForm = new DevExpress.LookAndFeel.DefaultLookAndFeel(this.components);
-            this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager1)).BeginInit();
             this.SuspendLayout();
@@ -134,9 +135,10 @@
             this.btnCultivo,
             this.btnProductor,
             this.btnGastoDirecto,
-            this.barButtonItem2});
+            this.barButtonItem2,
+            this.btnTipoCambio});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.MaxItemId = 39;
+            this.ribbonControl1.MaxItemId = 40;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1,
@@ -462,6 +464,23 @@
             this.btnGastoDirecto.Name = "btnGastoDirecto";
             this.btnGastoDirecto.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnGastoDirecto_ItemClick);
             // 
+            // barButtonItem2
+            // 
+            this.barButtonItem2.Caption = "IAVE";
+            this.barButtonItem2.Id = 38;
+            this.barButtonItem2.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem2.ImageOptions.Image")));
+            this.barButtonItem2.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem2.ImageOptions.LargeImage")));
+            this.barButtonItem2.Name = "barButtonItem2";
+            // 
+            // btnTipoCambio
+            // 
+            this.btnTipoCambio.Caption = "Tipo\r\nCambio";
+            this.btnTipoCambio.Id = 39;
+            this.btnTipoCambio.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem3.ImageOptions.Image")));
+            this.btnTipoCambio.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem3.ImageOptions.LargeImage")));
+            this.btnTipoCambio.Name = "btnTipoCambio";
+            this.btnTipoCambio.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnTipoCambio_ItemClick);
+            // 
             // ribbonPage1
             // 
             this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -498,6 +517,7 @@
             // 
             this.ribbonPageGroup3.ItemLinks.Add(this.btnGastosIndirectos);
             this.ribbonPageGroup3.ItemLinks.Add(this.btnGastoDirecto);
+            this.ribbonPageGroup3.ItemLinks.Add(this.btnTipoCambio);
             this.ribbonPageGroup3.Name = "ribbonPageGroup3";
             this.ribbonPageGroup3.Text = "Reportes";
             // 
@@ -618,14 +638,6 @@
             this.SkinForm.EnableBonusSkins = true;
             this.SkinForm.LookAndFeel.SkinName = "Office 2010 Silver";
             // 
-            // barButtonItem2
-            // 
-            this.barButtonItem2.Caption = "IAVE";
-            this.barButtonItem2.Id = 38;
-            this.barButtonItem2.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem2.ImageOptions.Image")));
-            this.barButtonItem2.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem2.ImageOptions.LargeImage")));
-            this.barButtonItem2.Name = "barButtonItem2";
-            // 
             // Frm_Principal
             // 
             this.AllowFormGlass = DevExpress.Utils.DefaultBoolean.True;
@@ -708,6 +720,7 @@
         private DevExpress.XtraBars.BarButtonItem btnProductor;
         private DevExpress.XtraBars.BarButtonItem btnGastoDirecto;
         private DevExpress.XtraBars.BarButtonItem barButtonItem2;
+        private DevExpress.XtraBars.BarButtonItem btnTipoCambio;
     }
 }
 

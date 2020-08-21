@@ -25,7 +25,8 @@ create PROCEDURE [dbo].[SP_Salidas_OtrosGastos_Insert]
 	@FacturaPDF varbinary(max),
 	@FacturaPDFNombre varchar(80),
 	@FacturaXML varbinary(max),
-	@FacturaXMLNombre varchar(80)
+	@FacturaXMLNombre varchar(80),
+	@Fecha_Factura varchar(15)
 AS
 BEGIN
 	-- SET NOCOUNT ON added to prevent extra result sets from
@@ -46,6 +47,9 @@ BEGIN
 		set @FacturaXMLNombre=NULL
 	if len(@FacturaXMLNombre)=0 
 		set @FacturaXML=NULL
+		
+	if len(@Fecha_Factura)=0 
+			set @Fecha_Factura=NULL
 
 	begin transaction T1;
 	begin try
@@ -61,7 +65,8 @@ BEGIN
 				FacturaPDFNombre=@FacturaPDFNombre,
 				FacturaPDF=@FacturaPDF,
 				FacturaXMLNombre=@FacturaXMLNombre,
-				FacturaXML=@FacturaXML
+				FacturaXML=@FacturaXML,
+				Fecha_Factura=@Fecha_Factura
 		    WHERE
 		    	Id_Salida=@Id_Salida and Ticket=@Ticket
 				
@@ -77,7 +82,8 @@ BEGIN
 				FacturaPDF,
 				FacturaPDFNombre,
 				FacturaXML,
-				FacturaXMLNombre)
+				FacturaXMLNombre,
+				Fecha_Factura)
 	     	VALUES
 	           (@Ticket
 	           ,@Id_Salida
@@ -89,7 +95,8 @@ BEGIN
 				@FacturaPDF,
 				@FacturaPDFNombre,
 				@FacturaXML,
-				@FacturaXMLNombre)
+				@FacturaXMLNombre,
+				@Fecha_Factura)
 		
 		commit transaction T1;
 		set @correcto=1

@@ -119,7 +119,8 @@ namespace TransportBusiness
             for (int x = 0; x < gridView1.RowCount; x++)
             {
                 int xRow = gridView1.GetVisibleRowHandle(x);
-                Total=Total+Convert.ToDouble(gridView1.GetRowCellValue(xRow, gridView1.Columns["Total"]).ToString());
+                string temp = gridView1.GetRowCellValue(xRow, gridView1.Columns["Total"]).ToString();
+                //Total =Total+Convert.ToDouble(gridView1.GetRowCellValue(xRow, gridView1.Columns["Total"]));
             }
             textPTotal.Text = Total.ToString();
         }
@@ -461,14 +462,30 @@ namespace TransportBusiness
                 {
                     int xRow = gridView1.GetVisibleRowHandle(x);
                     DataRow row = this.gridView1.GetDataRow(xRow);
-                    tCosto = Convert.ToDouble(row["Costo"].ToString());
-                    tPiezas = Convert.ToDouble(row["Piezas"].ToString());
+                    if (row["Costo"].ToString().Equals(""))
+                    {
+                        tCosto = 0;
+                    }else
+                    {
+                        tCosto = Convert.ToDouble(row["Costo"].ToString());
+                    }
+                    
+                    if (row["Piezas"].ToString().Equals(""))
+                    {
+                        tPiezas = 0;
+                    }
+                    else
+                    {
+                        tPiezas = Convert.ToDouble(row["Piezas"].ToString());
+                    }
+
+                   
 
                     gridView1.SetRowCellValue(xRow, gridView1.Columns["Total"], tCosto * tPiezas);
                 }
 
             }
-            sumarTotal();
+            //sumarTotal();
         }
     }
 }

@@ -256,6 +256,12 @@
     <Compile Include="Formularios\Catalogos\Frm_Tarjetas_IAVE.Designer.cs">
       <DependentUpon>Frm_Tarjetas_IAVE.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\Catalogos\Frm_TipoCambio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Catalogos\Frm_TipoCambio.Designer.cs">
+      <DependentUpon>Frm_TipoCambio.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\Catalogos\Tipos\Frm_Tipo_Servicio.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -545,6 +551,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Catalogos\Frm_Tarjetas_IAVE.resx">
       <DependentUpon>Frm_Tarjetas_IAVE.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Catalogos\Frm_TipoCambio.resx">
+      <DependentUpon>Frm_TipoCambio.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Catalogos\Tipos\Frm_Tipo_Servicio.resx">
       <DependentUpon>Frm_Tipo_Servicio.cs</DependentUpon>

@@ -19,6 +19,7 @@ ELSE
 		[FacturaPDFNombre] [varchar](80) NULL,
 		[FacturaXML] [varbinary](max) NULL,
 		[FacturaXMLNombre] [varchar](80) NULL,
+		[Fecha_Factura] datetime NULL,
 	 CONSTRAINT [PK_SalidasOtrosGastos] PRIMARY KEY CLUSTERED 
 	(
 		[Ticket] ASC,

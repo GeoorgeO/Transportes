@@ -416,6 +416,8 @@ namespace TransportBusiness
             textImporte.Text = "0";
             textLitros.Text = "0";
             textTicket.Focus();
+
+            
         }
 
         private void btnSalidaDiesel_Click(object sender, EventArgs e)
@@ -575,6 +577,17 @@ namespace TransportBusiness
 
             Clase.FacturaXMLNombre = NombreXMLG;
 
+            DateTime Fecha;
+            if (dateFactura.EditValue == null)
+            {
+                Clase.Fecha_Factura = String.Empty;
+            }
+            else
+            {
+                Fecha = Convert.ToDateTime(dateOtroGasto.Text.Trim());
+                Clase.Fecha_Factura = Fecha.Year.ToString() + DosCero(Fecha.Month.ToString()) + DosCero(Fecha.Day.ToString());
+            }
+
             Clase.MtdInsertarSalidas_OtrosGastos();
 
             if (Clase.Exito)
@@ -632,6 +645,8 @@ namespace TransportBusiness
             ArchivoPDFGlobalG = null;
             ArchivoXMLGlobalG = null;
             textTicketG.Enabled = true;
+            checkFGasto.Checked = true;
+           
         }
 
         private void EliminarSalidasOtrosGastos(string Salida, string ticket)
@@ -791,7 +806,8 @@ namespace TransportBusiness
             textPagadoX.Text = "";
             textPagadoX.Focus();
             dateFechaViatico.EditValue = DateTime.Now;
-           
+
+            
         }
 
         private void EliminarSalidasViaticos(string Salida, string Id_Viatico)
@@ -1106,6 +1122,9 @@ namespace TransportBusiness
         {
             textImporteH.Text = "0";
             textImporteH.Focus();
+            labelSaldoOperdor.Text = "0";
+
+            
         }
 
         private void CargarSalidasHonorario()
@@ -1720,6 +1739,16 @@ namespace TransportBusiness
                     textGastos.Tag = row["Id_GastoDirecto"].ToString();
                     textGastos.Text = row["Nombre_GastoDirecto"].ToString();
                     textOtrosGastos.Text = row["Otros_Gastos"].ToString();
+                    if (row["Fecha_Factura"].ToString() != String.Empty)
+                    {
+                        checkFGasto.Checked = false;
+                        dateOtroGasto.EditValue = Convert.ToDateTime(row["Fecha_Factura"]);
+                        
+                    }else
+                    {
+                        checkFGasto.Checked = true;
+                        dateOtroGasto.EditValue = null;
+                    }
                     if (row["Moneda"].ToString().Equals("P"))
                     {
                         cbMonedaG.Text = "Pesos";
@@ -2061,7 +2090,18 @@ namespace TransportBusiness
             }
         }
 
-        
+        private void checkFGasto_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkFGasto.Checked == false)
+            {
+                dateOtroGasto.Enabled = true;
+                dateOtroGasto.EditValue = DateTime.Today;
+            }else
+            {
+                dateOtroGasto.Enabled = false;
+                dateOtroGasto.EditValue = null;
+            }
+        }
 
         private void gridCruce_DoubleClick(object sender, EventArgs e)
         {
@@ -2189,6 +2229,8 @@ namespace TransportBusiness
             dateFactura.EditValue = DateTime.Now;
             dateCobro.EditValue = null;
             rbTotalF.Checked = true;
+
+            
         }
 
        private void limpiarSalidasCruce()
@@ -2203,6 +2245,8 @@ namespace TransportBusiness
             NombreXMLC = "";
             ArchivoPDFGlobalC = null;
             ArchivoXMLGlobalC = null;
+
+           
         }
 
         private void EliminarSalidasFacturas(string Salida, string Id_Archivo)

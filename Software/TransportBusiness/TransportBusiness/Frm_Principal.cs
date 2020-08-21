@@ -541,5 +541,18 @@ namespace TransportBusiness
                 XtraMessageBox.Show("No Cuentas con acceso a esta Opcion [033]");
             }
         }
+
+        private void btnTipoCambio_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            if (TieneAcceso("035"))
+            {
+                Frm_TipoCambio Permisos = new Frm_TipoCambio();
+                Permisos.ShowDialog();
+            }
+            else
+            {
+                XtraMessageBox.Show("No Cuentas con acceso a esta Opcion [035]");
+            }
+        }
     }
 }

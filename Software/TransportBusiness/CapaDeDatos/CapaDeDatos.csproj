@@ -87,6 +87,7 @@
     <Compile Include="Catalogos\CLS_ServiciosDetalle.cs" />
     <Compile Include="Catalogos\CLS_Tarjetas_Combustible.cs" />
     <Compile Include="Catalogos\CLS_Tarjetas_IAVE.cs" />
+    <Compile Include="Catalogos\CLS_TipoCambio.cs" />
     <Compile Include="Catalogos\CLS_Usuarios.cs" />
     <Compile Include="Tipos\CLS_TipoPersona.cs" />
     <Compile Include="Tipos\CLS_TiposServicio.cs" />
