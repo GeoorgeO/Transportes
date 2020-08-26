@@ -554,5 +554,11 @@ namespace TransportBusiness
                 XtraMessageBox.Show("No Cuentas con acceso a esta Opcion [035]");
             }
         }
+
+        private void btnRptGastosSalida_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Frm_Rpt_GastosSalida.DefInstance.MdiParent = this;
+            Frm_Rpt_GastosSalida.DefInstance.Show();
+        }
     }
 }

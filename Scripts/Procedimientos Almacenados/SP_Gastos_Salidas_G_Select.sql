@@ -15,20 +15,21 @@ SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
-IF  EXISTS (SELECT * FROM SYS.OBJECTS WHERE TYPE = 'P' AND NAME = 'SP_Gastos_Salidas_Select')
-DROP PROCEDURE SP_Gastos_Salidas_Select
+IF  EXISTS (SELECT * FROM SYS.OBJECTS WHERE TYPE = 'P' AND NAME = 'SP_Gastos_Salidas_G_Select')
+DROP PROCEDURE SP_Gastos_Salidas_G_Select
 GO
 -- =============================================
 -- Author:		<Author,,Name>
 -- Create date: <Create Date,,>
 -- Description:	<Description,,>
 -- =============================================
-CREATE PROCEDURE SP_Gastos_Salidas_Select 
+CREATE PROCEDURE SP_Gastos_Salidas_G_Select 
 	-- Add the parameters for the stored procedure here
 	@Parametro char(1),
 	@F_Del datetime,
 	@F_Al datetime,
-	@Id_Activo char(8),
+	@Id_Activo char(8)
+	
 AS
 BEGIN
 	-- SET NOCOUNT ON added to prevent extra result sets from
@@ -36,39 +37,11 @@ BEGIN
 	SET NOCOUNT ON;
 
     -- Insert statements for procedure here
-	select s.Id_Salida,
-		s.Fecha_Salida,
-		a.Nombre_Interno,
-		ope.Nombre_Empleado as Operador,
-		r.Origen,r.Destino,
-		c.Nombre_Cliente,
-		isnull(sf.Importe_P,0) as Monto_Factura_P,
-		isnull(sf.Importe_D,0) as Monto_Factura_D,
-		isnull(sd.Importe,0) as Diesel_P,
-		sd.Litros,
-		isnull(trans.Importe_P,0) as Transfe_P,
-		isnull(trans.Importe_D,0) as Transfe_D,
-		isnull(Caseta.Importe_P,0) as Caseta_P,
-		isnull(Caseta.Importe_D,0) as Caseta_D,
-		isnull(PFP.Importe_P,0) as PFP_P,
-		isnull(PFP.Importe_D,0) as PFP_D,
-		isnull(tReten1.Importe_P,0) as tReten1_P,
-		isnull(tReten1.Importe_D,0) as tReten1_D,
-		/*tReten2.Importe_P as tReten2_P,
-		tReten2.Importe_D as tReten2_D,*/
-		isnull(pens.Importe_P,0) as Pension_P,
-		isnull(pens.Importe_D,0) as Pension_D,
-		isnull(lav.Importe_P,0) as Lavada_P,
-		isnull(lav.Importe_D,0) as Lavada_D,
-		isnull(Ther.Importe_P,0) as Thermo_P,
-		isnull(Ther.Importe_D,0) as Thermo_D,
-		isnull(otro.Importe_P,0) as Otros_P,
-		isnull(otro.Importe_D,0) as Otros_D,
-		isnull(sv.Importe,0) as Viaticos,
-		isnull(sh.Importe,0) as Comision_Chofer,
-		isnull(sd.Importe,0)+isnull(trans.Importe_P,0)+isnull(Caseta.Importe_P,0)+isnull(PFP.Importe_P,0)+isnull(tReten1.Importe_P,0)+isnull(pens.Importe_P,0)+isnull(lav.Importe_P,0)+isnull(Ther.Importe_P,0)+isnull(otro.Importe_P,0)+isnull(sv.Importe,0)+isnull(sh.Importe,0) as Gasto_Total, 
-		isnull(sf.Importe_P,0)- (isnull(sd.Importe,0)+isnull(trans.Importe_P,0)+isnull(Caseta.Importe_P,0)+isnull(PFP.Importe_P,0)+isnull(tReten1.Importe_P,0)+isnull(pens.Importe_P,0)+isnull(lav.Importe_P,0)+isnull(Ther.Importe_P,0)+isnull(otro.Importe_P,0)+isnull(sv.Importe,0)+isnull(sh.Importe,0)) as Ganancias_Total,
-		s.Observaciones from transportes.dbo.Salidas as s
+	select a.Id_Activo,a.Nombre_Interno,
+		sum(sf.Importe_P) as Monto_Factura_P,
+		sum(isnull(sd.Importe,0))+sum(isnull(trans.Importe_P,0))+sum(isnull(Caseta.Importe_P,0))+sum(isnull(PFP.Importe_P,0))+sum(isnull(tReten1.Importe_P,0))+sum(isnull(pens.Importe_P,0))+sum(isnull(lav.Importe_P,0))+sum(isnull(Ther.Importe_P,0))+sum(isnull(otro.Importe_P,0))+sum(isnull(sv.Importe,0))+sum(isnull(sh.Importe,0)) as Gasto_Total, 
+		sum(isnull(sf.Importe_P,0))- (sum(isnull(sd.Importe,0))+sum(isnull(trans.Importe_P,0))+sum(isnull(Caseta.Importe_P,0))+sum(isnull(PFP.Importe_P,0))+sum(isnull(tReten1.Importe_P,0))+sum(isnull(pens.Importe_P,0))+sum(isnull(lav.Importe_P,0))+sum(isnull(Ther.Importe_P,0))+sum(isnull(otro.Importe_P,0))+sum(isnull(sv.Importe,0))+sum(isnull(sh.Importe,0))) as Ganancias_Total
+	from transportes.dbo.Salidas as s
 	left join transportes.dbo.Activos as a on a.Id_Activo=s.Id_Activo_Principal
 	left join transportes.dbo.Empleado as ope on ope.Id_Empleado=s.Id_Operador
 	left join transportes.dbo.Rutas as r on r.Id_Rutas=s.Id_Ruta
@@ -89,6 +62,7 @@ BEGIN
 	where ('F'=@Parametro and Fecha_Salida between @F_Del and @F_Al ) 
 		or ('A'=@Parametro and Id_Activo_Principal=@Id_Activo) 
 		or ('2'=@Parametro and (Fecha_Salida between @F_Del and @F_Al and Id_Activo_Principal=@Id_Activo))
+	group by  a.Id_Activo,a.Nombre_Interno
 	
 END
 GO

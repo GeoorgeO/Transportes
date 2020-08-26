@@ -578,7 +578,7 @@ namespace TransportBusiness
             Clase.FacturaXMLNombre = NombreXMLG;
 
             DateTime Fecha;
-            if (dateFactura.EditValue == null)
+            if (checkFGasto.Checked)
             {
                 Clase.Fecha_Factura = String.Empty;
             }
