@@ -46,6 +46,9 @@
             this.repositoryItemTextEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
+            this.checkEmpresas = new DevExpress.XtraEditors.CheckEdit();
+            this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
+            this.comboEmpresas = new DevExpress.XtraEditors.ComboBoxEdit();
             this.radioMoneda = new DevExpress.XtraEditors.RadioGroup();
             this.btnFiltrar = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
@@ -59,11 +62,11 @@
             this.panelControl3 = new DevExpress.XtraEditors.PanelControl();
             this.gridControl2 = new DevExpress.XtraGrid.GridControl();
             this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.Nombre_InternoG = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Id_Activo = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Monto_Factura_PG = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Nombre_InternoG = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Gasto_TotalG = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Ganancias_TotalG = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.Id_Activo = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -104,6 +107,8 @@
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.checkEmpresas.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.comboEmpresas.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radioMoneda.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateAl.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateAl.Properties)).BeginInit();
@@ -235,9 +240,9 @@
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 542);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 544);
             this.barDockControlBottom.Manager = this.barManager1;
-            this.barDockControlBottom.Size = new System.Drawing.Size(1317, 27);
+            this.barDockControlBottom.Size = new System.Drawing.Size(1317, 25);
             // 
             // barDockControlLeft
             // 
@@ -245,7 +250,7 @@
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.barDockControlLeft.Location = new System.Drawing.Point(0, 0);
             this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Size = new System.Drawing.Size(75, 542);
+            this.barDockControlLeft.Size = new System.Drawing.Size(77, 544);
             // 
             // barDockControlRight
             // 
@@ -253,7 +258,7 @@
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
             this.barDockControlRight.Location = new System.Drawing.Point(1317, 0);
             this.barDockControlRight.Manager = this.barManager1;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 542);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 544);
             // 
             // btnSeleccionar
             // 
@@ -271,14 +276,17 @@
             // 
             this.panelControl1.Controls.Add(this.groupControl1);
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelControl1.Location = new System.Drawing.Point(75, 0);
+            this.panelControl1.Location = new System.Drawing.Point(77, 0);
             this.panelControl1.Name = "panelControl1";
             this.panelControl1.Padding = new System.Windows.Forms.Padding(5);
-            this.panelControl1.Size = new System.Drawing.Size(1242, 101);
+            this.panelControl1.Size = new System.Drawing.Size(1240, 101);
             this.panelControl1.TabIndex = 8;
             // 
             // groupControl1
             // 
+            this.groupControl1.Controls.Add(this.checkEmpresas);
+            this.groupControl1.Controls.Add(this.labelControl2);
+            this.groupControl1.Controls.Add(this.comboEmpresas);
             this.groupControl1.Controls.Add(this.radioMoneda);
             this.groupControl1.Controls.Add(this.btnFiltrar);
             this.groupControl1.Controls.Add(this.labelControl1);
@@ -292,13 +300,41 @@
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl1.Location = new System.Drawing.Point(7, 7);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(1228, 87);
+            this.groupControl1.Size = new System.Drawing.Size(1226, 87);
             this.groupControl1.TabIndex = 0;
             this.groupControl1.Text = "Parametros";
             // 
+            // checkEmpresas
+            // 
+            this.checkEmpresas.Location = new System.Drawing.Point(385, 28);
+            this.checkEmpresas.MenuManager = this.barManager1;
+            this.checkEmpresas.Name = "checkEmpresas";
+            this.checkEmpresas.Properties.Caption = "Todas las empresas";
+            this.checkEmpresas.Size = new System.Drawing.Size(141, 19);
+            this.checkEmpresas.TabIndex = 77;
+            this.checkEmpresas.CheckedChanged += new System.EventHandler(this.checkEmpresas_CheckedChanged);
+            // 
+            // labelControl2
+            // 
+            this.labelControl2.Location = new System.Drawing.Point(385, 57);
+            this.labelControl2.Name = "labelControl2";
+            this.labelControl2.Size = new System.Drawing.Size(45, 13);
+            this.labelControl2.TabIndex = 76;
+            this.labelControl2.Text = "Empresa:";
+            // 
+            // comboEmpresas
+            // 
+            this.comboEmpresas.Location = new System.Drawing.Point(436, 54);
+            this.comboEmpresas.MenuManager = this.barManager1;
+            this.comboEmpresas.Name = "comboEmpresas";
+            this.comboEmpresas.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.comboEmpresas.Size = new System.Drawing.Size(143, 20);
+            this.comboEmpresas.TabIndex = 75;
+            // 
             // radioMoneda
             // 
-            this.radioMoneda.Location = new System.Drawing.Point(382, 31);
+            this.radioMoneda.Location = new System.Drawing.Point(607, 33);
             this.radioMoneda.MenuManager = this.barManager1;
             this.radioMoneda.Name = "radioMoneda";
             this.radioMoneda.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
@@ -312,7 +348,7 @@
             // 
             // btnFiltrar
             // 
-            this.btnFiltrar.Location = new System.Drawing.Point(465, 48);
+            this.btnFiltrar.Location = new System.Drawing.Point(690, 50);
             this.btnFiltrar.Name = "btnFiltrar";
             this.btnFiltrar.Size = new System.Drawing.Size(75, 23);
             this.btnFiltrar.TabIndex = 73;
@@ -403,10 +439,10 @@
             // 
             this.panelControl3.Controls.Add(this.gridControl2);
             this.panelControl3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelControl3.Location = new System.Drawing.Point(75, 101);
+            this.panelControl3.Location = new System.Drawing.Point(77, 101);
             this.panelControl3.Name = "panelControl3";
             this.panelControl3.Padding = new System.Windows.Forms.Padding(5);
-            this.panelControl3.Size = new System.Drawing.Size(1242, 232);
+            this.panelControl3.Size = new System.Drawing.Size(1240, 232);
             this.panelControl3.TabIndex = 1;
             // 
             // gridControl2
@@ -415,7 +451,7 @@
             this.gridControl2.Location = new System.Drawing.Point(7, 7);
             this.gridControl2.MainView = this.gridView2;
             this.gridControl2.Name = "gridControl2";
-            this.gridControl2.Size = new System.Drawing.Size(1228, 218);
+            this.gridControl2.Size = new System.Drawing.Size(1226, 218);
             this.gridControl2.TabIndex = 1;
             this.gridControl2.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView2});
@@ -438,13 +474,11 @@
             this.gridView2.OptionsView.ShowGroupPanel = false;
             this.gridView2.SelectionChanged += new DevExpress.Data.SelectionChangedEventHandler(this.gridView2_SelectionChanged);
             // 
-            // Nombre_InternoG
+            // Id_Activo
             // 
-            this.Nombre_InternoG.Caption = "Activo";
-            this.Nombre_InternoG.FieldName = "Nombre_Interno";
-            this.Nombre_InternoG.Name = "Nombre_InternoG";
-            this.Nombre_InternoG.Visible = true;
-            this.Nombre_InternoG.VisibleIndex = 0;
+            this.Id_Activo.Caption = "Id_Activo";
+            this.Id_Activo.FieldName = "Id_Activo";
+            this.Id_Activo.Name = "Id_Activo";
             // 
             // Monto_Factura_PG
             // 
@@ -456,7 +490,15 @@
             this.Monto_Factura_PG.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "Monto_Factura_P", "{0:#,###.00}")});
             this.Monto_Factura_PG.Visible = true;
-            this.Monto_Factura_PG.VisibleIndex = 1;
+            this.Monto_Factura_PG.VisibleIndex = 2;
+            // 
+            // Nombre_InternoG
+            // 
+            this.Nombre_InternoG.Caption = "Activo";
+            this.Nombre_InternoG.FieldName = "Nombre_Interno";
+            this.Nombre_InternoG.Name = "Nombre_InternoG";
+            this.Nombre_InternoG.Visible = true;
+            this.Nombre_InternoG.VisibleIndex = 1;
             // 
             // Gasto_TotalG
             // 
@@ -468,7 +510,7 @@
             this.Gasto_TotalG.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "Gasto_Total", "{0:#,###.00}")});
             this.Gasto_TotalG.Visible = true;
-            this.Gasto_TotalG.VisibleIndex = 2;
+            this.Gasto_TotalG.VisibleIndex = 3;
             // 
             // Ganancias_TotalG
             // 
@@ -480,22 +522,16 @@
             this.Ganancias_TotalG.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "Ganancias_Total", "{0:#,###.00}")});
             this.Ganancias_TotalG.Visible = true;
-            this.Ganancias_TotalG.VisibleIndex = 3;
-            // 
-            // Id_Activo
-            // 
-            this.Id_Activo.Caption = "Id_Activo";
-            this.Id_Activo.FieldName = "Id_Activo";
-            this.Id_Activo.Name = "Id_Activo";
+            this.Ganancias_TotalG.VisibleIndex = 4;
             // 
             // panelControl2
             // 
             this.panelControl2.Controls.Add(this.gridControl1);
             this.panelControl2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelControl2.Location = new System.Drawing.Point(75, 333);
+            this.panelControl2.Location = new System.Drawing.Point(77, 333);
             this.panelControl2.Name = "panelControl2";
             this.panelControl2.Padding = new System.Windows.Forms.Padding(5);
-            this.panelControl2.Size = new System.Drawing.Size(1242, 209);
+            this.panelControl2.Size = new System.Drawing.Size(1240, 211);
             this.panelControl2.TabIndex = 14;
             // 
             // gridControl1
@@ -505,7 +541,7 @@
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.MenuManager = this.barManager1;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(1228, 195);
+            this.gridControl1.Size = new System.Drawing.Size(1226, 197);
             this.gridControl1.TabIndex = 0;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -918,6 +954,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
             this.groupControl1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.checkEmpresas.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.comboEmpresas.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radioMoneda.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateAl.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateAl.Properties)).EndInit();
@@ -1008,5 +1046,8 @@
         private DevExpress.XtraGrid.Columns.GridColumn Otros_D;
         private DevExpress.XtraGrid.Columns.GridColumn Gasto_Total;
         private DevExpress.XtraGrid.Columns.GridColumn Ganancias_Total;
+        private DevExpress.XtraEditors.CheckEdit checkEmpresas;
+        private DevExpress.XtraEditors.LabelControl labelControl2;
+        private DevExpress.XtraEditors.ComboBoxEdit comboEmpresas;
     }
 }

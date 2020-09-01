@@ -422,5 +422,16 @@ namespace TransportBusiness
                 XtraMessageBox.Show(ex.Message);
             }
         }
+
+        private void checkEmpresas_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkEmpresas.Checked)
+            {
+                comboEmpresas.Enabled = false;
+            }else
+            {
+                comboEmpresas.Enabled = true;
+            }
+        }
     }
 }
