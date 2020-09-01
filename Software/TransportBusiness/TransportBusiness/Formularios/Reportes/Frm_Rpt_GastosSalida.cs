@@ -1,14 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+
 using System.Data;
-using System.Drawing;
-using System.Text;
-using System.Linq;
-using System.Threading.Tasks;
+
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using CapaDeDatos;
+
 
 namespace TransportBusiness
 {
@@ -30,6 +27,9 @@ namespace TransportBusiness
             }
         }
 
+        //GridControlCheckMarksSelection gridCheckMarksPalets;
+        //string CadenaCodigos = null;
+        //StringBuilder sb = new StringBuilder();
 
         public Frm_Rpt_GastosSalida()
         {
@@ -95,6 +95,8 @@ namespace TransportBusiness
             radioMoneda.EditValue = "P";
             dateDel.EditValue =  DateTime.Today.AddDays(-7);
             dateAl.EditValue = DateTime.Today;
+
+            //GridMultiplePalets();
         }
 
         private void btnFiltrar_Click(object sender, EventArgs e)
@@ -137,21 +139,99 @@ namespace TransportBusiness
             this.Close();
         }
 
+
+       
+
+        //private void GridMultiplePalets()
+        //{
+        //    gridCheckMarksPalets = new GridControlCheckMarksSelection(gridView2);
+        //    gridCheckMarksPalets.SelectionChanged += gridCheckMarksAcuerdos_SelectionChanged;
+        //}
+        //void gridCheckMarksAcuerdos_SelectionChanged(object sender, EventArgs e)
+        //{
+        //    CadenaCodigos = string.Empty;
+        //    if (ActiveControl is DevExpress.XtraGrid.GridControl)
+        //    {
+
+        //        foreach (DataRowView rv in (sender as GridControlCheckMarksSelection).selection)
+        //        {
+        //            if (sb.ToString().Length > 0) { sb.Append(", "); }
+        //            sb.AppendFormat("{0}", rv["Id_Activo"]);
+
+        //            if (CadenaCodigos != string.Empty)
+        //            {
+        //                CadenaCodigos = string.Format("{0},{1}", CadenaCodigos, rv["Id_Activo"]);
+        //            }
+        //            else
+        //            {
+        //                CadenaCodigos = rv["Id_Activo"].ToString();
+        //            }
+        //        }
+        //    }
+        //    if (CadenaCodigos == string.Empty)
+        //    {
+        //        btnExportar.Enabled = false;
+        //    }
+        //    else
+        //    {
+        //        btnExportar.Enabled = true;
+        //    }
+        //    CargarGastosDet(CadenaCodigos);
+
+        //}
+
         private void gridControl2_Click(object sender, EventArgs e)
         {
-            try
-            {
-                foreach (int i in this.gridView2.GetSelectedRows())
-                {
-                    DataRow row = this.gridView2.GetDataRow(i);
-                    CargarGastosDet( row["Id_Activo"].ToString());
-                  
-                }
-            }
-            catch (Exception ex)
-            {
-                XtraMessageBox.Show(ex.Message);
-            }
+            //try
+            //{
+            //    string Tactivos="";
+            //    //foreach (int i in this.gridView2.GetSelectedRows())
+            //    //{
+            //    //    DataRow row = this.gridView2.GetDataRow(i);
+            //    //    CargarGastosDet( row["Id_Activo"].ToString());
+
+            //    //}
+
+            //    System.Collections.ArrayList rows = new System.Collections.ArrayList();
+
+            //    // Add the selected rows to the list.
+            //    Int32[] selectedRowHandles = gridView2.GetSelectedRows();
+            //    for (int i = 0; i < selectedRowHandles.Length; i++)
+            //    {
+            //        int selectedRowHandle = selectedRowHandles[i];
+            //        if (selectedRowHandle >= 0)
+            //            rows.Add(gridView2.GetDataRow(selectedRowHandle));
+            //    }
+            //    try
+            //    {
+            //        gridView2.BeginUpdate();
+            //        for (int i = 0; i < rows.Count; i++)
+            //        {
+            //            DataRow row = rows[i] as DataRow;
+            //            if (Tactivos.Length > 0)
+            //            {
+            //                Tactivos = Tactivos+ "," + row[0].ToString() ;
+            //            }
+            //            else
+            //            {
+            //                Tactivos = row[0].ToString() ;
+            //            }
+                        
+            //            // Change the field value.
+            //            //row["Discontinued"] = true;
+            //        }
+            //    }
+            //    finally
+            //    {
+            //        gridView2.EndUpdate();
+            //    }
+            //    CargarGastosDet(Tactivos);
+
+            //}
+            //catch (Exception ex)
+            //{
+            //    XtraMessageBox.Show(ex.Message);
+            //}
         }
 
         private void radioGroup1_SelectedIndexChanged(object sender, EventArgs e)
@@ -279,6 +359,67 @@ namespace TransportBusiness
                         MessageBox.Show(msg, "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
+            }
+
+        }
+
+        private void btnImpimir_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Frm_Rpt_GastosSalida_Preview clase = new Frm_Rpt_GastosSalida_Preview();
+            clase.ShowDialog();
+        }
+
+        private void gridView2_SelectionChanged(object sender, DevExpress.Data.SelectionChangedEventArgs e)
+        {
+            try
+            {
+                string Tactivos = "";
+                //foreach (int i in this.gridView2.GetSelectedRows())
+                //{
+                //    DataRow row = this.gridView2.GetDataRow(i);
+                //    CargarGastosDet( row["Id_Activo"].ToString());
+
+                //}
+
+                System.Collections.ArrayList rows = new System.Collections.ArrayList();
+
+                // Add the selected rows to the list.
+                Int32[] selectedRowHandles = gridView2.GetSelectedRows();
+                for (int i = 0; i < selectedRowHandles.Length; i++)
+                {
+                    int selectedRowHandle = selectedRowHandles[i];
+                    if (selectedRowHandle >= 0)
+                        rows.Add(gridView2.GetDataRow(selectedRowHandle));
+                }
+                try
+                {
+                    gridView2.BeginUpdate();
+                    for (int i = 0; i < rows.Count; i++)
+                    {
+                        DataRow row = rows[i] as DataRow;
+                        if (Tactivos.Length > 0)
+                        {
+                            Tactivos = Tactivos + "," + row[0].ToString();
+                        }
+                        else
+                        {
+                            Tactivos = row[0].ToString();
+                        }
+
+                        // Change the field value.
+                        //row["Discontinued"] = true;
+                    }
+                }
+                finally
+                {
+                    gridView2.EndUpdate();
+                }
+                CargarGastosDet(Tactivos);
+
+            }
+            catch (Exception ex)
+            {
+                XtraMessageBox.Show(ex.Message);
             }
         }
     }

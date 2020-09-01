@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
 
-namespace TransportBusiness.Formularios.Reportes
+namespace TransportBusiness
 {
     public partial class Frm_Rpt_GastosSalida_Preview : DevExpress.XtraEditors.XtraForm
     {

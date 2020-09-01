@@ -192,6 +192,7 @@
             this.btnImpimir.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnImpimir.ImageOptions.Image")));
             this.btnImpimir.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnImpimir.ImageOptions.LargeImage")));
             this.btnImpimir.Name = "btnImpimir";
+            this.btnImpimir.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnImpimir_ItemClick);
             // 
             // btnSalir
             // 
@@ -320,7 +321,7 @@
             // 
             // labelControl1
             // 
-            this.labelControl1.Location = new System.Drawing.Point(238, 59);
+            this.labelControl1.Location = new System.Drawing.Point(238, 60);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(13, 13);
             this.labelControl1.TabIndex = 72;
@@ -352,7 +353,7 @@
             // 
             // labelControl6
             // 
-            this.labelControl6.Location = new System.Drawing.Point(99, 59);
+            this.labelControl6.Location = new System.Drawing.Point(99, 60);
             this.labelControl6.Name = "labelControl6";
             this.labelControl6.Size = new System.Drawing.Size(19, 13);
             this.labelControl6.TabIndex = 69;
@@ -392,7 +393,7 @@
             // 
             // labelControl3
             // 
-            this.labelControl3.Location = new System.Drawing.Point(99, 32);
+            this.labelControl3.Location = new System.Drawing.Point(99, 33);
             this.labelControl3.Name = "labelControl3";
             this.labelControl3.Size = new System.Drawing.Size(34, 13);
             this.labelControl3.TabIndex = 4;
@@ -423,16 +424,19 @@
             // gridView2
             // 
             this.gridView2.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.Nombre_InternoG,
+            this.Id_Activo,
             this.Monto_Factura_PG,
+            this.Nombre_InternoG,
             this.Gasto_TotalG,
-            this.Ganancias_TotalG,
-            this.Id_Activo});
+            this.Ganancias_TotalG});
             this.gridView2.GridControl = this.gridControl2;
             this.gridView2.Name = "gridView2";
             this.gridView2.OptionsBehavior.Editable = false;
+            this.gridView2.OptionsSelection.MultiSelect = true;
+            this.gridView2.OptionsSelection.MultiSelectMode = DevExpress.XtraGrid.Views.Grid.GridMultiSelectMode.CheckBoxRowSelect;
             this.gridView2.OptionsView.ShowFooter = true;
             this.gridView2.OptionsView.ShowGroupPanel = false;
+            this.gridView2.SelectionChanged += new DevExpress.Data.SelectionChangedEventHandler(this.gridView2_SelectionChanged);
             // 
             // Nombre_InternoG
             // 
@@ -541,10 +545,13 @@
             this.Gasto_Total,
             this.Ganancias_Total});
             this.gridView1.GridControl = this.gridControl1;
+            this.gridView1.GroupCount = 1;
             this.gridView1.Name = "gridView1";
+            this.gridView1.OptionsBehavior.AutoExpandAllGroups = true;
             this.gridView1.OptionsBehavior.Editable = false;
             this.gridView1.OptionsView.ShowFooter = true;
-            this.gridView1.OptionsView.ShowGroupPanel = false;
+            this.gridView1.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
+            new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.Nombre_Interno, DevExpress.Data.ColumnSortOrder.Ascending)});
             // 
             // Id_Salida
             // 
@@ -566,6 +573,8 @@
             this.Nombre_Interno.Caption = "Activo";
             this.Nombre_Interno.FieldName = "Nombre_Interno";
             this.Nombre_Interno.Name = "Nombre_Interno";
+            this.Nombre_Interno.Visible = true;
+            this.Nombre_Interno.VisibleIndex = 0;
             // 
             // Operador
             // 
@@ -865,8 +874,6 @@
             // 
             // Gasto_Total
             // 
-            this.Gasto_Total.AppearanceCell.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.Gasto_Total.AppearanceCell.Options.UseBackColor = true;
             this.Gasto_Total.Caption = "Total Gasto";
             this.Gasto_Total.DisplayFormat.FormatString = "{0:#,###.00}";
             this.Gasto_Total.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;

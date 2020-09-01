@@ -1,4 +1,4 @@
-﻿namespace TransportBusiness.Formularios.Reportes
+﻿namespace TransportBusiness
 {
     partial class Frm_Rpt_GastosSalida_Preview
     {
@@ -34,6 +34,7 @@
             // reportViewer1
             // 
             this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.reportViewer1.LocalReport.ReportEmbeddedResource = "TransportBusiness.Formularios.Reportes.Rpt_GastosSalida.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(0, 0);
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.Size = new System.Drawing.Size(549, 497);

@@ -71,6 +71,9 @@
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
             this.textKM = new DevExpress.XtraEditors.TextEdit();
             this.panelControl3 = new DevExpress.XtraEditors.PanelControl();
+            this.cboMoneda = new DevExpress.XtraEditors.ComboBoxEdit();
+            this.labelControl34 = new DevExpress.XtraEditors.LabelControl();
+            this.btnBusqServicio = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl13 = new DevExpress.XtraEditors.LabelControl();
             this.textCantidad = new DevExpress.XtraEditors.TextEdit();
             this.labelControl12 = new DevExpress.XtraEditors.LabelControl();
@@ -87,6 +90,8 @@
             this.Costo = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Piezas = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Total = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Id_Servicio = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Moneda = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.barManager2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
@@ -105,6 +110,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.textKM.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).BeginInit();
             this.panelControl3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cboMoneda.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textCantidad.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textCosto.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textServicio.Properties)).BeginInit();
@@ -229,7 +235,7 @@
             // 
             // barStaticItem1
             // 
-            this.barStaticItem1.Caption = "Empleado:";
+            this.barStaticItem1.Caption = "Servicio:";
             this.barStaticItem1.Id = 48;
             this.barStaticItem1.Name = "barStaticItem1";
             // 
@@ -255,7 +261,7 @@
             this.barDockControl3.Dock = System.Windows.Forms.DockStyle.Left;
             this.barDockControl3.Location = new System.Drawing.Point(0, 0);
             this.barDockControl3.Manager = this.barManager2;
-            this.barDockControl3.Size = new System.Drawing.Size(68, 529);
+            this.barDockControl3.Size = new System.Drawing.Size(72, 529);
             // 
             // barDockControl5
             // 
@@ -269,10 +275,10 @@
             // 
             this.panelControl1.Controls.Add(this.groupControl1);
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelControl1.Location = new System.Drawing.Point(68, 0);
+            this.panelControl1.Location = new System.Drawing.Point(72, 0);
             this.panelControl1.Name = "panelControl1";
             this.panelControl1.Padding = new System.Windows.Forms.Padding(5);
-            this.panelControl1.Size = new System.Drawing.Size(759, 227);
+            this.panelControl1.Size = new System.Drawing.Size(755, 209);
             this.panelControl1.TabIndex = 4;
             // 
             // groupControl1
@@ -304,7 +310,7 @@
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl1.Location = new System.Drawing.Point(7, 7);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(745, 213);
+            this.groupControl1.Size = new System.Drawing.Size(741, 195);
             this.groupControl1.TabIndex = 77;
             this.groupControl1.Text = "Datos del Servicio";
             // 
@@ -504,6 +510,9 @@
             // 
             // panelControl3
             // 
+            this.panelControl3.Controls.Add(this.cboMoneda);
+            this.panelControl3.Controls.Add(this.labelControl34);
+            this.panelControl3.Controls.Add(this.btnBusqServicio);
             this.panelControl3.Controls.Add(this.labelControl13);
             this.panelControl3.Controls.Add(this.textCantidad);
             this.panelControl3.Controls.Add(this.labelControl12);
@@ -512,14 +521,46 @@
             this.panelControl3.Controls.Add(this.labelControl10);
             this.panelControl3.Controls.Add(this.textServicio);
             this.panelControl3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelControl3.Location = new System.Drawing.Point(68, 227);
+            this.panelControl3.Location = new System.Drawing.Point(72, 209);
             this.panelControl3.Name = "panelControl3";
-            this.panelControl3.Size = new System.Drawing.Size(759, 57);
+            this.panelControl3.Size = new System.Drawing.Size(755, 57);
             this.panelControl3.TabIndex = 6;
+            // 
+            // cboMoneda
+            // 
+            this.cboMoneda.Location = new System.Drawing.Point(345, 33);
+            this.cboMoneda.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cboMoneda.Name = "cboMoneda";
+            this.cboMoneda.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cboMoneda.Properties.Items.AddRange(new object[] {
+            "Pesos",
+            "Dólares"});
+            this.cboMoneda.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
+            this.cboMoneda.Size = new System.Drawing.Size(100, 20);
+            this.cboMoneda.TabIndex = 73;
+            // 
+            // labelControl34
+            // 
+            this.labelControl34.Location = new System.Drawing.Point(302, 37);
+            this.labelControl34.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.labelControl34.Name = "labelControl34";
+            this.labelControl34.Size = new System.Drawing.Size(42, 13);
+            this.labelControl34.TabIndex = 72;
+            this.labelControl34.Text = "Moneda:";
+            // 
+            // btnBusqServicio
+            // 
+            this.btnBusqServicio.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnBusqServicio.ImageOptions.Image")));
+            this.btnBusqServicio.Location = new System.Drawing.Point(263, 7);
+            this.btnBusqServicio.Name = "btnBusqServicio";
+            this.btnBusqServicio.Size = new System.Drawing.Size(24, 21);
+            this.btnBusqServicio.TabIndex = 69;
+            this.btnBusqServicio.Click += new System.EventHandler(this.btnBusqServicio_Click);
             // 
             // labelControl13
             // 
-            this.labelControl13.Location = new System.Drawing.Point(460, 21);
+            this.labelControl13.Location = new System.Drawing.Point(174, 36);
             this.labelControl13.Name = "labelControl13";
             this.labelControl13.Size = new System.Drawing.Size(47, 13);
             this.labelControl13.TabIndex = 67;
@@ -527,14 +568,14 @@
             // 
             // textCantidad
             // 
-            this.textCantidad.Location = new System.Drawing.Point(511, 18);
+            this.textCantidad.Location = new System.Drawing.Point(225, 33);
             this.textCantidad.Name = "textCantidad";
             this.textCantidad.Size = new System.Drawing.Size(62, 20);
             this.textCantidad.TabIndex = 68;
             // 
             // labelControl12
             // 
-            this.labelControl12.Location = new System.Drawing.Point(293, 22);
+            this.labelControl12.Location = new System.Drawing.Point(8, 36);
             this.labelControl12.Name = "labelControl12";
             this.labelControl12.Size = new System.Drawing.Size(42, 13);
             this.labelControl12.TabIndex = 65;
@@ -542,7 +583,7 @@
             // 
             // textCosto
             // 
-            this.textCosto.Location = new System.Drawing.Point(338, 18);
+            this.textCosto.Location = new System.Drawing.Point(53, 32);
             this.textCosto.Name = "textCosto";
             this.textCosto.Size = new System.Drawing.Size(111, 20);
             this.textCosto.TabIndex = 66;
@@ -550,7 +591,7 @@
             // btnAgregar
             // 
             this.btnAgregar.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnAgregar.ImageOptions.Image")));
-            this.btnAgregar.Location = new System.Drawing.Point(588, 5);
+            this.btnAgregar.Location = new System.Drawing.Point(461, 5);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(87, 46);
             this.btnAgregar.TabIndex = 27;
@@ -559,7 +600,7 @@
             // 
             // labelControl10
             // 
-            this.labelControl10.Location = new System.Drawing.Point(28, 22);
+            this.labelControl10.Location = new System.Drawing.Point(10, 11);
             this.labelControl10.Name = "labelControl10";
             this.labelControl10.Size = new System.Drawing.Size(41, 13);
             this.labelControl10.TabIndex = 25;
@@ -567,19 +608,19 @@
             // 
             // textServicio
             // 
-            this.textServicio.Location = new System.Drawing.Point(94, 18);
+            this.textServicio.Location = new System.Drawing.Point(53, 7);
             this.textServicio.Name = "textServicio";
-            this.textServicio.Size = new System.Drawing.Size(188, 20);
+            this.textServicio.Size = new System.Drawing.Size(204, 20);
             this.textServicio.TabIndex = 26;
             // 
             // panelControl2
             // 
             this.panelControl2.Controls.Add(this.gridControl1);
             this.panelControl2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelControl2.Location = new System.Drawing.Point(68, 284);
+            this.panelControl2.Location = new System.Drawing.Point(72, 266);
             this.panelControl2.Name = "panelControl2";
             this.panelControl2.Padding = new System.Windows.Forms.Padding(5);
-            this.panelControl2.Size = new System.Drawing.Size(759, 245);
+            this.panelControl2.Size = new System.Drawing.Size(755, 263);
             this.panelControl2.TabIndex = 7;
             // 
             // gridControl1
@@ -589,7 +630,7 @@
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.MenuManager = this.barManager2;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(745, 231);
+            this.gridControl1.Size = new System.Drawing.Size(741, 249);
             this.gridControl1.TabIndex = 0;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -604,7 +645,9 @@
             this.Nombre_ServicioDetalle,
             this.Costo,
             this.Piezas,
-            this.Total});
+            this.Total,
+            this.Id_Servicio,
+            this.Moneda});
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsView.ShowGroupPanel = false;
@@ -623,7 +666,7 @@
             this.Secuencia.Name = "Secuencia";
             this.Secuencia.OptionsColumn.AllowEdit = false;
             this.Secuencia.Visible = true;
-            this.Secuencia.VisibleIndex = 4;
+            this.Secuencia.VisibleIndex = 5;
             // 
             // Nombre_ServicioDetalle
             // 
@@ -631,7 +674,7 @@
             this.Nombre_ServicioDetalle.FieldName = "Nombre_ServicioDetalle";
             this.Nombre_ServicioDetalle.Name = "Nombre_ServicioDetalle";
             this.Nombre_ServicioDetalle.Visible = true;
-            this.Nombre_ServicioDetalle.VisibleIndex = 0;
+            this.Nombre_ServicioDetalle.VisibleIndex = 1;
             this.Nombre_ServicioDetalle.Width = 397;
             // 
             // Costo
@@ -640,7 +683,7 @@
             this.Costo.FieldName = "Costo";
             this.Costo.Name = "Costo";
             this.Costo.Visible = true;
-            this.Costo.VisibleIndex = 1;
+            this.Costo.VisibleIndex = 2;
             this.Costo.Width = 127;
             // 
             // Piezas
@@ -649,7 +692,7 @@
             this.Piezas.FieldName = "Piezas";
             this.Piezas.Name = "Piezas";
             this.Piezas.Visible = true;
-            this.Piezas.VisibleIndex = 2;
+            this.Piezas.VisibleIndex = 3;
             this.Piezas.Width = 96;
             // 
             // Total
@@ -658,8 +701,24 @@
             this.Total.FieldName = "Total";
             this.Total.Name = "Total";
             this.Total.Visible = true;
-            this.Total.VisibleIndex = 3;
+            this.Total.VisibleIndex = 4;
             this.Total.Width = 103;
+            // 
+            // Id_Servicio
+            // 
+            this.Id_Servicio.Caption = "Id_Servicio";
+            this.Id_Servicio.FieldName = "Id_Servicio";
+            this.Id_Servicio.Name = "Id_Servicio";
+            this.Id_Servicio.Visible = true;
+            this.Id_Servicio.VisibleIndex = 0;
+            // 
+            // Moneda
+            // 
+            this.Moneda.Caption = "Moneda";
+            this.Moneda.FieldName = "Moneda";
+            this.Moneda.Name = "Moneda";
+            this.Moneda.Visible = true;
+            this.Moneda.VisibleIndex = 6;
             // 
             // Frm_Servicios
             // 
@@ -696,6 +755,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).EndInit();
             this.panelControl3.ResumeLayout(false);
             this.panelControl3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cboMoneda.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textCantidad.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textCosto.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textServicio.Properties)).EndInit();
@@ -767,5 +827,10 @@
         private DevExpress.XtraBars.BarLargeButtonItem barLargeButtonItem6;
         private DevExpress.XtraGrid.Columns.GridColumn Folio;
         private DevExpress.XtraGrid.Columns.GridColumn Secuencia;
+        private DevExpress.XtraEditors.SimpleButton btnBusqServicio;
+        private DevExpress.XtraGrid.Columns.GridColumn Id_Servicio;
+        private DevExpress.XtraEditors.ComboBoxEdit cboMoneda;
+        private DevExpress.XtraEditors.LabelControl labelControl34;
+        private DevExpress.XtraGrid.Columns.GridColumn Moneda;
     }
 }

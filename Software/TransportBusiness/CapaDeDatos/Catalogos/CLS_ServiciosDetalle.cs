@@ -15,6 +15,8 @@ namespace CapaDeDatos
         public double Costo { get; set; }
         public double Piezas { get; set; }
         public double Total { get; set; }
+        public string Id_Servicio { get; set; }
+        public string Moneda { get; set; }
 
         public void MtdSeleccionarServiciosDetalle()
         {
@@ -60,6 +62,8 @@ namespace CapaDeDatos
                 _conexion.NombreProcedimiento = "SP_ServiciosDetalle_Insert";
                 _dato.CadenaTexto = Folio;
                 _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Folio");
+                _dato.CadenaTexto = Id_Servicio;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_Servicio");
                 _dato.CadenaTexto = Nombre_ServicioDetalle;
                 _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Nombre_ServicioDetalle");
                 _dato.Entero = Secuencia;
@@ -70,7 +74,8 @@ namespace CapaDeDatos
                 _conexion.agregarParametro(EnumTipoDato.Tipodecimal, _dato, "Piezas");
                 _dato.DecimalValor = Convert.ToDecimal(Total);
                 _conexion.agregarParametro(EnumTipoDato.Tipodecimal, _dato, "Total");
-                
+                _dato.CadenaTexto = Moneda;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Moneda");
                 _conexion.EjecutarDataset();
 
                 if (_conexion.Exito)

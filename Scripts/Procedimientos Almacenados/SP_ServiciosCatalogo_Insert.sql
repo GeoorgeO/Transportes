@@ -5,24 +5,19 @@ SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
-IF  EXISTS (SELECT * FROM SYS.OBJECTS WHERE TYPE = 'P' AND NAME = 'SP_ServiciosDetalle_Insert')
-DROP PROCEDURE SP_ServiciosDetalle_Insert
+IF  EXISTS (SELECT * FROM SYS.OBJECTS WHERE TYPE = 'P' AND NAME = 'SP_ServiciosCatalogo_Insert')
+DROP PROCEDURE SP_ServiciosCatalogo_Insert
 GO
 -- =============================================
 -- Author:		<Author,,Name>
 -- Create date: <Create Date,,>
 -- Description:	<Description,,>
 -- =============================================
-create PROCEDURE [dbo].[SP_ServiciosDetalle_Insert] 
+create PROCEDURE [dbo].[SP_ServiciosCatalogo_Insert] 
 	-- Add the parameters for the stored procedure here
-	@Folio char(10),
-	@Nombre_ServicioDetalle varchar(80),
 	@Id_Servicio char(3),
-	@Secuencia numeric(10,0),
-	@Costo numeric(18,2),
-	@Piezas numeric(18,2),
-	@Total numeric(18,2),
-	@Moneda char(1)
+	@Nombre_Servicio varchar(50),
+	
 AS
 BEGIN
 	-- SET NOCOUNT ON added to prevent extra result sets from
@@ -34,31 +29,31 @@ BEGIN
 
 	begin transaction T1;
 	begin try
-	
+
+		declare @maximo char(6)
+		select @maximo=right(Concat('000', isnull(max(Id_Servicio),0)+1),3) from dbo.Servicios_Catalogo
+
+		declare @Existe int
+		select @Existe = count(Id_Servicio) from dbo.Servicios_Catalogo a where (a.Id_Servicio=@Id_Servicio)
+
+		if @Existe>0 
 		
-			INSERT INTO dbo.ServiciosDetalle
-	           (Folio
-			   ,Id_Servicio
-			   ,Nombre_ServicioDetalle
-	           ,Secuencia
-			   ,Costo
-			   ,Piezas
-			   ,Total
-			   ,Moneda)
+			UPDATE dbo.Servicios_Catalogo
+		        SET Nombre_Servicio=@Nombre_Servicio
+		    WHERE
+		    	Id_Servicio=@Id_Servicio
+				
+		else
+		
+			INSERT INTO dbo.Servicios_Catalogo
+	           (Id_Servicio
+	           ,Nombre_Servicio)
 	     	VALUES
-	           (@Folio
-			   ,@Id_Servicio
-			   ,@Nombre_ServicioDetalle
-	           ,@Secuencia
-			   ,@Costo
-			   ,@Piezas
-			   ,@Total
-			   ,@Moneda)
-			   
+	           (@maximo
+	           ,@Nombre_Servicio)
 		
-		set @correcto=1	
 		commit transaction T1;
-		
+		set @correcto=1
 	end try
 	begin catch
 		rollback transaction T1;

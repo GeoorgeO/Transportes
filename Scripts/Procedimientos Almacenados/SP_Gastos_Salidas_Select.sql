@@ -28,12 +28,31 @@ CREATE PROCEDURE SP_Gastos_Salidas_Select
 	@Parametro char(1),
 	@F_Del datetime,
 	@F_Al datetime,
-	@Id_Activo char(8),
+	@Id_Activo varchar(500)
 AS
 BEGIN
 	-- SET NOCOUNT ON added to prevent extra result sets from
 	-- interfering with SELECT statements.
 	SET NOCOUNT ON;
+	
+	DECLARE @table TABLE ( id VARCHAR(50))
+	DECLARE @x INT = 0
+	DECLARE @firstcomma INT = 0
+	DECLARE @nextcomma INT = 0
+
+	SET @x = LEN(@Id_Activo) - LEN(REPLACE(@Id_Activo, ',', '')) + 1 
+
+	WHILE @x > 0
+		BEGIN
+			SET @nextcomma = CASE WHEN CHARINDEX(',', @Id_Activo, @firstcomma + 1) = 0
+								  THEN LEN(@Id_Activo) + 1
+								  ELSE CHARINDEX(',', @Id_Activo, @firstcomma + 1)
+							 END
+			INSERT  INTO @table
+			VALUES  ( SUBSTRING(@Id_Activo, @firstcomma + 1, (@nextcomma - @firstcomma) - 1) )
+			SET @firstcomma = CHARINDEX(',', @Id_Activo, @firstcomma + 1)
+			SET @x = @x - 1
+		END
 
     -- Insert statements for procedure here
 	select s.Id_Salida,
@@ -88,7 +107,7 @@ BEGIN
 	left join (select id_Salida,sum(Importe) as Importe from transportes.dbo.Salidas_Honorarios group by id_Salida) as sh on sh.Id_Salida=s.Id_Salida
 	where ('F'=@Parametro and Fecha_Salida between @F_Del and @F_Al ) 
 		or ('A'=@Parametro and Id_Activo_Principal=@Id_Activo) 
-		or ('2'=@Parametro and (Fecha_Salida between @F_Del and @F_Al and Id_Activo_Principal=@Id_Activo))
+		or ('2'=@Parametro and (Fecha_Salida between @F_Del and @F_Al and Id_Activo_Principal in (select * from @table)))
 	
 END
 GO

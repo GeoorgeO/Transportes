@@ -85,6 +85,7 @@
     <Compile Include="Catalogos\CLS_Salidas_RevisionUnidad.cs" />
     <Compile Include="Catalogos\CLS_Salidas_Viaticos.cs" />
     <Compile Include="Catalogos\CLS_Servicios.cs" />
+    <Compile Include="Catalogos\CLS_ServiciosCatalogo.cs" />
     <Compile Include="Catalogos\CLS_ServiciosDetalle.cs" />
     <Compile Include="Catalogos\CLS_Tarjetas_Combustible.cs" />
     <Compile Include="Catalogos\CLS_Tarjetas_IAVE.cs" />

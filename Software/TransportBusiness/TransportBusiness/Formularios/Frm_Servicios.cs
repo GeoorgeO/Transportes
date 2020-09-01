@@ -53,6 +53,14 @@ namespace TransportBusiness
             // Add the Column to the DataColumnCollection.
             Tabla.Columns.Add(column);
 
+            // Create second column.
+            column = new DataColumn();
+            column.DataType = System.Type.GetType("System.String");
+            column.ColumnName = "Id_Servicio";
+            column.ReadOnly = false;
+            column.Unique = false;
+            // Add the column to the table.
+            Tabla.Columns.Add(column);
 
             // Create second column.
             column = new DataColumn();
@@ -99,6 +107,15 @@ namespace TransportBusiness
             // Add the column to the table.
             Tabla.Columns.Add(column);
 
+            // Create second column.
+            column = new DataColumn();
+            column.DataType = System.Type.GetType("System.String");
+            column.ColumnName = "Moneda";
+            column.ReadOnly = false;
+            column.Unique = false;
+            // Add the column to the table.
+            Tabla.Columns.Add(column);
+
             gridControl1.DataSource = Tabla;
         }
 
@@ -138,6 +155,7 @@ namespace TransportBusiness
 
         private void InsertarServicios()
         {
+            
             CLS_Servicios Clase = new CLS_Servicios();
             Clase.Folio = textFolio.Text.Trim();
             Clase.Id_Activo = textActivo.Tag.ToString().Trim();
@@ -160,7 +178,9 @@ namespace TransportBusiness
                 for (int x = 0; x < gridView1.RowCount; x++)
                 {
                     int xRow = gridView1.GetVisibleRowHandle(x);
-                    InsertarServiciosDetalle(textFolio.Text.Trim(), gridView1.GetRowCellValue(xRow, gridView1.Columns["Nombre_ServicioDetalle"]).ToString(), Convert.ToInt32(gridView1.GetRowCellValue(xRow, gridView1.Columns["Secuencia"]).ToString()), Convert.ToDouble(gridView1.GetRowCellValue(xRow, gridView1.Columns["Costo"]).ToString()), Convert.ToDouble(gridView1.GetRowCellValue(xRow, gridView1.Columns["Piezas"]).ToString()), Convert.ToDouble(gridView1.GetRowCellValue(xRow, gridView1.Columns["Total"]).ToString()));
+
+                   
+                    InsertarServiciosDetalle(textFolio.Text.Trim(), gridView1.GetRowCellValue(xRow, gridView1.Columns["Id_Servicio"]).ToString(), gridView1.GetRowCellValue(xRow, gridView1.Columns["Nombre_ServicioDetalle"]).ToString(), Convert.ToInt32(gridView1.GetRowCellValue(xRow, gridView1.Columns["Secuencia"]).ToString()), Convert.ToDouble(gridView1.GetRowCellValue(xRow, gridView1.Columns["Costo"]).ToString()), Convert.ToDouble(gridView1.GetRowCellValue(xRow, gridView1.Columns["Piezas"]).ToString()), Convert.ToDouble(gridView1.GetRowCellValue(xRow, gridView1.Columns["Total"]).ToString()), gridView1.GetRowCellValue(xRow, gridView1.Columns["Moneda"]).ToString());
                 }
             }
             else
@@ -169,15 +189,17 @@ namespace TransportBusiness
             }
         }
 
-        private Boolean InsertarServiciosDetalle(string Folio, string Nombre_ServicioDetalle, int Secuencia, double Costo, double Piezas, double Total)
+        private Boolean InsertarServiciosDetalle(string Folio, string Id_Servicio,string Nombre_ServicioDetalle, int Secuencia, double Costo, double Piezas, double Total,string Moneda)
         {
             CLS_ServiciosDetalle Clase = new CLS_ServiciosDetalle();
             Clase.Folio = Folio;
+            Clase.Id_Servicio = Id_Servicio;
             Clase.Nombre_ServicioDetalle = Nombre_ServicioDetalle;
             Clase.Secuencia = Secuencia;
             Clase.Costo = Costo;
             Clase.Piezas = Piezas;
             Clase.Total = Total;
+            Clase.Moneda = Moneda;
             Clase.MtdInsertarServiciosDetalle();
             if (Clase.Exito)
             {
@@ -348,11 +370,21 @@ namespace TransportBusiness
             if (gridView1.IsNewItemRow(rowHandle))
             {
                 gridView1.SetRowCellValue(rowHandle, gridView1.Columns["Folio"], "");
+                gridView1.SetRowCellValue(rowHandle, gridView1.Columns["Id_Servicio"], textServicio.Tag.ToString());
                 gridView1.SetRowCellValue(rowHandle, gridView1.Columns["Nombre_ServicioDetalle"], textServicio.Text.Trim());
                 gridView1.SetRowCellValue(rowHandle, gridView1.Columns["Secuencia"], "");
                 gridView1.SetRowCellValue(rowHandle, gridView1.Columns["Costo"], Convert.ToDouble(textCosto.Text));
                 gridView1.SetRowCellValue(rowHandle, gridView1.Columns["Piezas"], Convert.ToDouble(textCantidad.Text));
                 gridView1.SetRowCellValue(rowHandle, gridView1.Columns["Total"], Convert.ToDouble(Convert.ToDouble(textCosto.Text) * Convert.ToDouble(textCantidad.Text)));
+                if (cboMoneda.Text.Equals("Pesos"))
+                {
+                    gridView1.SetRowCellValue(rowHandle, gridView1.Columns["Moneda"], "P");
+                }
+                else
+                {
+                    gridView1.SetRowCellValue(rowHandle, gridView1.Columns["Moneda"], "D");
+                }
+               
 
             }
         }
@@ -486,6 +518,15 @@ namespace TransportBusiness
 
             }
             //sumarTotal();
+        }
+
+        private void btnBusqServicio_Click(object sender, EventArgs e)
+        {
+            Frm_ServiciosCatalogo Clase = new Frm_ServiciosCatalogo();
+            Clase.PaSel = true;
+            Clase.ShowDialog();
+            textServicio.Tag = Clase.IdServicio;
+            textServicio.Text = Clase.Servicio;
         }
     }
 }

@@ -58,8 +58,11 @@
     <Reference Include="DevExpress.XtraPdfViewer.v17.2, Version=17.2.11.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraPrinting.v17.2, Version=17.2.11.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraTreeList.v17.2, Version=17.2.11.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="Microsoft.ReportViewer.Common, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -243,6 +246,12 @@
     </Compile>
     <Compile Include="Formularios\Catalogos\Frm_Proveedores.Designer.cs">
       <DependentUpon>Frm_Proveedores.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Catalogos\Frm_ServiciosCatalogo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Catalogos\Frm_ServiciosCatalogo.Designer.cs">
+      <DependentUpon>Frm_ServiciosCatalogo.cs</DependentUpon>
     </Compile>
     <Compile Include="Formularios\Catalogos\Frm_Tarjetas_Combustible.cs">
       <SubType>Form</SubType>
@@ -430,6 +439,12 @@
     <Compile Include="Formularios\Reportes\Frm_Rpt_GastosSalida.Designer.cs">
       <DependentUpon>Frm_Rpt_GastosSalida.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\Reportes\Frm_Rpt_GastosSalida_Preview.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Reportes\Frm_Rpt_GastosSalida_Preview.Designer.cs">
+      <DependentUpon>Frm_Rpt_GastosSalida_Preview.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\Seguridad\Frm_Pantallas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -552,6 +567,9 @@
     <EmbeddedResource Include="Formularios\Catalogos\Frm_Proveedores.resx">
       <DependentUpon>Frm_Proveedores.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Catalogos\Frm_ServiciosCatalogo.resx">
+      <DependentUpon>Frm_ServiciosCatalogo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Catalogos\Frm_Tarjetas_Combustible.resx">
       <DependentUpon>Frm_Tarjetas_Combustible.cs</DependentUpon>
     </EmbeddedResource>
@@ -645,6 +663,10 @@
     <EmbeddedResource Include="Formularios\Reportes\Frm_Rpt_GastosSalida.resx">
       <DependentUpon>Frm_Rpt_GastosSalida.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Reportes\Frm_Rpt_GastosSalida_Preview.resx">
+      <DependentUpon>Frm_Rpt_GastosSalida_Preview.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Reportes\Rpt_GastosSalida.rdlc" />
     <EmbeddedResource Include="Formularios\Seguridad\Frm_Pantallas.resx">
       <DependentUpon>Frm_Pantallas.cs</DependentUpon>
     </EmbeddedResource>
@@ -673,6 +695,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="app.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -683,7 +706,9 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Properties\DataSources\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.
