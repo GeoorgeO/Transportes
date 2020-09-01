@@ -234,9 +234,9 @@
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 542);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 544);
             this.barDockControlBottom.Manager = this.barManager1;
-            this.barDockControlBottom.Size = new System.Drawing.Size(1317, 27);
+            this.barDockControlBottom.Size = new System.Drawing.Size(1317, 25);
             // 
             // barDockControlLeft
             // 
@@ -244,7 +244,7 @@
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.barDockControlLeft.Location = new System.Drawing.Point(0, 0);
             this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Size = new System.Drawing.Size(75, 542);
+            this.barDockControlLeft.Size = new System.Drawing.Size(77, 544);
             // 
             // barDockControlRight
             // 
@@ -252,7 +252,7 @@
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
             this.barDockControlRight.Location = new System.Drawing.Point(1317, 0);
             this.barDockControlRight.Manager = this.barManager1;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 542);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 544);
             // 
             // btnSeleccionar
             // 
@@ -270,10 +270,10 @@
             // 
             this.panelControl1.Controls.Add(this.groupControl1);
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelControl1.Location = new System.Drawing.Point(75, 0);
+            this.panelControl1.Location = new System.Drawing.Point(77, 0);
             this.panelControl1.Name = "panelControl1";
             this.panelControl1.Padding = new System.Windows.Forms.Padding(5);
-            this.panelControl1.Size = new System.Drawing.Size(1242, 101);
+            this.panelControl1.Size = new System.Drawing.Size(1240, 101);
             this.panelControl1.TabIndex = 8;
             // 
             // groupControl1
@@ -291,7 +291,7 @@
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl1.Location = new System.Drawing.Point(7, 7);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(1228, 87);
+            this.groupControl1.Size = new System.Drawing.Size(1226, 87);
             this.groupControl1.TabIndex = 0;
             this.groupControl1.Text = "Parametros";
             // 
@@ -302,6 +302,7 @@
             this.radioMoneda.Name = "radioMoneda";
             this.radioMoneda.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
             this.radioMoneda.Properties.Appearance.Options.UseBackColor = true;
+            this.radioMoneda.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.radioMoneda.Properties.Items.AddRange(new DevExpress.XtraEditors.Controls.RadioGroupItem[] {
             new DevExpress.XtraEditors.Controls.RadioGroupItem("P", "Pesos", true, "Pesos"),
             new DevExpress.XtraEditors.Controls.RadioGroupItem("D", "Dólares", true, "Dólares")});
@@ -365,6 +366,7 @@
             this.radioParametro.Name = "radioParametro";
             this.radioParametro.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
             this.radioParametro.Properties.Appearance.Options.UseBackColor = true;
+            this.radioParametro.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.radioParametro.Properties.Items.AddRange(new DevExpress.XtraEditors.Controls.RadioGroupItem[] {
             new DevExpress.XtraEditors.Controls.RadioGroupItem('F', "Por fecha", true, "Por fecha"),
             new DevExpress.XtraEditors.Controls.RadioGroupItem('A', "Por Activo", true, "Por Activo"),
@@ -402,10 +404,10 @@
             // 
             this.panelControl3.Controls.Add(this.gridControl2);
             this.panelControl3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelControl3.Location = new System.Drawing.Point(75, 101);
+            this.panelControl3.Location = new System.Drawing.Point(77, 101);
             this.panelControl3.Name = "panelControl3";
             this.panelControl3.Padding = new System.Windows.Forms.Padding(5);
-            this.panelControl3.Size = new System.Drawing.Size(1242, 232);
+            this.panelControl3.Size = new System.Drawing.Size(1240, 232);
             this.panelControl3.TabIndex = 1;
             // 
             // gridControl2
@@ -414,7 +416,7 @@
             this.gridControl2.Location = new System.Drawing.Point(7, 7);
             this.gridControl2.MainView = this.gridView2;
             this.gridControl2.Name = "gridControl2";
-            this.gridControl2.Size = new System.Drawing.Size(1228, 218);
+            this.gridControl2.Size = new System.Drawing.Size(1226, 218);
             this.gridControl2.TabIndex = 1;
             this.gridControl2.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView2});
@@ -488,10 +490,10 @@
             // 
             this.panelControl2.Controls.Add(this.gridControl1);
             this.panelControl2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelControl2.Location = new System.Drawing.Point(75, 333);
+            this.panelControl2.Location = new System.Drawing.Point(77, 333);
             this.panelControl2.Name = "panelControl2";
             this.panelControl2.Padding = new System.Windows.Forms.Padding(5);
-            this.panelControl2.Size = new System.Drawing.Size(1242, 209);
+            this.panelControl2.Size = new System.Drawing.Size(1240, 211);
             this.panelControl2.TabIndex = 14;
             // 
             // gridControl1
@@ -501,7 +503,7 @@
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.MenuManager = this.barManager1;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(1228, 195);
+            this.gridControl1.Size = new System.Drawing.Size(1226, 197);
             this.gridControl1.TabIndex = 0;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
