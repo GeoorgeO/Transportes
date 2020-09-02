@@ -28,7 +28,8 @@ CREATE PROCEDURE SP_Gastos_Salidas_Select
 	@Parametro char(1),
 	@F_Del datetime,
 	@F_Al datetime,
-	@Id_Activo varchar(500)
+	@Id_Activo varchar(500),
+	@Id_Empresa char(4)
 AS
 BEGIN
 	-- SET NOCOUNT ON added to prevent extra result sets from
@@ -105,9 +106,10 @@ BEGIN
 	left join (select Id_Salida, sum(Importe_P) as Importe_P,sum(Importe_D) as Importe_D from(select id_Salida,case Moneda when 'D' then Importe*(select TC.Tipo_Cambio from Transportes.dbo.Tipo_Cambio as TC where TC.Fecha=Fecha_Factura) else Importe end as Importe_P,case Moneda when 'P' then Importe/(select TC.Tipo_Cambio from Transportes.dbo.Tipo_Cambio as TC where TC.Fecha=Fecha_Factura) else Importe end as Importe_D from transportes.dbo.Salidas_OtrosGastos where Id_GastoDirecto='0009' ) as T group by Id_Salida) as otro on otro.Id_Salida=s.Id_Salida
 	left join (select id_Salida,sum(Importe) as Importe from transportes.dbo.Salidas_Viaticos group by id_Salida) as sv on sv.Id_Salida=s.Id_Salida
 	left join (select id_Salida,sum(Importe) as Importe from transportes.dbo.Salidas_Honorarios group by id_Salida) as sh on sh.Id_Salida=s.Id_Salida
-	where ('F'=@Parametro and Fecha_Salida between @F_Del and @F_Al ) 
+	where (('F'=@Parametro and Fecha_Salida between @F_Del and @F_Al ) 
 		or ('A'=@Parametro and Id_Activo_Principal=@Id_Activo) 
-		or ('2'=@Parametro and (Fecha_Salida between @F_Del and @F_Al and Id_Activo_Principal in (select * from @table)))
+		or ('2'=@Parametro and (Fecha_Salida between @F_Del and @F_Al and Id_Activo_Principal in (select * from @table))))
+		and a.Id_Empresa like '%'+@Id_empresa+'%'
 	
 END
 GO

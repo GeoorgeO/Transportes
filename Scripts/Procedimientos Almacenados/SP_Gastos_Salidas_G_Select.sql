@@ -28,7 +28,8 @@ CREATE PROCEDURE SP_Gastos_Salidas_G_Select
 	@Parametro char(1),
 	@F_Del datetime,
 	@F_Al datetime,
-	@Id_Activo char(8)
+	@Id_Activo char(8),
+	@Id_Empresa char(4)
 	
 AS
 BEGIN
@@ -37,7 +38,7 @@ BEGIN
 	SET NOCOUNT ON;
 
     -- Insert statements for procedure here
-	select a.Id_Activo,a.Nombre_Interno,
+	select a.Id_Activo,a.Nombre_Interno,E.Nombre_Empresa,
 		sum(sf.Importe_P) as Monto_Factura_P,
 		sum(isnull(sd.Importe,0))+sum(isnull(trans.Importe_P,0))+sum(isnull(Caseta.Importe_P,0))+sum(isnull(PFP.Importe_P,0))+sum(isnull(tReten1.Importe_P,0))+sum(isnull(pens.Importe_P,0))+sum(isnull(lav.Importe_P,0))+sum(isnull(Ther.Importe_P,0))+sum(isnull(otro.Importe_P,0))+sum(isnull(sv.Importe,0))+sum(isnull(sh.Importe,0)) as Gasto_Total, 
 		sum(isnull(sf.Importe_P,0))- (sum(isnull(sd.Importe,0))+sum(isnull(trans.Importe_P,0))+sum(isnull(Caseta.Importe_P,0))+sum(isnull(PFP.Importe_P,0))+sum(isnull(tReten1.Importe_P,0))+sum(isnull(pens.Importe_P,0))+sum(isnull(lav.Importe_P,0))+sum(isnull(Ther.Importe_P,0))+sum(isnull(otro.Importe_P,0))+sum(isnull(sv.Importe,0))+sum(isnull(sh.Importe,0))) as Ganancias_Total
@@ -59,10 +60,12 @@ BEGIN
 	left join (select Id_Salida, sum(Importe_P) as Importe_P,sum(Importe_D) as Importe_D from(select id_Salida,case Moneda when 'D' then Importe*(select TC.Tipo_Cambio from Transportes.dbo.Tipo_Cambio as TC where TC.Fecha=Fecha_Factura) else Importe end as Importe_P,case Moneda when 'P' then Importe/(select TC.Tipo_Cambio from Transportes.dbo.Tipo_Cambio as TC where TC.Fecha=Fecha_Factura) else Importe end as Importe_D from transportes.dbo.Salidas_OtrosGastos where Id_GastoDirecto='0009' ) as T group by Id_Salida) as otro on otro.Id_Salida=s.Id_Salida
 	left join (select id_Salida,sum(Importe) as Importe from transportes.dbo.Salidas_Viaticos group by id_Salida) as sv on sv.Id_Salida=s.Id_Salida
 	left join (select id_Salida,sum(Importe) as Importe from transportes.dbo.Salidas_Honorarios group by id_Salida) as sh on sh.Id_Salida=s.Id_Salida
-	where ('F'=@Parametro and Fecha_Salida between @F_Del and @F_Al ) 
+	left join Transportes.dbo.Empresa as E on E.Id_Empresa=A.Id_Empresa
+	where (('F'=@Parametro and Fecha_Salida between @F_Del and @F_Al ) 
 		or ('A'=@Parametro and Id_Activo_Principal=@Id_Activo) 
-		or ('2'=@Parametro and (Fecha_Salida between @F_Del and @F_Al and Id_Activo_Principal=@Id_Activo))
-	group by  a.Id_Activo,a.Nombre_Interno
+		or ('2'=@Parametro and (Fecha_Salida between @F_Del and @F_Al and Id_Activo_Principal=@Id_Activo)))
+		and a.Id_Empresa like '%'+@Id_empresa+'%'
+	group by  a.Id_Activo,a.Nombre_Interno,E.Nombre_Empresa
 	
 END
 GO

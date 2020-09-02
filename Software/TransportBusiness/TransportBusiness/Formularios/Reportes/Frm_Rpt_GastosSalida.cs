@@ -47,10 +47,38 @@ namespace TransportBusiness
             Fecha = Convert.ToDateTime(dateAl.Text.Trim());
             Clase.F_Al = Fecha.Year.ToString() + DosCero(Fecha.Month.ToString()) + DosCero(Fecha.Day.ToString());
             Clase.Id_Activo = textActivo.Text;
+            if (checkEmpresas.Checked)
+            {
+                Clase.Id_Empresa = "";
+            }
+            else
+            {
+                Clase.Id_Empresa =  comboEmpresas.EditValue.ToString().Substring(0,4);
+            }
+           
             Clase.MtdSeleccionarGastos();
             if (Clase.Exito)
             {
                 gridControl2.DataSource = Clase.Datos;
+            }
+        }
+
+        private void CargarEmpresas()
+        {
+            comboEmpresas.EditValue = null;
+            
+            CLS_Empresa Clase = new CLS_Empresa();
+            Clase.MtdSeleccionarEmpresa();
+            if (Clase.Exito)
+            {
+                foreach (DataRow Row in Clase.Datos.Rows)
+                {
+                    comboEmpresas.Properties.Items.Add(Row["Id_Empresa"] + " - " + Row["Nombre_Empresa"]);
+                }
+            }
+            if (comboEmpresas.Properties.Items.Count > 0)
+            {
+                comboEmpresas.SelectedIndex=0;
             }
         }
 
@@ -431,6 +459,7 @@ namespace TransportBusiness
             }else
             {
                 comboEmpresas.Enabled = true;
+                CargarEmpresas();
             }
         }
     }

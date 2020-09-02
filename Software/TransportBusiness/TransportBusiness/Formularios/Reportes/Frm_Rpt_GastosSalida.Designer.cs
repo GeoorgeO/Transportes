@@ -101,6 +101,7 @@
             this.Otros_D = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Gasto_Total = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Ganancias_Total = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Nombre_Empresa = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
@@ -306,6 +307,7 @@
             // 
             // checkEmpresas
             // 
+            this.checkEmpresas.EditValue = true;
             this.checkEmpresas.Location = new System.Drawing.Point(385, 28);
             this.checkEmpresas.MenuManager = this.barManager1;
             this.checkEmpresas.Name = "checkEmpresas";
@@ -324,11 +326,13 @@
             // 
             // comboEmpresas
             // 
-            this.comboEmpresas.Location = new System.Drawing.Point(436, 54);
+            this.comboEmpresas.Enabled = false;
+            this.comboEmpresas.Location = new System.Drawing.Point(434, 54);
             this.comboEmpresas.MenuManager = this.barManager1;
             this.comboEmpresas.Name = "comboEmpresas";
             this.comboEmpresas.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.comboEmpresas.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
             this.comboEmpresas.Size = new System.Drawing.Size(143, 20);
             this.comboEmpresas.TabIndex = 75;
             // 
@@ -464,7 +468,8 @@
             this.Monto_Factura_PG,
             this.Nombre_InternoG,
             this.Gasto_TotalG,
-            this.Ganancias_TotalG});
+            this.Ganancias_TotalG,
+            this.Nombre_Empresa});
             this.gridView2.GridControl = this.gridControl2;
             this.gridView2.Name = "gridView2";
             this.gridView2.OptionsBehavior.Editable = false;
@@ -932,6 +937,14 @@
             this.Ganancias_Total.Visible = true;
             this.Ganancias_Total.VisibleIndex = 28;
             // 
+            // Nombre_Empresa
+            // 
+            this.Nombre_Empresa.Caption = "Empresa";
+            this.Nombre_Empresa.FieldName = "Nombre_Empresa";
+            this.Nombre_Empresa.Name = "Nombre_Empresa";
+            this.Nombre_Empresa.Visible = true;
+            this.Nombre_Empresa.VisibleIndex = 5;
+            // 
             // Frm_Rpt_GastosSalida
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1049,5 +1062,6 @@
         private DevExpress.XtraEditors.CheckEdit checkEmpresas;
         private DevExpress.XtraEditors.LabelControl labelControl2;
         private DevExpress.XtraEditors.ComboBoxEdit comboEmpresas;
+        private DevExpress.XtraGrid.Columns.GridColumn Nombre_Empresa;
     }
 }
