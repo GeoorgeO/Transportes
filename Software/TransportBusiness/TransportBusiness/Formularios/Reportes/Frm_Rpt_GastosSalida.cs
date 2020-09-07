@@ -266,61 +266,176 @@ namespace TransportBusiness
         {
             if (radioMoneda.EditValue.Equals("P"))
             {
-                Monto_Factura_P.Visible = true;
+                Nombre_InternoG.VisibleIndex = 1;
+                Nombre_Empresa.VisibleIndex = 2;
+
+                Monto_Factura_DG.Visible = false;
+                Monto_Factura_DG.VisibleIndex = -1;
+                Gasto_Total_DG.Visible = false;
+                Gasto_Total_DG.VisibleIndex = -1;
+                Utilidad_Total_DG.Visible = false;
+                Utilidad_Total_DG.VisibleIndex = -1;
+
+                Monto_Factura_PG.Visible = true;
+                Monto_Factura_PG.VisibleIndex = 4;
+                Gasto_Total_PG.Visible = true;
+                Gasto_Total_PG.VisibleIndex = 5;
+                Utilidad_Total_PG.Visible = true;
+                Utilidad_Total_PG.VisibleIndex = 6;
+
+
+                Fecha_Salida.VisibleIndex = 1;
+                Nombre_Interno.VisibleIndex = 2;
+                Operador.VisibleIndex = 3;
+                Origen.VisibleIndex = 4;
+                Destino.VisibleIndex = 5;
+                Nombre_Cliente.VisibleIndex = 6;
+
                 Monto_Factura_D.Visible = false;
-
-                Transfe_P.Visible = true;
+                Monto_Factura_D.VisibleIndex = -1;
+                Diesel_D.Visible = false;
+                Diesel_D.VisibleIndex = -1;
                 Transfe_D.Visible = false;
-
-                Caseta_P.Visible = true;
+                Transfe_D.VisibleIndex = -1;
                 Caseta_D.Visible = false;
-
-                PFP_P.Visible = true;
+                Caseta_D.VisibleIndex = -1;
                 PFP_D.Visible = false;
-
-                tReten1_P.Visible = true;
+                PFP_D.VisibleIndex = -1;
                 tReten1_D.Visible = false;
-
-                Pension_P.Visible = true;
+                tReten1_D.VisibleIndex = -1;
                 Pension_D.Visible = false;
-
-                Lavada_P.Visible = true;
+                Pension_D.VisibleIndex = -1;
                 Lavada_D.Visible = false;
-
-                Thermo_P.Visible = true;
+                Lavada_D.VisibleIndex = -1;
                 Thermo_D.Visible = false;
-
-                Otros_P.Visible = true;
+                Thermo_D.VisibleIndex = -1;
+                Viaticos_D.Visible = false;
+                Viaticos_D.VisibleIndex = -1;
+                Comision_Chofer_D.Visible = false;
+                Comision_Chofer_D.VisibleIndex = -1;
                 Otros_D.Visible = false;
+                Otros_D.VisibleIndex = -1;
+                Gasto_Total_D.Visible = false;
+                Gasto_Total_D.VisibleIndex = -1;
+                Ganancias_Total_D.Visible = false;
+                Ganancias_Total_D.VisibleIndex = -1;
+
+                Monto_Factura_P.Visible = true;
+                Monto_Factura_P.VisibleIndex = 8;
+                Diesel_P.Visible = true;
+                Diesel_P.VisibleIndex = 9;
+                Transfe_P.Visible = true;
+                Transfe_P.VisibleIndex = 10;
+                Caseta_P.Visible = true;
+                Caseta_P.VisibleIndex = 11;
+                PFP_P.Visible = true;
+                PFP_P.VisibleIndex = 12;
+                tReten1_P.Visible = true;
+                tReten1_P.VisibleIndex = 12;
+                Pension_P.Visible = true;
+                Pension_P.VisibleIndex = 13;
+                Lavada_P.Visible = true;
+                Lavada_P.VisibleIndex = 14;
+                Thermo_P.Visible = true;
+                Thermo_P.VisibleIndex = 15;
+                Viaticos_P.Visible = true;
+                Viaticos_P.VisibleIndex = 16;
+                Comision_Chofer_P.Visible = true;
+                Comision_Chofer_P.VisibleIndex = 17;
+                Otros_P.Visible = true;
+                Otros_P.VisibleIndex = 18;
+                Gasto_Total_P.Visible = true;
+                Gasto_Total_P.VisibleIndex = 19;
+                Ganancias_Total_P.Visible = true;
+                Ganancias_Total_P.VisibleIndex = 20;
+
+
             }
             else
             {
-                Monto_Factura_D.Visible = true;
+                Nombre_InternoG.VisibleIndex = 1;
+                Nombre_Empresa.VisibleIndex = 2;
+
+                Monto_Factura_PG.Visible = false;
+                Monto_Factura_PG.VisibleIndex = -1;
+                Gasto_Total_PG.Visible = false;
+                Gasto_Total_PG.VisibleIndex = -1;
+                Utilidad_Total_PG.Visible = false;
+                Utilidad_Total_PG.VisibleIndex = -1;
+
+                Monto_Factura_DG.Visible = true;
+                Monto_Factura_DG.VisibleIndex = 4;
+                Gasto_Total_DG.Visible = true;
+                Gasto_Total_DG.VisibleIndex = 5;
+                Utilidad_Total_DG.Visible = true;
+                Utilidad_Total_DG.VisibleIndex = 6;
+
+
+                Fecha_Salida.VisibleIndex = 1;
+                Nombre_Interno.VisibleIndex = 2;
+                Operador.VisibleIndex = 3;
+                Origen.VisibleIndex = 4;
+                Destino.VisibleIndex = 5;
+                Nombre_Cliente.VisibleIndex = 6;
+
                 Monto_Factura_P.Visible = false;
-
-                Transfe_D.Visible = true;
+                Monto_Factura_P.VisibleIndex = -1;
+                Diesel_P.Visible = false;
+                Diesel_P.VisibleIndex = -1;
                 Transfe_P.Visible = false;
-
-                Caseta_D.Visible = true;
+                Transfe_P.VisibleIndex = -1;
                 Caseta_P.Visible = false;
-
-                PFP_D.Visible = true;
+                Caseta_P.VisibleIndex = -1;
                 PFP_P.Visible = false;
-
-                tReten1_D.Visible = true;
+                PFP_P.VisibleIndex = -1;
                 tReten1_P.Visible = false;
-
-                Pension_D.Visible = true;
+                tReten1_P.VisibleIndex = -1;
                 Pension_P.Visible = false;
-
-                Lavada_D.Visible = true;
+                Pension_P.VisibleIndex = -1;
                 Lavada_P.Visible = false;
-
-                Thermo_D.Visible = true;
+                Lavada_P.VisibleIndex = -1;
                 Thermo_P.Visible = false;
-
-                Otros_D.Visible = true;
+                Thermo_P.VisibleIndex = -1;
+                Viaticos_P.Visible = false;
+                Viaticos_P.VisibleIndex = -1;
+                Comision_Chofer_P.Visible = false;
+                Comision_Chofer_P.VisibleIndex = -1;
                 Otros_P.Visible = false;
+                Otros_P.VisibleIndex = -1;
+                Gasto_Total_P.Visible = false;
+                Gasto_Total_P.VisibleIndex = -1;
+                Ganancias_Total_P.Visible = false;
+                Ganancias_Total_P.VisibleIndex = -1;
+
+                Monto_Factura_D.Visible = true;
+                Monto_Factura_D.VisibleIndex = 8;
+                Diesel_D.Visible = true;
+                Diesel_D.VisibleIndex = 9;
+                Transfe_D.Visible = true;
+                Transfe_D.VisibleIndex = 10;
+                Caseta_D.Visible = true;
+                Caseta_D.VisibleIndex = 11;
+                PFP_D.Visible = true;
+                PFP_D.VisibleIndex = 12;
+                tReten1_D.Visible = true;
+                tReten1_D.VisibleIndex = 12;
+                Pension_D.Visible = true;
+                Pension_D.VisibleIndex = 13;
+                Lavada_D.Visible = true;
+                Lavada_D.VisibleIndex = 14;
+                Thermo_D.Visible = true;
+                Thermo_D.VisibleIndex = 15;
+                Viaticos_D.Visible = true;
+                Viaticos_D.VisibleIndex = 16;
+                Comision_Chofer_D.Visible = true;
+                Comision_Chofer_D.VisibleIndex = 17;
+                Otros_D.Visible = true;
+                Otros_D.VisibleIndex = 18;
+                Gasto_Total_D.Visible = true;
+                Gasto_Total_D.VisibleIndex = 19;
+                Ganancias_Total_D.Visible = true;
+                Ganancias_Total_D.VisibleIndex = 20;
+
             }
         }
 

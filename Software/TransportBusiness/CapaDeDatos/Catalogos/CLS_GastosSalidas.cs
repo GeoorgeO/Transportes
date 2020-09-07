@@ -71,8 +71,6 @@ namespace CapaDeDatos
                 _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "F_Al");
                 _dato.CadenaTexto = Id_Activo;
                 _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_Activo");
-                _dato.CadenaTexto = Id_Empresa;
-                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_Empresa");
                 _conexion.EjecutarDataset();
 
                 if (_conexion.Exito)
