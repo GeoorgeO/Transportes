@@ -557,8 +557,28 @@ namespace TransportBusiness
 
         private void btnRptGastosSalida_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            Frm_Rpt_GastosSalida.DefInstance.MdiParent = this;
-            Frm_Rpt_GastosSalida.DefInstance.Show();
+            if (TieneAcceso("036"))
+            {
+                Frm_Rpt_GastosSalida.DefInstance.MdiParent = this;
+                Frm_Rpt_GastosSalida.DefInstance.Show();
+            }
+            else
+            {
+                XtraMessageBox.Show("No Cuentas con acceso a esta Opcion [036]");
+            }
+        }
+
+        private void btnReporteEmpresa_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            if (TieneAcceso("037"))
+            {
+                Frm_ReportexEmpresa.DefInstance.MdiParent = this;
+                Frm_ReportexEmpresa.DefInstance.Show();
+            }
+            else
+            {
+                XtraMessageBox.Show("No Cuentas con acceso a esta Opcion [037]");
+            }
         }
     }
 }

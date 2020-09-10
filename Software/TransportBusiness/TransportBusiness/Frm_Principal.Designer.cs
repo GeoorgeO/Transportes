@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_Principal));
             this.ribbonControl1 = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
@@ -71,6 +70,7 @@
             this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
             this.btnTipoCambio = new DevExpress.XtraBars.BarButtonItem();
             this.btnRptGastosSalida = new DevExpress.XtraBars.BarButtonItem();
+            this.btnReporteEmpresa = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup9 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -89,8 +89,8 @@
             this.ribbonPageGroup4 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPage4 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup12 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.xtraTabbedMdiManager1 = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
-            this.SkinForm = new DevExpress.LookAndFeel.DefaultLookAndFeel(this.components);
+            this.xtraTabbedMdiManager1 = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager();
+            this.SkinForm = new DevExpress.LookAndFeel.DefaultLookAndFeel();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager1)).BeginInit();
             this.SuspendLayout();
@@ -139,9 +139,10 @@
             this.btnGastoDirecto,
             this.barButtonItem2,
             this.btnTipoCambio,
-            this.btnRptGastosSalida});
+            this.btnRptGastosSalida,
+            this.btnReporteEmpresa});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.MaxItemId = 41;
+            this.ribbonControl1.MaxItemId = 42;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1,
@@ -488,10 +489,19 @@
             // 
             this.btnRptGastosSalida.Caption = "Gastos de Salidas";
             this.btnRptGastosSalida.Id = 40;
-            this.btnRptGastosSalida.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem3.ImageOptions.Image")));
-            this.btnRptGastosSalida.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem3.ImageOptions.LargeImage")));
+            this.btnRptGastosSalida.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnRptGastosSalida.ImageOptions.Image")));
+            this.btnRptGastosSalida.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnRptGastosSalida.ImageOptions.LargeImage")));
             this.btnRptGastosSalida.Name = "btnRptGastosSalida";
             this.btnRptGastosSalida.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnRptGastosSalida_ItemClick);
+            // 
+            // btnReporteEmpresa
+            // 
+            this.btnReporteEmpresa.Caption = "Reporte por Empresa";
+            this.btnReporteEmpresa.Id = 41;
+            this.btnReporteEmpresa.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnReporteEmpresa.ImageOptions.Image")));
+            this.btnReporteEmpresa.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnReporteEmpresa.ImageOptions.LargeImage")));
+            this.btnReporteEmpresa.Name = "btnReporteEmpresa";
+            this.btnReporteEmpresa.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnReporteEmpresa_ItemClick);
             // 
             // ribbonPage1
             // 
@@ -645,6 +655,7 @@
             // ribbonPageGroup12
             // 
             this.ribbonPageGroup12.ItemLinks.Add(this.btnRptGastosSalida);
+            this.ribbonPageGroup12.ItemLinks.Add(this.btnReporteEmpresa);
             this.ribbonPageGroup12.Name = "ribbonPageGroup12";
             this.ribbonPageGroup12.Text = "ribbonPageGroup12";
             // 
@@ -743,6 +754,7 @@
         private DevExpress.XtraBars.BarButtonItem btnTipoCambio;
         private DevExpress.XtraBars.BarButtonItem btnRptGastosSalida;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup12;
+        private DevExpress.XtraBars.BarButtonItem btnReporteEmpresa;
     }
 }
 
