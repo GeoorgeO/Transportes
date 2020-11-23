@@ -52,6 +52,7 @@
     <Compile Include="Catalogos\CLS_Ciudades.cs" />
     <Compile Include="Catalogos\CLS_Clientes.cs" />
     <Compile Include="Catalogos\CLS_Contacto_Emergencia.cs" />
+    <Compile Include="Catalogos\CLS_Cuentas_contables.cs" />
     <Compile Include="Catalogos\CLS_Cultivo.cs" />
     <Compile Include="Catalogos\CLS_Domicilios.cs" />
     <Compile Include="Catalogos\CLS_Duenio.cs" />
@@ -60,6 +61,7 @@
     <Compile Include="Catalogos\CLS_Empresa_Aseguradora.cs" />
     <Compile Include="Catalogos\CLS_Entradas.cs" />
     <Compile Include="Catalogos\CLS_Estado.cs" />
+    <Compile Include="Catalogos\CLS_Gastos.cs" />
     <Compile Include="Catalogos\CLS_GastosDirectos.cs" />
     <Compile Include="Catalogos\CLS_GastosIndirectos.cs" />
     <Compile Include="Catalogos\CLS_GastosSalidas.cs" />
@@ -90,6 +92,7 @@
     <Compile Include="Catalogos\CLS_Tarjetas_Combustible.cs" />
     <Compile Include="Catalogos\CLS_Tarjetas_IAVE.cs" />
     <Compile Include="Catalogos\CLS_TipoCambio.cs" />
+    <Compile Include="Catalogos\CLS_Tipo_Cuenta.cs" />
     <Compile Include="Catalogos\CLS_Usuarios.cs" />
     <Compile Include="Tipos\CLS_TipoPersona.cs" />
     <Compile Include="Tipos\CLS_TiposServicio.cs" />

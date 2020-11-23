@@ -54,6 +54,7 @@ namespace CapaDeDatos
             }
 
         }
+
         public void MtdSeleccionarGastosEmpresa()
         {
             TipoDato _dato = new TipoDato();
@@ -108,6 +109,42 @@ namespace CapaDeDatos
                 _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "F_Al");
                 _dato.CadenaTexto = Id_Activo;
                 _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_Activo");
+                _conexion.EjecutarDataset();
+
+                if (_conexion.Exito)
+                {
+                    Datos = _conexion.Datos;
+                }
+                else
+                {
+                    Mensaje = _conexion.Mensaje;
+                    Exito = false;
+                }
+            }
+            catch (Exception e)
+            {
+                Mensaje = e.Message;
+                Exito = false;
+            }
+
+        }
+
+        public void MtdSeleccionarGastosCuentas()
+        {
+            TipoDato _dato = new TipoDato();
+            Conexion _conexion = new Conexion(cadenaConexion);
+
+            Exito = true;
+            try
+            {
+                _conexion.NombreProcedimiento = "SP_Gastos_Cuentas_Select";
+                
+                _dato.CadenaTexto = F_Del;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "F_Del");
+                _dato.CadenaTexto = F_Al;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "F_Al");
+                _dato.CadenaTexto = Id_Empresa;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_Empresa");
                 _conexion.EjecutarDataset();
 
                 if (_conexion.Exito)

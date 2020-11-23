@@ -43,6 +43,7 @@ namespace TransportBusiness
             CLS_GastosIndirectos GastosIndirectos = new CLS_GastosIndirectos();
             GastosIndirectos.Id_GastoIndirecto = textId.Text.Trim();
             GastosIndirectos.Nombre_GastoIndirecto = textNombre.Text.Trim();
+            GastosIndirectos.Id_cuenta = textCtasContables.Tag.ToString();
             GastosIndirectos.MtdInsertarGastosIndirectos();
             if (GastosIndirectos.Exito)
             {
@@ -78,6 +79,8 @@ namespace TransportBusiness
         {
             textId.Text = "";
             textNombre.Text = "";
+            textCtasContables.Tag = "";
+            textCtasContables.Text = "";
         }
 
         private void gridControl1_Click(object sender, EventArgs e)
@@ -89,7 +92,8 @@ namespace TransportBusiness
                     DataRow row = this.gridView1.GetDataRow(i);
                     textId.Text = row["Id_GastoIndirecto"].ToString();
                     textNombre.Text = row["Nombre_GastoIndirecto"].ToString();
-
+                    textCtasContables.Tag = row["Id_cuenta"].ToString();
+                    textCtasContables.Text = row["Nombre_cuenta"].ToString();
 
                 }
             }
@@ -157,6 +161,18 @@ namespace TransportBusiness
             else
             {
                 XtraMessageBox.Show("No se ha seleccionado un Gasto Indirecto");
+            }
+        }
+
+        private void btnCtasContables_Click(object sender, EventArgs e)
+        {
+            Frm_Cuentas_Contables clase = new Frm_Cuentas_Contables();
+            clase.PaSel = true;
+            clase.ShowDialog();
+            if (clase.vId_Cuenta != null)
+            {
+                textCtasContables.Text = clase.vNombre_Cuenta;
+                textCtasContables.Tag = clase.vId_Cuenta;
             }
         }
     }

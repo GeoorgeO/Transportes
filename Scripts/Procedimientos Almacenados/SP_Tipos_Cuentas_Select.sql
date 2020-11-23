@@ -15,15 +15,15 @@ SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
-IF  EXISTS (SELECT * FROM SYS.OBJECTS WHERE TYPE = 'P' AND NAME = 'SP_GastosIndirectos_Select')
-DROP PROCEDURE SP_GastosIndirectos_Select
+IF  EXISTS (SELECT * FROM SYS.OBJECTS WHERE TYPE = 'P' AND NAME = 'SP_Tipos_Cuentas_Select')
+DROP PROCEDURE SP_Tipos_Cuentas_Select
 GO
 -- =============================================
 -- Author:		<Author,,Name>
 -- Create date: <Create Date,,>
 -- Description:	<Description,,>
 -- =============================================
-CREATE PROCEDURE SP_GastosIndirectos_Select
+CREATE PROCEDURE SP_Tipos_Cuentas_Select
 	-- Add the parameters for the stored procedure here
 	
 AS
@@ -34,13 +34,9 @@ BEGIN
 
     -- Insert statements for procedure here
 	
-		select G.Id_GastoIndirecto
-	      ,G.Nombre_GastoIndirecto
-		  ,G.Id_cuenta
-		  ,C.Nombre_cuenta
-		  ,G.Activo
-		from GastosIndirectos as G
-		left join Cuentas_Contables as C on C.Id_cuenta=G.Id_cuenta
-
+		select Id_tipocuenta,
+			Nombre_tipocuenta
+		from Tipos_Cuentas
+		
 END
 GO

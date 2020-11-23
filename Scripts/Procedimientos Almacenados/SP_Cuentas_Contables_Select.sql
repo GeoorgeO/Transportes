@@ -15,17 +15,17 @@ SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
-IF  EXISTS (SELECT * FROM SYS.OBJECTS WHERE TYPE = 'P' AND NAME = 'SP_GastosIndirectos_Select')
-DROP PROCEDURE SP_GastosIndirectos_Select
+IF  EXISTS (SELECT * FROM SYS.OBJECTS WHERE TYPE = 'P' AND NAME = 'SP_Cuentas_Contables_Select')
+DROP PROCEDURE SP_Cuentas_Contables_Select
 GO
 -- =============================================
 -- Author:		<Author,,Name>
 -- Create date: <Create Date,,>
 -- Description:	<Description,,>
 -- =============================================
-CREATE PROCEDURE SP_GastosIndirectos_Select
+CREATE PROCEDURE SP_Cuentas_Contables_Select
 	-- Add the parameters for the stored procedure here
-	
+	@Activa int
 AS
 BEGIN
 	-- SET NOCOUNT ON added to prevent extra result sets from
@@ -34,13 +34,16 @@ BEGIN
 
     -- Insert statements for procedure here
 	
-		select G.Id_GastoIndirecto
-	      ,G.Nombre_GastoIndirecto
-		  ,G.Id_cuenta
-		  ,C.Nombre_cuenta
-		  ,G.Activo
-		from GastosIndirectos as G
-		left join Cuentas_Contables as C on C.Id_cuenta=G.Id_cuenta
+		select C.Id_cuenta
+	      ,C.Id_cuenta_padre
+		  ,(select Nombre_cuenta from Cuentas_Contables where Id_cuenta=C.Id_cuenta_padre) as Nombre_padre
+	      ,C.Nombre_cuenta
+	      ,C.Id_tipocuenta
+		  ,TC.Nombre_tipocuenta
+	      ,C.Naturaleza
+		from Cuentas_Contables as C
+		left join Tipos_Cuentas as TC on TC.Id_tipocuenta=C.Id_tipocuenta
+		where C.Activa=@Activa
 
 END
 GO

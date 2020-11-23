@@ -147,6 +147,12 @@
     <Compile Include="Formularios\Catalogos\Frm_Combustible.Designer.cs">
       <DependentUpon>Frm_Combustible.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\Catalogos\Frm_Cuentas_Contables.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Catalogos\Frm_Cuentas_Contables.Designer.cs">
+      <DependentUpon>Frm_Cuentas_Contables.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\Catalogos\Frm_Cultivo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -279,6 +285,12 @@
     <Compile Include="Formularios\Catalogos\Frm_TipoCambio.Designer.cs">
       <DependentUpon>Frm_TipoCambio.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\Catalogos\Tipos\Frm_Tipo_Cuenta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Catalogos\Tipos\Frm_Tipo_Cuenta.Designer.cs">
+      <DependentUpon>Frm_Tipo_Cuenta.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\Catalogos\Tipos\Frm_Tipo_Servicio.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -309,17 +321,29 @@
     <Compile Include="Formularios\Control\Frm_BusqSalidas.Designer.cs">
       <DependentUpon>Frm_BusqSalidas.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\Control\Frm_Gasto_Directo.cs">
+    <Compile Include="Formularios\Control\Frm_CuentasxNivel.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\Control\Frm_Gasto_Directo.Designer.cs">
+    <Compile Include="Formularios\Control\Frm_CuentasxNivel.Designer.cs">
+      <DependentUpon>Frm_CuentasxNivel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Catalogos\Frm_Gasto_Directo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Catalogos\Frm_Gasto_Directo.Designer.cs">
       <DependentUpon>Frm_Gasto_Directo.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\Control\Frm_Gasto_Indirecto.cs">
+    <Compile Include="Formularios\Catalogos\Frm_Gasto_Indirecto.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\Control\Frm_Gasto_Indirecto.Designer.cs">
+    <Compile Include="Formularios\Catalogos\Frm_Gasto_Indirecto.Designer.cs">
       <DependentUpon>Frm_Gasto_Indirecto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Control\Frm_Gastos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Control\Frm_Gastos.Designer.cs">
+      <DependentUpon>Frm_Gastos.cs</DependentUpon>
     </Compile>
     <Compile Include="Formularios\Control\Frm_ViewPDFSalidas.cs">
       <SubType>Form</SubType>
@@ -497,6 +521,12 @@
     <Compile Include="Reportes\Frm_ReportexEmpresa.Designer.cs">
       <DependentUpon>Frm_ReportexEmpresa.cs</DependentUpon>
     </Compile>
+    <Compile Include="Reportes\Frm_RptxEmpresaIndirectos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\Frm_RptxEmpresaIndirectos.Designer.cs">
+      <DependentUpon>Frm_RptxEmpresaIndirectos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Reportes\rpt_Reporte_Salidas.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -535,6 +565,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Catalogos\Frm_Combustible.resx">
       <DependentUpon>Frm_Combustible.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Catalogos\Frm_Cuentas_Contables.resx">
+      <DependentUpon>Frm_Cuentas_Contables.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Catalogos\Frm_Cultivo.resx">
       <DependentUpon>Frm_Cultivo.cs</DependentUpon>
@@ -599,6 +632,9 @@
     <EmbeddedResource Include="Formularios\Catalogos\Frm_TipoCambio.resx">
       <DependentUpon>Frm_TipoCambio.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Catalogos\Tipos\Frm_Tipo_Cuenta.resx">
+      <DependentUpon>Frm_Tipo_Cuenta.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Catalogos\Tipos\Frm_Tipo_Servicio.resx">
       <DependentUpon>Frm_Tipo_Servicio.cs</DependentUpon>
     </EmbeddedResource>
@@ -614,14 +650,20 @@
     <EmbeddedResource Include="Formularios\Control\Frm_BusqSalidas.resx">
       <DependentUpon>Frm_BusqSalidas.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Control\Frm_CuentasxNivel.resx">
+      <DependentUpon>Frm_CuentasxNivel.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Control\Frm_Entradas.resx">
       <DependentUpon>Frm_Entradas.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\Control\Frm_Gasto_Directo.resx">
+    <EmbeddedResource Include="Formularios\Catalogos\Frm_Gasto_Directo.resx">
       <DependentUpon>Frm_Gasto_Directo.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\Control\Frm_Gasto_Indirecto.resx">
+    <EmbeddedResource Include="Formularios\Catalogos\Frm_Gasto_Indirecto.resx">
       <DependentUpon>Frm_Gasto_Indirecto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Control\Frm_Gastos.resx">
+      <DependentUpon>Frm_Gastos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Control\Frm_Salidas.resx">
       <DependentUpon>Frm_Salidas.cs</DependentUpon>
@@ -717,6 +759,9 @@
     </Compile>
     <EmbeddedResource Include="Reportes\Frm_ReportexEmpresa.resx">
       <DependentUpon>Frm_ReportexEmpresa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\Frm_RptxEmpresaIndirectos.resx">
+      <DependentUpon>Frm_RptxEmpresaIndirectos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\rpt_Reporte_Salidas.resx">
       <DependentUpon>rpt_Reporte_Salidas.cs</DependentUpon>

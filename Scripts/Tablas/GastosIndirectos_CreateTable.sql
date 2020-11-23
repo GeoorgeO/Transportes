@@ -10,6 +10,8 @@ ELSE
 	CREATE TABLE [dbo].[GastosIndirectos](
 		[Id_GastoIndirecto] [char](4) NOT NULL,
 		[Nombre_GastoIndirecto] [varchar](40) NULL,
+		[Id_cuenta] [varchar](14) NULL,
+		[Activo] [int] NULL,
 	 CONSTRAINT [PK_GastoIndirecto] PRIMARY KEY CLUSTERED 
 	(
 		[Id_GastoIndirecto] ASC

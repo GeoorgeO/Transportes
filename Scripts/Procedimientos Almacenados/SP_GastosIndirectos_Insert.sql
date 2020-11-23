@@ -16,7 +16,9 @@ GO
 create PROCEDURE [dbo].[SP_GastosIndirectos_Insert] 
 	-- Add the parameters for the stored procedure here
 	@Id_GastoIndirecto char(4),
-	@Nombre_GastoIndirecto varchar(40)
+	@Nombre_GastoIndirecto varchar(40),
+	@Id_cuenta varchar(16),
+	@Activo int
 AS
 BEGIN
 	-- SET NOCOUNT ON added to prevent extra result sets from
@@ -38,7 +40,9 @@ BEGIN
 		if @Existe>0 
 		
 			UPDATE dbo.GastosIndirectos
-		        SET Nombre_GastoIndirecto=@Nombre_GastoIndirecto
+		        SET Nombre_GastoIndirecto=@Nombre_GastoIndirecto,
+				Id_cuenta=@Id_cuenta,
+				Activo=@Activo
 		    WHERE
 		    	Id_GastoIndirecto=@Id_GastoIndirecto
 				
@@ -46,10 +50,14 @@ BEGIN
 		
 			INSERT INTO dbo.GastosIndirectos
 	           (Id_GastoIndirecto
-	           ,Nombre_GastoIndirecto)
+	           ,Nombre_GastoIndirecto
+			   ,Id_cuenta
+			   ,Activo)
 	     	VALUES
 	           (@maximo
-	           ,@Nombre_GastoIndirecto)
+	           ,@Nombre_GastoIndirecto
+			   ,@Id_cuenta
+			   ,1)
 		
 		commit transaction T1;
 		set @correcto=1

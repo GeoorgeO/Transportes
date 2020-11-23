@@ -253,8 +253,8 @@ namespace TransportBusiness
             Activos.Id_Factura = textFactura.Text.Trim();
             
             Activos.Folio_Tarjeta_Circulacion = textFolioCircula.Text.Trim();
-            
 
+            Activos.Activo_Primario = Convert.ToInt16(radioPrimario.EditValue);
             Activos.MtdInsertarActivos();
             if (Activos.Exito)
             {
@@ -446,7 +446,9 @@ namespace TransportBusiness
                     textFactura.Text = row["Id_Factura"].ToString();
                     
                     textFolioCircula.Text = row["Folio_Tarjeta_Circulacion"].ToString();
-                   
+
+                    radioPrimario.EditValue = Convert.ToInt16(row["Activo_Primario"]);
+
                 }
 
                

@@ -28,8 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_Cultivo));
-            this.barManager1 = new DevExpress.XtraBars.BarManager();
+            this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.bIconos = new DevExpress.XtraBars.Bar();
             this.btnLimpiar = new DevExpress.XtraBars.BarLargeButtonItem();
             this.btnGuardar = new DevExpress.XtraBars.BarLargeButtonItem();
@@ -193,9 +194,9 @@
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 353);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 351);
             this.barDockControlBottom.Manager = this.barManager1;
-            this.barDockControlBottom.Size = new System.Drawing.Size(513, 25);
+            this.barDockControlBottom.Size = new System.Drawing.Size(513, 27);
             // 
             // barDockControlLeft
             // 
@@ -203,7 +204,7 @@
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.barDockControlLeft.Location = new System.Drawing.Point(0, 0);
             this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Size = new System.Drawing.Size(71, 353);
+            this.barDockControlLeft.Size = new System.Drawing.Size(69, 351);
             // 
             // barDockControlRight
             // 
@@ -211,7 +212,7 @@
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
             this.barDockControlRight.Location = new System.Drawing.Point(513, 0);
             this.barDockControlRight.Manager = this.barManager1;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 353);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 351);
             // 
             // repositoryItemTextEdit1
             // 
@@ -221,10 +222,10 @@
             // 
             this.panelControl2.Controls.Add(this.gridControl1);
             this.panelControl2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelControl2.Location = new System.Drawing.Point(71, 108);
+            this.panelControl2.Location = new System.Drawing.Point(69, 108);
             this.panelControl2.Name = "panelControl2";
             this.panelControl2.Padding = new System.Windows.Forms.Padding(10);
-            this.panelControl2.Size = new System.Drawing.Size(442, 245);
+            this.panelControl2.Size = new System.Drawing.Size(444, 243);
             this.panelControl2.TabIndex = 7;
             // 
             // gridControl1
@@ -234,7 +235,7 @@
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.MenuManager = this.barManager1;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(418, 221);
+            this.gridControl1.Size = new System.Drawing.Size(420, 219);
             this.gridControl1.TabIndex = 0;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -271,10 +272,10 @@
             // 
             this.panelControl1.Controls.Add(this.groupControl1);
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelControl1.Location = new System.Drawing.Point(71, 0);
+            this.panelControl1.Location = new System.Drawing.Point(69, 0);
             this.panelControl1.Name = "panelControl1";
             this.panelControl1.Padding = new System.Windows.Forms.Padding(10);
-            this.panelControl1.Size = new System.Drawing.Size(442, 108);
+            this.panelControl1.Size = new System.Drawing.Size(444, 108);
             this.panelControl1.TabIndex = 6;
             // 
             // groupControl1
@@ -286,7 +287,7 @@
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl1.Location = new System.Drawing.Point(12, 12);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(418, 84);
+            this.groupControl1.Size = new System.Drawing.Size(420, 84);
             this.groupControl1.TabIndex = 0;
             this.groupControl1.Text = "Datos Cultivo";
             // 
@@ -300,7 +301,7 @@
             // 
             // labelControl2
             // 
-            this.labelControl2.Location = new System.Drawing.Point(19, 58);
+            this.labelControl2.Location = new System.Drawing.Point(19, 59);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(37, 13);
             this.labelControl2.TabIndex = 2;
@@ -317,7 +318,7 @@
             // 
             // labelControl1
             // 
-            this.labelControl1.Location = new System.Drawing.Point(19, 31);
+            this.labelControl1.Location = new System.Drawing.Point(19, 32);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(53, 13);
             this.labelControl1.TabIndex = 0;

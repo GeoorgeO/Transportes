@@ -40,6 +40,8 @@ namespace CapaDeDatos
         public string NombreArchivoXML { get; set; }
         public byte[] ArchivoXML { get; set; }
 
+        public int Activo_Primario { get; set; }
+
         public void MtdSeleccionarActivos()
         {
             TipoDato _dato = new TipoDato();
@@ -154,6 +156,8 @@ namespace CapaDeDatos
                 _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_Factura");
                 _dato.CadenaTexto = Folio_Tarjeta_Circulacion;
                 _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Folio_Tarjeta_Circulacion");
+                _dato.Entero = Activo_Primario;
+                _conexion.agregarParametro(EnumTipoDato.Entero, _dato, "Activo_Primario");
                 _conexion.EjecutarDataset();
 
                 if (_conexion.Exito)

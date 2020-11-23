@@ -401,7 +401,8 @@ namespace TransportBusiness
         {
             if (TieneAcceso("011"))
             {
-
+                Frm_Gasto_Indirecto frm = new Frm_Gasto_Indirecto();
+                frm.ShowDialog();
             }
             else
             {
@@ -574,6 +575,46 @@ namespace TransportBusiness
             {
                 Frm_ReportexEmpresa.DefInstance.MdiParent = this;
                 Frm_ReportexEmpresa.DefInstance.Show();
+            }
+            else
+            {
+                XtraMessageBox.Show("No Cuentas con acceso a esta Opcion [037]");
+            }
+        }
+
+        private void btnTiposCuenta_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            if (TieneAcceso("037"))
+            {
+                Frm_Tipo_Cuenta Clase = new Frm_Tipo_Cuenta();
+                Clase.ShowDialog();
+            }
+            else
+            {
+                XtraMessageBox.Show("No Cuentas con acceso a esta Opcion [037]");
+            }
+        }
+
+        private void btnCtasContables_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            if (TieneAcceso("037"))
+            {
+                Frm_Cuentas_Contables.DefInstance.MdiParent = this;
+                Frm_Cuentas_Contables.DefInstance.Show();
+
+            }
+            else
+            {
+                XtraMessageBox.Show("No Cuentas con acceso a esta Opcion [037]");
+            }
+        }
+
+        private void btnGastos_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            if (TieneAcceso("037"))
+            {
+                Frm_Gastos Clase = new Frm_Gastos();
+                Clase.ShowDialog();
             }
             else
             {

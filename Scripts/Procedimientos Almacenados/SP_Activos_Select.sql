@@ -63,7 +63,8 @@ BEGIN
 			A.Id_Empresa,
 			E.Nombre_Empresa,
 			A.Id_Factura,
-			A.Folio_Tarjeta_Circulacion
+			A.Folio_Tarjeta_Circulacion,
+			isnull(A.Activo_Primario,0) as Activo_Primario
 		from Activos as A
 		left join Marcas as M on M.Id_Marca=A.Id_Marca
 		left join Tipo_Transporte as T on T.Id_Tipo_Transporte=A.Id_Tipo_Transporte

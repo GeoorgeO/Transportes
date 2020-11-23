@@ -63,6 +63,31 @@ namespace TransportBusiness
             }
         }
 
+        private void CargarGastosCuentas()
+        {
+            gridControl3.DataSource = null;
+            CLS_GastosSalidas Clase = new CLS_GastosSalidas();
+            
+            DateTime Fecha = Convert.ToDateTime(dateDel.Text.Trim());
+            Clase.F_Del = Fecha.Year.ToString() + DosCero(Fecha.Month.ToString()) + DosCero(Fecha.Day.ToString());
+            Fecha = Convert.ToDateTime(dateAl.Text.Trim());
+            Clase.F_Al = Fecha.Year.ToString() + DosCero(Fecha.Month.ToString()) + DosCero(Fecha.Day.ToString());
+            if (checkEmpresas.Checked)
+            {
+                Clase.Id_Empresa = "";
+            }
+            else
+            {
+                Clase.Id_Empresa = comboEmpresas.EditValue.ToString().Substring(0, 4);
+            }
+
+            Clase.MtdSeleccionarGastosCuentas();
+            if (Clase.Exito)
+            {
+                gridControl3.DataSource = Clase.Datos;
+            }
+        }
+
         private void CargarEmpresas()
         {
             comboEmpresas.EditValue = null;
@@ -130,6 +155,7 @@ namespace TransportBusiness
         private void btnFiltrar_Click(object sender, EventArgs e)
         {
             CargarGastos();
+           
         }
 
         
@@ -275,6 +301,8 @@ namespace TransportBusiness
                 Gasto_Total_DG.VisibleIndex = -1;
                 Utilidad_Total_DG.Visible = false;
                 Utilidad_Total_DG.VisibleIndex = -1;
+                GastoIndirecto_D.Visible = false;
+                GastoIndirecto_D.VisibleIndex = -1;
 
                 Monto_Factura_PG.Visible = true;
                 Monto_Factura_PG.VisibleIndex = 4;
@@ -282,6 +310,8 @@ namespace TransportBusiness
                 Gasto_Total_PG.VisibleIndex = 5;
                 Utilidad_Total_PG.Visible = true;
                 Utilidad_Total_PG.VisibleIndex = 6;
+                GastoIndirecto_P.Visible = true;
+                GastoIndirecto_P.VisibleIndex = 7;
 
 
                 Fecha_Salida.VisibleIndex = 1;
@@ -362,6 +392,8 @@ namespace TransportBusiness
                 Gasto_Total_PG.VisibleIndex = -1;
                 Utilidad_Total_PG.Visible = false;
                 Utilidad_Total_PG.VisibleIndex = -1;
+                GastoIndirecto_P.Visible = false;
+                GastoIndirecto_P.VisibleIndex = -1;
 
                 Monto_Factura_DG.Visible = true;
                 Monto_Factura_DG.VisibleIndex = 4;
@@ -369,6 +401,8 @@ namespace TransportBusiness
                 Gasto_Total_DG.VisibleIndex = 5;
                 Utilidad_Total_DG.Visible = true;
                 Utilidad_Total_DG.VisibleIndex = 6;
+                GastoIndirecto_D.Visible = true;
+                GastoIndirecto_D.VisibleIndex = 7;
 
 
                 Fecha_Salida.VisibleIndex = 1;
@@ -558,6 +592,7 @@ namespace TransportBusiness
                     gridView2.EndUpdate();
                 }
                 CargarGastosDet(Tactivos);
+                CargarGastosCuentas();
 
             }
             catch (Exception ex)
