@@ -72,6 +72,7 @@ namespace TransportBusiness
             MSRegistro RegOut = new MSRegistro();
             Crypto DesencriptarTexto = new Crypto();
             string valServer, valDB, valLogin, valPass;
+            string valServerC, valDBC, valLoginC, valPassC;
 
             try
             {
@@ -88,7 +89,22 @@ namespace TransportBusiness
                 valPass = string.Empty;
             }
 
-            
+            try
+            {
+                valServerC = DesencriptarTexto.Desencriptar(RegOut.GetSetting("ConexionSQL", "ServerC"));
+                valDBC = DesencriptarTexto.Desencriptar(RegOut.GetSetting("ConexionSQL", "DBaseC"));
+                valLoginC = DesencriptarTexto.Desencriptar(RegOut.GetSetting("ConexionSQL", "UserC"));
+                valPassC = DesencriptarTexto.Desencriptar(RegOut.GetSetting("ConexionSQL", "PasswordC"));
+            }
+            catch
+            {
+                valServerC = string.Empty;
+                valDBC = string.Empty;
+                valLoginC = string.Empty;
+                valPassC = string.Empty;
+            }
+
+
 
             if (valServer != null && valDB != null && valLogin != null & valPass != null)
             {
@@ -114,6 +130,32 @@ namespace TransportBusiness
                 txtDB.Text = string.Empty;
                 txtLogin.Text = string.Empty;
                 txtPassword.Text = string.Empty;
+            }
+
+            if (valServerC != null && valDBC != null && valLoginC != null & valPassC != null)
+            {
+                txtServerC.Text = valServerC;
+                txtDBC.Text = valDBC;
+                txtLoginC.Text = valLoginC;
+                txtPasswordC.Text = valPassC;
+                using (SqlConnection conn = new SqlConnection(String.Format("Data Source={0};Initial Catalog={1};Persist Security Info=True;User ID={2};Password={3}", txtServerC.Text, txtDBC.Text, txtLoginC.Text, txtPasswordC.Text)))
+                {
+                    try
+                    {
+                        conn.Open();
+                    }
+                    catch
+                    {
+                        XtraMessageBox.Show("No se Han Configurado datos Correctos para la conexion a la base de datos Contpaq");
+                    }
+                }
+            }
+            else
+            {
+                txtServerC.Text = string.Empty;
+                txtDBC.Text = string.Empty;
+                txtLoginC.Text = string.Empty;
+                txtPasswordC.Text = string.Empty;
             }
         }
         private void btnGuardarConexion_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -253,7 +295,59 @@ namespace TransportBusiness
             }
         }
 
-        
-        
+        private void btnGuardarConexionC_Click(object sender, EventArgs e)
+        {
+            if (txtServerC.Text != "" && txtDBC.Text != "" && txtLoginC.Text != "" && txtPasswordC.Text != "")
+            {
+                {
+                    SqlConnection conn = new SqlConnection("Data Source=" + txtServerC.Text + ";Initial Catalog=" + txtDBC.Text + ";Persist Security Info=True;User ID=" + txtLoginC.Text + ";Password=" + txtPasswordC.Text);
+                    try
+                    {
+                        MSRegistro RegIn = new MSRegistro();
+                        Crypto EncriptarTexto = new Crypto();
+                        conn.Open();
+                        RegIn.SaveSetting("ConexionSQL", "ServerC", EncriptarTexto.Encriptar(txtServerC.Text));
+                        RegIn.SaveSetting("ConexionSQL", "DBaseC", EncriptarTexto.Encriptar(txtDBC.Text));
+                        RegIn.SaveSetting("ConexionSQL", "UserC", EncriptarTexto.Encriptar(txtLoginC.Text));
+                        RegIn.SaveSetting("ConexionSQL", "PasswordC", EncriptarTexto.Encriptar(txtPasswordC.Text));
+                        XtraMessageBox.Show("Se Grabaron los Datos Del Servidor Contpaq Con Exito");
+                        this.Close();
+                    }
+                    catch (Exception ex)
+                    {
+                        XtraMessageBox.Show("Error Descripcion: " + ex);
+                    }
+                }
+            }
+            else
+            {
+                XtraMessageBox.Show("Faltan Datos para la Conexion Local");
+            }
+        }
+
+        private void btnProbarConexionC_Click(object sender, EventArgs e)
+        {
+            if (txtServerC.Text != "" && txtDBC.Text != "" && txtLoginC.Text != "" && txtPasswordC.Text != "")
+            {
+                using (SqlConnection conn = new SqlConnection(String.Format("Data Source={0};Initial Catalog={1};Persist Security Info=True;User ID={2};Password={3}", txtServerC.Text, txtDBC.Text, txtLoginC.Text, txtPasswordC.Text)))
+                {
+                    try
+                    {
+                        conn.Open();
+                        XtraMessageBox.Show("Conexion Exitosa DB Contpaq");
+                        MSRegistro RegIn = new MSRegistro();
+                        Crypto EncriptarTexto = new Crypto();
+                        RegIn.SaveSetting("ConexionSQL", "ServerC", EncriptarTexto.Encriptar(txtServerC.Text));
+                        RegIn.SaveSetting("ConexionSQL", "DBaseC", EncriptarTexto.Encriptar(txtDBC.Text));
+                        RegIn.SaveSetting("ConexionSQL", "UserC", EncriptarTexto.Encriptar(txtLoginC.Text));
+                        RegIn.SaveSetting("ConexionSQL", "PasswordC", EncriptarTexto.Encriptar(txtPasswordC.Text));
+                    }
+                    catch (Exception ex)
+                    {
+                        XtraMessageBox.Show("No se pudo Conectar con la Base de Datos Contpaq: " + ex);
+                    }
+                }
+            }
+        }
     }
 }

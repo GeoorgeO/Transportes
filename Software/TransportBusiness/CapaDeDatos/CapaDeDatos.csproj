@@ -61,6 +61,7 @@
     <Compile Include="Catalogos\CLS_Empresa_Aseguradora.cs" />
     <Compile Include="Catalogos\CLS_Entradas.cs" />
     <Compile Include="Catalogos\CLS_Estado.cs" />
+    <Compile Include="Catalogos\CLS_Gastos_Contpaq.cs" />
     <Compile Include="Catalogos\CLS_Gastos.cs" />
     <Compile Include="Catalogos\CLS_GastosDirectos.cs" />
     <Compile Include="Catalogos\CLS_GastosIndirectos.cs" />
