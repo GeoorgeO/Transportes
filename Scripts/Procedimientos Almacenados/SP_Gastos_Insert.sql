@@ -19,7 +19,10 @@ create PROCEDURE [dbo].[SP_Gastos_Insert]
 	@Fecha_Gasto datetime,
 	@Id_GastoIndirecto char(4),
 	@Importe numeric(18,2),
-	@Tipo_Cambio numeric(5,2)
+	@Tipo_Cambio numeric(5,2),
+	@Factura varchar(30),
+	@Concepto varchar(60),
+	@Id_Cuenta varchar(16)
 AS
 BEGIN
 	-- SET NOCOUNT ON added to prevent extra result sets from
@@ -38,13 +41,19 @@ BEGIN
 	           ,Fecha_Gasto
 			   ,Id_GastoIndirecto
 			   ,Importe
-			   ,Tipo_Cambio)
+			   ,Tipo_Cambio
+			   ,Factura
+			   ,Concepto
+			   ,Id_Cuenta)
 	     	VALUES
 	           (@Id_Gasto
 	           ,@Fecha_Gasto
 			   ,@Id_GastoIndirecto
 			   ,@Importe
-			   ,@Tipo_Cambio)
+			   ,@Tipo_Cambio
+			   ,@Factura
+			   ,@Concepto
+			   ,@Id_Cuenta)
 		
 		commit transaction T1;
 		set @correcto=1

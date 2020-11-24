@@ -96,6 +96,9 @@ namespace TransportBusiness
             Clase.Tipo_Cambio=Convert.ToDecimal(textTC.Text);
             Fcha = Convert.ToDateTime(dateFecha.EditValue);
             Clase.Fecha_Gasto= Fcha.Year.ToString() + DosCero(Fcha.Month.ToString()) + DosCero(Fcha.Day.ToString());
+            Clase.Concepto = textConcepto.Text;
+            Clase.Factura = textFactura.Text;
+            Clase.Id_Cuenta = textCtas.Tag.ToString();
             Clase.MtdInsertarGastos();
 
             if (Clase.Exito)
@@ -133,11 +136,15 @@ namespace TransportBusiness
             textGastosIndirectos.Text = "";
             textGastosIndirectos.Tag = "";
             textImporte.Text = "0";
-            //textTC.Text = "0";
+            textFactura.Text = "";
+            textConcepto.Text = "";
+            textCtas.Tag = "";
+            textCtas.Text = "";
         }
 
         private void Frm_Gastos_Load(object sender, EventArgs e)
         {
+            LimpiarCampos();
             dateFecha.EditValue = DateTime.Today;
             
             CargarGastos();
@@ -198,6 +205,18 @@ namespace TransportBusiness
         private void btnSalir_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             this.Close();
+        }
+
+        private void btnCtas_Click(object sender, EventArgs e)
+        {
+            Frm_Cuentas_Contables Clase = new Frm_Cuentas_Contables();
+            Clase.PaSel = true;
+            Clase.ShowDialog();
+            if (Clase.vId_Cuenta != null)
+            {
+                textCtas.Text = Clase.vNombre_Cuenta;
+                textCtas.Tag = Clase.vId_Cuenta;
+            }
         }
     }
 }

@@ -14,7 +14,10 @@ namespace CapaDeDatos
         public string Id_GastoIndirecto { get; set; }
         public decimal Importe { get; set; }
         public decimal Tipo_Cambio { get; set; }
-        
+        public string Factura { get; set; }
+        public string Concepto { get; set; }
+        public string Id_Cuenta { get; set; }
+
 
         public void MtdSeleccionarGastos()
         {
@@ -125,6 +128,12 @@ namespace CapaDeDatos
                 _conexion.agregarParametro(EnumTipoDato.Tipodecimal, _dato, "Importe");
                 _dato.DecimalValor = Tipo_Cambio;
                 _conexion.agregarParametro(EnumTipoDato.Tipodecimal, _dato, "Tipo_Cambio");
+                _dato.CadenaTexto = Factura;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Factura");
+                _dato.CadenaTexto = Concepto;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Concepto");
+                _dato.CadenaTexto = Id_Cuenta;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_Cuenta");
                 _conexion.EjecutarDataset();
 
                 if (_conexion.Exito)

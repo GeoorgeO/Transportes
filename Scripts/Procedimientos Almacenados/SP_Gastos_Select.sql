@@ -40,8 +40,13 @@ BEGIN
 	      ,G.Importe
 	      ,G.Tipo_Cambio
 		  ,I.Nombre_GastoIndirecto
+		  ,G.Concepto
+		  ,G.Id_Cuenta
+		  ,Ctas.Nombre_cuenta
+		  ,G.Factura
 		from Gastos as G
 		left join GastosIndirectos as I on I.Id_GastoIndirecto=G.Id_GastoIndirecto
+		left join Cuentas_Contables as Ctas on Ctas.Id_cuenta=G.Id_Cuenta
 		where G.Fecha_Gasto=@Fecha_Gasto
 		
 END
