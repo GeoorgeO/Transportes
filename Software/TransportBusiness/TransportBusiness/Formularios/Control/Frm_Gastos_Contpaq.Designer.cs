@@ -359,6 +359,7 @@
             this.gridColumn1.Caption = "Codigo Cuenta";
             this.gridColumn1.FieldName = "Codigo";
             this.gridColumn1.Name = "gridColumn1";
+            this.gridColumn1.OptionsColumn.AllowEdit = false;
             this.gridColumn1.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Count, "Codigo", "{0}")});
             this.gridColumn1.Visible = true;
@@ -369,6 +370,7 @@
             this.gridColumn2.Caption = "Nombre Cuenta";
             this.gridColumn2.FieldName = "Cuenta";
             this.gridColumn2.Name = "gridColumn2";
+            this.gridColumn2.OptionsColumn.AllowEdit = false;
             this.gridColumn2.Visible = true;
             this.gridColumn2.VisibleIndex = 1;
             this.gridColumn2.Width = 100;
@@ -378,6 +380,7 @@
             this.gridColumn3.Caption = "No Poliza";
             this.gridColumn3.FieldName = "Poliza";
             this.gridColumn3.Name = "gridColumn3";
+            this.gridColumn3.OptionsColumn.AllowEdit = false;
             this.gridColumn3.Visible = true;
             this.gridColumn3.VisibleIndex = 3;
             // 
@@ -385,6 +388,7 @@
             // 
             this.gridColumn4.FieldName = "Concepto";
             this.gridColumn4.Name = "gridColumn4";
+            this.gridColumn4.OptionsColumn.AllowEdit = false;
             this.gridColumn4.Visible = true;
             this.gridColumn4.VisibleIndex = 4;
             this.gridColumn4.Width = 188;
@@ -393,6 +397,7 @@
             // 
             this.gridColumn5.FieldName = "Fecha";
             this.gridColumn5.Name = "gridColumn5";
+            this.gridColumn5.OptionsColumn.AllowEdit = false;
             this.gridColumn5.Visible = true;
             this.gridColumn5.VisibleIndex = 2;
             // 
@@ -401,6 +406,7 @@
             this.gridColumn6.Caption = "Tipo de Poliza";
             this.gridColumn6.FieldName = "Nombre";
             this.gridColumn6.Name = "gridColumn6";
+            this.gridColumn6.OptionsColumn.AllowEdit = false;
             this.gridColumn6.Visible = true;
             this.gridColumn6.VisibleIndex = 5;
             // 
@@ -408,6 +414,7 @@
             // 
             this.ColImporte.FieldName = "Importe";
             this.ColImporte.Name = "ColImporte";
+            this.ColImporte.OptionsColumn.AllowEdit = false;
             this.ColImporte.Visible = true;
             this.ColImporte.VisibleIndex = 6;
             // 
@@ -416,6 +423,7 @@
             this.gridColumn8.Caption = "Moneda";
             this.gridColumn8.FieldName = "TextoFinal";
             this.gridColumn8.Name = "gridColumn8";
+            this.gridColumn8.OptionsColumn.AllowEdit = false;
             this.gridColumn8.Visible = true;
             this.gridColumn8.VisibleIndex = 7;
             // 
@@ -424,12 +432,14 @@
             this.gridColumn9.Caption = "Referencia";
             this.gridColumn9.FieldName = "Referencia";
             this.gridColumn9.Name = "gridColumn9";
+            this.gridColumn9.OptionsColumn.AllowEdit = false;
             this.gridColumn9.Visible = true;
             this.gridColumn9.VisibleIndex = 8;
             // 
             // gridColumn10
             // 
             this.gridColumn10.Name = "gridColumn10";
+            this.gridColumn10.OptionsColumn.AllowEdit = false;
             // 
             // Frm_Gastos_Contpaq
             // 

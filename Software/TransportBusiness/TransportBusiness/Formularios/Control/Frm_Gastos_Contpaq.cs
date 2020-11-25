@@ -100,6 +100,7 @@ namespace TransportBusiness
                 pgBar.Properties.Minimum = 0;
                 pgBar.Properties.Maximum = dtgValGastos.RowCount;
                 pgBar.Position = 0;
+                int contador = 0;
                 for (int i = 0; i < dtgValGastos.RowCount; i++)
                 {
                     pgBar.Position = i + 1;
@@ -131,9 +132,13 @@ namespace TransportBusiness
                         {
                             XtraMessageBox.Show(insdetped.Mensaje, "Error al guardar el Registro");
                         }
+                        else
+                        {
+                            contador++;
+                        }
                     }
                 }
-                XtraMessageBox.Show("Se han importado los datos con exito");
+                XtraMessageBox.Show("Se han importado "+ contador +" datos con exito ");
                 pgBar.Position = 0;
             }
             else
