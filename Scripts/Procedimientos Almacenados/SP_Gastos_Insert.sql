@@ -38,7 +38,7 @@ BEGIN
 	begin try
 
 		declare @Existe int
-		select @Existe = count(Id_Gasto) from dbo.Gastos a where (a.Poliza=@Poliza)
+		select @Existe = count(Poliza) from dbo.Gastos a where (a.Poliza=@Poliza and a.Id_Cuenta=@Id_Cuenta)
 
 		if @Existe>0 
 			update dbo.Gastos set
@@ -48,11 +48,10 @@ BEGIN
 				Poliza=@Poliza,
 				Moneda=@Moneda,
 				TipoPoliza=@TipoPoliza
-				
+			where Poliza=@Poliza and Id_Cuenta=@Id_Cuenta
 		else
 			INSERT INTO dbo.Gastos
-	           (Id_Gasto
-	           ,Fecha_Gasto
+	           (Fecha_Gasto
 			   ,Importe
 			   ,Tipo_Cambio
 			   ,Factura
@@ -63,8 +62,7 @@ BEGIN
 			   ,Moneda
 			   ,TipoPoliza)
 	     	VALUES
-	           (@Id_Gasto
-	           ,@Fecha_Gasto
+	           (@Fecha_Gasto
 			   ,@Importe
 			   ,@Tipo_Cambio
 			   ,@Factura
