@@ -8,8 +8,6 @@ namespace CapaDeDatos
 {
     public class CLS_Gastos : ConexionBase
     {
-
-        public string Id_Gasto { get; set; }
         public string Fecha_Gasto { get; set; }
         public string Id_GastoIndirecto { get; set; }
         public decimal Importe { get; set; }
@@ -122,8 +120,6 @@ namespace CapaDeDatos
             try
             {
                 _conexion.NombreProcedimiento = "SP_Gastos_Insert";
-                _dato.CadenaTexto = Id_Gasto;
-                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_Gasto");
                 _dato.CadenaTexto = Fecha_Gasto;
                 _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Fecha_Gasto");
                 _dato.CadenaTexto = Id_GastoIndirecto;
@@ -174,8 +170,8 @@ namespace CapaDeDatos
             try
             {
                 _conexion.NombreProcedimiento = "SP_Gastos_Delete";
-                _dato.CadenaTexto = Id_Gasto;
-                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_Gasto");
+                _dato.EnteroLargo = Poliza;
+                _conexion.agregarParametro(EnumTipoDato.Entero, _dato, "Poliza");
                 _conexion.EjecutarDataset();
 
                 if (_conexion.Exito)

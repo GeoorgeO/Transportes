@@ -15,14 +15,12 @@ GO
 -- =============================================
 create PROCEDURE [dbo].[SP_Gastos_Insert] 
 	-- Add the parameters for the stored procedure here
-	@Id_Gasto char(9),
 	@Fecha_Gasto datetime,
 	@Importe numeric(18,2),
 	@Tipo_Cambio numeric(5,2),
 	@Factura varchar(30),
 	@Concepto varchar(60),
 	@Id_Cuenta varchar(16),
-	@Id_GastoIndirecto char(4),
 	@Referencia varchar(50),
 	@Poliza int,
 	@Moneda varchar(10),
@@ -40,7 +38,7 @@ BEGIN
 	begin try
 
 		declare @Existe int
-		select @Existe = count(Id_Gasto) from dbo.Gastos a where (a.Id_Cuenta=@Id_Cuenta and a.Fecha_Gasto=@Fecha_Gasto and Importe=@Importe and Concepto=@Concepto)
+		select @Existe = count(Id_Gasto) from dbo.Gastos a where (a.Poliza=@Poliza)
 
 		if @Existe>0 
 			update dbo.Gastos set
