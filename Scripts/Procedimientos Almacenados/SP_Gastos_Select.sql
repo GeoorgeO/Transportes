@@ -34,8 +34,7 @@ BEGIN
 
     -- Insert statements for procedure here
 	
-		select G.Id_Gasto
-	      ,G.Fecha_Gasto
+		select G.Fecha_Gasto
 	      ,G.Id_GastoIndirecto
 	      ,G.Importe
 	      ,G.Tipo_Cambio
@@ -44,6 +43,10 @@ BEGIN
 		  ,G.Id_Cuenta
 		  ,Ctas.Nombre_cuenta
 		  ,G.Factura
+		  ,G.Referencia
+		  ,G.Poliza
+		  ,G.Moneda
+		  ,G.TipoPoliza
 		from Gastos as G
 		left join GastosIndirectos as I on I.Id_GastoIndirecto=G.Id_GastoIndirecto
 		left join Cuentas_Contables as Ctas on Ctas.Id_cuenta=G.Id_Cuenta
