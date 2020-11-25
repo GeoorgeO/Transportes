@@ -15,7 +15,7 @@ GO
 -- =============================================
 create PROCEDURE [dbo].[SP_Gastos_Delete] 
 	-- Add the parameters for the stored procedure here
-	@Poliza int
+	@Id_Gasto char(9)
 AS
 BEGIN
 	-- SET NOCOUNT ON added to prevent extra result sets from
@@ -28,7 +28,7 @@ BEGIN
 	begin transaction T2;
 	begin try
 		
-		delete from dbo.Gastos where Poliza=@Poliza
+		delete from dbo.Gastos where Id_Gasto=@Id_Gasto
 
 		commit transaction T2;
 		set @correcto=1
