@@ -61,9 +61,10 @@
             this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn6 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn7 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.ColImporte = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn8 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn9 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn10 = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
@@ -189,15 +190,15 @@
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
             this.barDockControlTop.Manager = this.barManager1;
-            this.barDockControlTop.Size = new System.Drawing.Size(698, 0);
+            this.barDockControlTop.Size = new System.Drawing.Size(755, 0);
             // 
             // barDockControlBottom
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 365);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 390);
             this.barDockControlBottom.Manager = this.barManager1;
-            this.barDockControlBottom.Size = new System.Drawing.Size(698, 27);
+            this.barDockControlBottom.Size = new System.Drawing.Size(755, 27);
             // 
             // barDockControlLeft
             // 
@@ -205,15 +206,15 @@
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.barDockControlLeft.Location = new System.Drawing.Point(0, 0);
             this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Size = new System.Drawing.Size(57, 365);
+            this.barDockControlLeft.Size = new System.Drawing.Size(57, 390);
             // 
             // barDockControlRight
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(698, 0);
+            this.barDockControlRight.Location = new System.Drawing.Point(755, 0);
             this.barDockControlRight.Manager = this.barManager1;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 365);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 390);
             // 
             // btnEliminar
             // 
@@ -234,7 +235,7 @@
             this.panelControl1.Location = new System.Drawing.Point(57, 0);
             this.panelControl1.Name = "panelControl1";
             this.panelControl1.Padding = new System.Windows.Forms.Padding(10);
-            this.panelControl1.Size = new System.Drawing.Size(641, 133);
+            this.panelControl1.Size = new System.Drawing.Size(698, 133);
             this.panelControl1.TabIndex = 4;
             // 
             // groupControl1
@@ -248,7 +249,7 @@
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl1.Location = new System.Drawing.Point(12, 12);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(617, 109);
+            this.groupControl1.Size = new System.Drawing.Size(674, 109);
             this.groupControl1.TabIndex = 0;
             this.groupControl1.Text = "Datos de Busqueda y Captura";
             // 
@@ -320,7 +321,7 @@
             this.panelControl2.Location = new System.Drawing.Point(57, 133);
             this.panelControl2.Name = "panelControl2";
             this.panelControl2.Padding = new System.Windows.Forms.Padding(10);
-            this.panelControl2.Size = new System.Drawing.Size(641, 232);
+            this.panelControl2.Size = new System.Drawing.Size(698, 257);
             this.panelControl2.TabIndex = 5;
             // 
             // dtgGastos
@@ -330,7 +331,7 @@
             this.dtgGastos.MainView = this.dtgValGastos;
             this.dtgGastos.MenuManager = this.barManager1;
             this.dtgGastos.Name = "dtgGastos";
-            this.dtgGastos.Size = new System.Drawing.Size(617, 208);
+            this.dtgGastos.Size = new System.Drawing.Size(674, 233);
             this.dtgGastos.TabIndex = 0;
             this.dtgGastos.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.dtgValGastos});
@@ -344,11 +345,13 @@
             this.gridColumn4,
             this.gridColumn5,
             this.gridColumn6,
-            this.gridColumn7,
+            this.ColImporte,
             this.gridColumn8,
-            this.gridColumn9});
+            this.gridColumn9,
+            this.gridColumn10});
             this.dtgValGastos.GridControl = this.dtgGastos;
             this.dtgValGastos.Name = "dtgValGastos";
+            this.dtgValGastos.OptionsView.ShowFooter = true;
             this.dtgValGastos.OptionsView.ShowGroupPanel = false;
             // 
             // gridColumn1
@@ -356,6 +359,8 @@
             this.gridColumn1.Caption = "Codigo Cuenta";
             this.gridColumn1.FieldName = "Codigo";
             this.gridColumn1.Name = "gridColumn1";
+            this.gridColumn1.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Count, "Codigo", "{0}")});
             this.gridColumn1.Visible = true;
             this.gridColumn1.VisibleIndex = 0;
             // 
@@ -399,12 +404,12 @@
             this.gridColumn6.Visible = true;
             this.gridColumn6.VisibleIndex = 5;
             // 
-            // gridColumn7
+            // ColImporte
             // 
-            this.gridColumn7.FieldName = "Importe";
-            this.gridColumn7.Name = "gridColumn7";
-            this.gridColumn7.Visible = true;
-            this.gridColumn7.VisibleIndex = 6;
+            this.ColImporte.FieldName = "Importe";
+            this.ColImporte.Name = "ColImporte";
+            this.ColImporte.Visible = true;
+            this.ColImporte.VisibleIndex = 6;
             // 
             // gridColumn8
             // 
@@ -422,11 +427,15 @@
             this.gridColumn9.Visible = true;
             this.gridColumn9.VisibleIndex = 8;
             // 
+            // gridColumn10
+            // 
+            this.gridColumn10.Name = "gridColumn10";
+            // 
             // Frm_Gastos_Contpaq
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(698, 392);
+            this.ClientSize = new System.Drawing.Size(755, 417);
             this.Controls.Add(this.panelControl2);
             this.Controls.Add(this.panelControl1);
             this.Controls.Add(this.barDockControlLeft);
@@ -492,8 +501,9 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn4;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn5;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn6;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn7;
+        private DevExpress.XtraGrid.Columns.GridColumn ColImporte;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn8;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn9;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn10;
     }
 }

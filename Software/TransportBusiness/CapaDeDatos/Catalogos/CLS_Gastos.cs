@@ -133,7 +133,7 @@ namespace CapaDeDatos
                 _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_Cuenta");
                 _dato.CadenaTexto = Referencia;
                 _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Referencia");
-                _dato.EnteroLargo = Poliza;
+                _dato.Entero = Poliza;
                 _conexion.agregarParametro(EnumTipoDato.Entero, _dato, "Poliza");
                 _dato.CadenaTexto = Moneda;
                 _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Moneda");

@@ -39,6 +39,12 @@ namespace TransportBusiness
         {
             dateInicio.DateTime = DateTime.Now;
             dateFin.DateTime = DateTime.Now;
+            dtgValGastos.OptionsSelection.EnableAppearanceFocusedCell = false;
+            dtgValGastos.OptionsSelection.EnableAppearanceHideSelection = false;
+            dtgValGastos.OptionsSelection.MultiSelect = true;
+            dtgValGastos.OptionsView.ShowGroupPanel = false;
+            ColImporte.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
+            ColImporte.DisplayFormat.FormatString = "$ #,###,###0.00";
         }
 
         private void btnBuscar_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -101,7 +107,7 @@ namespace TransportBusiness
                     int xRow = dtgValGastos.GetVisibleRowHandle(i);
                     DateTime vFecha = Convert.ToDateTime(dtgValGastos.GetRowCellValue(xRow, "Fecha").ToString());
                     
-                    if (ExisteTipoCambio(vFecha))
+                    if (!ExisteTipoCambio(vFecha))
                     {
                         XtraMessageBox.Show("Falta de capturar el tipo de cambio de la fecha " + vFecha.ToString());
                     }
@@ -109,13 +115,16 @@ namespace TransportBusiness
                     {
                         CLS_Gastos insdetped = new CLS_Gastos();
                         insdetped.Fecha_Gasto = vFecha.Year.ToString() + DosCero(vFecha.Month.ToString()) + DosCero(vFecha.Day.ToString());
+                        insdetped.Tipo_Cambio = Convert.ToDecimal(vTipoCambio);
                         insdetped.Importe = Convert.ToDecimal(dtgValGastos.GetRowCellValue(xRow, "Importe").ToString());
                         insdetped.Factura = string.Empty;
                         insdetped.Concepto = dtgValGastos.GetRowCellValue(xRow, "Concepto").ToString();
-                        insdetped.Id_Cuenta =string.Format("####-##-##-#####", dtgValGastos.GetRowCellValue(xRow, "Codigo").ToString());
+                        string vCuenta = dtgValGastos.GetRowCellValue(xRow, "Codigo").ToString();
+                        vCuenta = vCuenta.Substring(0, 4) + "-" + vCuenta.Substring(4, 2) + "-" + vCuenta.Substring(6, 2) + "-" + vCuenta.Substring(8, 5);
+                        insdetped.Id_Cuenta = vCuenta;
                         insdetped.Referencia = dtgValGastos.GetRowCellValue(xRow, "Referencia").ToString();
                         insdetped.Poliza =Convert.ToInt32(dtgValGastos.GetRowCellValue(xRow, "Poliza").ToString());
-                        insdetped.Moneda = dtgValGastos.GetRowCellValue(xRow, "Moneda").ToString();
+                        insdetped.Moneda = dtgValGastos.GetRowCellValue(xRow, "TextoFinal").ToString();
                         insdetped.TipoPoliza = dtgValGastos.GetRowCellValue(xRow, "Nombre").ToString();
                         insdetped.MtdInsertarGastos();
                         if (!insdetped.Exito)
