@@ -17,6 +17,10 @@ namespace CapaDeDatos
         public string Factura { get; set; }
         public string Concepto { get; set; }
         public string Id_Cuenta { get; set; }
+        public string Referencia { get; set; }
+        public int Poliza { get; set; }
+        public string Moneda { get; set; }
+        public string TipoPoliza { get; set; }
 
 
         public void MtdSeleccionarGastos()
@@ -134,6 +138,14 @@ namespace CapaDeDatos
                 _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Concepto");
                 _dato.CadenaTexto = Id_Cuenta;
                 _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_Cuenta");
+                _dato.CadenaTexto = Referencia;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Referencia");
+                _dato.EnteroLargo = Poliza;
+                _conexion.agregarParametro(EnumTipoDato.Entero, _dato, "Poliza");
+                _dato.CadenaTexto = Moneda;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Moneda");
+                _dato.CadenaTexto = TipoPoliza;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "TipoPoliza");
                 _conexion.EjecutarDataset();
 
                 if (_conexion.Exito)
