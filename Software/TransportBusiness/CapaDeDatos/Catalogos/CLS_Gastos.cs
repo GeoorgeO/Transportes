@@ -9,7 +9,6 @@ namespace CapaDeDatos
     public class CLS_Gastos : ConexionBase
     {
         public string Fecha_Gasto { get; set; }
-       
         public decimal Importe { get; set; }
         public decimal Tipo_Cambio { get; set; }
         public string Factura { get; set; }
@@ -122,7 +121,6 @@ namespace CapaDeDatos
                 _conexion.NombreProcedimiento = "SP_Gastos_Insert";
                 _dato.CadenaTexto = Fecha_Gasto;
                 _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Fecha_Gasto");
-               
                 _dato.DecimalValor = Importe;
                 _conexion.agregarParametro(EnumTipoDato.Tipodecimal, _dato, "Importe");
                 _dato.DecimalValor = Tipo_Cambio;

@@ -90,8 +90,8 @@ namespace TransportBusiness
         {
             CLS_Gastos Clase = new CLS_Gastos();
             DateTime Fcha;
-            Clase.Id_Gasto = textId.Text.Trim();
-            Clase.Id_GastoIndirecto = textGastosIndirectos.Tag.ToString().Trim();
+            //Clase.Id_Gasto = textId.Text.Trim();
+            //Clase.Id_GastoIndirecto = textGastosIndirectos.Tag.ToString().Trim();
             Clase.Importe=Convert.ToDecimal( textImporte.Text );
             Clase.Tipo_Cambio=Convert.ToDecimal(textTC.Text);
             Fcha = Convert.ToDateTime(dateFecha.EditValue);
@@ -116,7 +116,7 @@ namespace TransportBusiness
         private void EliminarGastos()
         {
             CLS_Gastos Clase = new CLS_Gastos();
-            Clase.Id_Gasto = textId.Text.Trim();
+            //Clase.Id_Gasto = textId.Text.Trim();
             Clase.MtdEliminarGastos();
             if (Clase.Exito)
             {

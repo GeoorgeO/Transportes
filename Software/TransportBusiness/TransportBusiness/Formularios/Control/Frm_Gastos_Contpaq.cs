@@ -14,6 +14,7 @@ namespace TransportBusiness
 {
     public partial class Frm_Gastos_Contpaq : DevExpress.XtraEditors.XtraForm
     {
+        public string vTipoCambio { get; set; }
         private static Frm_Gastos_Contpaq m_FormDefInstance;
         public static Frm_Gastos_Contpaq DefInstance
         {
@@ -28,6 +29,7 @@ namespace TransportBusiness
                 m_FormDefInstance = value;
             }
         }
+       
         public Frm_Gastos_Contpaq()
         {
             InitializeComponent();
@@ -83,6 +85,74 @@ namespace TransportBusiness
                 return (str = "0" + sVal);
             }
             return sVal;
+        }
+
+        private void btnImportar_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            if(dtgValGastos.RowCount>0)
+            {
+                pgBar.Properties.Minimum = 0;
+                pgBar.Properties.Maximum = dtgValGastos.RowCount;
+                pgBar.Position = 0;
+                for (int i = 0; i < dtgValGastos.RowCount; i++)
+                {
+                    pgBar.Position = i + 1;
+                    Application.DoEvents();
+                    int xRow = dtgValGastos.GetVisibleRowHandle(i);
+                    DateTime vFecha = Convert.ToDateTime(dtgValGastos.GetRowCellValue(xRow, "Fecha").ToString());
+                    
+                    if (ExisteTipoCambio(vFecha))
+                    {
+                        XtraMessageBox.Show("Falta de capturar el tipo de cambio de la fecha " + vFecha.ToString());
+                    }
+                    else
+                    {
+                        CLS_Gastos insdetped = new CLS_Gastos();
+                        insdetped.Fecha_Gasto = vFecha.Year.ToString() + DosCero(vFecha.Month.ToString()) + DosCero(vFecha.Day.ToString());
+                        insdetped.Importe = Convert.ToDecimal(dtgValGastos.GetRowCellValue(xRow, "Importe").ToString());
+                        insdetped.Factura = string.Empty;
+                        insdetped.Concepto = dtgValGastos.GetRowCellValue(xRow, "Concepto").ToString();
+                        insdetped.Id_Cuenta =string.Format("####-##-##-#####", dtgValGastos.GetRowCellValue(xRow, "Codigo").ToString());
+                        insdetped.Referencia = dtgValGastos.GetRowCellValue(xRow, "Referencia").ToString();
+                        insdetped.Poliza =Convert.ToInt32(dtgValGastos.GetRowCellValue(xRow, "Poliza").ToString());
+                        insdetped.Moneda = dtgValGastos.GetRowCellValue(xRow, "Moneda").ToString();
+                        insdetped.TipoPoliza = dtgValGastos.GetRowCellValue(xRow, "Nombre").ToString();
+                        insdetped.MtdInsertarGastos();
+                        if (!insdetped.Exito)
+                        {
+                            XtraMessageBox.Show(insdetped.Mensaje, "Error al guardar el Registro");
+                        }
+                    }
+                }
+            }
+            else
+            {
+                XtraMessageBox.Show("No existen datos para importar");
+            }
+        }
+
+        private Boolean ExisteTipoCambio(DateTime vFecha)
+        {
+            DateTime Fcha;
+            Boolean Valor = false;
+            CLS_Gastos Clase = new CLS_Gastos();
+            
+            Clase.Fecha_Gasto = vFecha.Year.ToString() + DosCero(vFecha.Month.ToString()) + DosCero(vFecha.Day.ToString());
+            Clase.MtdSeleccionarTCxFecha();
+            if (Clase.Exito)
+            {
+                if (Clase.Datos.Rows.Count > 0)
+                {
+                    vTipoCambio = Clase.Datos.Rows[0]["Tipo_Cambio"].ToString();
+                    Valor = true;
+                }
+                else
+                {
+                    vTipoCambio = "0";
+                }
+
+            }
+            return Valor;
         }
     }
 }

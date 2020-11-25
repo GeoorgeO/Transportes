@@ -77,6 +77,7 @@
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.textId = new DevExpress.XtraEditors.TextEdit();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
+            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
@@ -283,7 +284,8 @@
             this.Concepto,
             this.Factura,
             this.Id_Cuenta,
-            this.Nombre_cuenta});
+            this.Nombre_cuenta,
+            this.gridColumn1});
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsBehavior.Editable = false;
@@ -569,6 +571,13 @@
             this.labelControl1.TabIndex = 0;
             this.labelControl1.Text = "Id Gasto: ";
             // 
+            // gridColumn1
+            // 
+            this.gridColumn1.FieldName = "Poliza";
+            this.gridColumn1.Name = "gridColumn1";
+            this.gridColumn1.Visible = true;
+            this.gridColumn1.VisibleIndex = 10;
+            // 
             // Frm_Gastos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -660,5 +669,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn Factura;
         private DevExpress.XtraGrid.Columns.GridColumn Id_Cuenta;
         private DevExpress.XtraGrid.Columns.GridColumn Nombre_cuenta;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
     }
 }

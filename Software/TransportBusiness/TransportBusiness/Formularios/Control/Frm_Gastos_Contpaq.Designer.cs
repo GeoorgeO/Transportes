@@ -34,7 +34,7 @@
             this.bIconos = new DevExpress.XtraBars.Bar();
             this.btnLimpiar = new DevExpress.XtraBars.BarLargeButtonItem();
             this.btnBuscar = new DevExpress.XtraBars.BarLargeButtonItem();
-            this.barLargeButtonItem1 = new DevExpress.XtraBars.BarLargeButtonItem();
+            this.btnImportar = new DevExpress.XtraBars.BarLargeButtonItem();
             this.btnSalir = new DevExpress.XtraBars.BarLargeButtonItem();
             this.bEstado = new DevExpress.XtraBars.Bar();
             this.lblProveedor = new DevExpress.XtraBars.BarStaticItem();
@@ -47,7 +47,7 @@
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
-            this.progressBarControl1 = new DevExpress.XtraEditors.ProgressBarControl();
+            this.pgBar = new DevExpress.XtraEditors.ProgressBarControl();
             this.dateFin = new DevExpress.XtraEditors.DateEdit();
             this.dateInicio = new DevExpress.XtraEditors.DateEdit();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
@@ -70,7 +70,7 @@
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.progressBarControl1.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pgBar.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateFin.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateFin.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateInicio.Properties.CalendarTimeProperties)).BeginInit();
@@ -97,7 +97,7 @@
             this.btnBuscar,
             this.btnSalir,
             this.btnEliminar,
-            this.barLargeButtonItem1});
+            this.btnImportar});
             this.barManager1.MainMenu = this.bIconos;
             this.barManager1.MaxItemId = 67;
             this.barManager1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
@@ -115,7 +115,7 @@
             this.bIconos.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
             new DevExpress.XtraBars.LinkPersistInfo(this.btnLimpiar),
             new DevExpress.XtraBars.LinkPersistInfo(this.btnBuscar),
-            new DevExpress.XtraBars.LinkPersistInfo(this.barLargeButtonItem1),
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnImportar),
             new DevExpress.XtraBars.LinkPersistInfo(this.btnSalir)});
             this.bIconos.OptionsBar.AllowCollapse = true;
             this.bIconos.OptionsBar.AllowQuickCustomization = false;
@@ -145,13 +145,14 @@
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnBuscar_ItemClick);
             // 
-            // barLargeButtonItem1
+            // btnImportar
             // 
-            this.barLargeButtonItem1.Caption = "Importar";
-            this.barLargeButtonItem1.Id = 66;
-            this.barLargeButtonItem1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barLargeButtonItem1.ImageOptions.Image")));
-            this.barLargeButtonItem1.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barLargeButtonItem1.ImageOptions.LargeImage")));
-            this.barLargeButtonItem1.Name = "barLargeButtonItem1";
+            this.btnImportar.Caption = "Importar";
+            this.btnImportar.Id = 66;
+            this.btnImportar.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barLargeButtonItem1.ImageOptions.Image")));
+            this.btnImportar.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barLargeButtonItem1.ImageOptions.LargeImage")));
+            this.btnImportar.Name = "btnImportar";
+            this.btnImportar.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnImportar_ItemClick);
             // 
             // btnSalir
             // 
@@ -188,7 +189,7 @@
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
             this.barDockControlTop.Manager = this.barManager1;
-            this.barDockControlTop.Size = new System.Drawing.Size(606, 0);
+            this.barDockControlTop.Size = new System.Drawing.Size(698, 0);
             // 
             // barDockControlBottom
             // 
@@ -196,7 +197,7 @@
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.barDockControlBottom.Location = new System.Drawing.Point(0, 365);
             this.barDockControlBottom.Manager = this.barManager1;
-            this.barDockControlBottom.Size = new System.Drawing.Size(606, 27);
+            this.barDockControlBottom.Size = new System.Drawing.Size(698, 27);
             // 
             // barDockControlLeft
             // 
@@ -210,7 +211,7 @@
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(606, 0);
+            this.barDockControlRight.Location = new System.Drawing.Point(698, 0);
             this.barDockControlRight.Manager = this.barManager1;
             this.barDockControlRight.Size = new System.Drawing.Size(0, 365);
             // 
@@ -233,13 +234,13 @@
             this.panelControl1.Location = new System.Drawing.Point(57, 0);
             this.panelControl1.Name = "panelControl1";
             this.panelControl1.Padding = new System.Windows.Forms.Padding(10);
-            this.panelControl1.Size = new System.Drawing.Size(549, 133);
+            this.panelControl1.Size = new System.Drawing.Size(641, 133);
             this.panelControl1.TabIndex = 4;
             // 
             // groupControl1
             // 
             this.groupControl1.Controls.Add(this.labelControl1);
-            this.groupControl1.Controls.Add(this.progressBarControl1);
+            this.groupControl1.Controls.Add(this.pgBar);
             this.groupControl1.Controls.Add(this.dateFin);
             this.groupControl1.Controls.Add(this.dateInicio);
             this.groupControl1.Controls.Add(this.labelControl3);
@@ -247,7 +248,7 @@
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl1.Location = new System.Drawing.Point(12, 12);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(525, 109);
+            this.groupControl1.Size = new System.Drawing.Size(617, 109);
             this.groupControl1.TabIndex = 0;
             this.groupControl1.Text = "Datos de Busqueda y Captura";
             // 
@@ -259,14 +260,14 @@
             this.labelControl1.TabIndex = 11;
             this.labelControl1.Text = "Proceso de Importacion";
             // 
-            // progressBarControl1
+            // pgBar
             // 
-            this.progressBarControl1.Location = new System.Drawing.Point(22, 59);
-            this.progressBarControl1.MenuManager = this.barManager1;
-            this.progressBarControl1.Name = "progressBarControl1";
-            this.progressBarControl1.Properties.ShowTitle = true;
-            this.progressBarControl1.Size = new System.Drawing.Size(356, 18);
-            this.progressBarControl1.TabIndex = 10;
+            this.pgBar.Location = new System.Drawing.Point(22, 59);
+            this.pgBar.MenuManager = this.barManager1;
+            this.pgBar.Name = "pgBar";
+            this.pgBar.Properties.ShowTitle = true;
+            this.pgBar.Size = new System.Drawing.Size(356, 18);
+            this.pgBar.TabIndex = 10;
             // 
             // dateFin
             // 
@@ -319,7 +320,7 @@
             this.panelControl2.Location = new System.Drawing.Point(57, 133);
             this.panelControl2.Name = "panelControl2";
             this.panelControl2.Padding = new System.Windows.Forms.Padding(10);
-            this.panelControl2.Size = new System.Drawing.Size(549, 232);
+            this.panelControl2.Size = new System.Drawing.Size(641, 232);
             this.panelControl2.TabIndex = 5;
             // 
             // dtgGastos
@@ -329,7 +330,7 @@
             this.dtgGastos.MainView = this.dtgValGastos;
             this.dtgGastos.MenuManager = this.barManager1;
             this.dtgGastos.Name = "dtgGastos";
-            this.dtgGastos.Size = new System.Drawing.Size(525, 208);
+            this.dtgGastos.Size = new System.Drawing.Size(617, 208);
             this.dtgGastos.TabIndex = 0;
             this.dtgGastos.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.dtgValGastos});
@@ -425,7 +426,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(606, 392);
+            this.ClientSize = new System.Drawing.Size(698, 392);
             this.Controls.Add(this.panelControl2);
             this.Controls.Add(this.panelControl1);
             this.Controls.Add(this.barDockControlLeft);
@@ -444,7 +445,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
             this.groupControl1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.progressBarControl1.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pgBar.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateFin.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateFin.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateInicio.Properties.CalendarTimeProperties)).EndInit();
@@ -465,7 +466,7 @@
         private DevExpress.XtraBars.BarLargeButtonItem btnLimpiar;
         private DevExpress.XtraBars.BarLargeButtonItem btnBuscar;
         private DevExpress.XtraBars.BarLargeButtonItem btnEliminar;
-        private DevExpress.XtraBars.BarLargeButtonItem barLargeButtonItem1;
+        private DevExpress.XtraBars.BarLargeButtonItem btnImportar;
         private DevExpress.XtraBars.BarLargeButtonItem btnSalir;
         private DevExpress.XtraBars.Bar bEstado;
         private DevExpress.XtraBars.BarStaticItem lblProveedor;
@@ -484,7 +485,7 @@
         private DevExpress.XtraGrid.GridControl dtgGastos;
         private DevExpress.XtraGrid.Views.Grid.GridView dtgValGastos;
         private DevExpress.XtraEditors.LabelControl labelControl1;
-        private DevExpress.XtraEditors.ProgressBarControl progressBarControl1;
+        private DevExpress.XtraEditors.ProgressBarControl pgBar;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn3;
