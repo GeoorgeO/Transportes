@@ -14,6 +14,20 @@ namespace TransportBusiness
 {
     public partial class Frm_Gastos_Contpaq : DevExpress.XtraEditors.XtraForm
     {
+        private static Frm_Gastos_Contpaq m_FormDefInstance;
+        public static Frm_Gastos_Contpaq DefInstance
+        {
+            get
+            {
+                if (m_FormDefInstance == null || m_FormDefInstance.IsDisposed)
+                    m_FormDefInstance = new Frm_Gastos_Contpaq();
+                return m_FormDefInstance;
+            }
+            set
+            {
+                m_FormDefInstance = value;
+            }
+        }
         public Frm_Gastos_Contpaq()
         {
             InitializeComponent();
