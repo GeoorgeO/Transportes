@@ -74,6 +74,7 @@
             this.btnReporteEmpresa = new DevExpress.XtraBars.BarButtonItem();
             this.btnTiposCuenta = new DevExpress.XtraBars.BarButtonItem();
             this.btnCtasContables = new DevExpress.XtraBars.BarButtonItem();
+            this.btnGastos = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup9 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -94,7 +95,7 @@
             this.ribbonPageGroup12 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.xtraTabbedMdiManager1 = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
             this.SkinForm = new DevExpress.LookAndFeel.DefaultLookAndFeel(this.components);
-            this.btnGastos = new DevExpress.XtraBars.BarButtonItem();
+            this.btnGastosContpaq = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager1)).BeginInit();
             this.SuspendLayout();
@@ -147,9 +148,10 @@
             this.btnReporteEmpresa,
             this.btnTiposCuenta,
             this.btnCtasContables,
-            this.btnGastos});
+            this.btnGastos,
+            this.btnGastosContpaq});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.MaxItemId = 45;
+            this.ribbonControl1.MaxItemId = 46;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1,
@@ -528,6 +530,15 @@
             this.btnCtasContables.Name = "btnCtasContables";
             this.btnCtasContables.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnCtasContables_ItemClick);
             // 
+            // btnGastos
+            // 
+            this.btnGastos.Caption = "Gastos";
+            this.btnGastos.Id = 44;
+            this.btnGastos.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnGastos.ImageOptions.Image")));
+            this.btnGastos.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnGastos.ImageOptions.LargeImage")));
+            this.btnGastos.Name = "btnGastos";
+            this.btnGastos.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnGastos_ItemClick);
+            // 
             // ribbonPage1
             // 
             this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -634,6 +645,7 @@
             this.ribbonPageGroup2.ItemLinks.Add(this.btnMantenimientos);
             this.ribbonPageGroup2.ItemLinks.Add(this.btnAsignacionHerramienta);
             this.ribbonPageGroup2.ItemLinks.Add(this.btnGastos);
+            this.ribbonPageGroup2.ItemLinks.Add(this.btnGastosContpaq);
             this.ribbonPageGroup2.Name = "ribbonPageGroup2";
             this.ribbonPageGroup2.Text = "Control";
             // 
@@ -697,14 +709,14 @@
             this.SkinForm.EnableBonusSkins = true;
             this.SkinForm.LookAndFeel.SkinName = "Office 2010 Silver";
             // 
-            // btnGastos
+            // btnGastosContpaq
             // 
-            this.btnGastos.Caption = "Gastos";
-            this.btnGastos.Id = 44;
-            this.btnGastos.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem3.ImageOptions.Image")));
-            this.btnGastos.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem3.ImageOptions.LargeImage")));
-            this.btnGastos.Name = "btnGastos";
-            this.btnGastos.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnGastos_ItemClick);
+            this.btnGastosContpaq.Caption = "Gastos Contpaq";
+            this.btnGastosContpaq.Id = 45;
+            this.btnGastosContpaq.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnGastosContpaq.ImageOptions.Image")));
+            this.btnGastosContpaq.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnGastosContpaq.ImageOptions.LargeImage")));
+            this.btnGastosContpaq.Name = "btnGastosContpaq";
+            this.btnGastosContpaq.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnGastosContpaq_ItemClick);
             // 
             // Frm_Principal
             // 
@@ -795,6 +807,7 @@
         private DevExpress.XtraBars.BarButtonItem btnTiposCuenta;
         private DevExpress.XtraBars.BarButtonItem btnCtasContables;
         private DevExpress.XtraBars.BarButtonItem btnGastos;
+        private DevExpress.XtraBars.BarButtonItem btnGastosContpaq;
     }
 }
 
