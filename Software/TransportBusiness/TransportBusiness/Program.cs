@@ -20,7 +20,7 @@ namespace TransportBusiness
 
             BonusSkins.Register();
             SkinManager.EnableFormSkins();
-            Application.Run(new Frm_Gastos_Contpaq());
+            Application.Run(new Frm_Login());
         }
     }
 }

@@ -133,6 +133,8 @@ namespace TransportBusiness
                         }
                     }
                 }
+                XtraMessageBox.Show("Se han importado los datos con exito");
+                pgBar.Position = 0;
             }
             else
             {
