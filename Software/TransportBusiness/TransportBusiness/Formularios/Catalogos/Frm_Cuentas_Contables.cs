@@ -75,10 +75,15 @@ namespace TransportBusiness
             {
                 Clase.Activa = 1;
             }
+            if(chkConcideraPoliza.EditValue.ToString()=="True")
+            {
+                Clase.Considera = 1;
+            }
+            else
+            {
+                Clase.Considera = 0;
+            }
             
-
-            
-
             Clase.MtdInsertarCtas();
             if (Clase.Exito)
             {
@@ -119,6 +124,7 @@ namespace TransportBusiness
             textTipoCta.Tag = "";
             textTipoCta.Text = "";
             cbNaturaleza.Text = "Deudora";
+            chkConcideraPoliza.EditValue = 0;
         }
 
         private void btnTipoCta_Click(object sender, EventArgs e)
@@ -179,6 +185,7 @@ namespace TransportBusiness
                     }
                     textCtasPadre.Text= row["Nombre_Padre"].ToString();
                     textCtasPadre.Tag = row["Id_cuenta_padre"].ToString();
+                    chkConcideraPoliza.EditValue =Convert.ToBoolean(row["Considera"].ToString());
                 }
             }
             catch (Exception ex)

@@ -15,6 +15,7 @@ namespace CapaDeDatos
         public string Naturaleza { get; set; }
         public string Nivel { get; set; }
         public int Activa { get; set; }
+        public int Considera { get; set; }
 
         public void MtdSeleccionarCtas()
         {
@@ -97,6 +98,8 @@ namespace CapaDeDatos
                 _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Naturaleza");
                 _dato.Entero = Activa;
                 _conexion.agregarParametro(EnumTipoDato.Entero, _dato, "Activa");
+                _dato.Entero = Considera;
+                _conexion.agregarParametro(EnumTipoDato.Entero, _dato, "Considera");
                 _conexion.EjecutarDataset();
 
                 if (_conexion.Exito)

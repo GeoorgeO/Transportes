@@ -55,8 +55,10 @@
             this.Id_tipocuenta = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Nombre_tipocuenta = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Naturaleza = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
+            this.chkConcideraPoliza = new DevExpress.XtraEditors.CheckEdit();
             this.btnTipoCta = new DevExpress.XtraEditors.SimpleButton();
             this.btnCtasPadre = new DevExpress.XtraEditors.SimpleButton();
             this.textTipoCta = new DevExpress.XtraEditors.TextEdit();
@@ -80,6 +82,7 @@
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chkConcideraPoliza.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textTipoCta.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textCtasPadre.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbNaturaleza.Properties)).BeginInit();
@@ -279,7 +282,8 @@
             this.Nombre_padre,
             this.Id_tipocuenta,
             this.Nombre_tipocuenta,
-            this.Naturaleza});
+            this.Naturaleza,
+            this.gridColumn1});
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsBehavior.Editable = false;
@@ -343,6 +347,14 @@
             this.Naturaleza.Visible = true;
             this.Naturaleza.VisibleIndex = 6;
             // 
+            // gridColumn1
+            // 
+            this.gridColumn1.Caption = "Considera Poliza";
+            this.gridColumn1.FieldName = "Considera";
+            this.gridColumn1.Name = "gridColumn1";
+            this.gridColumn1.Visible = true;
+            this.gridColumn1.VisibleIndex = 7;
+            // 
             // panelControl1
             // 
             this.panelControl1.Controls.Add(this.groupControl1);
@@ -355,6 +367,7 @@
             // 
             // groupControl1
             // 
+            this.groupControl1.Controls.Add(this.chkConcideraPoliza);
             this.groupControl1.Controls.Add(this.btnTipoCta);
             this.groupControl1.Controls.Add(this.btnCtasPadre);
             this.groupControl1.Controls.Add(this.textTipoCta);
@@ -373,6 +386,16 @@
             this.groupControl1.Size = new System.Drawing.Size(737, 156);
             this.groupControl1.TabIndex = 0;
             this.groupControl1.Text = "Tipo Activo";
+            // 
+            // chkConcideraPoliza
+            // 
+            this.chkConcideraPoliza.Location = new System.Drawing.Point(211, 126);
+            this.chkConcideraPoliza.MenuManager = this.barManager1;
+            this.chkConcideraPoliza.Name = "chkConcideraPoliza";
+            this.chkConcideraPoliza.Properties.Caption = "Concidera Poliza";
+            this.chkConcideraPoliza.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.chkConcideraPoliza.Size = new System.Drawing.Size(110, 19);
+            this.chkConcideraPoliza.TabIndex = 93;
             // 
             // btnTipoCta
             // 
@@ -506,6 +529,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
             this.groupControl1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chkConcideraPoliza.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textTipoCta.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textCtasPadre.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbNaturaleza.Properties)).EndInit();
@@ -557,5 +581,7 @@
         private DevExpress.XtraEditors.ComboBoxEdit cbNaturaleza;
         private DevExpress.XtraEditors.CheckEdit checkActiva;
         private DevExpress.XtraGrid.Columns.GridColumn Nombre_padre;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
+        private DevExpress.XtraEditors.CheckEdit chkConcideraPoliza;
     }
 }
