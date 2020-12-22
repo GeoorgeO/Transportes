@@ -383,8 +383,19 @@ namespace TransportBusiness
             Clase.Ticket = textTicket.Text.ToString();
             Clase.Importe = Convert.ToDecimal(textImporte.Text);
             Clase.Litros = Convert.ToDecimal(textLitros.Text);
+            if (comboMonedaDiesel.Text.Equals("Pesos"))
+            {
+                Clase.Moneda = "P";
+            }
+            else
+            {
+                Clase.Moneda = "D";
+            }
+            DateTime Fecha;
+           
+            Fecha = Convert.ToDateTime(dateFechaDiesel.Text.Trim());
+            Clase.Fecha_Diesel = Fecha.Year.ToString() + DosCero(Fecha.Month.ToString()) + DosCero(Fecha.Day.ToString());
             Clase.MtdInsertarSalidas_Diesel();
-
             if (Clase.Exito)
             {
                 CargarSalidas_Diesel();
@@ -400,6 +411,8 @@ namespace TransportBusiness
 
         private void CargarSalidas_Diesel()
         {
+            dateFechaDiesel.EditValue = dtFechaSalida.EditValue;
+            comboMonedaDiesel.Text = "Pesos";
             gridDiesel.DataSource = null;
             CLS_Salidas_Diesel Clase = new CLS_Salidas_Diesel();
             Clase.Id_Salida = textFolio.Text.Trim();
@@ -2102,6 +2115,7 @@ namespace TransportBusiness
                 dateOtroGasto.EditValue = null;
             }
         }
+
 
         private void gridCruce_DoubleClick(object sender, EventArgs e)
         {

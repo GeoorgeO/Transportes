@@ -90,7 +90,9 @@ namespace TransportBusiness
 
         private void CargarEmpresas()
         {
+            comboEmpresas.Properties.Items.Clear();
             comboEmpresas.EditValue = null;
+
             
             CLS_Empresa Clase = new CLS_Empresa();
             Clase.MtdSeleccionarEmpresa();
@@ -125,6 +127,15 @@ namespace TransportBusiness
             Fecha = Convert.ToDateTime(dateAl.Text.Trim());
             Clase.F_Al = Fecha.Year.ToString() + DosCero(Fecha.Month.ToString()) + DosCero(Fecha.Day.ToString());
             Clase.Id_Activo = activo;
+       
+            if (checkEmpresas.Checked)
+            {
+                Clase.Id_Empresa = "";
+            }
+            else
+            {
+                Clase.Id_Empresa = comboEmpresas.EditValue.ToString().Substring(0, 4);
+            }
             Clase.MtdSeleccionarGastosDet();
             if (Clase.Exito)
             {
@@ -347,6 +358,8 @@ namespace TransportBusiness
                 Otros_D.VisibleIndex = -1;
                 Gasto_Total_D.Visible = false;
                 Gasto_Total_D.VisibleIndex = -1;
+                PGastoIndirecto_D.Visible = false;
+                PGastoIndirecto_D.VisibleIndex = -1;
                 Ganancias_Total_D.Visible = false;
                 Ganancias_Total_D.VisibleIndex = -1;
 
@@ -376,8 +389,10 @@ namespace TransportBusiness
                 Otros_P.VisibleIndex = 18;
                 Gasto_Total_P.Visible = true;
                 Gasto_Total_P.VisibleIndex = 19;
+                PGastoIndirecto_P.Visible = true;
+                PGastoIndirecto_P.VisibleIndex = 20;
                 Ganancias_Total_P.Visible = true;
-                Ganancias_Total_P.VisibleIndex = 20;
+                Ganancias_Total_P.VisibleIndex = 21;
 
 
             }
@@ -438,6 +453,8 @@ namespace TransportBusiness
                 Otros_P.VisibleIndex = -1;
                 Gasto_Total_P.Visible = false;
                 Gasto_Total_P.VisibleIndex = -1;
+                PGastoIndirecto_P.Visible = false;
+                PGastoIndirecto_P.VisibleIndex = -1;
                 Ganancias_Total_P.Visible = false;
                 Ganancias_Total_P.VisibleIndex = -1;
 
@@ -467,8 +484,10 @@ namespace TransportBusiness
                 Otros_D.VisibleIndex = 18;
                 Gasto_Total_D.Visible = true;
                 Gasto_Total_D.VisibleIndex = 19;
+                PGastoIndirecto_D.Visible = true;
+                PGastoIndirecto_D.VisibleIndex = 20;
                 Ganancias_Total_D.Visible = true;
-                Ganancias_Total_D.VisibleIndex = 20;
+                Ganancias_Total_D.VisibleIndex = 21;
 
             }
         }

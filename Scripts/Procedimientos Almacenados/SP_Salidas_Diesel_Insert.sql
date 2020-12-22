@@ -18,7 +18,9 @@ create PROCEDURE [dbo].[SP_Salidas_Diesel_Insert]
 	@Ticket varchar(15),
 	@Id_Salida char(10),
 	@Importe numeric(18, 2),
-	@Litros numeric(18, 2)
+	@Litros numeric(18, 2),
+	@Fecha_Diesel datetime,
+	@Moneda char(1)
 AS
 BEGIN
 	-- SET NOCOUNT ON added to prevent extra result sets from
@@ -35,12 +37,16 @@ BEGIN
 	           (Ticket
 	           ,Id_Salida
 			   ,Importe
-			   ,Litros)
+			   ,Litros
+			   ,Fecha_Diesel
+			   ,Moneda)
 	     	VALUES
 	           (@Ticket
 	           ,@Id_Salida
 			   ,@Importe
-			   ,@Litros)
+			   ,@Litros
+			   ,@Fecha_Diesel
+			   ,@Moneda)
 		
 		commit transaction T1;
 		set @correcto=1

@@ -170,5 +170,10 @@ namespace TransportBusiness
             }
             return Valor;
         }
+
+        private void Frm_Gastos_Contpaq_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

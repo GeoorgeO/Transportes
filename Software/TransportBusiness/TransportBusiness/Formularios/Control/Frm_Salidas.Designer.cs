@@ -107,7 +107,13 @@
             this.Id_Salida = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Importe = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Litros = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Fecha_Diesel = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.MonedaD = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panelControl3 = new DevExpress.XtraEditors.PanelControl();
+            this.comboMonedaDiesel = new DevExpress.XtraEditors.ComboBoxEdit();
+            this.labelControl50 = new DevExpress.XtraEditors.LabelControl();
+            this.dateFechaDiesel = new DevExpress.XtraEditors.DateEdit();
+            this.labelControl49 = new DevExpress.XtraEditors.LabelControl();
             this.textLitros = new DevExpress.XtraEditors.TextEdit();
             this.labelControl47 = new DevExpress.XtraEditors.LabelControl();
             this.btnSalidaDiesel = new DevExpress.XtraEditors.SimpleButton();
@@ -332,6 +338,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).BeginInit();
             this.panelControl3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.comboMonedaDiesel.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dateFechaDiesel.Properties.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dateFechaDiesel.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textLitros.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textImporte.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textTicket.Properties)).BeginInit();
@@ -1154,7 +1163,9 @@
             this.Ticket,
             this.Id_Salida,
             this.Importe,
-            this.Litros});
+            this.Litros,
+            this.Fecha_Diesel,
+            this.MonedaD});
             this.gridView2.GridControl = this.gridDiesel;
             this.gridView2.Name = "gridView2";
             this.gridView2.OptionsBehavior.Editable = false;
@@ -1193,8 +1204,28 @@
             this.Litros.Visible = true;
             this.Litros.VisibleIndex = 2;
             // 
+            // Fecha_Diesel
+            // 
+            this.Fecha_Diesel.Caption = "Fecha";
+            this.Fecha_Diesel.FieldName = "Fecha_Diesel";
+            this.Fecha_Diesel.Name = "Fecha_Diesel";
+            this.Fecha_Diesel.Visible = true;
+            this.Fecha_Diesel.VisibleIndex = 3;
+            // 
+            // MonedaD
+            // 
+            this.MonedaD.Caption = "Moneda";
+            this.MonedaD.FieldName = "Moneda";
+            this.MonedaD.Name = "MonedaD";
+            this.MonedaD.Visible = true;
+            this.MonedaD.VisibleIndex = 4;
+            // 
             // panelControl3
             // 
+            this.panelControl3.Controls.Add(this.comboMonedaDiesel);
+            this.panelControl3.Controls.Add(this.labelControl50);
+            this.panelControl3.Controls.Add(this.dateFechaDiesel);
+            this.panelControl3.Controls.Add(this.labelControl49);
             this.panelControl3.Controls.Add(this.textLitros);
             this.panelControl3.Controls.Add(this.labelControl47);
             this.panelControl3.Controls.Add(this.btnSalidaDiesel);
@@ -1208,10 +1239,55 @@
             this.panelControl3.Size = new System.Drawing.Size(1118, 37);
             this.panelControl3.TabIndex = 0;
             // 
+            // comboMonedaDiesel
+            // 
+            this.comboMonedaDiesel.Location = new System.Drawing.Point(698, 9);
+            this.comboMonedaDiesel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.comboMonedaDiesel.MenuManager = this.barManager1;
+            this.comboMonedaDiesel.Name = "comboMonedaDiesel";
+            this.comboMonedaDiesel.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.comboMonedaDiesel.Properties.Items.AddRange(new object[] {
+            "Pesos",
+            "Dólares"});
+            this.comboMonedaDiesel.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
+            this.comboMonedaDiesel.Size = new System.Drawing.Size(100, 20);
+            this.comboMonedaDiesel.TabIndex = 102;
+            // 
+            // labelControl50
+            // 
+            this.labelControl50.Location = new System.Drawing.Point(653, 12);
+            this.labelControl50.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.labelControl50.Name = "labelControl50";
+            this.labelControl50.Size = new System.Drawing.Size(42, 13);
+            this.labelControl50.TabIndex = 101;
+            this.labelControl50.Text = "Moneda:";
+            // 
+            // dateFechaDiesel
+            // 
+            this.dateFechaDiesel.EditValue = null;
+            this.dateFechaDiesel.Location = new System.Drawing.Point(529, 9);
+            this.dateFechaDiesel.MenuManager = this.barManager1;
+            this.dateFechaDiesel.Name = "dateFechaDiesel";
+            this.dateFechaDiesel.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dateFechaDiesel.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dateFechaDiesel.Size = new System.Drawing.Size(100, 20);
+            this.dateFechaDiesel.TabIndex = 100;
+            // 
+            // labelControl49
+            // 
+            this.labelControl49.Location = new System.Drawing.Point(491, 12);
+            this.labelControl49.Name = "labelControl49";
+            this.labelControl49.Size = new System.Drawing.Size(33, 13);
+            this.labelControl49.TabIndex = 99;
+            this.labelControl49.Text = "Fecha:";
+            // 
             // textLitros
             // 
             this.textLitros.EditValue = "0";
-            this.textLitros.Location = new System.Drawing.Point(373, 12);
+            this.textLitros.Location = new System.Drawing.Point(373, 9);
             this.textLitros.MenuManager = this.barManager1;
             this.textLitros.Name = "textLitros";
             this.textLitros.Properties.Mask.EditMask = "n";
@@ -1221,7 +1297,7 @@
             // 
             // labelControl47
             // 
-            this.labelControl47.Location = new System.Drawing.Point(340, 15);
+            this.labelControl47.Location = new System.Drawing.Point(340, 12);
             this.labelControl47.Name = "labelControl47";
             this.labelControl47.Size = new System.Drawing.Size(30, 13);
             this.labelControl47.TabIndex = 59;
@@ -1229,7 +1305,7 @@
             // 
             // btnSalidaDiesel
             // 
-            this.btnSalidaDiesel.Location = new System.Drawing.Point(480, 8);
+            this.btnSalidaDiesel.Location = new System.Drawing.Point(816, 8);
             this.btnSalidaDiesel.Name = "btnSalidaDiesel";
             this.btnSalidaDiesel.Size = new System.Drawing.Size(75, 23);
             this.btnSalidaDiesel.TabIndex = 58;
@@ -1238,7 +1314,7 @@
             // 
             // labelControl16
             // 
-            this.labelControl16.Location = new System.Drawing.Point(179, 15);
+            this.labelControl16.Location = new System.Drawing.Point(179, 12);
             this.labelControl16.Name = "labelControl16";
             this.labelControl16.Size = new System.Drawing.Size(42, 13);
             this.labelControl16.TabIndex = 57;
@@ -1246,7 +1322,7 @@
             // 
             // textImporte
             // 
-            this.textImporte.Location = new System.Drawing.Point(223, 12);
+            this.textImporte.Location = new System.Drawing.Point(223, 9);
             this.textImporte.MenuManager = this.barManager1;
             this.textImporte.Name = "textImporte";
             this.textImporte.Properties.Mask.EditMask = "n";
@@ -1256,7 +1332,7 @@
             // 
             // labelControl15
             // 
-            this.labelControl15.Location = new System.Drawing.Point(14, 15);
+            this.labelControl15.Location = new System.Drawing.Point(14, 12);
             this.labelControl15.Name = "labelControl15";
             this.labelControl15.Size = new System.Drawing.Size(48, 13);
             this.labelControl15.TabIndex = 55;
@@ -1264,7 +1340,7 @@
             // 
             // textTicket
             // 
-            this.textTicket.Location = new System.Drawing.Point(65, 12);
+            this.textTicket.Location = new System.Drawing.Point(65, 9);
             this.textTicket.MenuManager = this.barManager1;
             this.textTicket.Name = "textTicket";
             this.textTicket.Size = new System.Drawing.Size(100, 20);
@@ -1276,7 +1352,7 @@
             this.xtraTabPage2.Controls.Add(this.panelControl6);
             this.xtraTabPage2.Name = "xtraTabPage2";
             this.xtraTabPage2.Padding = new System.Windows.Forms.Padding(5);
-            this.xtraTabPage2.Size = new System.Drawing.Size(1130, 319);
+            this.xtraTabPage2.Size = new System.Drawing.Size(1128, 321);
             this.xtraTabPage2.Text = "Otros Gastos";
             // 
             // panelControl5
@@ -1286,7 +1362,7 @@
             this.panelControl5.Location = new System.Drawing.Point(5, 127);
             this.panelControl5.Name = "panelControl5";
             this.panelControl5.Padding = new System.Windows.Forms.Padding(5);
-            this.panelControl5.Size = new System.Drawing.Size(1120, 187);
+            this.panelControl5.Size = new System.Drawing.Size(1118, 189);
             this.panelControl5.TabIndex = 3;
             // 
             // panel2
@@ -1295,7 +1371,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel2.Location = new System.Drawing.Point(7, 7);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(789, 173);
+            this.panel2.Size = new System.Drawing.Size(789, 175);
             this.panel2.TabIndex = 0;
             // 
             // gridOtrosGastos
@@ -1305,7 +1381,7 @@
             this.gridOtrosGastos.MainView = this.gridView3;
             this.gridOtrosGastos.MenuManager = this.barManager1;
             this.gridOtrosGastos.Name = "gridOtrosGastos";
-            this.gridOtrosGastos.Size = new System.Drawing.Size(789, 173);
+            this.gridOtrosGastos.Size = new System.Drawing.Size(789, 175);
             this.gridOtrosGastos.TabIndex = 0;
             this.gridOtrosGastos.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView3});
@@ -1461,7 +1537,7 @@
             this.panelControl6.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelControl6.Location = new System.Drawing.Point(5, 5);
             this.panelControl6.Name = "panelControl6";
-            this.panelControl6.Size = new System.Drawing.Size(1120, 122);
+            this.panelControl6.Size = new System.Drawing.Size(1118, 122);
             this.panelControl6.TabIndex = 2;
             // 
             // checkFGasto
@@ -1692,7 +1768,7 @@
             this.xtraTabPage3.Controls.Add(this.panelControl8);
             this.xtraTabPage3.Name = "xtraTabPage3";
             this.xtraTabPage3.Padding = new System.Windows.Forms.Padding(5);
-            this.xtraTabPage3.Size = new System.Drawing.Size(1130, 319);
+            this.xtraTabPage3.Size = new System.Drawing.Size(1128, 321);
             this.xtraTabPage3.Text = "Viaticos al Operador";
             // 
             // panelControl13
@@ -1702,7 +1778,7 @@
             this.panelControl13.Location = new System.Drawing.Point(5, 55);
             this.panelControl13.Name = "panelControl13";
             this.panelControl13.Padding = new System.Windows.Forms.Padding(5);
-            this.panelControl13.Size = new System.Drawing.Size(1120, 259);
+            this.panelControl13.Size = new System.Drawing.Size(1118, 261);
             this.panelControl13.TabIndex = 3;
             // 
             // panel3
@@ -1711,7 +1787,7 @@
             this.panel3.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel3.Location = new System.Drawing.Point(7, 7);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(470, 245);
+            this.panel3.Size = new System.Drawing.Size(470, 247);
             this.panel3.TabIndex = 0;
             // 
             // gridViaticos
@@ -1721,7 +1797,7 @@
             this.gridViaticos.MainView = this.gridView4;
             this.gridViaticos.MenuManager = this.barManager1;
             this.gridViaticos.Name = "gridViaticos";
-            this.gridViaticos.Size = new System.Drawing.Size(470, 245);
+            this.gridViaticos.Size = new System.Drawing.Size(470, 247);
             this.gridViaticos.TabIndex = 0;
             this.gridViaticos.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView4});
@@ -1791,7 +1867,7 @@
             this.panelControl8.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelControl8.Location = new System.Drawing.Point(5, 5);
             this.panelControl8.Name = "panelControl8";
-            this.panelControl8.Size = new System.Drawing.Size(1120, 50);
+            this.panelControl8.Size = new System.Drawing.Size(1118, 50);
             this.panelControl8.TabIndex = 2;
             // 
             // btnAgregaViatico
@@ -1864,7 +1940,7 @@
             this.xtraTabPage4.Controls.Add(this.panelControl10);
             this.xtraTabPage4.Name = "xtraTabPage4";
             this.xtraTabPage4.Padding = new System.Windows.Forms.Padding(5);
-            this.xtraTabPage4.Size = new System.Drawing.Size(1130, 319);
+            this.xtraTabPage4.Size = new System.Drawing.Size(1128, 321);
             this.xtraTabPage4.Text = "Honorarios";
             // 
             // panelControl7
@@ -1874,7 +1950,7 @@
             this.panelControl7.Location = new System.Drawing.Point(5, 55);
             this.panelControl7.Name = "panelControl7";
             this.panelControl7.Padding = new System.Windows.Forms.Padding(5);
-            this.panelControl7.Size = new System.Drawing.Size(1120, 259);
+            this.panelControl7.Size = new System.Drawing.Size(1118, 261);
             this.panelControl7.TabIndex = 3;
             // 
             // panel4
@@ -1883,7 +1959,7 @@
             this.panel4.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel4.Location = new System.Drawing.Point(7, 7);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(470, 245);
+            this.panel4.Size = new System.Drawing.Size(470, 247);
             this.panel4.TabIndex = 0;
             // 
             // gridHonorario
@@ -1893,7 +1969,7 @@
             this.gridHonorario.MainView = this.gridView5;
             this.gridHonorario.MenuManager = this.barManager1;
             this.gridHonorario.Name = "gridHonorario";
-            this.gridHonorario.Size = new System.Drawing.Size(470, 245);
+            this.gridHonorario.Size = new System.Drawing.Size(470, 247);
             this.gridHonorario.TabIndex = 0;
             this.gridHonorario.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView5});
@@ -1952,7 +2028,7 @@
             this.panelControl10.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelControl10.Location = new System.Drawing.Point(5, 5);
             this.panelControl10.Name = "panelControl10";
-            this.panelControl10.Size = new System.Drawing.Size(1120, 50);
+            this.panelControl10.Size = new System.Drawing.Size(1118, 50);
             this.panelControl10.TabIndex = 2;
             // 
             // labelSaldoOperdor
@@ -2406,7 +2482,7 @@
             this.xtraTabPage6.Controls.Add(this.panelControl11);
             this.xtraTabPage6.Name = "xtraTabPage6";
             this.xtraTabPage6.Padding = new System.Windows.Forms.Padding(5);
-            this.xtraTabPage6.Size = new System.Drawing.Size(1130, 319);
+            this.xtraTabPage6.Size = new System.Drawing.Size(1128, 321);
             this.xtraTabPage6.Text = "Revisión de Unidad";
             // 
             // panelControl11
@@ -2428,7 +2504,7 @@
             this.panelControl11.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelControl11.Location = new System.Drawing.Point(5, 5);
             this.panelControl11.Name = "panelControl11";
-            this.panelControl11.Size = new System.Drawing.Size(1120, 309);
+            this.panelControl11.Size = new System.Drawing.Size(1118, 311);
             this.panelControl11.TabIndex = 0;
             // 
             // btnGuardarCheck
@@ -2634,7 +2710,7 @@
             this.xtraTabPage7.Controls.Add(this.panelControl14);
             this.xtraTabPage7.Name = "xtraTabPage7";
             this.xtraTabPage7.Padding = new System.Windows.Forms.Padding(5);
-            this.xtraTabPage7.Size = new System.Drawing.Size(1130, 319);
+            this.xtraTabPage7.Size = new System.Drawing.Size(1128, 321);
             this.xtraTabPage7.Text = "Cruce";
             // 
             // panelControl15
@@ -2643,7 +2719,7 @@
             this.panelControl15.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelControl15.Location = new System.Drawing.Point(5, 72);
             this.panelControl15.Name = "panelControl15";
-            this.panelControl15.Size = new System.Drawing.Size(1120, 242);
+            this.panelControl15.Size = new System.Drawing.Size(1118, 244);
             this.panelControl15.TabIndex = 1;
             // 
             // gridCruce
@@ -2653,7 +2729,7 @@
             this.gridCruce.MainView = this.gridView1;
             this.gridCruce.MenuManager = this.barManager1;
             this.gridCruce.Name = "gridCruce";
-            this.gridCruce.Size = new System.Drawing.Size(1116, 238);
+            this.gridCruce.Size = new System.Drawing.Size(1114, 240);
             this.gridCruce.TabIndex = 1;
             this.gridCruce.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -2776,7 +2852,7 @@
             this.panelControl14.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelControl14.Location = new System.Drawing.Point(5, 5);
             this.panelControl14.Name = "panelControl14";
-            this.panelControl14.Size = new System.Drawing.Size(1120, 67);
+            this.panelControl14.Size = new System.Drawing.Size(1118, 67);
             this.panelControl14.TabIndex = 0;
             // 
             // rbTotal
@@ -3060,6 +3136,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).EndInit();
             this.panelControl3.ResumeLayout(false);
             this.panelControl3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.comboMonedaDiesel.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dateFechaDiesel.Properties.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dateFechaDiesel.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textLitros.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textImporte.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textTicket.Properties)).EndInit();
@@ -3428,5 +3507,11 @@
         private DevExpress.XtraEditors.LabelControl labelControl48;
         private DevExpress.XtraGrid.Columns.GridColumn Fecha_FacturaG;
         private DevExpress.XtraEditors.CheckEdit checkFGasto;
+        private DevExpress.XtraGrid.Columns.GridColumn Fecha_Diesel;
+        private DevExpress.XtraGrid.Columns.GridColumn MonedaD;
+        private DevExpress.XtraEditors.ComboBoxEdit comboMonedaDiesel;
+        private DevExpress.XtraEditors.LabelControl labelControl50;
+        private DevExpress.XtraEditors.DateEdit dateFechaDiesel;
+        private DevExpress.XtraEditors.LabelControl labelControl49;
     }
 }

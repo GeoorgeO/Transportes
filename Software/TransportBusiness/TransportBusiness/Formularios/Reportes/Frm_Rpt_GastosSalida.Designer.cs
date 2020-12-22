@@ -113,6 +113,7 @@
             this.Otros_D = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Gasto_Total_D = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Ganancias_Total_D = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.PGastoIndirecto_P = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panelControl5 = new DevExpress.XtraEditors.PanelControl();
             this.gridControl3 = new DevExpress.XtraGrid.GridControl();
             this.gridView3 = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -125,6 +126,7 @@
             this.Prorateo_P = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Importe_D = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Prorateo_D = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.PGastoIndirecto_D = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
@@ -270,7 +272,7 @@
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 563);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 577);
             this.barDockControlBottom.Manager = this.barManager1;
             this.barDockControlBottom.Size = new System.Drawing.Size(1395, 25);
             // 
@@ -280,7 +282,7 @@
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.barDockControlLeft.Location = new System.Drawing.Point(0, 0);
             this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Size = new System.Drawing.Size(77, 563);
+            this.barDockControlLeft.Size = new System.Drawing.Size(77, 577);
             // 
             // barDockControlRight
             // 
@@ -288,7 +290,7 @@
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
             this.barDockControlRight.Location = new System.Drawing.Point(1395, 0);
             this.barDockControlRight.Manager = this.barManager1;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 563);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 577);
             // 
             // btnSeleccionar
             // 
@@ -549,7 +551,7 @@
             // 
             // Gasto_Total_PG
             // 
-            this.Gasto_Total_PG.Caption = "Gasto Total Pesos";
+            this.Gasto_Total_PG.Caption = "Gasto Salida Pesos";
             this.Gasto_Total_PG.DisplayFormat.FormatString = "{0:#,###.00}";
             this.Gasto_Total_PG.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.Gasto_Total_PG.FieldName = "Gasto_Total_P";
@@ -578,6 +580,8 @@
             this.GastoIndirecto_P.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.GastoIndirecto_P.FieldName = "GastoIndirecto_P";
             this.GastoIndirecto_P.Name = "GastoIndirecto_P";
+            this.GastoIndirecto_P.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "GastoIndirecto_P", "{0:#,###.00}")});
             this.GastoIndirecto_P.Visible = true;
             this.GastoIndirecto_P.VisibleIndex = 6;
             // 
@@ -593,7 +597,7 @@
             // 
             // Gasto_Total_DG
             // 
-            this.Gasto_Total_DG.Caption = "Gasto Total Dolares";
+            this.Gasto_Total_DG.Caption = "Gasto Salida Dolares";
             this.Gasto_Total_DG.DisplayFormat.FormatString = "{0:#,###.00}";
             this.Gasto_Total_DG.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.Gasto_Total_DG.FieldName = "Gasto_Total_D";
@@ -614,8 +618,12 @@
             // GastoIndirecto_D
             // 
             this.GastoIndirecto_D.Caption = "G. Indirectos Dolares";
+            this.GastoIndirecto_D.DisplayFormat.FormatString = "{0:#,###.00}";
+            this.GastoIndirecto_D.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.GastoIndirecto_D.FieldName = "GastoIndirecto_D";
             this.GastoIndirecto_D.Name = "GastoIndirecto_D";
+            this.GastoIndirecto_D.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "GastoIndirecto_D", "{0:#,###.00}")});
             // 
             // panelControl2
             // 
@@ -625,7 +633,7 @@
             this.panelControl2.Location = new System.Drawing.Point(77, 333);
             this.panelControl2.Name = "panelControl2";
             this.panelControl2.Padding = new System.Windows.Forms.Padding(5);
-            this.panelControl2.Size = new System.Drawing.Size(1318, 230);
+            this.panelControl2.Size = new System.Drawing.Size(1318, 244);
             this.panelControl2.TabIndex = 14;
             // 
             // panelControl4
@@ -635,7 +643,7 @@
             this.panelControl4.Location = new System.Drawing.Point(7, 7);
             this.panelControl4.Name = "panelControl4";
             this.panelControl4.Padding = new System.Windows.Forms.Padding(5);
-            this.panelControl4.Size = new System.Drawing.Size(977, 216);
+            this.panelControl4.Size = new System.Drawing.Size(977, 230);
             this.panelControl4.TabIndex = 3;
             // 
             // gridControl1
@@ -645,7 +653,7 @@
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.MenuManager = this.barManager1;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(963, 202);
+            this.gridControl1.Size = new System.Drawing.Size(963, 216);
             this.gridControl1.TabIndex = 0;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -674,6 +682,7 @@
             this.Comision_Chofer_P,
             this.Otros_P,
             this.Gasto_Total_P,
+            this.PGastoIndirecto_P,
             this.Ganancias_Total_P,
             this.Monto_Factura_D,
             this.Diesel_D,
@@ -688,7 +697,8 @@
             this.Comision_Chofer_D,
             this.Otros_D,
             this.Gasto_Total_D,
-            this.Ganancias_Total_D});
+            this.Ganancias_Total_D,
+            this.PGastoIndirecto_D});
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.GroupCount = 1;
             this.gridView1.GroupSummary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
@@ -697,7 +707,9 @@
             new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "Ganancias_Total_P", this.Ganancias_Total_P, "{0:#,###.00}"),
             new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "Monto_Factura_D", this.Monto_Factura_D, "{0:#,###.00}"),
             new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "Gasto_Total_D", this.Gasto_Total_D, "{0:#,###.00}"),
-            new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "Ganancias_Total_D", this.Ganancias_Total_D, "{0:#,###.00}")});
+            new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "Ganancias_Total_D", this.Ganancias_Total_D, "{0:#,###.00}"),
+            new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "PGastoIndirecto_P", this.PGastoIndirecto_P, "{0:#,###.00}"),
+            new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "PGastoIndirecto_D", this.PGastoIndirecto_D, "{0:#,###.00}")});
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsBehavior.AutoExpandAllGroups = true;
             this.gridView1.OptionsBehavior.Editable = false;
@@ -924,7 +936,7 @@
             this.Gasto_Total_P.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "Gasto_Total_P", "{0:#,###.##}")});
             this.Gasto_Total_P.Visible = true;
-            this.Gasto_Total_P.VisibleIndex = 26;
+            this.Gasto_Total_P.VisibleIndex = 27;
             // 
             // Ganancias_Total_P
             // 
@@ -936,7 +948,7 @@
             this.Ganancias_Total_P.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "Ganancias_Total_P", "{0:#,###.00}")});
             this.Ganancias_Total_P.Visible = true;
-            this.Ganancias_Total_P.VisibleIndex = 27;
+            this.Ganancias_Total_P.VisibleIndex = 28;
             // 
             // Monto_Factura_D
             // 
@@ -960,7 +972,7 @@
             this.Diesel_D.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "Diesel_D", "{0:#,###.00}")});
             this.Diesel_D.Visible = true;
-            this.Diesel_D.VisibleIndex = 28;
+            this.Diesel_D.VisibleIndex = 29;
             // 
             // Transfe_D
             // 
@@ -1056,7 +1068,7 @@
             this.Viaticos_D.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "Viaticos_D", "{0:#,###.00}")});
             this.Viaticos_D.Visible = true;
-            this.Viaticos_D.VisibleIndex = 29;
+            this.Viaticos_D.VisibleIndex = 30;
             // 
             // Comision_Chofer_D
             // 
@@ -1068,7 +1080,7 @@
             this.Comision_Chofer_D.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "Comision_Chofer_D", "{0:#,###.00}")});
             this.Comision_Chofer_D.Visible = true;
-            this.Comision_Chofer_D.VisibleIndex = 30;
+            this.Comision_Chofer_D.VisibleIndex = 31;
             // 
             // Otros_D
             // 
@@ -1092,7 +1104,7 @@
             this.Gasto_Total_D.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "Gasto_Total_D", "{0:#,###.##}")});
             this.Gasto_Total_D.Visible = true;
-            this.Gasto_Total_D.VisibleIndex = 31;
+            this.Gasto_Total_D.VisibleIndex = 32;
             // 
             // Ganancias_Total_D
             // 
@@ -1104,7 +1116,19 @@
             this.Ganancias_Total_D.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "Ganancias_Total_D", "{0:#,###.##}")});
             this.Ganancias_Total_D.Visible = true;
-            this.Ganancias_Total_D.VisibleIndex = 32;
+            this.Ganancias_Total_D.VisibleIndex = 33;
+            // 
+            // PGastoIndirecto_P
+            // 
+            this.PGastoIndirecto_P.Caption = "Gasto Indirecto Pesos";
+            this.PGastoIndirecto_P.DisplayFormat.FormatString = "{0:#,###.00}";
+            this.PGastoIndirecto_P.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.PGastoIndirecto_P.FieldName = "PGastoIndirecto_P";
+            this.PGastoIndirecto_P.Name = "PGastoIndirecto_P";
+            this.PGastoIndirecto_P.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "PGastoIndirecto", "{0:#,###.00}")});
+            this.PGastoIndirecto_P.Visible = true;
+            this.PGastoIndirecto_P.VisibleIndex = 26;
             // 
             // panelControl5
             // 
@@ -1112,7 +1136,7 @@
             this.panelControl5.Dock = System.Windows.Forms.DockStyle.Right;
             this.panelControl5.Location = new System.Drawing.Point(984, 7);
             this.panelControl5.Name = "panelControl5";
-            this.panelControl5.Size = new System.Drawing.Size(327, 216);
+            this.panelControl5.Size = new System.Drawing.Size(327, 230);
             this.panelControl5.TabIndex = 2;
             // 
             // gridControl3
@@ -1122,7 +1146,7 @@
             this.gridControl3.MainView = this.gridView3;
             this.gridControl3.MenuManager = this.barManager1;
             this.gridControl3.Name = "gridControl3";
-            this.gridControl3.Size = new System.Drawing.Size(323, 212);
+            this.gridControl3.Size = new System.Drawing.Size(323, 226);
             this.gridControl3.TabIndex = 1;
             this.gridControl3.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView3});
@@ -1144,7 +1168,6 @@
             this.gridView3.GroupSummary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "Prorateo_P", this.Prorateo_P, "{0:#,###.00}")});
             this.gridView3.Name = "gridView3";
-            this.gridView3.OptionsBehavior.AutoExpandAllGroups = true;
             this.gridView3.OptionsBehavior.Editable = false;
             this.gridView3.OptionsView.ShowFooter = true;
             this.gridView3.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
@@ -1172,7 +1195,7 @@
             // 
             // Nombre_Cuenta
             // 
-            this.Nombre_Cuenta.Caption = "Nombre_Cuenta";
+            this.Nombre_Cuenta.Caption = "Cta";
             this.Nombre_Cuenta.FieldName = "Nombre_Cuenta";
             this.Nombre_Cuenta.Name = "Nombre_Cuenta";
             this.Nombre_Cuenta.Visible = true;
@@ -1191,6 +1214,8 @@
             this.Importe_P.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.Importe_P.FieldName = "Importe_P";
             this.Importe_P.Name = "Importe_P";
+            this.Importe_P.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "Importe_P", "{0:#,###.00}")});
             this.Importe_P.Visible = true;
             this.Importe_P.VisibleIndex = 1;
             // 
@@ -1201,6 +1226,8 @@
             this.Prorateo_P.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.Prorateo_P.FieldName = "Prorateo_P";
             this.Prorateo_P.Name = "Prorateo_P";
+            this.Prorateo_P.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "Prorateo_P", "{0:#,###.00}")});
             this.Prorateo_P.Visible = true;
             this.Prorateo_P.VisibleIndex = 2;
             // 
@@ -1216,11 +1243,23 @@
             this.Prorateo_D.FieldName = "Prorateo_D";
             this.Prorateo_D.Name = "Prorateo_D";
             // 
+            // PGastoIndirecto_D
+            // 
+            this.PGastoIndirecto_D.Caption = "Gasto Indirecto Dólares";
+            this.PGastoIndirecto_D.DisplayFormat.FormatString = "{0:#,###.00}";
+            this.PGastoIndirecto_D.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.PGastoIndirecto_D.FieldName = "PGastoIndirecto_D";
+            this.PGastoIndirecto_D.Name = "PGastoIndirecto_D";
+            this.PGastoIndirecto_D.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "PGastoIndirecto_D", "{0:#,###.00}")});
+            this.PGastoIndirecto_D.Visible = true;
+            this.PGastoIndirecto_D.VisibleIndex = 34;
+            // 
             // Frm_Rpt_GastosSalida
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1395, 588);
+            this.ClientSize = new System.Drawing.Size(1395, 602);
             this.Controls.Add(this.panelControl2);
             this.Controls.Add(this.panelControl3);
             this.Controls.Add(this.panelControl1);
@@ -1363,5 +1402,7 @@
         private DevExpress.XtraGrid.Columns.GridColumn Otros_D;
         private DevExpress.XtraGrid.Columns.GridColumn Gasto_Total_D;
         private DevExpress.XtraGrid.Columns.GridColumn Ganancias_Total_D;
+        private DevExpress.XtraGrid.Columns.GridColumn PGastoIndirecto_P;
+        private DevExpress.XtraGrid.Columns.GridColumn PGastoIndirecto_D;
     }
 }

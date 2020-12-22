@@ -12,6 +12,8 @@ namespace CapaDeDatos
         public string Id_Salida { get; set; }
         public decimal Importe { get; set; }
         public decimal Litros { get; set; }
+        public string Fecha_Diesel { get; set; }
+        public string Moneda { get; set; }
 
         public void MtdSeleccionarSalidas_Diesel()
         {
@@ -63,6 +65,10 @@ namespace CapaDeDatos
                 _conexion.agregarParametro(EnumTipoDato.Tipodecimal, _dato, "Importe");
                 _dato.DecimalValor = Litros;
                 _conexion.agregarParametro(EnumTipoDato.Tipodecimal, _dato, "Litros");
+                _dato.CadenaTexto = Fecha_Diesel;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Fecha_Diesel");
+                _dato.CadenaTexto = Moneda;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Moneda");
                 _conexion.EjecutarDataset();
                 if (_conexion.Exito)
                 {

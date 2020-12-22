@@ -32,6 +32,8 @@ BEGIN
 	           ,Id_Salida
 			   ,Importe
 			   ,Litros
+			   ,Fecha_Diesel
+			   ,Moneda
 			from dbo.Salidas_Diesel
 			where Id_Salida=@Id_Salida
 		
