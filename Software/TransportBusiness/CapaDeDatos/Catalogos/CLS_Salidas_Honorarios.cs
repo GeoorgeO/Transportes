@@ -12,6 +12,7 @@ namespace CapaDeDatos
         public string Concepto { get; set; }
         public decimal Importe { get; set; }
         public string Id_Honorario { get; set; }
+        public string Fecha_Honorario { get; set; }
 
         public void MtdSeleccionarSalidas_Honorarios()
         {
@@ -59,6 +60,8 @@ namespace CapaDeDatos
                 _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_Salida");
                 _dato.DecimalValor = Importe;
                 _conexion.agregarParametro(EnumTipoDato.Tipodecimal, _dato, "Importe");
+                _dato.CadenaTexto = Fecha_Honorario;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Fecha_Honorario");
                 _conexion.EjecutarDataset();
 
                 if (_conexion.Exito)

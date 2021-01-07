@@ -1115,7 +1115,8 @@ namespace TransportBusiness
 
             Clase.Id_Salida = textFolio.Text.Trim();
             Clase.Importe = Convert.ToDecimal(textImporteH.Text);
-
+            DateTime Fecha = Convert.ToDateTime(dtFechaSalida.Text.Trim());
+            Clase.Fecha_Honorario = Fecha.Year.ToString() + DosCero(Fecha.Month.ToString()) + DosCero(Fecha.Day.ToString());
             Clase.MtdInsertarSalidas_Honorarios();
 
             if (Clase.Exito)

@@ -40,13 +40,15 @@ BEGIN
 			   ,Id_Salida
 			   ,PagadoPor
 			   ,FechaPago
-			   ,Importe)
+			   ,Importe
+			   ,Moneda)
 	     	VALUES
 	           (@Id_Viatico
 			   ,@Id_Salida
 			   ,@PagadoPor
 			   ,@FechaPago
-			   ,@Importe)
+			   ,@Importe
+			   ,'P')
 		
 		commit transaction T1;
 		set @correcto=1

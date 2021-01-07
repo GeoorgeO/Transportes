@@ -38,6 +38,30 @@ namespace TransportBusiness
 
         private void CargarGastos()
         {
+            CLS_Gastos_Contpaq gs = new CLS_Gastos_Contpaq();
+            gs.MtdSeleccionarCtasNoConsidera();
+            string Cadena = String.Empty;
+            if (gs.Exito)
+            {
+                for (int i = 0; i < gs.Datos.Rows.Count; i++)
+                {
+
+                    string s = gs.Datos.Rows[i]["Id_cuenta"].ToString(); ;
+
+                    if (i == 0)
+                    {
+                        Cadena = s;
+                    }
+                    else
+                    {
+                        Cadena = Cadena + "," + s;
+                    }
+
+                }
+            }
+
+         
+
             gridControl1.DataSource = null;
             gridControl2.DataSource = null;
             CLS_GastosSalidas Clase = new CLS_GastosSalidas();
@@ -47,6 +71,7 @@ namespace TransportBusiness
             Fecha = Convert.ToDateTime(dateAl.Text.Trim());
             Clase.F_Al = Fecha.Year.ToString() + DosCero(Fecha.Month.ToString()) + DosCero(Fecha.Day.ToString());
             Clase.Id_Activo = textActivo.Text;
+            Clase.Cuentas = Cadena;
             if (checkEmpresas.Checked)
             {
                 Clase.Id_Empresa = "";
@@ -66,6 +91,30 @@ namespace TransportBusiness
         private void CargarGastosCuentas()
         {
             gridControl3.DataSource = null;
+
+
+            CLS_Gastos_Contpaq gs = new CLS_Gastos_Contpaq();
+            gs.MtdSeleccionarCtasNoConsidera();
+            string Cadena = String.Empty;
+            if (gs.Exito)
+            {
+                for (int i = 0; i < gs.Datos.Rows.Count; i++)
+                {
+
+                    string s = gs.Datos.Rows[i]["Id_cuenta"].ToString(); ;
+
+                    if (i == 0)
+                    {
+                        Cadena = s;
+                    }
+                    else
+                    {
+                        Cadena = Cadena + "," + s;
+                    }
+
+                }
+            }
+
             CLS_GastosSalidas Clase = new CLS_GastosSalidas();
             
             DateTime Fecha = Convert.ToDateTime(dateDel.Text.Trim());
@@ -80,7 +129,7 @@ namespace TransportBusiness
             {
                 Clase.Id_Empresa = comboEmpresas.EditValue.ToString().Substring(0, 4);
             }
-
+            Clase.Cuentas = Cadena;
             Clase.MtdSeleccionarGastosCuentas();
             if (Clase.Exito)
             {
@@ -112,6 +161,31 @@ namespace TransportBusiness
         private void CargarGastosDet(string activo)
         {
             gridControl1.DataSource = null;
+
+
+            CLS_Gastos_Contpaq gs = new CLS_Gastos_Contpaq();
+            gs.MtdSeleccionarCtasNoConsidera();
+            string Cadena = String.Empty;
+            if (gs.Exito)
+            {
+                for (int i = 0; i < gs.Datos.Rows.Count; i++)
+                {
+
+                    string s = gs.Datos.Rows[i]["Id_cuenta"].ToString(); ;
+
+                    if (i == 0)
+                    {
+                        Cadena = s;
+                    }
+                    else
+                    {
+                        Cadena = Cadena + "," + s;
+                    }
+
+                }
+            }
+
+
             CLS_GastosSalidas Clase = new CLS_GastosSalidas();
             if (radioParametro.EditValue.ToString().Equals("F"))
             {
@@ -136,6 +210,7 @@ namespace TransportBusiness
             {
                 Clase.Id_Empresa = comboEmpresas.EditValue.ToString().Substring(0, 4);
             }
+            Clase.Cuentas = Cadena;
             Clase.MtdSeleccionarGastosDet();
             if (Clase.Exito)
             {
@@ -319,10 +394,11 @@ namespace TransportBusiness
                 Monto_Factura_PG.VisibleIndex = 4;
                 Gasto_Total_PG.Visible = true;
                 Gasto_Total_PG.VisibleIndex = 5;
-                Utilidad_Total_PG.Visible = true;
-                Utilidad_Total_PG.VisibleIndex = 6;
                 GastoIndirecto_P.Visible = true;
-                GastoIndirecto_P.VisibleIndex = 7;
+                GastoIndirecto_P.VisibleIndex = 6;
+                Utilidad_Total_PG.Visible = true;
+                Utilidad_Total_PG.VisibleIndex = 7;
+               
 
 
                 Fecha_Salida.VisibleIndex = 1;
@@ -350,8 +426,7 @@ namespace TransportBusiness
                 Lavada_D.VisibleIndex = -1;
                 Thermo_D.Visible = false;
                 Thermo_D.VisibleIndex = -1;
-                Viaticos_D.Visible = false;
-                Viaticos_D.VisibleIndex = -1;
+               
                 Comision_Chofer_D.Visible = false;
                 Comision_Chofer_D.VisibleIndex = -1;
                 Otros_D.Visible = false;
@@ -381,18 +456,17 @@ namespace TransportBusiness
                 Lavada_P.VisibleIndex = 14;
                 Thermo_P.Visible = true;
                 Thermo_P.VisibleIndex = 15;
-                Viaticos_P.Visible = true;
-                Viaticos_P.VisibleIndex = 16;
+               
                 Comision_Chofer_P.Visible = true;
-                Comision_Chofer_P.VisibleIndex = 17;
+                Comision_Chofer_P.VisibleIndex = 16;
                 Otros_P.Visible = true;
-                Otros_P.VisibleIndex = 18;
+                Otros_P.VisibleIndex = 17;
                 Gasto_Total_P.Visible = true;
-                Gasto_Total_P.VisibleIndex = 19;
+                Gasto_Total_P.VisibleIndex = 18;
                 PGastoIndirecto_P.Visible = true;
-                PGastoIndirecto_P.VisibleIndex = 20;
+                PGastoIndirecto_P.VisibleIndex = 19;
                 Ganancias_Total_P.Visible = true;
-                Ganancias_Total_P.VisibleIndex = 21;
+                Ganancias_Total_P.VisibleIndex = 20;
 
 
             }
@@ -414,10 +488,11 @@ namespace TransportBusiness
                 Monto_Factura_DG.VisibleIndex = 4;
                 Gasto_Total_DG.Visible = true;
                 Gasto_Total_DG.VisibleIndex = 5;
-                Utilidad_Total_DG.Visible = true;
-                Utilidad_Total_DG.VisibleIndex = 6;
                 GastoIndirecto_D.Visible = true;
-                GastoIndirecto_D.VisibleIndex = 7;
+                GastoIndirecto_D.VisibleIndex = 6;
+                Utilidad_Total_DG.Visible = true;
+                Utilidad_Total_DG.VisibleIndex = 7;
+               
 
 
                 Fecha_Salida.VisibleIndex = 1;
@@ -445,8 +520,7 @@ namespace TransportBusiness
                 Lavada_P.VisibleIndex = -1;
                 Thermo_P.Visible = false;
                 Thermo_P.VisibleIndex = -1;
-                Viaticos_P.Visible = false;
-                Viaticos_P.VisibleIndex = -1;
+                
                 Comision_Chofer_P.Visible = false;
                 Comision_Chofer_P.VisibleIndex = -1;
                 Otros_P.Visible = false;
@@ -476,18 +550,17 @@ namespace TransportBusiness
                 Lavada_D.VisibleIndex = 14;
                 Thermo_D.Visible = true;
                 Thermo_D.VisibleIndex = 15;
-                Viaticos_D.Visible = true;
-                Viaticos_D.VisibleIndex = 16;
+                
                 Comision_Chofer_D.Visible = true;
-                Comision_Chofer_D.VisibleIndex = 17;
+                Comision_Chofer_D.VisibleIndex = 16;
                 Otros_D.Visible = true;
-                Otros_D.VisibleIndex = 18;
+                Otros_D.VisibleIndex = 17;
                 Gasto_Total_D.Visible = true;
-                Gasto_Total_D.VisibleIndex = 19;
+                Gasto_Total_D.VisibleIndex = 18;
                 PGastoIndirecto_D.Visible = true;
-                PGastoIndirecto_D.VisibleIndex = 20;
+                PGastoIndirecto_D.VisibleIndex = 19;
                 Ganancias_Total_D.Visible = true;
-                Ganancias_Total_D.VisibleIndex = 21;
+                Ganancias_Total_D.VisibleIndex = 20;
 
             }
         }

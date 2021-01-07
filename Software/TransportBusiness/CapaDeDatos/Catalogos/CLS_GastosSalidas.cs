@@ -16,6 +16,7 @@ namespace CapaDeDatos
         public string Id_Activo { get; set; }
         public string Id_Empresa { get; set; }
         public decimal Monto_Indirecto { get; set; }
+        public string Cuentas { get; set; }
 
         public void MtdSeleccionarGastos()
         {
@@ -36,6 +37,8 @@ namespace CapaDeDatos
                 _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_Activo");
                 _dato.CadenaTexto = Id_Empresa;
                 _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_Empresa");
+                _dato.CadenaTexto = Cuentas;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Cuentas");
                 _conexion.EjecutarDataset();
 
                 if (_conexion.Exito)
@@ -112,6 +115,8 @@ namespace CapaDeDatos
                 _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_Activo");
                 _dato.CadenaTexto = Id_Empresa;
                 _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_Empresa");
+                _dato.CadenaTexto = Cuentas;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Cuentas");
                 _conexion.EjecutarDataset();
 
                 if (_conexion.Exito)
@@ -148,6 +153,8 @@ namespace CapaDeDatos
                 _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "F_Al");
                 _dato.CadenaTexto = Id_Empresa;
                 _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_Empresa");
+                _dato.CadenaTexto = Cuentas;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Cuentas");
                 _conexion.EjecutarDataset();
 
                 if (_conexion.Exito)

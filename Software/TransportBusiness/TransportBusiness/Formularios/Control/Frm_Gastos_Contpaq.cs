@@ -57,6 +57,38 @@ namespace TransportBusiness
                 string vFechaInicio = date1.Year.ToString() + DosCero(date1.Month.ToString()) + DosCero(date1.Day.ToString());
                 string vFechaFin = date2.Year.ToString() + DosCero(date2.Month.ToString()) + DosCero(date2.Day.ToString());
                 CLS_Gastos_Contpaq gs = new CLS_Gastos_Contpaq();
+
+                gs.MtdSeleccionarCtasNoConsidera();
+                string Cadena = String.Empty;
+                if (gs.Exito)
+                {
+                    for (int i = 0; i < gs.Datos.Rows.Count; i++)
+                    {
+
+                        string s = gs.Datos.Rows[i]["Id_cuenta"].ToString(); ;
+
+                        string[] subs = s.Split('-');
+                        string CodigoCta = String.Empty;
+                        foreach (var sub in subs)
+                        {
+                            CodigoCta= CodigoCta+sub;
+                        }
+
+
+                        if (i == 0)
+                        {
+                            Cadena = CodigoCta;
+                        }
+                        else
+                        {
+                            Cadena = Cadena + "," + CodigoCta;
+                        }
+
+                    }
+                }
+                
+                gs.Cuentas = Cadena;
+
                 gs.FechaInicio = vFechaInicio;
                 gs.FechaFin = vFechaFin;
                 gs.MtdSeleccionarGastos();
@@ -171,9 +203,11 @@ namespace TransportBusiness
             return Valor;
         }
 
-        private void Frm_Gastos_Contpaq_Load(object sender, EventArgs e)
-        {
+       
 
+        private void btnSalir_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            this.Close();
         }
     }
 }

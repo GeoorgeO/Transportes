@@ -36,6 +36,6 @@ BEGIN
 	
 		  select Id_cuenta 
 		  from Cuentas_Contables 
-		  where Id_cuenta in ('5102-02-02-00014','5102-02-02-00043','5102-02-02-00026')
+		  where Considera=0
 END
 GO

@@ -28,7 +28,9 @@ CREATE PROCEDURE SP_Gastos_Salidas_Select
 	@Parametro char(1),
 	@F_Del datetime,
 	@F_Al datetime,
-	@Id_Activo varchar(500)
+	@Id_Activo varchar(500),
+	@Id_Empresa varchar(4),
+	@Cuentas varchar(500)
 AS
 BEGIN
 	-- SET NOCOUNT ON added to prevent extra result sets from
@@ -53,6 +55,26 @@ BEGIN
 			SET @firstcomma = CHARINDEX(',', @Id_Activo, @firstcomma + 1)
 			SET @x = @x - 1
 		END
+
+		DECLARE @table2 TABLE ( id VARCHAR(60))
+		DECLARE @x2 INT = 0
+		DECLARE @firstcomma2 INT = 0
+		DECLARE @nextcomma2 INT = 0
+
+		SET @x2 = LEN(@Cuentas) - LEN(REPLACE(@Cuentas, ',', '')) + 1 
+
+		WHILE @x2 > 0
+			BEGIN
+				SET @nextcomma2 = CASE WHEN CHARINDEX(',', @Cuentas, @firstcomma2 + 1) = 0
+									  THEN LEN(@Cuentas) + 1
+									  ELSE CHARINDEX(',', @Cuentas, @firstcomma2 + 1)
+								 END
+				INSERT  INTO @table2
+				VALUES  ( SUBSTRING(@Cuentas, @firstcomma2 + 1, (@nextcomma2 - @firstcomma2) - 1) )
+				SET @firstcomma2 = CHARINDEX(',', @Cuentas, @firstcomma2 + 1)
+				SET @x2 = @x2 - 1
+			END
+
 
     -- Insert statements for procedure here
 	select s.Id_Salida,
@@ -84,14 +106,16 @@ BEGIN
 		isnull(Ther.Importe_D,0) as Thermo_D,
 		isnull(otro.Importe_P,0) as Otros_P,
 		isnull(otro.Importe_D,0) as Otros_D,
-		isnull(sv.Importe_P,0) as Viaticos_P,
-		isnull(sv.Importe_D,0) as Viaticos_D,
 		isnull(sh.Importe_P,0) as Comision_Chofer_P,
 		isnull(sh.Importe_D,0) as Comision_Chofer_D,
-		isnull(sd.Importe_P,0)+isnull(trans.Importe_P,0)+isnull(Caseta.Importe_P,0)+isnull(PFP.Importe_P,0)+isnull(tReten1.Importe_P,0)+isnull(pens.Importe_P,0)+isnull(lav.Importe_P,0)+isnull(Ther.Importe_P,0)+isnull(otro.Importe_P,0)+isnull(sv.Importe_P,0)+isnull(sh.Importe_P,0) as Gasto_Total_P, 
-		isnull(sf.Importe_P,0)- (isnull(sd.Importe_P,0)+isnull(trans.Importe_P,0)+isnull(Caseta.Importe_P,0)+isnull(PFP.Importe_P,0)+isnull(tReten1.Importe_P,0)+isnull(pens.Importe_P,0)+isnull(lav.Importe_P,0)+isnull(Ther.Importe_P,0)+isnull(otro.Importe_P,0)+isnull(sv.Importe_P,0)+isnull(sh.Importe_P,0)) as Ganancias_Total_P,
-		isnull(sd.Importe_D,0)+isnull(trans.Importe_D,0)+isnull(Caseta.Importe_D,0)+isnull(PFP.Importe_D,0)+isnull(tReten1.Importe_D,0)+isnull(pens.Importe_D,0)+isnull(lav.Importe_D,0)+isnull(Ther.Importe_D,0)+isnull(otro.Importe_D,0)+isnull(sv.Importe_D,0)+isnull(sh.Importe_D,0) as Gasto_Total_D, 
-		isnull(sf.Importe_D,0)- (isnull(sd.Importe_D,0)+isnull(trans.Importe_D,0)+isnull(Caseta.Importe_D,0)+isnull(PFP.Importe_D,0)+isnull(tReten1.Importe_D,0)+isnull(pens.Importe_D,0)+isnull(lav.Importe_D,0)+isnull(Ther.Importe_D,0)+isnull(otro.Importe_D,0)+isnull(sv.Importe_D,0)+isnull(sh.Importe_D,0)) as Ganancias_Total_D,
+		((Gas.Importe_P/(select count(Id_Activo) from transportes.dbo.activos where Status='ACTIVO' and Activo_Primario=1 and Id_Empresa like '%'+@Id_empresa+'%')) / (select count(ta.Id_Salida) from transportes.dbo.Salidas as ta where ta.Id_Activo_Principal=a.Id_Activo and ta.Fecha_Salida between @F_Del and @F_Al) ) as PGastoIndirecto_P,
+		((Gas.Importe_D/(select count(Id_Activo) from transportes.dbo.activos where Status='ACTIVO' and Activo_Primario=1 and Id_Empresa like '%'+@Id_empresa+'%'))/ (select count(ta.Id_Salida) from transportes.dbo.Salidas as ta where ta.Id_Activo_Principal=a.Id_Activo and ta.Fecha_Salida between @F_Del and @F_Al) ) as PGastoIndirecto_D,
+		isnull(sd.Importe_P,0)+isnull(trans.Importe_P,0)+isnull(Caseta.Importe_P,0)+isnull(PFP.Importe_P,0)+isnull(tReten1.Importe_P,0)+isnull(pens.Importe_P,0)+isnull(lav.Importe_P,0)+isnull(Ther.Importe_P,0)+isnull(otro.Importe_P,0)+isnull(sh.Importe_P,0) as Gasto_Total_P, 
+		isnull(sf.Importe_P,0)- (isnull(sd.Importe_P,0)+isnull(trans.Importe_P,0)+isnull(Caseta.Importe_P,0)+isnull(PFP.Importe_P,0)+isnull(tReten1.Importe_P,0)+isnull(pens.Importe_P,0)+isnull(lav.Importe_P,0)+isnull(Ther.Importe_P,0)+isnull(otro.Importe_P,0)+isnull(sh.Importe_P,0)) 
+			- ((Gas.Importe_P/(select count(Id_Activo) from transportes.dbo.activos where Status='ACTIVO' and Activo_Primario=1 and Id_Empresa like '%'+@Id_empresa+'%')) / (select count(ta.Id_Salida) from transportes.dbo.Salidas as ta where ta.Id_Activo_Principal=a.Id_Activo and ta.Fecha_Salida between @F_Del and @F_Al) ) as Ganancias_Total_P,
+		isnull(sd.Importe_D,0)+isnull(trans.Importe_D,0)+isnull(Caseta.Importe_D,0)+isnull(PFP.Importe_D,0)+isnull(tReten1.Importe_D,0)+isnull(pens.Importe_D,0)+isnull(lav.Importe_D,0)+isnull(Ther.Importe_D,0)+isnull(otro.Importe_D,0)+isnull(sh.Importe_D,0) as Gasto_Total_D, 
+		isnull(sf.Importe_D,0)- (isnull(sd.Importe_D,0)+isnull(trans.Importe_D,0)+isnull(Caseta.Importe_D,0)+isnull(PFP.Importe_D,0)+isnull(tReten1.Importe_D,0)+isnull(pens.Importe_D,0)+isnull(lav.Importe_D,0)+isnull(Ther.Importe_D,0)+isnull(otro.Importe_D,0)+isnull(sh.Importe_D,0))
+			- ((Gas.Importe_D/(select count(Id_Activo) from transportes.dbo.activos where Status='ACTIVO' and Activo_Primario=1 and Id_Empresa like '%'+@Id_empresa+'%'))/ (select count(ta.Id_Salida) from transportes.dbo.Salidas as ta where ta.Id_Activo_Principal=a.Id_Activo and ta.Fecha_Salida between @F_Del and @F_Al) ) as Ganancias_Total_D,
 		s.Observaciones from transportes.dbo.Salidas as s
 	left join transportes.dbo.Activos as a on a.Id_Activo=s.Id_Activo_Principal
 	left join transportes.dbo.Empleado as ope on ope.Id_Empleado=s.Id_Operador
@@ -108,8 +132,10 @@ BEGIN
 	left join (select Id_Salida, sum(Importe_P) as Importe_P,sum(Importe_D) as Importe_D from(select id_Salida,case Moneda when 'D' then Importe*(select TC.Tipo_Cambio from Transportes.dbo.Tipo_Cambio as TC where TC.Fecha=Fecha_Factura) else Importe end as Importe_P,case Moneda when 'P' then Importe/(select TC.Tipo_Cambio from Transportes.dbo.Tipo_Cambio as TC where TC.Fecha=Fecha_Factura) else Importe end as Importe_D from transportes.dbo.Salidas_OtrosGastos where Id_GastoDirecto='0007' ) as T group by Id_Salida) as lav on lav.Id_Salida=s.Id_Salida
 	left join (select Id_Salida, sum(Importe_P) as Importe_P,sum(Importe_D) as Importe_D from(select id_Salida,case Moneda when 'D' then Importe*(select TC.Tipo_Cambio from Transportes.dbo.Tipo_Cambio as TC where TC.Fecha=Fecha_Factura) else Importe end as Importe_P,case Moneda when 'P' then Importe/(select TC.Tipo_Cambio from Transportes.dbo.Tipo_Cambio as TC where TC.Fecha=Fecha_Factura) else Importe end as Importe_D from transportes.dbo.Salidas_OtrosGastos where Id_GastoDirecto='0008' ) as T group by Id_Salida) as Ther on Ther.Id_Salida=s.Id_Salida
 	left join (select Id_Salida, sum(Importe_P) as Importe_P,sum(Importe_D) as Importe_D from(select id_Salida,case Moneda when 'D' then Importe*(select TC.Tipo_Cambio from Transportes.dbo.Tipo_Cambio as TC where TC.Fecha=Fecha_Factura) else Importe end as Importe_P,case Moneda when 'P' then Importe/(select TC.Tipo_Cambio from Transportes.dbo.Tipo_Cambio as TC where TC.Fecha=Fecha_Factura) else Importe end as Importe_D from transportes.dbo.Salidas_OtrosGastos where Id_GastoDirecto='0009' ) as T group by Id_Salida) as otro on otro.Id_Salida=s.Id_Salida
-	left join (select Id_Salida, sum(Importe_P) as Importe_P,sum(Importe_D) as Importe_D from(select id_Salida,case Moneda when 'D' then Importe*(select TC.Tipo_Cambio from Transportes.dbo.Tipo_Cambio as TC where TC.Fecha=FechaPago) else Importe end as Importe_P,case Moneda when 'P' then Importe/(select TC.Tipo_Cambio from Transportes.dbo.Tipo_Cambio as TC where TC.Fecha=FechaPago) else Importe end as Importe_D from transportes.dbo.Salidas_Viaticos ) as T group by Id_Salida) as sv on sv.Id_Salida=s.Id_Salida
-	left join (select Id_Salida, sum(Importe_P) as Importe_P,sum(Importe_D) as Importe_D from(select id_Salida,case Moneda when 'D' then Importe*(select TC.Tipo_Cambio from Transportes.dbo.Tipo_Cambio as TC where TC.Fecha=Fecha_Honorario) else Importe end as Importe_P,case Moneda when 'P' then Importe/(select TC.Tipo_Cambio from Transportes.dbo.Tipo_Cambio as TC where TC.Fecha=Fecha_Honorario) else Importe end as Importe_D from transportes.dbo.Salidas_Honorarios ) as T group by Id_Salida) as sh on sh.Id_Salida=s.Id_Salida
+	--left join (select Id_Salida, sum(Importe_P) as Importe_P,sum(Importe_D) as Importe_D from(select id_Salida,case Moneda when 'D' then Importe*(select TC.Tipo_Cambio from Transportes.dbo.Tipo_Cambio as TC where TC.Fecha=FechaPago) else Importe end as Importe_P,case Moneda when 'P' then Importe/(select TC.Tipo_Cambio from Transportes.dbo.Tipo_Cambio as TC where TC.Fecha=FechaPago) else Importe end as Importe_D from transportes.dbo.Salidas_Viaticos ) as T group by Id_Salida) as sv on sv.Id_Salida=s.Id_Salida
+	left join (select Id_Salida, sum(Importe_P) as Importe_P,sum(Importe_D) as Importe_D from(select id_Salida,case Moneda when 'D' then Importe*(select TC.Tipo_Cambio from Transportes.dbo.Tipo_Cambio as TC where TC.Fecha=Fecha_Honorario) else Importe end as Importe_P,case Moneda when 'P' then Importe/(select TC.Tipo_Cambio from Transportes.dbo.Tipo_Cambio as TC where TC.Fecha=Fecha_Honorario) else Importe end as Importe_D from transportes.dbo.Salidas_Honorarios where Concepto!='GASTOS PAGADOS POR OPERADOR' ) as T group by Id_Salida) as sh on sh.Id_Salida=s.Id_Salida
+	--left join (select Id_Salida, sum(Importe_P) as Importe_P,sum(Importe_D) as Importe_D from(select id_Salida,case Moneda when 'D' then Importe*(select TC.Tipo_Cambio from Transportes.dbo.Tipo_Cambio as TC where TC.Fecha=Fecha_Honorario) else Importe end as Importe_P,case Moneda when 'P' then Importe/(select TC.Tipo_Cambio from Transportes.dbo.Tipo_Cambio as TC where TC.Fecha=Fecha_Honorario) else Importe end as Importe_D from transportes.dbo.Salidas_Honorarios where Concepto='GASTOS PAGADOS POR OPERADOR' ) as T group by Id_Salida) as sgv on sgv.Id_Salida=s.Id_Salida
+	left join (select sum(Importe_P) as Importe_P,sum(Importe_D) as Importe_D from (select  Importe as Importe_P,  Importe/(select TC.Tipo_Cambio from Transportes.dbo.Tipo_Cambio as TC where TC.Fecha=Fecha_Gasto)  as Importe_D,Fecha_Gasto from transportes.dbo.Gastos where Id_Cuenta not in (select id from @table2) ) as T where Fecha_Gasto between @F_Del and @F_Al  ) as Gas on 1=1
 	where ('F'=@Parametro and Fecha_Salida between @F_Del and @F_Al ) 
 		or ('A'=@Parametro and Id_Activo_Principal=@Id_Activo) 
 		or ('2'=@Parametro and (Fecha_Salida between @F_Del and @F_Al and Id_Activo_Principal in (select * from @table)))
