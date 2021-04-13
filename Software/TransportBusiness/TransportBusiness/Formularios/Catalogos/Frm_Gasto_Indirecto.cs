@@ -175,5 +175,22 @@ namespace TransportBusiness
                 textCtasContables.Tag = clase.vId_Cuenta;
             }
         }
+
+        private void gridControl1_DoubleClick(object sender, EventArgs e)
+        {
+            if (PaSel == true)
+            {
+                if (textId.Text != string.Empty && textNombre.Text != string.Empty)
+                {
+                    vid_GastoIndirecto = textId.Text;
+                    vNombre_GastoIndirecto = textNombre.Text;
+                    this.Close();
+                }
+                else
+                {
+                    XtraMessageBox.Show("No se ha seleccionado un Gasto Indirecto");
+                }
+            }
+        }
     }
 }

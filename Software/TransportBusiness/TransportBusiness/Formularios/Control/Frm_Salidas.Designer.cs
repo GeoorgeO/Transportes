@@ -239,6 +239,7 @@
             this.labelControl25 = new DevExpress.XtraEditors.LabelControl();
             this.xtraTabPage6 = new DevExpress.XtraTab.XtraTabPage();
             this.panelControl11 = new DevExpress.XtraEditors.PanelControl();
+            this.checkAll = new DevExpress.XtraEditors.CheckEdit();
             this.btnGuardarCheck = new DevExpress.XtraEditors.SimpleButton();
             this.Indicador = new DevExpress.XtraGauges.Win.GaugeControl();
             this.cGauge1 = new DevExpress.XtraGauges.Win.Gauges.Circular.CircularGauge();
@@ -298,6 +299,8 @@
             this.barStaticItem2 = new DevExpress.XtraBars.BarStaticItem();
             this.barDockControl8 = new DevExpress.XtraBars.BarDockControl();
             this.OpenDialog = new DevExpress.XtraEditors.XtraOpenFileDialog(this.components);
+            this.check_SP = new DevExpress.XtraEditors.CheckEdit();
+            this.SinPago = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
@@ -405,6 +408,7 @@
             this.xtraTabPage6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl11)).BeginInit();
             this.panelControl11.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.checkAll.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cGauge1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.arcScaleBackgroundLayerComponent1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.arcScaleComponent1)).BeginInit();
@@ -434,6 +438,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.textImporteC.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNombreArchivoXMLC.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNombreArchivoPDFC.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.check_SP.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // barManager1
@@ -665,7 +670,7 @@
             this.textProductor.MenuManager = this.barManager1;
             this.textProductor.Name = "textProductor";
             this.textProductor.Size = new System.Drawing.Size(234, 20);
-            this.textProductor.TabIndex = 81;
+            this.textProductor.TabIndex = 18;
             // 
             // labelControl31
             // 
@@ -681,7 +686,7 @@
             this.memoObservaciones.MenuManager = this.barManager1;
             this.memoObservaciones.Name = "memoObservaciones";
             this.memoObservaciones.Size = new System.Drawing.Size(234, 74);
-            this.memoObservaciones.TabIndex = 79;
+            this.memoObservaciones.TabIndex = 19;
             // 
             // labelControl29
             // 
@@ -698,7 +703,7 @@
             this.textMunicipio.MenuManager = this.barManager1;
             this.textMunicipio.Name = "textMunicipio";
             this.textMunicipio.Size = new System.Drawing.Size(234, 20);
-            this.textMunicipio.TabIndex = 77;
+            this.textMunicipio.TabIndex = 17;
             // 
             // btnBusqHuerta
             // 
@@ -723,7 +728,7 @@
             this.textHuerta.MenuManager = this.barManager1;
             this.textHuerta.Name = "textHuerta";
             this.textHuerta.Size = new System.Drawing.Size(234, 20);
-            this.textHuerta.TabIndex = 74;
+            this.textHuerta.TabIndex = 16;
             // 
             // btnMotivoSalida
             // 
@@ -743,7 +748,7 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.cboMotivoSalida.Properties.PopupView = this.gridLookUpEdit1View;
             this.cboMotivoSalida.Size = new System.Drawing.Size(222, 20);
-            this.cboMotivoSalida.TabIndex = 72;
+            this.cboMotivoSalida.TabIndex = 10;
             // 
             // gridLookUpEdit1View
             // 
@@ -783,7 +788,7 @@
             this.textAyudante.MenuManager = this.barManager1;
             this.textAyudante.Name = "textAyudante";
             this.textAyudante.Size = new System.Drawing.Size(234, 20);
-            this.textAyudante.TabIndex = 68;
+            this.textAyudante.TabIndex = 4;
             // 
             // btnBusqSalida
             // 
@@ -820,7 +825,7 @@
             this.textLts.Properties.Mask.EditMask = "n";
             this.textLts.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.textLts.Size = new System.Drawing.Size(100, 20);
-            this.textLts.TabIndex = 63;
+            this.textLts.TabIndex = 15;
             // 
             // textDiasViaje
             // 
@@ -832,7 +837,7 @@
             this.textDiasViaje.Properties.Mask.EditMask = "n";
             this.textDiasViaje.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.textDiasViaje.Size = new System.Drawing.Size(100, 20);
-            this.textDiasViaje.TabIndex = 62;
+            this.textDiasViaje.TabIndex = 14;
             // 
             // labelControl11
             // 
@@ -860,7 +865,7 @@
             this.textKmFin.Properties.Mask.EditMask = "n";
             this.textKmFin.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.textKmFin.Size = new System.Drawing.Size(100, 20);
-            this.textKmFin.TabIndex = 59;
+            this.textKmFin.TabIndex = 13;
             // 
             // textKmIni
             // 
@@ -872,7 +877,7 @@
             this.textKmIni.Properties.Mask.EditMask = "n";
             this.textKmIni.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.textKmIni.Size = new System.Drawing.Size(100, 20);
-            this.textKmIni.TabIndex = 58;
+            this.textKmIni.TabIndex = 12;
             // 
             // btnBusqClientes
             // 
@@ -897,7 +902,7 @@
             this.textCliente.MenuManager = this.barManager1;
             this.textCliente.Name = "textCliente";
             this.textCliente.Size = new System.Drawing.Size(222, 20);
-            this.textCliente.TabIndex = 55;
+            this.textCliente.TabIndex = 11;
             // 
             // labelControl9
             // 
@@ -922,7 +927,7 @@
             this.textDestino.MenuManager = this.barManager1;
             this.textDestino.Name = "textDestino";
             this.textDestino.Size = new System.Drawing.Size(100, 20);
-            this.textDestino.TabIndex = 52;
+            this.textDestino.TabIndex = 9;
             // 
             // textOrigen
             // 
@@ -931,7 +936,7 @@
             this.textOrigen.MenuManager = this.barManager1;
             this.textOrigen.Name = "textOrigen";
             this.textOrigen.Size = new System.Drawing.Size(100, 20);
-            this.textOrigen.TabIndex = 51;
+            this.textOrigen.TabIndex = 8;
             // 
             // btnBusqRuta
             // 
@@ -956,7 +961,7 @@
             this.textRuta.MenuManager = this.barManager1;
             this.textRuta.Name = "textRuta";
             this.textRuta.Size = new System.Drawing.Size(222, 20);
-            this.textRuta.TabIndex = 48;
+            this.textRuta.TabIndex = 7;
             // 
             // dtFechaSalida
             // 
@@ -969,7 +974,7 @@
             this.dtFechaSalida.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.dtFechaSalida.Size = new System.Drawing.Size(89, 20);
-            this.dtFechaSalida.TabIndex = 47;
+            this.dtFechaSalida.TabIndex = 1;
             // 
             // labelControl6
             // 
@@ -994,7 +999,7 @@
             this.textOperador.MenuManager = this.barManager1;
             this.textOperador.Name = "textOperador";
             this.textOperador.Size = new System.Drawing.Size(234, 20);
-            this.textOperador.TabIndex = 20;
+            this.textOperador.TabIndex = 3;
             // 
             // btnBusqActivoAdicional
             // 
@@ -1053,7 +1058,7 @@
             this.textActivoSec.MenuManager = this.barManager1;
             this.textActivoSec.Name = "textActivoSec";
             this.textActivoSec.Size = new System.Drawing.Size(234, 20);
-            this.textActivoSec.TabIndex = 4;
+            this.textActivoSec.TabIndex = 5;
             // 
             // labelControl2
             // 
@@ -2124,7 +2129,8 @@
             this.DiferidoF,
             this.Fecha_Factura,
             this.Fecha_Cobro,
-            this.Fecha_Pago});
+            this.Fecha_Pago,
+            this.SinPago});
             this.gridView6.GridControl = this.gridFacturas;
             this.gridView6.Name = "gridView6";
             this.gridView6.OptionsBehavior.Editable = false;
@@ -2223,6 +2229,7 @@
             // 
             // panelControl12
             // 
+            this.panelControl12.Controls.Add(this.check_SP);
             this.panelControl12.Controls.Add(this.checkPagada);
             this.panelControl12.Controls.Add(this.datePago);
             this.panelControl12.Controls.Add(this.dateFactura);
@@ -2255,7 +2262,7 @@
             // checkPagada
             // 
             this.checkPagada.EditValue = true;
-            this.checkPagada.Location = new System.Drawing.Point(880, 40);
+            this.checkPagada.Location = new System.Drawing.Point(949, 40);
             this.checkPagada.MenuManager = this.barManager1;
             this.checkPagada.Name = "checkPagada";
             this.checkPagada.Properties.Caption = "Pagada";
@@ -2266,7 +2273,7 @@
             // datePago
             // 
             this.datePago.EditValue = null;
-            this.datePago.Location = new System.Drawing.Point(780, 39);
+            this.datePago.Location = new System.Drawing.Point(849, 39);
             this.datePago.MenuManager = this.barManager1;
             this.datePago.Name = "datePago";
             this.datePago.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -2292,7 +2299,7 @@
             // dateCobro
             // 
             this.dateCobro.EditValue = null;
-            this.dateCobro.Location = new System.Drawing.Point(618, 39);
+            this.dateCobro.Location = new System.Drawing.Point(687, 39);
             this.dateCobro.MenuManager = this.barManager1;
             this.dateCobro.Name = "dateCobro";
             this.dateCobro.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -2304,7 +2311,7 @@
             // 
             // labelControl46
             // 
-            this.labelControl46.Location = new System.Drawing.Point(737, 43);
+            this.labelControl46.Location = new System.Drawing.Point(806, 43);
             this.labelControl46.Name = "labelControl46";
             this.labelControl46.Size = new System.Drawing.Size(41, 13);
             this.labelControl46.TabIndex = 94;
@@ -2312,7 +2319,7 @@
             // 
             // labelControl45
             // 
-            this.labelControl45.Location = new System.Drawing.Point(566, 43);
+            this.labelControl45.Location = new System.Drawing.Point(635, 43);
             this.labelControl45.Name = "labelControl45";
             this.labelControl45.Size = new System.Drawing.Size(46, 13);
             this.labelControl45.TabIndex = 93;
@@ -2330,7 +2337,7 @@
             // 
             this.rbTotalF.AutoSize = true;
             this.rbTotalF.Checked = true;
-            this.rbTotalF.Location = new System.Drawing.Point(810, 14);
+            this.rbTotalF.Location = new System.Drawing.Point(879, 14);
             this.rbTotalF.Name = "rbTotalF";
             this.rbTotalF.Size = new System.Drawing.Size(49, 17);
             this.rbTotalF.TabIndex = 91;
@@ -2341,7 +2348,7 @@
             // rbDiferidoF
             // 
             this.rbDiferidoF.AutoSize = true;
-            this.rbDiferidoF.Location = new System.Drawing.Point(737, 14);
+            this.rbDiferidoF.Location = new System.Drawing.Point(806, 14);
             this.rbDiferidoF.Name = "rbDiferidoF";
             this.rbDiferidoF.Size = new System.Drawing.Size(62, 17);
             this.rbDiferidoF.TabIndex = 90;
@@ -2350,7 +2357,7 @@
             // 
             // cboMoneda
             // 
-            this.cboMoneda.Location = new System.Drawing.Point(609, 12);
+            this.cboMoneda.Location = new System.Drawing.Point(678, 12);
             this.cboMoneda.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cboMoneda.MenuManager = this.barManager1;
             this.cboMoneda.Name = "cboMoneda";
@@ -2365,7 +2372,7 @@
             // 
             // labelControl34
             // 
-            this.labelControl34.Location = new System.Drawing.Point(566, 16);
+            this.labelControl34.Location = new System.Drawing.Point(635, 16);
             this.labelControl34.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.labelControl34.Name = "labelControl34";
             this.labelControl34.Size = new System.Drawing.Size(42, 13);
@@ -2374,7 +2381,7 @@
             // 
             // labelIdArchivo
             // 
-            this.labelIdArchivo.Location = new System.Drawing.Point(871, 4);
+            this.labelIdArchivo.Location = new System.Drawing.Point(940, 4);
             this.labelIdArchivo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.labelIdArchivo.Name = "labelIdArchivo";
             this.labelIdArchivo.Size = new System.Drawing.Size(6, 13);
@@ -2402,7 +2409,7 @@
             // 
             // btnAgregarFacturas
             // 
-            this.btnAgregarFacturas.Location = new System.Drawing.Point(984, 37);
+            this.btnAgregarFacturas.Location = new System.Drawing.Point(1034, 37);
             this.btnAgregarFacturas.Name = "btnAgregarFacturas";
             this.btnAgregarFacturas.Size = new System.Drawing.Size(75, 23);
             this.btnAgregarFacturas.TabIndex = 66;
@@ -2487,6 +2494,7 @@
             // 
             // panelControl11
             // 
+            this.panelControl11.Controls.Add(this.checkAll);
             this.panelControl11.Controls.Add(this.btnGuardarCheck);
             this.panelControl11.Controls.Add(this.Indicador);
             this.panelControl11.Controls.Add(this.labelControl32);
@@ -2506,6 +2514,16 @@
             this.panelControl11.Name = "panelControl11";
             this.panelControl11.Size = new System.Drawing.Size(1118, 311);
             this.panelControl11.TabIndex = 0;
+            // 
+            // checkAll
+            // 
+            this.checkAll.Location = new System.Drawing.Point(130, 167);
+            this.checkAll.MenuManager = this.barManager1;
+            this.checkAll.Name = "checkAll";
+            this.checkAll.Properties.Caption = "Marcar todo";
+            this.checkAll.Size = new System.Drawing.Size(109, 19);
+            this.checkAll.TabIndex = 15;
+            this.checkAll.CheckedChanged += new System.EventHandler(this.checkAll_CheckedChanged);
             // 
             // btnGuardarCheck
             // 
@@ -2655,7 +2673,7 @@
             this.checkLicencia.Location = new System.Drawing.Point(14, 142);
             this.checkLicencia.MenuManager = this.barManager1;
             this.checkLicencia.Name = "checkLicencia";
-            this.checkLicencia.Properties.Caption = "Tarejta de Licencia";
+            this.checkLicencia.Properties.Caption = "Tarjeta de Licencia";
             this.checkLicencia.Size = new System.Drawing.Size(151, 19);
             this.checkLicencia.TabIndex = 5;
             // 
@@ -2664,7 +2682,7 @@
             this.checkTCombustible.Location = new System.Drawing.Point(14, 117);
             this.checkTCombustible.MenuManager = this.barManager1;
             this.checkTCombustible.Name = "checkTCombustible";
-            this.checkTCombustible.Properties.Caption = "Tarejta de Combustible";
+            this.checkTCombustible.Properties.Caption = "Tarjeta de Combustible";
             this.checkTCombustible.Size = new System.Drawing.Size(151, 19);
             this.checkTCombustible.TabIndex = 4;
             // 
@@ -2673,7 +2691,7 @@
             this.checkTCirculacion.Location = new System.Drawing.Point(14, 92);
             this.checkTCirculacion.MenuManager = this.barManager1;
             this.checkTCirculacion.Name = "checkTCirculacion";
-            this.checkTCirculacion.Properties.Caption = "Tarejta de Circulación";
+            this.checkTCirculacion.Properties.Caption = "Tarjeta de Circulación";
             this.checkTCirculacion.Size = new System.Drawing.Size(151, 19);
             this.checkTCirculacion.TabIndex = 3;
             // 
@@ -3077,6 +3095,23 @@
             // 
             this.OpenDialog.FileName = "xtraOpenFileDialog1";
             // 
+            // check_SP
+            // 
+            this.check_SP.Location = new System.Drawing.Point(558, 12);
+            this.check_SP.MenuManager = this.barManager1;
+            this.check_SP.Name = "check_SP";
+            this.check_SP.Properties.Caption = "Sin Pago";
+            this.check_SP.Size = new System.Drawing.Size(60, 19);
+            this.check_SP.TabIndex = 99;
+            // 
+            // SinPago
+            // 
+            this.SinPago.Caption = "Sin Pago";
+            this.SinPago.FieldName = "SinPago";
+            this.SinPago.Name = "SinPago";
+            this.SinPago.Visible = true;
+            this.SinPago.VisibleIndex = 8;
+            // 
             // Frm_Salidas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -3208,6 +3243,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.panelControl11)).EndInit();
             this.panelControl11.ResumeLayout(false);
             this.panelControl11.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.checkAll.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cGauge1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.arcScaleBackgroundLayerComponent1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.arcScaleComponent1)).EndInit();
@@ -3238,6 +3274,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.textImporteC.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNombreArchivoXMLC.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNombreArchivoPDFC.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.check_SP.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -3513,5 +3550,8 @@
         private DevExpress.XtraEditors.LabelControl labelControl50;
         private DevExpress.XtraEditors.DateEdit dateFechaDiesel;
         private DevExpress.XtraEditors.LabelControl labelControl49;
+        private DevExpress.XtraEditors.CheckEdit checkAll;
+        private DevExpress.XtraEditors.CheckEdit check_SP;
+        private DevExpress.XtraGrid.Columns.GridColumn SinPago;
     }
 }

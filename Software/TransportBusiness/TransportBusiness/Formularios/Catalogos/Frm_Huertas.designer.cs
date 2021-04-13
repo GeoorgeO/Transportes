@@ -845,6 +845,7 @@
             this.dtgHuertas.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.dtgValHuertas});
             this.dtgHuertas.Click += new System.EventHandler(this.dtgHuertas_Click);
+            this.dtgHuertas.DoubleClick += new System.EventHandler(this.dtgHuertas_DoubleClick);
             // 
             // dtgValHuertas
             // 

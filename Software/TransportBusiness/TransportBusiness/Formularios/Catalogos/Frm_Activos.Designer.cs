@@ -103,6 +103,7 @@
             this.Operador = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Id_Empresa = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Empresa = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Activo_Primario = new DevExpress.XtraGrid.Columns.GridColumn();
             this.bandedGridView1 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridView();
             this.gridBand1 = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
             this.bandedGridColumn1 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
@@ -133,6 +134,8 @@
             this.bandedGridColumn26 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
+            this.labelControl23 = new DevExpress.XtraEditors.LabelControl();
+            this.radioPrimario = new DevExpress.XtraEditors.RadioGroup();
             this.btnTIAVE = new DevExpress.XtraEditors.SimpleButton();
             this.btnTCombustible = new DevExpress.XtraEditors.SimpleButton();
             this.btnBusqPoliza = new DevExpress.XtraEditors.SimpleButton();
@@ -190,9 +193,6 @@
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.txtIdActivo = new DevExpress.XtraEditors.TextEdit();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
-            this.radioPrimario = new DevExpress.XtraEditors.RadioGroup();
-            this.labelControl23 = new DevExpress.XtraEditors.LabelControl();
-            this.Activo_Primario = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
@@ -206,6 +206,7 @@
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.radioPrimario.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textFolioCircula.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textFactura.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cboAsignado.Properties)).BeginInit();
@@ -231,7 +232,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtTipoPlaca.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNombreActivo.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtIdActivo.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radioPrimario.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // barManager1
@@ -359,9 +359,9 @@
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 537);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 539);
             this.barDockControlBottom.Manager = this.barManager1;
-            this.barDockControlBottom.Size = new System.Drawing.Size(1032, 27);
+            this.barDockControlBottom.Size = new System.Drawing.Size(1032, 25);
             // 
             // barDockControlLeft
             // 
@@ -369,7 +369,7 @@
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.barDockControlLeft.Location = new System.Drawing.Point(0, 0);
             this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Size = new System.Drawing.Size(71, 537);
+            this.barDockControlLeft.Size = new System.Drawing.Size(73, 539);
             // 
             // barDockControlRight
             // 
@@ -377,7 +377,7 @@
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
             this.barDockControlRight.Location = new System.Drawing.Point(1032, 0);
             this.barDockControlRight.Manager = this.barManager1;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 537);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 539);
             // 
             // repositoryItemTextEdit1
             // 
@@ -388,10 +388,10 @@
             this.panelControl2.Controls.Add(this.checkActivo);
             this.panelControl2.Controls.Add(this.dtgActivos);
             this.panelControl2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelControl2.Location = new System.Drawing.Point(71, 300);
+            this.panelControl2.Location = new System.Drawing.Point(73, 300);
             this.panelControl2.Name = "panelControl2";
             this.panelControl2.Padding = new System.Windows.Forms.Padding(5, 20, 5, 5);
-            this.panelControl2.Size = new System.Drawing.Size(961, 237);
+            this.panelControl2.Size = new System.Drawing.Size(959, 239);
             this.panelControl2.TabIndex = 21;
             // 
             // checkActivo
@@ -411,13 +411,14 @@
             this.dtgActivos.MainView = this.cardView1;
             this.dtgActivos.MenuManager = this.barManager1;
             this.dtgActivos.Name = "dtgActivos";
-            this.dtgActivos.Size = new System.Drawing.Size(947, 208);
+            this.dtgActivos.Size = new System.Drawing.Size(945, 210);
             this.dtgActivos.TabIndex = 0;
             this.dtgActivos.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.cardView1,
             this.gridView1,
             this.bandedGridView1});
             this.dtgActivos.Click += new System.EventHandler(this.dtgActivos_Click);
+            this.dtgActivos.DoubleClick += new System.EventHandler(this.dtgActivos_DoubleClick);
             // 
             // cardView1
             // 
@@ -920,6 +921,14 @@
             this.Empresa.Visible = true;
             this.Empresa.VisibleIndex = 24;
             // 
+            // Activo_Primario
+            // 
+            this.Activo_Primario.Caption = "Primario";
+            this.Activo_Primario.FieldName = "Activo_Primario";
+            this.Activo_Primario.Name = "Activo_Primario";
+            this.Activo_Primario.Visible = true;
+            this.Activo_Primario.VisibleIndex = 25;
+            // 
             // bandedGridView1
             // 
             this.bandedGridView1.Bands.AddRange(new DevExpress.XtraGrid.Views.BandedGrid.GridBand[] {
@@ -1174,10 +1183,10 @@
             // 
             this.panelControl1.Controls.Add(this.groupControl1);
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelControl1.Location = new System.Drawing.Point(71, 0);
+            this.panelControl1.Location = new System.Drawing.Point(73, 0);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Padding = new System.Windows.Forms.Padding(5, 5, 5, 5);
-            this.panelControl1.Size = new System.Drawing.Size(961, 300);
+            this.panelControl1.Padding = new System.Windows.Forms.Padding(5);
+            this.panelControl1.Size = new System.Drawing.Size(959, 300);
             this.panelControl1.TabIndex = 20;
             // 
             // groupControl1
@@ -1244,9 +1253,28 @@
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl1.Location = new System.Drawing.Point(7, 7);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(947, 286);
+            this.groupControl1.Size = new System.Drawing.Size(945, 286);
             this.groupControl1.TabIndex = 0;
             this.groupControl1.Text = "Activo";
+            // 
+            // labelControl23
+            // 
+            this.labelControl23.Location = new System.Drawing.Point(345, 250);
+            this.labelControl23.Name = "labelControl23";
+            this.labelControl23.Size = new System.Drawing.Size(57, 13);
+            this.labelControl23.TabIndex = 70;
+            this.labelControl23.Text = "Tipo Activo:";
+            // 
+            // radioPrimario
+            // 
+            this.radioPrimario.Location = new System.Drawing.Point(443, 246);
+            this.radioPrimario.MenuManager = this.barManager1;
+            this.radioPrimario.Name = "radioPrimario";
+            this.radioPrimario.Properties.Items.AddRange(new DevExpress.XtraEditors.Controls.RadioGroupItem[] {
+            new DevExpress.XtraEditors.Controls.RadioGroupItem(((short)(1)), "Primario"),
+            new DevExpress.XtraEditors.Controls.RadioGroupItem(((short)(0)), "Secundario")});
+            this.radioPrimario.Size = new System.Drawing.Size(170, 22);
+            this.radioPrimario.TabIndex = 69;
             // 
             // btnTIAVE
             // 
@@ -1750,33 +1778,6 @@
             this.labelControl1.TabIndex = 0;
             this.labelControl1.Text = "Id Activo: ";
             // 
-            // radioPrimario
-            // 
-            this.radioPrimario.Location = new System.Drawing.Point(443, 246);
-            this.radioPrimario.MenuManager = this.barManager1;
-            this.radioPrimario.Name = "radioPrimario";
-            this.radioPrimario.Properties.Items.AddRange(new DevExpress.XtraEditors.Controls.RadioGroupItem[] {
-            new DevExpress.XtraEditors.Controls.RadioGroupItem(((short)(1)), "Primario"),
-            new DevExpress.XtraEditors.Controls.RadioGroupItem(((short)(0)), "Secundario")});
-            this.radioPrimario.Size = new System.Drawing.Size(170, 22);
-            this.radioPrimario.TabIndex = 69;
-            // 
-            // labelControl23
-            // 
-            this.labelControl23.Location = new System.Drawing.Point(345, 250);
-            this.labelControl23.Name = "labelControl23";
-            this.labelControl23.Size = new System.Drawing.Size(57, 13);
-            this.labelControl23.TabIndex = 70;
-            this.labelControl23.Text = "Tipo Activo:";
-            // 
-            // Activo_Primario
-            // 
-            this.Activo_Primario.Caption = "Primario";
-            this.Activo_Primario.FieldName = "Activo_Primario";
-            this.Activo_Primario.Name = "Activo_Primario";
-            this.Activo_Primario.Visible = true;
-            this.Activo_Primario.VisibleIndex = 25;
-            // 
             // Frm_Activos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1808,6 +1809,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
             this.groupControl1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.radioPrimario.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textFolioCircula.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textFactura.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cboAsignado.Properties)).EndInit();
@@ -1833,7 +1835,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtTipoPlaca.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNombreActivo.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtIdActivo.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radioPrimario.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -203,17 +203,15 @@
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
             this.barDockControlTop.Manager = this.barManager1;
-            this.barDockControlTop.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.barDockControlTop.Size = new System.Drawing.Size(773, 0);
+            this.barDockControlTop.Size = new System.Drawing.Size(663, 0);
             // 
             // barDockControlBottom
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 574);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 469);
             this.barDockControlBottom.Manager = this.barManager1;
-            this.barDockControlBottom.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.barDockControlBottom.Size = new System.Drawing.Size(773, 34);
+            this.barDockControlBottom.Size = new System.Drawing.Size(663, 25);
             // 
             // barDockControlLeft
             // 
@@ -221,17 +219,15 @@
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.barDockControlLeft.Location = new System.Drawing.Point(0, 0);
             this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.barDockControlLeft.Size = new System.Drawing.Size(87, 574);
+            this.barDockControlLeft.Size = new System.Drawing.Size(71, 469);
             // 
             // barDockControlRight
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(773, 0);
+            this.barDockControlRight.Location = new System.Drawing.Point(663, 0);
             this.barDockControlRight.Manager = this.barManager1;
-            this.barDockControlRight.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 574);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 469);
             // 
             // repositoryItemTextEdit1
             // 
@@ -241,27 +237,25 @@
             // 
             this.panelControl2.Controls.Add(this.gridControl1);
             this.panelControl2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelControl2.Location = new System.Drawing.Point(87, 181);
-            this.panelControl2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.panelControl2.Location = new System.Drawing.Point(71, 147);
             this.panelControl2.Name = "panelControl2";
-            this.panelControl2.Padding = new System.Windows.Forms.Padding(6);
-            this.panelControl2.Size = new System.Drawing.Size(686, 393);
+            this.panelControl2.Padding = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.panelControl2.Size = new System.Drawing.Size(592, 322);
             this.panelControl2.TabIndex = 9;
             // 
             // gridControl1
             // 
             this.gridControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControl1.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.gridControl1.Location = new System.Drawing.Point(8, 8);
+            this.gridControl1.Location = new System.Drawing.Point(7, 7);
             this.gridControl1.MainView = this.gridView1;
-            this.gridControl1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.gridControl1.MenuManager = this.barManager1;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(670, 377);
+            this.gridControl1.Size = new System.Drawing.Size(578, 308);
             this.gridControl1.TabIndex = 0;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
             this.gridControl1.Click += new System.EventHandler(this.gridControl1_Click);
+            this.gridControl1.DoubleClick += new System.EventHandler(this.gridControl1_DoubleClick);
             // 
             // gridView1
             // 
@@ -327,11 +321,10 @@
             // 
             this.panelControl1.Controls.Add(this.groupControl1);
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelControl1.Location = new System.Drawing.Point(87, 0);
-            this.panelControl1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.panelControl1.Location = new System.Drawing.Point(71, 0);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Padding = new System.Windows.Forms.Padding(6);
-            this.panelControl1.Size = new System.Drawing.Size(686, 181);
+            this.panelControl1.Padding = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.panelControl1.Size = new System.Drawing.Size(592, 147);
             this.panelControl1.TabIndex = 8;
             // 
             // groupControl1
@@ -348,124 +341,112 @@
             this.groupControl1.Controls.Add(this.textEmpresa);
             this.groupControl1.Controls.Add(this.labelControl1);
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupControl1.Location = new System.Drawing.Point(8, 8);
-            this.groupControl1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.groupControl1.Location = new System.Drawing.Point(7, 7);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(670, 165);
+            this.groupControl1.Size = new System.Drawing.Size(578, 133);
             this.groupControl1.TabIndex = 54;
             this.groupControl1.Text = "Datos Tarjeta";
             // 
             // textFolio
             // 
-            this.textFolio.Location = new System.Drawing.Point(105, 66);
-            this.textFolio.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.textFolio.Location = new System.Drawing.Point(90, 54);
             this.textFolio.MenuManager = this.barManager1;
             this.textFolio.Name = "textFolio";
-            this.textFolio.Size = new System.Drawing.Size(155, 22);
+            this.textFolio.Size = new System.Drawing.Size(133, 20);
             this.textFolio.TabIndex = 64;
             // 
             // labelControl5
             // 
-            this.labelControl5.Location = new System.Drawing.Point(15, 71);
-            this.labelControl5.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.labelControl5.Location = new System.Drawing.Point(13, 58);
             this.labelControl5.Name = "labelControl5";
-            this.labelControl5.Size = new System.Drawing.Size(87, 16);
+            this.labelControl5.Size = new System.Drawing.Size(70, 13);
             this.labelControl5.TabIndex = 63;
             this.labelControl5.Text = "N Serie / Folio:";
             // 
             // textMmax
             // 
-            this.textMmax.Location = new System.Drawing.Point(105, 130);
-            this.textMmax.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.textMmax.Location = new System.Drawing.Point(90, 106);
             this.textMmax.MenuManager = this.barManager1;
             this.textMmax.Name = "textMmax";
-            this.textMmax.Size = new System.Drawing.Size(85, 22);
+            this.textMmax.Size = new System.Drawing.Size(73, 20);
             this.textMmax.TabIndex = 62;
             // 
             // labelControl3
             // 
-            this.labelControl3.Location = new System.Drawing.Point(15, 135);
-            this.labelControl3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.labelControl3.Location = new System.Drawing.Point(13, 110);
             this.labelControl3.Name = "labelControl3";
-            this.labelControl3.Size = new System.Drawing.Size(88, 16);
+            this.labelControl3.Size = new System.Drawing.Size(73, 13);
             this.labelControl3.TabIndex = 61;
             this.labelControl3.Text = "Monto Maximo:";
             // 
             // textMmin
             // 
-            this.textMmin.Location = new System.Drawing.Point(105, 98);
-            this.textMmin.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.textMmin.Location = new System.Drawing.Point(90, 80);
             this.textMmin.MenuManager = this.barManager1;
             this.textMmin.Name = "textMmin";
-            this.textMmin.Size = new System.Drawing.Size(85, 22);
+            this.textMmin.Size = new System.Drawing.Size(73, 20);
             this.textMmin.TabIndex = 60;
             // 
             // labelControl2
             // 
-            this.labelControl2.Location = new System.Drawing.Point(15, 103);
-            this.labelControl2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.labelControl2.Location = new System.Drawing.Point(13, 84);
             this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(85, 16);
+            this.labelControl2.Size = new System.Drawing.Size(69, 13);
             this.labelControl2.TabIndex = 59;
             this.labelControl2.Text = "Monto Minimo:";
             // 
             // dtFechaVigencia
             // 
             this.dtFechaVigencia.EditValue = null;
-            this.dtFechaVigencia.Location = new System.Drawing.Point(462, 34);
-            this.dtFechaVigencia.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.dtFechaVigencia.Location = new System.Drawing.Point(396, 28);
             this.dtFechaVigencia.MenuManager = this.barManager1;
             this.dtFechaVigencia.Name = "dtFechaVigencia";
             this.dtFechaVigencia.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.dtFechaVigencia.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dtFechaVigencia.Size = new System.Drawing.Size(129, 22);
+            this.dtFechaVigencia.Size = new System.Drawing.Size(111, 20);
             this.dtFechaVigencia.TabIndex = 58;
             // 
             // labelControl4
             // 
-            this.labelControl4.Location = new System.Drawing.Point(390, 39);
-            this.labelControl4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.labelControl4.Location = new System.Drawing.Point(334, 32);
             this.labelControl4.Name = "labelControl4";
-            this.labelControl4.Size = new System.Drawing.Size(66, 16);
+            this.labelControl4.Size = new System.Drawing.Size(56, 13);
             this.labelControl4.TabIndex = 57;
             this.labelControl4.Text = "F. vigencia:";
             // 
             // btnBusqEmpresa
             // 
             this.btnBusqEmpresa.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnBusqEmpresa.ImageOptions.Image")));
-            this.btnBusqEmpresa.Location = new System.Drawing.Point(349, 33);
-            this.btnBusqEmpresa.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnBusqEmpresa.Location = new System.Drawing.Point(299, 27);
             this.btnBusqEmpresa.Name = "btnBusqEmpresa";
-            this.btnBusqEmpresa.Size = new System.Drawing.Size(28, 28);
+            this.btnBusqEmpresa.Size = new System.Drawing.Size(24, 23);
             this.btnBusqEmpresa.TabIndex = 56;
             this.btnBusqEmpresa.Click += new System.EventHandler(this.btnBusqProveedor_Click);
             // 
             // textEmpresa
             // 
             this.textEmpresa.Enabled = false;
-            this.textEmpresa.Location = new System.Drawing.Point(105, 34);
-            this.textEmpresa.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.textEmpresa.Location = new System.Drawing.Point(90, 28);
             this.textEmpresa.MenuManager = this.barManager1;
             this.textEmpresa.Name = "textEmpresa";
-            this.textEmpresa.Size = new System.Drawing.Size(237, 22);
+            this.textEmpresa.Size = new System.Drawing.Size(203, 20);
             this.textEmpresa.TabIndex = 55;
             // 
             // labelControl1
             // 
-            this.labelControl1.Location = new System.Drawing.Point(15, 39);
-            this.labelControl1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.labelControl1.Location = new System.Drawing.Point(13, 32);
             this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(55, 16);
+            this.labelControl1.Size = new System.Drawing.Size(45, 13);
             this.labelControl1.TabIndex = 54;
             this.labelControl1.Text = "Empresa:";
             // 
             // Frm_Tarjetas_Combustible
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(773, 608);
+            this.ClientSize = new System.Drawing.Size(663, 494);
             this.Controls.Add(this.panelControl2);
             this.Controls.Add(this.panelControl1);
             this.Controls.Add(this.barDockControlLeft);
@@ -473,7 +454,6 @@
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Frm_Tarjetas_Combustible";

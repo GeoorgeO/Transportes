@@ -669,5 +669,22 @@ namespace TransportBusiness
         {
             CargarEmpleado();
         }
+
+        private void gridControl1_DoubleClick(object sender, EventArgs e)
+        {
+            if (PaSel == true)
+            {
+                if (textIdEmpleado.Text != string.Empty && textEmpleado.Text != string.Empty)
+                {
+                    vId_Empleado = textIdEmpleado.Text;
+                    vNombre_Empleado = textEmpleado.Text;
+                    this.Close();
+                }
+                else
+                {
+                    XtraMessageBox.Show("No se ha seleccionado un empleado");
+                }
+            }
+        }
     }
 }

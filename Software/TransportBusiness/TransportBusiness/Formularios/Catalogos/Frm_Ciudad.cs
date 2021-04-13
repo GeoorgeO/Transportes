@@ -178,5 +178,17 @@ namespace TransportBusiness
             textEstado.Tag = Estado.IdEstado;
             textEstado.Text = Estado.Estado;
         }
+
+        private void gridControl1_DoubleClick(object sender, EventArgs e)
+        {
+            if (PaSel == true)
+            {
+                IdCiudad = textId.Text.Trim();
+                Ciudad = textNombre.Text.Trim();
+                IdEstado = textEstado.Tag.ToString();
+                Estado = textEstado.Text.Trim();
+                this.Close();
+            }
+        }
     }
 }

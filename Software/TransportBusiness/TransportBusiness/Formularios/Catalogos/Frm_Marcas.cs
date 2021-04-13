@@ -159,5 +159,22 @@ namespace TransportBusiness
                 XtraMessageBox.Show("No se ha seleccionado una Marca");
             }
         }
+
+        private void gridControl1_DoubleClick(object sender, EventArgs e)
+        {
+            if (PaSel == true)
+            {
+                if (textId.Text != string.Empty && textNombre.Text != string.Empty)
+                {
+                    vid_Marca = textId.Text;
+                    vNombre_Marca = textNombre.Text;
+                    this.Close();
+                }
+                else
+                {
+                    XtraMessageBox.Show("No se ha seleccionado una Marca");
+                }
+            }
+        }
     }
 }

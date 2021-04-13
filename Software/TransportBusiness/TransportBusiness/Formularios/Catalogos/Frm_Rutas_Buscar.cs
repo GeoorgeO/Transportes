@@ -76,5 +76,10 @@ namespace TransportBusiness
             vDestino = "";
             this.Close();
         }
+
+        private void dtgRutas_DoubleClick(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

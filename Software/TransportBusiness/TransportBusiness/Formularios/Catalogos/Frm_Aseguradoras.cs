@@ -373,5 +373,15 @@ namespace TransportBusiness
             textTipoDomicilio.Tag = tipoDomicilio.IdTipoDomicilio;
             textTipoDomicilio.Text = tipoDomicilio.TipoDomicilio;
         }
+
+        private void gridControl1_DoubleClick(object sender, EventArgs e)
+        {
+            if (PaSel == true)
+            {
+                idAseguradora = textIdAseguradora.Text;
+                Aseguradora = textAseguradora.Text;
+                this.Close();
+            }
+        }
     }
 }

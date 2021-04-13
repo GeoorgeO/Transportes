@@ -410,7 +410,7 @@ namespace TransportBusiness
                     txtTipoTransporte.Tag = row["Id_Tipo_Transporte"].ToString();
                     txtTipoTransporte.Text = row["Nombre_Tipo_Transporte"].ToString();
                     txtTipoActivo.Tag = row["Id_Tipo_Activo"].ToString();
-                    txtTipoActivo.Text = row["Id_Tipo_Activo"].ToString();
+                    txtTipoActivo.Text = row["Nombre_Tipo_Activo"].ToString();
                     txtEmpresa.Tag = row["Id_Empresa"].ToString();
                     txtEmpresa.Text = row["Nombre_Empresa"].ToString();
                     txtTarjetaCirculacion.Text = row["Tarjeta_Circulacion"].ToString();
@@ -608,6 +608,23 @@ namespace TransportBusiness
             else
             {
                 XtraMessageBox.Show("No se ha seleccionado un activo");
+            }
+        }
+
+        private void dtgActivos_DoubleClick(object sender, EventArgs e)
+        {
+            if (PaSel == true)
+            {
+                if (txtIdActivo.Text != string.Empty)
+                {
+                    IdActivo = txtIdActivo.Text;
+                    Activo = txtNombreActivo.Text;
+                    this.Close();
+                }
+                else
+                {
+                    XtraMessageBox.Show("No se ha seleccionado un activo");
+                }
             }
         }
 

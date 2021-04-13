@@ -195,5 +195,21 @@ namespace TransportBusiness
             }
 
         }
+
+        private void gridControl1_DoubleClick(object sender, EventArgs e)
+        {
+            if (PaSel == true)
+            {
+                if (textIAVE.Enabled == false)
+                {
+                    vIAVE = textIAVE.Text.Trim();
+                    this.Close();
+                }
+                else
+                {
+                    XtraMessageBox.Show("No ha seleccionado una IAVE");
+                }
+            }
+        }
     }
 }

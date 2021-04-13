@@ -1472,7 +1472,15 @@ namespace TransportBusiness
                 Fecha = Convert.ToDateTime(datePago.Text.Trim());
                 Clase.Fecha_Pago = Fecha.Year.ToString() + DosCero(Fecha.Month.ToString()) + DosCero(Fecha.Day.ToString());
             }
-
+            if (check_SP.Checked)
+            {
+                Clase.SinPago = 1;
+            }
+            else
+            {
+                Clase.SinPago = 0;
+            }
+            
 
             Clase.MtdInsertarSalidasArchivoPDFXML();
 
@@ -1590,7 +1598,15 @@ namespace TransportBusiness
                         datePago.EditValue = Convert.ToDateTime(row["Fecha_Pago"]);
                         checkPagada.Checked = true;
                     }
-                    
+                    if (row["SinPago"].ToString().Equals("True"))
+                    {
+                        check_SP.Checked = true;
+                    }
+                    else
+                    {
+                        check_SP.Checked = false;
+                    }
+
                 }
             }
             catch (Exception ex)
@@ -2117,6 +2133,40 @@ namespace TransportBusiness
             }
         }
 
+        private void checkAll_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkAll.Checked)
+            {
+                checkAll.Text = "Desmarcar todo";
+                checkAceite.Checked = true;
+                checkAnticongelante.Checked = true;
+                checkCaja.Checked = true;
+                checkLicencia.Checked = true;
+                checkLimpieza.Checked = true;
+                checkLiquidoDireccion.Checked = true;
+                checkLuces.Checked = true;
+                checkPresionLlantas.Checked = true;
+                checkTCirculacion.Checked = true;
+                checkTCombustible.Checked = true;
+
+            }
+            else
+            {
+                checkAll.Text = "Marcar todo";
+                checkAceite.Checked = false;
+                checkAnticongelante.Checked = false;
+                checkCaja.Checked = false;
+                checkLicencia.Checked = false;
+                checkLimpieza.Checked = false;
+                checkLiquidoDireccion.Checked = false;
+                checkLuces.Checked = false;
+                checkPresionLlantas.Checked = false;
+                checkTCirculacion.Checked = false;
+                checkTCombustible.Checked = false;
+            }
+        }
+
+        
 
         private void gridCruce_DoubleClick(object sender, EventArgs e)
         {
@@ -2244,7 +2294,7 @@ namespace TransportBusiness
             dateFactura.EditValue = DateTime.Now;
             dateCobro.EditValue = null;
             rbTotalF.Checked = true;
-
+            check_SP.Checked = false;
             
         }
 

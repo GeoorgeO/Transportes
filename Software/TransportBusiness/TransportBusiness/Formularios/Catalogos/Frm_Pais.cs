@@ -153,5 +153,15 @@ namespace TransportBusiness
             Pais = textNombre.Text.Trim();
             this.Close();
         }
+
+        private void gridControl1_DoubleClick(object sender, EventArgs e)
+        {
+            if (PaSel == true)
+            {
+                IdPais = textId.Text.Trim();
+                Pais = textNombre.Text.Trim();
+                this.Close();
+            }
+        }
     }
 }

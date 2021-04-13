@@ -200,5 +200,15 @@ namespace TransportBusiness
             Licencia = textNoLic.Text.Trim();
             this.Close();
         }
+
+        private void gridControl1_DoubleClick(object sender, EventArgs e)
+        {
+            if (PaSel == true)
+            {
+                IdLicencia = textId.Text.Trim();
+                Licencia = textNoLic.Text.Trim();
+                this.Close();
+            }
+        }
     }
 }

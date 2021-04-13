@@ -151,5 +151,15 @@ namespace TransportBusiness
             Servicio = textNombre.Text.Trim();
             this.Close();
         }
+
+        private void gridControl1_DoubleClick(object sender, EventArgs e)
+        {
+            if (PaSel == true)
+            {
+                IdServicio = textId.Text.Trim();
+                Servicio = textNombre.Text.Trim();
+                this.Close();
+            }
+        }
     }
 }

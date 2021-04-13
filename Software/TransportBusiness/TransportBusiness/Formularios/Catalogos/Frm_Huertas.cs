@@ -425,5 +425,15 @@ namespace TransportBusiness
             Huerta = txtNombreHuerta.Text.Trim();
             this.Close();
         }
+
+        private void dtgHuertas_DoubleClick(object sender, EventArgs e)
+        {
+            if (PaSel == true)
+            {
+                IdHuerta = txtCodigo.Text.Trim();
+                Huerta = txtNombreHuerta.Text.Trim();
+                this.Close();
+            }
+        }
     }
 }

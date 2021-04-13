@@ -153,5 +153,15 @@ namespace TransportBusiness
             MotivoSalida = textNombre.Text.Trim();
             this.Close();
         }
+
+        private void gridControl1_DoubleClick(object sender, EventArgs e)
+        {
+            if (PaSel == true)
+            {
+                IdMotivoSalida = textId.Text.Trim();
+                MotivoSalida = textNombre.Text.Trim();
+                this.Close();
+            }
+        }
     }
 }

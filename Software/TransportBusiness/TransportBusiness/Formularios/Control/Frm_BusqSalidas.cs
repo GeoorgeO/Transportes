@@ -225,5 +225,17 @@ namespace TransportBusiness
             }
             
         }
+
+        private void dtgRutas_DoubleClick(object sender, EventArgs e)
+        {
+            if (vId_Salida != null)
+            {
+                this.Close();
+            }
+            else
+            {
+                XtraMessageBox.Show("No se selecciono ningun dato.");
+            }
+        }
     }
 }

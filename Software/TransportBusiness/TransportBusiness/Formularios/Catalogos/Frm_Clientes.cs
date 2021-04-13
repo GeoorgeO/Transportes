@@ -378,5 +378,16 @@ namespace TransportBusiness
            
             this.Close();
         }
+
+        private void gridControl1_DoubleClick(object sender, EventArgs e)
+        {
+            if (PaSel == true)
+            {
+                IdCliente = textIdCliente.Text.Trim();
+                Cliente = textCliente.Text.Trim();
+
+                this.Close();
+            }
+        }
     }
 }

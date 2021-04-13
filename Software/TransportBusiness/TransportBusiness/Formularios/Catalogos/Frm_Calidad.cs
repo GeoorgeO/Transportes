@@ -153,5 +153,15 @@ namespace TransportBusiness
             Calidad = textNombre.Text.Trim();
             this.Close();
         }
+
+        private void gridControl1_DoubleClick(object sender, EventArgs e)
+        {
+            if (PaSel == true)
+            {
+                IdCalidad = textId.Text.Trim();
+                Calidad = textNombre.Text.Trim();
+                this.Close();
+            }
+        }
     }
 }

@@ -20,6 +20,7 @@ namespace CapaDeDatos
         public string Fecha_Factura { get; set; }
         public string Fecha_Pago { get; set; }
         public string Fecha_Cobro { get; set; }
+        public int SinPago { get; set; }
 
         public void MtdSeleccionarSalidasArchivoPDFXML()
         {
@@ -115,6 +116,8 @@ namespace CapaDeDatos
                 _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Fecha_Cobro");
                 _dato.CadenaTexto = Fecha_Pago;
                 _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Fecha_Pago");
+                _dato.Entero = SinPago;
+                _conexion.agregarParametro(EnumTipoDato.Entero, _dato, "SinPago");
                 _conexion.EjecutarDataset();
 
                 if (_conexion.Exito)

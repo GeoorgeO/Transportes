@@ -195,5 +195,21 @@ namespace TransportBusiness
                 XtraMessageBox.Show("No ha seleccionado una Tarjeta");
             }
         }
+
+        private void gridControl1_DoubleClick(object sender, EventArgs e)
+        {
+            if (PaSel == true)
+            {
+                if (textFolio.Enabled == false)
+                {
+                    vTCombustible = textFolio.Text.Trim();
+                    this.Close();
+                }
+                else
+                {
+                    XtraMessageBox.Show("No ha seleccionado una Tarjeta");
+                }
+            }
+        }
     }
 }

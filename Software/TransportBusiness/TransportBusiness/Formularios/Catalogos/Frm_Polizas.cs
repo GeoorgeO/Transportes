@@ -276,5 +276,25 @@ namespace TransportBusiness
             }
            
         }
+
+        private void gridControl1_DoubleClick(object sender, EventArgs e)
+        {
+            if (PaSel == true)
+            {
+                if (Convert.ToInt32(DateTime.Now.Year.ToString() + DosCero(DateTime.Now.Month.ToString()) + DosCero(DateTime.Now.Day.ToString())) >= Convert.ToInt32(Convert.ToDateTime(dateInicio.EditValue).Year.ToString() + DosCero(Convert.ToDateTime(dateInicio.EditValue).Month.ToString()) + DosCero(Convert.ToDateTime(dateInicio.EditValue).Day.ToString())) && Convert.ToInt32(DateTime.Now.Year.ToString() + DosCero(DateTime.Now.Month.ToString()) + DosCero(DateTime.Now.Day.ToString())) <= Convert.ToInt32(Convert.ToDateTime(dateFin.EditValue).Year.ToString() + DosCero(Convert.ToDateTime(dateFin.EditValue).Month.ToString()) + DosCero(Convert.ToDateTime(dateFin.EditValue).Day.ToString())))
+                {
+                    IdPoliza = textId.Text.Trim();
+                    FInicio = Convert.ToDateTime(dateFin.Text.Trim()).Year.ToString() + DosCero(Convert.ToDateTime(dateFin.Text.Trim()).Month.ToString()) + DosCero(Convert.ToDateTime(dateFin.Text.Trim()).Day.ToString());
+                    Ffin = Convert.ToDateTime(dateInicio.Text.Trim()).Year.ToString() + DosCero(Convert.ToDateTime(dateInicio.Text.Trim()).Month.ToString()) + DosCero(Convert.ToDateTime(dateInicio.Text.Trim()).Day.ToString());
+                    IdAseguradora = txtEmpresaAsegu.Tag.ToString();
+                    Aseguradora = txtEmpresaAsegu.Text.Trim();
+                    this.Close();
+                }
+                else
+                {
+                    XtraMessageBox.Show("No esta vigente la poliza de seguro seleccionada.");
+                }
+            }
+        }
     }
 }

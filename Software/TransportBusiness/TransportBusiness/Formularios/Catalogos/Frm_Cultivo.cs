@@ -150,5 +150,15 @@ namespace TransportBusiness
             Cultivo = textNombre.Text.Trim();
             this.Close();
         }
+
+        private void gridControl1_DoubleClick(object sender, EventArgs e)
+        {
+            if (PaSel == true)
+            {
+                IdCultivo = textId.Text.Trim();
+                Cultivo = textNombre.Text.Trim();
+                this.Close();
+            }
+        }
     }
 }

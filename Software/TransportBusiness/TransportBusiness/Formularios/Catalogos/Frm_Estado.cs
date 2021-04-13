@@ -188,5 +188,15 @@ namespace TransportBusiness
             Estado = textEstado.Text.Trim();
             this.Close();
         }
+
+        private void gridControl1_DoubleClick(object sender, EventArgs e)
+        {
+            if (PaSel == true)
+            {
+                IdEstado = textIdEstado.Text.Trim();
+                Estado = textEstado.Text.Trim();
+                this.Close();
+            }
+        }
     }
 }

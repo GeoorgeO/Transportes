@@ -376,5 +376,15 @@ namespace TransportBusiness
             Proveedor = textProveedor.Text.Trim();
             this.Close();
         }
+
+        private void gridControl1_DoubleClick(object sender, EventArgs e)
+        {
+            if (PaSel == true)
+            {
+                IdProveedor = textIdProveedor.Text.Trim();
+                Proveedor = textProveedor.Text.Trim();
+                this.Close();
+            }
+        }
     }
 }

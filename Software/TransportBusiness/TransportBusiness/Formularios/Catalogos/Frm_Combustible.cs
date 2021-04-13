@@ -240,5 +240,18 @@ namespace TransportBusiness
             textComprador.Tag = Clase.vId_Empleado;
             textComprador.Text = Clase.vNombre_Empleado;
         }
+
+        private void gridControl1_DoubleClick(object sender, EventArgs e)
+        {
+            if (PaSel == true)
+            {
+                
+            }
+        }
+
+        private void btnSeleccionar_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+
+        }
     }
 }

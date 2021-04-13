@@ -243,5 +243,15 @@ namespace TransportBusiness
                 XtraMessageBox.Show("No se ha seleccionado tipo de activo");
             }
         }
+
+        private void gridControl1_DoubleClick(object sender, EventArgs e)
+        {
+            if (PaSel == true)
+            {
+                vId_Cuenta = textId.Text;
+                vNombre_Cuenta = textNombre.Text;
+                this.Close();
+            }
+        }
     }
 }

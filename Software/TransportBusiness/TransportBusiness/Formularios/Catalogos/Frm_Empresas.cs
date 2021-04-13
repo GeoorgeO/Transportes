@@ -370,5 +370,22 @@ namespace TransportBusiness
                 XtraMessageBox.Show(ex.Message);
             }
         }
+
+        private void gridControl1_DoubleClick(object sender, EventArgs e)
+        {
+            if (PaSel == true)
+            {
+                if (textId.Text != string.Empty && textNombre.Text != string.Empty)
+                {
+                    vId_Empresa = textId.Text;
+                    vNombre_Empresa = textNombre.Text;
+                    this.Close();
+                }
+                else
+                {
+                    XtraMessageBox.Show("No ha seleccionado una empresa");
+                }
+            }
+        }
     }
 }
