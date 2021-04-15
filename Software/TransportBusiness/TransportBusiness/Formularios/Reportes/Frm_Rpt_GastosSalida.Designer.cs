@@ -125,6 +125,10 @@
             this.Prorateo_P = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Importe_D = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Prorateo_D = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Monto_Viaje_P = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Monto_Viaje_D = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Rendimiento_Total_P = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Rendimiento_Total_D = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
@@ -694,7 +698,11 @@
             this.Otros_D,
             this.Gasto_Total_D,
             this.Ganancias_Total_D,
-            this.PGastoIndirecto_D});
+            this.PGastoIndirecto_D,
+            this.Monto_Viaje_P,
+            this.Monto_Viaje_D,
+            this.Rendimiento_Total_P,
+            this.Rendimiento_Total_D});
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.GroupCount = 1;
             this.gridView1.GroupSummary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
@@ -1227,6 +1235,38 @@
             this.Prorateo_D.FieldName = "Prorateo_D";
             this.Prorateo_D.Name = "Prorateo_D";
             // 
+            // Monto_Viaje_P
+            // 
+            this.Monto_Viaje_P.Caption = "M. Viaje Pesos";
+            this.Monto_Viaje_P.FieldName = "Monto_Viaje_P";
+            this.Monto_Viaje_P.Name = "Monto_Viaje_P";
+            this.Monto_Viaje_P.Visible = true;
+            this.Monto_Viaje_P.VisibleIndex = 33;
+            // 
+            // Monto_Viaje_D
+            // 
+            this.Monto_Viaje_D.Caption = "M. Viaje Dolares";
+            this.Monto_Viaje_D.FieldName = "Monto_Viaje_D";
+            this.Monto_Viaje_D.Name = "Monto_Viaje_D";
+            this.Monto_Viaje_D.Visible = true;
+            this.Monto_Viaje_D.VisibleIndex = 34;
+            // 
+            // Rendimiento_Total_P
+            // 
+            this.Rendimiento_Total_P.Caption = "Rendimiento Viaje";
+            this.Rendimiento_Total_P.FieldName = "Rendimiento_Total_P";
+            this.Rendimiento_Total_P.Name = "Rendimiento_Total_P";
+            this.Rendimiento_Total_P.Visible = true;
+            this.Rendimiento_Total_P.VisibleIndex = 35;
+            // 
+            // Rendimiento_Total_D
+            // 
+            this.Rendimiento_Total_D.Caption = "Rendimiento Viaje";
+            this.Rendimiento_Total_D.FieldName = "Rendimiento_Total_D";
+            this.Rendimiento_Total_D.Name = "Rendimiento_Total_D";
+            this.Rendimiento_Total_D.Visible = true;
+            this.Rendimiento_Total_D.VisibleIndex = 36;
+            // 
             // Frm_Rpt_GastosSalida
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1374,5 +1414,9 @@
         private DevExpress.XtraGrid.Columns.GridColumn Ganancias_Total_D;
         private DevExpress.XtraGrid.Columns.GridColumn PGastoIndirecto_P;
         private DevExpress.XtraGrid.Columns.GridColumn PGastoIndirecto_D;
+        private DevExpress.XtraGrid.Columns.GridColumn Monto_Viaje_P;
+        private DevExpress.XtraGrid.Columns.GridColumn Monto_Viaje_D;
+        private DevExpress.XtraGrid.Columns.GridColumn Rendimiento_Total_P;
+        private DevExpress.XtraGrid.Columns.GridColumn Rendimiento_Total_D;
     }
 }

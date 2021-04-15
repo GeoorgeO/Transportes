@@ -1472,14 +1472,9 @@ namespace TransportBusiness
                 Fecha = Convert.ToDateTime(datePago.Text.Trim());
                 Clase.Fecha_Pago = Fecha.Year.ToString() + DosCero(Fecha.Month.ToString()) + DosCero(Fecha.Day.ToString());
             }
-            if (check_SP.Checked)
-            {
-                Clase.SinPago = 1;
-            }
-            else
-            {
-                Clase.SinPago = 0;
-            }
+            
+                Clase.Importe_Viaje = Convert.ToDecimal(txtImporteViaje.Text);
+           
             
 
             Clase.MtdInsertarSalidasArchivoPDFXML();
@@ -1598,15 +1593,8 @@ namespace TransportBusiness
                         datePago.EditValue = Convert.ToDateTime(row["Fecha_Pago"]);
                         checkPagada.Checked = true;
                     }
-                    if (row["SinPago"].ToString().Equals("True"))
-                    {
-                        check_SP.Checked = true;
-                    }
-                    else
-                    {
-                        check_SP.Checked = false;
-                    }
 
+                    txtImporteViaje.Text = row["Importe_Viaje"].ToString();
                 }
             }
             catch (Exception ex)
@@ -2294,8 +2282,8 @@ namespace TransportBusiness
             dateFactura.EditValue = DateTime.Now;
             dateCobro.EditValue = null;
             rbTotalF.Checked = true;
-            check_SP.Checked = false;
-            
+            txtImporteViaje.Text = "0";
+
         }
 
        private void limpiarSalidasCruce()

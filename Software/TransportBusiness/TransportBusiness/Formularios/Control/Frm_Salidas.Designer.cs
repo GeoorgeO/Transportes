@@ -213,6 +213,7 @@
             this.Fecha_Factura = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Fecha_Cobro = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Fecha_Pago = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Importe_Viaje = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panelControl12 = new DevExpress.XtraEditors.PanelControl();
             this.checkPagada = new DevExpress.XtraEditors.CheckEdit();
             this.datePago = new DevExpress.XtraEditors.DateEdit();
@@ -299,8 +300,8 @@
             this.barStaticItem2 = new DevExpress.XtraBars.BarStaticItem();
             this.barDockControl8 = new DevExpress.XtraBars.BarDockControl();
             this.OpenDialog = new DevExpress.XtraEditors.XtraOpenFileDialog(this.components);
-            this.check_SP = new DevExpress.XtraEditors.CheckEdit();
-            this.SinPago = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.labelControl51 = new DevExpress.XtraEditors.LabelControl();
+            this.txtImporteViaje = new DevExpress.XtraEditors.TextEdit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
@@ -438,7 +439,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.textImporteC.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNombreArchivoXMLC.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNombreArchivoPDFC.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.check_SP.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtImporteViaje.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // barManager1
@@ -2130,7 +2131,7 @@
             this.Fecha_Factura,
             this.Fecha_Cobro,
             this.Fecha_Pago,
-            this.SinPago});
+            this.Importe_Viaje});
             this.gridView6.GridControl = this.gridFacturas;
             this.gridView6.Name = "gridView6";
             this.gridView6.OptionsBehavior.Editable = false;
@@ -2179,7 +2180,7 @@
             this.ImporteF.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "Importe", "Total={0:#.##}")});
             this.ImporteF.Visible = true;
-            this.ImporteF.VisibleIndex = 2;
+            this.ImporteF.VisibleIndex = 3;
             // 
             // Id_Archivo
             // 
@@ -2193,7 +2194,7 @@
             this.Moneda.FieldName = "Moneda";
             this.Moneda.Name = "Moneda";
             this.Moneda.Visible = true;
-            this.Moneda.VisibleIndex = 3;
+            this.Moneda.VisibleIndex = 4;
             // 
             // DiferidoF
             // 
@@ -2201,7 +2202,7 @@
             this.DiferidoF.FieldName = "Diferido";
             this.DiferidoF.Name = "DiferidoF";
             this.DiferidoF.Visible = true;
-            this.DiferidoF.VisibleIndex = 4;
+            this.DiferidoF.VisibleIndex = 5;
             // 
             // Fecha_Factura
             // 
@@ -2209,7 +2210,7 @@
             this.Fecha_Factura.FieldName = "Fecha_Factura";
             this.Fecha_Factura.Name = "Fecha_Factura";
             this.Fecha_Factura.Visible = true;
-            this.Fecha_Factura.VisibleIndex = 5;
+            this.Fecha_Factura.VisibleIndex = 6;
             // 
             // Fecha_Cobro
             // 
@@ -2217,7 +2218,7 @@
             this.Fecha_Cobro.FieldName = "Fecha_Cobro";
             this.Fecha_Cobro.Name = "Fecha_Cobro";
             this.Fecha_Cobro.Visible = true;
-            this.Fecha_Cobro.VisibleIndex = 6;
+            this.Fecha_Cobro.VisibleIndex = 7;
             // 
             // Fecha_Pago
             // 
@@ -2225,11 +2226,22 @@
             this.Fecha_Pago.FieldName = "Fecha_Pago";
             this.Fecha_Pago.Name = "Fecha_Pago";
             this.Fecha_Pago.Visible = true;
-            this.Fecha_Pago.VisibleIndex = 7;
+            this.Fecha_Pago.VisibleIndex = 8;
+            // 
+            // Importe_Viaje
+            // 
+            this.Importe_Viaje.Caption = "Importe Viaje";
+            this.Importe_Viaje.FieldName = "Importe_Viaje";
+            this.Importe_Viaje.Name = "Importe_Viaje";
+            this.Importe_Viaje.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "Importe_Viaje", "Total={0:#.##}")});
+            this.Importe_Viaje.Visible = true;
+            this.Importe_Viaje.VisibleIndex = 2;
             // 
             // panelControl12
             // 
-            this.panelControl12.Controls.Add(this.check_SP);
+            this.panelControl12.Controls.Add(this.labelControl51);
+            this.panelControl12.Controls.Add(this.txtImporteViaje);
             this.panelControl12.Controls.Add(this.checkPagada);
             this.panelControl12.Controls.Add(this.datePago);
             this.panelControl12.Controls.Add(this.dateFactura);
@@ -2262,7 +2274,7 @@
             // checkPagada
             // 
             this.checkPagada.EditValue = true;
-            this.checkPagada.Location = new System.Drawing.Point(949, 40);
+            this.checkPagada.Location = new System.Drawing.Point(890, 40);
             this.checkPagada.MenuManager = this.barManager1;
             this.checkPagada.Name = "checkPagada";
             this.checkPagada.Properties.Caption = "Pagada";
@@ -2273,7 +2285,7 @@
             // datePago
             // 
             this.datePago.EditValue = null;
-            this.datePago.Location = new System.Drawing.Point(849, 39);
+            this.datePago.Location = new System.Drawing.Point(790, 39);
             this.datePago.MenuManager = this.barManager1;
             this.datePago.Name = "datePago";
             this.datePago.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -2286,7 +2298,7 @@
             // dateFactura
             // 
             this.dateFactura.EditValue = null;
-            this.dateFactura.Location = new System.Drawing.Point(459, 39);
+            this.dateFactura.Location = new System.Drawing.Point(473, 39);
             this.dateFactura.MenuManager = this.barManager1;
             this.dateFactura.Name = "dateFactura";
             this.dateFactura.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -2299,7 +2311,7 @@
             // dateCobro
             // 
             this.dateCobro.EditValue = null;
-            this.dateCobro.Location = new System.Drawing.Point(687, 39);
+            this.dateCobro.Location = new System.Drawing.Point(639, 39);
             this.dateCobro.MenuManager = this.barManager1;
             this.dateCobro.Name = "dateCobro";
             this.dateCobro.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -2311,7 +2323,7 @@
             // 
             // labelControl46
             // 
-            this.labelControl46.Location = new System.Drawing.Point(806, 43);
+            this.labelControl46.Location = new System.Drawing.Point(747, 43);
             this.labelControl46.Name = "labelControl46";
             this.labelControl46.Size = new System.Drawing.Size(41, 13);
             this.labelControl46.TabIndex = 94;
@@ -2319,7 +2331,7 @@
             // 
             // labelControl45
             // 
-            this.labelControl45.Location = new System.Drawing.Point(635, 43);
+            this.labelControl45.Location = new System.Drawing.Point(587, 43);
             this.labelControl45.Name = "labelControl45";
             this.labelControl45.Size = new System.Drawing.Size(46, 13);
             this.labelControl45.TabIndex = 93;
@@ -2337,7 +2349,7 @@
             // 
             this.rbTotalF.AutoSize = true;
             this.rbTotalF.Checked = true;
-            this.rbTotalF.Location = new System.Drawing.Point(879, 14);
+            this.rbTotalF.Location = new System.Drawing.Point(820, 14);
             this.rbTotalF.Name = "rbTotalF";
             this.rbTotalF.Size = new System.Drawing.Size(49, 17);
             this.rbTotalF.TabIndex = 91;
@@ -2348,7 +2360,7 @@
             // rbDiferidoF
             // 
             this.rbDiferidoF.AutoSize = true;
-            this.rbDiferidoF.Location = new System.Drawing.Point(806, 14);
+            this.rbDiferidoF.Location = new System.Drawing.Point(747, 14);
             this.rbDiferidoF.Name = "rbDiferidoF";
             this.rbDiferidoF.Size = new System.Drawing.Size(62, 17);
             this.rbDiferidoF.TabIndex = 90;
@@ -2357,7 +2369,7 @@
             // 
             // cboMoneda
             // 
-            this.cboMoneda.Location = new System.Drawing.Point(678, 12);
+            this.cboMoneda.Location = new System.Drawing.Point(630, 12);
             this.cboMoneda.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cboMoneda.MenuManager = this.barManager1;
             this.cboMoneda.Name = "cboMoneda";
@@ -2372,7 +2384,7 @@
             // 
             // labelControl34
             // 
-            this.labelControl34.Location = new System.Drawing.Point(635, 16);
+            this.labelControl34.Location = new System.Drawing.Point(587, 16);
             this.labelControl34.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.labelControl34.Name = "labelControl34";
             this.labelControl34.Size = new System.Drawing.Size(42, 13);
@@ -2381,7 +2393,7 @@
             // 
             // labelIdArchivo
             // 
-            this.labelIdArchivo.Location = new System.Drawing.Point(940, 4);
+            this.labelIdArchivo.Location = new System.Drawing.Point(878, 4);
             this.labelIdArchivo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.labelIdArchivo.Name = "labelIdArchivo";
             this.labelIdArchivo.Size = new System.Drawing.Size(6, 13);
@@ -2393,13 +2405,13 @@
             // 
             this.labelControl26.Location = new System.Drawing.Point(388, 16);
             this.labelControl26.Name = "labelControl26";
-            this.labelControl26.Size = new System.Drawing.Size(42, 13);
+            this.labelControl26.Size = new System.Drawing.Size(80, 13);
             this.labelControl26.TabIndex = 68;
-            this.labelControl26.Text = "Importe:";
+            this.labelControl26.Text = "Importe factura:";
             // 
             // textImporteF
             // 
-            this.textImporteF.Location = new System.Drawing.Point(459, 12);
+            this.textImporteF.Location = new System.Drawing.Point(473, 12);
             this.textImporteF.MenuManager = this.barManager1;
             this.textImporteF.Name = "textImporteF";
             this.textImporteF.Properties.Mask.EditMask = "n";
@@ -2409,7 +2421,7 @@
             // 
             // btnAgregarFacturas
             // 
-            this.btnAgregarFacturas.Location = new System.Drawing.Point(1034, 37);
+            this.btnAgregarFacturas.Location = new System.Drawing.Point(1000, 37);
             this.btnAgregarFacturas.Name = "btnAgregarFacturas";
             this.btnAgregarFacturas.Size = new System.Drawing.Size(75, 23);
             this.btnAgregarFacturas.TabIndex = 66;
@@ -3095,22 +3107,23 @@
             // 
             this.OpenDialog.FileName = "xtraOpenFileDialog1";
             // 
-            // check_SP
+            // labelControl51
             // 
-            this.check_SP.Location = new System.Drawing.Point(558, 12);
-            this.check_SP.MenuManager = this.barManager1;
-            this.check_SP.Name = "check_SP";
-            this.check_SP.Properties.Caption = "Sin Pago";
-            this.check_SP.Size = new System.Drawing.Size(60, 19);
-            this.check_SP.TabIndex = 99;
+            this.labelControl51.Location = new System.Drawing.Point(909, 14);
+            this.labelControl51.Name = "labelControl51";
+            this.labelControl51.Size = new System.Drawing.Size(68, 13);
+            this.labelControl51.TabIndex = 100;
+            this.labelControl51.Text = "Importe viaje:";
             // 
-            // SinPago
+            // txtImporteViaje
             // 
-            this.SinPago.Caption = "Sin Pago";
-            this.SinPago.FieldName = "SinPago";
-            this.SinPago.Name = "SinPago";
-            this.SinPago.Visible = true;
-            this.SinPago.VisibleIndex = 8;
+            this.txtImporteViaje.Location = new System.Drawing.Point(981, 12);
+            this.txtImporteViaje.MenuManager = this.barManager1;
+            this.txtImporteViaje.Name = "txtImporteViaje";
+            this.txtImporteViaje.Properties.Mask.EditMask = "n";
+            this.txtImporteViaje.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
+            this.txtImporteViaje.Size = new System.Drawing.Size(94, 20);
+            this.txtImporteViaje.TabIndex = 99;
             // 
             // Frm_Salidas
             // 
@@ -3274,7 +3287,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.textImporteC.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNombreArchivoXMLC.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNombreArchivoPDFC.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.check_SP.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtImporteViaje.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -3551,7 +3564,8 @@
         private DevExpress.XtraEditors.DateEdit dateFechaDiesel;
         private DevExpress.XtraEditors.LabelControl labelControl49;
         private DevExpress.XtraEditors.CheckEdit checkAll;
-        private DevExpress.XtraEditors.CheckEdit check_SP;
-        private DevExpress.XtraGrid.Columns.GridColumn SinPago;
+        private DevExpress.XtraGrid.Columns.GridColumn Importe_Viaje;
+        private DevExpress.XtraEditors.LabelControl labelControl51;
+        private DevExpress.XtraEditors.TextEdit txtImporteViaje;
     }
 }

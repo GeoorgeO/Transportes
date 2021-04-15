@@ -455,6 +455,7 @@
             this.cardView1.GridControl = this.dtgActivos;
             this.cardView1.Name = "cardView1";
             this.cardView1.OptionsBehavior.Editable = false;
+            this.cardView1.OptionsFind.AlwaysVisible = true;
             this.cardView1.VertScrollVisibility = DevExpress.XtraGrid.Views.Base.ScrollVisibility.Auto;
             // 
             // gridColumn1
