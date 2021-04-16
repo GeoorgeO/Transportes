@@ -113,6 +113,10 @@
             this.Gasto_Total_D = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Ganancias_Total_D = new DevExpress.XtraGrid.Columns.GridColumn();
             this.PGastoIndirecto_D = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Monto_Viaje_P = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Monto_Viaje_D = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Rendimiento_Total_P = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Rendimiento_Total_D = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panelControl5 = new DevExpress.XtraEditors.PanelControl();
             this.gridControl3 = new DevExpress.XtraGrid.GridControl();
             this.gridView3 = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -125,10 +129,10 @@
             this.Prorateo_P = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Importe_D = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Prorateo_D = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.Monto_Viaje_P = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.Monto_Viaje_D = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.Rendimiento_Total_P = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.Rendimiento_Total_D = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Monto_Viaje_PG = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Monto_Viaje_DG = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Rendimiento_Total_PG = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Rendimiento_Total_DG = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
@@ -507,7 +511,11 @@
             this.Monto_Factura_DG,
             this.Gasto_Total_DG,
             this.Utilidad_Total_DG,
-            this.GastoIndirecto_D});
+            this.GastoIndirecto_D,
+            this.Monto_Viaje_PG,
+            this.Monto_Viaje_DG,
+            this.Rendimiento_Total_PG,
+            this.Rendimiento_Total_DG});
             this.gridView2.GridControl = this.gridControl2;
             this.gridView2.Name = "gridView2";
             this.gridView2.OptionsBehavior.Editable = false;
@@ -1122,6 +1130,50 @@
             this.PGastoIndirecto_D.Visible = true;
             this.PGastoIndirecto_D.VisibleIndex = 32;
             // 
+            // Monto_Viaje_P
+            // 
+            this.Monto_Viaje_P.Caption = "M. Viaje Pesos";
+            this.Monto_Viaje_P.DisplayFormat.FormatString = "{0:#,###.00}";
+            this.Monto_Viaje_P.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.Monto_Viaje_P.FieldName = "Monto_Viaje_P";
+            this.Monto_Viaje_P.Name = "Monto_Viaje_P";
+            this.Monto_Viaje_P.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "Monto_Viaje_P", "{0:#,###.00}")});
+            this.Monto_Viaje_P.Visible = true;
+            this.Monto_Viaje_P.VisibleIndex = 33;
+            // 
+            // Monto_Viaje_D
+            // 
+            this.Monto_Viaje_D.Caption = "M. Viaje Dolares";
+            this.Monto_Viaje_D.DisplayFormat.FormatString = "{0:#,###.00}";
+            this.Monto_Viaje_D.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.Monto_Viaje_D.FieldName = "Monto_Viaje_D";
+            this.Monto_Viaje_D.Name = "Monto_Viaje_D";
+            this.Monto_Viaje_D.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "Monto_Viaje_D", "{0:#,###.00}")});
+            // 
+            // Rendimiento_Total_P
+            // 
+            this.Rendimiento_Total_P.Caption = "Rendimiento Viaje";
+            this.Rendimiento_Total_P.DisplayFormat.FormatString = "{0:#,###.00}";
+            this.Rendimiento_Total_P.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.Rendimiento_Total_P.FieldName = "Rendimiento_Total_P";
+            this.Rendimiento_Total_P.Name = "Rendimiento_Total_P";
+            this.Rendimiento_Total_P.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "Rendimiento_Total_P", "{0:#,###.00}")});
+            this.Rendimiento_Total_P.Visible = true;
+            this.Rendimiento_Total_P.VisibleIndex = 34;
+            // 
+            // Rendimiento_Total_D
+            // 
+            this.Rendimiento_Total_D.Caption = "Rendimiento Viaje";
+            this.Rendimiento_Total_D.DisplayFormat.FormatString = "{0:#,###.00}";
+            this.Rendimiento_Total_D.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.Rendimiento_Total_D.FieldName = "Rendimiento_Total_D";
+            this.Rendimiento_Total_D.Name = "Rendimiento_Total_D";
+            this.Rendimiento_Total_D.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "Rendimiento_Total_D", "{0:#,###.00}")});
+            // 
             // panelControl5
             // 
             this.panelControl5.Controls.Add(this.gridControl3);
@@ -1235,37 +1287,49 @@
             this.Prorateo_D.FieldName = "Prorateo_D";
             this.Prorateo_D.Name = "Prorateo_D";
             // 
-            // Monto_Viaje_P
+            // Monto_Viaje_PG
             // 
-            this.Monto_Viaje_P.Caption = "M. Viaje Pesos";
-            this.Monto_Viaje_P.FieldName = "Monto_Viaje_P";
-            this.Monto_Viaje_P.Name = "Monto_Viaje_P";
-            this.Monto_Viaje_P.Visible = true;
-            this.Monto_Viaje_P.VisibleIndex = 33;
+            this.Monto_Viaje_PG.Caption = "M. Viaje Pesos";
+            this.Monto_Viaje_PG.DisplayFormat.FormatString = "{0:#,###.00}";
+            this.Monto_Viaje_PG.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.Monto_Viaje_PG.FieldName = "Monto_Viaje_P";
+            this.Monto_Viaje_PG.Name = "Monto_Viaje_PG";
+            this.Monto_Viaje_PG.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "Monto_Viaje_P", "{0:#,###.00}")});
+            this.Monto_Viaje_PG.Visible = true;
+            this.Monto_Viaje_PG.VisibleIndex = 7;
             // 
-            // Monto_Viaje_D
+            // Monto_Viaje_DG
             // 
-            this.Monto_Viaje_D.Caption = "M. Viaje Dolares";
-            this.Monto_Viaje_D.FieldName = "Monto_Viaje_D";
-            this.Monto_Viaje_D.Name = "Monto_Viaje_D";
-            this.Monto_Viaje_D.Visible = true;
-            this.Monto_Viaje_D.VisibleIndex = 34;
+            this.Monto_Viaje_DG.Caption = "M. Viaje Dolares";
+            this.Monto_Viaje_DG.DisplayFormat.FormatString = "{0:#,###.00}";
+            this.Monto_Viaje_DG.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.Monto_Viaje_DG.FieldName = "Monto_Viaje_D";
+            this.Monto_Viaje_DG.Name = "Monto_Viaje_DG";
+            this.Monto_Viaje_DG.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "Monto_Viaje_D", "{0:#,###.00}")});
             // 
-            // Rendimiento_Total_P
+            // Rendimiento_Total_PG
             // 
-            this.Rendimiento_Total_P.Caption = "Rendimiento Viaje";
-            this.Rendimiento_Total_P.FieldName = "Rendimiento_Total_P";
-            this.Rendimiento_Total_P.Name = "Rendimiento_Total_P";
-            this.Rendimiento_Total_P.Visible = true;
-            this.Rendimiento_Total_P.VisibleIndex = 35;
+            this.Rendimiento_Total_PG.Caption = "Rendimiento Viajes Pesos";
+            this.Rendimiento_Total_PG.DisplayFormat.FormatString = "{0:#,###.00}";
+            this.Rendimiento_Total_PG.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.Rendimiento_Total_PG.FieldName = "Rendimiento_Total_P";
+            this.Rendimiento_Total_PG.Name = "Rendimiento_Total_PG";
+            this.Rendimiento_Total_PG.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "Rendimiento_Total_P", "{0:#,###.00}")});
+            this.Rendimiento_Total_PG.Visible = true;
+            this.Rendimiento_Total_PG.VisibleIndex = 8;
             // 
-            // Rendimiento_Total_D
+            // Rendimiento_Total_DG
             // 
-            this.Rendimiento_Total_D.Caption = "Rendimiento Viaje";
-            this.Rendimiento_Total_D.FieldName = "Rendimiento_Total_D";
-            this.Rendimiento_Total_D.Name = "Rendimiento_Total_D";
-            this.Rendimiento_Total_D.Visible = true;
-            this.Rendimiento_Total_D.VisibleIndex = 36;
+            this.Rendimiento_Total_DG.Caption = "Rendimiento Viajes Dolares";
+            this.Rendimiento_Total_DG.DisplayFormat.FormatString = "{0:#,###.00}";
+            this.Rendimiento_Total_DG.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.Rendimiento_Total_DG.FieldName = "Rendimiento_Total_D";
+            this.Rendimiento_Total_DG.Name = "Rendimiento_Total_DG";
+            this.Rendimiento_Total_DG.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "Rendimiento_Total_D", "{0:#,###.00}")});
             // 
             // Frm_Rpt_GastosSalida
             // 
@@ -1418,5 +1482,9 @@
         private DevExpress.XtraGrid.Columns.GridColumn Monto_Viaje_D;
         private DevExpress.XtraGrid.Columns.GridColumn Rendimiento_Total_P;
         private DevExpress.XtraGrid.Columns.GridColumn Rendimiento_Total_D;
+        private DevExpress.XtraGrid.Columns.GridColumn Monto_Viaje_PG;
+        private DevExpress.XtraGrid.Columns.GridColumn Monto_Viaje_DG;
+        private DevExpress.XtraGrid.Columns.GridColumn Rendimiento_Total_PG;
+        private DevExpress.XtraGrid.Columns.GridColumn Rendimiento_Total_DG;
     }
 }

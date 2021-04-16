@@ -389,6 +389,10 @@ namespace TransportBusiness
                 Utilidad_Total_DG.VisibleIndex = -1;
                 GastoIndirecto_D.Visible = false;
                 GastoIndirecto_D.VisibleIndex = -1;
+                Monto_Viaje_DG.Visible = false;
+                Monto_Viaje_DG.VisibleIndex = -1;
+                Rendimiento_Total_DG.Visible = false;
+                Rendimiento_Total_DG.VisibleIndex = -1;
 
                 Monto_Factura_PG.Visible = true;
                 Monto_Factura_PG.VisibleIndex = 4;
@@ -398,7 +402,11 @@ namespace TransportBusiness
                 GastoIndirecto_P.VisibleIndex = 6;
                 Utilidad_Total_PG.Visible = true;
                 Utilidad_Total_PG.VisibleIndex = 7;
-               
+                Monto_Viaje_PG.Visible = true;
+                Monto_Viaje_PG.VisibleIndex = 8;
+                Rendimiento_Total_PG.Visible = true;
+                Rendimiento_Total_PG.VisibleIndex = 9;
+
 
 
                 Fecha_Salida.VisibleIndex = 1;
@@ -437,6 +445,10 @@ namespace TransportBusiness
                 PGastoIndirecto_D.VisibleIndex = -1;
                 Ganancias_Total_D.Visible = false;
                 Ganancias_Total_D.VisibleIndex = -1;
+                Monto_Viaje_D.Visible = false;
+                Monto_Viaje_D.VisibleIndex = -1;
+                Rendimiento_Total_D.Visible = false;
+                Rendimiento_Total_D.VisibleIndex = -1;
 
                 Monto_Factura_P.Visible = true;
                 Monto_Factura_P.VisibleIndex = 8;
@@ -467,7 +479,10 @@ namespace TransportBusiness
                 PGastoIndirecto_P.VisibleIndex = 19;
                 Ganancias_Total_P.Visible = true;
                 Ganancias_Total_P.VisibleIndex = 20;
-
+                Monto_Viaje_P.Visible = true;
+                Monto_Viaje_P.VisibleIndex = 21;
+                Rendimiento_Total_P.Visible = true;
+                Rendimiento_Total_P.VisibleIndex = 22;
 
             }
             else
@@ -483,6 +498,10 @@ namespace TransportBusiness
                 Utilidad_Total_PG.VisibleIndex = -1;
                 GastoIndirecto_P.Visible = false;
                 GastoIndirecto_P.VisibleIndex = -1;
+                Monto_Viaje_PG.Visible = false;
+                Monto_Viaje_PG.VisibleIndex = -1;
+                Rendimiento_Total_PG.Visible = false;
+                Rendimiento_Total_PG.VisibleIndex = -1;
 
                 Monto_Factura_DG.Visible = true;
                 Monto_Factura_DG.VisibleIndex = 4;
@@ -492,7 +511,10 @@ namespace TransportBusiness
                 GastoIndirecto_D.VisibleIndex = 6;
                 Utilidad_Total_DG.Visible = true;
                 Utilidad_Total_DG.VisibleIndex = 7;
-               
+                Monto_Viaje_DG.Visible = true;
+                Monto_Viaje_DG.VisibleIndex = 8;
+                Rendimiento_Total_DG.Visible = true;
+                Rendimiento_Total_DG.VisibleIndex = 9;
 
 
                 Fecha_Salida.VisibleIndex = 1;
@@ -531,6 +553,10 @@ namespace TransportBusiness
                 PGastoIndirecto_P.VisibleIndex = -1;
                 Ganancias_Total_P.Visible = false;
                 Ganancias_Total_P.VisibleIndex = -1;
+                Monto_Viaje_P.Visible = false;
+                Monto_Viaje_P.VisibleIndex = -1;
+                Rendimiento_Total_P.Visible = false;
+                Rendimiento_Total_P.VisibleIndex = -1;
 
                 Monto_Factura_D.Visible = true;
                 Monto_Factura_D.VisibleIndex = 8;
@@ -561,7 +587,10 @@ namespace TransportBusiness
                 PGastoIndirecto_D.VisibleIndex = 19;
                 Ganancias_Total_D.Visible = true;
                 Ganancias_Total_D.VisibleIndex = 20;
-
+                Monto_Viaje_D.Visible = true;
+                Monto_Viaje_D.VisibleIndex = 21;
+                Rendimiento_Total_D.Visible = true;
+                Rendimiento_Total_D.VisibleIndex = 22;
             }
         }
 
