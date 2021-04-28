@@ -345,6 +345,10 @@ namespace TransportBusiness
         private void Frm_Principal_Load(object sender, EventArgs e)
         {
             CargarAccesos();
+            Frm_TipoCambio Ventana = new Frm_TipoCambio();
+            Ventana.vIni = true;
+            Ventana.ShowDialog();
+           
         }
 
         private void btnHerramienta_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)

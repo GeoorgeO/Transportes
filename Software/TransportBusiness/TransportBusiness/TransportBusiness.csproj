@@ -483,6 +483,12 @@
     <Compile Include="Formularios\Reportes\Frm_Rpt_GastosSalida_Preview.Designer.cs">
       <DependentUpon>Frm_Rpt_GastosSalida_Preview.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\Reportes\Frm_Rpt_SalidasGeneral.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Reportes\Frm_Rpt_SalidasGeneral.Designer.cs">
+      <DependentUpon>Frm_Rpt_SalidasGeneral.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\Seguridad\Frm_Pantallas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -736,6 +742,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Reportes\Frm_Rpt_GastosSalida_Preview.resx">
       <DependentUpon>Frm_Rpt_GastosSalida_Preview.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Reportes\Frm_Rpt_SalidasGeneral.resx">
+      <DependentUpon>Frm_Rpt_SalidasGeneral.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Reportes\Rpt_GastosSalida.rdlc" />
     <EmbeddedResource Include="Formularios\Seguridad\Frm_Pantallas.resx">
