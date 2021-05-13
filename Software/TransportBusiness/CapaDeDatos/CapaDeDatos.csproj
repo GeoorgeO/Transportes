@@ -77,6 +77,7 @@
     <Compile Include="Catalogos\CLS_Perfiles_Pantallas.cs" />
     <Compile Include="Catalogos\CLS_Polizas.cs" />
     <Compile Include="Catalogos\CLS_Proveedores.cs" />
+    <Compile Include="Catalogos\CLS_Rpt_SalidasG.cs" />
     <Compile Include="Catalogos\CLS_Rutas.cs" />
     <Compile Include="Catalogos\CLS_Rutas_Detalle.cs" />
     <Compile Include="Catalogos\CLS_Salidas.cs" />

@@ -638,5 +638,18 @@ namespace TransportBusiness
                 XtraMessageBox.Show("No Cuentas con acceso a esta Opcion [038]");
             }
         }
+
+        private void btnSalidasxMes_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            if (TieneAcceso("036"))
+            {
+                Frm_Rpt_SalidasGeneral.DefInstance.MdiParent = this;
+                Frm_Rpt_SalidasGeneral.DefInstance.Show();
+            }
+            else
+            {
+                XtraMessageBox.Show("No Cuentas con acceso a esta Opcion [036]");
+            }
+        }
     }
 }
