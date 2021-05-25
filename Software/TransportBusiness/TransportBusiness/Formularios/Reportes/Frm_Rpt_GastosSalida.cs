@@ -733,5 +733,10 @@ namespace TransportBusiness
                 CargarEmpresas();
             }
         }
+
+        private void btnLimpiar_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+
+        }
     }
 }

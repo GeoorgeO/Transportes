@@ -198,11 +198,111 @@ namespace TransportBusiness
             }
         }
 
+        private void CargarFacturasxMes()
+        {
+
+            CLS_Gastos_Contpaq gs = new CLS_Gastos_Contpaq();
+            gs.MtdSeleccionarCtasNoConsidera();
+            string Cadena = String.Empty;
+            if (gs.Exito)
+            {
+                for (int i = 0; i < gs.Datos.Rows.Count; i++)
+                {
+
+                    string s = gs.Datos.Rows[i]["Id_cuenta"].ToString(); ;
+
+                    if (i == 0)
+                    {
+                        Cadena = s;
+                    }
+                    else
+                    {
+                        Cadena = Cadena + "," + s;
+                    }
+
+                }
+            }
+
+            CLS_Rpt_SalidasG Clase = new CLS_Rpt_SalidasG();
+            Clase.Anio = comboAnio.EditValue.ToString();
+            if (checkEmpresas.Checked)
+            {
+                Clase.Id_Empresa = "";
+            }
+            else
+            {
+                Clase.Id_Empresa = comboEmpresas.EditValue.ToString().Substring(0, 4);
+            }
+
+            Clase.Moneda = radioMoneda.EditValue.ToString();
+            Clase.Cuentas = Cadena;
+
+            Clase.MtdFacturasxMes();
+            if (Clase.Exito)
+            {
+
+                gridControl4.DataSource = Clase.Datos;
+
+            }
+
+        }
+
+        private void CargarUtilidadxMes()
+        {
+
+            CLS_Gastos_Contpaq gs = new CLS_Gastos_Contpaq();
+            gs.MtdSeleccionarCtasNoConsidera();
+            string Cadena = String.Empty;
+            if (gs.Exito)
+            {
+                for (int i = 0; i < gs.Datos.Rows.Count; i++)
+                {
+
+                    string s = gs.Datos.Rows[i]["Id_cuenta"].ToString(); ;
+
+                    if (i == 0)
+                    {
+                        Cadena = s;
+                    }
+                    else
+                    {
+                        Cadena = Cadena + "," + s;
+                    }
+
+                }
+            }
+
+            CLS_Rpt_SalidasG Clase = new CLS_Rpt_SalidasG();
+            Clase.Anio = comboAnio.EditValue.ToString();
+            if (checkEmpresas.Checked)
+            {
+                Clase.Id_Empresa = "";
+            }
+            else
+            {
+                Clase.Id_Empresa = comboEmpresas.EditValue.ToString().Substring(0, 4);
+            }
+
+            Clase.Moneda = radioMoneda.EditValue.ToString();
+            Clase.Cuentas = Cadena;
+
+            Clase.MtdUtilidadxMes();
+            if (Clase.Exito)
+            {
+
+                gridControl5.DataSource = Clase.Datos;
+
+            }
+
+        }
+
         private void btnFiltrar_Click(object sender, EventArgs e)
         {
             CargarGridNsalidasxMes();
             CargarGridGastosDirectosxMes();
             CargarGridGastosIndirectosxMes();
+            CargarFacturasxMes();
+            CargarUtilidadxMes();
         }
 
         private void checkEmpresas_CheckedChanged(object sender, EventArgs e)
@@ -216,6 +316,11 @@ namespace TransportBusiness
                 comboEmpresas.Enabled = true;
                 CargarEmpresas();
             }
+        }
+
+        private void btnSalir_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            this.Close();
         }
     }
 }

@@ -158,5 +158,81 @@ namespace CapaDeDatos
 
         }
 
+        public void MtdFacturasxMes()
+        {
+            TipoDato _dato = new TipoDato();
+            Conexion _conexion = new Conexion(cadenaConexion);
+
+            Exito = true;
+            try
+            {
+                _conexion.NombreProcedimiento = "SP_Rpt_FacturasxMes_Select";
+
+                _dato.CadenaTexto = Anio;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Anio");
+                _dato.CadenaTexto = Id_Empresa;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_Empresa");
+                _dato.CadenaTexto = Cuentas;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Cuentas");
+                _dato.CadenaTexto = Moneda;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Moneda");
+                _conexion.EjecutarDataset();
+
+                if (_conexion.Exito)
+                {
+                    Datos = _conexion.Datos;
+                }
+                else
+                {
+                    Mensaje = _conexion.Mensaje;
+                    Exito = false;
+                }
+            }
+            catch (Exception e)
+            {
+                Mensaje = e.Message;
+                Exito = false;
+            }
+
+        }
+
+        public void MtdUtilidadxMes()
+        {
+            TipoDato _dato = new TipoDato();
+            Conexion _conexion = new Conexion(cadenaConexion);
+
+            Exito = true;
+            try
+            {
+                _conexion.NombreProcedimiento = "SP_Rpt_UtilidadxMes_Select";
+
+                _dato.CadenaTexto = Anio;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Anio");
+                _dato.CadenaTexto = Id_Empresa;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_Empresa");
+                _dato.CadenaTexto = Cuentas;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Cuentas");
+                _dato.CadenaTexto = Moneda;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Moneda");
+                _conexion.EjecutarDataset();
+
+                if (_conexion.Exito)
+                {
+                    Datos = _conexion.Datos;
+                }
+                else
+                {
+                    Mensaje = _conexion.Mensaje;
+                    Exito = false;
+                }
+            }
+            catch (Exception e)
+            {
+                Mensaje = e.Message;
+                Exito = false;
+            }
+
+        }
+
     }
 }
