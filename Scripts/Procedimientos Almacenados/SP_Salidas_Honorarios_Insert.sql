@@ -17,7 +17,8 @@ create PROCEDURE [dbo].[SP_Salidas_Honorarios_Insert]
 	-- Add the parameters for the stored procedure here
 	@Id_Salida char(10),
 	@Importe numeric(18, 2),
-	@Fecha_Honorario datetime
+	@Fecha_Honorario datetime,
+	@Usuario varchar(10)
 	
 AS
 BEGIN
@@ -40,14 +41,18 @@ BEGIN
 			   ,Concepto
 			   ,Importe
 			   ,Moneda
-			   ,Fecha_Honorario)
+			   ,Fecha_Honorario
+			   ,Creador
+			   ,Fecha_Creador)
 	     	VALUES
 	           (@Id_Honorario
 			   ,@Id_Salida
 			   ,'HONORARIOS AL OPERADOR'
 			   ,@Importe
 			   ,'P'
-			   ,@Fecha_Honorario)
+			   ,@Fecha_Honorario
+			   ,@Usuario
+			   ,getdate())
 		
 		commit transaction T1;
 		set @correcto=1

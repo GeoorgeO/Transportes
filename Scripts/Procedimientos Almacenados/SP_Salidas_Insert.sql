@@ -31,7 +31,8 @@ create PROCEDURE [dbo].[SP_Salidas_Insert]
 	@Lts_Km numeric(18,2),
 	@Id_Huerta char(5),
 	@Observaciones varchar(100),
-	@EnRuta bit
+	@EnRuta bit,
+	@Usuario varchar(10)
 as
 BEGIN
 	-- SET NOCOUNT ON added to prevent extra result sets from
@@ -75,7 +76,9 @@ BEGIN
 				km_Inicio=@km_Inicio,
 				km_Fin=@km_Fin,
 				Id_Huerta=@Id_Huerta,
-				Observaciones=@Observaciones
+				Observaciones=@Observaciones,
+				Modificador=@Usuario,
+				Fecha_Modificador=getdate()
 		    WHERE
 		    	Id_Salida=@Id_Salida
 				
@@ -95,7 +98,9 @@ BEGIN
 			   ,km_Inicio
 			   ,km_Fin
 			   ,Id_Huerta
-			   ,Observaciones)
+			   ,Observaciones
+			   ,Creador
+			   ,Fecha_Creador)
 	     	VALUES
 	           (@maximo
 	           ,@Fecha_Salida
@@ -110,7 +115,9 @@ BEGIN
 			   ,@km_Inicio
 			   ,@km_Fin
 			   ,@Id_Huerta
-			   ,@Observaciones)
+			   ,@Observaciones
+			   ,@Usuario
+			   ,getdate())
 
 		   
 		declare @yano integer

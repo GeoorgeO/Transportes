@@ -20,6 +20,7 @@ namespace CapaDeDatos
         public string FacturaXMLNombre { get; set; }
         public string Moneda { get; set; }
         public string Fecha_Factura { get; set; }
+        public string Usuario { get; set; }
 
         public void MtdSeleccionarSalidas_OtrosGastos()
         {
@@ -120,6 +121,8 @@ namespace CapaDeDatos
                 _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Otros_Gastos");
                 _dato.CadenaTexto = Fecha_Factura;
                 _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Fecha_Factura");
+                _dato.CadenaTexto = Usuario;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Usuario");
                 _conexion.EjecutarDataset();
 
                 if (_conexion.Exito)

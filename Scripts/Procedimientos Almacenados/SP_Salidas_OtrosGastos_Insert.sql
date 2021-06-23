@@ -26,7 +26,8 @@ create PROCEDURE [dbo].[SP_Salidas_OtrosGastos_Insert]
 	@FacturaPDFNombre varchar(80),
 	@FacturaXML varbinary(max),
 	@FacturaXMLNombre varchar(80),
-	@Fecha_Factura varchar(15)
+	@Fecha_Factura varchar(15),
+	@Usuario varchar(10)
 AS
 BEGIN
 	-- SET NOCOUNT ON added to prevent extra result sets from
@@ -66,7 +67,9 @@ BEGIN
 				FacturaPDF=@FacturaPDF,
 				FacturaXMLNombre=@FacturaXMLNombre,
 				FacturaXML=@FacturaXML,
-				Fecha_Factura=@Fecha_Factura
+				Fecha_Factura=@Fecha_Factura,
+				Modificador=@Usuario,
+				Fecha_Modificador=getdate()
 		    WHERE
 		    	Id_Salida=@Id_Salida and Ticket=@Ticket
 				
@@ -83,7 +86,9 @@ BEGIN
 				FacturaPDFNombre,
 				FacturaXML,
 				FacturaXMLNombre,
-				Fecha_Factura)
+				Fecha_Factura,
+				Creador,
+				Fecha_Creador)
 	     	VALUES
 	           (@Ticket
 	           ,@Id_Salida
@@ -96,7 +101,9 @@ BEGIN
 				@FacturaPDFNombre,
 				@FacturaXML,
 				@FacturaXMLNombre,
-				@Fecha_Factura)
+				@Fecha_Factura,
+				@Usuario,
+				getdate())
 		
 		commit transaction T1;
 		set @correcto=1

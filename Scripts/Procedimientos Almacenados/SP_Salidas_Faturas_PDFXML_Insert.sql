@@ -26,7 +26,9 @@ create PROCEDURE [dbo].[SP_Salidas_Faturas_PDFXML_Insert]
 	@Diferido bit,
 	@Fecha_Factura varchar(15),
 	@Fecha_Cobro varchar(15),
-	@Fecha_Pago varchar(15)
+	@Fecha_Pago varchar(15),
+	@Importe_Viaje numeric(18, 2),
+	@Usuario varchar(10)
 AS
 BEGIN
 	-- SET NOCOUNT ON added to prevent extra result sets from
@@ -64,7 +66,10 @@ BEGIN
 				Diferido=@Diferido,
 				Fecha_Factura=@Fecha_Factura,
 				Fecha_Cobro=@Fecha_Cobro,
-				Fecha_Pago=@Fecha_Pago
+				Fecha_Pago=@Fecha_Pago,
+				Importe_Viaje=@Importe_Viaje,
+				Modificador=@Usuario,
+				Fecha_Modificador=getdate()
 			where Id_Salida=@Id_Salida and Id_Archivo=@Id_Archivo
 			
 		else
@@ -81,7 +86,10 @@ BEGIN
 			   ,Diferido
 			   ,Fecha_Factura
 			   ,Fecha_Cobro
-			   ,Fecha_Pago)
+			   ,Fecha_Pago
+			   ,Importe_Viaje
+			   ,Creador
+			   ,Fecha_Creador)
 	     	VALUES
 	           (@Id_Salida
 	           ,@FacturaPDF
@@ -94,7 +102,10 @@ BEGIN
 			   ,@Diferido
 			   ,@Fecha_Factura
 			   ,@Fecha_Cobro
-			   ,@Fecha_Pago)
+			   ,@Fecha_Pago
+			   ,@Importe_Viaje
+			   ,@Usuario
+			   ,getdate())
 		
 		commit transaction T1;
 		set @correcto=1

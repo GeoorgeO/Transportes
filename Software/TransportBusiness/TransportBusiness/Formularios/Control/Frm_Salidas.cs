@@ -24,6 +24,7 @@ namespace TransportBusiness
 
         string RutaPDFC = "", NombrePDFC = "";
         string RutaXMLC = "", NombreXMLC = "";
+        public static string Id_Usuario { get; set; }
 
         string OperadorAnterior = "",ActivoAnterior="";
 
@@ -102,6 +103,7 @@ namespace TransportBusiness
             Clase.Id_Huerta = textHuerta.Tag.ToString();
             Clase.Observaciones= memoObservaciones.Text.ToString();
             Clase.EnRuta = "1";
+            Clase.Usuario = Id_Usuario;
             Clase.MtdInsertarSalidas();
 
             if (Clase.Exito)
@@ -395,6 +397,7 @@ namespace TransportBusiness
            
             Fecha = Convert.ToDateTime(dateFechaDiesel.Text.Trim());
             Clase.Fecha_Diesel = Fecha.Year.ToString() + DosCero(Fecha.Month.ToString()) + DosCero(Fecha.Day.ToString());
+            Clase.Usuario = Id_Usuario;
             Clase.MtdInsertarSalidas_Diesel();
             if (Clase.Exito)
             {
@@ -600,7 +603,7 @@ namespace TransportBusiness
                 Fecha = Convert.ToDateTime(dateOtroGasto.Text.Trim());
                 Clase.Fecha_Factura = Fecha.Year.ToString() + DosCero(Fecha.Month.ToString()) + DosCero(Fecha.Day.ToString());
             }
-
+            Clase.Usuario = Id_Usuario;
             Clase.MtdInsertarSalidas_OtrosGastos();
 
             if (Clase.Exito)
@@ -785,6 +788,7 @@ namespace TransportBusiness
             Clase.Importe = Convert.ToDecimal(textImporteV.Text);
             DateTime Fecha = Convert.ToDateTime(dateFechaViatico.Text.Trim());
             Clase.FechaPago = Fecha.Year.ToString() + DosCero(Fecha.Month.ToString()) + DosCero(Fecha.Day.ToString());
+          
             Clase.MtdInsertarSalidas_Viaticos();
 
             if (Clase.Exito)
@@ -1117,6 +1121,7 @@ namespace TransportBusiness
             Clase.Importe = Convert.ToDecimal(textImporteH.Text);
             DateTime Fecha = Convert.ToDateTime(dtFechaSalida.Text.Trim());
             Clase.Fecha_Honorario = Fecha.Year.ToString() + DosCero(Fecha.Month.ToString()) + DosCero(Fecha.Day.ToString());
+            Clase.Usuario = Id_Usuario;
             Clase.MtdInsertarSalidas_Honorarios();
 
             if (Clase.Exito)
@@ -1474,9 +1479,9 @@ namespace TransportBusiness
             }
             
                 Clase.Importe_Viaje = Convert.ToDecimal(txtImporteViaje.Text);
-           
-            
 
+
+            Clase.Usuario = Id_Usuario;
             Clase.MtdInsertarSalidasArchivoPDFXML();
 
             if (Clase.Exito)

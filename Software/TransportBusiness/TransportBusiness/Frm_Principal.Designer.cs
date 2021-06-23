@@ -76,6 +76,7 @@
             this.btnCtasContables = new DevExpress.XtraBars.BarButtonItem();
             this.btnGastos = new DevExpress.XtraBars.BarButtonItem();
             this.btnGastosContpaq = new DevExpress.XtraBars.BarButtonItem();
+            this.btnSalidasxMes = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup9 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -96,7 +97,6 @@
             this.ribbonPageGroup12 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.xtraTabbedMdiManager1 = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
             this.SkinForm = new DevExpress.LookAndFeel.DefaultLookAndFeel(this.components);
-            this.btnSalidasxMes = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager1)).BeginInit();
             this.SuspendLayout();
@@ -163,7 +163,7 @@
             this.ribbonPage2,
             this.ribbonPage4});
             this.ribbonControl1.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.Office2007;
-            this.ribbonControl1.Size = new System.Drawing.Size(1250, 144);
+            this.ribbonControl1.Size = new System.Drawing.Size(1256, 146);
             // 
             // barButtonItem1
             // 
@@ -550,6 +550,15 @@
             this.btnGastosContpaq.Name = "btnGastosContpaq";
             this.btnGastosContpaq.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnGastosContpaq_ItemClick);
             // 
+            // btnSalidasxMes
+            // 
+            this.btnSalidasxMes.Caption = "Salidas por Mes";
+            this.btnSalidasxMes.Id = 46;
+            this.btnSalidasxMes.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnSalidasxMes.ImageOptions.Image")));
+            this.btnSalidasxMes.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnSalidasxMes.ImageOptions.LargeImage")));
+            this.btnSalidasxMes.Name = "btnSalidasxMes";
+            this.btnSalidasxMes.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnSalidasxMes_ItemClick);
+            // 
             // ribbonPage1
             // 
             this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -719,23 +728,14 @@
             // SkinForm
             // 
             this.SkinForm.EnableBonusSkins = true;
-            this.SkinForm.LookAndFeel.SkinName = "Office 2010 Silver";
-            // 
-            // btnSalidasxMes
-            // 
-            this.btnSalidasxMes.Caption = "Salidas por Mes";
-            this.btnSalidasxMes.Id = 46;
-            this.btnSalidasxMes.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem3.ImageOptions.Image")));
-            this.btnSalidasxMes.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem3.ImageOptions.LargeImage")));
-            this.btnSalidasxMes.Name = "btnSalidasxMes";
-            this.btnSalidasxMes.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnSalidasxMes_ItemClick);
+            this.SkinForm.LookAndFeel.SkinName = "Sharp Plus";
             // 
             // Frm_Principal
             // 
             this.AllowFormGlass = DevExpress.Utils.DefaultBoolean.True;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1250, 582);
+            this.ClientSize = new System.Drawing.Size(1256, 585);
             this.Controls.Add(this.ribbonControl1);
             this.IsMdiContainer = true;
             this.Name = "Frm_Principal";
