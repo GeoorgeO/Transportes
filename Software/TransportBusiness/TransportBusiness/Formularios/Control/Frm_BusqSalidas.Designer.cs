@@ -74,6 +74,7 @@
             this.Id_Huerta = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Nombre_Huerta = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Observaciones = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.EsNacional = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
@@ -231,7 +232,7 @@
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelControl1.Location = new System.Drawing.Point(71, 0);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Padding = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.panelControl1.Padding = new System.Windows.Forms.Padding(5);
             this.panelControl1.Size = new System.Drawing.Size(598, 310);
             this.panelControl1.TabIndex = 8;
             // 
@@ -278,7 +279,8 @@
             this.Lts_Km,
             this.Id_Huerta,
             this.Nombre_Huerta,
-            this.Observaciones});
+            this.Observaciones,
+            this.EsNacional});
             this.dtgValRutas.GridControl = this.dtgRutas;
             this.dtgValRutas.Name = "dtgValRutas";
             this.dtgValRutas.OptionsBehavior.Editable = false;
@@ -461,6 +463,12 @@
             this.Observaciones.Visible = true;
             this.Observaciones.VisibleIndex = 6;
             // 
+            // EsNacional
+            // 
+            this.EsNacional.Caption = "Nacional";
+            this.EsNacional.FieldName = "EsNacional";
+            this.EsNacional.Name = "EsNacional";
+            // 
             // Frm_BusqSalidas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -533,5 +541,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn Id_Huerta;
         private DevExpress.XtraGrid.Columns.GridColumn Nombre_Huerta;
         private DevExpress.XtraGrid.Columns.GridColumn Observaciones;
+        private DevExpress.XtraGrid.Columns.GridColumn EsNacional;
     }
 }

@@ -42,6 +42,7 @@ namespace TransportBusiness
         public string vId_Huerta { get; set; }
         public string vNombre_Huerta { get; set; }
         public string vObservaciones { get; set; }
+        public int vEsNacional { get; set; }
 
         public int filtro { get; set; }
 
@@ -96,7 +97,7 @@ namespace TransportBusiness
                     vId_Huerta = row["Id_Huerta"].ToString();
                     vNombre_Huerta = row["Nombre_Huerta"].ToString();
                     vObservaciones = row["Observaciones"].ToString();
-                    
+                    vEsNacional = Convert.ToInt16(row["EsNacional"]);
                 }
             }
             catch (Exception ex)
@@ -146,6 +147,7 @@ namespace TransportBusiness
             vId_Huerta = "";
             vNombre_Huerta = "";
             vObservaciones = "";
+            vEsNacional = 0;
             this.Close();
         }
 
@@ -183,6 +185,7 @@ namespace TransportBusiness
                     vId_Huerta = row["Id_Huerta"].ToString();
                     vNombre_Huerta = row["Nombre_Huerta"].ToString();
                     vObservaciones = row["Observaciones"].ToString();
+                    vEsNacional = Convert.ToInt16(row["EsNacional"]);
                 }
             }
             catch (Exception ex)
@@ -222,6 +225,7 @@ namespace TransportBusiness
                 vId_Huerta = "";
                 vNombre_Huerta = "";
                 vObservaciones = "";
+                vEsNacional = 0;
             }
             
         }

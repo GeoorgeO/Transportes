@@ -104,6 +104,15 @@ namespace TransportBusiness
             Clase.Observaciones= memoObservaciones.Text.ToString();
             Clase.EnRuta = "1";
             Clase.Usuario = Id_Usuario;
+            if (check_Nacional.Checked)
+            {
+                Clase.EsNacional = 1;
+            }
+            else
+            {
+                Clase.EsNacional = 0;
+            }
+            
             Clase.MtdInsertarSalidas();
 
             if (Clase.Exito)
@@ -216,7 +225,7 @@ namespace TransportBusiness
             gridCruce.DataSource = null;
             OperadorAnterior = "";
             ActivoAnterior = "";
-            
+            check_Nacional.Checked = false;
         }
 
         private void btnBusqAyudante_Click(object sender, EventArgs e)
@@ -359,6 +368,15 @@ namespace TransportBusiness
             textHuerta.Tag=frm.vId_Huerta;
             textHuerta.Text=frm.vNombre_Huerta;
             memoObservaciones.Text=frm.vObservaciones;
+            if (frm.vEsNacional>0)
+            {
+                check_Nacional.Checked = true;
+            }
+            else
+            {
+                check_Nacional.Checked = false;
+            }
+            
 
             CargarSalidas_Diesel();
             CargarSalidasOtrosGastos();

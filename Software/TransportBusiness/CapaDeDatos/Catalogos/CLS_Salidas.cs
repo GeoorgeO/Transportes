@@ -28,6 +28,7 @@ namespace CapaDeDatos
         public string EnRuta { get; set; }
         public int filtro { get; set; }
         public string Usuario { get; set; }
+        public int EsNacional { get; set; }
 
         public void MtdSeleccionarSalida()
         {
@@ -107,6 +108,8 @@ namespace CapaDeDatos
                 _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "EnRuta");
                 _dato.CadenaTexto = Usuario;
                 _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Usuario");
+                _dato.Entero = EsNacional;
+                _conexion.agregarParametro(EnumTipoDato.Entero, _dato, "EsNacional");
                 _conexion.EjecutarDataset();
                 if (_conexion.Exito)
                 {

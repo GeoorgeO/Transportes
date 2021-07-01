@@ -133,6 +133,7 @@
             this.Prorateo_P = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Importe_D = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Prorateo_D = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.NSalidas = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
@@ -384,7 +385,7 @@
             this.radioMoneda.Properties.Items.AddRange(new DevExpress.XtraEditors.Controls.RadioGroupItem[] {
             new DevExpress.XtraEditors.Controls.RadioGroupItem("P", "Pesos", true, "Pesos"),
             new DevExpress.XtraEditors.Controls.RadioGroupItem("D", "Dólares", true, "Dólares")});
-            this.radioMoneda.Size = new System.Drawing.Size(67, 40);
+            this.radioMoneda.Size = new System.Drawing.Size(67, 50);
             this.radioMoneda.TabIndex = 74;
             this.radioMoneda.SelectedIndexChanged += new System.EventHandler(this.radioGroup1_SelectedIndexChanged);
             // 
@@ -504,6 +505,7 @@
             this.gridView2.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.Id_Activo,
             this.Nombre_InternoG,
+            this.NSalidas,
             this.Nombre_Empresa,
             this.Monto_Factura_PG,
             this.Gasto_Total_PG,
@@ -546,7 +548,7 @@
             this.Nombre_Empresa.FieldName = "Nombre_Empresa";
             this.Nombre_Empresa.Name = "Nombre_Empresa";
             this.Nombre_Empresa.Visible = true;
-            this.Nombre_Empresa.VisibleIndex = 2;
+            this.Nombre_Empresa.VisibleIndex = 3;
             // 
             // Monto_Factura_PG
             // 
@@ -558,7 +560,7 @@
             this.Monto_Factura_PG.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "Monto_Factura_P", "{0:#,###.00}")});
             this.Monto_Factura_PG.Visible = true;
-            this.Monto_Factura_PG.VisibleIndex = 3;
+            this.Monto_Factura_PG.VisibleIndex = 4;
             // 
             // Gasto_Total_PG
             // 
@@ -570,7 +572,7 @@
             this.Gasto_Total_PG.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "Gasto_Total_P", "{0:#,###.00}")});
             this.Gasto_Total_PG.Visible = true;
-            this.Gasto_Total_PG.VisibleIndex = 4;
+            this.Gasto_Total_PG.VisibleIndex = 5;
             // 
             // Utilidad_Total_PG
             // 
@@ -582,7 +584,7 @@
             this.Utilidad_Total_PG.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "Utilidad_Total_P", "{0:#,###.00}")});
             this.Utilidad_Total_PG.Visible = true;
-            this.Utilidad_Total_PG.VisibleIndex = 5;
+            this.Utilidad_Total_PG.VisibleIndex = 6;
             // 
             // GastoIndirecto_P
             // 
@@ -594,7 +596,7 @@
             this.GastoIndirecto_P.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "GastoIndirecto_P", "{0:#,###.00}")});
             this.GastoIndirecto_P.Visible = true;
-            this.GastoIndirecto_P.VisibleIndex = 6;
+            this.GastoIndirecto_P.VisibleIndex = 7;
             // 
             // Monto_Factura_DG
             // 
@@ -646,7 +648,7 @@
             this.Monto_Viaje_PG.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "Monto_Viaje_P", "{0:#,###.00}")});
             this.Monto_Viaje_PG.Visible = true;
-            this.Monto_Viaje_PG.VisibleIndex = 7;
+            this.Monto_Viaje_PG.VisibleIndex = 8;
             // 
             // Monto_Viaje_DG
             // 
@@ -668,7 +670,7 @@
             this.Rendimiento_Total_PG.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "Rendimiento_Total_P", "{0:#,###.00}")});
             this.Rendimiento_Total_PG.Visible = true;
-            this.Rendimiento_Total_PG.VisibleIndex = 8;
+            this.Rendimiento_Total_PG.VisibleIndex = 9;
             // 
             // Rendimiento_Total_DG
             // 
@@ -973,7 +975,7 @@
             // 
             // Gasto_Total_P
             // 
-            this.Gasto_Total_P.Caption = "Gasto Total Pesos";
+            this.Gasto_Total_P.Caption = "Gasto Directo Pesos";
             this.Gasto_Total_P.DisplayFormat.FormatString = "{0:#,###.00}";
             this.Gasto_Total_P.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.Gasto_Total_P.FieldName = "Gasto_Total_P";
@@ -1141,7 +1143,7 @@
             // 
             // Gasto_Total_D
             // 
-            this.Gasto_Total_D.Caption = "Gasto Total Dólares";
+            this.Gasto_Total_D.Caption = "Gasto Directo Dólares";
             this.Gasto_Total_D.DisplayFormat.FormatString = "{0:#,###.00}";
             this.Gasto_Total_D.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.Gasto_Total_D.FieldName = "Gasto_Total_D";
@@ -1332,6 +1334,14 @@
             this.Prorateo_D.FieldName = "Prorateo_D";
             this.Prorateo_D.Name = "Prorateo_D";
             // 
+            // NSalidas
+            // 
+            this.NSalidas.Caption = "N° Salidas";
+            this.NSalidas.FieldName = "NSalidas";
+            this.NSalidas.Name = "NSalidas";
+            this.NSalidas.Visible = true;
+            this.NSalidas.VisibleIndex = 2;
+            // 
             // Frm_Rpt_GastosSalida
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1487,5 +1497,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn Monto_Viaje_DG;
         private DevExpress.XtraGrid.Columns.GridColumn Rendimiento_Total_PG;
         private DevExpress.XtraGrid.Columns.GridColumn Rendimiento_Total_DG;
+        private DevExpress.XtraGrid.Columns.GridColumn NSalidas;
     }
 }

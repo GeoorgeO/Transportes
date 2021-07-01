@@ -379,7 +379,8 @@ namespace TransportBusiness
             if (radioMoneda.EditValue.Equals("P"))
             {
                 Nombre_InternoG.VisibleIndex = 1;
-                Nombre_Empresa.VisibleIndex = 2;
+                NSalidas.VisibleIndex = 2;
+                Nombre_Empresa.VisibleIndex = 3;
 
                 Monto_Factura_DG.Visible = false;
                 Monto_Factura_DG.VisibleIndex = -1;
@@ -488,7 +489,8 @@ namespace TransportBusiness
             else
             {
                 Nombre_InternoG.VisibleIndex = 1;
-                Nombre_Empresa.VisibleIndex = 2;
+                NSalidas.VisibleIndex = 2;
+                Nombre_Empresa.VisibleIndex = 3;
 
                 Monto_Factura_PG.Visible = false;
                 Monto_Factura_PG.VisibleIndex = -1;
