@@ -75,6 +75,8 @@
             this.Nombre_Huerta = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Observaciones = new DevExpress.XtraGrid.Columns.GridColumn();
             this.EsNacional = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Id_ClienteAd = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Nombre_ClienteAd = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
@@ -280,7 +282,9 @@
             this.Id_Huerta,
             this.Nombre_Huerta,
             this.Observaciones,
-            this.EsNacional});
+            this.EsNacional,
+            this.Id_ClienteAd,
+            this.Nombre_ClienteAd});
             this.dtgValRutas.GridControl = this.dtgRutas;
             this.dtgValRutas.Name = "dtgValRutas";
             this.dtgValRutas.OptionsBehavior.Editable = false;
@@ -469,6 +473,18 @@
             this.EsNacional.FieldName = "EsNacional";
             this.EsNacional.Name = "EsNacional";
             // 
+            // Id_ClienteAd
+            // 
+            this.Id_ClienteAd.Caption = "Id_ClienteAd";
+            this.Id_ClienteAd.FieldName = "Id_ClienteAd";
+            this.Id_ClienteAd.Name = "Id_ClienteAd";
+            // 
+            // Nombre_ClienteAd
+            // 
+            this.Nombre_ClienteAd.Caption = "Nombre_ClienteAd";
+            this.Nombre_ClienteAd.FieldName = "Nombre_ClienteAd";
+            this.Nombre_ClienteAd.Name = "Nombre_ClienteAd";
+            // 
             // Frm_BusqSalidas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -542,5 +558,7 @@
         private DevExpress.XtraGrid.Columns.GridColumn Nombre_Huerta;
         private DevExpress.XtraGrid.Columns.GridColumn Observaciones;
         private DevExpress.XtraGrid.Columns.GridColumn EsNacional;
+        private DevExpress.XtraGrid.Columns.GridColumn Id_ClienteAd;
+        private DevExpress.XtraGrid.Columns.GridColumn Nombre_ClienteAd;
     }
 }

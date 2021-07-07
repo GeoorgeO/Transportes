@@ -43,6 +43,8 @@ namespace TransportBusiness
         public string vNombre_Huerta { get; set; }
         public string vObservaciones { get; set; }
         public int vEsNacional { get; set; }
+        public string vId_ClienteAd { get; set; }
+        public string vNombre_ClienteAd { get; set; }
 
         public int filtro { get; set; }
 
@@ -98,6 +100,8 @@ namespace TransportBusiness
                     vNombre_Huerta = row["Nombre_Huerta"].ToString();
                     vObservaciones = row["Observaciones"].ToString();
                     vEsNacional = Convert.ToInt16(row["EsNacional"]);
+                    vId_ClienteAd= row["Id_ClienteAd"].ToString();
+                    vNombre_ClienteAd = row["Nombre_ClienteAd"].ToString();
                 }
             }
             catch (Exception ex)
@@ -148,6 +152,8 @@ namespace TransportBusiness
             vNombre_Huerta = "";
             vObservaciones = "";
             vEsNacional = 0;
+            vId_ClienteAd = "";
+            vNombre_ClienteAd = "";
             this.Close();
         }
 
@@ -186,6 +192,8 @@ namespace TransportBusiness
                     vNombre_Huerta = row["Nombre_Huerta"].ToString();
                     vObservaciones = row["Observaciones"].ToString();
                     vEsNacional = Convert.ToInt16(row["EsNacional"]);
+                    vId_ClienteAd = row["Id_ClienteAd"].ToString();
+                    vNombre_ClienteAd = row["Nombre_ClienteAd"].ToString();
                 }
             }
             catch (Exception ex)
@@ -226,6 +234,8 @@ namespace TransportBusiness
                 vNombre_Huerta = "";
                 vObservaciones = "";
                 vEsNacional = 0;
+                vId_ClienteAd = "";
+                vNombre_ClienteAd = "";
             }
             
         }

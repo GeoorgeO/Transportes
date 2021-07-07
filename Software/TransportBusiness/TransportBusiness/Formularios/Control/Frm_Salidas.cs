@@ -103,6 +103,7 @@ namespace TransportBusiness
             Clase.Id_Huerta = textHuerta.Tag.ToString();
             Clase.Observaciones= memoObservaciones.Text.ToString();
             Clase.EnRuta = "1";
+            Clase.Id_ClienteAd = text_2doCliente.Tag.ToString();
             Clase.Usuario = Id_Usuario;
             if (check_Nacional.Checked)
             {
@@ -226,6 +227,8 @@ namespace TransportBusiness
             OperadorAnterior = "";
             ActivoAnterior = "";
             check_Nacional.Checked = false;
+            text_2doCliente.Tag = "";
+            text_2doCliente.Text = "";
         }
 
         private void btnBusqAyudante_Click(object sender, EventArgs e)
@@ -266,6 +269,14 @@ namespace TransportBusiness
             textOperador.Text = frm.Operador;
             ActivoAnterior= frm.IdActivo;
             OperadorAnterior= frm.IdOPerador;
+            if (frm.Activo.Substring(0, 2).Equals("AG"))
+            {
+                check_Nacional.Checked = true;
+            }
+            else
+            {
+                check_Nacional.Checked = false;
+            }
         }
 
         private void btnBusqActivoSec_Click(object sender, EventArgs e)
@@ -284,6 +295,7 @@ namespace TransportBusiness
             frm.ShowDialog();
             textActivoAdicional.Tag = frm.IdActivo;
             textActivoAdicional.Text = frm.Activo;
+            
         }
 
         private void btnGuardar_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -376,7 +388,16 @@ namespace TransportBusiness
             {
                 check_Nacional.Checked = false;
             }
-            
+            text_2doCliente.Tag = frm.vId_ClienteAd;
+            text_2doCliente.Text = frm.vNombre_ClienteAd;
+            if (frm.vId_ClienteAd.Trim().Length > 0)
+            {
+                check_2Clientes.Checked = true;
+            }
+            else
+            {
+                check_2Clientes.Checked = false;
+            }
 
             CargarSalidas_Diesel();
             CargarSalidasOtrosGastos();
@@ -2177,7 +2198,43 @@ namespace TransportBusiness
             }
         }
 
-        
+        private void check_2Clientes_CheckedChanged(object sender, EventArgs e)
+        {
+            if (check_2Clientes.Checked)
+            {
+                text_2doCliente.Enabled = true;
+                btn_2doCliente.Enabled = true;
+            }
+            else
+            {
+                text_2doCliente.Tag = "";
+                text_2doCliente.Text = "";
+                text_2doCliente.Enabled = false;
+                btn_2doCliente.Enabled = false;
+            }
+        }
+
+        private void textActivoAdicional_EditValueChanged(object sender, EventArgs e)
+        {
+            if (textActivoAdicional.Text.Length > 0)
+            {
+                check_2Clientes.Visible = true;
+            }
+            else
+            {
+                check_2Clientes.Visible = false;
+                check_2Clientes.Checked = false;
+            }
+        }
+
+        private void btn_2doCliente_Click(object sender, EventArgs e)
+        {
+            Frm_Clientes frm = new Frm_Clientes();
+            frm.PaSel = true;
+            frm.ShowDialog();
+            text_2doCliente.Tag = frm.IdCliente;
+            text_2doCliente.Text = frm.Cliente;
+        }
 
         private void gridCruce_DoubleClick(object sender, EventArgs e)
         {

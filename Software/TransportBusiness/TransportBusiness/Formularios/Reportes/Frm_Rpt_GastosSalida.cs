@@ -235,7 +235,30 @@ namespace TransportBusiness
             dateDel.EditValue =  DateTime.Today.AddDays(-7);
             dateAl.EditValue = DateTime.Today;
 
+             
+
             //GridMultiplePalets();
+            gridView2.BestFitColumns();
+            gridView2.Columns["Nombre_Interno"].Width = 110;
+            
+            gridView2.Columns["NSalidas"].Width = 60;
+            gridView2.Columns["Monto_Factura_P"].Width = 110;
+            gridView2.Columns["Gasto_Total_P"].Width = 110;
+            gridView2.Columns["Utilidad_Total_P"].Width = 110;
+            gridView2.Columns["GastoIndirecto_P"].Width = 110;
+            gridView2.Columns["Monto_Factura_D"].Width = 110;
+            gridView2.Columns["Gasto_Total_D"].Width = 110;
+            gridView2.Columns["Utilidad_Total_D"].Width = 110;
+            gridView2.Columns["GastoIndirecto_D"].Width = 110;
+            gridView2.Columns["Monto_Viaje_P"].Width = 110;
+            gridView2.Columns["Monto_Viaje_D"].Width = 110;
+            gridView2.Columns["Rendimiento_Total_P"].Width = 130;
+            gridView2.Columns["Rendimiento_Total_D"].Width = 130;
+            gridView2.BestFitColumns();
+
+
+            
+
         }
 
         private void btnFiltrar_Click(object sender, EventArgs e)
@@ -413,7 +436,7 @@ namespace TransportBusiness
                 Fecha_Salida.VisibleIndex = 1;
                 Nombre_Interno.VisibleIndex = 2;
                 Operador.VisibleIndex = 3;
-                Origen.VisibleIndex = 4;
+                //Origen.VisibleIndex = 4;
                 Destino.VisibleIndex = 5;
                 Nombre_Cliente.VisibleIndex = 6;
 
@@ -522,7 +545,7 @@ namespace TransportBusiness
                 Fecha_Salida.VisibleIndex = 1;
                 Nombre_Interno.VisibleIndex = 2;
                 Operador.VisibleIndex = 3;
-                Origen.VisibleIndex = 4;
+                //Origen.VisibleIndex = 4;
                 Destino.VisibleIndex = 5;
                 Nombre_Cliente.VisibleIndex = 6;
 
@@ -739,6 +762,27 @@ namespace TransportBusiness
         private void btnLimpiar_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
 
+        }
+
+        
+
+        private void gridControl2_Resize(object sender, EventArgs e)
+        {
+            gridView2.Columns["Nombre_Empresa"].Width = gridControl2.Width + 550 
+                - gridView2.Columns["Nombre_Interno"].Width
+                - gridView2.Columns["NSalidas"].Width
+                - gridView2.Columns["Monto_Factura_P"].Width
+                - gridView2.Columns["Gasto_Total_P"].Width
+                - gridView2.Columns["Utilidad_Total_P"].Width
+                - gridView2.Columns["GastoIndirecto_P"].Width
+                - gridView2.Columns["Monto_Factura_D"].Width
+                - gridView2.Columns["Gasto_Total_D"].Width
+                - gridView2.Columns["Utilidad_Total_D"].Width
+                - gridView2.Columns["GastoIndirecto_D"].Width
+                - gridView2.Columns["Monto_Viaje_P"].Width
+                - gridView2.Columns["Monto_Viaje_D"].Width
+                - gridView2.Columns["Rendimiento_Total_P"].Width
+                - gridView2.Columns["Rendimiento_Total_D"].Width;
         }
     }
 }
