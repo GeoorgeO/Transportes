@@ -435,5 +435,10 @@ namespace TransportBusiness
                 this.Close();
             }
         }
+
+        private void Frm_Huertas_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

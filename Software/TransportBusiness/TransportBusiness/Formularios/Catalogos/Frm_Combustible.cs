@@ -49,6 +49,42 @@ namespace TransportBusiness
             }
         }
 
+        public void CargarActivos()
+        {
+            CLS_Activos MotivoSalida = new CLS_Activos();
+            MotivoSalida.MtdSeleccionarActivosShort();
+            if (MotivoSalida.Exito)
+            {
+                cboActivos.Properties.DisplayMember = "Nombre_Interno";
+                cboActivos.Properties.ValueMember = "Id_Activo";
+                cboActivos.Properties.DataSource = MotivoSalida.Datos;
+            }
+        }
+
+        public void CargarProveedores()
+        {
+            CLS_Proveedores MotivoSalida = new CLS_Proveedores();
+            MotivoSalida.MtdSeleccionarProveedoresShort();
+            if (MotivoSalida.Exito)
+            {
+                cboProveedores.Properties.DisplayMember = "Nombre_Proveedor";
+                cboProveedores.Properties.ValueMember = "Id_Proveedor";
+                cboProveedores.Properties.DataSource = MotivoSalida.Datos;
+            }
+        }
+
+        public void CargarCompradores()
+        {
+            CLS_Empleado MotivoSalida = new CLS_Empleado();
+            MotivoSalida.MtdSeleccionarEmpleadoShort();
+            if (MotivoSalida.Exito)
+            {
+                cboComprador.Properties.DisplayMember = "Nombre_Empleado";
+                cboComprador.Properties.ValueMember = "Id_Empleado";
+                cboComprador.Properties.DataSource = MotivoSalida.Datos;
+            }
+        }
+
         private string DosCero(string sVal)
         {
             string str = "";
@@ -70,11 +106,13 @@ namespace TransportBusiness
             Clase.Litros = Convert.ToDouble(textLT.Text);
             Clase.PrecioLitro= Convert.ToDouble(textPrecio.Text);
             Clase.PrecioTotal= Convert.ToDouble(textTotal.Text);
-            Clase.Id_Activo = textActivo.Tag.ToString();
-            Clase.Id_Proveedor = textProveedor.Tag.ToString();
+            Clase.Id_Activo = cboActivos.EditValue.ToString();
+            Clase.Id_Proveedor = cboProveedores.EditValue.ToString();
             Clase.Id_Factura = textFactura.Text.ToString();
-            Clase.Comprador = textComprador.Tag.ToString();
+            Clase.Comprador = cboComprador.EditValue.ToString();
             Clase.Observaciones = memoObservaciones.Text.ToString();
+            Clase.Id_Salida = text_Salida.Text.ToString();
+            Clase.Ticket = text_Ticket.Text.ToString();
             Clase.MtdInsertarCarga_Combustible();
             if (Clase.Exito)
             {
@@ -113,20 +151,21 @@ namespace TransportBusiness
             textLT.Text = "0";
             textPrecio.Text = "0";
             textTotal.Text = "0";
-            textComprador.Text = "";
+            cboComprador.EditValue = null;
             textFactura.Text = "";
-            textProveedor.Text = "";
-            textActivo.Text = "";
+            cboProveedores.EditValue = null;
+            cboActivos.EditValue = null;
             memoObservaciones.Text = "";
             iniciarTags();
             dtFechaAlta.EditValue = DateTime.Now;
+            text_Ticket.Text = "";
+            text_Salida.Text = "";
         }
 
         private void iniciarTags()
         {
-            textActivo.Tag = "";
-            textProveedor.Tag = "";
-            textComprador.Tag = "";
+            //cboProveedores.Tag = "";
+            //cboComprador.Tag = "";
         }
 
         private void gridControl1_Click(object sender, EventArgs e)
@@ -141,15 +180,17 @@ namespace TransportBusiness
                     textLT.Text = row["Litros"].ToString();
                     textPrecio.Text = row["PrecioLitro"].ToString();
                     textTotal.Text = row["PrecioTotal"].ToString();
-                    textComprador.Tag = row["Comprador"].ToString();
-                    textComprador.Text = row["Nombre_Empleado"].ToString();
+                    cboComprador.EditValue = row["Comprador"].ToString();
+                    //cboComprador.Text = row["Nombre_Empleado"].ToString();
                     textFactura.Text = row["Id_Factura"].ToString();
-                    textProveedor.Tag = row["Id_Proveedor"].ToString();
-                    textProveedor.Text = row["Nombre_Proveedor"].ToString();
-                    textActivo.Tag = row["Id_Activo"].ToString();
-                    textActivo.Text = row["Nombre_Interno"].ToString();
+                    cboProveedores.EditValue = row["Id_Proveedor"].ToString();
+                    //cboProveedores.Text = row["Nombre_Proveedor"].ToString();
+                    cboActivos.EditValue = row["Id_Activo"].ToString();
+                    //cboActivos.Text = row["Nombre_Interno"].ToString();
                     memoObservaciones.Text = row["Observaciones"].ToString();
                     dtFechaAlta.EditValue= row["FechaCarga"].ToString();
+                    text_Salida.Text= row["Id_salida"].ToString();
+                    text_Ticket.Text= row["Ticket"].ToString();
                 }
             }
             catch (Exception ex)
@@ -170,13 +211,29 @@ namespace TransportBusiness
             }
             CargarCarga_Combustible();
             LimpiarCampos();
+            CargarActivos();
+            CargarProveedores();
+            CargarCompradores();
+            BloqueaCampos(false);
+        }
+
+        private void BloqueaCampos(Boolean Sino)
+        {
+            dtFechaAlta.ReadOnly = Sino;
+            textKM.ReadOnly = Sino;
+            textLT.ReadOnly = Sino;
+            textPrecio.ReadOnly = Sino;
+            cboActivos.ReadOnly = Sino;
+            cboComprador.ReadOnly = Sino;
+            text_Ticket.ReadOnly = Sino;
+            btnBusqSalida.Visible =!Sino;
         }
 
         private void btnGuardar_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             if (dtFechaAlta.EditValue!=null)
             {
-                if (textActivo.Tag.ToString().Trim().Length > 0)
+                if (cboActivos.EditValue.ToString().Length > 0)
                 {
                     InsertarCarga_Combustible();
                 }
@@ -219,8 +276,8 @@ namespace TransportBusiness
             Frm_Activos Clase = new Frm_Activos();
             Clase.PaSel = true;
             Clase.ShowDialog();
-            textActivo.Tag = Clase.IdActivo;
-            textActivo.Text = Clase.Activo;
+            cboActivos.EditValue = Clase.IdActivo;
+            //cboActivos.Text = Clase.Activo;
         }
 
         private void btnbusqProveedor_Click(object sender, EventArgs e)
@@ -228,8 +285,8 @@ namespace TransportBusiness
             Frm_Proveedores Clase = new Frm_Proveedores();
             Clase.PaSel = true;
             Clase.ShowDialog();
-            textProveedor.Tag = Clase.IdProveedor;
-            textProveedor.Text = Clase.Proveedor;
+            cboProveedores.EditValue = Clase.IdProveedor;
+            //cboProveedores.Text = Clase.Proveedor;
         }
 
         private void btnbusqComprador_Click(object sender, EventArgs e)
@@ -237,8 +294,8 @@ namespace TransportBusiness
             Frm_Empleados Clase = new Frm_Empleados();
             Clase.PaSel = true;
             Clase.ShowDialog();
-            textComprador.Tag = Clase.vId_Empleado;
-            textComprador.Text = Clase.vNombre_Empleado;
+            cboComprador.EditValue = Clase.vId_Empleado;
+            //cboComprador.Text = Clase.vNombre_Empleado;
         }
 
         private void gridControl1_DoubleClick(object sender, EventArgs e)
@@ -252,6 +309,33 @@ namespace TransportBusiness
         private void btnSeleccionar_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
 
+        }
+
+        private void btnBusqSalida_Click(object sender, EventArgs e)
+        {
+
+            if (textFolio.Text.Length > 0)
+            {
+                Frm_RelacionaSalida CLS = new Frm_RelacionaSalida();
+                CLS.Fecha = Convert.ToDateTime(dtFechaAlta.Text);
+                CLS.IdActivo = cboActivos.EditValue.ToString();
+                CLS.ShowDialog();
+                text_Salida.Text = CLS.IdSalida;
+            }
+            
+        }
+
+        private void textFolio_EditValueChanged(object sender, EventArgs e)
+        {
+            if (textFolio.Text.Trim().Length > 0)
+            {
+                BloqueaCampos(true);
+            }
+            else
+            {
+                BloqueaCampos(false);
+            }
+            
         }
     }
 }

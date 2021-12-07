@@ -32,8 +32,17 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_Combustible));
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
-            this.btnbusqProveedor = new DevExpress.XtraEditors.SimpleButton();
-            this.btnbusqComprador = new DevExpress.XtraEditors.SimpleButton();
+            this.btnBusqSalida = new DevExpress.XtraEditors.SimpleButton();
+            this.text_Ticket = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl13 = new DevExpress.XtraEditors.LabelControl();
+            this.text_Salida = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl12 = new DevExpress.XtraEditors.LabelControl();
+            this.cboComprador = new DevExpress.XtraEditors.GridLookUpEdit();
+            this.gridView3 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.cboProveedores = new DevExpress.XtraEditors.GridLookUpEdit();
+            this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.cboActivos = new DevExpress.XtraEditors.GridLookUpEdit();
+            this.gridLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.memoObservaciones = new DevExpress.XtraEditors.MemoEdit();
             this.barManager2 = new DevExpress.XtraBars.BarManager(this.components);
             this.bar1 = new DevExpress.XtraBars.Bar();
@@ -51,11 +60,9 @@
             this.textFolio = new DevExpress.XtraEditors.TextEdit();
             this.labelControl11 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl10 = new DevExpress.XtraEditors.LabelControl();
-            this.textComprador = new DevExpress.XtraEditors.TextEdit();
             this.labelControl9 = new DevExpress.XtraEditors.LabelControl();
             this.textFactura = new DevExpress.XtraEditors.TextEdit();
             this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
-            this.textProveedor = new DevExpress.XtraEditors.TextEdit();
             this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
             this.dtFechaAlta = new DevExpress.XtraEditors.DateEdit();
             this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
@@ -67,8 +74,6 @@
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.textKM = new DevExpress.XtraEditors.TextEdit();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
-            this.btnbusqActivo = new DevExpress.XtraEditors.SimpleButton();
-            this.textActivo = new DevExpress.XtraEditors.TextEdit();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.barDockControl4 = new DevExpress.XtraBars.BarDockControl();
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
@@ -88,23 +93,31 @@
             this.Comprador = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Nombre_Empleado = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Observaciones = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.ConSalida = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Id_salida = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Ticket = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.text_Ticket.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.text_Salida.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cboComprador.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cboProveedores.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cboActivos.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1View)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.memoObservaciones.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textFolio.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textComprador.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textFactura.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textProveedor.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtFechaAlta.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtFechaAlta.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textTotal.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textPrecio.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textLT.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textKM.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textActivo.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
             this.panelControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
@@ -123,17 +136,21 @@
             // 
             // groupControl1
             // 
-            this.groupControl1.Controls.Add(this.btnbusqProveedor);
-            this.groupControl1.Controls.Add(this.btnbusqComprador);
+            this.groupControl1.Controls.Add(this.btnBusqSalida);
+            this.groupControl1.Controls.Add(this.text_Ticket);
+            this.groupControl1.Controls.Add(this.labelControl13);
+            this.groupControl1.Controls.Add(this.text_Salida);
+            this.groupControl1.Controls.Add(this.labelControl12);
+            this.groupControl1.Controls.Add(this.cboComprador);
+            this.groupControl1.Controls.Add(this.cboProveedores);
+            this.groupControl1.Controls.Add(this.cboActivos);
             this.groupControl1.Controls.Add(this.memoObservaciones);
             this.groupControl1.Controls.Add(this.textFolio);
             this.groupControl1.Controls.Add(this.labelControl11);
             this.groupControl1.Controls.Add(this.labelControl10);
-            this.groupControl1.Controls.Add(this.textComprador);
             this.groupControl1.Controls.Add(this.labelControl9);
             this.groupControl1.Controls.Add(this.textFactura);
             this.groupControl1.Controls.Add(this.labelControl8);
-            this.groupControl1.Controls.Add(this.textProveedor);
             this.groupControl1.Controls.Add(this.labelControl7);
             this.groupControl1.Controls.Add(this.dtFechaAlta);
             this.groupControl1.Controls.Add(this.labelControl6);
@@ -145,8 +162,6 @@
             this.groupControl1.Controls.Add(this.labelControl3);
             this.groupControl1.Controls.Add(this.textKM);
             this.groupControl1.Controls.Add(this.labelControl2);
-            this.groupControl1.Controls.Add(this.btnbusqActivo);
-            this.groupControl1.Controls.Add(this.textActivo);
             this.groupControl1.Controls.Add(this.labelControl1);
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl1.Location = new System.Drawing.Point(7, 7);
@@ -155,23 +170,103 @@
             this.groupControl1.TabIndex = 0;
             this.groupControl1.Text = "Datos Combustible";
             // 
-            // btnbusqProveedor
+            // btnBusqSalida
             // 
-            this.btnbusqProveedor.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnbusqProveedor.ImageOptions.Image")));
-            this.btnbusqProveedor.Location = new System.Drawing.Point(483, 49);
-            this.btnbusqProveedor.Name = "btnbusqProveedor";
-            this.btnbusqProveedor.Size = new System.Drawing.Size(24, 21);
-            this.btnbusqProveedor.TabIndex = 78;
-            this.btnbusqProveedor.Click += new System.EventHandler(this.btnbusqProveedor_Click);
+            this.btnBusqSalida.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnBusqSalida.ImageOptions.Image")));
+            this.btnBusqSalida.Location = new System.Drawing.Point(700, 48);
+            this.btnBusqSalida.Name = "btnBusqSalida";
+            this.btnBusqSalida.Size = new System.Drawing.Size(24, 23);
+            this.btnBusqSalida.TabIndex = 86;
+            this.btnBusqSalida.Visible = false;
+            this.btnBusqSalida.Click += new System.EventHandler(this.btnBusqSalida_Click);
             // 
-            // btnbusqComprador
+            // text_Ticket
             // 
-            this.btnbusqComprador.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnbusqComprador.ImageOptions.Image")));
-            this.btnbusqComprador.Location = new System.Drawing.Point(483, 102);
-            this.btnbusqComprador.Name = "btnbusqComprador";
-            this.btnbusqComprador.Size = new System.Drawing.Size(24, 21);
-            this.btnbusqComprador.TabIndex = 77;
-            this.btnbusqComprador.Click += new System.EventHandler(this.btnbusqComprador_Click);
+            this.text_Ticket.Location = new System.Drawing.Point(583, 27);
+            this.text_Ticket.Name = "text_Ticket";
+            this.text_Ticket.Properties.ReadOnly = true;
+            this.text_Ticket.Size = new System.Drawing.Size(111, 20);
+            this.text_Ticket.TabIndex = 35;
+            // 
+            // labelControl13
+            // 
+            this.labelControl13.Location = new System.Drawing.Point(548, 27);
+            this.labelControl13.Name = "labelControl13";
+            this.labelControl13.Size = new System.Drawing.Size(32, 13);
+            this.labelControl13.TabIndex = 84;
+            this.labelControl13.Text = "Ticket:";
+            // 
+            // text_Salida
+            // 
+            this.text_Salida.Location = new System.Drawing.Point(583, 50);
+            this.text_Salida.Name = "text_Salida";
+            this.text_Salida.Properties.ReadOnly = true;
+            this.text_Salida.Size = new System.Drawing.Size(111, 20);
+            this.text_Salida.TabIndex = 83;
+            // 
+            // labelControl12
+            // 
+            this.labelControl12.Location = new System.Drawing.Point(548, 53);
+            this.labelControl12.Name = "labelControl12";
+            this.labelControl12.Size = new System.Drawing.Size(32, 13);
+            this.labelControl12.TabIndex = 82;
+            this.labelControl12.Text = "Salida:";
+            // 
+            // cboComprador
+            // 
+            this.cboComprador.Location = new System.Drawing.Point(289, 104);
+            this.cboComprador.Name = "cboComprador";
+            this.cboComprador.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cboComprador.Properties.PopupView = this.gridView3;
+            this.cboComprador.Properties.ReadOnly = true;
+            this.cboComprador.Size = new System.Drawing.Size(234, 20);
+            this.cboComprador.TabIndex = 33;
+            // 
+            // gridView3
+            // 
+            this.gridView3.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
+            this.gridView3.Name = "gridView3";
+            this.gridView3.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.gridView3.OptionsView.ShowAutoFilterRow = true;
+            this.gridView3.OptionsView.ShowGroupPanel = false;
+            // 
+            // cboProveedores
+            // 
+            this.cboProveedores.Location = new System.Drawing.Point(289, 50);
+            this.cboProveedores.Name = "cboProveedores";
+            this.cboProveedores.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cboProveedores.Properties.PopupView = this.gridView2;
+            this.cboProveedores.Size = new System.Drawing.Size(234, 20);
+            this.cboProveedores.TabIndex = 31;
+            // 
+            // gridView2
+            // 
+            this.gridView2.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
+            this.gridView2.Name = "gridView2";
+            this.gridView2.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.gridView2.OptionsView.ShowAutoFilterRow = true;
+            this.gridView2.OptionsView.ShowGroupPanel = false;
+            // 
+            // cboActivos
+            // 
+            this.cboActivos.Location = new System.Drawing.Point(289, 27);
+            this.cboActivos.Name = "cboActivos";
+            this.cboActivos.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cboActivos.Properties.PopupView = this.gridLookUpEdit1View;
+            this.cboActivos.Properties.ReadOnly = true;
+            this.cboActivos.Size = new System.Drawing.Size(234, 20);
+            this.cboActivos.TabIndex = 30;
+            // 
+            // gridLookUpEdit1View
+            // 
+            this.gridLookUpEdit1View.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
+            this.gridLookUpEdit1View.Name = "gridLookUpEdit1View";
+            this.gridLookUpEdit1View.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.gridLookUpEdit1View.OptionsView.ShowAutoFilterRow = true;
+            this.gridLookUpEdit1View.OptionsView.ShowGroupPanel = false;
             // 
             // memoObservaciones
             // 
@@ -179,8 +274,8 @@
             this.memoObservaciones.Location = new System.Drawing.Point(289, 130);
             this.memoObservaciones.MenuManager = this.barManager2;
             this.memoObservaciones.Name = "memoObservaciones";
-            this.memoObservaciones.Size = new System.Drawing.Size(218, 44);
-            this.memoObservaciones.TabIndex = 76;
+            this.memoObservaciones.Size = new System.Drawing.Size(234, 44);
+            this.memoObservaciones.TabIndex = 34;
             // 
             // barManager2
             // 
@@ -327,8 +422,10 @@
             // 
             this.textFolio.Location = new System.Drawing.Point(82, 24);
             this.textFolio.Name = "textFolio";
+            this.textFolio.Properties.ReadOnly = true;
             this.textFolio.Size = new System.Drawing.Size(111, 20);
-            this.textFolio.TabIndex = 57;
+            this.textFolio.TabIndex = 24;
+            this.textFolio.EditValueChanged += new System.EventHandler(this.textFolio_EditValueChanged);
             // 
             // labelControl11
             // 
@@ -346,13 +443,6 @@
             this.labelControl10.TabIndex = 54;
             this.labelControl10.Text = "Info. Adicional:";
             // 
-            // textComprador
-            // 
-            this.textComprador.Location = new System.Drawing.Point(289, 103);
-            this.textComprador.Name = "textComprador";
-            this.textComprador.Size = new System.Drawing.Size(188, 20);
-            this.textComprador.TabIndex = 53;
-            // 
             // labelControl9
             // 
             this.labelControl9.Location = new System.Drawing.Point(213, 108);
@@ -366,7 +456,7 @@
             this.textFactura.Location = new System.Drawing.Point(289, 77);
             this.textFactura.Name = "textFactura";
             this.textFactura.Size = new System.Drawing.Size(111, 20);
-            this.textFactura.TabIndex = 51;
+            this.textFactura.TabIndex = 32;
             // 
             // labelControl8
             // 
@@ -376,16 +466,9 @@
             this.labelControl8.TabIndex = 50;
             this.labelControl8.Text = "Ref Factura:";
             // 
-            // textProveedor
-            // 
-            this.textProveedor.Location = new System.Drawing.Point(289, 51);
-            this.textProveedor.Name = "textProveedor";
-            this.textProveedor.Size = new System.Drawing.Size(188, 20);
-            this.textProveedor.TabIndex = 49;
-            // 
             // labelControl7
             // 
-            this.labelControl7.Location = new System.Drawing.Point(213, 56);
+            this.labelControl7.Location = new System.Drawing.Point(213, 53);
             this.labelControl7.Name = "labelControl7";
             this.labelControl7.Size = new System.Drawing.Size(54, 13);
             this.labelControl7.TabIndex = 48;
@@ -400,8 +483,9 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.dtFechaAlta.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dtFechaAlta.Properties.ReadOnly = true;
             this.dtFechaAlta.Size = new System.Drawing.Size(111, 20);
-            this.dtFechaAlta.TabIndex = 47;
+            this.dtFechaAlta.TabIndex = 25;
             // 
             // labelControl6
             // 
@@ -415,8 +499,9 @@
             // 
             this.textTotal.Location = new System.Drawing.Point(82, 154);
             this.textTotal.Name = "textTotal";
+            this.textTotal.Properties.ReadOnly = true;
             this.textTotal.Size = new System.Drawing.Size(111, 20);
-            this.textTotal.TabIndex = 30;
+            this.textTotal.TabIndex = 29;
             // 
             // labelControl5
             // 
@@ -430,6 +515,7 @@
             // 
             this.textPrecio.Location = new System.Drawing.Point(82, 128);
             this.textPrecio.Name = "textPrecio";
+            this.textPrecio.Properties.ReadOnly = true;
             this.textPrecio.Size = new System.Drawing.Size(111, 20);
             this.textPrecio.TabIndex = 28;
             // 
@@ -445,8 +531,9 @@
             // 
             this.textLT.Location = new System.Drawing.Point(82, 102);
             this.textLT.Name = "textLT";
+            this.textLT.Properties.ReadOnly = true;
             this.textLT.Size = new System.Drawing.Size(111, 20);
-            this.textLT.TabIndex = 26;
+            this.textLT.TabIndex = 27;
             // 
             // labelControl3
             // 
@@ -460,8 +547,9 @@
             // 
             this.textKM.Location = new System.Drawing.Point(82, 76);
             this.textKM.Name = "textKM";
+            this.textKM.Properties.ReadOnly = true;
             this.textKM.Size = new System.Drawing.Size(111, 20);
-            this.textKM.TabIndex = 24;
+            this.textKM.TabIndex = 26;
             // 
             // labelControl2
             // 
@@ -470,22 +558,6 @@
             this.labelControl2.Size = new System.Drawing.Size(57, 13);
             this.labelControl2.TabIndex = 23;
             this.labelControl2.Text = "Kilometraje:";
-            // 
-            // btnbusqActivo
-            // 
-            this.btnbusqActivo.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnbusqActivo.ImageOptions.Image")));
-            this.btnbusqActivo.Location = new System.Drawing.Point(483, 25);
-            this.btnbusqActivo.Name = "btnbusqActivo";
-            this.btnbusqActivo.Size = new System.Drawing.Size(24, 21);
-            this.btnbusqActivo.TabIndex = 22;
-            this.btnbusqActivo.Click += new System.EventHandler(this.btnbusqActivo_Click);
-            // 
-            // textActivo
-            // 
-            this.textActivo.Location = new System.Drawing.Point(289, 25);
-            this.textActivo.Name = "textActivo";
-            this.textActivo.Size = new System.Drawing.Size(188, 20);
-            this.textActivo.TabIndex = 1;
             // 
             // labelControl1
             // 
@@ -542,7 +614,10 @@
             this.Id_Factura,
             this.Comprador,
             this.Nombre_Empleado,
-            this.Observaciones});
+            this.Observaciones,
+            this.ConSalida,
+            this.Id_salida,
+            this.Ticket});
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsBehavior.Editable = false;
@@ -562,7 +637,7 @@
             this.FechaCarga.FieldName = "FechaCarga";
             this.FechaCarga.Name = "FechaCarga";
             this.FechaCarga.Visible = true;
-            this.FechaCarga.VisibleIndex = 2;
+            this.FechaCarga.VisibleIndex = 1;
             // 
             // Kilometraje
             // 
@@ -570,7 +645,7 @@
             this.Kilometraje.FieldName = "Kilometraje";
             this.Kilometraje.Name = "Kilometraje";
             this.Kilometraje.Visible = true;
-            this.Kilometraje.VisibleIndex = 3;
+            this.Kilometraje.VisibleIndex = 2;
             // 
             // Litros
             // 
@@ -578,7 +653,7 @@
             this.Litros.FieldName = "Litros";
             this.Litros.Name = "Litros";
             this.Litros.Visible = true;
-            this.Litros.VisibleIndex = 4;
+            this.Litros.VisibleIndex = 3;
             // 
             // PrecioLitro
             // 
@@ -586,7 +661,7 @@
             this.PrecioLitro.FieldName = "PrecioLitro";
             this.PrecioLitro.Name = "PrecioLitro";
             this.PrecioLitro.Visible = true;
-            this.PrecioLitro.VisibleIndex = 5;
+            this.PrecioLitro.VisibleIndex = 4;
             // 
             // PrecioTotal
             // 
@@ -594,15 +669,13 @@
             this.PrecioTotal.FieldName = "PrecioTotal";
             this.PrecioTotal.Name = "PrecioTotal";
             this.PrecioTotal.Visible = true;
-            this.PrecioTotal.VisibleIndex = 6;
+            this.PrecioTotal.VisibleIndex = 5;
             // 
             // Id_Activo
             // 
             this.Id_Activo.Caption = "Activo";
             this.Id_Activo.FieldName = "Id_Activo";
             this.Id_Activo.Name = "Id_Activo";
-            this.Id_Activo.Visible = true;
-            this.Id_Activo.VisibleIndex = 1;
             // 
             // Nombre_Interno
             // 
@@ -610,15 +683,13 @@
             this.Nombre_Interno.FieldName = "Nombre_Interno";
             this.Nombre_Interno.Name = "Nombre_Interno";
             this.Nombre_Interno.Visible = true;
-            this.Nombre_Interno.VisibleIndex = 11;
+            this.Nombre_Interno.VisibleIndex = 8;
             // 
             // Id_Proveedor
             // 
-            this.Id_Proveedor.Caption = "Id Factura";
+            this.Id_Proveedor.Caption = "Id Proveedor";
             this.Id_Proveedor.FieldName = "Id_Proveedor";
             this.Id_Proveedor.Name = "Id_Proveedor";
-            this.Id_Proveedor.Visible = true;
-            this.Id_Proveedor.VisibleIndex = 7;
             // 
             // Nombre_Proveedor
             // 
@@ -626,7 +697,7 @@
             this.Nombre_Proveedor.FieldName = "Nombre_Proveedor";
             this.Nombre_Proveedor.Name = "Nombre_Proveedor";
             this.Nombre_Proveedor.Visible = true;
-            this.Nombre_Proveedor.VisibleIndex = 8;
+            this.Nombre_Proveedor.VisibleIndex = 6;
             // 
             // Id_Factura
             // 
@@ -634,15 +705,13 @@
             this.Id_Factura.FieldName = "Id_Factura";
             this.Id_Factura.Name = "Id_Factura";
             this.Id_Factura.Visible = true;
-            this.Id_Factura.VisibleIndex = 9;
+            this.Id_Factura.VisibleIndex = 7;
             // 
             // Comprador
             // 
             this.Comprador.Caption = "Id Comprador";
             this.Comprador.FieldName = "Comprador";
             this.Comprador.Name = "Comprador";
-            this.Comprador.Visible = true;
-            this.Comprador.VisibleIndex = 10;
             // 
             // Nombre_Empleado
             // 
@@ -650,7 +719,7 @@
             this.Nombre_Empleado.FieldName = "Nombre_Empleado";
             this.Nombre_Empleado.Name = "Nombre_Empleado";
             this.Nombre_Empleado.Visible = true;
-            this.Nombre_Empleado.VisibleIndex = 12;
+            this.Nombre_Empleado.VisibleIndex = 9;
             // 
             // Observaciones
             // 
@@ -658,7 +727,31 @@
             this.Observaciones.FieldName = "Observaciones";
             this.Observaciones.Name = "Observaciones";
             this.Observaciones.Visible = true;
-            this.Observaciones.VisibleIndex = 13;
+            this.Observaciones.VisibleIndex = 10;
+            // 
+            // ConSalida
+            // 
+            this.ConSalida.Caption = "Salida";
+            this.ConSalida.FieldName = "ConSalida";
+            this.ConSalida.Name = "ConSalida";
+            this.ConSalida.Visible = true;
+            this.ConSalida.VisibleIndex = 11;
+            // 
+            // Id_salida
+            // 
+            this.Id_salida.Caption = "Id_salida";
+            this.Id_salida.FieldName = "Id_salida";
+            this.Id_salida.Name = "Id_salida";
+            this.Id_salida.Visible = true;
+            this.Id_salida.VisibleIndex = 12;
+            // 
+            // Ticket
+            // 
+            this.Ticket.Caption = "Ticket";
+            this.Ticket.FieldName = "Ticket";
+            this.Ticket.Name = "Ticket";
+            this.Ticket.Visible = true;
+            this.Ticket.VisibleIndex = 13;
             // 
             // Frm_Combustible
             // 
@@ -680,19 +773,24 @@
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
             this.groupControl1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.text_Ticket.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.text_Salida.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cboComprador.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cboProveedores.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cboActivos.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1View)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.memoObservaciones.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textFolio.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textComprador.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textFactura.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textProveedor.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtFechaAlta.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtFechaAlta.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textTotal.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textPrecio.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textLT.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textKM.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textActivo.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).EndInit();
             this.panelControl2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
@@ -708,7 +806,6 @@
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
         private DevExpress.XtraEditors.PanelControl panelControl1;
         private DevExpress.XtraEditors.GroupControl groupControl1;
-        private DevExpress.XtraEditors.TextEdit textActivo;
         private DevExpress.XtraEditors.LabelControl labelControl1;
         private DevExpress.XtraBars.BarDockControl barDockControl4;
         private DevExpress.XtraBars.BarManager barManager2;
@@ -732,13 +829,10 @@
         private DevExpress.XtraEditors.LabelControl labelControl3;
         private DevExpress.XtraEditors.TextEdit textKM;
         private DevExpress.XtraEditors.LabelControl labelControl2;
-        private DevExpress.XtraEditors.SimpleButton btnbusqActivo;
         private DevExpress.XtraEditors.LabelControl labelControl10;
-        private DevExpress.XtraEditors.TextEdit textComprador;
         private DevExpress.XtraEditors.LabelControl labelControl9;
         private DevExpress.XtraEditors.TextEdit textFactura;
         private DevExpress.XtraEditors.LabelControl labelControl8;
-        private DevExpress.XtraEditors.TextEdit textProveedor;
         private DevExpress.XtraEditors.LabelControl labelControl7;
         private DevExpress.XtraEditors.DateEdit dtFechaAlta;
         private DevExpress.XtraEditors.LabelControl labelControl6;
@@ -756,10 +850,22 @@
         private DevExpress.XtraEditors.TextEdit textFolio;
         private DevExpress.XtraEditors.LabelControl labelControl11;
         private DevExpress.XtraEditors.MemoEdit memoObservaciones;
-        private DevExpress.XtraEditors.SimpleButton btnbusqComprador;
-        private DevExpress.XtraEditors.SimpleButton btnbusqProveedor;
         private DevExpress.XtraGrid.Columns.GridColumn Nombre_Interno;
         private DevExpress.XtraGrid.Columns.GridColumn Nombre_Empleado;
         private DevExpress.XtraGrid.Columns.GridColumn Observaciones;
+        private DevExpress.XtraEditors.GridLookUpEdit cboActivos;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridLookUpEdit1View;
+        private DevExpress.XtraEditors.GridLookUpEdit cboComprador;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView3;
+        private DevExpress.XtraEditors.GridLookUpEdit cboProveedores;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView2;
+        private DevExpress.XtraGrid.Columns.GridColumn ConSalida;
+        private DevExpress.XtraGrid.Columns.GridColumn Id_salida;
+        private DevExpress.XtraEditors.TextEdit text_Ticket;
+        private DevExpress.XtraEditors.LabelControl labelControl13;
+        private DevExpress.XtraEditors.TextEdit text_Salida;
+        private DevExpress.XtraEditors.LabelControl labelControl12;
+        private DevExpress.XtraGrid.Columns.GridColumn Ticket;
+        private DevExpress.XtraEditors.SimpleButton btnBusqSalida;
     }
 }

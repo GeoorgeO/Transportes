@@ -261,6 +261,12 @@
     <Compile Include="Formularios\Catalogos\Frm_Proveedores.Designer.cs">
       <DependentUpon>Frm_Proveedores.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\Catalogos\Frm_RelacionaSalida.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Catalogos\Frm_RelacionaSalida.Designer.cs">
+      <DependentUpon>Frm_RelacionaSalida.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\Catalogos\Frm_ServiciosCatalogo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -314,6 +320,12 @@
     </Compile>
     <Compile Include="Formularios\Control\Frm_BusqEntradas.Designer.cs">
       <DependentUpon>Frm_BusqEntradas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Control\Frm_BusqHuertasNew.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Control\Frm_BusqHuertasNew.Designer.cs">
+      <DependentUpon>Frm_BusqHuertasNew.cs</DependentUpon>
     </Compile>
     <Compile Include="Formularios\Control\Frm_BusqSalidas.cs">
       <SubType>Form</SubType>
@@ -632,6 +644,9 @@
     <EmbeddedResource Include="Formularios\Catalogos\Frm_Proveedores.resx">
       <DependentUpon>Frm_Proveedores.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Catalogos\Frm_RelacionaSalida.resx">
+      <DependentUpon>Frm_RelacionaSalida.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Catalogos\Frm_ServiciosCatalogo.resx">
       <DependentUpon>Frm_ServiciosCatalogo.cs</DependentUpon>
     </EmbeddedResource>
@@ -658,6 +673,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Control\Frm_BusqEntradas.resx">
       <DependentUpon>Frm_BusqEntradas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Control\Frm_BusqHuertasNew.resx">
+      <DependentUpon>Frm_BusqHuertasNew.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Control\Frm_BusqSalidas.resx">
       <DependentUpon>Frm_BusqSalidas.cs</DependentUpon>

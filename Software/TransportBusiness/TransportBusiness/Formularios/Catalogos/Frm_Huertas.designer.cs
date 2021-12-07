@@ -1064,6 +1064,7 @@
             this.Controls.Add(this.barDockControlTop);
             this.Name = "Frm_Huertas";
             this.Text = "Frm_Huertas";
+            this.Load += new System.EventHandler(this.Frm_Huertas_Load);
             this.Shown += new System.EventHandler(this.Frm_Huertas_Shown);
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).EndInit();

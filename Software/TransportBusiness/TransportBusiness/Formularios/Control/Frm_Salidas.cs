@@ -71,6 +71,25 @@ namespace TransportBusiness
             }
         }
 
+        public void CargarKilometrosFin()
+        {
+            CLS_Salidas CLASE = new CLS_Salidas();
+            CLASE.Id_Activo_Principal = textActivoPrincipal.Tag.ToString().Trim();
+            CLASE.MtdSeleccionarKmFin();
+            if (CLASE.Exito)
+            {
+                if (textActivoPrincipal.Tag.ToString().Trim().Length > 0)
+                {
+                    if (CLASE.Datos.Rows.Count>0)
+                    {
+                        textKmIni.Text = CLASE.Datos.Rows[0][0].ToString();
+                    }
+                    
+                }
+                
+            }
+        }
+
         private string DosCero(string sVal)
         {
             string str = "";
@@ -189,6 +208,7 @@ namespace TransportBusiness
             limpiarSalidasRevisionUnidad();
             limpiarSalidasFacturas();
             cboMoneda.Text = "Pesos";
+            text_KM.Text = "0";
         }
 
         private void limpiarCampos()
@@ -229,6 +249,7 @@ namespace TransportBusiness
             check_Nacional.Checked = false;
             text_2doCliente.Tag = "";
             text_2doCliente.Text = "";
+            text_KM.Text = "0";
         }
 
         private void btnBusqAyudante_Click(object sender, EventArgs e)
@@ -440,6 +461,7 @@ namespace TransportBusiness
             Clase.MtdInsertarSalidas_Diesel();
             if (Clase.Exito)
             {
+                InsertarCarga_Combustible("", dateFechaDiesel.Text.Trim(), Convert.ToDecimal(text_KM.Text.Trim()), Convert.ToDecimal(textLitros.Text), Convert.ToDecimal(textImporte.Text)/Convert.ToDecimal(textLitros.Text), Convert.ToDecimal(textImporte.Text), textActivoPrincipal.Tag.ToString().Trim(), textOperador.Tag.ToString().Trim(), textFolio.Text.Trim(), textTicket.Text.ToString());
                 CargarSalidas_Diesel();
                 limpiarSalidas_diesel();
                 XtraMessageBox.Show("Se ha Insertado el registro con exito");
@@ -475,6 +497,52 @@ namespace TransportBusiness
             
         }
 
+        private void InsertarCarga_Combustible(String Folio,String FechaCarga,Decimal Km,Decimal Ltrs,Decimal Precio,Decimal Total,String Activo, String Comprador,String Salida,String Ticket)
+        {
+            CLS_Carga_Combustible Clase = new CLS_Carga_Combustible();
+            Clase.Folio = Folio;
+            DateTime Fecha;
+            Fecha = Convert.ToDateTime(FechaCarga);
+            Clase.FechaCarga = Fecha.Year.ToString() + DosCero(Fecha.Month.ToString()) + DosCero(Fecha.Day.ToString());
+            Clase.Kilometraje = Decimal.ToDouble(Km);
+            Clase.Litros = Decimal.ToDouble(Ltrs);
+            Clase.PrecioLitro = Decimal.ToDouble(Precio);
+            Clase.PrecioTotal = Decimal.ToDouble(Total);
+            Clase.Id_Activo = Activo;
+            Clase.Id_Proveedor = "";
+            Clase.Id_Factura = "";
+            Clase.Comprador = Comprador;
+            Clase.Observaciones ="";
+            Clase.Id_Salida = Salida;
+            Clase.Ticket = Ticket;
+            Clase.MtdInsertarCarga_Combustible();
+            if (Clase.Exito)
+            {
+
+            }
+            else
+            {
+                XtraMessageBox.Show(Clase.Mensaje);
+            }
+        }
+
+        private void EliminarCarga_Combustible(String Salida,String Activo,String Ticket)
+        {
+            CLS_Carga_Combustible Clase = new CLS_Carga_Combustible();
+            Clase.Id_Salida = Salida;
+            Clase.Id_Activo = Activo;
+            Clase.Ticket = Ticket;
+            Clase.MtdEliminarCarga_Combustible_New();
+            if (Clase.Exito)
+            {
+                
+            }
+            else
+            {
+                XtraMessageBox.Show(Clase.Mensaje);
+            }
+        }
+
         private void btnSalidaDiesel_Click(object sender, EventArgs e)
         {
             if (textTicket.Text.ToString().Trim().Length > 0)
@@ -506,9 +574,11 @@ namespace TransportBusiness
             CLS_Salidas_Diesel Clase = new CLS_Salidas_Diesel();
             Clase.Id_Salida = Salida;
             Clase.Ticket = ticket;
+
             Clase.MtdEliminarSalidas_Diesel();
             if (Clase.Exito)
             {
+                EliminarCarga_Combustible(Salida, textActivoPrincipal.Tag.ToString().Trim(), ticket);
                 CargarSalidas_Diesel();
                 XtraMessageBox.Show("Se ha Eliminado el registro con exito");
             }
@@ -1270,11 +1340,16 @@ namespace TransportBusiness
 
         private void btnBusqHuerta_Click(object sender, EventArgs e)
         {
-            Frm_Huertas frm = new Frm_Huertas();
-            frm.PaSel = true;
+            Frm_BusqHuertasNew frm = new Frm_BusqHuertasNew();
+
+            //Frm_Huertas frm = new Frm_Huertas();
+            //frm.PaSel = true;
             frm.ShowDialog();
-            textHuerta.Tag = frm.IdHuerta;
-            textHuerta.Text = frm.Huerta;
+            textHuerta.Tag = frm.vId_Huerta;
+            textHuerta.Text = frm.vNombre_Huerta;
+            textMunicipio.Text = frm.vNombre_Ciudad;
+            textProductor.Tag = frm.vId_Duenio;
+            textProductor.Text = frm.vNombre_Duenio;
         }
 
         private void btnUpPDF_Click(object sender, EventArgs e)
@@ -2216,15 +2291,15 @@ namespace TransportBusiness
 
         private void textActivoAdicional_EditValueChanged(object sender, EventArgs e)
         {
-            if (textActivoAdicional.Text.Length > 0)
+            /*if (textActivoAdicional.Text.Length > 0)
             {
                 check_2Clientes.Visible = true;
             }
             else
             {
-                check_2Clientes.Visible = false;
+                check_2Clientes.Visible = false;  inhabilite por que dice paty que hay algunos casos que hay doble cliente sin ser full
                 check_2Clientes.Checked = false;
-            }
+            }*/
         }
 
         private void btn_2doCliente_Click(object sender, EventArgs e)
@@ -2235,6 +2310,44 @@ namespace TransportBusiness
             text_2doCliente.Tag = frm.IdCliente;
             text_2doCliente.Text = frm.Cliente;
         }
+
+        private void textActivoPrincipal_EditValueChanged(object sender, EventArgs e)
+        {
+            if (textFolio.Text.Trim().Length == 0)
+            {
+                CargarKilometrosFin();
+            }
+            
+        }
+
+        private void textKmFin_EditValueChanged(object sender, EventArgs e)
+        {
+            text_KmRecorridos.Text = Convert.ToString(Convert.ToDecimal(textKmFin.Text) - Convert.ToDecimal(textKmIni.Text));
+        }
+
+        private void text_KmRecorridos_EditValueChanged(object sender, EventArgs e)
+        {
+            if (Convert.ToDecimal(text_KmRecorridos.Text)>0)
+            {
+                Decimal LitrosT = 0;
+                for (int x = 0; x < gridView2.RowCount; x++)
+                {
+                    int xRow = gridView2.GetVisibleRowHandle(x);
+                    LitrosT = LitrosT + Convert.ToDecimal(gridView2.GetRowCellValue(xRow, "Litros"));
+
+
+                }
+                if (LitrosT > 0)
+                {
+                    textLts.Text = Convert.ToString(Convert.ToDecimal(text_KmRecorridos.Text) / LitrosT);
+                }
+                
+            }
+            
+
+        }
+
+      
 
         private void gridCruce_DoubleClick(object sender, EventArgs e)
         {
