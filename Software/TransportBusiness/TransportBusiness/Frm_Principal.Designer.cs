@@ -77,6 +77,7 @@
             this.btnGastos = new DevExpress.XtraBars.BarButtonItem();
             this.btnGastosContpaq = new DevExpress.XtraBars.BarButtonItem();
             this.btnSalidasxMes = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem3 = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup9 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -95,6 +96,7 @@
             this.ribbonPageGroup4 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPage4 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup12 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPageGroup13 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.xtraTabbedMdiManager1 = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
             this.SkinForm = new DevExpress.LookAndFeel.DefaultLookAndFeel(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
@@ -151,9 +153,10 @@
             this.btnCtasContables,
             this.btnGastos,
             this.btnGastosContpaq,
-            this.btnSalidasxMes});
+            this.btnSalidasxMes,
+            this.barButtonItem3});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.MaxItemId = 47;
+            this.ribbonControl1.MaxItemId = 48;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1,
@@ -559,6 +562,17 @@
             this.btnSalidasxMes.Name = "btnSalidasxMes";
             this.btnSalidasxMes.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnSalidasxMes_ItemClick);
             // 
+            // barButtonItem3
+            // 
+            this.barButtonItem3.Caption = "Diesel";
+            this.barButtonItem3.Hint = "Diesel";
+            this.barButtonItem3.Id = 47;
+            this.barButtonItem3.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem3.ImageOptions.Image")));
+            this.barButtonItem3.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem3.ImageOptions.LargeImage")));
+            this.barButtonItem3.Name = "barButtonItem3";
+            this.barButtonItem3.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+            this.barButtonItem3.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem3_ItemClick);
+            // 
             // ribbonPage1
             // 
             this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -708,7 +722,8 @@
             // ribbonPage4
             // 
             this.ribbonPage4.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
-            this.ribbonPageGroup12});
+            this.ribbonPageGroup12,
+            this.ribbonPageGroup13});
             this.ribbonPage4.Name = "ribbonPage4";
             this.ribbonPage4.Text = "Reportes";
             // 
@@ -719,6 +734,12 @@
             this.ribbonPageGroup12.ItemLinks.Add(this.btnSalidasxMes);
             this.ribbonPageGroup12.Name = "ribbonPageGroup12";
             this.ribbonPageGroup12.Text = "ribbonPageGroup12";
+            // 
+            // ribbonPageGroup13
+            // 
+            this.ribbonPageGroup13.ItemLinks.Add(this.barButtonItem3);
+            this.ribbonPageGroup13.Name = "ribbonPageGroup13";
+            this.ribbonPageGroup13.Text = "ribbonPageGroup13";
             // 
             // xtraTabbedMdiManager1
             // 
@@ -821,6 +842,8 @@
         private DevExpress.XtraBars.BarButtonItem btnGastos;
         private DevExpress.XtraBars.BarButtonItem btnGastosContpaq;
         private DevExpress.XtraBars.BarButtonItem btnSalidasxMes;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem3;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup13;
     }
 }
 

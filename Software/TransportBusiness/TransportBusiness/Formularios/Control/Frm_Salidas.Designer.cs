@@ -560,9 +560,9 @@
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 567);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 562);
             this.barDockControlBottom.Manager = this.barManager1;
-            this.barDockControlBottom.Size = new System.Drawing.Size(1204, 28);
+            this.barDockControlBottom.Size = new System.Drawing.Size(1204, 33);
             // 
             // barDockControlLeft
             // 
@@ -570,7 +570,7 @@
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.barDockControlLeft.Location = new System.Drawing.Point(0, 0);
             this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Size = new System.Drawing.Size(58, 567);
+            this.barDockControlLeft.Size = new System.Drawing.Size(58, 562);
             // 
             // barDockControlRight
             // 
@@ -578,7 +578,7 @@
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
             this.barDockControlRight.Location = new System.Drawing.Point(1204, 0);
             this.barDockControlRight.Manager = this.barManager1;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 567);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 562);
             // 
             // btnEliminar
             // 
@@ -687,7 +687,7 @@
             this.text_KmRecorridos.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.text_KmRecorridos.Properties.ReadOnly = true;
             this.text_KmRecorridos.Size = new System.Drawing.Size(100, 20);
-            this.text_KmRecorridos.TabIndex = 89;
+            this.text_KmRecorridos.TabIndex = 16;
             this.text_KmRecorridos.EditValueChanged += new System.EventHandler(this.text_KmRecorridos_EditValueChanged);
             // 
             // check_2Clientes
@@ -698,7 +698,7 @@
             this.check_2Clientes.Properties.Caption = "Agregar Segundo Cliente";
             this.check_2Clientes.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.check_2Clientes.Size = new System.Drawing.Size(144, 19);
-            this.check_2Clientes.TabIndex = 88;
+            this.check_2Clientes.TabIndex = 12;
             this.check_2Clientes.CheckedChanged += new System.EventHandler(this.check_2Clientes_CheckedChanged);
             // 
             // btn_2doCliente
@@ -708,7 +708,7 @@
             this.btn_2doCliente.Location = new System.Drawing.Point(686, 128);
             this.btn_2doCliente.Name = "btn_2doCliente";
             this.btn_2doCliente.Size = new System.Drawing.Size(24, 23);
-            this.btn_2doCliente.TabIndex = 87;
+            this.btn_2doCliente.TabIndex = 76;
             this.btn_2doCliente.Click += new System.EventHandler(this.btn_2doCliente_Click);
             // 
             // labelControl52
@@ -726,7 +726,7 @@
             this.text_2doCliente.MenuManager = this.barManager1;
             this.text_2doCliente.Name = "text_2doCliente";
             this.text_2doCliente.Size = new System.Drawing.Size(222, 20);
-            this.text_2doCliente.TabIndex = 85;
+            this.text_2doCliente.TabIndex = 13;
             // 
             // check_Nacional
             // 
@@ -736,7 +736,7 @@
             this.check_Nacional.Properties.Caption = "Nacional";
             this.check_Nacional.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.check_Nacional.Size = new System.Drawing.Size(64, 19);
-            this.check_Nacional.TabIndex = 84;
+            this.check_Nacional.TabIndex = 23;
             // 
             // btnBusqOperador
             // 
@@ -744,7 +744,7 @@
             this.btnBusqOperador.Location = new System.Drawing.Point(343, 79);
             this.btnBusqOperador.Name = "btnBusqOperador";
             this.btnBusqOperador.Size = new System.Drawing.Size(24, 23);
-            this.btnBusqOperador.TabIndex = 83;
+            this.btnBusqOperador.TabIndex = 69;
             this.btnBusqOperador.Click += new System.EventHandler(this.btnBusqOperador_Click);
             // 
             // labelControl33
@@ -762,7 +762,7 @@
             this.textProductor.MenuManager = this.barManager1;
             this.textProductor.Name = "textProductor";
             this.textProductor.Size = new System.Drawing.Size(234, 20);
-            this.textProductor.TabIndex = 18;
+            this.textProductor.TabIndex = 20;
             // 
             // labelControl31
             // 
@@ -778,7 +778,7 @@
             this.memoObservaciones.MenuManager = this.barManager1;
             this.memoObservaciones.Name = "memoObservaciones";
             this.memoObservaciones.Size = new System.Drawing.Size(234, 73);
-            this.memoObservaciones.TabIndex = 19;
+            this.memoObservaciones.TabIndex = 21;
             // 
             // labelControl29
             // 
@@ -795,7 +795,7 @@
             this.textMunicipio.MenuManager = this.barManager1;
             this.textMunicipio.Name = "textMunicipio";
             this.textMunicipio.Size = new System.Drawing.Size(234, 20);
-            this.textMunicipio.TabIndex = 17;
+            this.textMunicipio.TabIndex = 19;
             // 
             // btnBusqHuerta
             // 
@@ -803,7 +803,7 @@
             this.btnBusqHuerta.Location = new System.Drawing.Point(1028, 29);
             this.btnBusqHuerta.Name = "btnBusqHuerta";
             this.btnBusqHuerta.Size = new System.Drawing.Size(24, 23);
-            this.btnBusqHuerta.TabIndex = 76;
+            this.btnBusqHuerta.TabIndex = 77;
             this.btnBusqHuerta.Click += new System.EventHandler(this.btnBusqHuerta_Click);
             // 
             // labelControl30
@@ -820,7 +820,7 @@
             this.textHuerta.MenuManager = this.barManager1;
             this.textHuerta.Name = "textHuerta";
             this.textHuerta.Size = new System.Drawing.Size(234, 20);
-            this.textHuerta.TabIndex = 16;
+            this.textHuerta.TabIndex = 18;
             // 
             // btnMotivoSalida
             // 
@@ -840,7 +840,7 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.cboMotivoSalida.Properties.PopupView = this.gridLookUpEdit1View;
             this.cboMotivoSalida.Size = new System.Drawing.Size(234, 20);
-            this.cboMotivoSalida.TabIndex = 10;
+            this.cboMotivoSalida.TabIndex = 7;
             // 
             // gridLookUpEdit1View
             // 
@@ -918,7 +918,7 @@
             this.textLts.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.textLts.Properties.ReadOnly = true;
             this.textLts.Size = new System.Drawing.Size(100, 20);
-            this.textLts.TabIndex = 15;
+            this.textLts.TabIndex = 17;
             // 
             // textDiasViaje
             // 
@@ -930,7 +930,7 @@
             this.textDiasViaje.Properties.Mask.EditMask = "n";
             this.textDiasViaje.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.textDiasViaje.Size = new System.Drawing.Size(100, 20);
-            this.textDiasViaje.TabIndex = 14;
+            this.textDiasViaje.TabIndex = 21;
             // 
             // labelControl11
             // 
@@ -958,7 +958,7 @@
             this.textKmFin.Properties.Mask.EditMask = "n";
             this.textKmFin.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.textKmFin.Size = new System.Drawing.Size(100, 20);
-            this.textKmFin.TabIndex = 13;
+            this.textKmFin.TabIndex = 15;
             this.textKmFin.EditValueChanged += new System.EventHandler(this.textKmFin_EditValueChanged);
             // 
             // textKmIni
@@ -971,7 +971,7 @@
             this.textKmIni.Properties.Mask.EditMask = "n";
             this.textKmIni.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.textKmIni.Size = new System.Drawing.Size(100, 20);
-            this.textKmIni.TabIndex = 12;
+            this.textKmIni.TabIndex = 14;
             // 
             // btnBusqClientes
             // 
@@ -979,7 +979,7 @@
             this.btnBusqClientes.Location = new System.Drawing.Point(686, 79);
             this.btnBusqClientes.Name = "btnBusqClientes";
             this.btnBusqClientes.Size = new System.Drawing.Size(24, 23);
-            this.btnBusqClientes.TabIndex = 57;
+            this.btnBusqClientes.TabIndex = 75;
             this.btnBusqClientes.Click += new System.EventHandler(this.btnBusqClientes_Click);
             // 
             // labelControl10
@@ -1021,7 +1021,7 @@
             this.textDestino.MenuManager = this.barManager1;
             this.textDestino.Name = "textDestino";
             this.textDestino.Size = new System.Drawing.Size(100, 20);
-            this.textDestino.TabIndex = 9;
+            this.textDestino.TabIndex = 10;
             // 
             // textOrigen
             // 
@@ -1030,7 +1030,7 @@
             this.textOrigen.MenuManager = this.barManager1;
             this.textOrigen.Name = "textOrigen";
             this.textOrigen.Size = new System.Drawing.Size(100, 20);
-            this.textOrigen.TabIndex = 8;
+            this.textOrigen.TabIndex = 9;
             // 
             // btnBusqRuta
             // 
@@ -1038,7 +1038,7 @@
             this.btnBusqRuta.Location = new System.Drawing.Point(686, 29);
             this.btnBusqRuta.Name = "btnBusqRuta";
             this.btnBusqRuta.Size = new System.Drawing.Size(24, 23);
-            this.btnBusqRuta.TabIndex = 50;
+            this.btnBusqRuta.TabIndex = 74;
             this.btnBusqRuta.Click += new System.EventHandler(this.btnBusqRuta_Click);
             // 
             // labelControl7
@@ -1055,7 +1055,7 @@
             this.textRuta.MenuManager = this.barManager1;
             this.textRuta.Name = "textRuta";
             this.textRuta.Size = new System.Drawing.Size(222, 20);
-            this.textRuta.TabIndex = 7;
+            this.textRuta.TabIndex = 8;
             // 
             // dtFechaSalida
             // 
@@ -1101,7 +1101,7 @@
             this.btnBusqActivoAdicional.Location = new System.Drawing.Point(343, 159);
             this.btnBusqActivoAdicional.Name = "btnBusqActivoAdicional";
             this.btnBusqActivoAdicional.Size = new System.Drawing.Size(24, 23);
-            this.btnBusqActivoAdicional.TabIndex = 19;
+            this.btnBusqActivoAdicional.TabIndex = 72;
             this.btnBusqActivoAdicional.Click += new System.EventHandler(this.btnBusqActivoAdicional_Click);
             // 
             // btnBusqActivoSec
@@ -1110,7 +1110,7 @@
             this.btnBusqActivoSec.Location = new System.Drawing.Point(343, 133);
             this.btnBusqActivoSec.Name = "btnBusqActivoSec";
             this.btnBusqActivoSec.Size = new System.Drawing.Size(24, 23);
-            this.btnBusqActivoSec.TabIndex = 18;
+            this.btnBusqActivoSec.TabIndex = 71;
             this.btnBusqActivoSec.Click += new System.EventHandler(this.btnBusqActivoSec_Click);
             // 
             // btnBusqActivoPrincipal
@@ -1119,7 +1119,7 @@
             this.btnBusqActivoPrincipal.Location = new System.Drawing.Point(343, 54);
             this.btnBusqActivoPrincipal.Name = "btnBusqActivoPrincipal";
             this.btnBusqActivoPrincipal.Size = new System.Drawing.Size(24, 23);
-            this.btnBusqActivoPrincipal.TabIndex = 17;
+            this.btnBusqActivoPrincipal.TabIndex = 68;
             this.btnBusqActivoPrincipal.Click += new System.EventHandler(this.btnBusqActivoPrincipal_Click);
             // 
             // labelControl4
@@ -1197,7 +1197,7 @@
             this.panelControl2.Location = new System.Drawing.Point(58, 231);
             this.panelControl2.Name = "panelControl2";
             this.panelControl2.Padding = new System.Windows.Forms.Padding(5);
-            this.panelControl2.Size = new System.Drawing.Size(1146, 336);
+            this.panelControl2.Size = new System.Drawing.Size(1146, 331);
             this.panelControl2.TabIndex = 5;
             // 
             // xtraTabControl1
@@ -1206,7 +1206,7 @@
             this.xtraTabControl1.Location = new System.Drawing.Point(7, 7);
             this.xtraTabControl1.Name = "xtraTabControl1";
             this.xtraTabControl1.SelectedTabPage = this.xtraTabPage1;
-            this.xtraTabControl1.Size = new System.Drawing.Size(1132, 322);
+            this.xtraTabControl1.Size = new System.Drawing.Size(1132, 317);
             this.xtraTabControl1.TabIndex = 0;
             this.xtraTabControl1.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.xtraTabPage1,
@@ -1223,7 +1223,7 @@
             this.xtraTabPage1.Controls.Add(this.panelControl3);
             this.xtraTabPage1.Name = "xtraTabPage1";
             this.xtraTabPage1.Padding = new System.Windows.Forms.Padding(5);
-            this.xtraTabPage1.Size = new System.Drawing.Size(1128, 297);
+            this.xtraTabPage1.Size = new System.Drawing.Size(1128, 292);
             this.xtraTabPage1.Text = "Diesel";
             // 
             // panelControl4
@@ -1233,7 +1233,7 @@
             this.panelControl4.Location = new System.Drawing.Point(5, 42);
             this.panelControl4.Name = "panelControl4";
             this.panelControl4.Padding = new System.Windows.Forms.Padding(5);
-            this.panelControl4.Size = new System.Drawing.Size(1118, 250);
+            this.panelControl4.Size = new System.Drawing.Size(1118, 245);
             this.panelControl4.TabIndex = 1;
             // 
             // panel1
@@ -1242,7 +1242,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(7, 7);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(470, 236);
+            this.panel1.Size = new System.Drawing.Size(470, 231);
             this.panel1.TabIndex = 0;
             // 
             // gridDiesel
@@ -1252,11 +1252,10 @@
             this.gridDiesel.MainView = this.gridView2;
             this.gridDiesel.MenuManager = this.barManager1;
             this.gridDiesel.Name = "gridDiesel";
-            this.gridDiesel.Size = new System.Drawing.Size(470, 236);
+            this.gridDiesel.Size = new System.Drawing.Size(470, 231);
             this.gridDiesel.TabIndex = 0;
             this.gridDiesel.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView2});
-           
             this.gridDiesel.DoubleClick += new System.EventHandler(this.gridDiesel_DoubleClick);
             // 
             // gridView2
@@ -1361,7 +1360,7 @@
             this.text_KM.Properties.Mask.EditMask = "n";
             this.text_KM.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.text_KM.Size = new System.Drawing.Size(100, 20);
-            this.text_KM.TabIndex = 103;
+            this.text_KM.TabIndex = 59;
             // 
             // comboMonedaDiesel
             // 
@@ -1376,7 +1375,7 @@
             "Dólares"});
             this.comboMonedaDiesel.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
             this.comboMonedaDiesel.Size = new System.Drawing.Size(100, 20);
-            this.comboMonedaDiesel.TabIndex = 102;
+            this.comboMonedaDiesel.TabIndex = 58;
             // 
             // labelControl50
             // 
@@ -1398,7 +1397,7 @@
             this.dateFechaDiesel.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.dateFechaDiesel.Size = new System.Drawing.Size(100, 20);
-            this.dateFechaDiesel.TabIndex = 100;
+            this.dateFechaDiesel.TabIndex = 57;
             // 
             // labelControl49
             // 
@@ -1417,7 +1416,7 @@
             this.textLitros.Properties.Mask.EditMask = "n";
             this.textLitros.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.textLitros.Size = new System.Drawing.Size(100, 20);
-            this.textLitros.TabIndex = 60;
+            this.textLitros.TabIndex = 56;
             // 
             // labelControl47
             // 
@@ -1432,7 +1431,7 @@
             this.btnSalidaDiesel.Location = new System.Drawing.Point(977, 8);
             this.btnSalidaDiesel.Name = "btnSalidaDiesel";
             this.btnSalidaDiesel.Size = new System.Drawing.Size(75, 23);
-            this.btnSalidaDiesel.TabIndex = 58;
+            this.btnSalidaDiesel.TabIndex = 60;
             this.btnSalidaDiesel.Text = "Agregar";
             this.btnSalidaDiesel.Click += new System.EventHandler(this.btnSalidaDiesel_Click);
             // 
@@ -1452,7 +1451,7 @@
             this.textImporte.Properties.Mask.EditMask = "n";
             this.textImporte.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.textImporte.Size = new System.Drawing.Size(100, 20);
-            this.textImporte.TabIndex = 56;
+            this.textImporte.TabIndex = 55;
             // 
             // labelControl15
             // 
@@ -1476,7 +1475,7 @@
             this.xtraTabPage2.Controls.Add(this.panelControl6);
             this.xtraTabPage2.Name = "xtraTabPage2";
             this.xtraTabPage2.Padding = new System.Windows.Forms.Padding(5);
-            this.xtraTabPage2.Size = new System.Drawing.Size(1130, 300);
+            this.xtraTabPage2.Size = new System.Drawing.Size(1128, 292);
             this.xtraTabPage2.Text = "Otros Gastos";
             // 
             // panelControl5
@@ -1486,7 +1485,7 @@
             this.panelControl5.Location = new System.Drawing.Point(5, 127);
             this.panelControl5.Name = "panelControl5";
             this.panelControl5.Padding = new System.Windows.Forms.Padding(5);
-            this.panelControl5.Size = new System.Drawing.Size(1120, 168);
+            this.panelControl5.Size = new System.Drawing.Size(1118, 160);
             this.panelControl5.TabIndex = 3;
             // 
             // panel2
@@ -1495,7 +1494,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel2.Location = new System.Drawing.Point(7, 7);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(789, 154);
+            this.panel2.Size = new System.Drawing.Size(789, 146);
             this.panel2.TabIndex = 0;
             // 
             // gridOtrosGastos
@@ -1505,7 +1504,7 @@
             this.gridOtrosGastos.MainView = this.gridView3;
             this.gridOtrosGastos.MenuManager = this.barManager1;
             this.gridOtrosGastos.Name = "gridOtrosGastos";
-            this.gridOtrosGastos.Size = new System.Drawing.Size(789, 154);
+            this.gridOtrosGastos.Size = new System.Drawing.Size(789, 146);
             this.gridOtrosGastos.TabIndex = 0;
             this.gridOtrosGastos.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView3});
@@ -1661,7 +1660,7 @@
             this.panelControl6.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelControl6.Location = new System.Drawing.Point(5, 5);
             this.panelControl6.Name = "panelControl6";
-            this.panelControl6.Size = new System.Drawing.Size(1120, 122);
+            this.panelControl6.Size = new System.Drawing.Size(1118, 122);
             this.panelControl6.TabIndex = 2;
             // 
             // checkFGasto
@@ -1672,7 +1671,7 @@
             this.checkFGasto.Name = "checkFGasto";
             this.checkFGasto.Properties.Caption = "Sin Factura";
             this.checkFGasto.Size = new System.Drawing.Size(75, 19);
-            this.checkFGasto.TabIndex = 99;
+            this.checkFGasto.TabIndex = 89;
             this.checkFGasto.CheckedChanged += new System.EventHandler(this.checkFGasto_CheckedChanged);
             // 
             // dateOtroGasto
@@ -1687,7 +1686,7 @@
             this.dateOtroGasto.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.dateOtroGasto.Size = new System.Drawing.Size(100, 20);
-            this.dateOtroGasto.TabIndex = 98;
+            this.dateOtroGasto.TabIndex = 85;
             // 
             // labelControl48
             // 
@@ -1703,7 +1702,7 @@
             this.textOtrosGastos.Location = new System.Drawing.Point(84, 38);
             this.textOtrosGastos.Name = "textOtrosGastos";
             this.textOtrosGastos.Size = new System.Drawing.Size(285, 20);
-            this.textOtrosGastos.TabIndex = 87;
+            this.textOtrosGastos.TabIndex = 82;
             // 
             // labelControl36
             // 
@@ -1726,7 +1725,7 @@
             "Dólares"});
             this.cbMonedaG.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
             this.cbMonedaG.Size = new System.Drawing.Size(100, 20);
-            this.cbMonedaG.TabIndex = 85;
+            this.cbMonedaG.TabIndex = 87;
             // 
             // labelControl35
             // 
@@ -1743,7 +1742,7 @@
             this.btnViewXMLG.Location = new System.Drawing.Point(407, 89);
             this.btnViewXMLG.Name = "btnViewXMLG";
             this.btnViewXMLG.Size = new System.Drawing.Size(25, 23);
-            this.btnViewXMLG.TabIndex = 79;
+            this.btnViewXMLG.TabIndex = 94;
             this.btnViewXMLG.Click += new System.EventHandler(this.btnViewXMLG_Click);
             // 
             // btnUPXMLG
@@ -1752,7 +1751,7 @@
             this.btnUPXMLG.Location = new System.Drawing.Point(375, 89);
             this.btnUPXMLG.Name = "btnUPXMLG";
             this.btnUPXMLG.Size = new System.Drawing.Size(25, 23);
-            this.btnUPXMLG.TabIndex = 78;
+            this.btnUPXMLG.TabIndex = 93;
             this.btnUPXMLG.Click += new System.EventHandler(this.btnUPXMLG_Click);
             // 
             // textNombreArchivoXML
@@ -1761,7 +1760,7 @@
             this.textNombreArchivoXML.Location = new System.Drawing.Point(84, 90);
             this.textNombreArchivoXML.Name = "textNombreArchivoXML";
             this.textNombreArchivoXML.Size = new System.Drawing.Size(285, 20);
-            this.textNombreArchivoXML.TabIndex = 77;
+            this.textNombreArchivoXML.TabIndex = 84;
             // 
             // labelControl38
             // 
@@ -1777,7 +1776,7 @@
             this.btnViewPDFG.Location = new System.Drawing.Point(407, 63);
             this.btnViewPDFG.Name = "btnViewPDFG";
             this.btnViewPDFG.Size = new System.Drawing.Size(25, 23);
-            this.btnViewPDFG.TabIndex = 75;
+            this.btnViewPDFG.TabIndex = 92;
             this.btnViewPDFG.Click += new System.EventHandler(this.btnViewPDFG_Click);
             // 
             // btnUpPDFG
@@ -1786,7 +1785,7 @@
             this.btnUpPDFG.Location = new System.Drawing.Point(374, 63);
             this.btnUpPDFG.Name = "btnUpPDFG";
             this.btnUpPDFG.Size = new System.Drawing.Size(25, 23);
-            this.btnUpPDFG.TabIndex = 74;
+            this.btnUpPDFG.TabIndex = 91;
             this.btnUpPDFG.Click += new System.EventHandler(this.btnUpPDFG_Click);
             // 
             // textNombreArchivoPDF
@@ -1795,7 +1794,7 @@
             this.textNombreArchivoPDF.Location = new System.Drawing.Point(84, 64);
             this.textNombreArchivoPDF.Name = "textNombreArchivoPDF";
             this.textNombreArchivoPDF.Size = new System.Drawing.Size(285, 20);
-            this.textNombreArchivoPDF.TabIndex = 73;
+            this.textNombreArchivoPDF.TabIndex = 83;
             // 
             // labelControl39
             // 
@@ -1812,7 +1811,7 @@
             this.checkPagadoOperador.Name = "checkPagadoOperador";
             this.checkPagadoOperador.Properties.Caption = "Pagado por Operador";
             this.checkPagadoOperador.Size = new System.Drawing.Size(144, 19);
-            this.checkPagadoOperador.TabIndex = 63;
+            this.checkPagadoOperador.TabIndex = 88;
             // 
             // labelControl22
             // 
@@ -1828,14 +1827,14 @@
             this.textTicketG.MenuManager = this.barManager1;
             this.textTicketG.Name = "textTicketG";
             this.textTicketG.Size = new System.Drawing.Size(100, 20);
-            this.textTicketG.TabIndex = 61;
+            this.textTicketG.TabIndex = 80;
             // 
             // btnAgregaGastos
             // 
             this.btnAgregaGastos.Location = new System.Drawing.Point(612, 63);
             this.btnAgregaGastos.Name = "btnAgregaGastos";
             this.btnAgregaGastos.Size = new System.Drawing.Size(75, 23);
-            this.btnAgregaGastos.TabIndex = 60;
+            this.btnAgregaGastos.TabIndex = 95;
             this.btnAgregaGastos.Text = "Agregar";
             this.btnAgregaGastos.Click += new System.EventHandler(this.btnAgregaGastos_Click);
             // 
@@ -1857,7 +1856,7 @@
             this.textImporteG.Properties.Mask.EditMask = "n";
             this.textImporteG.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.textImporteG.Size = new System.Drawing.Size(100, 20);
-            this.textImporteG.TabIndex = 58;
+            this.textImporteG.TabIndex = 86;
             // 
             // btnBusqGastos
             // 
@@ -1865,7 +1864,7 @@
             this.btnBusqGastos.Location = new System.Drawing.Point(407, 10);
             this.btnBusqGastos.Name = "btnBusqGastos";
             this.btnBusqGastos.Size = new System.Drawing.Size(25, 23);
-            this.btnBusqGastos.TabIndex = 21;
+            this.btnBusqGastos.TabIndex = 90;
             this.btnBusqGastos.Click += new System.EventHandler(this.btnBusqGastos_Click);
             // 
             // labelControl17
@@ -1883,7 +1882,7 @@
             this.textGastos.MenuManager = this.barManager1;
             this.textGastos.Name = "textGastos";
             this.textGastos.Size = new System.Drawing.Size(167, 20);
-            this.textGastos.TabIndex = 19;
+            this.textGastos.TabIndex = 81;
             this.textGastos.EditValueChanged += new System.EventHandler(this.textGastos_EditValueChanged);
             // 
             // xtraTabPage3
@@ -1892,7 +1891,7 @@
             this.xtraTabPage3.Controls.Add(this.panelControl8);
             this.xtraTabPage3.Name = "xtraTabPage3";
             this.xtraTabPage3.Padding = new System.Windows.Forms.Padding(5);
-            this.xtraTabPage3.Size = new System.Drawing.Size(1130, 300);
+            this.xtraTabPage3.Size = new System.Drawing.Size(1128, 292);
             this.xtraTabPage3.Text = "Viaticos al Operador";
             // 
             // panelControl13
@@ -1902,7 +1901,7 @@
             this.panelControl13.Location = new System.Drawing.Point(5, 55);
             this.panelControl13.Name = "panelControl13";
             this.panelControl13.Padding = new System.Windows.Forms.Padding(5);
-            this.panelControl13.Size = new System.Drawing.Size(1120, 240);
+            this.panelControl13.Size = new System.Drawing.Size(1118, 232);
             this.panelControl13.TabIndex = 3;
             // 
             // panel3
@@ -1911,7 +1910,7 @@
             this.panel3.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel3.Location = new System.Drawing.Point(7, 7);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(470, 226);
+            this.panel3.Size = new System.Drawing.Size(470, 218);
             this.panel3.TabIndex = 0;
             // 
             // gridViaticos
@@ -1921,7 +1920,7 @@
             this.gridViaticos.MainView = this.gridView4;
             this.gridViaticos.MenuManager = this.barManager1;
             this.gridViaticos.Name = "gridViaticos";
-            this.gridViaticos.Size = new System.Drawing.Size(470, 226);
+            this.gridViaticos.Size = new System.Drawing.Size(470, 218);
             this.gridViaticos.TabIndex = 0;
             this.gridViaticos.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView4});
@@ -1991,7 +1990,7 @@
             this.panelControl8.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelControl8.Location = new System.Drawing.Point(5, 5);
             this.panelControl8.Name = "panelControl8";
-            this.panelControl8.Size = new System.Drawing.Size(1120, 50);
+            this.panelControl8.Size = new System.Drawing.Size(1118, 50);
             this.panelControl8.TabIndex = 2;
             // 
             // btnAgregaViatico
@@ -1999,7 +1998,7 @@
             this.btnAgregaViatico.Location = new System.Drawing.Point(659, 14);
             this.btnAgregaViatico.Name = "btnAgregaViatico";
             this.btnAgregaViatico.Size = new System.Drawing.Size(75, 23);
-            this.btnAgregaViatico.TabIndex = 63;
+            this.btnAgregaViatico.TabIndex = 4;
             this.btnAgregaViatico.Text = "Agregar";
             this.btnAgregaViatico.Click += new System.EventHandler(this.btnAgregaViatico_Click);
             // 
@@ -2019,7 +2018,7 @@
             this.textImporteV.Properties.Mask.EditMask = "n";
             this.textImporteV.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.textImporteV.Size = new System.Drawing.Size(100, 20);
-            this.textImporteV.TabIndex = 61;
+            this.textImporteV.TabIndex = 3;
             // 
             // dateFechaViatico
             // 
@@ -2032,7 +2031,7 @@
             this.dateFechaViatico.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.dateFechaViatico.Size = new System.Drawing.Size(111, 20);
-            this.dateFechaViatico.TabIndex = 49;
+            this.dateFechaViatico.TabIndex = 2;
             // 
             // labelControl20
             // 
@@ -2056,7 +2055,7 @@
             this.textPagadoX.MenuManager = this.barManager1;
             this.textPagadoX.Name = "textPagadoX";
             this.textPagadoX.Size = new System.Drawing.Size(234, 20);
-            this.textPagadoX.TabIndex = 21;
+            this.textPagadoX.TabIndex = 1;
             // 
             // xtraTabPage4
             // 
@@ -2064,7 +2063,7 @@
             this.xtraTabPage4.Controls.Add(this.panelControl10);
             this.xtraTabPage4.Name = "xtraTabPage4";
             this.xtraTabPage4.Padding = new System.Windows.Forms.Padding(5);
-            this.xtraTabPage4.Size = new System.Drawing.Size(1130, 300);
+            this.xtraTabPage4.Size = new System.Drawing.Size(1128, 292);
             this.xtraTabPage4.Text = "Honorarios";
             // 
             // panelControl7
@@ -2074,7 +2073,7 @@
             this.panelControl7.Location = new System.Drawing.Point(5, 55);
             this.panelControl7.Name = "panelControl7";
             this.panelControl7.Padding = new System.Windows.Forms.Padding(5);
-            this.panelControl7.Size = new System.Drawing.Size(1120, 240);
+            this.panelControl7.Size = new System.Drawing.Size(1118, 232);
             this.panelControl7.TabIndex = 3;
             // 
             // panel4
@@ -2083,7 +2082,7 @@
             this.panel4.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel4.Location = new System.Drawing.Point(7, 7);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(470, 226);
+            this.panel4.Size = new System.Drawing.Size(470, 218);
             this.panel4.TabIndex = 0;
             // 
             // gridHonorario
@@ -2093,7 +2092,7 @@
             this.gridHonorario.MainView = this.gridView5;
             this.gridHonorario.MenuManager = this.barManager1;
             this.gridHonorario.Name = "gridHonorario";
-            this.gridHonorario.Size = new System.Drawing.Size(470, 226);
+            this.gridHonorario.Size = new System.Drawing.Size(470, 218);
             this.gridHonorario.TabIndex = 0;
             this.gridHonorario.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView5});
@@ -2152,7 +2151,7 @@
             this.panelControl10.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelControl10.Location = new System.Drawing.Point(5, 5);
             this.panelControl10.Name = "panelControl10";
-            this.panelControl10.Size = new System.Drawing.Size(1120, 50);
+            this.panelControl10.Size = new System.Drawing.Size(1118, 50);
             this.panelControl10.TabIndex = 2;
             // 
             // labelSaldoOperdor
@@ -2179,7 +2178,7 @@
             this.btnAgregaHonorario.Location = new System.Drawing.Point(168, 13);
             this.btnAgregaHonorario.Name = "btnAgregaHonorario";
             this.btnAgregaHonorario.Size = new System.Drawing.Size(75, 23);
-            this.btnAgregaHonorario.TabIndex = 65;
+            this.btnAgregaHonorario.TabIndex = 2;
             this.btnAgregaHonorario.Text = "Agregar";
             this.btnAgregaHonorario.Click += new System.EventHandler(this.btnAgregaHonorario_Click);
             // 
@@ -2199,7 +2198,7 @@
             this.textImporteH.Properties.Mask.EditMask = "n";
             this.textImporteH.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.textImporteH.Size = new System.Drawing.Size(100, 20);
-            this.textImporteH.TabIndex = 63;
+            this.textImporteH.TabIndex = 1;
             // 
             // xtraTabPage5
             // 
@@ -2207,7 +2206,7 @@
             this.xtraTabPage5.Controls.Add(this.panelControl12);
             this.xtraTabPage5.Name = "xtraTabPage5";
             this.xtraTabPage5.Padding = new System.Windows.Forms.Padding(5);
-            this.xtraTabPage5.Size = new System.Drawing.Size(1130, 300);
+            this.xtraTabPage5.Size = new System.Drawing.Size(1128, 292);
             this.xtraTabPage5.Text = "Facturas";
             // 
             // panelControl9
@@ -2217,7 +2216,7 @@
             this.panelControl9.Location = new System.Drawing.Point(5, 73);
             this.panelControl9.Name = "panelControl9";
             this.panelControl9.Padding = new System.Windows.Forms.Padding(5);
-            this.panelControl9.Size = new System.Drawing.Size(1120, 222);
+            this.panelControl9.Size = new System.Drawing.Size(1118, 214);
             this.panelControl9.TabIndex = 3;
             // 
             // gridFacturas
@@ -2227,7 +2226,7 @@
             this.gridFacturas.MainView = this.gridView6;
             this.gridFacturas.MenuManager = this.barManager1;
             this.gridFacturas.Name = "gridFacturas";
-            this.gridFacturas.Size = new System.Drawing.Size(1106, 208);
+            this.gridFacturas.Size = new System.Drawing.Size(1104, 200);
             this.gridFacturas.TabIndex = 0;
             this.gridFacturas.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView6});
@@ -2386,7 +2385,7 @@
             this.panelControl12.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelControl12.Location = new System.Drawing.Point(5, 5);
             this.panelControl12.Name = "panelControl12";
-            this.panelControl12.Size = new System.Drawing.Size(1120, 68);
+            this.panelControl12.Size = new System.Drawing.Size(1118, 68);
             this.panelControl12.TabIndex = 2;
             // 
             // labelControl51
@@ -2405,7 +2404,7 @@
             this.txtImporteViaje.Properties.Mask.EditMask = "n";
             this.txtImporteViaje.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.txtImporteViaje.Size = new System.Drawing.Size(94, 20);
-            this.txtImporteViaje.TabIndex = 99;
+            this.txtImporteViaje.TabIndex = 8;
             // 
             // checkPagada
             // 
@@ -2415,7 +2414,7 @@
             this.checkPagada.Name = "checkPagada";
             this.checkPagada.Properties.Caption = "Pagada";
             this.checkPagada.Size = new System.Drawing.Size(59, 19);
-            this.checkPagada.TabIndex = 98;
+            this.checkPagada.TabIndex = 15;
             this.checkPagada.CheckedChanged += new System.EventHandler(this.checkPagada_CheckedChanged);
             // 
             // datePago
@@ -2429,7 +2428,7 @@
             this.datePago.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.datePago.Size = new System.Drawing.Size(94, 20);
-            this.datePago.TabIndex = 97;
+            this.datePago.TabIndex = 7;
             // 
             // dateFactura
             // 
@@ -2442,7 +2441,7 @@
             this.dateFactura.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.dateFactura.Size = new System.Drawing.Size(94, 20);
-            this.dateFactura.TabIndex = 96;
+            this.dateFactura.TabIndex = 4;
             // 
             // dateCobro
             // 
@@ -2455,7 +2454,7 @@
             this.dateCobro.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.dateCobro.Size = new System.Drawing.Size(91, 20);
-            this.dateCobro.TabIndex = 95;
+            this.dateCobro.TabIndex = 6;
             // 
             // labelControl46
             // 
@@ -2488,7 +2487,7 @@
             this.rbTotalF.Location = new System.Drawing.Point(820, 14);
             this.rbTotalF.Name = "rbTotalF";
             this.rbTotalF.Size = new System.Drawing.Size(49, 17);
-            this.rbTotalF.TabIndex = 91;
+            this.rbTotalF.TabIndex = 14;
             this.rbTotalF.TabStop = true;
             this.rbTotalF.Text = "Total";
             this.rbTotalF.UseVisualStyleBackColor = true;
@@ -2499,7 +2498,7 @@
             this.rbDiferidoF.Location = new System.Drawing.Point(747, 14);
             this.rbDiferidoF.Name = "rbDiferidoF";
             this.rbDiferidoF.Size = new System.Drawing.Size(62, 17);
-            this.rbDiferidoF.TabIndex = 90;
+            this.rbDiferidoF.TabIndex = 13;
             this.rbDiferidoF.Text = "Diferido";
             this.rbDiferidoF.UseVisualStyleBackColor = true;
             // 
@@ -2516,7 +2515,7 @@
             "Dólares"});
             this.cboMoneda.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
             this.cboMoneda.Size = new System.Drawing.Size(100, 20);
-            this.cboMoneda.TabIndex = 71;
+            this.cboMoneda.TabIndex = 5;
             // 
             // labelControl34
             // 
@@ -2553,14 +2552,14 @@
             this.textImporteF.Properties.Mask.EditMask = "n";
             this.textImporteF.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.textImporteF.Size = new System.Drawing.Size(94, 20);
-            this.textImporteF.TabIndex = 67;
+            this.textImporteF.TabIndex = 3;
             // 
             // btnAgregarFacturas
             // 
             this.btnAgregarFacturas.Location = new System.Drawing.Point(1000, 37);
             this.btnAgregarFacturas.Name = "btnAgregarFacturas";
             this.btnAgregarFacturas.Size = new System.Drawing.Size(75, 23);
-            this.btnAgregarFacturas.TabIndex = 66;
+            this.btnAgregarFacturas.TabIndex = 16;
             this.btnAgregarFacturas.Text = "Agregar";
             this.btnAgregarFacturas.Click += new System.EventHandler(this.btnAgregarFacturas_Click);
             // 
@@ -2570,7 +2569,7 @@
             this.btnViewXML.Location = new System.Drawing.Point(345, 38);
             this.btnViewXML.Name = "btnViewXML";
             this.btnViewXML.Size = new System.Drawing.Size(25, 23);
-            this.btnViewXML.TabIndex = 17;
+            this.btnViewXML.TabIndex = 12;
             this.btnViewXML.Click += new System.EventHandler(this.btnViewXML_Click);
             // 
             // btnUPXML
@@ -2579,7 +2578,7 @@
             this.btnUPXML.Location = new System.Drawing.Point(315, 38);
             this.btnUPXML.Name = "btnUPXML";
             this.btnUPXML.Size = new System.Drawing.Size(25, 23);
-            this.btnUPXML.TabIndex = 16;
+            this.btnUPXML.TabIndex = 11;
             this.btnUPXML.Click += new System.EventHandler(this.btnUPXML_Click);
             // 
             // txtNombreArchivoXML
@@ -2588,7 +2587,7 @@
             this.txtNombreArchivoXML.Location = new System.Drawing.Point(42, 39);
             this.txtNombreArchivoXML.Name = "txtNombreArchivoXML";
             this.txtNombreArchivoXML.Size = new System.Drawing.Size(262, 20);
-            this.txtNombreArchivoXML.TabIndex = 15;
+            this.txtNombreArchivoXML.TabIndex = 2;
             // 
             // labelControl24
             // 
@@ -2604,7 +2603,7 @@
             this.btnViewPDF.Location = new System.Drawing.Point(345, 11);
             this.btnViewPDF.Name = "btnViewPDF";
             this.btnViewPDF.Size = new System.Drawing.Size(25, 23);
-            this.btnViewPDF.TabIndex = 13;
+            this.btnViewPDF.TabIndex = 10;
             this.btnViewPDF.Click += new System.EventHandler(this.btnViewPDF_Click);
             // 
             // btnUpPDF
@@ -2613,7 +2612,7 @@
             this.btnUpPDF.Location = new System.Drawing.Point(315, 11);
             this.btnUpPDF.Name = "btnUpPDF";
             this.btnUpPDF.Size = new System.Drawing.Size(25, 23);
-            this.btnUpPDF.TabIndex = 12;
+            this.btnUpPDF.TabIndex = 9;
             this.btnUpPDF.Click += new System.EventHandler(this.btnUpPDF_Click);
             // 
             // txtNombreArchivoPDF
@@ -2622,7 +2621,7 @@
             this.txtNombreArchivoPDF.Location = new System.Drawing.Point(42, 12);
             this.txtNombreArchivoPDF.Name = "txtNombreArchivoPDF";
             this.txtNombreArchivoPDF.Size = new System.Drawing.Size(262, 20);
-            this.txtNombreArchivoPDF.TabIndex = 11;
+            this.txtNombreArchivoPDF.TabIndex = 1;
             // 
             // labelControl25
             // 
@@ -2637,7 +2636,7 @@
             this.xtraTabPage6.Controls.Add(this.panelControl11);
             this.xtraTabPage6.Name = "xtraTabPage6";
             this.xtraTabPage6.Padding = new System.Windows.Forms.Padding(5);
-            this.xtraTabPage6.Size = new System.Drawing.Size(1130, 300);
+            this.xtraTabPage6.Size = new System.Drawing.Size(1128, 292);
             this.xtraTabPage6.Text = "Revisión de Unidad";
             // 
             // panelControl11
@@ -2660,7 +2659,7 @@
             this.panelControl11.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelControl11.Location = new System.Drawing.Point(5, 5);
             this.panelControl11.Name = "panelControl11";
-            this.panelControl11.Size = new System.Drawing.Size(1120, 290);
+            this.panelControl11.Size = new System.Drawing.Size(1118, 282);
             this.panelControl11.TabIndex = 0;
             // 
             // checkAll
@@ -2876,7 +2875,7 @@
             this.xtraTabPage7.Controls.Add(this.panelControl14);
             this.xtraTabPage7.Name = "xtraTabPage7";
             this.xtraTabPage7.Padding = new System.Windows.Forms.Padding(5);
-            this.xtraTabPage7.Size = new System.Drawing.Size(1130, 300);
+            this.xtraTabPage7.Size = new System.Drawing.Size(1128, 292);
             this.xtraTabPage7.Text = "Cruce";
             // 
             // panelControl15
@@ -2885,7 +2884,7 @@
             this.panelControl15.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelControl15.Location = new System.Drawing.Point(5, 72);
             this.panelControl15.Name = "panelControl15";
-            this.panelControl15.Size = new System.Drawing.Size(1120, 223);
+            this.panelControl15.Size = new System.Drawing.Size(1118, 215);
             this.panelControl15.TabIndex = 1;
             // 
             // gridCruce
@@ -2895,7 +2894,7 @@
             this.gridCruce.MainView = this.gridView1;
             this.gridCruce.MenuManager = this.barManager1;
             this.gridCruce.Name = "gridCruce";
-            this.gridCruce.Size = new System.Drawing.Size(1116, 219);
+            this.gridCruce.Size = new System.Drawing.Size(1114, 211);
             this.gridCruce.TabIndex = 1;
             this.gridCruce.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -3018,7 +3017,7 @@
             this.panelControl14.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelControl14.Location = new System.Drawing.Point(5, 5);
             this.panelControl14.Name = "panelControl14";
-            this.panelControl14.Size = new System.Drawing.Size(1120, 67);
+            this.panelControl14.Size = new System.Drawing.Size(1118, 67);
             this.panelControl14.TabIndex = 0;
             // 
             // rbTotal
@@ -3029,7 +3028,7 @@
             this.rbTotal.Location = new System.Drawing.Point(657, 16);
             this.rbTotal.Name = "rbTotal";
             this.rbTotal.Size = new System.Drawing.Size(49, 17);
-            this.rbTotal.TabIndex = 89;
+            this.rbTotal.TabIndex = 11;
             this.rbTotal.TabStop = true;
             this.rbTotal.Text = "Total";
             this.rbTotal.UseVisualStyleBackColor = true;
@@ -3041,7 +3040,7 @@
             this.rbDiferido.Location = new System.Drawing.Point(571, 16);
             this.rbDiferido.Name = "rbDiferido";
             this.rbDiferido.Size = new System.Drawing.Size(62, 17);
-            this.rbDiferido.TabIndex = 88;
+            this.rbDiferido.TabIndex = 10;
             this.rbDiferido.Text = "Diferido";
             this.rbDiferido.UseVisualStyleBackColor = true;
             // 
@@ -3067,7 +3066,7 @@
             this.dateFacturaC.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.dateFacturaC.Size = new System.Drawing.Size(94, 20);
-            this.dateFacturaC.TabIndex = 86;
+            this.dateFacturaC.TabIndex = 3;
             // 
             // labelControl43
             // 
@@ -3092,7 +3091,7 @@
             "Dólares"});
             this.cboMonedaC.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
             this.cboMonedaC.Size = new System.Drawing.Size(86, 20);
-            this.cboMonedaC.TabIndex = 84;
+            this.cboMonedaC.TabIndex = 5;
             // 
             // labelControl37
             // 
@@ -3122,7 +3121,7 @@
             this.textImporteC.Properties.Mask.EditMask = "n";
             this.textImporteC.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.textImporteC.Size = new System.Drawing.Size(94, 20);
-            this.textImporteC.TabIndex = 81;
+            this.textImporteC.TabIndex = 4;
             // 
             // btnAgregarCruce
             // 
@@ -3130,7 +3129,7 @@
             this.btnAgregarCruce.Location = new System.Drawing.Point(726, 36);
             this.btnAgregarCruce.Name = "btnAgregarCruce";
             this.btnAgregarCruce.Size = new System.Drawing.Size(75, 23);
-            this.btnAgregarCruce.TabIndex = 80;
+            this.btnAgregarCruce.TabIndex = 12;
             this.btnAgregarCruce.Text = "Agregar";
             this.btnAgregarCruce.Click += new System.EventHandler(this.btnAgregarCruce_Click);
             // 
@@ -3141,7 +3140,7 @@
             this.btnViewXMLC.Location = new System.Drawing.Point(364, 37);
             this.btnViewXMLC.Name = "btnViewXMLC";
             this.btnViewXMLC.Size = new System.Drawing.Size(25, 23);
-            this.btnViewXMLC.TabIndex = 79;
+            this.btnViewXMLC.TabIndex = 9;
             this.btnViewXMLC.Click += new System.EventHandler(this.btnViewXMLC_Click);
             // 
             // btnUpXMLC
@@ -3151,7 +3150,7 @@
             this.btnUpXMLC.Location = new System.Drawing.Point(333, 37);
             this.btnUpXMLC.Name = "btnUpXMLC";
             this.btnUpXMLC.Size = new System.Drawing.Size(25, 23);
-            this.btnUpXMLC.TabIndex = 78;
+            this.btnUpXMLC.TabIndex = 8;
             this.btnUpXMLC.Click += new System.EventHandler(this.btnUpXMLC_Click);
             // 
             // txtNombreArchivoXMLC
@@ -3160,7 +3159,7 @@
             this.txtNombreArchivoXMLC.Location = new System.Drawing.Point(37, 38);
             this.txtNombreArchivoXMLC.Name = "txtNombreArchivoXMLC";
             this.txtNombreArchivoXMLC.Size = new System.Drawing.Size(285, 20);
-            this.txtNombreArchivoXMLC.TabIndex = 77;
+            this.txtNombreArchivoXMLC.TabIndex = 2;
             // 
             // labelControl41
             // 
@@ -3178,7 +3177,7 @@
             this.btnViewPDFC.Location = new System.Drawing.Point(364, 11);
             this.btnViewPDFC.Name = "btnViewPDFC";
             this.btnViewPDFC.Size = new System.Drawing.Size(25, 23);
-            this.btnViewPDFC.TabIndex = 75;
+            this.btnViewPDFC.TabIndex = 7;
             this.btnViewPDFC.Click += new System.EventHandler(this.btnViewPDFC_Click);
             // 
             // btnUpPDFC
@@ -3188,7 +3187,7 @@
             this.btnUpPDFC.Location = new System.Drawing.Point(333, 11);
             this.btnUpPDFC.Name = "btnUpPDFC";
             this.btnUpPDFC.Size = new System.Drawing.Size(25, 23);
-            this.btnUpPDFC.TabIndex = 74;
+            this.btnUpPDFC.TabIndex = 6;
             this.btnUpPDFC.Click += new System.EventHandler(this.btnUpPDFC_Click);
             // 
             // txtNombreArchivoPDFC
@@ -3197,7 +3196,7 @@
             this.txtNombreArchivoPDFC.Location = new System.Drawing.Point(37, 12);
             this.txtNombreArchivoPDFC.Name = "txtNombreArchivoPDFC";
             this.txtNombreArchivoPDFC.Size = new System.Drawing.Size(285, 20);
-            this.txtNombreArchivoPDFC.TabIndex = 73;
+            this.txtNombreArchivoPDFC.TabIndex = 1;
             // 
             // labelControl42
             // 
@@ -3252,7 +3251,7 @@
             this.barDockControl8.Dock = System.Windows.Forms.DockStyle.Right;
             this.barDockControl8.Location = new System.Drawing.Point(1204, 0);
             this.barDockControl8.Manager = null;
-            this.barDockControl8.Size = new System.Drawing.Size(0, 567);
+            this.barDockControl8.Size = new System.Drawing.Size(0, 562);
             // 
             // OpenDialog
             // 

@@ -652,5 +652,15 @@ namespace TransportBusiness
                 XtraMessageBox.Show("No Cuentas con acceso a esta Opcion [036]");
             }
         }
+
+        private void barButtonItem3_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+           // System.Diagnostics.Process fileopener = new System.Diagnostics.Process();
+
+            //fileopener.StartInfo.FileName = "PBIDesktop.exe";
+            //fileopener.StartInfo.Arguments = "/A \"page=2=OpenActions\" D:/JORGE/Desktop/Diesel Transportes.pbix" ;
+            System.Diagnostics.Process.Start("D:\\JORGE\\Desktop\\Diesel Transportes.pbix");
+            
+        }
     }
 }

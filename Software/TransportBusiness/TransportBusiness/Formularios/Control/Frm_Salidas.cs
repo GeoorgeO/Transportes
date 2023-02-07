@@ -329,7 +329,22 @@ namespace TransportBusiness
                     {
                         if (textCliente.Tag.ToString().Trim().Length >0)
                         {
-                           InsertarSalidas();
+                            if (Convert.ToDecimal(textKmIni.Text) > 0)
+                            {
+                                if (Convert.ToDecimal(textKmIni.Text) < Convert.ToDecimal(textKmFin.Text) )
+                                {
+                                    InsertarSalidas();
+                                }
+                                else
+                                {
+                                    XtraMessageBox.Show("El Kilometraje de Final Es menor o Igual que el Inicial");
+                                }
+                            }
+                            else
+                            {
+                                XtraMessageBox.Show("El Kilometraje de Inicio no puede Quedar en cero");
+                            }
+                           
                         }
                         else
                         {
@@ -354,80 +369,174 @@ namespace TransportBusiness
 
         private void btnLimpiar_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            limpiarCampos();
-            limpiarSalidasRevisionUnidad();
-            limpiarSalidasFacturas();
-            limpiarSalidasHonorario();
-            limpiarSalidasOtrosGastos();
-            limpiarSalidasViaticos();
-            limpiarSalidas_diesel();
-            limpiarSalidasCruce();
+            if (textFolio.Text.Trim().Length > 0)
+            {
+                Boolean SiLimipia;
+                SiLimipia = true;
+                if (gridView2.RowCount == 0)
+                {
+                    if (MessageBox.Show("No has agregado datos de combustible, Deseas agregarlos?", "Falta Combustible",
+             MessageBoxButtons.YesNo) == DialogResult.Yes)
+                    {
+                        // Cancel the Closing event from closing the form.
+                        SiLimipia = false;
+                        // Call method to save file...
+                    }
+                    else
+                    {
+                        SiLimipia = true;
+                    }
+
+                }
+
+                if (gridView6.RowCount == 0)
+                {
+                    if (MessageBox.Show("No has agregado datos de Factura(s), Deseas agregarlos?", "Faltan Facturas",
+             MessageBoxButtons.YesNo) == DialogResult.Yes)
+                    {
+                        // Cancel the Closing event from closing the form.
+                        SiLimipia = false;
+                        // Call method to save file...
+                    }
+                    else
+                    {
+                        SiLimipia = true;
+                    }
+
+                }
+                if (SiLimipia)
+                {
+                    limpiarCampos();
+                    limpiarSalidasRevisionUnidad();
+                    limpiarSalidasFacturas();
+                    limpiarSalidasHonorario();
+                    limpiarSalidasOtrosGastos();
+                    limpiarSalidasViaticos();
+                    limpiarSalidas_diesel();
+                    limpiarSalidasCruce();
+                }
+            }
+            else
+            {
+                limpiarCampos();
+                limpiarSalidasRevisionUnidad();
+                limpiarSalidasFacturas();
+                limpiarSalidasHonorario();
+                limpiarSalidasOtrosGastos();
+                limpiarSalidasViaticos();
+                limpiarSalidas_diesel();
+                limpiarSalidasCruce();
+            }
+
+
+            
         }
 
         private void btnBusqSalida_Click(object sender, EventArgs e)
         {
-            
-            Frm_BusqSalidas frm = new Frm_BusqSalidas();
-            frm.filtro = 0;
-            frm.ShowDialog();
-            textFolio.Text= frm.vId_Salida;
-            if (frm.vFecha_Salida.Length > 0)
+            Boolean SiLimipia;
+            SiLimipia = true;
+            if (textFolio.Text.Trim().Length > 0)
             {
-                dtFechaSalida.EditValue = Convert.ToDateTime(frm.vFecha_Salida);
+                
+                if (gridView2.RowCount == 0)
+                {
+                    if (MessageBox.Show("No has agregado datos de combustible, Deseas agregarlos?", "Falta Combustible",
+             MessageBoxButtons.YesNo) == DialogResult.Yes)
+                    {
+                        // Cancel the Closing event from closing the form.
+                        SiLimipia = false;
+                        // Call method to save file...
+                    }
+                    else
+                    {
+                        SiLimipia = true;
+                    }
+
+                }
+
+                if (gridView6.RowCount == 0)
+                {
+                    if (MessageBox.Show("No has agregado datos de Factura(s), Deseas agregarlos?", "Faltan Facturas",
+             MessageBoxButtons.YesNo) == DialogResult.Yes)
+                    {
+                        // Cancel the Closing event from closing the form.
+                        SiLimipia = false;
+                        // Call method to save file...
+                    }
+                    else
+                    {
+                        SiLimipia = true;
+                    }
+
+                }
+                
             }
-            textActivoPrincipal.Tag=frm.vId_Activo_Principal;
-            ActivoAnterior= frm.vId_Activo_Principal; 
-            textActivoPrincipal.Text=frm.vNombre_Activo_Principal;
-            textOperador.Tag=frm.vId_Operador;
-            OperadorAnterior= frm.vId_Operador;
-            textOperador.Text=frm.vNombre_Operador;
-            textAyudante.Tag=frm.vId_Ayudante;
-            textAyudante.Text=frm.vNombre_Ayudante;
-            textActivoSec.Tag=frm.vId_Activo_Secundario;
-            textActivoSec.Text=frm.vNombre_Activo_Secundario;
-            textActivoAdicional.Tag=frm.vId_Activo_Adicional;
-            textActivoAdicional.Text=frm.vNombre_Activo_Adicional;
-            textRuta.Tag=frm.vId_Ruta ;
-            textRuta.Text=frm.vNombre_Ruta;
-            textOrigen.Text=frm.vOrigen;
-            textDestino.Text=frm.vDestino;
-            cboMotivoSalida.EditValue=frm.vId_MotivoSalida;
-            textCliente.Tag=frm.vId_Cliente;
-            textCliente.Text=frm.vNombre_Cliente;
-            textKmIni.Text = frm.vkm_Inicio.ToString() ;
-            textKmFin.Text=frm.vkm_Fin.ToString();
-            textDiasViaje.Text=frm.vDias_Viaje.ToString();
-            textLts.Text=frm.vLts_Km.ToString();
-            textHuerta.Tag=frm.vId_Huerta;
-            textHuerta.Text=frm.vNombre_Huerta;
-            memoObservaciones.Text=frm.vObservaciones;
-            if (frm.vEsNacional>0)
+            if (SiLimipia)
             {
-                check_Nacional.Checked = true;
-            }
-            else
-            {
-                check_Nacional.Checked = false;
-            }
-            text_2doCliente.Tag = frm.vId_ClienteAd;
-            text_2doCliente.Text = frm.vNombre_ClienteAd;
-            if (frm.vId_ClienteAd.Trim().Length > 0)
-            {
-                check_2Clientes.Checked = true;
-            }
-            else
-            {
-                check_2Clientes.Checked = false;
+                Frm_BusqSalidas frm = new Frm_BusqSalidas();
+                frm.filtro = 0;
+                frm.ShowDialog();
+                textFolio.Text = frm.vId_Salida;
+                if (frm.vFecha_Salida.Length > 0)
+                {
+                    dtFechaSalida.EditValue = Convert.ToDateTime(frm.vFecha_Salida);
+                }
+                textActivoPrincipal.Tag = frm.vId_Activo_Principal;
+                ActivoAnterior = frm.vId_Activo_Principal;
+                textActivoPrincipal.Text = frm.vNombre_Activo_Principal;
+                textOperador.Tag = frm.vId_Operador;
+                OperadorAnterior = frm.vId_Operador;
+                textOperador.Text = frm.vNombre_Operador;
+                textAyudante.Tag = frm.vId_Ayudante;
+                textAyudante.Text = frm.vNombre_Ayudante;
+                textActivoSec.Tag = frm.vId_Activo_Secundario;
+                textActivoSec.Text = frm.vNombre_Activo_Secundario;
+                textActivoAdicional.Tag = frm.vId_Activo_Adicional;
+                textActivoAdicional.Text = frm.vNombre_Activo_Adicional;
+                textRuta.Tag = frm.vId_Ruta;
+                textRuta.Text = frm.vNombre_Ruta;
+                textOrigen.Text = frm.vOrigen;
+                textDestino.Text = frm.vDestino;
+                cboMotivoSalida.EditValue = frm.vId_MotivoSalida;
+                textCliente.Tag = frm.vId_Cliente;
+                textCliente.Text = frm.vNombre_Cliente;
+                textKmIni.Text = frm.vkm_Inicio.ToString();
+                textKmFin.Text = frm.vkm_Fin.ToString();
+                textDiasViaje.Text = frm.vDias_Viaje.ToString();
+                textLts.Text = frm.vLts_Km.ToString();
+                textHuerta.Tag = frm.vId_Huerta;
+                textHuerta.Text = frm.vNombre_Huerta;
+                memoObservaciones.Text = frm.vObservaciones;
+                if (frm.vEsNacional > 0)
+                {
+                    check_Nacional.Checked = true;
+                }
+                else
+                {
+                    check_Nacional.Checked = false;
+                }
+                text_2doCliente.Tag = frm.vId_ClienteAd;
+                text_2doCliente.Text = frm.vNombre_ClienteAd;
+                if (frm.vId_ClienteAd.Trim().Length > 0)
+                {
+                    check_2Clientes.Checked = true;
+                }
+                else
+                {
+                    check_2Clientes.Checked = false;
+                }
+
+                CargarSalidas_Diesel();
+                CargarSalidasOtrosGastos();
+                CargarSalidasViaticos();
+                CargarSalidasRevisionUnidad();
+                CargarSalidasHonorario();
+                CargarSalidasFacturas();
+                CargarSalidasCruces();
             }
 
-            CargarSalidas_Diesel();
-            CargarSalidasOtrosGastos();
-            CargarSalidasViaticos();
-            CargarSalidasRevisionUnidad();
-            CargarSalidasHonorario();
-            CargarSalidasFacturas();
-            CargarSalidasCruces();
-            
+
         }
 
         private void btnMotivoSalida_Click(object sender, EventArgs e)
@@ -484,6 +593,25 @@ namespace TransportBusiness
             if (Clase.Exito)
             {
                 gridDiesel.DataSource = Clase.Datos;
+            }
+            if (gridView2.RowCount > 0)
+            {
+                if (Convert.ToDecimal(text_KmRecorridos.Text) > 0)
+                {
+                    Decimal LitrosT = 0;
+                    for (int x = 0; x < gridView2.RowCount; x++)
+                    {
+                        int xRow = gridView2.GetVisibleRowHandle(x);
+                        LitrosT = LitrosT + Convert.ToDecimal(gridView2.GetRowCellValue(xRow, "Litros"));
+
+
+                    }
+                    if (LitrosT > 0)
+                    {
+                        textLts.Text = Convert.ToString(Convert.ToDecimal(text_KmRecorridos.Text) / LitrosT);
+                    }
+
+                }
             }
         }
 
@@ -1740,11 +1868,38 @@ namespace TransportBusiness
 
         private void Frm_Salidas_FormClosed(object sender, FormClosedEventArgs e)
         {
-            
+           
         }
 
         private void Frm_Salidas_FormClosing(object sender, FormClosingEventArgs e)
         {
+            if (textFolio.Text.Trim().Length > 0)
+            {
+                if (gridView2.RowCount == 0)
+                {
+                    if (MessageBox.Show("No has agregado datos de combustible, Deseas agregarlos?", "Falta Combustible",
+             MessageBoxButtons.YesNo) == DialogResult.Yes)
+                    {
+                        // Cancel the Closing event from closing the form.
+                        e.Cancel = true;
+                        // Call method to save file...
+                    }
+
+                }
+
+                if (gridView6.RowCount == 0)
+                {
+                    if (MessageBox.Show("No has agregado datos de Factura(s), Deseas agregarlos?", "Faltan Facturas",
+             MessageBoxButtons.YesNo) == DialogResult.Yes)
+                    {
+                        // Cancel the Closing event from closing the form.
+                        e.Cancel = true;
+                        // Call method to save file...
+                    }
+
+                }
+
+            }
            
         }
 
